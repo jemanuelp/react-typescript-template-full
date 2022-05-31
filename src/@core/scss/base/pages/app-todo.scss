@@ -190,7 +190,6 @@
 
 // while dragging task
 .gu-mirror {
-  list-style-type: none;
   list-style: none;
   padding: 0.893rem 2rem;
   background-color: $white;
@@ -230,7 +229,7 @@
   }
   75% {
     opacity: 0.5;
-    top: 0px;
+    top: 0;
   }
   100% {
     opacity: 1;
