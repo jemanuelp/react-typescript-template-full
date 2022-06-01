@@ -88,14 +88,14 @@ InputPasswordToggle.propTypes = {
   inputClassName: PropTypes.string,
   label(props: any, propName: string): Error | null {
     // ** If label is defined and htmlFor is undefined throw error
-    if (props[propName] && props['htmlFor'] === 'undefined') {
+    if (props[propName] && props['htmlFor'] === undefined) {
       return new Error('htmlFor prop is required when label prop is present')
     }
     return null;
   },
   htmlFor(props, propName) {
     // ** If htmlFor is defined and label is undefined throw error
-    if (props[propName] && props['label'] === 'undefined') {
+    if (props[propName] && props['label'] === undefined) {
       return new Error('label prop is required when htmlFor prop is present')
     }
     return null;
