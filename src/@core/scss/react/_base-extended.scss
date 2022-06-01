@@ -65,7 +65,7 @@ body #root .wrapper .ps__rail-y {
 .horizontal-layout {
   &.navbar-static .header-navbar.navbar-scrolled {
     background-color: $white;
-    box-shadow: rgba($black, 0.05) 0px 4px 20px 0px;
+    box-shadow: rgba($black, 0.05) 0 4px 20px 0;
   }
 
   // Main Navbar
@@ -204,7 +204,7 @@ body #root .wrapper .ps__rail-y {
 // ========================================================================
 .react-slidedown {
   &::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
   }
 }
 
