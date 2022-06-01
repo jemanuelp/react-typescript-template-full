@@ -57,7 +57,7 @@ div.dataTables_wrapper .dt-button-collection {
   background-color: $dropdown-bg;
   > div[role='menu'] {
     text-align: left;
-    box-shadow: 0px 5px 16px -8px;
+    box-shadow: 0 5px 16px -8px;
     min-width: 8rem;
   }
   [class*='buttons-']:focus {

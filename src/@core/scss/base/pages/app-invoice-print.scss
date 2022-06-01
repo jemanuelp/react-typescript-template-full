@@ -60,7 +60,7 @@ body {
 // style for print screen
 @media print {
   .invoice-print {
-    padding: 0px !important;
+    padding: 0 !important;
   }
   .invoice-header {
     border-bottom: 1px solid $border-color;
