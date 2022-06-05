@@ -37,6 +37,6 @@ const themeConfig: ThemeConfig = {
     scrollTop: true, // Enable scroll to top button
     toastPosition
   }
-}
+};
 
-export default themeConfig
+export default themeConfig;
