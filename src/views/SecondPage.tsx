@@ -14,7 +14,7 @@ const SecondPage = () => {
         </CardText>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SecondPage
+export default SecondPage;

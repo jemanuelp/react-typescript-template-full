@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
-import { Button } from 'reactstrap'
+import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import {useSkin} from "../utility/hooks/useSkin";
-import '../@core/scss/base/pages/page-misc.scss'
+import '../@core/scss/base/pages/page-misc.scss';
 
 const Error = () => {
-  const { skin } = useSkin()
+  const { skin } = useSkin();
 
   const illustration = skin === 'dark' ? 'error-dark.svg' : 'error.svg',
-    source = require(`../assets/images/pages/${illustration}`).default
+    source = require(`../assets/images/pages/${illustration}`).default;
   return (
     <div className='misc-wrapper'>
       <a className='brand-logo' href='/'>
@@ -72,6 +72,6 @@ const Error = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default Error
+  );
+};
+export default Error;

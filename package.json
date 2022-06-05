@@ -43,7 +43,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint src/**/*.ts src/**/*.tsx",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts src/**/*.tsx --fix"
   },
   "eslintConfig": {
     "extends": [

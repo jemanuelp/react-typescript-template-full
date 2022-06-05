@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
-import { ChevronLeft } from 'react-feather'
-import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap'
-import '../@core/scss/react/pages/page-authentication.scss'
+import { Link } from 'react-router-dom';
+import { ChevronLeft } from 'react-feather';
+import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap';
+import '../@core/scss/react/pages/page-authentication.scss';
 import {useSkin} from "../utility/hooks/useSkin";
 
 const ForgotPassword = () => {
-  const { skin } = useSkin()
+  const { skin } = useSkin();
 
   const illustration = skin === 'dark' ? 'forgot-password-v2-dark.svg' : 'forgot-password-v2.svg';
-  const source = require(`../assets/images/pages/${illustration}`).default
+  const source = require(`../assets/images/pages/${illustration}`).default;
 
   return (
     <div className='auth-wrapper auth-cover'>
@@ -98,7 +98,7 @@ const ForgotPassword = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ForgotPassword
+export default ForgotPassword;

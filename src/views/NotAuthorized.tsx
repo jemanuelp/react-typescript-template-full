@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom'
-import { Button } from 'reactstrap'
-import { getUserData } from '../utility/Utils'
-import '../@core/scss/base/pages/page-misc.scss'
+import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+// import { getUserData } from '../utility/Utils';
+import '../@core/scss/base/pages/page-misc.scss';
 import {useSkin} from "../utility/hooks/useSkin";
 
 const NotAuthorized = () => {
-  const { skin } = useSkin()
+  const { skin } = useSkin();
 
-  const user = getUserData()
+  // const user = getUserData();
 
   const illustration = skin === 'dark' ? 'not-authorized-dark.svg' : 'not-authorized.svg',
-    source = require(`../../src/assets/images/pages/${illustration}`).default
+    source = require(`../../src/assets/images/pages/${illustration}`).default;
   return (
     <div className='misc-wrapper'>
       <Link className='brand-logo' to='/'>
@@ -78,6 +78,6 @@ const NotAuthorized = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default NotAuthorized
+  );
+};
+export default NotAuthorized;
