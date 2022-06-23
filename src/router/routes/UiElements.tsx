@@ -1,38 +1,38 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-const Typography = lazy(() => import('../../views/ui-elements/typography'))
-const Icons = lazy(() => import('../../views/ui-elements/icons'))
-const CardsBasic = lazy(() => import('../../views/ui-elements/cards/basic'))
-const CardsAdvance = lazy(() => import('../../views/ui-elements/cards/advance'))
-const CardsStatistics = lazy(() => import('../../views/ui-elements/cards/statistics'))
-const CardsAnalytics = lazy(() => import('../../views/ui-elements/cards/analytics'))
-const CardsActions = lazy(() => import('../../views/ui-elements/cards/actions'))
-const Accordion = lazy(() => import('../../views/components/accordion'))
-const Alerts = lazy(() => import('../../views/components/alerts'))
-const Autocomplete = lazy(() => import('../../views/components/autocomplete'))
-const Avatar = lazy(() => import('../../views/components/avatar'))
-const Badge = lazy(() => import('../../views/components/badge'))
-const BlockUI = lazy(() => import('../../views/components/block-ui'))
-const Breadcrumbs = lazy(() => import('../../views/components/breadcrumbs'))
-const Buttons = lazy(() => import('../../views/components/buttons'))
-const Carousel = lazy(() => import('../../views/components/carousel'))
-const Collapse = lazy(() => import('../../views/components/collapse'))
-const Divider = lazy(() => import('../../views/components/divider'))
-const Dropdown = lazy(() => import('../../views/components/dropdowns'))
-const ListGroup = lazy(() => import('../../views/components/listGroup'))
-const Modal = lazy(() => import('../../views/components/modal'))
-const NavComponent = lazy(() => import('../../views/components/navComponent'))
-const Offcanvas = lazy(() => import('../../views/components/offcanvas'))
-const Pagination = lazy(() => import('../../views/components/pagination'))
-const BadgePills = lazy(() => import('../../views/components/badgePills'))
-const TabPills = lazy(() => import('../../views/components/tabPills'))
-const Popovers = lazy(() => import('../../views/components/popovers'))
-const Progress = lazy(() => import('../../views/components/progress'))
-const Spinners = lazy(() => import('../../views/components/spinners'))
-const Tabs = lazy(() => import('../../views/components/tabs'))
-const Timeline = lazy(() => import('../../views/components/timeline'))
-const Toasts = lazy(() => import('../../views/components/toasts'))
-const Tooltips = lazy(() => import('../../views/components/tooltips'))
+const Typography = lazy(() => import('../../views/ui-elements/typography'));
+const Icons = lazy(() => import('../../views/ui-elements/icons'));
+const CardsBasic = lazy(() => import('../../views/ui-elements/cards/basic'));
+const CardsAdvance = lazy(() => import('../../views/ui-elements/cards/advance'));
+const CardsStatistics = lazy(() => import('../../views/ui-elements/cards/statistics'));
+const CardsAnalytics = lazy(() => import('../../views/ui-elements/cards/analytics'));
+const CardsActions = lazy(() => import('../../views/ui-elements/cards/actions'));
+const Accordion = lazy(() => import('../../views/components/accordion'));
+const Alerts = lazy(() => import('../../views/components/alerts'));
+const Autocomplete = lazy(() => import('../../views/components/autocomplete'));
+const Avatar = lazy(() => import('../../views/components/avatar'));
+const Badge = lazy(() => import('../../views/components/badge'));
+const BlockUI = lazy(() => import('../../views/components/block-ui'));
+const Breadcrumbs = lazy(() => import('../../views/components/breadcrumbs'));
+const Buttons = lazy(() => import('../../views/components/buttons'));
+const Carousel = lazy(() => import('../../views/components/carousel'));
+const Collapse = lazy(() => import('../../views/components/collapse'));
+const Divider = lazy(() => import('../../views/components/divider'));
+const Dropdown = lazy(() => import('../../views/components/dropdowns'));
+const ListGroup = lazy(() => import('../../views/components/listGroup'));
+const Modal = lazy(() => import('../../views/components/modal'));
+const NavComponent = lazy(() => import('../../views/components/navComponent'));
+const Offcanvas = lazy(() => import('../../views/components/offcanvas'));
+const Pagination = lazy(() => import('../../views/components/pagination'));
+const BadgePills = lazy(() => import('../../views/components/badgePills'));
+const TabPills = lazy(() => import('../../views/components/tabPills'));
+const Popovers = lazy(() => import('../../views/components/popovers'));
+const Progress = lazy(() => import('../../views/components/progress'));
+const Spinners = lazy(() => import('../../views/components/spinners'));
+const Tabs = lazy(() => import('../../views/components/tabs'));
+const Timeline = lazy(() => import('../../views/components/timeline'));
+const Toasts = lazy(() => import('../../views/components/toasts'));
+const Tooltips = lazy(() => import('../../views/components/tooltips'));
 
 const UiElementRoutes = [
   {
@@ -167,6 +167,6 @@ const UiElementRoutes = [
     element: <Tooltips />,
     path: '/components/tooltips'
   }
-]
+];
 
-export default UiElementRoutes
+export default UiElementRoutes;

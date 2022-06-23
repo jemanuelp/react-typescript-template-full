@@ -1,4 +1,4 @@
-import mock from '../mock'
+import mock from '../mock';
 const data = {
   profileData: {
     header: {
@@ -309,6 +309,6 @@ const data = {
       }
     ]
   }
-}
+};
 
-mock.onGet('/profile/data').reply(() => [200, data.profileData])
+mock.onGet('/profile/data').reply(() => [200, data.profileData]);

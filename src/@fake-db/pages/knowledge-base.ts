@@ -1,4 +1,4 @@
-import mock from '../mock'
+import mock from '../mock';
 
 const data = {
   // knowledge base
@@ -271,8 +271,8 @@ const data = {
       require('@src/assets/images/pages/kb-image.jpg').default
     }" /><h5 class='my-1'>Houston</h5><p>that may have seemed like a very long final phase. The auto targeting was taking us right into a … crater, with a large number of big boulders and rocks … and it required …flying manually over the rock field to find a reasonably good area.</p><ul class="list-group list-group-circle ms-2 mt-2"><li class="list-group-item"><a class="text-body" href="/" rel="noopener noreferrer" >I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.</a></li><li class="list-group-item"><a class="text-body" href="/" rel="noopener noreferrer" >It’s just mind-blowingly awesome. I apologize, and I wish I was more articulate, but it’s hard to be articulate when your mind’s blown—but in a very good way.</a></li><li class="list-group-item"><a class="text-body" href="/" rel="noopener noreferrer" >A good rule for rocket experimenters to follow is this</a></li></ul>`
   }
-}
+};
 
-mock.onGet('/faq/data/knowledge_base').reply(() => [200, data.knowledgeBase])
-mock.onGet('/faq/data/category').reply(() => [200, data.categoryData])
-mock.onGet('/faq/data/question').reply(() => [200, data.questionData])
+mock.onGet('/faq/data/knowledge_base').reply(() => [200, data.knowledgeBase]);
+mock.onGet('/faq/data/category').reply(() => [200, data.categoryData]);
+mock.onGet('/faq/data/question').reply(() => [200, data.questionData]);

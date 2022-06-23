@@ -1,4 +1,4 @@
-import mock from '../mock'
+import mock from '../mock';
 
 const data = {
   tasks: [
@@ -273,64 +273,64 @@ const data = {
       isImportant: true
     }
   ]
-}
+};
 
 // ------------------------------------------------
 // GET: Return Tasks
 // ------------------------------------------------
 mock.onGet('/apps/todo/tasks').reply(config => {
   // eslint-disable-next-line object-curly-newline
-  const { q = '', filter, tag, sortBy: sortByParam = 'latest' } = config.params
+  const { q = '', filter, tag, sortBy: sortByParam = 'latest' } = config.params;
   /* eslint-enable */
   // ------------------------------------------------
   // Get Sort by and Sort Direction
   // ------------------------------------------------
-  let sortDesc = true
+  let sortDesc = true;
 
   const sortBy = (() => {
     if (sortByParam === 'title-asc') {
-      sortDesc = false
-      return 'title'
+      sortDesc = false;
+      return 'title';
     }
-    if (sortByParam === 'title-desc') return 'title'
+    if (sortByParam === 'title-desc') return 'title';
     if (sortByParam === 'assignee') {
-      sortDesc = false
-      return 'assignee'
+      sortDesc = false;
+      return 'assignee';
     }
     if (sortByParam === 'due-date') {
-      sortDesc = false
-      return 'dueDate'
+      sortDesc = false;
+      return 'dueDate';
     }
-    return 'id'
-  })()
+    return 'id';
+  })();
 
   // ------------------------------------------------
   // Filtering
   // ------------------------------------------------
-  const queryLowered = q.toLowerCase()
+  const queryLowered = q.toLowerCase();
 
   const hasFilter = task => {
-    if (filter === 'important') return task.isImportant && !task.isDeleted
-    if (filter === 'completed') return task.isCompleted && !task.isDeleted
-    if (filter === 'deleted') return task.isDeleted
-    return !task.isDeleted
-  }
+    if (filter === 'important') return task.isImportant && !task.isDeleted;
+    if (filter === 'completed') return task.isCompleted && !task.isDeleted;
+    if (filter === 'deleted') return task.isDeleted;
+    return !task.isDeleted;
+  };
 
-  const includesFilter = task => task.tags.includes(queryLowered) || task.tags.some(tag => tag.includes(queryLowered))
+  const includesFilter = task => task.tags.includes(queryLowered) || task.tags.some(tag => tag.includes(queryLowered));
 
   const includesDueDate = task => {
-    const date = new Date(task.dueDate).getDate().toString().padStart(2, '0')
-    const month = new Date(task.dueDate).toLocaleString('default', { month: 'short' }).toLowerCase()
-    const dateMonth = `${date} ${month}`
-    const monthDate = `${month} ${date}`
+    const date = new Date(task.dueDate).getDate().toString().padStart(2, '0');
+    const month = new Date(task.dueDate).toLocaleString('default', { month: 'short' }).toLowerCase();
+    const dateMonth = `${date} ${month}`;
+    const monthDate = `${month} ${date}`;
 
     return (
       date.includes(queryLowered) ||
       month.includes(queryLowered) ||
       dateMonth.includes(queryLowered) ||
       monthDate.includes(queryLowered)
-    )
-  }
+    );
+  };
 
   /* eslint-disable */
   const filteredData = data.tasks.filter(task => {
@@ -348,93 +348,93 @@ mock.onGet('/apps/todo/tasks').reply(config => {
   // Perform sorting
   // ------------------------------------------------
   const sortTasks = key => (a, b) => {
-    let fieldA
-    let fieldB
+    let fieldA;
+    let fieldB;
 
     // If sorting is by dueDate => Convert data to date
     if (key === 'dueDate') {
-      fieldA = new Date(a[key])
-      fieldB = new Date(b[key])
+      fieldA = new Date(a[key]);
+      fieldB = new Date(b[key]);
       // eslint-disable-next-line brace-style
     }
 
     // If sorting is by assignee => Use `fullName` of assignee
     else if (key === 'assignee') {
-      fieldA = a.assignee ? a.assignee.fullName : null
-      fieldB = b.assignee ? b.assignee.fullName : null
+      fieldA = a.assignee ? a.assignee.fullName : null;
+      fieldB = b.assignee ? b.assignee.fullName : null;
     } else {
-      fieldA = a[key]
-      fieldB = b[key]
+      fieldA = a[key];
+      fieldB = b[key];
     }
 
-    let comparison = 0
+    let comparison = 0;
 
     if (fieldA === fieldB) {
-      comparison = 0
+      comparison = 0;
     } else if (fieldA === null) {
-      comparison = 1
+      comparison = 1;
     } else if (fieldB === null) {
-      comparison = -1
+      comparison = -1;
     } else if (fieldA > fieldB) {
-      comparison = 1
+      comparison = 1;
     } else if (fieldA < fieldB) {
-      comparison = -1
+      comparison = -1;
     }
 
-    return comparison
-  }
+    return comparison;
+  };
 
   // Sort Data
-  const sortedData = filteredData.sort(sortTasks(sortBy))
-  if (sortDesc) sortedData.reverse()
-  return [200, sortedData]
-})
+  const sortedData = filteredData.sort(sortTasks(sortBy));
+  if (sortDesc) sortedData.reverse();
+  return [200, sortedData];
+});
 
 // ------------------------------------------------
 // POST: Add new task
 // ------------------------------------------------
 mock.onPost('/apps/todo/add-tasks').reply(config => {
   // Get event from post data
-  const { task } = JSON.parse(config.data)
+  const { task } = JSON.parse(config.data);
 
-  const { length } = data.tasks
-  let lastIndex = 0
+  const { length } = data.tasks;
+  let lastIndex = 0;
   if (length) {
-    lastIndex = data.tasks[length - 1].id
+    lastIndex = data.tasks[length - 1].id;
   }
-  task.id = lastIndex + 1
+  task.id = lastIndex + 1;
 
-  data.tasks.push(task)
+  data.tasks.push(task);
 
-  return [201, { task }]
-})
+  return [201, { task }];
+});
 
 // ------------------------------------------------
 // POST: Update Task
 // ------------------------------------------------
 mock.onPost('/apps/todo/update-task').reply(config => {
-  const taskData = JSON.parse(config.data).task
+  const taskData = JSON.parse(config.data).task;
 
   // Convert Id to number
-  taskData.id = Number(taskData.id)
+  taskData.id = Number(taskData.id);
 
-  const task = data.tasks.find(e => e.id === Number(taskData.id))
-  Object.assign(task, taskData)
+  const task = data.tasks.find(e => e.id === Number(taskData.id));
+  Object.assign(task, taskData);
 
-  return [200, { task }]
-})
+  return [200, { task }];
+});
 
 // ------------------------------------------------
 // DELETE: Remove Task
 // ------------------------------------------------
 mock.onDelete('/apps/todo/delete-task').reply(config => {
   // Get task id from URL
-  let taskId = config.taskId
+  let taskId = config.taskId;
 
   // Convert Id to number
-  taskId = Number(taskId)
+  taskId = Number(taskId);
 
-  const task = data.tasks.find(t => t.id === taskId)
-  Object.assign(task, { isDeleted: true })
-  return [200]
-})
+  const task = data.tasks.find(t => t.id === taskId);
+  Object.assign(task, { isDeleted: true });
+  return [200];
+});

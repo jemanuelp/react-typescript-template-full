@@ -1,23 +1,23 @@
-import { lazy } from 'react'
-import { Navigate } from 'react-router-dom'
+import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 
-const Faq = lazy(() => import('../../views/pages/faq'))
-const ApiKey = lazy(() => import('../../views/pages/api-key'))
-const Profile = lazy(() => import('../../views/pages/profile'))
-const Pricing = lazy(() => import('../../views/pages/pricing'))
-const License = lazy(() => import('../../views/pages/license'))
-const Error = lazy(() => import('../../views/pages/misc/Error'))
-const BlogList = lazy(() => import('../../views/pages/blog/list'))
-const BlogEdit = lazy(() => import('../../views/pages/blog/edit'))
-const BlogDetails = lazy(() => import('../../views/pages/blog/details'))
-const ComingSoon = lazy(() => import('../../views/pages/misc/ComingSoon'))
-const ModalExamples = lazy(() => import('../../views/pages/modal-examples'))
-const Maintenance = lazy(() => import('../../views/pages/misc/Maintenance'))
-const AccountSettings = lazy(() => import('../../views/pages/account-settings'))
-const NotAuthorized = lazy(() => import('../../views/pages/misc/NotAuthorized'))
-const KnowledgeBase = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBase'))
-const KnowledgeBaseCategory = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBaseCategory'))
-const KBCategoryQuestion = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBaseCategoryQuestion'))
+const Faq = lazy(() => import('../../views/pages/faq'));
+const ApiKey = lazy(() => import('../../views/pages/api-key'));
+const Profile = lazy(() => import('../../views/pages/profile'));
+const Pricing = lazy(() => import('../../views/pages/pricing'));
+const License = lazy(() => import('../../views/pages/license'));
+const Error = lazy(() => import('../../views/pages/misc/Error'));
+const BlogList = lazy(() => import('../../views/pages/blog/list'));
+const BlogEdit = lazy(() => import('../../views/pages/blog/edit'));
+const BlogDetails = lazy(() => import('../../views/pages/blog/details'));
+const ComingSoon = lazy(() => import('../../views/pages/misc/ComingSoon'));
+const ModalExamples = lazy(() => import('../../views/pages/modal-examples'));
+const Maintenance = lazy(() => import('../../views/pages/misc/Maintenance'));
+const AccountSettings = lazy(() => import('../../views/pages/account-settings'));
+const NotAuthorized = lazy(() => import('../../views/pages/misc/NotAuthorized'));
+const KnowledgeBase = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBase'));
+const KnowledgeBaseCategory = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBaseCategory'));
+const KBCategoryQuestion = lazy(() => import('../../views/pages/knowledge-base/KnowledgeBaseCategoryQuestion'));
 
 const PagesRoutes = [
   {
@@ -112,6 +112,6 @@ const PagesRoutes = [
       layout: 'blank'
     }
   }
-]
+];
 
-export default PagesRoutes
+export default PagesRoutes;
