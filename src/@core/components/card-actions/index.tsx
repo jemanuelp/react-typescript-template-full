@@ -1,7 +1,7 @@
-import { Fragment, useState, useEffect } from 'react'
-import classnames from 'classnames'
-import { ChevronDown, RotateCw, X } from 'react-feather'
-import { Card, CardHeader, CardTitle, Collapse } from 'reactstrap'
+import { Fragment, useState, useEffect } from 'react';
+import classnames from 'classnames';
+import { ChevronDown, RotateCw, X } from 'react-feather';
+import { Card, CardHeader, CardTitle, Collapse } from 'reactstrap';
 import UiLoader from "../ui-loader";
 
 enum IconActions {
@@ -23,20 +23,19 @@ abstract class PropTypesCardActions {
         (props['actions'] === 'reload' && props['endReload'] === undefined) ||
         (props['actions'].includes('reload') && props['endReload'] === undefined)
     ) {
-      return new Error('Please provide a function to end reload!')
+      return new Error('Please provide a function to end reload!');
     }
   };
   children: any;
 }
 
 const CardActions = (props: PropTypesCardActions) => {
-  // ** Props
-  const { title, actions, children, collapseIcon, reloadIcon, removeIcon, endReload } = props
+  const { title, actions, children, collapseIcon, reloadIcon, removeIcon, endReload } = props;
 
   // ** States
-  const [reload, setReload] = useState(false)
-  const [collapse, setCollapse] = useState(true)
-  const [visibility, setVisibility] = useState(true)
+  const [reload, setReload] = useState(false);
+  const [collapse, setCollapse] = useState(true);
+  const [visibility, setVisibility] = useState(true);
 
   /**
    ** If custom icon is defined then consider that else default icons
@@ -45,20 +44,20 @@ const CardActions = (props: PropTypesCardActions) => {
     collapse: collapseIcon ? collapseIcon : ChevronDown,
     remove: removeIcon ? removeIcon : X,
     reload: reloadIcon ? reloadIcon : RotateCw
-  }
+  };
 
   // ** Action to call
   const callAction = (action: string) => {
     switch (action) {
       case 'collapse':
-        return setCollapse(!collapse)
+        return setCollapse(!collapse);
       case 'remove':
-        return setVisibility(false)
+        return setVisibility(false);
       case 'reload':
-        return setReload(true)
+        return setReload(true);
       default:
     }
-  }
+  };
 
   // ** Renders card actions
   const renderIcons = () => {
@@ -79,31 +78,31 @@ const CardActions = (props: PropTypesCardActions) => {
             size={15}
             onClick={() => callAction(action)}
           />
-        )
-      })
+        );
+      });
     } else {
-      const Tag = Icons[actions]
-      return <Tag className='cursor-pointer' size={15} onClick={() => callAction(actions)} />
+      const Tag = Icons[actions];
+      return <Tag className='cursor-pointer' size={15} onClick={() => callAction(actions)} />;
     }
-  }
+  };
 
   // ** Ends reload
   const removeReload = () => {
-    setReload(false)
-  }
+    setReload(false);
+  };
 
   // ** If user passes endReload function call it.
   useEffect(() => {
     if (reload) {
-      endReload(removeReload)
+      endReload(removeReload);
     }
-  })
+  });
 
   // ** If user passes collapse action then return <Collapse> as Wrapper else return <Fragment>
-  const CollapseWrapper = actions === 'collapse' || actions.includes(IconActions.collapse) ? Collapse : Fragment
+  const CollapseWrapper = actions === 'collapse' || actions.includes(IconActions.collapse) ? Collapse : Fragment;
 
   // ** If user passes reload action then return <BlockUi> as Wrapper else return <Fragment>
-  const BlockUiWrapper = actions === 'reload' || actions.includes(IconActions.reload) ? UiLoader : Fragment
+  const BlockUiWrapper = actions === 'reload' || actions.includes(IconActions.reload) ? UiLoader : Fragment;
 
   return (
     <BlockUiWrapper
@@ -129,7 +128,7 @@ const CardActions = (props: PropTypesCardActions) => {
         </CollapseWrapper>
       </Card>
     </BlockUiWrapper>
-  )
-}
+  );
+};
 
-export default CardActions
+export default CardActions;

@@ -1,10 +1,9 @@
-import { forwardRef } from 'react'
-import Proptypes from 'prop-types'
-import classnames from 'classnames'
-import { Badge } from 'reactstrap'
+import { forwardRef } from 'react';
+import Proptypes from 'prop-types';
+import classnames from 'classnames';
+import { Badge } from 'reactstrap';
 
 const Avatar = forwardRef((props: any, ref) => {
-  // ** Props
   const {
     img,
     size,
@@ -23,17 +22,16 @@ const Avatar = forwardRef((props: any, ref) => {
     imgClassName,
     contentStyles,
     ...rest
-  } = props
+  } = props;
 
-  // ** Function to extract initials from content
   const getInitials = (str: string) => {
     const results: any[] = [];
-    const wordArray = str.split(' ')
+    const wordArray = str.split(' ');
     wordArray.forEach(e => {
-      results.push(e[0])
-    })
-    return results.join('')
-  }
+      results.push(e[0]);
+    });
+    return results.join('');
+  };
 
   return (
     <Tag
@@ -81,12 +79,11 @@ const Avatar = forwardRef((props: any, ref) => {
         ></span>
       ) : null}
     </Tag>
-  )
-})
+  );
+});
 
-export default Avatar
+export default Avatar;
 
-// ** PropTypes
 Avatar.propTypes = {
   icon: Proptypes.node,
   src: Proptypes.string,
@@ -135,19 +132,18 @@ Avatar.propTypes = {
   ]),
   initials(props) {
     if (props['initials'] && props['content'] === undefined) {
-      return new Error('content prop is required with initials prop.')
+      return new Error('content prop is required with initials prop.');
     }
     if (props['initials'] && typeof props['content'] !== 'string') {
-      return new Error('content prop must be a string.')
+      return new Error('content prop must be a string.');
     }
     if (typeof props['initials'] !== 'boolean' && props['initials'] !== undefined) {
-      return new Error('initials must be a boolean!')
+      return new Error('initials must be a boolean!');
     }
     return null;
   }
-}
+};
 
-// ** Default Props
 Avatar.defaultProps = {
   tag: 'div'
-}
+};

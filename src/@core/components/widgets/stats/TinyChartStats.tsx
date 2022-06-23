@@ -1,13 +1,12 @@
 // ** Third Party Components
-import PropTypes from 'prop-types'
-import Chart from 'react-apexcharts'
+import PropTypes from 'prop-types';
+import Chart from 'react-apexcharts';
 
 // ** Reactstrap Imports
-import { Card, CardBody } from 'reactstrap'
+import { Card, CardBody } from 'reactstrap';
 
 const TinyChartStats = (props: any) => {
-  // ** Props
-  const { title, stats, options, series, type, height } = props
+  const { title, stats, options, series, type, height } = props;
 
   return (
     <Card className='card-tiny-line-stats'>
@@ -17,10 +16,10 @@ const TinyChartStats = (props: any) => {
         <Chart options={options} series={series} type={type} height={height} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default TinyChartStats
+export default TinyChartStats;
 
 // ** PropTypes
 TinyChartStats.propTypes = {
@@ -29,9 +28,9 @@ TinyChartStats.propTypes = {
   stats: PropTypes.string.isRequired,
   series: PropTypes.array.isRequired,
   options: PropTypes.object.isRequired
-}
+};
 
 // ** Default Props
 TinyChartStats.defaultProps = {
   height: 100
-}
+};

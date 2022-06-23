@@ -7,7 +7,6 @@ import { Eye, EyeOff } from 'react-feather';
 import { InputGroup, Input, InputGroupText, Label } from 'reactstrap';
 
 const InputPasswordToggle = forwardRef((props: any, ref) => {
-  // ** Props
   const {
     label,
     hideIcon,
@@ -20,21 +19,21 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
     inputClassName,
     invalid,
     ...rest
-  } = props
+  } = props;
 
   // ** State
-  const [inputVisibility, setInputVisibility] = useState(visible)
+  const [inputVisibility, setInputVisibility] = useState(visible);
 
   // ** Renders Icon Based On Visibility
   const renderIcon = () => {
-    const size = iconSize ? iconSize : 14
+    const size = iconSize ? iconSize : 14;
 
     if (inputVisibility === false) {
-      return hideIcon ? hideIcon : <Eye size={size} />
+      return hideIcon ? hideIcon : <Eye size={size} />;
     } else {
-      return showIcon ? showIcon : <EyeOff size={size} />
+      return showIcon ? showIcon : <EyeOff size={size} />;
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -71,10 +70,10 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
         </InputGroupText>
       </InputGroup>
     </Fragment>
-  )
-})
+  );
+});
 
-export default InputPasswordToggle
+export default InputPasswordToggle;
 
 // ** PropTypes
 InputPasswordToggle.propTypes = {
@@ -89,20 +88,20 @@ InputPasswordToggle.propTypes = {
   label(props: any, propName: string): Error | null {
     // ** If label is defined and htmlFor is undefined throw error
     if (props[propName] && props['htmlFor'] === undefined) {
-      return new Error('htmlFor prop is required when label prop is present')
+      return new Error('htmlFor prop is required when label prop is present');
     }
     return null;
   },
   htmlFor(props, propName) {
     // ** If htmlFor is defined and label is undefined throw error
     if (props[propName] && props['label'] === undefined) {
-      return new Error('label prop is required when htmlFor prop is present')
+      return new Error('label prop is required when htmlFor prop is present');
     }
     return null;
   }
-}
+};
 
 // ** Default Props
 InputPasswordToggle.defaultProps = {
   visible: false
-}
+};

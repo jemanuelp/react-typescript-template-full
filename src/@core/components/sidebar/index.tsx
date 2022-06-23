@@ -1,11 +1,10 @@
-import { X } from 'react-feather'
-import Proptypes from 'prop-types'
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Modal, ModalHeader, ModalBody } from 'reactstrap'
+import { X } from 'react-feather';
+import Proptypes from 'prop-types';
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 const Sidebar = (props: any) => {
-  // ** Props
   const {
     open,
     size,
@@ -20,10 +19,10 @@ const Sidebar = (props: any) => {
     wrapperClassName,
     headerClassName,
     ...rest
-  } = props
+  } = props;
 
   // ** If user passes custom close btn render that else default close btn
-  const renderCloseBtn = closeBtn ? closeBtn : <X className='cursor-pointer' size={15} onClick={toggleSidebar} />
+  const renderCloseBtn = closeBtn ? closeBtn : <X className='cursor-pointer' size={15} onClick={toggleSidebar} />;
 
   return (
     <Modal
@@ -71,10 +70,10 @@ const Sidebar = (props: any) => {
         </ModalBody>
       </PerfectScrollbar>
     </Modal>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
 
 // ** PropTypes
 Sidebar.propTypes = {
@@ -88,4 +87,4 @@ Sidebar.propTypes = {
   size: Proptypes.oneOf(['sm', 'lg']),
   toggleSidebar: Proptypes.func.isRequired,
   width: Proptypes.oneOfType([Proptypes.number, Proptypes.string])
-}
+};

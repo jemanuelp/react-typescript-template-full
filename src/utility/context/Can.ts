@@ -1,11 +1,10 @@
-// ** Imports createContext function
-import { createContext } from 'react'
+import { createContext } from 'react';
+import { createContextualCan } from '@casl/react';
+import {RegisterResponse} from "../../domains/classes/RegisterResponse";
 
-// ** Imports createContextualCan function
-import { createContextualCan } from '@casl/react'
-
+const registerResponse = new RegisterResponse();
 // ** Create Context
-export const AbilityContext = createContext(null)
+export const AbilityContext = createContext(registerResponse);
 
 // ** Init Can Context
-export const Can = createContextualCan(AbilityContext.Consumer)
+export const Can = createContextualCan(AbilityContext.Consumer);

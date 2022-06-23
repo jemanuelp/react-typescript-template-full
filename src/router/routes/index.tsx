@@ -1,104 +1,74 @@
-import { Fragment, lazy } from 'react'
-import { Navigate } from 'react-router-dom'
-import BlankLayout from '../../../src/@core/layouts/BlankLayout'
-import VerticalLayout from '../../../src/@core/layouts/VerticalLayout'
-import HorizontalLayout from '../../../src/@core/layouts/HorizontalLayout'
-import LayoutWrapper from '../../../src/@core/layouts/components/layout-wrapper'
-import PublicRoute from '../../@core/components/routes/PublicRoute'
-import { isObjEmpty } from '../../utility/Utils'
-import {Route} from "../../domains/interfaces/Route";
+import { Fragment } from 'react';
+import AppRoutes from './Apps';
+import FormRoutes from './Forms';
+import PagesRoutes from './Pages';
+import TablesRoutes from './Tables';
+import ChartsRoutes from './Charts';
+import DashboardRoutes from './Dashboards';
+import UiElementRoutes from './UiElements';
+import ExtensionsRoutes from './Extensions';
+import PageLayoutsRoutes from './PageLayouts';
+import AuthenticationRoutes from './Authentication';
+
+import { isObjEmpty } from '../../utility/Utils';
+import BlankLayout from "../../@core/layouts/BlankLayout";
+import VerticalLayout from "../../@core/layouts/VerticalLayout";
+import HorizontalLayout from "../../@core/layouts/HorizontalLayout";
+import LayoutWrapper from "../../@core/layouts/components/layout-wrapper";
+import PrivateRoute from "../../@core/components/routes/PrivateRoute";
+import PublicRoute from "../../@core/components/routes/PublicRoute";
+import {RouteObject} from "react-router/lib/router";
 import {LayoutTypes} from "../../domains/enums/LayoutTypes";
 
-const getLayout = {
-  blank: <BlankLayout />,
-  vertical: <VerticalLayout />,
-  horizontal: <HorizontalLayout />
-}
+let getLayout: Map<LayoutTypes, any[]> = new Map<LayoutTypes, any[]>();
+getLayout.set(LayoutTypes.blank, [BlankLayout]);
+getLayout.set(LayoutTypes.vertical, [VerticalLayout]);
+getLayout.set(LayoutTypes.horizontal, [HorizontalLayout]);
 
-// ** Document title
-const TemplateTitle: String = '%s - Vuexy React Admin Template'
+const TemplateTitle = '%s - Vuexy React Admin Template';
 
-// ** Default Route
-const DefaultRoute: String = '/home'
+const DefaultRoute = '/dashboard/ecommerce';
 
-const Home = lazy(() => import('../../views/Home'))
-const SecondPage = lazy(() => import('../../views/SecondPage'))
-const Login = lazy(() => import('../../views/Login'))
-const Register = lazy(() => import('../../views/Register'))
-const ForgotPassword = lazy(() => import('../../views/ForgotPassword'))
-const Error = lazy(() => import('../../views/Error'))
-
-const Routes: Route[] = [
-  {
-    path: '/',
-    index: true,
-    element: <Navigate replace to={DefaultRoute.toString()} />
-  },
-  {
-    path: '/home',
-    element: <Home />
-  },
-  {
-    path: '/second-page',
-    element: <SecondPage />
-  },
-  {
-    path: '/login',
-    element: <Login />,
-    meta: {
-      layout: 'blank'
-    }
-  },
-  {
-    path: '/register',
-    element: <Register />,
-    meta: {
-      layout: 'blank'
-    }
-  },
-  {
-    path: '/forgot-password',
-    element: <ForgotPassword />,
-    meta: {
-      layout: 'blank'
-    }
-  },
-  {
-    path: '/error',
-    element: <Error />,
-    meta: {
-      layout: 'blank'
-    }
-  }
-]
+const Routes = [
+  ...AuthenticationRoutes,
+  ...DashboardRoutes,
+  ...AppRoutes,
+  ...PagesRoutes,
+  ...UiElementRoutes,
+  ...ExtensionsRoutes,
+  ...PageLayoutsRoutes,
+  ...FormRoutes,
+  ...TablesRoutes,
+  ...ChartsRoutes
+];
 
 const getRouteMeta = (route: any) => {
   if (isObjEmpty(route.element.props)) {
     if (route.meta) {
-      return { routeMeta: route.meta }
+      return { routeMeta: route.meta };
     } else {
-      return {}
+      return {};
     }
   }
-}
+};
 
-// ** Return Filtered Array of Routes & Paths
-const MergeLayoutRoutes = (layout: any, defaultLayout: any) => {
-  const LayoutRoutes: Route[] = []
+const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
+  const LayoutRoutes = new Array<RouteObject>();
 
   if (Routes) {
-    Routes.filter(route => {
-      let isBlank = false
+    Routes.filter((route: any) => {
+      let isBlank = false;
       // ** Checks if Route layout or Default layout matches current layout
       if (
         (route.meta && route.meta.layout && route.meta.layout === layout) ||
         ((route.meta === undefined || route.meta.layout === undefined) && defaultLayout === layout)
       ) {
-        const RouteTag = PublicRoute
+        let RouteTag = PrivateRoute;
 
         // ** Check for public or private route
         if (route.meta) {
-          route.meta.layout === 'blank' ? (isBlank = true) : (isBlank = false)
+          route.meta.layout === 'blank' ? (isBlank = true) : (isBlank = false);
+          RouteTag = route.meta.publicRoute ? PublicRoute : PrivateRoute;
         }
         if (route.element) {
           const Wrapper =
@@ -106,40 +76,38 @@ const MergeLayoutRoutes = (layout: any, defaultLayout: any) => {
             isObjEmpty(route.element.props) && !isBlank
               ? // eslint-disable-next-line multiline-ternary
                 LayoutWrapper
-              : Fragment
+              : Fragment;
 
           route.element = (
             <Wrapper {...(!isBlank ? getRouteMeta(route) : {})}>
               <RouteTag route={route}>{route.element}</RouteTag>
             </Wrapper>
-          )
+          );
         }
 
-        // Push route to LayoutRoutes
-        LayoutRoutes.push(route)
       }
-      return LayoutRoutes
-    })
+      return LayoutRoutes;
+    });
   }
-  return LayoutRoutes
-}
+  return LayoutRoutes;
+};
 
-const getRoutes = (layout: LayoutTypes): Route[] => {
-  const defaultLayout = layout || 'vertical'
-  const layouts: LayoutTypes[] = [LayoutTypes.horizontal, LayoutTypes.vertical, LayoutTypes.blank]
+const getRoutes = (layout: LayoutTypes) => {
+  const defaultLayout = layout || LayoutTypes.vertical;
+  const layouts: LayoutTypes[] = [LayoutTypes.vertical, LayoutTypes.horizontal, LayoutTypes.blank];
 
-  const AllRoutes: Route[] = [];
+  const AllRoutes = Array<RouteObject>();
 
-  layouts.forEach(layoutItem => {
-    const LayoutRoutes = MergeLayoutRoutes(layoutItem, defaultLayout)
+  layouts.forEach((layoutItem: LayoutTypes) => {
+    const LayoutRoutes = MergeLayoutRoutes(layoutItem, defaultLayout);
 
     AllRoutes.push({
       path: '/',
-      element: getLayout[layoutItem] || getLayout[defaultLayout],
-      children: LayoutRoutes
-    })
-  })
-  return AllRoutes
-}
+      element: getLayout.has(layoutItem) ? getLayout.get(layoutItem) : getLayout.get(defaultLayout),
+      children: LayoutRoutes,
+    });
+  });
+  return AllRoutes;
+};
 
-export { DefaultRoute, TemplateTitle, Routes, getRoutes }
+export { DefaultRoute, TemplateTitle, Routes, getRoutes };

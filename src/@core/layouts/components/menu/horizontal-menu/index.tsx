@@ -1,5 +1,4 @@
-// ** Horizontal Menu Components
-import HorizontalNavMenuItems from './HorizontalNavMenuItems'
+import HorizontalNavMenuItems from './HorizontalNavMenuItems';
 
 const HorizontalMenu = ({ menuData }: any) => {
   return (
@@ -8,7 +7,7 @@ const HorizontalMenu = ({ menuData }: any) => {
         <HorizontalNavMenuItems submenu={false} items={menuData} />
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default HorizontalMenu
+export default HorizontalMenu;

@@ -1,13 +1,12 @@
-import {useEffect, useState, Fragment, forwardRef} from 'react'
-import Stepper from 'bs-stepper'
-import classnames from 'classnames'
-import { ChevronRight } from 'react-feather'
-import 'bs-stepper/dist/css/bs-stepper.min.css'
-import '../../../@core/scss/base/plugins/forms/form-wizard.scss'
+import {useEffect, useState, Fragment, forwardRef} from 'react';
+import Stepper from 'bs-stepper';
+import classnames from 'classnames';
+import { ChevronRight } from 'react-feather';
+import 'bs-stepper/dist/css/bs-stepper.min.css';
+import '../../../@core/scss/base/plugins/forms/form-wizard.scss';
 import PropTypes from "prop-types";
 
 const Wizard = forwardRef((props: any, ref: any) => {
-  // ** Props
   const {
     type,
     steps,
@@ -18,28 +17,26 @@ const Wizard = forwardRef((props: any, ref: any) => {
     headerClassName,
     contentClassName,
     contentWrapperClassName
-  } = props
+  } = props;
 
-  // ** State
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // ** Vars
   let stepper;
 
   // ** Step change listener on mount
   useEffect(() => {
-    stepper = new Stepper(ref.current, options)
+    stepper = new Stepper(ref.current, options);
 
     if (ref && ref.current) {
         ref.current.addEventListener('shown.bs-stepper', function (event: any) {
-            setActiveIndex(event.detail.indexStep)
-        })
+            setActiveIndex(event.detail.indexStep);
+        });
     }
 
     if (instance) {
-      instance(stepper)
+      instance(stepper);
     }
-  }, [])
+  }, []);
 
   // ** Renders Wizard Header
   const renderHeader = () => {
@@ -63,9 +60,9 @@ const Wizard = forwardRef((props: any, ref: any) => {
             </button>
           </div>
         </Fragment>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** Renders Wizard Content
   const renderContent = () => {
@@ -81,9 +78,9 @@ const Wizard = forwardRef((props: any, ref: any) => {
         >
           {step.content}
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <div
@@ -100,19 +97,17 @@ const Wizard = forwardRef((props: any, ref: any) => {
         {renderContent()}
       </div>
     </div>
-  )
-})
+  );
+});
 
-export default Wizard
+export default Wizard;
 
-// ** Default Props
 Wizard.defaultProps = {
   options: {},
   type: 'horizontal',
   separator: <ChevronRight size={17} />
-}
+};
 
-// ** PropTypes
 Wizard.propTypes = {
   type: PropTypes.string,
   instance: PropTypes.func,
@@ -131,4 +126,4 @@ Wizard.propTypes = {
       content: PropTypes.any.isRequired
     })
   ).isRequired
-}
+};

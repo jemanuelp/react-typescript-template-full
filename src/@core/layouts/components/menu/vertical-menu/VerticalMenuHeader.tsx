@@ -1,22 +1,18 @@
-import { useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
-import { Disc, X, Circle } from 'react-feather'
-import { getUserData, getHomeRouteForLoggedInUser } from '../../../../../utility/Utils'
-import themeConfig from '../../../../../configs/themeConfig'
+import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Disc, X, Circle } from 'react-feather';
+import { getUserData, getHomeRouteForLoggedInUser } from '../../../../../utility/Utils';
+import themeConfig from '../../../../../configs/themeConfig';
 
 const VerticalMenuHeader = (props: any) => {
-  // ** Props
-  const { menuCollapsed, setMenuCollapsed, setMenuVisibility, setGroupOpen, menuHover } = props
+  const { menuCollapsed, setMenuCollapsed, setMenuVisibility, setGroupOpen, menuHover } = props;
 
-  // ** Vars
-  const user = getUserData()
+  const user = getUserData();
 
-  // ** Reset open group
   useEffect(() => {
-    if (!menuHover && menuCollapsed) setGroupOpen([])
-  }, [menuHover, menuCollapsed])
+    if (!menuHover && menuCollapsed) setGroupOpen([]);
+  }, [menuHover, menuCollapsed]);
 
-  // ** Menu toggler component
   const Toggler = () => {
     if (!menuCollapsed) {
       return (
@@ -26,7 +22,7 @@ const VerticalMenuHeader = (props: any) => {
           className='text-primary toggle-icon d-none d-xl-block'
           onClick={() => setMenuCollapsed(true)}
         />
-      )
+      );
     } else {
       return (
         <Circle
@@ -35,9 +31,9 @@ const VerticalMenuHeader = (props: any) => {
           className='text-primary toggle-icon d-none d-xl-block'
           onClick={() => setMenuCollapsed(false)}
         />
-      )
+      );
     }
-  }
+  };
 
   return (
     <div className='navbar-header'>
@@ -58,7 +54,7 @@ const VerticalMenuHeader = (props: any) => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default VerticalMenuHeader
+export default VerticalMenuHeader;

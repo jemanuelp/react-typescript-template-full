@@ -1,21 +1,20 @@
-import { Outlet } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import {useSkin} from "../../utility/hooks/useSkin";
-import classnames from 'classnames'
+import classnames from 'classnames';
 
 const BlankLayout = () => {
-  // ** States
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
-  const { skin } = useSkin()
+  const { skin } = useSkin();
 
   useEffect(() => {
-    setIsMounted(true)
-    return () => setIsMounted(false)
-  }, [])
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
 
   if (!isMounted) {
-    return null
+    return null;
   }
 
   return (
@@ -32,7 +31,7 @@ const BlankLayout = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlankLayout
+export default BlankLayout;

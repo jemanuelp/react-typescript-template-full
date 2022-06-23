@@ -1,20 +1,19 @@
-import { Fragment } from 'react'
-import Proptypes from 'prop-types'
-import classnames from 'classnames'
-import { UncontrolledTooltip } from 'reactstrap'
+import { Fragment } from 'react';
+import Proptypes from 'prop-types';
+import classnames from 'classnames';
+import { UncontrolledTooltip } from 'reactstrap';
 import Avatar from "../avatar";
 
 const AvatarGroup = (props: any) => {
-  // ** Props
-  const { data, tag, className } = props
+  const { data, tag, className } = props;
 
   // ** Conditional Tag
-  const Tag = tag ? tag : 'div'
+  const Tag = tag ? tag : 'div';
 
   // ** Render Data
   const renderData = () => {
     return data.map((item: any, i: any) => {
-      const ItemTag = item.tag ? item.tag : 'div'
+      const ItemTag = item.tag ? item.tag : 'div';
       return (
         <Fragment key={i}>
           {item.title ? (
@@ -36,9 +35,9 @@ const AvatarGroup = (props: any) => {
           ) : null}
           {item.meta ? <ItemTag className='d-flex align-items-center ps-1'>{item.meta}</ItemTag> : null}
         </Fragment>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Tag
@@ -48,13 +47,13 @@ const AvatarGroup = (props: any) => {
     >
       {renderData()}
     </Tag>
-  )
-}
+  );
+};
 
-export default AvatarGroup
+export default AvatarGroup;
 
 // ** PropTypes
 AvatarGroup.propTypes = {
   data: Proptypes.array.isRequired,
   tag: Proptypes.oneOfType([Proptypes.func, Proptypes.string])
-}
+};

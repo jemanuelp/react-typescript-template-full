@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import {Fragment, useEffect, useState} from 'react'
-import * as Icon from 'react-feather'
-import classnames from 'classnames'
-import Autocomplete from '../../../../@core/components/autocomplete'
+import { Link } from 'react-router-dom';
+import {Fragment, useEffect, useState} from 'react';
+import * as Icon from 'react-feather';
+import classnames from 'classnames';
+import Autocomplete from '../../../../@core/components/autocomplete';
 import {
   NavItem,
   NavLink,
@@ -11,9 +11,9 @@ import {
   DropdownToggle,
   UncontrolledTooltip,
   UncontrolledDropdown
-} from 'reactstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import { getBookmarks, updateBookmarked, handleSearchQuery } from '../../../../redux/navbar'
+} from 'reactstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBookmarks, updateBookmarked, handleSearchQuery } from '../../../../redux/navbar';
 import {RootState} from "../../../../redux/reducers/RootReducer";
 
 interface BookmarkProps {
@@ -24,21 +24,20 @@ interface BookmarkProps {
   title: string,
 }
 const NavbarBookmarks = (props: any) => {
-  // ** Props
-  const { setMenuVisibility } = props
+  const { setMenuVisibility } = props;
 
   // ** State
-  const [value, setValue] = useState('')
-  const [openSearch, setOpenSearch] = useState<boolean>(false)
+  const [value, setValue] = useState('');
+  const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector((state: RootState) => state.navbar)
+  const dispatch = useDispatch();
+  const store = useSelector((state: RootState) => state.navbar);
 
   // ** ComponentDidMount
   useEffect(() => {
-    getBookmarks()
-  }, [])
+    getBookmarks();
+  }, []);
 
   // ** Loops through Bookmarks Array to return Bookmarks
   const renderBookmarks = () => {
@@ -53,13 +52,13 @@ const NavbarBookmarks = (props: any) => {
                 <UncontrolledTooltip target={item.target}>{item.title}</UncontrolledTooltip>
               </NavLink>
             </NavItem>
-          )
+          );
         })
-        .slice(0, 10)
+        .slice(0, 10);
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   // ** If user has more than 10 bookmarks then add the extra Bookmarks to a dropdown
   const renderExtraBookmarksDropdown = () => {
@@ -74,69 +73,69 @@ const NavbarBookmarks = (props: any) => {
               <DropdownMenu end>
                 {store.bookmarks
                   .map((item: any) => {
-                    const IconTag = item.icon
+                    const IconTag = item.icon;
                     return (
                       <DropdownItem tag={Link} to={item.link} key={item.id}>
                         <IconTag className='me-50' size={14} />
                         <span className='align-middle'>{item.title}</span>
                       </DropdownItem>
-                    )
+                    );
                   })
                   .slice(10)}
               </DropdownMenu>
             </UncontrolledDropdown>
           </NavLink>
         </NavItem>
-      )
+      );
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   // ** Removes query in store
-  const handleClearQueryInStore = () => dispatch(handleSearchQuery(''))
+  const handleClearQueryInStore = () => dispatch(handleSearchQuery(''));
 
   // ** Loops through Bookmarks Array to return Bookmarks
   const onKeyDown = (e: any) => {
     if (e.keyCode === 27 || e.keyCode === 13) {
       setTimeout(() => {
-        setOpenSearch(false)
-        handleClearQueryInStore()
-      }, 1)
+        setOpenSearch(false);
+        handleClearQueryInStore();
+      }, 1);
     }
-  }
+  };
 
   // ** Function to toggle Bookmarks
-  const handleBookmarkUpdate = (id: number) => updateBookmarked(id)
+  const handleBookmarkUpdate = (id: number) => updateBookmarked(id);
 
   // ** Function to handle Bookmarks visibility
   const handleBookmarkVisibility = () => {
-    setOpenSearch(!openSearch)
-    setValue('')
-    handleClearQueryInStore()
-  }
+    setOpenSearch(!openSearch);
+    setValue('');
+    handleClearQueryInStore();
+  };
 
   // ** Function to handle Input change
   const handleInputChange = (e: any) => {
-    setValue(e.target.value)
-    dispatch(handleSearchQuery(e.target.value))
-  }
+    setValue(e.target.value);
+    dispatch(handleSearchQuery(e.target.value));
+  };
 
   // ** Function to handle external Input click
   const handleExternalClick = () => {
     if (openSearch) {
-      setOpenSearch(false)
-      handleClearQueryInStore()
+      setOpenSearch(false);
+      handleClearQueryInStore();
     }
-  }
+  };
 
   // ** Function to clear input value
   const handleClearInput = (setUserInput: Function) => {
     if (!openSearch) {
-      setUserInput('')
-      handleClearQueryInStore()
+      setUserInput('');
+      handleClearQueryInStore();
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -183,7 +182,7 @@ const NavbarBookmarks = (props: any) => {
                   onSuggestionItemClick: any,
                   onSuggestionItemHover: any
                 ) => {
-                  const IconTag = item.icon ?? 'X'
+                  const IconTag = item.icon ?? 'X';
                   return (
                     <li
                       key={i}
@@ -196,8 +195,8 @@ const NavbarBookmarks = (props: any) => {
                         to={item.link}
                         className='d-flex align-items-center justify-content-between p-0'
                         onClick={() => {
-                          setOpenSearch(false)
-                          handleClearQueryInStore()
+                          setOpenSearch(false);
+                          handleClearQueryInStore();
                         }}
                         style={{
                           width: 'calc(90%)'
@@ -216,7 +215,7 @@ const NavbarBookmarks = (props: any) => {
                         onClick={() => handleBookmarkUpdate(item.id)}
                       />
                     </li>
-                  )
+                  );
                 }}
               />
             ) : null}
@@ -224,7 +223,7 @@ const NavbarBookmarks = (props: any) => {
         </NavItem>
       </ul>
     </Fragment>
-  )
-}
+  );
+};
 
-export default NavbarBookmarks
+export default NavbarBookmarks;

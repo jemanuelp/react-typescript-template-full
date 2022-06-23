@@ -1,14 +1,13 @@
 // ** Third Party Components
-import Proptypes from 'prop-types'
-import classnames from 'classnames'
-import Chart from 'react-apexcharts'
+import Proptypes from 'prop-types';
+import classnames from 'classnames';
+import Chart from 'react-apexcharts';
 
 // ** Reactstrap Imports
-import { Card, CardBody } from 'reactstrap'
+import { Card, CardBody } from 'reactstrap';
 
 const StatisticsCards = (props: any) => {
-  // ** Props
-  const { className, hideChart, iconRight, iconBg, icon, stat, statTitle, options, series, type, height } = props
+  const { className, hideChart, iconRight, iconBg, icon, stat, statTitle, options, series, type, height } = props;
 
   return (
     <Card>
@@ -34,9 +33,9 @@ const StatisticsCards = (props: any) => {
       </CardBody>
       {!hideChart && <Chart options={options} series={series} type={type} height={height ? height : 100} />}
     </Card>
-  )
-}
-export default StatisticsCards
+  );
+};
+export default StatisticsCards;
 
 // ** PropTypes
 StatisticsCards.propTypes = {
@@ -51,4 +50,4 @@ StatisticsCards.propTypes = {
   icon: Proptypes.node.isRequired,
   stat: Proptypes.string.isRequired,
   statTitle: Proptypes.string.isRequired
-}
+};

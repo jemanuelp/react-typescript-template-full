@@ -1,42 +1,41 @@
-import {Fragment, useState, useRef} from 'react'
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import VerticalMenuHeader from './VerticalMenuHeader'
-import VerticalNavMenuItems from './VerticalNavMenuItems'
+import {Fragment, useState, useRef} from 'react';
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import VerticalMenuHeader from './VerticalMenuHeader';
+import VerticalNavMenuItems from './VerticalNavMenuItems';
 
 const Sidebar = (props: any) => {
-    // ** Props
-    const {menuCollapsed, menu, skin, menuData} = props
+    const {menuCollapsed, menu, skin, menuData} = props;
 
     // ** States
-    const [groupOpen, setGroupOpen] = useState([])
-    const [groupActive, setGroupActive] = useState([])
-    const [currentActiveGroup, setCurrentActiveGroup] = useState([])
-    const [activeItem, setActiveItem] = useState(null)
+    const [groupOpen, setGroupOpen] = useState([]);
+    const [groupActive, setGroupActive] = useState([]);
+    const [currentActiveGroup, setCurrentActiveGroup] = useState([]);
+    const [activeItem, setActiveItem] = useState(null);
 
     // ** Menu Hover State
-    const [menuHover, setMenuHover] = useState(false)
+    const [menuHover, setMenuHover] = useState(false);
 
     // ** Ref
-    const shadowRef = useRef<HTMLDivElement>(null)
+    const shadowRef = useRef<HTMLDivElement>(null);
 
     // ** Function to handle Mouse Enter
     const onMouseEnter = () => {
-        setMenuHover(true)
-    }
+        setMenuHover(true);
+    };
 
     // ** Scroll Menu
     const scrollMenu = (container: any) => {
         if (shadowRef && container.scrollTop > 0) {
             if (shadowRef.current && !shadowRef.current.classList.contains('d-block')) {
-                shadowRef.current.classList.add('d-block')
+                shadowRef.current.classList.add('d-block');
             }
         } else {
             if (shadowRef.current && shadowRef.current.classList.contains('d-block')) {
-                shadowRef.current.classList.remove('d-block')
+                shadowRef.current.classList.remove('d-block');
             }
         }
-    }
+    };
 
     return (
         <Fragment>
@@ -84,7 +83,7 @@ const Sidebar = (props: any) => {
                 )}
             </div>
         </Fragment>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

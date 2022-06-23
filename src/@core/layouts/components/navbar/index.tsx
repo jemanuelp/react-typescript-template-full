@@ -1,20 +1,19 @@
-import { Fragment } from 'react'
-import NavbarUser from './NavbarUser'
-import { Sun, Moon, Menu } from 'react-feather'
-import { NavItem, NavLink } from 'reactstrap'
+import { Fragment } from 'react';
+import NavbarUser from './NavbarUser';
+import { Sun, Moon, Menu } from 'react-feather';
+import { NavItem, NavLink } from 'reactstrap';
 
 const ThemeNavbar = (props: any) => {
-  // ** Props
-  const { skin, setSkin, setMenuVisibility } = props
+  const { skin, setSkin, setMenuVisibility } = props;
 
   // ** Function to toggle Theme (Light/Dark)
   const ThemeToggler = () => {
     if (skin === 'dark') {
-      return <Sun className='ficon' onClick={() => setSkin('light')} />
+      return <Sun className='ficon' onClick={() => setSkin('light')} />;
     } else {
-      return <Moon className='ficon' onClick={() => setSkin('dark')} />
+      return <Moon className='ficon' onClick={() => setSkin('dark')} />;
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -34,7 +33,7 @@ const ThemeNavbar = (props: any) => {
       </div>
       <NavbarUser skin={skin} setSkin={setSkin} />
     </Fragment>
-  )
-}
+  );
+};
 
-export default ThemeNavbar
+export default ThemeNavbar;

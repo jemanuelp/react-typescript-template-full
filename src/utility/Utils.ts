@@ -77,7 +77,7 @@ export const getUserData = () => JSON.parse(localStorage.getItem('userData')!);
  * ? NOTE: If you have different pages to navigate based on user ability then this function can be useful. However, you need to update it.
  * @param {String} userRole Role of user
  */
-export const getHomeRouteForLoggedInUser = (userRole: string): String => {
+export const getHomeRouteForLoggedInUser = (userRole: string): string => {
   if (userRole === 'admin') return DefaultRoute;
   if (userRole === 'client') return '/access-control';
   return '/login';

@@ -1,99 +1,95 @@
-import {Link} from 'react-router-dom'
-import {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {handleContentWidth, handleMenuHidden} from '../../redux/layout'
-import classnames from 'classnames'
-import {ArrowUp} from 'react-feather'
-import {Button, Navbar, NavItem} from 'reactstrap'
-import themeConfig from '../../configs/themeConfig'
-import Customizer from '../../@core/components/customizer'
-import ScrollToTop from '../../@core/components/scrolltop'
-import NavbarComponent from './components/navbar'
-import FooterComponent from './components/footer'
-import MenuComponent from './components/menu/horizontal-menu'
-import {useRTL} from '../../utility/hooks/useRTL'
-import {useLayout} from '../../utility/hooks/useLayout'
-import {useNavbarType} from '../../utility/hooks/useNavbarType'
-import {useFooterType} from '../../utility/hooks/useFooterType'
-import {useNavbarColor} from '../../utility/hooks/useNavbarColor'
-import {useRouterTransition} from '../../utility/hooks/useRouterTransition'
-import '../scss/base/core/menu/menu-types/horizontal-menu.scss'
+import {Link} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {handleContentWidth, handleMenuHidden} from '../../redux/layout';
+import classnames from 'classnames';
+import {ArrowUp} from 'react-feather';
+import {Button, Navbar, NavItem} from 'reactstrap';
+import themeConfig from '../../configs/themeConfig';
+import Customizer from '../../@core/components/customizer';
+import ScrollToTop from '../../@core/components/scrolltop';
+import NavbarComponent from './components/navbar';
+import FooterComponent from './components/footer';
+import MenuComponent from './components/menu/horizontal-menu';
+import {useRTL} from '../../utility/hooks/useRTL';
+import {useLayout} from '../../utility/hooks/useLayout';
+import {useNavbarType} from '../../utility/hooks/useNavbarType';
+import {useFooterType} from '../../utility/hooks/useFooterType';
+import {useNavbarColor} from '../../utility/hooks/useNavbarColor';
+import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
+import '../scss/base/core/menu/menu-types/horizontal-menu.scss';
 import {useSkin} from "../../utility/hooks/useSkin";
 import {RootState} from "../../redux/reducers/RootReducer";
 import {NavbarLayoutTypes} from "../../domains/enums/NavbarLayoutTypes";
 
 const HorizontalLayout = (props: any) => {
-    // ** Props
-    const {navbar, menuData, footer, children, menu} = props
+    const {navbar, menuData, footer, children, menu} = props;
 
-    const {skin, setSkin} = useSkin()
-    const {isRtl, setIsRtl} = useRTL()
-    const {navbarType, setNavbarType} = useNavbarType()
-    const {footerType, setFooterType} = useFooterType()
-    const {navbarColor, setNavbarColor} = useNavbarColor()
-    const {layout, setLayout, setLastLayout} = useLayout()
-    const {transition, setTransition} = useRouterTransition()
+    const {skin, setSkin} = useSkin();
+    const {isRtl, setIsRtl} = useRTL();
+    const {navbarType, setNavbarType} = useNavbarType();
+    const {footerType, setFooterType} = useFooterType();
+    const {navbarColor, setNavbarColor} = useNavbarColor();
+    const {layout, setLayout, setLastLayout} = useLayout();
+    const {transition, setTransition} = useRouterTransition();
 
-    // ** States
-    const [isMounted, setIsMounted] = useState(false)
-    const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false)
+    const [isMounted, setIsMounted] = useState(false);
+    const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false);
 
-    // ** Store Vars
-    const dispatch = useDispatch()
-    const layoutStore = useSelector((state: RootState) => state.layout)
+    const dispatch = useDispatch();
+    const layoutStore = useSelector((state: RootState) => state.layout);
 
-    // ** Vars
-    const contentWidth = layoutStore.contentWidth
-    const isHidden = layoutStore.menu.isHidden
+    const contentWidth = layoutStore.contentWidth;
+    const isHidden = layoutStore.menu.isHidden;
 
     // ** Handles Content Width
-    const setContentWidth = (val: any) => dispatch(handleContentWidth(val))
+    const setContentWidth = (val: any) => dispatch(handleContentWidth(val));
 
     // ** Handles Content Width
-    const setIsHidden = (val: any) => dispatch(handleMenuHidden(val))
+    const setIsHidden = (val: any) => dispatch(handleMenuHidden(val));
 
     // ** UseEffect Cleanup
     const cleanup = () => {
-        setIsMounted(false)
-        setNavbarScrolled(false)
-    }
+        setIsMounted(false);
+        setNavbarScrolled(false);
+    };
 
     //** ComponentDidMount
     useEffect(() => {
-        setIsMounted(true)
+        setIsMounted(true);
         window.addEventListener('scroll', function () {
             if (window.pageYOffset > 65 && !navbarScrolled) {
-                setNavbarScrolled(true)
+                setNavbarScrolled(true);
             }
             if (window.pageYOffset < 65) {
-                setNavbarScrolled(false)
+                setNavbarScrolled(false);
             }
-        })
-        return () => cleanup()
-    }, [])
+        });
+        return () => cleanup();
+    }, []);
 
     // ** Vars
     const footerClasses = {
         static: 'footer-static',
         sticky: 'footer-fixed',
         hidden: 'footer-hidden'
-    }
+    };
 
     const navbarWrapperClasses = {
         floating: 'navbar-floating',
         sticky: 'navbar-sticky',
-        static: 'navbar-static',
-    }
+        static: 'navbar-static'
+    };
 
     const navbarClasses = {
         floating: contentWidth === 'boxed' ? 'floating-nav container-xxl' : 'floating-nav',
         sticky: 'fixed-top'
-    }
+    };
 
-    const bgColorCondition = navbarColor !== '' && navbarColor !== 'light' && navbarColor !== 'white'
+    const bgColorCondition = navbarColor !== '' && navbarColor !== 'light' && navbarColor !== 'white';
 
     if (!isMounted) {
-        return null
+        return null;
     }
 
     return (
@@ -197,6 +193,6 @@ const HorizontalLayout = (props: any) => {
                 </div>
             ) : null}
         </div>
-    )
-}
-export default HorizontalLayout
+    );
+};
+export default HorizontalLayout;
