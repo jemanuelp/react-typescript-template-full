@@ -1,7 +1,4 @@
-// ** React Imports
 import { Fragment, useState } from 'react';
-
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -19,22 +16,18 @@ import {
   FormFeedback,
   InputGroupText
 } from 'reactstrap';
-
-// ** Third Party Components
 import classnames from 'classnames';
 import Cleave from 'cleave.js/react';
 import { Check, X, CreditCard } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
-
-// ** Images
-import jcbCC from '@src/assets/images/icons/payments/jcb-cc.png';
-import amexCC from '@src/assets/images/icons/payments/amex-cc.png';
-import uatpCC from '@src/assets/images/icons/payments/uatp-cc.png';
-import visaCC from '@src/assets/images/icons/payments/visa-cc.png';
-import dinersCC from '@src/assets/images/icons/payments/diners-cc.png';
-import maestroCC from '@src/assets/images/icons/payments/maestro-cc.png';
-import discoverCC from '@src/assets/images/icons/payments/discover-cc.png';
-import mastercardCC from '@src/assets/images/icons/payments/mastercard-cc.png';
+import jcbCC from '../../../../src/assets/images/icons/payments/jcb-cc.png';
+import amexCC from '../../../../src/assets/images/icons/payments/amex-cc.png';
+import uatpCC from '../../../../src/assets/images/icons/payments/uatp-cc.png';
+import visaCC from '../../../../src/assets/images/icons/payments/visa-cc.png';
+import dinersCC from '../../../../src/assets/images/icons/payments/diners-cc.png';
+import maestroCC from '../../../../src/assets/images/icons/payments/maestro-cc.png';
+import discoverCC from '../../../../src/assets/images/icons/payments/discover-cc.png';
+import mastercardCC from '../../../../src/assets/images/icons/payments/mastercard-cc.png';
 
 const cardsObj = {
   jcb: jcbCC,
@@ -52,11 +45,9 @@ const defaultValues = {
 };
 
 const AddCardExample = () => {
-  // ** States
   const [show, setShow] = useState(false);
   const [cardType, setCardType] = useState('');
 
-  // ** Hooks
   const {
     reset,
     control,

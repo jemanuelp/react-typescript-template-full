@@ -1,7 +1,4 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** Reactstrap Imports
+import { Fragment, useState } from 'react';
 import {
   Row,
   Col,
@@ -16,35 +13,21 @@ import {
   CardHeader,
   ModalHeader,
   FormFeedback
-} from 'reactstrap'
-
-// ** Third Party Components
-import Select from 'react-select'
-import { Home, Check, X, Briefcase } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
-
-// ** Utils
-import { selectThemeColors } from '@utils'
-
-// ** Styles
-import '@styles/react/libs/react-select/_react-select.scss'
-
-const countryOptions = [
-  { value: 'uk', label: 'UK' },
-  { value: 'usa', label: 'USA' },
-  { value: 'france', label: 'France' },
-  { value: 'russia', label: 'Russia' },
-  { value: 'canada', label: 'Canada' }
-]
+} from 'reactstrap';
+import Select from 'react-select';
+import { Home, Check, X, Briefcase } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
+import { selectThemeColors } from '../../../../utility/Utils';
+import '../../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
+import {CountryOptions} from "../../../../domains/const/options/CountryOptions";
 
 const defaultValues = {
   lastName: '',
   firstName: ''
-}
+};
 
 const BillingAddress = () => {
-  // ** States
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   // ** Hooks
   const {
@@ -54,27 +37,27 @@ const BillingAddress = () => {
     clearErrors,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
-  const onSubmit = data => {
-    if (Object.values(data).every(field => field.length > 0)) {
-      setShow(false)
-      reset()
+  const onSubmit = (data: any) => {
+    if (Object.values(data).every((field: any) => field.length > 0)) {
+      setShow(false);
+      reset();
     } else {
       setError('firstName', {
         type: 'manual'
-      })
+      });
       setError('lastName', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   const onDiscard = () => {
-    clearErrors()
-    setShow(false)
-    reset()
-  }
+    clearErrors();
+    setShow(false);
+    reset();
+  };
 
   return (
     <Fragment>
@@ -216,7 +199,7 @@ const BillingAddress = () => {
                 name='firstName'
                 control={control}
                 render={({ field }) => {
-                  return <Input placeholder='John' id='firstName' invalid={errors.firstName && true} {...field} />
+                  return <Input placeholder='John' id='firstName' invalid={errors.firstName && true} {...field} />;
                 }}
               />
               {errors.firstName && <FormFeedback>Please enter a valid First Name</FormFeedback>}
@@ -243,9 +226,9 @@ const BillingAddress = () => {
                 isClearable={false}
                 className='react-select'
                 classNamePrefix='select'
-                options={countryOptions}
+                options={CountryOptions}
                 theme={selectThemeColors}
-                defaultValue={countryOptions[0]}
+                defaultValue={CountryOptions[0]}
               />
             </Col>
             <Col xs={12}>
@@ -308,7 +291,7 @@ const BillingAddress = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default BillingAddress
+export default BillingAddress;

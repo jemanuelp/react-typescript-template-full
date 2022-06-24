@@ -1,7 +1,4 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** Reactstrap Imports
+import { Fragment, useState } from 'react';
 import {
   Row,
   Col,
@@ -17,66 +14,16 @@ import {
   ModalBody,
   CardHeader,
   ModalHeader
-} from 'reactstrap'
-
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import Select from 'react-select'
-import withReactContent from 'sweetalert2-react-content'
-
-// ** Utils
-import { selectThemeColors } from '@utils'
-
-// ** Styles
-import '@styles/react/libs/react-select/_react-select.scss'
-import '@styles/base/plugins/extensions/ext-component-sweet-alerts.scss'
-
-const planOptions = [
-  { value: 'standard', label: 'Standard - $99/month' },
-  { value: 'exclusive', label: 'Exclusive - $249/month' },
-  { value: 'enterprise', label: 'Enterprise - $499/month' }
-]
-
-const MySwal = withReactContent(Swal)
+} from 'reactstrap';
+import Select from 'react-select';
+import { selectThemeColors } from '../../../../utility/Utils';
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
+import 'src/@core/scss/base/plugins/extensions/ext-component-sweet-alerts.scss';
+import {handleConfirmCancel} from "../hooks/HandleConfirmCancel";
+import {PlanOptions} from "../../../../domains/const/options/PlanOptions";
 
 const BillingCurrentPlan = () => {
-  // ** States
-  const [show, setShow] = useState(false)
-
-  const handleConfirmCancel = () => {
-    return MySwal.fire({
-      title: '',
-      text: 'Are you sure you would like to cancel your subscription?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      customClass: {
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-outline-danger ms-1'
-      },
-      buttonsStyling: false
-    }).then(function (result) {
-      if (result.value) {
-        MySwal.fire({
-          icon: 'success',
-          title: 'Unsubscribed!',
-          text: 'Your subscription cancelled successfully.',
-          customClass: {
-            confirmButton: 'btn btn-success'
-          }
-        })
-      } else if (result.dismiss === MySwal.DismissReason.cancel) {
-        MySwal.fire({
-          title: 'Cancelled',
-          text: 'Unsubscription Cancelled!!',
-          icon: 'error',
-          customClass: {
-            confirmButton: 'btn btn-success'
-          }
-        })
-      }
-    })
-  }
+  const [show, setShow] = useState(false);
 
   return (
     <Fragment>
@@ -147,9 +94,9 @@ const BillingCurrentPlan = () => {
                 isClearable={false}
                 className='react-select'
                 classNamePrefix='select'
-                options={planOptions}
+                options={PlanOptions}
                 theme={selectThemeColors}
-                defaultValue={planOptions[0]}
+                defaultValue={PlanOptions[0]}
               />
             </Col>
             <Col sm={4} className='text-sm-end mt-2'>
@@ -173,7 +120,7 @@ const BillingCurrentPlan = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default BillingCurrentPlan
+export default BillingCurrentPlan;
