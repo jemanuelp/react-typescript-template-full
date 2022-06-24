@@ -48,7 +48,7 @@ module.exports = {
     'multiline-ternary': ['error', 'never'],
     // 'no-lonely-if': 'error',
     'no-mixed-operators': 'error',
-    'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF:0 }],
     'no-tabs': 'error',
     'no-unneeded-ternary': 'error',
     'no-whitespace-before-property': 'error',
@@ -81,4 +81,4 @@ module.exports = {
   //   'max-len': 'off',
   //   camelcase: ['error', { properties: 'never', ignoreDestructuring: true, ignoreImports: true }]
   // }
-}
+};
