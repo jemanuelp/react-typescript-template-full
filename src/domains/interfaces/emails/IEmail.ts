@@ -1,6 +1,6 @@
 import {ISender} from "./ISender";
-import {IAdressee} from "./IAdressee";
-import {IAttachment} from "./IAttachment";
+import {IAdressee} from "../IAdressee";
+import {IAttachment} from "../IAttachment";
 
 export interface IEmail {
     id: number;
