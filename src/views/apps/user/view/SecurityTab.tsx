@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -19,22 +17,19 @@ import {
   CardHeader,
   ModalHeader,
   FormFeedback
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Custom Components
-import InputPasswordToggle from '@components/input-password-toggle'
+import InputPasswordToggle from '../../../../@core/components/input-password-toggle';
 
-// ** Third Party Components
-import * as yup from 'yup'
-import Cleave from 'cleave.js/react'
-import 'cleave.js/dist/addons/cleave-phone.us'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, Controller } from 'react-hook-form'
-import { Edit, Trash, Settings, MessageSquare, ChevronRight } from 'react-feather'
+import * as yup from 'yup';
+import Cleave from 'cleave.js/react';
+import 'cleave.js/dist/addons/cleave-phone.us';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm, Controller } from 'react-hook-form';
+import { Edit, Trash, Settings, MessageSquare, ChevronRight } from 'react-feather';
 
-// ** Images
-import qrCode from '@src/assets/images/icons/qrcode.png'
-import chromeLogo from '@src/assets/images/icons/google-chrome.png'
+import qrCode from 'src/assets/images/icons/qrcode.png';
+import chromeLogo from 'src/assets/images/icons/google-chrome.png';
 
 const SignupSchema = yup.object().shape({
   password: yup.string().min(8).required(),
@@ -42,7 +37,7 @@ const SignupSchema = yup.object().shape({
     .string()
     .min(8)
     .oneOf([yup.ref('password'), null], 'Passwords must match')
-})
+});
 
 const recentDevicesArr = [
   {
@@ -69,25 +64,28 @@ const recentDevicesArr = [
     browser: 'Chrome on iPhone',
     activity: '12, Jan 2021 8:29'
   }
-]
+];
 
 const defaultValues = {
   password: '',
   confirmPassword: ''
-}
+};
 
-const AppAuthComponent = ({ setShow, setShowDetailModal }) => {
+const AppAuthComponent = (
+    { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function}
+) => {
   const toggle = () => {
-    setShow(false)
-    setShowDetailModal(false)
-  }
+    setShow(false);
+    setShowDetailModal(false);
+  };
 
   return (
     <Fragment>
       <h1 className='text-center mb-2 pb-50'>Add Authenticator App</h1>
       <h4>Authenticator Apps</h4>
       <p>
-        Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the QR
+        Using an authenticator app like Google Authenticator,
+        Microsoft Authenticator, Authy, or 1Password, scan the QR
         code. It will generate a 6 digit code for you to enter below.
       </p>
       <div className='d-flex justify-content-center my-2 py-50'>
@@ -114,19 +112,22 @@ const AppAuthComponent = ({ setShow, setShowDetailModal }) => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-const AppSMSComponent = ({ setShow, setShowDetailModal }) => {
+const AppSMSComponent = (
+    { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function}
+) => {
   const toggle = () => {
-    setShow(false)
-    setShowDetailModal(false)
-  }
+    setShow(false);
+    setShowDetailModal(false);
+  };
   return (
     <Fragment>
       <h1 className='text-center mb-2 pb-50'>Add your number</h1>
       <h4>Verify Your Mobile Number for SMS</h4>
-      <p>Enter your mobile phone number with country code and we will send you a verification code.</p>
+      <p>Enter your mobile phone number with country code
+        and we will send you a verification code.</p>
       <Row className='gy-1 mt-1'>
         <Col xs={12}>
           <Cleave
@@ -146,29 +147,29 @@ const AppSMSComponent = ({ setShow, setShowDetailModal }) => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
 const SecurityTab = () => {
-  // ** Hooks
-  const [show, setShow] = useState(false)
-  const [authType, setAuthType] = useState('authApp')
-  const [showDetailModal, setShowDetailModal] = useState(false)
+  
+  const [show, setShow] = useState(false);
+  const [authType, setAuthType] = useState('authApp');
+  const [showDetailModal, setShowDetailModal] = useState(false);
   const {
     control,
     trigger,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues, resolver: yupResolver(SignupSchema) })
+  } = useForm({ defaultValues, resolver: yupResolver(SignupSchema) });
 
-  const onSubmit = data => {
-    trigger()
-    console.log(data)
-  }
+  const onSubmit = (data: any) => {
+    trigger();
+    console.log(data);
+  };
   const handleContinue = () => {
-    setShow(false)
-    setShowDetailModal(true)
-  }
+    setShow(false);
+    setShowDetailModal(true);
+  };
 
   return (
     <Fragment>
@@ -185,7 +186,6 @@ const SecurityTab = () => {
             <Row>
               <Col className='mb-2' md={6}>
                 <Controller
-                  id='password'
                   name='password'
                   control={control}
                   render={({ field }) => (
@@ -203,7 +203,6 @@ const SecurityTab = () => {
               <Col className='mb-2' md={6}>
                 <Controller
                   control={control}
-                  id='confirmPassword'
                   name='confirmPassword'
                   render={({ field }) => (
                     <InputPasswordToggle
@@ -240,8 +239,8 @@ const SecurityTab = () => {
                 to='/'
                 className='text-body'
                 onClick={e => {
-                  setShow(true)
-                  e.preventDefault()
+                  setShow(true);
+                  e.preventDefault();
                 }}
               >
                 <Edit className='font-medium-3 me-1 cursor-pointer' />
@@ -252,7 +251,8 @@ const SecurityTab = () => {
             </div>
           </div>
           <p className='mb-0'>
-            Two-factor authentication adds an additional layer of security to your account by requiring more than just a
+            Two-factor authentication adds an additional layer of
+            security to your account by requiring more than just a
             password to log in.{' '}
             <a href='#' onClick={e => e.preventDefault()}>
               Learn more.
@@ -285,7 +285,7 @@ const SecurityTab = () => {
                   <td>{item.location}</td>
                   <td>{item.activity}</td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </Table>
@@ -318,7 +318,8 @@ const SecurityTab = () => {
               <span>
                 <span className='custom-option-item-title d-block h3'>Authenticator Apps</span>
                 <span className='mt-75'>
-                  Get codes from an app like Google Authenticator, Microsoft Authenticator, Authy or 1Password.
+                  Get codes from an app like Google Authenticator,
+                  Microsoft Authenticator, Authy or 1Password.
                 </span>
               </span>
             </label>
@@ -356,15 +357,17 @@ const SecurityTab = () => {
       >
         <ModalHeader className='bg-transparent' toggle={() => setShowDetailModal(!showDetailModal)}></ModalHeader>
         <ModalBody className='pb-5 px-sm-5 mx-50'>
-          {authType === 'authApp' ? (
+          {authType === 'authApp'
+? (
             <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-          ) : (
+          )
+: (
             <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
           )}
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SecurityTab
+export default SecurityTab;

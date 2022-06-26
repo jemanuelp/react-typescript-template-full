@@ -1,14 +1,7 @@
-// ** React Imports
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Reactstrap Imports
-import { UncontrolledTooltip } from 'reactstrap'
-
-// ** Third Party Components
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import Avatar from '../../../../../src/@core/components/avatar';
+import { UncontrolledTooltip } from 'reactstrap';
 import {
   Eye,
   Send,
@@ -20,9 +13,8 @@ import {
   TrendingUp,
   CheckCircle,
   ArrowDownCircle
-} from 'react-feather'
+} from 'react-feather';
 
-// ** Vars
 const invoiceStatusObj = {
   Sent: { color: 'light-secondary', icon: Send },
   Paid: { color: 'light-success', icon: CheckCircle },
@@ -30,27 +22,30 @@ const invoiceStatusObj = {
   Downloaded: { color: 'light-info', icon: ArrowDownCircle },
   'Past Due': { color: 'light-danger', icon: Info },
   'Partial Payment': { color: 'light-warning', icon: PieChart }
-}
+};
 
-// ** Table columns
 export const columns = [
   {
     name: '#',
     sortable: true,
     sortField: 'id',
     minWidth: '107px',
-    selector: row => row.id,
-    cell: row => <Link className='fw-bolder' to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>
+    selector: (row: any) => row.id,
+    cell: (row: any) => <Link className='fw-bolder' to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>
   },
   {
     name: <TrendingUp size={14} />,
     minWidth: '102px',
     sortable: true,
     sortField: 'invoiceStatus',
-    selector: row => row.invoiceStatus,
-    cell: row => {
-      const color = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].color : 'primary',
-        Icon = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].icon : Edit
+    selector: (row: any) => row.invoiceStatus,
+    cell: (row: any) => {
+      const color = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
+              ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color
+              : 'primary',
+          Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
+              ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon
+              : Edit;
       return (
         <Fragment>
           <Avatar color={color} icon={<Icon size={14} />} id={`av-tooltip-${row.id}`} />
@@ -62,7 +57,7 @@ export const columns = [
             <span className='fw-bold'>Due Date:</span> {row.dueDate}
           </UncontrolledTooltip>
         </Fragment>
-      )
+      );
     }
   },
 
@@ -71,18 +66,18 @@ export const columns = [
     sortable: true,
     minWidth: '150px',
     sortField: 'total',
-    selector: row => row.total,
-    cell: row => <span>${row.total || 0}</span>
+    selector: (row: any) => row.total,
+    cell: (row: any) => <span>${row.total || 0}</span>
   },
   {
     minWidth: '200px',
     name: 'Issued Date',
-    cell: row => row.dueDate
+    cell: (row: any) => row.dueDate
   },
   {
     name: 'Action',
     minWidth: '110px',
-    cell: row => (
+    cell: (row: any) => (
       <div className='column-action d-flex align-items-center'>
         <Send className='text-body cursor-pointer' size={17} id={`send-tooltip-${row.id}`} />
         <UncontrolledTooltip placement='top' target={`send-tooltip-${row.id}`}>
@@ -103,4 +98,4 @@ export const columns = [
       </div>
     )
   }
-]
+];

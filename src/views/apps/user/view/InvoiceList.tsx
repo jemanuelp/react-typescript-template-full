@@ -1,14 +1,7 @@
-// ** React Imports
-import { useState, useEffect } from 'react'
-
-// ** Table Columns
-import { columns } from './columns'
-
-// ** Third Party Components
-import DataTable from 'react-data-table-component'
-import { ChevronDown, ExternalLink, Printer, FileText, File, Clipboard, Copy } from 'react-feather'
-
-// ** Reactstrap Imports
+import { useState, useEffect } from 'react';
+import { columns } from './columns';
+import DataTable from 'react-data-table-component';
+import { ChevronDown, ExternalLink, Printer, FileText, File, Clipboard, Copy } from 'react-feather';
 import {
   Card,
   CardTitle,
@@ -17,28 +10,22 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledButtonDropdown
-} from 'reactstrap'
-
-// ** Store & Actions
-import { getData } from '@src/views/apps/invoice/store'
-import { useDispatch, useSelector } from 'react-redux'
-
-// ** Styles
-import '@styles/react/apps/app-invoice.scss'
-import '@styles/react/libs/tables/react-dataTable-component.scss'
+} from 'reactstrap';
+import { getData } from '../../invoice/store';
+import { useDispatch, useSelector } from 'react-redux';
+import 'src/@core/scss/react/apps/app-invoice.scss';
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import {RootState} from "../../../../redux/reducers/RootReducer";
 
 const InvoiceList = () => {
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.invoice)
-
-  // ** States
-  const [value] = useState('')
-  const [rowsPerPage] = useState(6)
-  const [currentPage] = useState(1)
-  const [statusValue] = useState('')
-  const [sort, setSort] = useState('desc')
-  const [sortColumn, setSortColumn] = useState('id')
+  const dispatch = useDispatch<any>();
+  const store = useSelector((state: RootState) => state.invoice);
+  const [value] = useState('');
+  const [rowsPerPage] = useState(6);
+  const [currentPage] = useState(1);
+  const [statusValue] = useState('');
+  const [sort, setSort] = useState('desc');
+  const [sortColumn, setSortColumn] = useState('id');
 
   useEffect(() => {
     dispatch(
@@ -50,31 +37,31 @@ const InvoiceList = () => {
         perPage: rowsPerPage,
         status: statusValue
       })
-    )
-  }, [dispatch, store.data.length])
+    );
+  }, [dispatch, store.data.length]);
 
   const dataToRender = () => {
     const filters = {
       status: statusValue,
       q: value
-    }
+    };
 
     const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0
-    })
+      return filters[k as keyof typeof filters].length > 0;
+    });
 
     if (store.data.length > 0) {
-      return store.data.slice(0, rowsPerPage)
+      return store.data.slice(0, rowsPerPage);
     } else if (store.data.length === 0 && isFiltered) {
-      return []
+      return [];
     } else {
-      return store.allData.slice(0, rowsPerPage)
+      return store.allData.slice(0, rowsPerPage);
     }
-  }
+  };
 
-  const handleSort = (column, sortDirection) => {
-    setSort(sortDirection)
-    setSortColumn(column.sortField)
+  const handleSort = (column: any, sortDirection: any) => {
+    setSort(sortDirection);
+    setSortColumn(column.sortField);
     dispatch(
       getData({
         q: value,
@@ -84,8 +71,8 @@ const InvoiceList = () => {
         perPage: rowsPerPage,
         sortColumn: column.sortField
       })
-    )
-  }
+    );
+  };
 
   return (
     <div className='invoice-list-wrapper'>
@@ -131,12 +118,12 @@ const InvoiceList = () => {
             data={dataToRender()}
             sortIcon={<ChevronDown />}
             className='react-dataTable'
-            defaultSortField='invoiceId'
+            defaultSortFieldId={'invoiceId'}
           />
         </div>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default InvoiceList
+export default InvoiceList;

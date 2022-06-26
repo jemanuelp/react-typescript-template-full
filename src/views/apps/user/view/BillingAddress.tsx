@@ -29,7 +29,6 @@ const defaultValues = {
 const BillingAddress = () => {
   const [show, setShow] = useState(false);
 
-  // ** Hooks
   const {
     reset,
     control,
@@ -202,7 +201,10 @@ const BillingAddress = () => {
                   return <Input placeholder='John' id='firstName' invalid={errors.firstName && true} {...field} />;
                 }}
               />
-              {errors.firstName && <FormFeedback>Please enter a valid First Name</FormFeedback>}
+              {
+                errors.firstName &&
+                  <FormFeedback>Please enter a valid First Name</FormFeedback>
+              }
             </Col>
             <Col xs={12} md={6}>
               <Label className='form-label' for='lastName'>
@@ -215,7 +217,10 @@ const BillingAddress = () => {
                   <Input id='lastName' placeholder='Doe' invalid={errors.lastName && true} {...field} />
                 )}
               />
-              {errors.lastName && <FormFeedback>Please enter a valid Last Name</FormFeedback>}
+              {
+                errors.lastName &&
+                  <FormFeedback>Please enter a valid Last Name</FormFeedback>
+              }
             </Col>
             <Col xs={12}>
               <Label className='form-label' for='country'>

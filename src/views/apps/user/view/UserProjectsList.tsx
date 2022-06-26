@@ -1,17 +1,11 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, Progress } from 'reactstrap'
+import { Card, CardHeader, Progress } from 'reactstrap';
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
+import Avatar from '../../../../@core/components/avatar';
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import {IProject} from "../../../../domains/interfaces/IProject";
 
-// ** Third Party Components
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Styles
-import '@styles/react/libs/tables/react-dataTable-component.scss'
-
-const projectsArr = [
+const projectsArr: IProject[] = [
   {
     progress: 60,
     hours: '210:30h',
@@ -19,7 +13,7 @@ const projectsArr = [
     totalTasks: '233/240',
     subtitle: 'React Project',
     title: 'BGC eCommerce App',
-    img: require('@src/assets/images/icons/brands/react-label.png').default
+    img: require('src/assets/images/icons/brands/react-label.png').default
   },
   {
     hours: '89h',
@@ -28,7 +22,7 @@ const projectsArr = [
     progressColor: 'danger',
     subtitle: 'UI/UX Project',
     title: 'Falcon Logo Design',
-    img: require('@src/assets/images/icons/brands/xd-label.png').default
+    img: require('src/assets/images/icons/brands/xd-label.png').default
   },
   {
     progress: 90,
@@ -37,7 +31,7 @@ const projectsArr = [
     progressColor: 'success',
     subtitle: 'Vuejs Project',
     title: 'Dashboard Design',
-    img: require('@src/assets/images/icons/brands/vue-label.png').default
+    img: require('src/assets/images/icons/brands/vue-label.png').default
   },
   {
     hours: '45h',
@@ -46,9 +40,8 @@ const projectsArr = [
     progressColor: 'warning',
     subtitle: 'iPhone Project',
     title: 'Foodista mobile app',
-    img: require('@src/assets/images/icons/brands/sketch-label.png').default
+    img: require('src/assets/images/icons/brands/sketch-label.png').default
   },
-
   {
     progress: 73,
     hours: '67:10h',
@@ -56,7 +49,7 @@ const projectsArr = [
     progressColor: 'info',
     subtitle: 'React Project',
     title: 'Dojo React Project',
-    img: require('@src/assets/images/icons/brands/react-label.png').default
+    img: require('src/assets/images/icons/brands/react-label.png').default
   },
   {
     progress: 81,
@@ -65,7 +58,7 @@ const projectsArr = [
     title: 'HTML Project',
     progressColor: 'success',
     subtitle: 'Crypto Website',
-    img: require('@src/assets/images/icons/brands/html-label.png').default
+    img: require('src/assets/images/icons/brands/html-label.png').default
   },
   {
     progress: 78,
@@ -74,17 +67,17 @@ const projectsArr = [
     progressColor: 'success',
     subtitle: 'Vuejs Project',
     title: 'Vue Admin template',
-    img: require('@src/assets/images/icons/brands/vue-label.png').default
+    img: require('src/assets/images/icons/brands/vue-label.png').default
   }
-]
+];
 
 export const columns = [
   {
     sortable: true,
     minWidth: '300px',
     name: 'Project',
-    selector: row => row.title,
-    cell: row => {
+    selector: (row: IProject) => row.title,
+    cell: (row: IProject) => {
       return (
         <div className='d-flex justify-content-left align-items-center'>
           <div className='avatar-wrapper'>
@@ -95,18 +88,18 @@ export const columns = [
             <small className='text-muted'>{row.subtitle}</small>
           </div>
         </div>
-      )
+      );
     }
   },
   {
     name: 'Total Tasks',
-    selector: row => row.totalTasks
+    selector: (row: IProject) => row.totalTasks
   },
   {
     name: 'Progress',
-    selector: row => row.progress,
+    selector: (row: IProject) => row.progress,
     sortable: true,
-    cell: row => {
+    cell: (row: IProject) => {
       return (
         <div className='d-flex flex-column w-100'>
           <small className='mb-1'>{`${row.progress}%`}</small>
@@ -116,14 +109,14 @@ export const columns = [
             className={`w-100 progress-bar-${row.progressColor}`}
           />
         </div>
-      )
+      );
     }
   },
   {
     name: 'Hours',
-    selector: row => row.hours
+    selector: (row: IProject) => row.hours
   }
-]
+];
 
 const UserProjectsList = () => {
   return (
@@ -140,7 +133,7 @@ const UserProjectsList = () => {
         />
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default UserProjectsList
+export default UserProjectsList;

@@ -1,7 +1,4 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** Reactstrap Imports
+import { Fragment, useState } from 'react';
 import {
   Row,
   Col,
@@ -20,23 +17,20 @@ import {
   ModalHeader,
   FormFeedback,
   InputGroupText
-} from 'reactstrap'
-
-// ** Third Party Components
-import classnames from 'classnames'
-import Cleave from 'cleave.js/react'
-import { Plus, Check, X } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
-
-// ** Card Images
-import jcbCC from '@src/assets/images/icons/payments/jcb-cc.png'
-import amexCC from '@src/assets/images/icons/payments/amex-cc.png'
-import uatpCC from '@src/assets/images/icons/payments/uatp-cc.png'
-import visaCC from '@src/assets/images/icons/payments/visa-cc.png'
-import dinersCC from '@src/assets/images/icons/payments/diners-cc.png'
-import maestroCC from '@src/assets/images/icons/payments/maestro-cc.png'
-import discoverCC from '@src/assets/images/icons/payments/discover-cc.png'
-import mastercardCC from '@src/assets/images/icons/payments/mastercard-cc.png'
+} from 'reactstrap';
+import classnames from 'classnames';
+import Cleave from 'cleave.js/react';
+import { Plus, Check, X } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
+import jcbCC from '../../../../../src/assets/images/icons/payments/jcb-cc.png';
+import amexCC from '../../../../../src/assets/images/icons/payments/amex-cc.png';
+import uatpCC from '../../../../../src/assets/images/icons/payments/uatp-cc.png';
+import visaCC from '../../../../../src/assets/images/icons/payments/visa-cc.png';
+import dinersCC from '../../../../../src/assets/images/icons/payments/diners-cc.png';
+import maestroCC from '../../../../../src/assets/images/icons/payments/maestro-cc.png';
+import discoverCC from '../../../../../src/assets/images/icons/payments/discover-cc.png';
+import mastercardCC from '../../../../../src/assets/images/icons/payments/mastercard-cc.png';
+import {ICard} from "../../../../domains/interfaces/ICard";
 
 const cardsObj = {
   jcb: jcbCC,
@@ -47,9 +41,9 @@ const cardsObj = {
   maestro: maestroCC,
   discover: discoverCC,
   mastercard: mastercardCC
-}
+};
 
-const data = [
+const data: ICard[] = [
   {
     cardCvc: '587',
     name: 'Tom McBride',
@@ -58,15 +52,15 @@ const data = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('@src/assets/images/icons/payments/mastercard.png').default
+    imgSrc: require('src/assets/images/icons/payments/mastercard.png').default
   },
   {
     cardCvc: '681',
-    imgAlt: 'Visa card',
-    expiryDate: '02/24',
     name: 'Mildred Wagner',
+    expiryDate: '02/24',
+    imgAlt: 'Visa card',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('@src/assets/images/icons/payments/visa.png').default
+    imgSrc: require('src/assets/images/icons/payments/visa.png').default
   },
   {
     cardCvc: '3845',
@@ -76,17 +70,15 @@ const data = [
     name: 'Lester Jennings',
     imgAlt: 'American Express card',
     cardNumber: '3700 000000 00002',
-    imgSrc: require('@src/assets/images/icons/payments/american-ex.png').default
+    imgSrc: require('src/assets/images/icons/payments/american-ex.png').default
   }
-]
+];
 
 const PaymentMethods = () => {
-  // ** States
-  const [show, setShow] = useState(false)
-  const [cardType, setCardType] = useState('')
-  const [selected, setSelected] = useState(null)
-
-  // ** Hooks
+  const [show, setShow] = useState(false);
+  const [cardType, setCardType] = useState('');
+  const [selected, setSelected] = useState<ICard | undefined>();
+  
   const {
     reset,
     control,
@@ -94,37 +86,38 @@ const PaymentMethods = () => {
     setValue,
     handleSubmit,
     formState: { errors }
-  } = useForm({ cardNumber: '' })
+  } = useForm({});
 
-  const selectedCondition = selected !== null
+  const selectedCondition = selected !== null;
 
-  const openEditModal = card => {
-    setValue('cardNumber', card.cardNumber)
-    setSelected(card)
-    setShow(true)
-  }
+  const openEditModal = (card: ICard) => {
+    setValue('cardNumber', card.cardNumber);
+    setSelected(card);
+    setShow(true);
+  };
 
   const openAddModal = () => {
-    setSelected(null)
-    setShow(true)
-  }
+    setSelected(undefined);
+    setShow(true);
+  };
 
-  const onSubmit = data => {
+  const onSubmit = (data: any) => {
+    data = data as ICard;
     if (data.cardNumber && data.cardNumber.length > 0) {
-      setShow(show)
+      setShow(show);
     } else {
       setError('cardNumber', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   const onModalClosed = () => {
-    reset()
-    setCardType('')
-    setSelected(null)
-    setShow(false)
-  }
+    reset();
+    setCardType('');
+    setSelected(undefined);
+    setShow(false);
+  };
 
   return (
     <Fragment>
@@ -139,7 +132,7 @@ const PaymentMethods = () => {
         <CardBody>
           <div className='added-cards'>
             {data.map((card, index) => {
-              const isLastCard = index === data.length - 1
+              const isLastCard = index === data.length - 1;
               return (
                 <div
                   key={index}
@@ -159,7 +152,8 @@ const PaymentMethods = () => {
                         )}
                       </div>
                       <span className='card-number '>
-                        **** **** **** {card.cardNumber.substring(card.cardNumber.length - 4)}
+                        **** **** ****
+                        {card.cardNumber.substring(card.cardNumber.length - 4)}
                       </span>
                     </div>
                     <div className='d-flex flex-column text-start text-lg-end'>
@@ -173,7 +167,7 @@ const PaymentMethods = () => {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </CardBody>
@@ -181,9 +175,13 @@ const PaymentMethods = () => {
       <Modal isOpen={show} toggle={() => setShow(!show)} className='modal-dialog-centered' onClosed={onModalClosed}>
         <ModalHeader className='bg-transparent' toggle={() => setShow(!show)}></ModalHeader>
         <ModalBody className='px-sm-5 mx-50 pb-5'>
-          <h1 className='text-center mb-1'>{selectedCondition ? 'Edit' : 'Add New'} Card</h1>
+          <h1 className='text-center mb-1'>{selectedCondition
+? 'Edit'
+: 'Add New'} Card</h1>
           <p className='text-center'>
-            {selectedCondition ? 'Edit your saved card details' : 'Add card for future billing'}
+            {selectedCondition
+? 'Edit your saved card details'
+: 'Add card for future billing'}
           </p>
           <Row tag={Form} className='gy-1 gx-2 mt-75' onSubmit={handleSubmit(onSubmit)}>
             <Col xs={12}>
@@ -203,17 +201,19 @@ const PaymentMethods = () => {
                       options={{
                         creditCard: true,
                         onCreditCardTypeChanged: type => {
-                          setCardType(type)
+                          setCardType(type);
                         }
                       }}
                     />
                   )}
                 />
-                {cardType !== '' && cardType !== 'unknown' ? (
+                {cardType !== '' && cardType !== 'unknown'
+? (
                   <InputGroupText className='cursor-pointer p-25'>
-                    <img height='24' alt='card-type' src={cardsObj[cardType]} />
+                    <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
                   </InputGroupText>
-                ) : null}
+                )
+: null}
               </InputGroup>
               {errors.cardNumber && <FormFeedback className='d-block'>Please enter a valid card number</FormFeedback>}
             </Col>
@@ -221,7 +221,9 @@ const PaymentMethods = () => {
               <Label className='form-label' for='card-name'>
                 Name On Card
               </Label>
-              <Input id='card-name' placeholder='John Doe' defaultValue={selectedCondition ? selected.name : ''} />
+              <Input id='card-name' placeholder='John Doe' defaultValue={(selectedCondition && selected)
+                  ? selected.name
+                  : ''}/>
             </Col>
             <Col xs={6} md={3}>
               <Label className='form-label' for='exp-date'>
@@ -232,7 +234,9 @@ const PaymentMethods = () => {
                 placeholder='MM/YY'
                 className='form-control'
                 options={{ delimiter: '/', blocks: [2, 2] }}
-                value={selectedCondition ? selected.expiryDate : ''}
+                value={(selectedCondition && selected)
+                    ? selected.expiryDate
+                    : ''}
               />
             </Col>
             <Col xs={6} md={3}>
@@ -244,7 +248,9 @@ const PaymentMethods = () => {
                 placeholder='654'
                 className='form-control'
                 options={{ blocks: [3] }}
-                value={selectedCondition ? selected.cardCvc : ''}
+                value={(selectedCondition && selected)
+                    ? selected.cardCvc
+                    : ''}
               />
             </Col>
             <Col xs={12}>
@@ -277,7 +283,7 @@ const PaymentMethods = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default PaymentMethods
+export default PaymentMethods;

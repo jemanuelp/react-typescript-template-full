@@ -1,13 +1,8 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
-import Timeline from '@components/timeline'
-
-// ** Images
-import pdf from '@src/assets/images/icons/file-icons/pdf.png'
-import ceo from '@src/assets/images/portrait/small/avatar-s-7.jpg'
-
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import Avatar from '../../../../@core/components/avatar';
+import Timeline from '../../../../@core/components/timeline';
+import pdf from 'src/assets/images/icons/file-icons/pdf.png';
+import ceo from 'src/assets/images/portrait/small/avatar-s-7.jpg';
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 // ** Timeline Data
 const data = [
@@ -49,7 +44,7 @@ const data = [
       </div>
     )
   }
-]
+];
 
 const UserTimeline = () => {
   return (
@@ -61,7 +56,7 @@ const UserTimeline = () => {
         <Timeline data={data} className='ms-50' />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default UserTimeline
+export default UserTimeline;
