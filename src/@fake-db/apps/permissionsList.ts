@@ -118,49 +118,44 @@ mock.onPost('/apps/permissions/add-permission').reply(config => {
   const time = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
   const monthsArr = months.split(' ');
-  /*eslint-disable */
+  
   const moveElement = (array: any[], sourceIndex: any, destinationIndex: any) => {
-    return array.map(a =>
-      a === sourceIndex
-        ? array.find(a => a === destinationIndex)
-        : a === destinationIndex
-        ? array.find(a => a === sourceIndex)
-        : a
-    )
-  }
+    return array.map(a => (a === sourceIndex ? array.find(a => a === destinationIndex) : a === destinationIndex ? array.find(a => a === sourceIndex) : a)
+    );
+  };
 
-  const finalDate = moveElement(monthsArr, monthsArr[0], monthsArr[1]).join(' ')
+  const finalDate = moveElement(monthsArr, monthsArr[0], monthsArr[1]).join(' ');
 
-  permission.createdDate = `${finalDate}, ${time}`
+  permission.createdDate = `${finalDate}, ${time}`;
 
-  data.permissions.unshift(permission)
+  data.permissions.unshift(permission);
 
-  return [201, { permission }]
-})
+  return [201, { permission }];
+});
 
 mock.onPost('/apps/permissions/update-permission').reply(config => {
   // Get permission from post data
-  const { id, name } = JSON.parse(config.data)
+  const { id, name } = JSON.parse(config.data);
 
   data.permissions.find(i => {
     if (i.id === id) {
-      i.name = name
+      i.name = name;
     }
-  })
+  });
 
-  return [201]
-})
+  return [201];
+});
 
 // DELETE: Deletes Permissions
 mock.onDelete('/apps/permissions/delete').reply(config => {
   // Get  id from URL
-  let permissionID = config.data.id
+  let permissionID = config.data.id;
 
   // Convert Id to number
-  permissionID = Number(permissionID)
+  permissionID = Number(permissionID);
 
-  const permissionIndex = data.permissions.findIndex(t => t.id === permissionID)
-  data.permissions.splice(permissionIndex, 1)
+  const permissionIndex = data.permissions.findIndex(t => t.id === permissionID);
+  data.permissions.splice(permissionIndex, 1);
 
-  return [200]
-})
+  return [200];
+});

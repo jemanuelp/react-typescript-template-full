@@ -1,5 +1,7 @@
 // ** Returns paginated array
-export const paginateArray = (array: any[], perPage: number, page: number) => array.slice((page - 1) * perPage, page * perPage);
+export const paginateArray = (array: any[], perPage: number, page: number) => {
+  return array.slice((page - 1) * perPage, page * perPage);
+};
 
 // ** Returns sorted array
 export const sortCompare = (key: any) => (a: any, b: any) => {
@@ -19,10 +21,8 @@ export const sortCompare = (key: any) => (a: any, b: any) => {
 export const getRandomInt = (min: number, max: number) => {
   if (min > max) {
     const temp = max;
-    /* eslint-disable no-param-reassign */
     max = min;
     min = temp;
-    /* eslint-enable */
   }
 
   if (min <= 0) {

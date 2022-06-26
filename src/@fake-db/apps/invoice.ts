@@ -1,8 +1,11 @@
 import mock from '../mock';
-
 import { paginateArray } from '../utils';
+import {IInvoice} from "../../domains/interfaces/IInvoice";
+import {ISearch} from "../../domains/interfaces/ISearch";
+import {AxiosRequestConfig} from "axios";
+import {IInvoices} from "../../domains/grouper/IInvoices";
 
-const data = {
+const data: IInvoices = {
   invoices: [
     {
       id: 4987,
@@ -35,7 +38,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 5219,
-      avatar: require('@src/assets/images/avatars/10-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/10-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: 0,
       dueDate: '15 Dec 2019'
@@ -53,7 +56,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 3719,
-      avatar: require('@src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
       invoiceStatus: 'Paid',
       balance: 0,
       dueDate: '03 Nov 2019'
@@ -71,7 +74,7 @@ const data = {
       },
       service: 'Software Development',
       total: 4749,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Sent',
       balance: 0,
       dueDate: '11 Feb 2020'
@@ -89,7 +92,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 4056,
-      avatar: require('@src/assets/images/avatars/10-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/10-small.png').default,
       invoiceStatus: 'Draft',
       balance: '$815',
       dueDate: '30 Jun 2019'
@@ -143,7 +146,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 4309,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Paid',
       balance: '-$205',
       dueDate: '10 Feb 2020'
@@ -161,7 +164,7 @@ const data = {
       },
       service: 'Software Development',
       total: 3367,
-      avatar: require('@src/assets/images/avatars/2-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/2-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: 0,
       dueDate: '24 Dec 2019'
@@ -179,7 +182,7 @@ const data = {
       },
       service: 'Software Development',
       total: 4776,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: '$305',
       dueDate: '02 Jun 2019'
@@ -197,7 +200,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 3789,
-      avatar: require('@src/assets/images/avatars/4-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/4-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: '$666',
       dueDate: '18 Mar 2020'
@@ -215,7 +218,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 5200,
-      avatar: require('@src/assets/images/avatars/5-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/5-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '17 Jan 2020'
@@ -233,7 +236,7 @@ const data = {
       },
       service: 'Software Development',
       total: 4558,
-      avatar: require('@src/assets/images/avatars/7-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/7-small.png').default,
       invoiceStatus: 'Paid',
       balance: 0,
       dueDate: '01 Oct 2019'
@@ -251,7 +254,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 3503,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Paid',
       balance: 0,
       dueDate: '22 May 2019'
@@ -269,7 +272,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 5285,
-      avatar: require('@src/assets/images/avatars/2-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/2-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: '-$202',
       dueDate: '02 Aug 2019'
@@ -287,7 +290,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 3668,
-      avatar: require('@src/assets/images/avatars/6-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/6-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: '$731',
       dueDate: '15 Dec 2019'
@@ -323,7 +326,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 3198,
-      avatar: require('@src/assets/images/avatars/7-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/7-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: '-$253',
       dueDate: '16 Aug 2019'
@@ -359,7 +362,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 5612,
-      avatar: require('@src/assets/images/avatars/6-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/6-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: '$883',
       dueDate: '12 Apr 2019'
@@ -377,7 +380,7 @@ const data = {
       },
       service: 'Software Development',
       total: 2230,
-      avatar: require('@src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
       invoiceStatus: 'Sent',
       balance: 0,
       dueDate: '19 Nov 2019'
@@ -395,7 +398,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 2032,
-      avatar: require('@src/assets/images/avatars/8-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/8-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '30 Nov 2019'
@@ -413,7 +416,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 3128,
-      avatar: require('@src/assets/images/avatars/3-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/3-small.png').default,
       invoiceStatus: 'Paid',
       balance: 0,
       dueDate: '10 Sep 2019'
@@ -431,7 +434,7 @@ const data = {
       },
       service: 'Software Development',
       total: 2060,
-      avatar: require('@src/assets/images/avatars/2-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/2-small.png').default,
       invoiceStatus: 'Downloaded',
       balance: 0,
       dueDate: '08 Dec 2019'
@@ -467,7 +470,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 2872,
-      avatar: require('@src/assets/images/avatars/4-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/4-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '18 Oct 2019'
@@ -485,7 +488,7 @@ const data = {
       },
       service: 'Software Development',
       total: 3740,
-      avatar: require('@src/assets/images/avatars/10-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/10-small.png').default,
       invoiceStatus: 'Draft',
       balance: 0,
       dueDate: '01 Nov 2019'
@@ -521,7 +524,7 @@ const data = {
       },
       service: 'Software Development',
       total: 2477,
-      avatar: require('@src/assets/images/avatars/7-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/7-small.png').default,
       invoiceStatus: 'Draft',
       balance: 0,
       dueDate: '01 Apr 2019'
@@ -557,7 +560,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 3102,
-      avatar: require('@src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: '-$153',
       dueDate: '25 Aug 2019'
@@ -575,7 +578,7 @@ const data = {
       },
       service: 'UI/UX Design & Development',
       total: 2483,
-      avatar: require('@src/assets/images/avatars/5-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/5-small.png').default,
       invoiceStatus: 'Draft',
       balance: 0,
       dueDate: '10 Jul 2019'
@@ -593,7 +596,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 2825,
-      avatar: require('@src/assets/images/avatars/8-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/8-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: '-$459',
       dueDate: '14 Oct 2019'
@@ -611,7 +614,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 2029,
-      avatar: require('@src/assets/images/avatars/4-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/4-small.png').default,
       invoiceStatus: 'Past Due',
       balance: 0,
       dueDate: '28 Mar 2019'
@@ -665,7 +668,7 @@ const data = {
       },
       service: 'Software Development',
       total: 5578,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Draft',
       balance: 0,
       dueDate: '23 Jul 2019'
@@ -683,7 +686,7 @@ const data = {
       },
       service: 'Software Development',
       total: 2787,
-      avatar: require('@src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '25 Sep 2019'
@@ -719,7 +722,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 2783,
-      avatar: require('@src/assets/images/avatars/6-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/6-small.png').default,
       invoiceStatus: 'Draft',
       balance: 0,
       dueDate: '22 Oct 2019'
@@ -809,7 +812,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 3313,
-      avatar: require('@src/assets/images/avatars/3-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/3-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '09 Jun 2019'
@@ -845,7 +848,7 @@ const data = {
       },
       service: 'Template Customization',
       total: 2869,
-      avatar: require('@src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
       invoiceStatus: 'Partial Payment',
       balance: 0,
       dueDate: '22 Mar 2020'
@@ -899,7 +902,7 @@ const data = {
       },
       service: 'Unlimited Extended License',
       total: 3171,
-      avatar: require('@src/assets/images/avatars/9-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/9-small.png').default,
       invoiceStatus: 'Paid',
       balance: '-$205',
       dueDate: '25 Sep 2019'
@@ -910,49 +913,60 @@ const data = {
 // ------------------------------------------------
 // GET: Return Invoice List
 // ------------------------------------------------
-mock.onGet('/apps/invoice/invoices').reply(config => {
-  // eslint-disable-next-line object-curly-newline
-  const { q = '', perPage = 10, page = 1, status = null, sort, sortColumn } = config.data;
-  /* eslint-enable */
+mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>) => {
+  if (!config.data) {
+    throw new Error('No search data');
+  }
+
+  const { q = '', perPage = 10, page = 1, status = '', sort, sortColumn } = config.data;
 
   const dataAsc = data.invoices.sort((a, b) => {
-    if (a[sortColumn]) {
-      return a[sortColumn] < b[sortColumn] ? -1 : 1;
+    if (a[sortColumn as keyof IInvoice]) {
+      return a[sortColumn as keyof IInvoice] < b[sortColumn as keyof IInvoice]
+? -1
+: 1;
     } else {
       const splitColumn = sortColumn.split('.');
+      // @ts-ignore
       const columnA = a[splitColumn[0]][splitColumn[1]];
+      // @ts-ignore
       const columnB = b[splitColumn[0]][splitColumn[1]];
-      return columnA < columnB ? -1 : 1;
+      return columnA < columnB
+? -1
+: 1;
     }
   });
 
-  const dataToFilter = sort === 'asc' ? dataAsc : dataAsc.reverse();
+  const dataToFilter = sort === 'asc'
+? dataAsc
+: dataAsc.reverse();
 
   const queryLowered = q.toLowerCase();
   const filteredData = dataToFilter.filter(invoice => {
     if (String('paid').includes(queryLowered) && invoice.balance === 0) {
       return invoice.balance === 0;
     } else {
-      /* eslint-disable operator-linebreak, implicit-arrow-linebreak */
       return (
-        (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
-          invoice.client.name.toLowerCase().includes(queryLowered) ||
-          String(invoice.id).toLowerCase().includes(queryLowered) ||
-          String(invoice.total).toLowerCase().includes(queryLowered) ||
-          String(invoice.balance).toLowerCase().includes(queryLowered) ||
-          invoice.dueDate.toLowerCase().includes(queryLowered)) &&
-        invoice.invoiceStatus.toLowerCase() === (status.toLowerCase() || invoice.invoiceStatus.toLowerCase())
+          (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
+              invoice.client.name.toLowerCase().includes(queryLowered) ||
+              String(invoice.id).toLowerCase().includes(queryLowered) ||
+              String(invoice.total).toLowerCase().includes(queryLowered) ||
+              String(invoice.balance).toLowerCase().includes(queryLowered) ||
+              invoice.dueDate.toLowerCase().includes(queryLowered)) &&
+          invoice.invoiceStatus.toLowerCase() ===
+          (status.toLowerCase() || invoice.invoiceStatus.toLowerCase())
       );
     }
   });
-  /* eslint-enable  */
 
   return [
     200,
     {
       allData: data.invoices,
       total: filteredData.length,
-      invoices: filteredData.length <= perPage ? filteredData : paginateArray(filteredData, perPage, page)
+      invoices: filteredData.length <= perPage
+? filteredData
+: paginateArray(filteredData, perPage, page)
     }
   ];
 });
@@ -962,7 +976,9 @@ mock.onGet('/apps/invoice/invoices').reply(config => {
 // ------------------------------------------------
 mock.onGet(/\/api\/invoice\/invoices\/\d+/).reply(config => {
   // // Get event id from URL
-  const index = config && config.url ? Number(config.url.substring(config.url.lastIndexOf('/'))) : 0;
+  const index = config && config.url
+? Number(config.url.substring(config.url.lastIndexOf('/')))
+: 0;
   const invoiceId = Number(index + 1);
 
   const invoiceIndex = data.invoices.findIndex(e => e.id === invoiceId);

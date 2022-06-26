@@ -171,14 +171,20 @@ mock.onGet('/faq/data').reply(config => {
     const {q = ''} = config.params;
     const queryLowered = q.toLowerCase();
 
-    const filteredData = {} as IFaqData;
+    const filteredData = {} as {
+        payment: IFaqData,
+        delivery: IFaqData,
+        cancellationReturn: IFaqData,
+        myOrders: IFaqData,
+        productServices: IFaqData
+    };
 
     Object.entries(data.faqData).forEach((entry) => {
         const [categoryName, categoryObj] = entry;
         const filteredQAndAOfCategory = categoryObj.qandA.filter(qAndAObj => {
             return qAndAObj.question.toLowerCase().includes(queryLowered);
         });
-        filteredData[categoryName] = {
+        filteredData[categoryName as keyof typeof filteredData] = {
             ...categoryObj,
             qandA: filteredQAndAOfCategory.length ? filteredQAndAOfCategory : []
         };
