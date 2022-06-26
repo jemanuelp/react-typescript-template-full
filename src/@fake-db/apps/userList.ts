@@ -18,7 +18,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'enterprise',
             status: 'inactive',
             avatar: '',
-            avatarColor: 'light-primary'
+            avatarColor: 'light-primary',
         },
         {
             id: 2,
@@ -32,7 +32,7 @@ const data: { users: IUser[] } = {
             email: 'hredmore1@imgur.com',
             currentPlan: 'team',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/10.png').default
+            avatar: require('../../../src/assets/images/avatars/10.png').default,
         },
         {
             id: 3,
@@ -46,7 +46,7 @@ const data: { users: IUser[] } = {
             email: 'msicely2@who.int',
             currentPlan: 'enterprise',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/1.png').default
+            avatar: require('../../../src/assets/images/avatars/1.png').default,
         },
         {
             id: 4,
@@ -60,7 +60,7 @@ const data: { users: IUser[] } = {
             email: 'crisby3@wordpress.com',
             currentPlan: 'team',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
         },
         {
             id: 5,
@@ -74,7 +74,7 @@ const data: { users: IUser[] } = {
             email: 'mhurran4@yahoo.co.jp',
             currentPlan: 'enterprise',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/10.png').default
+            avatar: require('../../../src/assets/images/avatars/10.png').default,
         },
         {
             id: 6,
@@ -89,7 +89,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'company',
             status: 'active',
             avatar: '',
-            avatarColor: 'light-success'
+            avatarColor: 'light-success',
         },
         {
             id: 7,
@@ -104,7 +104,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'company',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-danger'
+            avatarColor: 'light-danger',
         },
         {
             id: 8,
@@ -118,7 +118,7 @@ const data: { users: IUser[] } = {
             email: 'kliger7@vinaora.com',
             currentPlan: 'enterprise',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
         },
         {
             id: 9,
@@ -132,7 +132,7 @@ const data: { users: IUser[] } = {
             email: 'fscotfurth8@dailymotion.com',
             currentPlan: 'team',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/2.png').default
+            avatar: require('../../../src/assets/images/avatars/2.png').default,
         },
         {
             id: 10,
@@ -146,7 +146,7 @@ const data: { users: IUser[] } = {
             email: 'jbellany9@kickstarter.com',
             currentPlan: 'company',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
         },
         {
             id: 11,
@@ -160,7 +160,7 @@ const data: { users: IUser[] } = {
             email: 'jwharltona@oakley.com',
             currentPlan: 'team',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/4.png').default
+            avatar: require('../../../src/assets/images/avatars/4.png').default,
         },
         {
             id: 12,
@@ -174,7 +174,7 @@ const data: { users: IUser[] } = {
             email: 'shallamb@hugedomains.com',
             currentPlan: 'team',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/5.png').default
+            avatar: require('../../../src/assets/images/avatars/5.png').default,
         },
         {
             id: 13,
@@ -188,7 +188,7 @@ const data: { users: IUser[] } = {
             email: 'ypottiec@privacy.gov.au',
             currentPlan: 'basic',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/7.png').default
+            avatar: require('../../../src/assets/images/avatars/7.png').default,
         },
         {
             id: 14,
@@ -202,7 +202,7 @@ const data: { users: IUser[] } = {
             email: 'mkraused@stanford.edu',
             currentPlan: 'team',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
         },
         {
             id: 15,
@@ -216,7 +216,7 @@ const data: { users: IUser[] } = {
             email: 'zmcclevertye@soundcloud.com',
             currentPlan: 'enterprise',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/2.png').default
+            avatar: require('../../../src/assets/images/avatars/2.png').default,
         },
         {
             id: 16,
@@ -230,7 +230,7 @@ const data: { users: IUser[] } = {
             email: 'bemblinf@wired.com',
             currentPlan: 'company',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/6.png').default
+            avatar: require('../../../src/assets/images/avatars/6.png').default,
         },
         {
             id: 17,
@@ -245,7 +245,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'basic',
             status: 'active',
             avatar: '',
-            avatarColor: 'light-warning'
+            avatarColor: 'light-warning',
         },
         {
             id: 18,
@@ -259,7 +259,7 @@ const data: { users: IUser[] } = {
             email: 'bbinerh@mozilla.com',
             currentPlan: 'team',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/7.png').default
+            avatar: require('../../../src/assets/images/avatars/7.png').default,
         },
         {
             id: 19,
@@ -274,7 +274,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'enterprise',
             status: 'active',
             avatar: '',
-            avatarColor: 'light-info'
+            avatarColor: 'light-info',
         },
         {
             id: 20,
@@ -288,7 +288,7 @@ const data: { users: IUser[] } = {
             email: 'wburlandj@uiuc.edu',
             currentPlan: 'team',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/6.png').default
+            avatar: require('../../../src/assets/images/avatars/6.png').default,
         },
         {
             id: 21,
@@ -302,7 +302,7 @@ const data: { users: IUser[] } = {
             email: 'irena.dubrovna@wayne.com',
             currentPlan: 'team',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/1.png').default
+            avatar: require('../../../src/assets/images/avatars/1.png').default,
         },
         {
             id: 22,
@@ -316,7 +316,7 @@ const data: { users: IUser[] } = {
             email: 'jlysterl@guardian.co.uk',
             currentPlan: 'company',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/8.png').default
+            avatar: require('../../../src/assets/images/avatars/8.png').default,
         },
         {
             id: 23,
@@ -330,7 +330,7 @@ const data: { users: IUser[] } = {
             email: 'kskitterelm@washingtonpost.com',
             currentPlan: 'basic',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/3.png').default
+            avatar: require('../../../src/assets/images/avatars/3.png').default,
         },
         {
             id: 24,
@@ -344,7 +344,7 @@ const data: { users: IUser[] } = {
             email: 'chatherleighn@washington.edu',
             currentPlan: 'team',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/2.png').default
+            avatar: require('../../../src/assets/images/avatars/2.png').default,
         },
         {
             id: 25,
@@ -359,7 +359,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'enterprise',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-primary'
+            avatarColor: 'light-primary',
         },
         {
             id: 26,
@@ -373,7 +373,7 @@ const data: { users: IUser[] } = {
             email: 'hhassonp@bizjournals.com',
             currentPlan: 'basic',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/4.png').default
+            avatar: require('../../../src/assets/images/avatars/4.png').default,
         },
         {
             id: 27,
@@ -387,7 +387,7 @@ const data: { users: IUser[] } = {
             email: 'gjacombsq@jigsy.com',
             currentPlan: 'enterprise',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/10.png').default
+            avatar: require('../../../src/assets/images/avatars/10.png').default,
         },
         {
             id: 28,
@@ -402,7 +402,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'active',
             avatar: '',
-            avatarColor: 'light-success'
+            avatarColor: 'light-success',
         },
         {
             id: 29,
@@ -416,7 +416,7 @@ const data: { users: IUser[] } = {
             email: 'cpinyons@behance.net',
             currentPlan: 'team',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/7.png').default
+            avatar: require('../../../src/assets/images/avatars/7.png').default,
         },
         {
             id: 30,
@@ -431,7 +431,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-warning'
+            avatarColor: 'light-warning',
         },
         {
             id: 31,
@@ -445,7 +445,7 @@ const data: { users: IUser[] } = {
             email: 'gmeinekenu@hc360.com',
             currentPlan: 'basic',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/1.png').default
+            avatar: require('../../../src/assets/images/avatars/1.png').default,
         },
         {
             id: 32,
@@ -459,7 +459,7 @@ const data: { users: IUser[] } = {
             email: 'rsnowballv@indiegogo.com',
             currentPlan: 'basic',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/5.png').default
+            avatar: require('../../../src/assets/images/avatars/5.png').default,
         },
         {
             id: 33,
@@ -473,7 +473,7 @@ const data: { users: IUser[] } = {
             email: 'remerw@blogtalkradio.com',
             currentPlan: 'basic',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/8.png').default
+            avatar: require('../../../src/assets/images/avatars/8.png').default,
         },
         {
             id: 34,
@@ -487,7 +487,7 @@ const data: { users: IUser[] } = {
             email: 'ofibbensx@booking.com',
             currentPlan: 'company',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/4.png').default
+            avatar: require('../../../src/assets/images/avatars/4.png').default,
         },
         {
             id: 35,
@@ -502,7 +502,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'company',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-danger'
+            avatarColor: 'light-danger',
         },
         {
             id: 36,
@@ -517,7 +517,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'inactive',
             avatar: '',
-            avatarColor: 'light-info'
+            avatarColor: 'light-info',
         },
         {
             id: 37,
@@ -531,7 +531,7 @@ const data: { users: IUser[] } = {
             email: 'shebblethwaite10@arizona.edu',
             currentPlan: 'company',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
         },
         {
             id: 38,
@@ -545,7 +545,7 @@ const data: { users: IUser[] } = {
             email: 'mpiccard11@vimeo.com',
             currentPlan: 'enterprise',
             status: 'inactive',
-            avatar: require('../../../src/assets/images/avatars/1.png').default
+            avatar: require('../../../src/assets/images/avatars/1.png').default,
         },
         {
             id: 39,
@@ -560,7 +560,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-primary'
+            avatarColor: 'light-primary',
         },
         {
             id: 40,
@@ -574,7 +574,7 @@ const data: { users: IUser[] } = {
             email: 'fdesporte13@omniture.com',
             currentPlan: 'company',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/6.png').default
+            avatar: require('../../../src/assets/images/avatars/6.png').default,
         },
         {
             id: 41,
@@ -589,7 +589,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-success'
+            avatarColor: 'light-success',
         },
         {
             id: 42,
@@ -604,7 +604,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'inactive',
             avatar: '',
-            avatarColor: 'light-danger'
+            avatarColor: 'light-danger',
         },
         {
             id: 43,
@@ -619,7 +619,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'basic',
             status: 'inactive',
             avatar: '',
-            avatarColor: 'light-warning'
+            avatarColor: 'light-warning',
         },
         {
             id: 44,
@@ -634,7 +634,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'active',
             avatar: '',
-            avatarColor: 'light-info'
+            avatarColor: 'light-info',
         },
         {
             id: 45,
@@ -648,7 +648,7 @@ const data: { users: IUser[] } = {
             email: 'cperot18@goo.ne.jp',
             currentPlan: 'team',
             status: 'pending',
-            avatar: require('../../../src/assets/images/avatars/3.png').default
+            avatar: require('../../../src/assets/images/avatars/3.png').default,
         },
         {
             id: 46,
@@ -663,7 +663,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'enterprise',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-primary'
+            avatarColor: 'light-primary',
         },
         {
             id: 47,
@@ -677,7 +677,7 @@ const data: { users: IUser[] } = {
             email: 'kcourtliff1a@bbc.co.uk',
             currentPlan: 'basic',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/1.png').default
+            avatar: require('../../../src/assets/images/avatars/1.png').default,
         },
         {
             id: 48,
@@ -692,7 +692,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'basic',
             status: 'pending',
             avatar: '',
-            avatarColor: 'light-success'
+            avatarColor: 'light-success',
         },
         {
             id: 49,
@@ -707,7 +707,7 @@ const data: { users: IUser[] } = {
             currentPlan: 'team',
             status: 'inactive',
             avatar: '',
-            avatarColor: 'light-danger'
+            avatarColor: 'light-danger',
         },
         {
             id: 50,
@@ -721,9 +721,9 @@ const data: { users: IUser[] } = {
             email: 'bkrabbe1d@home.pl',
             currentPlan: 'company',
             status: 'active',
-            avatar: require('../../../src/assets/images/avatars/9.png').default
-        }
-    ]
+            avatar: require('../../../src/assets/images/avatars/9.png').default,
+        },
+    ],
 };
 
 // GET ALL DATA
@@ -765,7 +765,7 @@ mock.onGet('/api/users/list/data').reply((config: any) => {
         sort = 'asc',
         status = null,
         currentPlan = null,
-        sortColumn = 'fullName'
+        sortColumn = 'fullName',
     } = config;
 
     const queryLowered = q.toLowerCase();
@@ -787,15 +787,15 @@ mock.onGet('/api/users/list/data').reply((config: any) => {
                 (user.billing && user.billing.toLowerCase().includes(queryLowered))) &&
             user.role === (role || user.role) &&
             user.currentPlan === (currentPlan || user.currentPlan) &&
-            user.status === (status || user.status)
+            user.status === (status || user.status),
     );
 
     return [
         200,
         {
             total: filteredData.length,
-            users: paginateArray(filteredData, perPage, page)
-        }
+            users: paginateArray(filteredData, perPage, page),
+        },
     ];
 });
 

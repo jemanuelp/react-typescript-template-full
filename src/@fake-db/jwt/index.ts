@@ -17,12 +17,12 @@ const data: { users: IUser[] } = {
             ability: [
                 {
                     action: 'manage',
-                    subject: 'all'
-                }
+                    subject: 'all',
+                },
             ],
             extras: {
-                eCommerceCartItemsCount: 5
-            }
+                eCommerceCartItemsCount: 5,
+            },
         },
         {
             id: 2,
@@ -35,18 +35,18 @@ const data: { users: IUser[] } = {
             ability: [
                 {
                     action: 'read',
-                    subject: 'ACL'
+                    subject: 'ACL',
                 },
                 {
                     action: 'read',
-                    subject: 'Auth'
-                }
+                    subject: 'Auth',
+                },
             ],
             extras: {
-                eCommerceCartItemsCount: 5
-            }
-        }
-    ]
+                eCommerceCartItemsCount: 5,
+            },
+        },
+    ],
 };
 
 // ! These two secrets shall be in .env file and not in any other file
@@ -54,14 +54,14 @@ const jwtConfig = {
     secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
     refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767',
     expireTime: '10m',
-    refreshTokenExpireTime: '10m'
+    refreshTokenExpireTime: '10m',
 };
 
 mock.onPost('/jwt/login').reply(request => {
     const {email, password} = JSON.parse(request.data);
 
     let error = {
-        email: ['Something went wrong']
+        email: ['Something went wrong'],
     };
 
     const user = data.users.find(u => u.email === email && u.password === password);
@@ -71,10 +71,10 @@ mock.onPost('/jwt/login').reply(request => {
             const accessToken = jwt.sign(
                 {id: user.id},
                 jwtConfig.secret,
-                {expiresIn: jwtConfig.expireTime}
+                {expiresIn: jwtConfig.expireTime},
             );
             const refreshToken = jwt.sign({id: user.id}, jwtConfig.refreshTokenSecret, {
-                expiresIn: jwtConfig.refreshTokenExpireTime
+                expiresIn: jwtConfig.refreshTokenExpireTime,
             });
 
             const userData = {...user};
@@ -84,7 +84,7 @@ mock.onPost('/jwt/login').reply(request => {
             const response = {
                 userData,
                 accessToken,
-                refreshToken
+                refreshToken,
             };
 
             return [200, response];
@@ -93,7 +93,7 @@ mock.onPost('/jwt/login').reply(request => {
         }
     } else {
         error = {
-            email: ['Email or Password is Invalid']
+            email: ['Email or Password is Invalid'],
         };
     }
 
@@ -110,7 +110,7 @@ mock.onPost('/jwt/register').reply((request: AxiosRequestConfig) => {
             : null,
         username: isUsernameAlreadyInUse
             ? 'This username is already in use.'
-            : null
+            : null,
     };
 
     if (!error.username && !error.email) {
@@ -124,9 +124,9 @@ mock.onPost('/jwt/register').reply((request: AxiosRequestConfig) => {
             ability: [
                 {
                     action: 'manage',
-                    subject: 'all'
-                }
-            ]
+                    subject: 'all',
+                },
+            ],
         };
 
         // Add user id
@@ -142,7 +142,7 @@ mock.onPost('/jwt/register').reply((request: AxiosRequestConfig) => {
         const accessToken = jwt.sign(
             {id: userData.id},
             jwtConfig.secret,
-            {expiresIn: jwtConfig.expireTime}
+            {expiresIn: jwtConfig.expireTime},
         );
 
         const user = Object.assign({}, userData);
@@ -166,19 +166,19 @@ mock.onPost('/jwt/refresh-token').reply(request => {
         const newAccessToken = jwt.sign(
             {id: userData.id},
             jwtConfig.secret,
-            {expiresIn: jwtConfig.expireTime}
+            {expiresIn: jwtConfig.expireTime},
         );
         const newRefreshToken = jwt.sign(
             {id: userData.id},
             jwtConfig.refreshTokenSecret,
-            {expiresIn: jwtConfig.refreshTokenExpireTime}
+            {expiresIn: jwtConfig.refreshTokenExpireTime},
         );
 
         delete userData.password;
         const response = {
             userData,
             accessToken: newAccessToken,
-            refreshToken: newRefreshToken
+            refreshToken: newRefreshToken,
         };
 
         return [200, response];

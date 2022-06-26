@@ -11,12 +11,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Jacob Ramirez',
-                avatar: require('../../../src/assets/images/avatars/12.png').default
+                avatar: require('../../../src/assets/images/avatars/12.png').default,
             },
             tags: ['update'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 2,
@@ -26,12 +26,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Andrew Anderson',
-                avatar: ''
+                avatar: '',
             },
             tags: ['team', 'medium'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 3,
@@ -41,12 +41,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Benjamin Jacobs',
-                avatar: ''
+                avatar: '',
             },
             tags: ['high'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 4,
@@ -56,12 +56,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Curtis Schmidt',
-                avatar: require('../../../src/assets/images/avatars/9.png').default
+                avatar: require('../../../src/assets/images/avatars/9.png').default,
             },
             tags: ['medium'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: true
+            isImportant: true,
         },
         {
             id: 5,
@@ -71,12 +71,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Katherine Perkins',
-                avatar: require('../../../src/assets/images/avatars/9.png').default
+                avatar: require('../../../src/assets/images/avatars/9.png').default,
             },
             tags: ['medium'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: true
+            isImportant: true,
         },
         {
             id: 6,
@@ -86,12 +86,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'David Murphy',
-                avatar: ''
+                avatar: '',
             },
             tags: ['high', 'medium'],
             isCompleted: true,
             isDeleted: true,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 7,
@@ -101,12 +101,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Karina Miller',
-                avatar: require('../../../src/assets/images/avatars/1.png').default
+                avatar: require('../../../src/assets/images/avatars/1.png').default,
             },
             tags: ['medium'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: true
+            isImportant: true,
         },
         {
             id: 8,
@@ -116,12 +116,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Thomas Moses',
-                avatar: require('../../../src/assets/images/avatars/7.png').default
+                avatar: require('../../../src/assets/images/avatars/7.png').default,
             },
             tags: ['low', 'medium'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 9,
@@ -131,12 +131,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Angel Morrow',
-                avatar: ''
+                avatar: '',
             },
             tags: ['high', 'update'],
             isCompleted: false,
             isDeleted: true,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 10,
@@ -146,12 +146,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Karen Carrillo',
-                avatar: ''
+                avatar: '',
             },
             tags: ['low'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 11,
@@ -161,12 +161,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Timothy Brewer',
-                avatar: require('../../../src/assets/images/avatars/1.png').default
+                avatar: require('../../../src/assets/images/avatars/1.png').default,
             },
             tags: ['low'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: true
+            isImportant: true,
         },
         {
             id: 12,
@@ -176,12 +176,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Brian Barry',
-                avatar: ''
+                avatar: '',
             },
             tags: ['team'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 13,
@@ -191,12 +191,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Joshua Golden',
-                avatar: require('../../../src/assets/images/avatars/5.png').default
+                avatar: require('../../../src/assets/images/avatars/5.png').default,
             },
             tags: ['team'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 14,
@@ -206,12 +206,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Paula Hammond',
-                avatar: require('../../../src/assets/images/avatars/5.png').default
+                avatar: require('../../../src/assets/images/avatars/5.png').default,
             },
             tags: ['medium'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: true
+            isImportant: true,
         },
         {
             id: 15,
@@ -221,12 +221,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Tyler Garcia',
-                avatar: ''
+                avatar: '',
             },
             tags: ['medium'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 16,
@@ -236,12 +236,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Darlene Shields',
-                avatar: require('../../../src/assets/images/avatars/1.png').default
+                avatar: require('../../../src/assets/images/avatars/1.png').default,
             },
             tags: ['low'],
             isCompleted: true,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 17,
@@ -251,12 +251,12 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Destiny Michael',
-                avatar: ''
+                avatar: '',
             },
             tags: ['medium', 'low'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: false
+            isImportant: false,
         },
         {
             id: 18,
@@ -266,14 +266,14 @@ const data: { tasks: ITask2[] } = {
                 'Chocolate cake topping bonbon jujubes donut sweet wafer. Marzipan gingerbread powder brownie bear claw. Chocolate bonbon sesame snaps jelly caramels oat cake.',
             assignee: {
                 fullName: 'Danielle Anderson',
-                avatar: require('../../../src/assets/images/portrait/small/avatar-s-9.jpg').default
+                avatar: require('../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
             },
             tags: ['low'],
             isCompleted: false,
             isDeleted: false,
-            isImportant: true
-        }
-    ]
+            isImportant: true,
+        },
+    ],
 };
 
 // ------------------------------------------------

@@ -15,16 +15,16 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
   boards: [
     {
       id: 'todo',
-      title: 'TODO'
+      title: 'TODO',
     },
     {
       id: 'in-progress',
-      title: 'In Progress'
+      title: 'In Progress',
     },
     {
       id: 'done',
-      title: 'Done'
-    }
+      title: 'Done',
+    },
   ],
   tasks: [
     {
@@ -37,40 +37,40 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'documentation.doc',
-          img: require('../../../src/assets/images/icons/file-icons/doc.png').default
+          img: require('../../../src/assets/images/icons/file-icons/doc.png').default,
         },
         {
           name: 'app.js',
-          img: require('../../../src/assets/images/icons/file-icons/js.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/js.png').default,
+        },
       ],
       comments: [
         {
           name: 'Joey Tribbiani',
           img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Chandler Bing',
           img: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Monica Geller',
           img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-          comment: 'Complete this on priority'
-        }
+          comment: 'Complete this on priority',
+        },
       ],
       assignedTo: [
         {
           title: 'Ross Geller',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default
+          img: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default,
         },
         {
           title: 'Pheobe Buffay',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default
-        }
-      ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default,
+        },
+      ],
     },
     {
       id: 2,
@@ -84,19 +84,19 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'book.pdf',
-          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default
+          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default,
         },
         {
           name: 'app.js',
-          img: require('../../../src/assets/images/icons/file-icons/js.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/js.png').default,
+        },
       ],
       assignedTo: [
         {
           title: 'Rachel Green',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default
-        }
-      ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
+        },
+      ],
     },
     {
       id: 3,
@@ -104,12 +104,12 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'list.txt',
-          img: require('../../../src/assets/images/icons/file-icons/txt.png').default
+          img: require('../../../src/assets/images/icons/file-icons/txt.png').default,
         },
         {
           name: 'pdf.png',
-          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default,
+        },
       ],
       boardId: 'in-progress',
       description: '',
@@ -119,44 +119,44 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
         {
           name: 'Chandler Bing',
           img: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Monica Geller',
           img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Joey Tribbiani',
           img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Rachel Green',
           img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Ross Geller',
           img: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Pheobe Buffay',
           img: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default,
-          comment: 'Complete this on priority'
-        }
+          comment: 'Complete this on priority',
+        },
       ],
       assignedTo: [
         {
           title: 'Monica Geller',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default
+          img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
         },
         {
           title: 'Chandler Bing',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default
-        }
-      ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
+        },
+      ],
     },
     {
       id: 4,
@@ -164,20 +164,20 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'list.txt',
-          img: require('../../../src/assets/images/icons/file-icons/txt.png').default
+          img: require('../../../src/assets/images/icons/file-icons/txt.png').default,
         },
         {
           name: 'pdf.png',
-          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default
+          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default,
         },
         {
           name: 'documentation.doc',
-          img: require('../../../src/assets/images/icons/file-icons/doc.png').default
+          img: require('../../../src/assets/images/icons/file-icons/doc.png').default,
         },
         {
           name: 'app.js',
-          img: require('../../../src/assets/images/icons/file-icons/js.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/js.png').default,
+        },
       ],
       boardId: 'in-progress',
       description: '',
@@ -187,24 +187,24 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
         {
           name: 'Chandler Bing',
           img: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Monica Geller',
           img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-          comment: 'Complete this on priority'
-        }
+          comment: 'Complete this on priority',
+        },
       ],
       assignedTo: [
         {
           title: 'Joey Tribbiani',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default
+          img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
         },
         {
           title: 'Jerry Seinfeld',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default
-        }
-      ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
+        },
+      ],
     },
     {
       id: 5,
@@ -212,8 +212,8 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'list.txt',
-          img: require('../../../src/assets/images/icons/file-icons/txt.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/txt.png').default,
+        },
       ],
       boardId: 'done',
       description: '',
@@ -223,24 +223,24 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
         {
           name: 'Chandler Bing',
           img: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Monica Geller',
           img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-          comment: 'Complete this on priority'
-        }
+          comment: 'Complete this on priority',
+        },
       ],
       assignedTo: [
         {
           title: 'Astro Kramer',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default
+          img: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default,
         },
         {
           title: 'George Costanza',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default
-        }
-      ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default,
+        },
+      ],
     },
     {
       id: 6,
@@ -248,16 +248,16 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
       attachments: [
         {
           name: 'documentation.doc',
-          img: require('../../../src/assets/images/icons/file-icons/doc.png').default
+          img: require('../../../src/assets/images/icons/file-icons/doc.png').default,
         },
         {
           name: 'app.js',
-          img: require('../../../src/assets/images/icons/file-icons/js.png').default
+          img: require('../../../src/assets/images/icons/file-icons/js.png').default,
         },
         {
           name: 'book.pdf',
-          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default
-        }
+          img: require('../../../src/assets/images/icons/file-icons/pdf.png').default,
+        },
       ],
       boardId: 'done',
       description: '',
@@ -267,26 +267,26 @@ const data: { boards: IBoard[], tasks: ITask[] } = {
         {
           name: 'Elaine Benes',
           img: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-          comment: 'Complete this on priority'
+          comment: 'Complete this on priority',
         },
         {
           name: 'Newman Knight',
           img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-          comment: 'Complete this on priority'
-        }
+          comment: 'Complete this on priority',
+        },
       ],
       assignedTo: [
         {
           title: 'Charlie Kelly',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default
+          img: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
         },
         {
           title: 'Dennis Reynolds',
-          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default
-        }
-      ]
-    }
-  ]
+          img: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
+        },
+      ],
+    },
+  ],
 };
 
 // ------------------------------------------------
@@ -358,7 +358,7 @@ mock.onPost('/apps/kanban/add-task').reply(config => {
     attachments: [],
     dueDate: dayAfterTomorrow,
     comments: [],
-    assignedTo: []
+    assignedTo: [],
   };
 
   data.tasks.push(newTask);

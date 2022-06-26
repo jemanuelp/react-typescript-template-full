@@ -21,8 +21,8 @@ const data = {
       end: nextDay,
       allDay: false,
       extendedProps: {
-        calendar: 'Business'
-      }
+        calendar: 'Business',
+      },
     },
     {
       id: 2,
@@ -32,8 +32,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
-      }
+        calendar: 'Business',
+      },
     },
     {
       id: 3,
@@ -43,8 +43,8 @@ const data = {
       start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
       extendedProps: {
-        calendar: 'Holiday'
-      }
+        calendar: 'Holiday',
+      },
     },
     {
       id: 4,
@@ -54,8 +54,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
-      }
+        calendar: 'Personal',
+      },
     },
     {
       id: 5,
@@ -65,8 +65,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'ETC'
-      }
+        calendar: 'ETC',
+      },
     },
     {
       id: 6,
@@ -76,8 +76,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
-      }
+        calendar: 'Personal',
+      },
     },
     {
       id: 7,
@@ -87,8 +87,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Family'
-      }
+        calendar: 'Family',
+      },
     },
     {
       id: 8,
@@ -98,8 +98,8 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
-      }
+        calendar: 'Business',
+      },
     },
     {
       id: 9,
@@ -109,8 +109,8 @@ const data = {
       end: nextMonth,
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
-      }
+        calendar: 'Business',
+      },
     },
     {
       id: 10,
@@ -120,10 +120,10 @@ const data = {
       end: prevMonth,
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
-      }
-    }
-  ]
+        calendar: 'Personal',
+      },
+    },
+  ],
 };
 
 // ------------------------------------------------
@@ -135,7 +135,7 @@ mock.onGet('/apps/calendar/events').reply(config => {
 
   return [
       200,
-    data.events.filter(event => calendars.includes(event.extendedProps.calendar))
+    data.events.filter(event => calendars.includes(event.extendedProps.calendar)),
   ];
 });
 

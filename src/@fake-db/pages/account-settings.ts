@@ -7,14 +7,14 @@ const data = {
       username: 'johndoe',
       fullName: 'John Doe',
       email: 'granger007@hogward.com',
-      company: 'PIXINVENT'
+      company: 'PIXINVENT',
     },
     info: {
       bio: '',
       dob: null,
       country: 'USA',
       website: '',
-      phone: 6562542568
+      phone: 6562542568,
     },
     social: {
       socialLinks: {
@@ -23,20 +23,20 @@ const data = {
         google: '',
         linkedIn: 'https://www.linkedin.com',
         instagram: '',
-        quora: ''
+        quora: '',
       },
       connections: {
         twitter: {
           profileImg: require('../../../src/assets/images/avatars/11-small.png').default,
-          id: 'johndoe'
+          id: 'johndoe',
         },
         google: {
           profileImg: require('../../../src/assets/images/avatars/3-small.png').default,
-          id: 'luraweber'
+          id: 'luraweber',
         },
         facebook: {},
-        github: {}
-      }
+        github: {},
+      },
     },
     notification: {
       commentOnArticle: true,
@@ -44,9 +44,9 @@ const data = {
       followMe: false,
       newAnnouncements: true,
       productUpdates: true,
-      blogDigest: false
-    }
-  }
+      blogDigest: false,
+    },
+  },
 };
 
 mock.onGet('/account-setting/data').reply(() => [200, data.accountSetting]);

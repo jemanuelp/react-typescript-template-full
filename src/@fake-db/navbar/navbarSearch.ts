@@ -12,7 +12,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Analytics Dashboard',
                 icon: 'Home',
-                link: '/dashboard/analytics'
+                link: '/dashboard/analytics',
             },
             {
                 id: 2,
@@ -20,7 +20,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'eCommerce Dashboard',
                 icon: 'Home',
-                link: '/'
+                link: '/',
             },
             {
                 id: 3,
@@ -28,7 +28,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: true,
                 title: 'Email',
                 icon: 'Mail',
-                link: '/apps/email'
+                link: '/apps/email',
             },
             {
                 id: 4,
@@ -36,7 +36,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: true,
                 title: 'Chat',
                 icon: 'MessageSquare',
-                link: '/apps/chat'
+                link: '/apps/chat',
             },
             {
                 id: 5,
@@ -44,7 +44,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: true,
                 title: 'Todo',
                 icon: 'CheckSquare',
-                link: '/apps/todo'
+                link: '/apps/todo',
             },
             {
                 id: 6,
@@ -52,7 +52,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: true,
                 title: 'Calendar',
                 icon: 'Calendar',
-                link: '/apps/calendar'
+                link: '/apps/calendar',
             },
             {
                 id: 7,
@@ -60,7 +60,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Invoice List',
                 icon: 'List',
-                link: '/apps/invoice/list'
+                link: '/apps/invoice/list',
             },
             {
                 id: 8,
@@ -68,7 +68,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Invoice Preview',
                 icon: 'FileText',
-                link: '/apps/invoice/preview'
+                link: '/apps/invoice/preview',
             },
             {
                 id: 9,
@@ -76,7 +76,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Invoice Edit',
                 icon: 'Edit',
-                link: '/apps/invoice/edit'
+                link: '/apps/invoice/edit',
             },
             {
                 id: 10,
@@ -84,7 +84,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Invoice Add',
                 icon: 'Plus',
-                link: '/apps/invoice/add'
+                link: '/apps/invoice/add',
             },
             {
                 id: 11,
@@ -92,7 +92,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Shop Ecommerce',
                 icon: 'ShoppingCart',
-                link: '/apps/ecommerce/shop'
+                link: '/apps/ecommerce/shop',
             },
             {
                 id: 12,
@@ -100,7 +100,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Product Detail',
                 icon: 'Circle',
-                link: '/apps/ecommerce/product-detail'
+                link: '/apps/ecommerce/product-detail',
             },
             {
                 id: 13,
@@ -108,7 +108,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Wish List',
                 icon: 'Heart',
-                link: '/apps/ecommerce/wishlist'
+                link: '/apps/ecommerce/wishlist',
             },
             {
                 id: 14,
@@ -116,7 +116,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Checkout',
                 icon: 'CreditCard',
-                link: '/apps/ecommerce/checkout'
+                link: '/apps/ecommerce/checkout',
             },
             {
                 id: 15,
@@ -124,7 +124,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'User List',
                 icon: 'User',
-                link: '/apps/user/list'
+                link: '/apps/user/list',
             },
             {
                 id: 16,
@@ -132,7 +132,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'User View',
                 icon: 'User',
-                link: '/apps/user/view'
+                link: '/apps/user/view',
             },
             {
                 id: 18,
@@ -140,7 +140,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Login Basic',
                 icon: 'LogIn',
-                link: '/pages/login-basic'
+                link: '/pages/login-basic',
             },
             {
                 id: 19,
@@ -148,7 +148,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Login Cover',
                 icon: 'LogIn',
-                link: '/pages/login-cover'
+                link: '/pages/login-cover',
             },
             {
                 id: 20,
@@ -156,7 +156,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Register Basic',
                 icon: 'UserPlus',
-                link: '/pages/register-basic'
+                link: '/pages/register-basic',
             },
             {
                 id: 21,
@@ -164,7 +164,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Register Cover',
                 icon: 'UserPlus',
-                link: '/pages/register-cover'
+                link: '/pages/register-cover',
             },
             {
                 id: 22,
@@ -172,7 +172,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Forgot Password Basic',
                 icon: 'Crosshair',
-                link: '/pages/forgot-password-basic'
+                link: '/pages/forgot-password-basic',
             },
             {
                 id: 23,
@@ -180,7 +180,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Forgot Password Cover',
                 icon: 'Crosshair',
-                link: '/pages/forgot-password-cover'
+                link: '/pages/forgot-password-cover',
             },
             {
                 id: 24,
@@ -188,7 +188,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Reset Password Basic',
                 icon: 'TrendingUp',
-                link: '/pages/reset-password-basic'
+                link: '/pages/reset-password-basic',
             },
             {
                 id: 25,
@@ -196,7 +196,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Reset Password Cover',
                 icon: 'TrendingUp',
-                link: '/pages/reset-password-cover'
+                link: '/pages/reset-password-cover',
             },
             {
                 id: 26,
@@ -204,7 +204,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Account Settings',
                 icon: 'Settings',
-                link: '/pages/account-settings'
+                link: '/pages/account-settings',
             },
             {
                 id: 27,
@@ -213,7 +213,7 @@ export const searchArr: INavbar[] = [
                 title: 'Profile Page',
                 icon: 'Users',
                 link: '/pages/profile',
-                collapsed: true
+                collapsed: true,
             },
             {
                 id: 28,
@@ -221,7 +221,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'FAQ Page',
                 icon: 'Zap',
-                link: '/pages/faq'
+                link: '/pages/faq',
             },
             {
                 id: 29,
@@ -229,7 +229,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Knowledge Base Page',
                 icon: 'AlignLeft',
-                link: '/pages/knowledge-base'
+                link: '/pages/knowledge-base',
             },
 
             {
@@ -238,7 +238,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Pricing',
                 icon: 'DollarSign',
-                link: '/pages/pricing'
+                link: '/pages/pricing',
             },
 
             {
@@ -247,7 +247,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Blog List',
                 icon: 'List',
-                link: '/pages/blog/list'
+                link: '/pages/blog/list',
             },
             {
                 id: 32,
@@ -255,7 +255,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Blog Details',
                 icon: 'FileText',
-                link: '/pages/blog/detail'
+                link: '/pages/blog/detail',
             },
             {
                 id: 33,
@@ -263,7 +263,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Blog Edit',
                 icon: 'Edit',
-                link: '/pages/blog/edit'
+                link: '/pages/blog/edit',
             },
 
             {
@@ -272,7 +272,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Coming Soon Page',
                 icon: 'Watch',
-                link: '/misc/coming-soon'
+                link: '/misc/coming-soon',
             },
 
             {
@@ -281,7 +281,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Not Authorized Page',
                 icon: 'UserX',
-                link: '/misc/not-authorized'
+                link: '/misc/not-authorized',
             },
             {
                 id: 36,
@@ -289,7 +289,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Maintenance Page',
                 icon: 'Aperture',
-                link: '/misc/maintenance'
+                link: '/misc/maintenance',
             },
             {
                 id: 37,
@@ -297,7 +297,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Error',
                 icon: 'AlertTriangle',
-                link: '/misc/error'
+                link: '/misc/error',
             },
             {
                 id: 38,
@@ -305,7 +305,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Typography',
                 icon: 'Type',
-                link: '/ui-element/typography'
+                link: '/ui-element/typography',
             },
             {
                 id: 39,
@@ -313,7 +313,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Colors',
                 icon: 'Feather',
-                link: '/colors/colors'
+                link: '/colors/colors',
             },
             {
                 id: 40,
@@ -321,7 +321,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Feather Icons',
                 icon: 'Feather',
-                link: '/icons/reactfeather'
+                link: '/icons/reactfeather',
             },
             {
                 id: 41,
@@ -329,7 +329,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Card Basic',
                 icon: 'Square',
-                link: '/cards/basic'
+                link: '/cards/basic',
             },
             {
                 id: 42,
@@ -337,7 +337,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Card Advance',
                 icon: 'Tablet',
-                link: '/cards/advance'
+                link: '/cards/advance',
             },
             {
                 id: 43,
@@ -345,7 +345,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Card Statistics',
                 icon: 'Smartphone',
-                link: '/cards/statistics'
+                link: '/cards/statistics',
             },
             {
                 id: 44,
@@ -353,7 +353,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Card Analytics',
                 icon: 'BarChart2',
-                link: '/cards/analytics'
+                link: '/cards/analytics',
             },
             {
                 id: 45,
@@ -361,7 +361,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Card Actions',
                 icon: 'Airplay',
-                link: '/cards/action'
+                link: '/cards/action',
             },
             {
                 id: 46,
@@ -369,7 +369,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Alerts',
                 icon: 'Info',
-                link: '/components/alerts'
+                link: '/components/alerts',
             },
             {
                 id: 47,
@@ -377,7 +377,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Auto Complete',
                 icon: 'Search',
-                link: '/components/auto-complete'
+                link: '/components/auto-complete',
             },
             {
                 id: 48,
@@ -385,7 +385,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Avatar',
                 icon: 'User',
-                link: '/components/avatar'
+                link: '/components/avatar',
             },
             {
                 id: 49,
@@ -393,7 +393,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Badges',
                 icon: 'Circle',
-                link: '/components/badges'
+                link: '/components/badges',
             },
             {
                 id: 50,
@@ -401,7 +401,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Breadcrumbs',
                 icon: 'MoreHorizontal',
-                link: '/components/breadcrumbs'
+                link: '/components/breadcrumbs',
             },
             {
                 id: 51,
@@ -409,7 +409,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Buttons',
                 icon: 'Inbox',
-                link: '/components/buttons'
+                link: '/components/buttons',
             },
             {
                 id: 52,
@@ -417,7 +417,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Carousel',
                 icon: 'Map',
-                link: '/components/carousel'
+                link: '/components/carousel',
             },
             {
                 id: 53,
@@ -425,7 +425,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Collapse',
                 icon: 'Minimize',
-                link: '/components/collapse'
+                link: '/components/collapse',
             },
             {
                 id: 54,
@@ -433,7 +433,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Divider',
                 icon: 'Minus',
-                link: '/components/divider'
+                link: '/components/divider',
             },
             {
                 id: 55,
@@ -441,7 +441,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Dropdowns',
                 icon: 'Inbox',
-                link: '/components/dropdowns'
+                link: '/components/dropdowns',
             },
             {
                 id: 56,
@@ -449,7 +449,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'List Group',
                 icon: 'Layers',
-                link: '/components/list-group'
+                link: '/components/list-group',
             },
             {
                 id: 58,
@@ -457,7 +457,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Modals',
                 icon: 'Maximize2',
-                link: '/components/modals'
+                link: '/components/modals',
             },
             {
                 id: 59,
@@ -465,7 +465,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Navs Component',
                 icon: 'MoreVertical',
-                link: '/components/nav-component'
+                link: '/components/nav-component',
             },
             {
                 id: 60,
@@ -473,7 +473,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Pagination',
                 icon: 'ChevronsRight',
-                link: '/components/pagination'
+                link: '/components/pagination',
             },
             {
                 id: 61,
@@ -481,7 +481,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Pill Badges',
                 icon: 'Circle',
-                link: '/components/pill-badges'
+                link: '/components/pill-badges',
             },
             {
                 id: 62,
@@ -489,7 +489,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Pills Component',
                 icon: 'ToggleRight',
-                link: '/components/pills-component'
+                link: '/components/pills-component',
             },
             {
                 id: 63,
@@ -497,7 +497,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Popovers',
                 icon: 'MessageCircle',
-                link: '/components/popovers'
+                link: '/components/popovers',
             },
             {
                 id: 64,
@@ -505,7 +505,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Progress',
                 icon: 'Server',
-                link: '/components/progress'
+                link: '/components/progress',
             },
             {
                 id: 65,
@@ -513,7 +513,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Spinners',
                 icon: 'Sun',
-                link: '/components/spinners'
+                link: '/components/spinners',
             },
             {
                 id: 66,
@@ -521,7 +521,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Tabs Component',
                 icon: 'Server',
-                link: '/components/tabs-component'
+                link: '/components/tabs-component',
             },
             {
                 id: 67,
@@ -529,7 +529,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Timeline',
                 icon: 'MoreVertical',
-                link: '/components/timeline'
+                link: '/components/timeline',
             },
             {
                 id: 68,
@@ -537,7 +537,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Toasts',
                 icon: 'Triangle',
-                link: '/components/toasts'
+                link: '/components/toasts',
             },
             {
                 id: 69,
@@ -545,7 +545,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Tooltips',
                 icon: 'MessageCircle',
-                link: '/components/tooltips'
+                link: '/components/tooltips',
             },
             {
                 id: 70,
@@ -553,7 +553,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Sweet Alerts',
                 icon: 'AlertTriangle',
-                link: '/extensions/sweet-alert'
+                link: '/extensions/sweet-alert',
             },
             {
                 id: 71,
@@ -561,7 +561,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'BlockUI',
                 icon: 'Loader',
-                link: '/components/blockui'
+                link: '/components/blockui',
             },
             {
                 id: 72,
@@ -569,7 +569,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Toastr',
                 icon: 'CreditCard',
-                link: '/extensions/toastr'
+                link: '/extensions/toastr',
             },
             {
                 id: 73,
@@ -577,7 +577,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Slider',
                 icon: 'Sliders',
-                link: '/extensions/slider'
+                link: '/extensions/slider',
             },
             {
                 id: 74,
@@ -585,7 +585,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Drag & Drop',
                 icon: 'Move',
-                link: '/extensions/drag-and-drop'
+                link: '/extensions/drag-and-drop',
             },
             {
                 id: 75,
@@ -593,7 +593,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Tour',
                 icon: 'Airplay',
-                link: '/extensions/tour'
+                link: '/extensions/tour',
             },
             {
                 id: 76,
@@ -601,7 +601,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Clipboard',
                 icon: 'Clipboard',
-                link: '/extensions/clipboard'
+                link: '/extensions/clipboard',
             },
             {
                 id: 77,
@@ -609,7 +609,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'React Player',
                 icon: 'Film',
-                link: '/extensions/react-player'
+                link: '/extensions/react-player',
             },
             {
                 id: 78,
@@ -617,7 +617,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Context Menu',
                 icon: 'Menu',
-                link: '/extensions/context-menu'
+                link: '/extensions/context-menu',
             },
             {
                 id: 79,
@@ -625,7 +625,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Swiper',
                 icon: 'Smartphone',
-                link: '/extensions/swiper'
+                link: '/extensions/swiper',
             },
             {
                 id: 81,
@@ -633,7 +633,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Ratings',
                 icon: 'Star',
-                link: '/extensions/ratings'
+                link: '/extensions/ratings',
             },
             {
                 id: 82,
@@ -641,7 +641,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'I18n',
                 icon: 'Globe',
-                link: '/extensions/i18n'
+                link: '/extensions/i18n',
             },
             {
                 id: 83,
@@ -649,7 +649,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Access Control',
                 icon: 'Lock',
-                link: '/access-control'
+                link: '/access-control',
             },
             {
                 id: 84,
@@ -657,7 +657,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'React Paginate',
                 icon: 'MoreHorizontal',
-                link: '/extensions/pagination'
+                link: '/extensions/pagination',
             },
             {
                 id: 85,
@@ -665,7 +665,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Import',
                 icon: 'DownloadCloud',
-                link: '/extensions/import'
+                link: '/extensions/import',
             },
             {
                 id: 86,
@@ -673,7 +673,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Export',
                 icon: 'UploadCloud',
-                link: '/extensions/export'
+                link: '/extensions/export',
             },
             {
                 id: 87,
@@ -681,7 +681,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Export Selected',
                 icon: 'CheckSquare',
-                link: '/extensions/export-selected'
+                link: '/extensions/export-selected',
             },
             {
                 id: 88,
@@ -689,7 +689,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Collapsed Menu Page Layout',
                 icon: 'Layout',
-                link: '/page-layout/collapse-menu'
+                link: '/page-layout/collapse-menu',
             },
             {
                 id: 89,
@@ -697,7 +697,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Boxed Page Layout',
                 icon: 'Layout',
-                link: '/page-layout/layout-boxed'
+                link: '/page-layout/layout-boxed',
             },
             {
                 id: 90,
@@ -705,7 +705,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Without Menu Page Layout',
                 icon: 'Layout',
-                link: '/page-layout/without-menu'
+                link: '/page-layout/without-menu',
             },
             {
                 id: 91,
@@ -713,7 +713,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Empty Page Layout',
                 icon: 'Layout',
-                link: '/page-layout/layout-empty'
+                link: '/page-layout/layout-empty',
             },
             {
                 id: 92,
@@ -721,7 +721,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Blank Page Layout',
                 icon: 'Layout',
-                link: '/page-layout/layout-blank'
+                link: '/page-layout/layout-blank',
             },
             {
                 id: 93,
@@ -729,7 +729,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Input',
                 icon: 'Server',
-                link: '/forms/elements/input'
+                link: '/forms/elements/input',
             },
             {
                 id: 94,
@@ -737,7 +737,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Input Group',
                 icon: 'Package',
-                link: '/forms/elements/input-group'
+                link: '/forms/elements/input-group',
             },
             {
                 id: 95,
@@ -745,7 +745,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Input Mask',
                 icon: 'Copy',
-                link: '/forms/elements/input-mask'
+                link: '/forms/elements/input-mask',
             },
             {
                 id: 96,
@@ -753,7 +753,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Textarea',
                 icon: 'Edit2',
-                link: '/forms/elements/textarea'
+                link: '/forms/elements/textarea',
             },
             {
                 id: 97,
@@ -761,7 +761,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Checkbox',
                 icon: 'CheckSquare',
-                link: '/forms/elements/checkbox'
+                link: '/forms/elements/checkbox',
             },
             {
                 id: 98,
@@ -769,7 +769,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Radio',
                 icon: 'StopCircle',
-                link: '/forms/elements/radio'
+                link: '/forms/elements/radio',
             },
             {
                 id: 99,
@@ -777,7 +777,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Switch',
                 icon: 'ToggleLeft',
-                link: '/forms/elements/switch'
+                link: '/forms/elements/switch',
             },
             {
                 id: 100,
@@ -785,7 +785,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Select',
                 icon: 'Server',
-                link: '/forms/elements/select'
+                link: '/forms/elements/select',
             },
             {
                 id: 101,
@@ -793,7 +793,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Number Input',
                 icon: 'Plus',
-                link: '/forms/elements/number-input'
+                link: '/forms/elements/number-input',
             },
             {
                 id: 102,
@@ -801,7 +801,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'File Uploader',
                 icon: 'Upload',
-                link: '/forms/elements/file-uploader'
+                link: '/forms/elements/file-uploader',
             },
             {
                 id: 103,
@@ -809,7 +809,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Editor',
                 icon: 'Edit3',
-                link: '/forms/elements/editor'
+                link: '/forms/elements/editor',
             },
             {
                 id: 104,
@@ -817,7 +817,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Date & Time Picker',
                 icon: 'Calendar',
-                link: '/forms/elements/pickers'
+                link: '/forms/elements/pickers',
             },
             {
                 id: 105,
@@ -825,7 +825,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Form Layouts',
                 icon: 'Layout',
-                link: '/forms/layout/form-layout'
+                link: '/forms/layout/form-layout',
             },
             {
                 id: 106,
@@ -833,7 +833,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Form Wizard',
                 icon: 'Sliders',
-                link: '/forms/wizard'
+                link: '/forms/wizard',
             },
             {
                 id: 107,
@@ -841,7 +841,7 @@ export const searchArr: INavbar[] = [
                 icon: 'AlertTriangle',
                 target: 'formValidation',
                 title: 'Form Validation',
-                link: '/forms/form-validation'
+                link: '/forms/form-validation',
             },
             {
                 id: 109,
@@ -849,7 +849,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Form Repeater',
                 icon: 'RotateCw',
-                link: '/forms/form-repeater'
+                link: '/forms/form-repeater',
             },
             {
                 id: 110,
@@ -857,7 +857,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Reactstrap Tables',
                 icon: 'Grid',
-                link: '/tables/reactstrap'
+                link: '/tables/reactstrap',
             },
             {
                 id: 111,
@@ -865,7 +865,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Datatables Basic',
                 icon: 'Grid',
-                link: '/datatables/basic'
+                link: '/datatables/basic',
             },
             {
                 id: 112,
@@ -873,7 +873,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Datatables Advance',
                 icon: 'Grid',
-                link: '/datatables/advance'
+                link: '/datatables/advance',
             },
             {
                 id: 114,
@@ -881,7 +881,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Apex Charts',
                 icon: 'BarChart',
-                link: '/charts/apex'
+                link: '/charts/apex',
             },
             {
                 id: 115,
@@ -889,7 +889,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'ChartJS',
                 icon: 'Activity',
-                link: '/charts/chartjs'
+                link: '/charts/chartjs',
             },
             {
                 id: 116,
@@ -897,7 +897,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Recharts',
                 icon: 'BarChart2',
-                link: '/charts/recharts'
+                link: '/charts/recharts',
             },
             {
                 id: 118,
@@ -905,7 +905,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Roles',
                 icon: 'Shield',
-                link: '/apps/roles'
+                link: '/apps/roles',
             },
             {
                 id: 119,
@@ -913,7 +913,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Permissions',
                 icon: 'Shield',
-                link: '/apps/permissions'
+                link: '/apps/permissions',
             },
             {
                 id: 120,
@@ -921,7 +921,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'License',
                 icon: 'CreditCard',
-                link: '/pages/license'
+                link: '/pages/license',
             },
             {
                 id: 121,
@@ -929,7 +929,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'API Key',
                 icon: 'Key',
-                link: '/pages/api-key'
+                link: '/pages/api-key',
             },
             {
                 id: 122,
@@ -937,7 +937,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Accordion',
                 icon: 'AlignJustify',
-                link: '/components/accordion'
+                link: '/components/accordion',
             },
             {
                 id: 123,
@@ -945,7 +945,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'OffCanvas',
                 icon: 'Layout',
-                link: '/components/offcanvas'
+                link: '/components/offcanvas',
             },
             {
                 id: 123,
@@ -953,7 +953,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'OffCanvas',
                 icon: 'Layout',
-                link: '/components/offcanvas'
+                link: '/components/offcanvas',
             },
             {
                 id: 124,
@@ -961,7 +961,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 title: 'Modal Examples',
                 icon: 'Square',
-                link: '/pages/modal-examples'
+                link: '/pages/modal-examples',
             },
             {
                 id: 125,
@@ -969,7 +969,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 target: 'verifyEmailBasic',
                 title: 'Verify Email Basic',
-                link: '/pages/verify-email-basic'
+                link: '/pages/verify-email-basic',
             },
             {
                 id: 126,
@@ -977,7 +977,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 target: 'verifyEmailCover',
                 title: 'Verify Email Cover',
-                link: '/pages/verify-email-cover'
+                link: '/pages/verify-email-cover',
             },
             {
                 id: 127,
@@ -985,7 +985,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 target: 'TwoStepBasic',
                 link: '/pages/two-steps-basic',
-                title: 'Two Step Verification Basic'
+                title: 'Two Step Verification Basic',
             },
             {
                 id: 128,
@@ -993,7 +993,7 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 target: 'TwoStepCover',
                 link: '/pages/two-steps-cover',
-                title: 'Two Step Verification Cover'
+                title: 'Two Step Verification Cover',
             },
             {
                 id: 129,
@@ -1001,9 +1001,9 @@ export const searchArr: INavbar[] = [
                 isBookmarked: false,
                 target: 'appKanban',
                 link: '/apps/kanban',
-                title: 'Kanban'
-            }
-        ]
+                title: 'Kanban',
+            },
+        ],
     },
     {
         groupTitle: 'Files',
@@ -1013,27 +1013,27 @@ export const searchArr: INavbar[] = [
                 title: 'Passport Image',
                 by: 'Oliver Queen',
                 size: '52kb',
-                file: require('../../../src/assets/images/icons/jpg.png').default
+                file: require('../../../src/assets/images/icons/jpg.png').default,
             },
             {
                 title: 'Parenting Guide',
                 by: 'Alfred Pennyworth',
                 size: '2.3mb',
-                file: require('../../../src/assets/images/icons/doc.png').default
+                file: require('../../../src/assets/images/icons/doc.png').default,
             },
             {
                 title: 'Class Notes',
                 by: 'Barry Allen',
                 size: '30kb',
-                file: require('../../../src/assets/images/icons/doc.png').default
+                file: require('../../../src/assets/images/icons/doc.png').default,
             },
             {
                 title: 'Class Attendance',
                 by: 'Walter White',
                 size: '52mb',
-                file: require('../../../src/assets/images/icons/xls.png').default
-            }
-        ]
+                file: require('../../../src/assets/images/icons/xls.png').default,
+            },
+        ],
     },
     {
         groupTitle: 'Contacts',
@@ -1043,28 +1043,28 @@ export const searchArr: INavbar[] = [
                 title: 'Mia Davis',
                 email: 'miadavis@teleworm.us',
                 img: require('../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
-                date: '01/03/2020'
+                date: '01/03/2020',
             },
             {
                 title: 'Norris Carrière',
                 email: 'NorrisCarriere@rhyta.com',
                 img: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
-                date: '07/03/2020'
+                date: '07/03/2020',
             },
             {
                 title: 'Charlotte Gordon',
                 email: 'CharlotteGordon@jourrapide.com',
                 img: require('../../../src/assets/images/portrait/small/avatar-s-26.jpg').default,
-                date: '14/03/2020'
+                date: '14/03/2020',
             },
             {
                 title: 'Robert Nash',
                 email: 'RobertNash@dayrep.com',
                 img: require('../../../src/assets/images/portrait/small/avatar-s-25.jpg').default,
-                date: '21/03/2020'
-            }
-        ]
-    }
+                date: '21/03/2020',
+            },
+        ],
+    },
 ];
 
 // GET Search Data

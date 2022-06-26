@@ -19,8 +19,8 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
     status: 'online',
     settings: {
       isTwoStepAuthVerificationEnabled: true,
-      isNotificationsOn: false
-    }
+      isNotificationsOn: false,
+    },
   },
   contacts: [
     {
@@ -30,7 +30,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
 
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-2.jpg').default,
-      status: 'offline'
+      status: 'offline',
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Toffee caramels jelly-o tart gummi bears cake I love ice cream lollipop. Sweet liquorice croissant candy danish dessert icing. Cake macaroon gingerbread toffee sweet.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-1.jpg').default,
-      status: 'busy'
+      status: 'busy',
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Soufflé soufflé caramels sweet roll. Jelly lollipop sesame snaps bear claw jelly beans sugar plum sugar plum.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-3.jpg').default,
-      status: 'busy'
+      status: 'busy',
     },
     {
       id: 4,
@@ -57,7 +57,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Chupa chups candy canes chocolate bar marshmallow liquorice muffin. Lemon drops oat cake tart liquorice tart cookie. Jelly-o cookie tootsie roll halvah.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-4.jpg').default,
-      status: 'online'
+      status: 'online',
     },
     {
       id: 5,
@@ -65,7 +65,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       role: 'Dietitian',
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-5.jpg').default,
-      status: 'busy'
+      status: 'busy',
     },
     {
       id: 6,
@@ -74,7 +74,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Toffee caramels jelly-o tart gummi bears cake I love ice cream lollipop. Sweet liquorice croissant candy danish dessert icing. Cake macaroon gingerbread toffee sweet.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
-      status: 'online'
+      status: 'online',
     },
     {
       id: 7,
@@ -83,7 +83,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Biscuit powder oat cake donut brownie ice cream I love soufflé. I love tootsie roll I love powder tootsie roll.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
-      status: 'online'
+      status: 'online',
     },
     {
       id: 8,
@@ -92,7 +92,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Bear claw ice cream lollipop gingerbread carrot cake. Brownie gummi bears chocolate muffin croissant jelly I love marzipan wafer.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
-      status: 'away'
+      status: 'away',
     },
     {
       id: 9,
@@ -101,7 +101,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       about:
         'Gummies gummi bears I love candy icing apple pie I love marzipan bear claw. I love tart biscuit I love candy canes pudding chupa chups liquorice croissant.',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
-      status: 'offline'
+      status: 'offline',
     },
     {
       id: 10,
@@ -109,8 +109,8 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       role: 'Building surveyor',
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
       avatar: require('../../../src/assets/images/portrait/small/avatar-s-10.jpg').default,
-      status: 'away'
-    }
+      status: 'away',
+    },
   ],
   chats: [
     {
@@ -121,34 +121,34 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
         {
           message: 'Hi',
           time: 'Mon Dec 10 2018 07:45:00 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'Hello. How can I help You?',
           time: 'Mon Dec 11 2018 07:45:15 GMT+0000 (GMT)',
-          senderId: 2
+          senderId: 2,
         },
         {
           message: 'Can I get details of my last transaction I made last month?',
           time: 'Mon Dec 11 2018 07:46:10 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'We need to check if we can provide you such information.',
           time: 'Mon Dec 11 2018 07:45:15 GMT+0000 (GMT)',
-          senderId: 2
+          senderId: 2,
         },
         {
           message: 'I will inform you as I get update on this.',
           time: 'Mon Dec 11 2018 07:46:15 GMT+0000 (GMT)',
-          senderId: 2
+          senderId: 2,
         },
         {
           message: 'If it takes long you can mail me at my mail address.',
           time: dayBeforePreviousDay,
-          senderId: 11
-        }
-      ]
+          senderId: 11,
+        },
+      ],
     },
     {
       id: 2,
@@ -158,56 +158,56 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
         {
           message: "How can we help? We're here for you!",
           time: 'Mon Dec 10 2018 07:45:00 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'Hey John, I am looking for the best admin template. Could you please help me to find it out?',
           time: 'Mon Dec 10 2018 07:45:23 GMT+0000 (GMT)',
-          senderId: 1
+          senderId: 1,
         },
         {
           message: 'It should be Bootstrap 5 compatible.',
           time: 'Mon Dec 10 2018 07:45:55 GMT+0000 (GMT)',
-          senderId: 1
+          senderId: 1,
         },
         {
           message: 'Absolutely!',
           time: 'Mon Dec 10 2018 07:46:00 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'Modern admin is the responsive bootstrap 5 admin template.!',
           time: 'Mon Dec 10 2018 07:46:05 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'Looks clean and fresh UI.',
           time: 'Mon Dec 10 2018 07:46:23 GMT+0000 (GMT)',
-          senderId: 1
+          senderId: 1,
         },
         {
           message: "It's perfect for my next project.",
           time: 'Mon Dec 10 2018 07:46:33 GMT+0000 (GMT)',
-          senderId: 1
+          senderId: 1,
         },
         {
           message: 'How can I purchase it?',
           time: 'Mon Dec 10 2018 07:46:43 GMT+0000 (GMT)',
-          senderId: 1
+          senderId: 1,
         },
         {
           message: 'Thanks, from ThemeForest.',
           time: 'Mon Dec 10 2018 07:46:53 GMT+0000 (GMT)',
-          senderId: 11
+          senderId: 11,
         },
         {
           message: 'I will purchase it for sure. 👍',
           time: previousDay,
-          senderId: 1
-        }
-      ]
-    }
-  ]
+          senderId: 1,
+        },
+      ],
+    },
+  ],
 };
 
 const reOrderChats = (arr: IChats[], from: number, to: number) => {
@@ -227,7 +227,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(() => {
       contact.chat = { id: chat.id,
         unseenMsgs: chat.unseenMsgs,
         lastMessage: chat.chat[chat.chat.length - 1],
-        chat: chat.chat
+        chat: chat.chat,
       };
     }
     return contact;
@@ -236,7 +236,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(() => {
     id: data.profileUser.id,
     avatar: data.profileUser.avatar,
     fullName: data.profileUser.fullName,
-    status: data.profileUser.status
+    status: data.profileUser.status,
   };
   return [200, { chatsContacts, contacts: data.contacts, profileUser: profileUserData }];
 });
@@ -273,7 +273,7 @@ mock.onPost('/apps/chat/send-msg').reply(config => {
   const newMessageData: IChat = {
     message: obj.message,
     time: new Date(),
-    senderId: 11
+    senderId: 11,
   };
   // If there's new chat for user create one
   let isNewChat = false;
@@ -286,7 +286,7 @@ mock.onPost('/apps/chat/send-msg').reply(config => {
       id: obj.contact.id,
       userId: obj.contact.id,
       unseenMsgs: 0,
-      chat: [newMessageData]
+      chat: [newMessageData],
     });
     activeChat = data.chats[data.chats.length - 1];
   } else {
@@ -301,7 +301,7 @@ mock.onPost('/apps/chat/send-msg').reply(config => {
   reOrderChats(
     data.chats,
     data.chats.findIndex(i => i.id === response.id),
-    0
+    0,
   );
 
   return [201, { response }];

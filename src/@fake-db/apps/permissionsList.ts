@@ -8,57 +8,57 @@ const data = {
       id: 1,
       name: 'Management',
       assignedTo: ['administrator'],
-      createdDate: '14 Apr 2021, 8:43 PM'
+      createdDate: '14 Apr 2021, 8:43 PM',
     },
     {
       id: 2,
       assignedTo: ['administrator'],
       name: 'Manage Billing & Roles',
-      createdDate: '16 Sep 2021, 5:20 PM'
+      createdDate: '16 Sep 2021, 5:20 PM',
     },
     {
       id: 3,
       name: 'Add & Remove Users',
       createdDate: '14 Oct 2021, 10:20 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['administrator', 'manager'],
     },
     {
       id: 4,
       name: 'Project Planning',
       createdDate: '14 Oct 2021, 10:20 AM',
-      assignedTo: ['administrator', 'user', 'support']
+      assignedTo: ['administrator', 'user', 'support'],
     },
     {
       id: 5,
       name: 'Manage Email Sequences',
       createdDate: '23 Aug 2021, 2:00 PM',
-      assignedTo: ['administrator', 'user', 'support']
+      assignedTo: ['administrator', 'user', 'support'],
     },
     {
       id: 6,
       name: 'Client Communication',
       createdDate: '15 Apr 2021, 11:30 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['administrator', 'manager'],
     },
     {
       id: 7,
       name: 'Only View',
       createdDate: '04 Dec 2021, 8:15 PM',
-      assignedTo: ['administrator', 'restricted-user']
+      assignedTo: ['administrator', 'restricted-user'],
     },
     {
       id: 8,
       name: 'Financial Management',
       createdDate: '25 Feb 2021, 10:30 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['administrator', 'manager'],
     },
     {
       id: 9,
       name: 'Manage Others’ Tasks',
       createdDate: '04 Nov 2021, 11:45 AM',
-      assignedTo: ['administrator', 'support']
-    }
-  ]
+      assignedTo: ['administrator', 'support'],
+    },
+  ],
 };
 
 // ------------------------------------------------
@@ -88,8 +88,8 @@ mock.onGet('/apps/permissions/data').reply(config => {
       params: config.params,
       allData: data.permissions,
       total: filteredData.length,
-      permissions: paginateArray(filteredData, perPage, page)
-    }
+      permissions: paginateArray(filteredData, perPage, page),
+    },
   ];
 });
 
@@ -112,7 +112,7 @@ mock.onPost('/apps/permissions/add-permission').reply(config => {
     .toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
     })
     .replace(',', '');
   const time = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -120,7 +120,11 @@ mock.onPost('/apps/permissions/add-permission').reply(config => {
   const monthsArr = months.split(' ');
   
   const moveElement = (array: any[], sourceIndex: any, destinationIndex: any) => {
-    return array.map(a => (a === sourceIndex ? array.find(a => a === destinationIndex) : a === destinationIndex ? array.find(a => a === sourceIndex) : a)
+    return array.map(a => (a === sourceIndex
+? array.find(a => a === destinationIndex)
+: a === destinationIndex
+? array.find(a => a === sourceIndex)
+: a),
     );
   };
 
