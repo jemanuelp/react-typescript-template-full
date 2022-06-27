@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap';
 
 const NamingSource = () => {
@@ -15,6 +14,7 @@ const NamingSource = () => {
         </CardText>
         <blockquote className='blockquote mb-0'>
           <CardText className='mb-0'>
+            {/* eslint-disable-next-line max-len */}
             Being the richest man in the cemetery doesn't matter to me. Going to bed at night saying we've done
             something wonderful, that's what matters to me.
           </CardText>

@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const ListUnstyled = () => {
@@ -10,8 +9,10 @@ const ListUnstyled = () => {
 
       <CardBody>
         <CardText>
+          {/* eslint-disable-next-line max-len */}
           Use class <code>.list-unstyled</code> for Lists Unstyled. It remove the default <code>list-style</code> and
           left margin on list items (immediate children only).
+          {/* eslint-disable-next-line max-len */}
           <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class
           for any nested lists as well.
         </CardText>

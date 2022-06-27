@@ -44,6 +44,7 @@ const Typography = () => {
             <h4>BlockQuotes</h4>
             <p>
               For quoting blocks of content from another source within your document. Wrap{' '}
+              {/* eslint-disable-next-line max-len */}
               <code>&lt;blockquote className="blockquote"&gt;</code> around any HTML as the quote.
             </p>
             <hr />
@@ -65,7 +66,9 @@ const Typography = () => {
           <div className='group-area'>
             <h4>Lists</h4>
             <p>
+              {/* eslint-disable-next-line max-len */}
               All lists - <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, and <code>&lt;dl&gt;</code> - have their
+              {/* eslint-disable-next-line max-len */}
               margin-top removed and a <code>margin-bottom: 1rem</code>. Nested lists have no <code>margin-bottom</code>
               .
             </p>
@@ -91,7 +94,9 @@ const Typography = () => {
           <div className='group-area'>
             <h4>Description list alignment</h4>
             <p>
+              {/* eslint-disable-next-line max-len */}
               Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic
+              {/* eslint-disable-next-line max-len */}
               mixins). For longer terms, you can optionally add a <code>.text-truncate</code> class to truncate the text
               with an ellipsis.
             </p>

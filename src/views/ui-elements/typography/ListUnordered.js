@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const ListUnordered = () => {
@@ -11,6 +10,7 @@ const ListUnordered = () => {
       <CardBody>
         <CardText>
           List of items in which the order does not explicitly matter. Use <code>.list-style-circle</code> or{' '}
+          {/* eslint-disable-next-line max-len */}
           <code>.list-style-square</code> class in unordered list to add circle or square bullet points.
         </CardText>
         <ul>
