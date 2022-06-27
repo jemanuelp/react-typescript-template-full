@@ -19,7 +19,7 @@ const cardsObj = {
   diners: dinersCC,
   maestro: maestroCC,
   discover: discoverCC,
-  mastercard: mastercardCC
+  mastercard: mastercardCC,
 };
 
 const BillingStep = ({ stepper }: any) => {
@@ -42,14 +42,16 @@ const BillingStep = ({ stepper }: any) => {
                 creditCard: true,
                 onCreditCardTypeChanged: type => {
                   setCardType(type);
-                }
+                },
               }}
             />
-            {cardType !== '' && cardType !== 'unknown' ? (
-              <InputGroupText>
-                <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
-              </InputGroupText>
-            ) : null}
+            {cardType !== '' && cardType !== 'unknown'
+              ? (
+                <InputGroupText>
+                  <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
+                </InputGroupText>
+              )
+              : null}
           </InputGroup>
         </Col>
         <Col md={6}>

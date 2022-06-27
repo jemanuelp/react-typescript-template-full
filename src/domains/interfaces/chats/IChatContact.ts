@@ -1,5 +1,5 @@
-import {IChats} from "../../grouper/IChats";
-import {IChatContactFather} from "./IChatContactFather";
+import {IChats} from '../../grouper/IChats';
+import {IChatContactFather} from './IChatContactFather';
 
 export interface IChatContact extends IChatContactFather{
     role: string;

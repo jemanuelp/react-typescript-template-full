@@ -5,14 +5,14 @@ import img2 from '../../../../src/assets/images/banner/banner-32.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-33.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-34.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-35.jpg';
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   slidesPerView: 3,
   spaceBetween: 30,
   pagination: {
-    clickable: true
-  }
+    clickable: true,
+  },
 };
 
 const SwiperMultiSlides = () => {

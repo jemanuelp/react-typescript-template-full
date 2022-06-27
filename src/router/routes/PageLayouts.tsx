@@ -11,34 +11,34 @@ const PageLayoutRoutes = [
     element: <CollapsedMenu />,
     path: '/page-layout/collapse-menu',
     meta: {
-      menuCollapsed: true
-    }
+      menuCollapsed: true,
+    },
   },
   {
     element: <BoxedLayout />,
     path: '/page-layout/layout-boxed',
     meta: {
-      contentWidth: 'boxed'
-    }
+      contentWidth: 'boxed',
+    },
   },
   {
     element: <WithoutMenu />,
     path: '/page-layout/without-menu',
     meta: {
-      menuHidden: true
-    }
+      menuHidden: true,
+    },
   },
   {
     element: <LayoutEmpty />,
-    path: '/page-layout/layout-empty'
+    path: '/page-layout/layout-empty',
   },
   {
     element: <LayoutBlank />,
     path: '/page-layout/layout-blank',
     meta: {
-      layout: 'blank'
-    }
-  }
+      layout: 'blank',
+    },
+  },
 ];
 
 export default PageLayoutRoutes;

@@ -1,6 +1,6 @@
-import {IUser} from "../interfaces/IUser";
-import {AppChatState} from "../../views/apps/chat/store";
-import {Dispatch, SetStateAction} from "react";
+import {IUser} from '../interfaces/IUser';
+import {AppChatState} from '../../views/apps/chat/store';
+import {Dispatch, SetStateAction} from 'react';
 
 export interface ChatProptypes {
     handleUser: Function;

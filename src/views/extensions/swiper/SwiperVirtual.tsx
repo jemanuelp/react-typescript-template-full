@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {VirtualMethods} from "swiper/types/modules/virtual";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {VirtualMethods} from 'swiper/types/modules/virtual';
 
 const SwiperVirtual = ({ isRtl }: Partial<useRTLInterface>) => {
   const slides = [];

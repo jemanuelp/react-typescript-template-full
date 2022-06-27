@@ -16,7 +16,7 @@ import {
   InputGroup,
   ModalHeader,
   FormFeedback,
-  InputGroupText
+  InputGroupText,
 } from 'reactstrap';
 import classnames from 'classnames';
 import Cleave from 'cleave.js/react';
@@ -30,7 +30,7 @@ import dinersCC from '../../../../../src/assets/images/icons/payments/diners-cc.
 import maestroCC from '../../../../../src/assets/images/icons/payments/maestro-cc.png';
 import discoverCC from '../../../../../src/assets/images/icons/payments/discover-cc.png';
 import mastercardCC from '../../../../../src/assets/images/icons/payments/mastercard-cc.png';
-import {ICard} from "../../../../domains/interfaces/ICard";
+import {ICard} from '../../../../domains/interfaces/ICard';
 
 const cardsObj = {
   jcb: jcbCC,
@@ -40,7 +40,7 @@ const cardsObj = {
   diners: dinersCC,
   maestro: maestroCC,
   discover: discoverCC,
-  mastercard: mastercardCC
+  mastercard: mastercardCC,
 };
 
 const data: ICard[] = [
@@ -52,7 +52,7 @@ const data: ICard[] = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('src/assets/images/icons/payments/mastercard.png').default
+    imgSrc: require('src/assets/images/icons/payments/mastercard.png').default,
   },
   {
     cardCvc: '681',
@@ -60,7 +60,7 @@ const data: ICard[] = [
     expiryDate: '02/24',
     imgAlt: 'Visa card',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('src/assets/images/icons/payments/visa.png').default
+    imgSrc: require('src/assets/images/icons/payments/visa.png').default,
   },
   {
     cardCvc: '3845',
@@ -70,8 +70,8 @@ const data: ICard[] = [
     name: 'Lester Jennings',
     imgAlt: 'American Express card',
     cardNumber: '3700 000000 00002',
-    imgSrc: require('src/assets/images/icons/payments/american-ex.png').default
-  }
+    imgSrc: require('src/assets/images/icons/payments/american-ex.png').default,
+  },
 ];
 
 const PaymentMethods = () => {
@@ -85,7 +85,7 @@ const PaymentMethods = () => {
     setError,
     setValue,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({});
 
   const selectedCondition = selected !== null;
@@ -107,7 +107,7 @@ const PaymentMethods = () => {
       setShow(show);
     } else {
       setError('cardNumber', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
@@ -137,7 +137,7 @@ const PaymentMethods = () => {
                 <div
                   key={index}
                   className={classnames('cardMaster rounded border p-2', {
-                    'mb-1': !isLastCard
+                    'mb-1': !isLastCard,
                   })}
                 >
                   <div className='d-flex justify-content-between flex-sm-row flex-column'>
@@ -176,12 +176,12 @@ const PaymentMethods = () => {
         <ModalHeader className='bg-transparent' toggle={() => setShow(!show)}></ModalHeader>
         <ModalBody className='px-sm-5 mx-50 pb-5'>
           <h1 className='text-center mb-1'>{selectedCondition
-? 'Edit'
-: 'Add New'} Card</h1>
+            ? 'Edit'
+            : 'Add New'} Card</h1>
           <p className='text-center'>
             {selectedCondition
-? 'Edit your saved card details'
-: 'Add card for future billing'}
+              ? 'Edit your saved card details'
+              : 'Add card for future billing'}
           </p>
           <Row tag={Form} className='gy-1 gx-2 mt-75' onSubmit={handleSubmit(onSubmit)}>
             <Col xs={12}>
@@ -202,18 +202,18 @@ const PaymentMethods = () => {
                         creditCard: true,
                         onCreditCardTypeChanged: type => {
                           setCardType(type);
-                        }
+                        },
                       }}
                     />
                   )}
                 />
                 {cardType !== '' && cardType !== 'unknown'
-? (
-                  <InputGroupText className='cursor-pointer p-25'>
-                    <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
-                  </InputGroupText>
-                )
-: null}
+                  ? (
+                    <InputGroupText className='cursor-pointer p-25'>
+                      <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
+                    </InputGroupText>
+                  )
+                  : null}
               </InputGroup>
               {errors.cardNumber && <FormFeedback className='d-block'>Please enter a valid card number</FormFeedback>}
             </Col>
@@ -222,8 +222,8 @@ const PaymentMethods = () => {
                 Name On Card
               </Label>
               <Input id='card-name' placeholder='John Doe' defaultValue={(selectedCondition && selected)
-                  ? selected.name
-                  : ''}/>
+                ? selected.name
+                : ''}/>
             </Col>
             <Col xs={6} md={3}>
               <Label className='form-label' for='exp-date'>
@@ -235,8 +235,8 @@ const PaymentMethods = () => {
                 className='form-control'
                 options={{ delimiter: '/', blocks: [2, 2] }}
                 value={(selectedCondition && selected)
-                    ? selected.expiryDate
-                    : ''}
+                  ? selected.expiryDate
+                  : ''}
               />
             </Col>
             <Col xs={6} md={3}>
@@ -249,8 +249,8 @@ const PaymentMethods = () => {
                 className='form-control'
                 options={{ blocks: [3] }}
                 value={(selectedCondition && selected)
-                    ? selected.cardCvc
-                    : ''}
+                  ? selected.cardCvc
+                  : ''}
               />
             </Col>
             <Col xs={12}>

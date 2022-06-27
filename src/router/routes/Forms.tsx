@@ -20,68 +20,68 @@ const FileUploader = lazy(() => import('../../views/forms/form-elements/file-upl
 const FormRoutes = [
   {
     element: <Input />,
-    path: '/forms/elements/input'
+    path: '/forms/elements/input',
   },
   {
     element: <InputGroups />,
-    path: '/forms/elements/input-group'
+    path: '/forms/elements/input-group',
   },
   {
     element: <InputMask />,
-    path: '/forms/elements/input-mask'
+    path: '/forms/elements/input-mask',
   },
   {
     element: <Textarea />,
-    path: '/forms/elements/textarea'
+    path: '/forms/elements/textarea',
   },
   {
     element: <Checkboxes />,
-    path: '/forms/elements/checkbox'
+    path: '/forms/elements/checkbox',
   },
   {
     element: <Radio />,
-    path: '/forms/elements/radio'
+    path: '/forms/elements/radio',
   },
   {
     element: <Switch />,
-    path: '/forms/elements/switch'
+    path: '/forms/elements/switch',
   },
   {
     element: <Select />,
-    path: '/forms/elements/select'
+    path: '/forms/elements/select',
   },
   {
     element: <NumberInput />,
-    path: '/forms/elements/number-input'
+    path: '/forms/elements/number-input',
   },
   {
     element: <FileUploader />,
-    path: '/forms/elements/file-uploader'
+    path: '/forms/elements/file-uploader',
   },
   {
     element: <Editor />,
-    path: '/forms/elements/editor'
+    path: '/forms/elements/editor',
   },
   {
     element: <Datepickers />,
-    path: '/forms/elements/pickers'
+    path: '/forms/elements/pickers',
   },
   {
     element: <FormLayouts />,
-    path: '/forms/layout/form-layout'
+    path: '/forms/layout/form-layout',
   },
   {
     element: <Wizard />,
-    path: '/forms/wizard'
+    path: '/forms/wizard',
   },
   {
     element: <Validation />,
-    path: '/forms/form-validation'
+    path: '/forms/form-validation',
   },
   {
     element: <FormRepeater />,
-    path: '/forms/form-repeater'
-  }
+    path: '/forms/form-repeater',
+  },
 ];
 
 export default FormRoutes;

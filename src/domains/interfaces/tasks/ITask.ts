@@ -1,6 +1,6 @@
-import {IAttachment} from "../IAttachment";
-import {IComment} from "../IComment";
-import {IAssignedTo} from "../IAssignedTo";
+import {IAttachment} from '../IAttachment';
+import {IComment} from '../IComment';
+import {IAssignedTo} from '../IAssignedTo';
 
 export interface ITask {
     id: number;

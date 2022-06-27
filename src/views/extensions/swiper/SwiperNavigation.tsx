@@ -8,7 +8,7 @@ import img4 from '../../../../src/assets/images/banner/banner-3.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-2.jpg';
 
 const params = {
-  navigation: true
+  navigation: true,
 };
 
 const SwiperNavigation = ({ isRtl }: any) => {

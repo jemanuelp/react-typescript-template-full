@@ -1,9 +1,9 @@
 import mock from '../mock';
 import { paginateArray } from '../utils';
-import {IInvoice} from "../../domains/interfaces/IInvoice";
-import {ISearch} from "../../domains/interfaces/ISearch";
-import {AxiosRequestConfig} from "axios";
-import {IInvoices} from "../../domains/grouper/IInvoices";
+import {IInvoice} from '../../domains/interfaces/IInvoice';
+import {ISearch} from '../../domains/interfaces/ISearch';
+import {AxiosRequestConfig} from 'axios';
+import {IInvoices} from '../../domains/grouper/IInvoices';
 
 const data: IInvoices = {
   invoices: [
@@ -923,8 +923,8 @@ mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>)
   const dataAsc = data.invoices.sort((a, b) => {
     if (a[sortColumn as keyof IInvoice]) {
       return a[sortColumn as keyof IInvoice] < b[sortColumn as keyof IInvoice]
-? -1
-: 1;
+        ? -1
+        : 1;
     } else {
       const splitColumn = sortColumn.split('.');
       // @ts-ignore
@@ -932,14 +932,14 @@ mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>)
       // @ts-ignore
       const columnB = b[splitColumn[0]][splitColumn[1]];
       return columnA < columnB
-? -1
-: 1;
+        ? -1
+        : 1;
     }
   });
 
   const dataToFilter = sort === 'asc'
-? dataAsc
-: dataAsc.reverse();
+    ? dataAsc
+    : dataAsc.reverse();
 
   const queryLowered = q.toLowerCase();
   const filteredData = dataToFilter.filter(invoice => {
@@ -947,7 +947,7 @@ mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>)
       return invoice.balance === 0;
     } else {
       return (
-          (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
+        (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
               invoice.client.name.toLowerCase().includes(queryLowered) ||
               String(invoice.id).toLowerCase().includes(queryLowered) ||
               String(invoice.total).toLowerCase().includes(queryLowered) ||
@@ -965,8 +965,8 @@ mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>)
       allData: data.invoices,
       total: filteredData.length,
       invoices: filteredData.length <= perPage
-? filteredData
-: paginateArray(filteredData, perPage, page),
+        ? filteredData
+        : paginateArray(filteredData, perPage, page),
     },
   ];
 });
@@ -977,8 +977,8 @@ mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>)
 mock.onGet(/\/api\/invoice\/invoices\/\d+/).reply(config => {
   // // Get event id from URL
   const index = config && config.url
-? Number(config.url.substring(config.url.lastIndexOf('/')))
-: 0;
+    ? Number(config.url.substring(config.url.lastIndexOf('/')))
+    : 0;
   const invoiceId = Number(index + 1);
 
   const invoiceIndex = data.invoices.findIndex(e => e.id === invoiceId);

@@ -6,12 +6,12 @@ import {Settings, X} from 'react-feather';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {Input, Label} from 'reactstrap';
 import '../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
-import {Layout} from "../../../domains/interfaces/layouts/Layout";
-import {LayoutSetterState} from "../../../domains/interfaces/layouts/LayoutSetterState";
-import {LayoutTypes} from "../../../domains/enums/LayoutTypes";
-import {NavbarLayoutTypes} from "../../../domains/enums/NavbarLayoutTypes";
-import {FooterLayoutTypes} from "../../../domains/enums/FooterLayoutTypes";
-import {SkinTypes} from "../../../domains/enums/SkinTypes";
+import {Layout} from '../../../domains/interfaces/layouts/Layout';
+import {LayoutSetterState} from '../../../domains/interfaces/layouts/LayoutSetterState';
+import {LayoutTypes} from '../../../domains/enums/LayoutTypes';
+import {NavbarLayoutTypes} from '../../../domains/enums/NavbarLayoutTypes';
+import {FooterLayoutTypes} from '../../../domains/enums/FooterLayoutTypes';
+import {SkinTypes} from '../../../domains/enums/SkinTypes';
 
 const Customizer = (props: (Layout & LayoutSetterState)) => {
   const {
@@ -65,7 +65,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
       {
         name: 'semi-dark',
         label: 'Semi Dark',
-        checked: skin === SkinTypes["semi-dark"],
+        checked: skin === SkinTypes['semi-dark'],
       },
     ];
 
@@ -311,21 +311,21 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
             </div>
           </div>
           {type !== LayoutTypes.horizontal
-? (
-            <div className='form-switch mb-2 ps-0'>
-              <div className='d-flex align-items-center'>
-                <p className='fw-bold me-auto mb-0'>Menu Collapsed</p>
-                <Input
-                  type='switch'
-                  id='menu-collapsed'
-                  name='menu-collapsed'
-                  checked={menu.isCollapsed}
-                  onChange={() => setMenuCollapsed && setMenuCollapsed(!menu.isCollapsed)}
-                />
+            ? (
+              <div className='form-switch mb-2 ps-0'>
+                <div className='d-flex align-items-center'>
+                  <p className='fw-bold me-auto mb-0'>Menu Collapsed</p>
+                  <Input
+                    type='switch'
+                    id='menu-collapsed'
+                    name='menu-collapsed'
+                    checked={menu.isCollapsed}
+                    onChange={() => setMenuCollapsed && setMenuCollapsed(!menu.isCollapsed)}
+                  />
+                </div>
               </div>
-            </div>
-          )
-: null}
+            )
+            : null}
 
           <div className='form-switch mb-2 ps-0'>
             <div className='d-flex align-items-center'>
@@ -345,18 +345,18 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
 
         <div className='px-2'>
           {type !== LayoutTypes.horizontal
-? (
-            <div className='mb-2'>
-              <p className='fw-bold'>Navbar Color</p>
-              <ul className='list-inline unstyled-list'>{renderNavbarColors()}</ul>
-            </div>
-          )
-: null}
+            ? (
+              <div className='mb-2'>
+                <p className='fw-bold'>Navbar Color</p>
+                <ul className='list-inline unstyled-list'>{renderNavbarColors()}</ul>
+              </div>
+            )
+            : null}
 
           <div className='mb-2'>
             <p className='fw-bold'>{type === LayoutTypes.horizontal
-? 'Menu'
-: 'Navbar'} Type</p>
+              ? 'Menu'
+              : 'Navbar'} Type</p>
             <div className='d-flex'>{renderNavbarTypeRadio()}</div>
           </div>
         </div>

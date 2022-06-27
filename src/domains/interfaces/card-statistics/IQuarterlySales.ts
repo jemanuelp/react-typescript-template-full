@@ -1,5 +1,5 @@
-import {ISerie} from "./ISerie";
-import {IAnalyticsData} from "./IAnalyticsData";
+import {ISerie} from './ISerie';
+import {IAnalyticsData} from './IAnalyticsData';
 
 export interface IQuarterlySales {
     series: ISerie[];

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardTitle, CardBody, ButtonGroup, Button } from 'reactstrap';
-import {ApexOptions} from "apexcharts";
+import {ApexOptions} from 'apexcharts';
 
 const ApexScatterCharts = (
-    {
-      direction,
-      warning,
-      primary,
-      success,
-    } : {
+  {
+    direction,
+    warning,
+    primary,
+    success,
+  } : {
       direction: string,
       primary: string,
       success: string,

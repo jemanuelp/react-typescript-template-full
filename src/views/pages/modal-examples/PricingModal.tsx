@@ -3,7 +3,7 @@ import { Card, Input, Modal, Button, CardBody, CardText, CardTitle, ModalBody, M
 import axios from 'axios';
 import { BarChart2 } from 'react-feather';
 import '../../../@core/scss/base/pages/page-pricing.scss';
-import PricingCards from "../pricing/PricingCards";
+import PricingCards from '../pricing/PricingCards';
 
 const PricingExample = () => {
   const [show, setShow] = useState(false);
@@ -37,6 +37,7 @@ const PricingExample = () => {
         <CardBody className='text-center'>
           <BarChart2 className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Pricing</CardTitle>
+          {/* eslint-disable-next-line max-len */}
           <CardText>Elegant pricing options modal popup example, easy to use in any page.</CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
@@ -48,6 +49,7 @@ const PricingExample = () => {
         <ModalBody className='px-sm-5 mx-50 pb-5'>
           <h1 className='text-center mb-1'>Subscription Plan</h1>
           <p className='text-center mb-3'>
+            {/* eslint-disable-next-line max-len */}
             All plans include 40+ advanced tools and features to boost your product. Choose the best plan to fit your
             needs.
           </p>
@@ -65,7 +67,7 @@ const PricingExample = () => {
             duration={duration}
             cols={{
               lg: 4,
-              xs: 12
+              xs: 12,
             }}
           />
           <div className='text-center'>

@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Search } from 'react-feather';
 import { InputGroup, Input, InputGroupText } from 'reactstrap';
-import InputPasswordToggle from "../../../../@core/components/input-password-toggle";
+import InputPasswordToggle from '../../../../@core/components/input-password-toggle';
 
 const InputGroupBasic = () => {
   return (

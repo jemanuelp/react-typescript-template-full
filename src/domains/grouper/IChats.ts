@@ -1,4 +1,4 @@
-import {IChat} from "../interfaces/chats/IChat";
+import {IChat} from '../interfaces/chats/IChat';
 
 export interface IChats {
     id: number;

@@ -102,8 +102,8 @@ const StatisticsCards = () => {
         </Col>
         <Col lg='3' sm='6'>
           <RevenueGenerated
-              kFormatter={kFormatter}
-              success={context.colors.success.main} />
+            kFormatter={kFormatter}
+            success={context.colors.success.main} />
         </Col>
         <Col lg='3' sm='6'>
           <QuaterlySales danger={context.colors.danger.main} />

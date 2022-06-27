@@ -10,11 +10,11 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledTooltip,
-  UncontrolledDropdown
+  UncontrolledDropdown,
 } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBookmarks, updateBookmarked, handleSearchQuery } from '../../../../redux/navbar';
-import {RootState} from "../../../../redux/reducers/RootReducer";
+import {RootState} from '../../../../redux/reducers/RootReducer';
 
 interface BookmarkProps {
   id: number,
@@ -155,68 +155,70 @@ const NavbarBookmarks = (props: any) => {
             <div className='bookmark-input-icon'>
               <Icon.Search size={14} />
             </div>
-            {openSearch && store.suggestions.length ? (
-              <Autocomplete
-                wrapperClass={classnames('search-list search-list-bookmark', {
-                  show: openSearch
-                })}
-                className='form-control'
-                suggestions={!value.length ? store.bookmarks : store.suggestions}
-                filterKey='title'
-                autoFocus={true}
-                defaultSuggestions
-                suggestionLimit={!value.length ? store.bookmarks.length : 6}
-                placeholder='Search...'
-                externalClick={handleExternalClick}
-                clearInput={(userInput: any, setUserInput: Function) => handleClearInput(setUserInput)}
-                onKeyDown={onKeyDown}
-                value={value}
-                onChange={handleInputChange}
-                customRender={(
-                  item: any,
-                  i: any,
-                  filteredData: any,
-                  activeSuggestion: any,
-                  onSuggestionItemClick: any,
-                  onSuggestionItemHover: any
-                ) => {
-                  const IconTag = item.icon ?? 'X';
-                  return (
-                    <li
-                      key={i}
-                      onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
-                      className={classnames('suggestion-item d-flex align-items-center justify-content-between', {
-                        active: filteredData.indexOf(item) === activeSuggestion
-                      })}
-                    >
-                      <Link
-                        to={item.link}
-                        className='d-flex align-items-center justify-content-between p-0'
-                        onClick={() => {
-                          setOpenSearch(false);
-                          handleClearQueryInStore();
-                        }}
-                        style={{
-                          width: 'calc(90%)'
-                        }}
-                      >
-                        <div className='d-flex justify-content-start align-items-center overflow-hidden'>
-                          <IconTag size={17.5} className='me-75' />
-                          <span className='text-truncate'>{item.title}</span>
-                        </div>
-                      </Link>
-                      <Icon.Star
-                        size={17.5}
-                        className={classnames('bookmark-icon float-end', {
-                          'text-warning': item.isBookmarked
+            {openSearch && store.suggestions.length
+              ? (
+                <Autocomplete
+                  wrapperClass={classnames('search-list search-list-bookmark', {
+                    show: openSearch,
+                  })}
+                  className='form-control'
+                  suggestions={!value.length ? store.bookmarks : store.suggestions}
+                  filterKey='title'
+                  autoFocus={true}
+                  defaultSuggestions
+                  suggestionLimit={!value.length ? store.bookmarks.length : 6}
+                  placeholder='Search...'
+                  externalClick={handleExternalClick}
+                  clearInput={(userInput: any, setUserInput: Function) => handleClearInput(setUserInput)}
+                  onKeyDown={onKeyDown}
+                  value={value}
+                  onChange={handleInputChange}
+                  customRender={(
+                    item: any,
+                    i: any,
+                    filteredData: any,
+                    activeSuggestion: any,
+                    onSuggestionItemClick: any,
+                    onSuggestionItemHover: any,
+                  ) => {
+                    const IconTag = item.icon ?? 'X';
+                    return (
+                      <li
+                        key={i}
+                        onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
+                        className={classnames('suggestion-item d-flex align-items-center justify-content-between', {
+                          active: filteredData.indexOf(item) === activeSuggestion,
                         })}
-                        onClick={() => handleBookmarkUpdate(item.id)}
-                      />
-                    </li>
-                  );
-                }}
-              />
-            ) : null}
+                      >
+                        <Link
+                          to={item.link}
+                          className='d-flex align-items-center justify-content-between p-0'
+                          onClick={() => {
+                            setOpenSearch(false);
+                            handleClearQueryInStore();
+                          }}
+                          style={{
+                            width: 'calc(90%)',
+                          }}
+                        >
+                          <div className='d-flex justify-content-start align-items-center overflow-hidden'>
+                            <IconTag size={17.5} className='me-75' />
+                            <span className='text-truncate'>{item.title}</span>
+                          </div>
+                        </Link>
+                        <Icon.Star
+                          size={17.5}
+                          className={classnames('bookmark-icon float-end', {
+                            'text-warning': item.isBookmarked,
+                          })}
+                          onClick={() => handleBookmarkUpdate(item.id)}
+                        />
+                      </li>
+                    );
+                  }}
+                />
+              )
+              : null}
           </div>
         </NavItem>
       </ul>

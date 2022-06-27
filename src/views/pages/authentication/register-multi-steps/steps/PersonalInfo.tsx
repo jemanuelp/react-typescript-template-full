@@ -5,7 +5,7 @@ import { Form, Label, Input, Row, Col, Button, FormFeedback } from 'reactstrap';
 
 const defaultValues = {
   address: '',
-  firstName: ''
+  firstName: '',
 };
 
 const PersonalInfo = ({ stepper }: any) => {
@@ -13,9 +13,9 @@ const PersonalInfo = ({ stepper }: any) => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
-    defaultValues
+    defaultValues,
   });
 
   const onSubmit = (data: any) => {
@@ -27,7 +27,7 @@ const PersonalInfo = ({ stepper }: any) => {
           const valid =  key as keyof typeof defaultValues;
           setError(valid, {
             type: 'manual',
-            message: `Please enter a valid ${key}`
+            message: `Please enter a valid ${key}`,
           });
         }
       }

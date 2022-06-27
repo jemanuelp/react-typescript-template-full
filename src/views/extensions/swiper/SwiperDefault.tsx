@@ -5,7 +5,7 @@ import img2 from '../../../../src/assets/images/banner/banner-2.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-4.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-13.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-7.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
 
 const SwiperDefault = ({ isRtl }: Partial<useRTLInterface>) => {
   return (

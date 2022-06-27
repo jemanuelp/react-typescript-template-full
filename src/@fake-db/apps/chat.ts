@@ -1,9 +1,9 @@
 import mock from '../mock';
-import {IChats} from "../../domains/grouper/IChats";
-import {IProfileUser} from "../../domains/interfaces/IProfileUser";
-import {IChatContact} from "../../domains/interfaces/chats/IChatContact";
-import {IChat} from "../../domains/interfaces/chats/IChat";
-import {AxiosRequestConfig} from "axios";
+import {IChats} from '../../domains/grouper/IChats';
+import {IProfileUser} from '../../domains/interfaces/IProfileUser';
+import {IChatContact} from '../../domains/interfaces/chats/IChatContact';
+import {IChat} from '../../domains/interfaces/chats/IChat';
+import {AxiosRequestConfig} from 'axios';
 
 const previousDay = new Date(new Date().getTime() - (24 * 60 * 60 * 1000));
 const dayBeforePreviousDay = new Date(new Date().getTime() - (24 * 60 * 60 * 1000 * 2));
@@ -156,7 +156,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
       unseenMsgs: 1,
       chat: [
         {
-          message: "How can we help? We're here for you!",
+          message: 'How can we help? We\'re here for you!',
           time: 'Mon Dec 10 2018 07:45:00 GMT+0000 (GMT)',
           senderId: 11,
         },
@@ -186,7 +186,7 @@ const data: {profileUser: IProfileUser, contacts: IChatContact[], chats: IChats[
           senderId: 1,
         },
         {
-          message: "It's perfect for my next project.",
+          message: 'It\'s perfect for my next project.',
           time: 'Mon Dec 10 2018 07:46:33 GMT+0000 (GMT)',
           senderId: 1,
         },

@@ -14,7 +14,7 @@ import {
   ModalBody,
   InputGroup,
   ModalHeader,
-  InputGroupText
+  InputGroupText,
 } from 'reactstrap';
 
 import { Award, Gift, MessageSquare, Clipboard, Facebook, Twitter, Linkedin } from 'react-feather';
@@ -23,18 +23,18 @@ const data = [
   {
     icon: <MessageSquare />,
     title: 'Send Invitation 🤟🏻',
-    subtitle: 'Send your referral link to your friend'
+    subtitle: 'Send your referral link to your friend',
   },
   {
     icon: <Clipboard />,
     title: 'Registration 👩🏻‍💻',
-    subtitle: 'Let them register to our services'
+    subtitle: 'Let them register to our services',
   },
   {
     icon: <Award />,
     title: 'Free Trial 🎉',
-    subtitle: 'Your friend will get 30 days free trial'
-  }
+    subtitle: 'Your friend will get 30 days free trial',
+  },
 ];
 
 const ReferEarnModal = () => {

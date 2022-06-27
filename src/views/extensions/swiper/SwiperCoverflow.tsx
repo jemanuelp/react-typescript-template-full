@@ -11,23 +11,23 @@ import img6 from 'src/assets/images/banner/banner-34.jpg';
 import img7 from 'src/assets/images/banner/banner-33.jpg';
 import img8 from 'src/assets/images/banner/banner-32.jpg';
 import img9 from 'src/assets/images/banner/banner-31.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   effect: 'coverflow',
   slidesPerView: 'auto',
   centeredSlides: true,
   pagination: {
-    clickable: true
+    clickable: true,
   },
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true
-  }
+    slideShadows: true,
+  },
 };
 
 const SwiperFade = ({ isRtl }: Partial<useRTLInterface>) => {

@@ -11,7 +11,7 @@ import {
   CardText,
   CardTitle,
   ModalBody,
-  ModalHeader
+  ModalHeader,
 } from 'reactstrap';
 import Cleave from 'cleave.js/react';
 import 'cleave.js/dist/addons/cleave-phone.us';
@@ -181,11 +181,13 @@ const AuthenticationExample = () => {
       >
         <ModalHeader className='bg-transparent' toggle={() => setShowDetailModal(!showDetailModal)}></ModalHeader>
         <ModalBody className='pb-5 px-sm-5 mx-50'>
-          {authType === 'authApp' ? (
-            <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-          ) : (
-            <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-          )}
+          {authType === 'authApp'
+            ? (
+              <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
+            )
+            : (
+              <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
+            )}
         </ModalBody>
       </Modal>
     </Fragment>

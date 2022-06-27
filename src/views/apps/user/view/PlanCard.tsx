@@ -4,8 +4,8 @@ import Select from 'react-select';
 import { selectThemeColors } from '../../../../utility/Utils';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import 'src/@core/scss/base/plugins/extensions/ext-component-sweet-alerts.scss';
-import {handleConfirmCancel} from "../hooks/HandleConfirmCancel";
-import {PlanOptions} from "../../../../domains/const/options/PlanOptions";
+import {handleConfirmCancel} from '../hooks/HandleConfirmCancel';
+import {PlanOptions} from '../../../../domains/const/options/PlanOptions';
 
 const PlanCard = () => {
   const [show, setShow] = useState(false);

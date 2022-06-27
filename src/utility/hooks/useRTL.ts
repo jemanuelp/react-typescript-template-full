@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {handleRTL} from "../../redux/layout";
-import {RootState} from "../../redux/reducers/RootReducer";
+import {handleRTL} from '../../redux/layout';
+import {RootState} from '../../redux/reducers/RootReducer';
 
 export interface useRTLInterface {
   isRtl: boolean;

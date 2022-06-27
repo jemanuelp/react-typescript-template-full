@@ -1,5 +1,5 @@
 import mock from '../mock';
-import {ICardStatistics} from "../../domains/grouper/ICardStatistics";
+import {ICardStatistics} from '../../domains/grouper/ICardStatistics';
 
 const data: ICardStatistics = {
   orders_bar_chart: {

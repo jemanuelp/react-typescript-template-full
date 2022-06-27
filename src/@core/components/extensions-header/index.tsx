@@ -8,13 +8,15 @@ const ExtensionsHeader = (props: any) => {
         <p className='font-medium-5 mt-1 extension-title' data-tour='extension-title'>
           {props.title}
         </p>
-        {props.link ? (
-          <a href={props.link} target='_blank' rel='noopener noreferrer'>
-            {props.subTitle}
-          </a>
-        ) : (
-          <p className='text-primary'>{props.subTitle}</p>
-        )}
+        {props.link
+          ? (
+            <a href={props.link} target='_blank' rel='noopener noreferrer'>
+              {props.subTitle}
+            </a>
+          )
+          : (
+            <p className='text-primary'>{props.subTitle}</p>
+          )}
       </Col>
     </Row>
   );
@@ -24,5 +26,5 @@ export default ExtensionsHeader;
 ExtensionsHeader.propTypes = {
   link: Proptypes.string,
   title: Proptypes.string.isRequired,
-  subTitle: Proptypes.string.isRequired
+  subTitle: Proptypes.string.isRequired,
 };

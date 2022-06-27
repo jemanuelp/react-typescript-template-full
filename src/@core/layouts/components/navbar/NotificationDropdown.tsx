@@ -14,7 +14,7 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>Congratulation Sam 🎉</span>winner!
         </p>
-      )
+      ),
     },
     {
       img: require('src/assets/images/portrait/small/avatar-s-3.jpg').default,
@@ -23,7 +23,7 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>New message</span>&nbsp;received
         </p>
-      )
+      ),
     },
     {
       avatarContent: 'MD',
@@ -33,7 +33,7 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>Revised Order 👋</span>&nbsp;checkout
         </p>
-      )
+      ),
     },
     {
       title: <h6 className='fw-bolder me-auto mb-0'>System Notifications</h6>,
@@ -41,7 +41,7 @@ const NotificationDropdown = () => {
         <div className='form-check form-switch'>
           <Input type='switch' name='customSwitch' id='exampleCustomSwitch' defaultChecked />
         </div>
-      )
+      ),
     },
     {
       avatarIcon: <X size={14} />,
@@ -51,7 +51,7 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>Server down</span>&nbsp;registered
         </p>
-      )
+      ),
     },
     {
       avatarIcon: <Check size={14} />,
@@ -61,7 +61,7 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>Sales report</span>&nbsp;generated
         </p>
-      )
+      ),
     },
     {
       avatarIcon: <AlertTriangle size={14} />,
@@ -71,8 +71,8 @@ const NotificationDropdown = () => {
         <p className='media-heading'>
           <span className='fw-bolder'>High memory</span>&nbsp;usage
         </p>
-      )
-    }
+      ),
+    },
   ];
 
   // ** Function to render Notifications
@@ -83,7 +83,7 @@ const NotificationDropdown = () => {
         component='li'
         className='media-list scrollable-container'
         options={{
-          wheelPropagation: false
+          wheelPropagation: false,
         }}
       >
         {notificationsArray.map((item, index) => {
@@ -101,33 +101,41 @@ const NotificationDropdown = () => {
               <div
                 className={classnames('list-item d-flex', {
                   'align-items-start': !item.switch,
-                  'align-items-center': item.switch
+                  'align-items-center': item.switch,
                 })}
               >
-                {!item.switch ? (
-                  <Fragment>
-                    <div className='me-1'>
-                      <Avatar
-                        {...(item.img ? { img: item.img, imgHeight: 32, imgWidth: 32 } : item.avatarContent ? {
-                              content: item.avatarContent,
-                              color: item.color
-                            } : item.avatarIcon ? {
-                              icon: item.avatarIcon,
-                              color: item.color
-                            } : null)}
-                      />
-                    </div>
-                    <div className='list-item-body flex-grow-1'>
+                {!item.switch
+                  ? (
+                    <Fragment>
+                      <div className='me-1'>
+                        <Avatar
+                          {...(item.img
+                            ? { img: item.img, imgHeight: 32, imgWidth: 32 }
+                            : item.avatarContent
+                              ? {
+                                content: item.avatarContent,
+                                color: item.color,
+                              }
+                              : item.avatarIcon
+                                ? {
+                                  icon: item.avatarIcon,
+                                  color: item.color,
+                                }
+                                : null)}
+                        />
+                      </div>
+                      <div className='list-item-body flex-grow-1'>
+                        {item.title}
+                        <small className='notification-text'>{item.subtitle}</small>
+                      </div>
+                    </Fragment>
+                  )
+                  : (
+                    <Fragment>
                       {item.title}
-                      <small className='notification-text'>{item.subtitle}</small>
-                    </div>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    {item.title}
-                    {item.switch}
-                  </Fragment>
-                )}
+                      {item.switch}
+                    </Fragment>
+                  )}
               </div>
             </a>
           );

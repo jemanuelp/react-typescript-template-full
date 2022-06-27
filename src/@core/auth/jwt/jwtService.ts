@@ -1,6 +1,6 @@
 import axios from 'axios';
 import jwtDefaultConfig from './jwtDefaultConfig';
-import {JWTConfig} from "../../../domains/interfaces/JWTConfig";
+import {JWTConfig} from '../../../domains/interfaces/JWTConfig';
 
 export default class JwtService {
   // ** jwtConfig <= Will be used by this service
@@ -27,7 +27,7 @@ export default class JwtService {
         }
         return config;
       },
-      error => Promise.reject(error)
+      error => Promise.reject(error),
     );
 
     // ** Add request/response interceptor
@@ -62,7 +62,7 @@ export default class JwtService {
           });
         }
         return Promise.reject(error);
-      }
+      },
     );
   }
 
@@ -101,7 +101,7 @@ export default class JwtService {
 
   refreshToken() {
     return axios.post(this.jwtConfig.refreshEndpoint, {
-      refreshToken: this.getRefreshToken()
+      refreshToken: this.getRefreshToken(),
     });
   }
 }

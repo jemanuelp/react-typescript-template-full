@@ -12,12 +12,12 @@ import 'react-slidedown/lib/slidedown.css';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 import 'src/@core/scss/base/pages/app-invoice.scss';
-import {CountryOptionsCard} from "../../../../domains/const/options/CountryOptions";
-import {IInvoice} from "../../../../domains/interfaces/IInvoice";
-import {ClientInterface} from "../../../../domains/interfaces/Client.interface";
-import {ISelectedOption} from "../../../../domains/interfaces/ISelectedOption";
-import {IInvoices} from "../../../../domains/grouper/IInvoices";
-import {SizeTypes} from "../../../../domains/enums/SizeTypes";
+import {CountryOptionsCard} from '../../../../domains/const/options/CountryOptions';
+import {IInvoice} from '../../../../domains/interfaces/IInvoice';
+import {ClientInterface} from '../../../../domains/interfaces/Client.interface';
+import {ISelectedOption} from '../../../../domains/interfaces/ISelectedOption';
+import {IInvoices} from '../../../../domains/grouper/IInvoices';
+import {SizeTypes} from '../../../../domains/enums/SizeTypes';
 
 const AddCard = () => {
   const [count, setCount] = useState(1);
@@ -33,15 +33,15 @@ const AddCard = () => {
       value: 'add-new',
       label: 'Add New Customer',
       type: 'button',
-      color: 'flat-success'
-    }
+      color: 'flat-success',
+    },
   ]);
 
   useEffect(() => {
     axios.get('/api/invoice/clients').then((response: AxiosResponse<ClientInterface[]>) => {
       const arr = options;
       response.data.map(
-          (item: ClientInterface) => arr.push({ value: item.name, label: item.name })
+        (item: ClientInterface) => arr.push({ value: item.name, label: item.name }),
       );
       setOptions([...arr]);
       setClients(response.data);
@@ -55,13 +55,13 @@ const AddCard = () => {
         status: '',
         sort: 'asc',
         perPage: 10,
-        sortColumn: 'id'
-      }
+        sortColumn: 'id',
+      },
     })
       .then((response:AxiosResponse<IInvoices>) => {
         const lastInvoiceNumber = Math.max.apply(
           Math,
-          response.data.invoices.map((i: IInvoice) => i.id)
+          response.data.invoices.map((i: IInvoice) => i.id),
         );
         setInvoiceNumber((lastInvoiceNumber + 1));
       });
@@ -210,35 +210,35 @@ const AddCard = () => {
               <h6 className='invoice-to-title'>Invoice To:</h6>
               <div className='invoice-customer'>
                 {clients !== null
-? (
-                  <Fragment>
-                    <Select
-                      className='react-select'
-                      classNamePrefix='select'
-                      id='label'
-                      value={value}
-                      options={options}
-                      theme={selectThemeColors}
-                      components={{
-                        Option: OptionComponent
-                      }}
-                      onChange={handleInvoiceToChange}
-                    />
-                    {selected !== null
-? (
-                      <div className='customer-details mt-1'>
-                        <p className='mb-25'>{selected.name}</p>
-                        <p className='mb-25'>{selected.company}</p>
-                        <p className='mb-25'>{selected.address}</p>
-                        <p className='mb-25'>{selected.country}</p>
-                        <p className='mb-0'>{selected.contact}</p>
-                        <p className='mb-0'>{selected.companyEmail}</p>
-                      </div>
-                    )
-: null}
-                  </Fragment>
-                )
-: null}
+                  ? (
+                    <Fragment>
+                      <Select
+                        className='react-select'
+                        classNamePrefix='select'
+                        id='label'
+                        value={value}
+                        options={options}
+                        theme={selectThemeColors}
+                        components={{
+                          Option: OptionComponent,
+                        }}
+                        onChange={handleInvoiceToChange}
+                      />
+                      {selected !== null
+                        ? (
+                          <div className='customer-details mt-1'>
+                            <p className='mb-25'>{selected.name}</p>
+                            <p className='mb-25'>{selected.company}</p>
+                            <p className='mb-25'>{selected.address}</p>
+                            <p className='mb-25'>{selected.country}</p>
+                            <p className='mb-0'>{selected.contact}</p>
+                            <p className='mb-0'>{selected.companyEmail}</p>
+                          </div>
+                        )
+                        : null}
+                    </Fragment>
+                  )
+                  : null}
               </div>
             </Col>
             <Col className='pe-0 mt-xl-0 mt-2' xl='4'>
@@ -279,48 +279,48 @@ const AddCard = () => {
           <Repeater count={count}>
             {
               (i: any) => {
-              const Tag = i === 0
+                const Tag = i === 0
                   ? 'div'
                   : SlideDown;
-              return (
+                return (
                   <Tag key={i} className='repeater-wrapper'>
-                  <Row>
-                    <Col className='d-flex product-details-border position-relative pe-0' sm='12'>
-                      <Row className='w-100 pe-lg-0 pe-1 py-2'>
-                        <Col className='mb-lg-0 mb-2 mt-lg-0 mt-2' lg='5' sm='12'>
-                          <CardText className='col-title mb-md-50 mb-0'>Item</CardText>
-                          <Input type='select' className='item-details'>
-                            <option>App Design</option>
-                            <option>App Customization</option>
-                            <option>ABC Template</option>
-                            <option>App Development</option>
-                          </Input>
-                          <Input className='mt-2' type='textarea' rows='1' defaultValue='Customization & Bug Fixes' />
-                        </Col>
-                        <Col className='my-lg-0 my-2' lg='3' sm='12'>
-                          <CardText className='col-title mb-md-2 mb-0'>Cost</CardText>
-                          <Input type='number' defaultValue='24' placeholder='24' />
-                          <div className='mt-2'>
-                            <span>Discount:</span> <span>0%</span>
-                          </div>
-                        </Col>
-                        <Col className='my-lg-0 my-2' lg='2' sm='12'>
-                          <CardText className='col-title mb-md-2 mb-0'>Qty</CardText>
-                          <Input type='number' defaultValue='1' placeholder='1' />
-                        </Col>
-                        <Col className='my-lg-0 mt-2' lg='2' sm='12'>
-                          <CardText className='col-title mb-md-50 mb-0'>Price</CardText>
-                          <CardText className='mb-0'>$24.00</CardText>
-                        </Col>
-                      </Row>
-                      <div className='d-flex justify-content-center border-start invoice-product-actions py-50 px-25'>
-                        <X size={18} className='cursor-pointer' onClick={deleteForm} />
-                      </div>
-                    </Col>
-                  </Row>
-                </Tag>
-              );
-            }}
+                    <Row>
+                      <Col className='d-flex product-details-border position-relative pe-0' sm='12'>
+                        <Row className='w-100 pe-lg-0 pe-1 py-2'>
+                          <Col className='mb-lg-0 mb-2 mt-lg-0 mt-2' lg='5' sm='12'>
+                            <CardText className='col-title mb-md-50 mb-0'>Item</CardText>
+                            <Input type='select' className='item-details'>
+                              <option>App Design</option>
+                              <option>App Customization</option>
+                              <option>ABC Template</option>
+                              <option>App Development</option>
+                            </Input>
+                            <Input className='mt-2' type='textarea' rows='1' defaultValue='Customization & Bug Fixes' />
+                          </Col>
+                          <Col className='my-lg-0 my-2' lg='3' sm='12'>
+                            <CardText className='col-title mb-md-2 mb-0'>Cost</CardText>
+                            <Input type='number' defaultValue='24' placeholder='24' />
+                            <div className='mt-2'>
+                              <span>Discount:</span> <span>0%</span>
+                            </div>
+                          </Col>
+                          <Col className='my-lg-0 my-2' lg='2' sm='12'>
+                            <CardText className='col-title mb-md-2 mb-0'>Qty</CardText>
+                            <Input type='number' defaultValue='1' placeholder='1' />
+                          </Col>
+                          <Col className='my-lg-0 mt-2' lg='2' sm='12'>
+                            <CardText className='col-title mb-md-50 mb-0'>Price</CardText>
+                            <CardText className='mb-0'>$24.00</CardText>
+                          </Col>
+                        </Row>
+                        <div className='d-flex justify-content-center border-start invoice-product-actions py-50 px-25'>
+                          <X size={18} className='cursor-pointer' onClick={deleteForm} />
+                        </div>
+                      </Col>
+                    </Row>
+                  </Tag>
+                );
+              }}
           </Repeater>
           <Row className='mt-1'>
             <Col sm='12' className='px-0'>

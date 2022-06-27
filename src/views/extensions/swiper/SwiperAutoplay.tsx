@@ -6,20 +6,20 @@ import img3 from '../../../../src/assets/images/banner/banner-8.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-9.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-10.jpg';
 import img6 from '../../../../src/assets/images/banner/banner-11.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false
+    disableOnInteraction: false,
   },
   pagination: {
-    clickable: true
+    clickable: true,
   },
-  navigation: true
+  navigation: true,
 };
 
 const SwiperAutoplay = ({ isRtl }: Partial<useRTLInterface>) => {

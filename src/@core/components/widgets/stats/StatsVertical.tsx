@@ -23,5 +23,5 @@ StatsVertical.propTypes = {
   icon: PropTypes.element.isRequired,
   color: PropTypes.string.isRequired,
   stats: PropTypes.string.isRequired,
-  statTitle: PropTypes.string.isRequired
+  statTitle: PropTypes.string.isRequired,
 };

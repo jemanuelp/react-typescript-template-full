@@ -22,7 +22,7 @@ const applyHeight: Partial<Modifier<any>> = {
       maxHeight = pageHeight - ddTop - 25;
       stylesObj = {
         maxHeight,
-        overflowY: 'auto'
+        overflowY: 'auto',
       };
     }
     const ddRef = popperEl.getBoundingClientRect();
@@ -31,7 +31,7 @@ const applyHeight: Partial<Modifier<any>> = {
       popperEl.closest('.dropdown').classList.add('openLeft');
     }
     data.state.styles.popper = { ...data.state.styles.popper, ...stylesObj };
-  }
+  },
 };
 
 const HorizontalNavMenuGroup = (props: any) => {
@@ -57,10 +57,10 @@ const HorizontalNavMenuGroup = (props: any) => {
         enabled: true,
         name: 'offset',
         options: {
-          offset: isChild ? [-8, 15] : [popperOffsetHorizontal, 5]
-        }
-      }
-    ]
+          offset: isChild ? [-8, 15] : [popperOffsetHorizontal, 5],
+        },
+      },
+    ],
   });
 
   const handleMouseEnter = () => {
@@ -77,7 +77,7 @@ const HorizontalNavMenuGroup = (props: any) => {
         show: menuOpen,
         'nav-item': submenu === false,
         'dropdown-submenu': submenu === true,
-        'sidebar-group-active active': hasActiveChild(item, currentURL)
+        'sidebar-group-active active': hasActiveChild(item, currentURL),
       })}
     >
       <Link
@@ -85,7 +85,7 @@ const HorizontalNavMenuGroup = (props: any) => {
         onClick={(e: any) => e.preventDefault()}
         className={classnames('dropdown-toggle d-flex align-items-center', {
           'dropdown-item': submenu === true,
-          'nav-link': submenu === false
+          'nav-link': submenu === false,
         })}
       >
         {item.icon}

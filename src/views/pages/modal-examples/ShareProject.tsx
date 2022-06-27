@@ -14,7 +14,7 @@ import {
   DropdownItem,
   ListGroupItem,
   DropdownToggle,
-  UncontrolledDropdown
+  UncontrolledDropdown,
 } from 'reactstrap';
 import Select, { components } from 'react-select';
 import { FileText, Users, Link } from 'react-feather';
@@ -32,8 +32,8 @@ import portrait5 from '../../../../src/assets/images/portrait/small/avatar-s-11.
 import portrait6 from '../../../../src/assets/images/portrait/small/avatar-s-10.jpg';
 import portrait7 from '../../../../src/assets/images/portrait/small/avatar-s-8.jpg';
 import portrait8 from '../../../../src/assets/images/portrait/small/avatar-s-6.jpg';
-import Avatar from "../../../@core/components/avatar";
-import {selectThemeColors} from "../../../utility/Utils";
+import Avatar from '../../../@core/components/avatar';
+import {selectThemeColors} from '../../../utility/Utils';
 
 const options = [
   { value: 'Donna Frank', label: 'Donna Frank', avatar: avatar1 },
@@ -41,7 +41,7 @@ const options = [
   { value: 'Gabrielle Robertson', label: 'Gabrielle Robertson', avatar: avatar3 },
   { value: 'Lori Spears', label: 'Lori Spears', avatar: avatar4 },
   { value: 'Sandy Vega', label: 'Sandy Vega', avatar: avatar5 },
-  { value: 'Cheryl May', label: 'Cheryl May', avatar: avatar6 }
+  { value: 'Cheryl May', label: 'Cheryl May', avatar: avatar6 },
 ];
 
 const data = [
@@ -49,50 +49,50 @@ const data = [
     img: portrait1,
     type: 'Can Edit',
     name: 'Lester Palmer',
-    username: 'pe@vogeiz.net'
+    username: 'pe@vogeiz.net',
   },
   {
     img: portrait2,
     type: 'Owner',
     name: 'Mittie Blair',
-    username: 'peromak@zukedohik.gov'
+    username: 'peromak@zukedohik.gov',
   },
   {
     img: portrait3,
     type: 'Can Comment',
     name: 'Marvin Wheeler',
-    username: 'rumet@jujpejah.net'
+    username: 'rumet@jujpejah.net',
   },
   {
     img: portrait4,
     type: 'Can View',
     name: 'Nannie Ford',
-    username: 'negza@nuv.io'
+    username: 'negza@nuv.io',
   },
   {
     img: portrait5,
     type: 'Can Edit',
     name: 'Julian Murphy',
-    username: 'lunebame@umdomgu.net'
+    username: 'lunebame@umdomgu.net',
   },
   {
     img: portrait6,
     type: 'Can View',
     name: 'Sophie Gilbert',
-    username: 'ha@sugit.gov'
+    username: 'ha@sugit.gov',
   },
   {
     img: portrait7,
     type: 'Can Comment',
     name: 'Chris Watkins',
-    username: 'zokap@mak.org'
+    username: 'zokap@mak.org',
   },
   {
     img: portrait8,
     type: 'Can Edit',
     name: 'Adelaide Nichols',
-    username: 'ujinomu@jigo.com'
-  }
+    username: 'ujinomu@jigo.com',
+  },
 ];
 
 const OptionComponent = ({ data, ...props }: any) => {
@@ -115,6 +115,7 @@ const ShareProjectExample = () => {
         <CardBody className='text-center'>
           <FileText className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Share Project</CardTitle>
+          {/* eslint-disable-next-line max-len */}
           <CardText>Elegant Share Project options modal popup example, easy to use in any page.</CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
@@ -137,7 +138,7 @@ const ShareProjectExample = () => {
             className='react-select'
             classNamePrefix='select'
             components={{
-              Option: OptionComponent
+              Option: OptionComponent,
             }}
           />
           <p className='fw-bolder pt-50 mt-2'>12 Members</p>

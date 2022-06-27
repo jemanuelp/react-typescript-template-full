@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TinyChartStats from '../../../../@core/components/widgets/stats/TinyChartStats';
-import {IProfitLineChart} from "../../../../domains/interfaces/card-statistics/IProfitLineChart";
+import {IProfitLineChart} from '../../../../domains/interfaces/card-statistics/IProfitLineChart';
 
 const ProfitLineChart = ({ info }: { info:string }) => {
   const [data, setData] = useState<IProfitLineChart | null>(null);
@@ -95,17 +95,17 @@ const ProfitLineChart = ({ info }: { info:string }) => {
   };
 
   return data !== null
-? (
-    <TinyChartStats
-      height={70}
-      type='line'
-      options={options}
-      title={data.title}
-      stats={data.statistics}
-      series={data.series}
-    />
-  )
-: null;
+    ? (
+      <TinyChartStats
+        height={70}
+        type='line'
+        options={options}
+        title={data.title}
+        stats={data.statistics}
+        series={data.series}
+      />
+    )
+    : null;
 };
 
 export default ProfitLineChart;

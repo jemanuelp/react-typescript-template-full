@@ -2,14 +2,14 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
-import {ApexOptions} from "apexcharts";
+import {ApexOptions} from 'apexcharts';
 
 const ApexCandleStickChart = (
-    {
-      danger,
-      success,
-      direction,
-    }: {
+  {
+    danger,
+    success,
+    direction,
+  }: {
       direction: string,
       success: string,
       danger: string
@@ -132,7 +132,7 @@ const ApexCandleStickChart = (
             options={{
               mode: 'range',
               defaultDate: [
-                  new Date(),
+                new Date(),
                 new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000)),
               ],
             }}

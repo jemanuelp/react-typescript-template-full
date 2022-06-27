@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import classnames from 'classnames';
 import { ChevronDown, RotateCw, X } from 'react-feather';
 import { Card, CardHeader, CardTitle, Collapse } from 'reactstrap';
-import UiLoader from "../ui-loader";
+import UiLoader from '../ui-loader';
 
 enum IconActions {
   collapse='collapse',
@@ -19,7 +19,7 @@ abstract class PropTypesCardActions {
   endReload(props: any) {
     // ** User passes reload action and doesn't pass endReload then return Error
     if (
-        (props['actions'] === 'reload' && props['endReload'] === undefined) ||
+      (props['actions'] === 'reload' && props['endReload'] === undefined) ||
         (props['actions'].includes('reload') && props['endReload'] === undefined)
     ) {
       return new Error('Please provide a function to end reload!');
@@ -41,19 +41,19 @@ const CardActions = (props: PropTypesCardActions) => {
   const Icons = {
     collapse: collapseIcon ? collapseIcon : ChevronDown,
     remove: removeIcon ? removeIcon : X,
-    reload: reloadIcon ? reloadIcon : RotateCw
+    reload: reloadIcon ? reloadIcon : RotateCw,
   };
 
   // ** Action to call
   const callAction = (action: string) => {
     switch (action) {
-      case 'collapse':
-        return setCollapse(!collapse);
-      case 'remove':
-        return setVisibility(false);
-      case 'reload':
-        return setReload(true);
-      default:
+    case 'collapse':
+      return setCollapse(!collapse);
+    case 'remove':
+      return setVisibility(false);
+    case 'reload':
+      return setReload(true);
+    default:
     }
   };
 
@@ -71,7 +71,7 @@ const CardActions = (props: PropTypesCardActions) => {
           <Tag
             key={i}
             className={classnames('cursor-pointer', {
-              'me-50': i < actions.length - 1
+              'me-50': i < actions.length - 1,
             })}
             size={15}
             onClick={() => callAction(action)}
@@ -105,13 +105,15 @@ const CardActions = (props: PropTypesCardActions) => {
   return (
     <BlockUiWrapper
       
-      {...(actions === IconActions.reload || actions.includes(IconActions.reload) ? {
-            blocking: reload
-          } : {})}
+      {...(actions === IconActions.reload || actions.includes(IconActions.reload)
+        ? {
+          blocking: reload,
+        }
+        : {})}
     >
       <Card
         className={classnames('card-action', {
-          'd-none': !visibility
+          'd-none': !visibility,
         })}
       >
         <CardHeader>

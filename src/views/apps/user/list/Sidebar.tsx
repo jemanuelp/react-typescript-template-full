@@ -6,10 +6,10 @@ import { useForm, Controller } from 'react-hook-form';
 import { Button, Label, FormText, Form, Input } from 'reactstrap';
 import { addUser } from '../store';
 import { useDispatch } from 'react-redux';
-import {IUser} from "../../../../domains/interfaces/IUser";
-import {CountryOptionsSidebar} from "../../../../domains/const/options/CountryOptions";
-import Sidebar from "../../../../../src/@core/components/sidebar";
-import {SizeTypes} from "../../../../domains/enums/SizeTypes";
+import {IUser} from '../../../../domains/interfaces/IUser';
+import {CountryOptionsSidebar} from '../../../../domains/const/options/CountryOptions';
+import Sidebar from '../../../../../src/@core/components/sidebar';
+import {SizeTypes} from '../../../../domains/enums/SizeTypes';
 
 const defaultValues: Partial<IUser> = {
   email: '',
@@ -17,13 +17,13 @@ const defaultValues: Partial<IUser> = {
   company: '',
   fullName: '',
   username: '',
-  country: null
+  country: null,
 };
 
 const checkIsValid = (data: Partial<IUser>) => {
   return Object.values(data).every((field: any) => (typeof field === 'object'
-? field !== null
-: field.length > 0));
+    ? field !== null
+    : field.length > 0));
 };
 
 const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
@@ -38,7 +38,7 @@ const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
     setValue,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   // ** Function to handle form submit
@@ -58,20 +58,20 @@ const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
           contact: data.contact,
           fullName: data.fullName,
           username: data.username,
-          country: data.country.value
-        })
+          country: data.country.value,
+        }),
       );
     } else {
       for (const key in data) {
         if (data[key] === null) {
           setError('country', {
-            type: 'manual'
+            type: 'manual',
           });
         }
         if (data[key] !== null && data[key].length === 0) {
           const validKey = key as keyof typeof defaultValues;
           setError(validKey, {
-            type: 'manual'
+            type: 'manual',
           });
         }
       }
@@ -150,11 +150,11 @@ const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
             name='contact'
             control={control}
             render={(
-                // { field }
+              // { field }
             ) => (
               <Input
-                  placeholder='(397) 294-5153'
-                  invalid={errors.contact && true}
+                placeholder='(397) 294-5153'
+                invalid={errors.contact && true}
               />
             )}
           />
@@ -208,13 +208,13 @@ const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
             Select Plan
           </Label>
           <Input type='select' id='select-plan' name='select-plan'
-                 value={plan}
-                 onChange={
-                   (e: ChangeEvent<HTMLInputElement>) => {
-                     if (e.target) {
-                       setPlan(e.target.value);
-                     }
-                   }}>
+            value={plan}
+            onChange={
+              (e: ChangeEvent<HTMLInputElement>) => {
+                if (e.target) {
+                  setPlan(e.target.value);
+                }
+              }}>
             <option value='basic'>Basic</option>
             <option value='enterprise'>Enterprise</option>
             <option value='company'>Company</option>

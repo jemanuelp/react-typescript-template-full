@@ -5,7 +5,7 @@ import SelectSizing from './SelectSizing';
 import Selectoptions from './SelectOptions';
 import SelectReactstrap from './SelectReactstrap';
 import '../../../../@core/scss/react/libs/react-select/_react-select.scss';
-import Breadcrumbs from "../../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 
 const Select = () => {
   return (

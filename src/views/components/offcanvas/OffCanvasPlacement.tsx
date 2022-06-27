@@ -44,12 +44,12 @@ const OffCanvasPlacement = () => {
         <OffcanvasHeader toggle={toggleCanvasStart}>OffCanvas {canvasPlacement}</OffcanvasHeader>
         <OffcanvasBody
           className={classnames({
-            'my-auto mx-0 flex-grow-0': canvasPlacement === 'start' || canvasPlacement === 'end'
+            'my-auto mx-0 flex-grow-0': canvasPlacement === 'start' || canvasPlacement === 'end',
           })}
         >
           <p
             className={classnames({
-              'text-center': canvasPlacement === 'start' || canvasPlacement === 'end'
+              'text-center': canvasPlacement === 'start' || canvasPlacement === 'end',
             })}
           >
             Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web
@@ -61,7 +61,7 @@ const OffCanvasPlacement = () => {
             onClick={toggleCanvasStart}
             className={classnames({
               'mb-1': canvasPlacement === 'start' || canvasPlacement === 'end',
-              'me-1': canvasPlacement === 'top' || canvasPlacement === 'bottom'
+              'me-1': canvasPlacement === 'top' || canvasPlacement === 'bottom',
             })}
             {...(canvasPlacement === 'start' || canvasPlacement === 'end' ? { block: true } : {})}
           >

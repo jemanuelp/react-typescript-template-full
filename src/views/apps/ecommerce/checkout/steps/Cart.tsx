@@ -4,7 +4,7 @@ import InputNumber from 'rc-input-number';
 import { X, Heart, Star, Plus, Minus } from 'react-feather';
 import { Card, CardBody, CardText, Button, Badge, InputGroup, Input, InputGroupText } from 'reactstrap';
 import '../../../../../@core/scss/react/libs/input-number/input-number.scss';
-import {FormatRangeOptions} from "@fullcalendar/common";
+import {FormatRangeOptions} from '@fullcalendar/common';
 
 const Cart = (props: any) => {
   const {
@@ -14,13 +14,13 @@ const Cart = (props: any) => {
     dispatch,
     addToWishlist,
     deleteWishlistItem,
-    getCartItems
+    getCartItems,
   } = props;
 
   // ** Function to convert Date
   const formatDate = (
-      value: string,
-      formatting: FormatRangeOptions = { month: "short", day: "numeric", year: "numeric" }
+    value: string,
+    formatting: FormatRangeOptions = { month: 'short', day: 'numeric', year: 'numeric' },
   ) => {
     if (!value) return value;
     return new Intl.DateTimeFormat('en-US', formatting).format(new Date(value));
@@ -67,7 +67,7 @@ const Cart = (props: any) => {
                         <Star
                           className={classnames({
                             'filled-star': index + 1 <= item.rating,
-                            'unfilled-star': index + 1 > item.rating
+                            'unfilled-star': index + 1 > item.rating,
                           })}
                         />
                       </li>
@@ -98,14 +98,14 @@ const Cart = (props: any) => {
               <div className='item-cost'>
                 <h4 className='item-price'>${item.price}</h4>
                 {item.hasFreeShipping
-? (
-                  <CardText className='shipping'>
-                    <Badge color='light-success' pill>
+                  ? (
+                    <CardText className='shipping'>
+                      <Badge color='light-success' pill>
                       Free Shipping
-                    </Badge>
-                  </CardText>
-                )
-: null}
+                      </Badge>
+                    </CardText>
+                  )
+                  : null}
               </div>
             </div>
             <Button className='mt-1 remove-wishlist' color='light' onClick={() => dispatch(deleteCartItem(item.id))}>
@@ -120,7 +120,7 @@ const Cart = (props: any) => {
               <Heart
                 size={14}
                 className={classnames('me-25', {
-                  'fill-current': item.isInWishlist
+                  'fill-current': item.isInWishlist,
                 })}
               />
               <span className='text-truncate'>Wishlist</span>
@@ -134,8 +134,8 @@ const Cart = (props: any) => {
   return (
     <div className='list-view product-checkout'>
       <div className='checkout-items'>{products.length
-? renderCart()
-: <h4>Your cart is empty</h4>}</div>
+        ? renderCart()
+        : <h4>Your cart is empty</h4>}</div>
       <div className='checkout-options'>
         <Card>
           <CardBody>

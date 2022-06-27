@@ -4,13 +4,13 @@ import { useForm, Controller } from 'react-hook-form';
 import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
 import {Row, Col, CardTitle, CardText, Label, Button, Form, FormFeedback, Input} from 'reactstrap';
 import '../../../@core/scss/react/pages/page-authentication.scss';
-import {useSkin} from "../../../utility/hooks/useSkin";
-import InputPasswordToggle from "../../../@core/components/input-password-toggle";
-import useJwt from "../../../auth/jwt/useJwt";
-import {handleLogin} from "../../../redux/authentication";
-import {AxiosResponse} from "axios";
-import * as Dark from "../../../../src/assets/images/pages/register-v2-dark.svg";
-import * as Light from "../../../../src/assets/images/pages/register-v2.svg";
+import {useSkin} from '../../../utility/hooks/useSkin';
+import InputPasswordToggle from '../../../@core/components/input-password-toggle';
+import useJwt from '../../../auth/jwt/useJwt';
+import {handleLogin} from '../../../redux/authentication';
+import {AxiosResponse} from 'axios';
+import * as Dark from '../../../../src/assets/images/pages/register-v2-dark.svg';
+import * as Light from '../../../../src/assets/images/pages/register-v2.svg';
 // import {AbilityContext} from "../../../utility/context/Can";
 // import {useContext} from 'react';
 // import {IRegisterResponse} from "../../../domains/interfaces/IRegisterResponse";
@@ -19,7 +19,7 @@ const defaultValues = {
   email: '',
   terms: false,
   username: '',
-  password: ''
+  password: '',
 };
 
 const Register = () => {
@@ -31,12 +31,12 @@ const Register = () => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   const source = skin === 'dark'
-      ? Dark.default
-      : Light.default;
+    ? Dark.default
+    : Light.default;
 
   const onSubmit = (data: any) => {
     const tempData = { ...data };
@@ -52,7 +52,7 @@ const Register = () => {
                 const valid =  property as keyof typeof defaultValues;
                 setError(valid, {
                   type: 'manual',
-                  message: res.data.error[property]
+                  message: res.data.error[property],
                 });
               }
             }
@@ -72,12 +72,12 @@ const Register = () => {
           const valid = key as keyof typeof defaultValues;
           setError(valid, {
             type: 'manual',
-            message: `Please enter a valid ${key}`
+            message: `Please enter a valid ${key}`,
           });
         }
         if (key === 'terms' && !data.terms) {
           setError('terms', {
-            type: 'manual'
+            type: 'manual',
           });
         }
       }
@@ -164,8 +164,8 @@ const Register = () => {
                 />
                 {
                   errors.username
-                      ? <FormFeedback>{errors.username.message}</FormFeedback>
-                      : null
+                    ? <FormFeedback>{errors.username.message}</FormFeedback>
+                    : null
                 }
               </div>
               <div className='mb-1'>
@@ -181,8 +181,8 @@ const Register = () => {
                 />
                 {
                   errors.email
-                      ? <FormFeedback>{errors.email.message}</FormFeedback>
-                      : null
+                    ? <FormFeedback>{errors.email.message}</FormFeedback>
+                    : null
                 }
               </div>
               <div className='mb-1'>
@@ -203,8 +203,8 @@ const Register = () => {
                   control={control}
                   render={({ field }) => (
                     <Input
-                        //{...field}
-                        id='terms' type='checkbox' checked={field.value} invalid={errors.terms && true} />
+                      //{...field}
+                      id='terms' type='checkbox' checked={field.value} invalid={errors.terms && true} />
                   )}
                 />
                 <Label className='form-check-label' for='terms'>

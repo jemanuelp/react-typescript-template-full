@@ -9,13 +9,13 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledButtonDropdown
+  UncontrolledButtonDropdown,
 } from 'reactstrap';
 import { getData } from '../../invoice/store';
 import { useDispatch, useSelector } from 'react-redux';
 import 'src/@core/scss/react/apps/app-invoice.scss';
 import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
-import {RootState} from "../../../../redux/reducers/RootReducer";
+import {RootState} from '../../../../redux/reducers/RootReducer';
 
 const InvoiceList = () => {
   const dispatch = useDispatch<any>();
@@ -35,18 +35,18 @@ const InvoiceList = () => {
         sortColumn,
         page: currentPage,
         perPage: rowsPerPage,
-        status: statusValue
-      })
+        status: statusValue,
+      }),
     );
   }, [dispatch, store.data.length]);
 
   const dataToRender = () => {
     const filters = {
       status: statusValue,
-      q: value
+      q: value,
     };
 
-    const isFiltered = Object.keys(filters).some(function (k) {
+    const isFiltered = Object.keys(filters).some(function(k) {
       return filters[k as keyof typeof filters].length > 0;
     });
 
@@ -69,8 +69,8 @@ const InvoiceList = () => {
         sort: sortDirection,
         status: statusValue,
         perPage: rowsPerPage,
-        sortColumn: column.sortField
-      })
+        sortColumn: column.sortField,
+      }),
     );
   };
 

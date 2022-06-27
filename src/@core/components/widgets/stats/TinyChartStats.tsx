@@ -24,10 +24,10 @@ TinyChartStats.propTypes = {
   title: PropTypes.string.isRequired,
   stats: PropTypes.string.isRequired,
   series: PropTypes.array.isRequired,
-  options: PropTypes.object.isRequired
+  options: PropTypes.object.isRequired,
 };
 
 // ** Default Props
 TinyChartStats.defaultProps = {
-  height: 100
+  height: 100,
 };

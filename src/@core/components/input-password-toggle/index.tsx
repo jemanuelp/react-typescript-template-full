@@ -35,15 +35,17 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
 
   return (
     <Fragment>
-      {label ? (
-        <Label className='form-label' for={htmlFor}>
-          {label}
-        </Label>
-      ) : null}
+      {label
+        ? (
+          <Label className='form-label' for={htmlFor}>
+            {label}
+          </Label>
+        )
+        : null}
       <InputGroup
         className={classnames({
           [className]: className,
-          'is-invalid': invalid
+          'is-invalid': invalid,
         })}
       >
         <Input
@@ -52,12 +54,14 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
           type={inputVisibility === false ? 'password' : 'text'}
           placeholder={placeholder ? placeholder : '············'}
           className={classnames({
-            [inputClassName]: inputClassName
+            [inputClassName]: inputClassName,
           })}
           
-          {...(label && htmlFor ? {
-                id: htmlFor
-              } : {})}
+          {...(label && htmlFor
+            ? {
+              id: htmlFor,
+            }
+            : {})}
           {...rest}
         />
         <InputGroupText className='cursor-pointer' onClick={() => setInputVisibility(!inputVisibility)}>
@@ -92,10 +96,10 @@ InputPasswordToggle.propTypes = {
       return new Error('label prop is required when htmlFor prop is present');
     }
     return null;
-  }
+  },
 };
 
 // ** Default Props
 InputPasswordToggle.defaultProps = {
-  visible: false
+  visible: false,
 };

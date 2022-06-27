@@ -1,6 +1,6 @@
 import mock from '../mock';
-import {AxiosRequestConfig} from "axios";
-import {IEmail} from "../../domains/interfaces/emails/IEmail";
+import {AxiosRequestConfig} from 'axios';
+import {IEmail} from '../../domains/interfaces/emails/IEmail';
 
 const data: {emails: IEmail[]} = {
   emails: [
@@ -761,8 +761,8 @@ mock.onGet('/apps/email/emails').reply(config => {
     email => (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered)) &&
       isInFolder(email) &&
       (label
-? email.labels.includes(label)
-: true),
+        ? email.labels.includes(label)
+        : true),
   );
 
   // ------------------------------------------------
@@ -831,16 +831,16 @@ mock.onGet('/apps/email/get-email').reply((config: AxiosRequestConfig) => {
   if (mail) {
     const mailIndex = data.emails.findIndex(i => i.id === mail.id);
     mailIndex === 0
-? (mail.hasPreviousMail = true)
-: (mail.hasPreviousMail = false);
+      ? (mail.hasPreviousMail = true)
+      : (mail.hasPreviousMail = false);
     mailIndex === data.emails.length - 1
-? (mail.hasNextMail = true)
-: (mail.hasNextMail = false);
+      ? (mail.hasNextMail = true)
+      : (mail.hasNextMail = false);
   }
 
   return mail
-? [200, mail]
-: [404];
+    ? [200, mail]
+    : [404];
 });
 
 // ------------------------------------------------
@@ -852,13 +852,13 @@ mock.onGet('/apps/email/paginate-email').reply(config => {
   const currentEmailIndex = data.emails.findIndex(e => e.id === emailId);
 
   const newEmailIndex = dir === 'previous'
-? currentEmailIndex - 1
-: currentEmailIndex + 1;
+    ? currentEmailIndex - 1
+    : currentEmailIndex + 1;
 
   const newEmail = data.emails[newEmailIndex];
 
   return newEmail
-? [200, newEmail]
-: [404];
+    ? [200, newEmail]
+    : [404];
 });
 

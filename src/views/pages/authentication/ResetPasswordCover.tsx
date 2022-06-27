@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'react-feather';
 import { Row, Col, CardTitle, CardText, Form, Label, Button } from 'reactstrap';
 import '../../../@core/scss/react/pages/page-authentication.scss';
-import {useSkin} from "../../../utility/hooks/useSkin";
-import InputPassword from "../../../@core/components/input-password-toggle";
-import * as Dark from "../../../../src/assets/images/pages/reset-password-v2-dark.svg";
-import * as Light from "../../../../src/assets/images/pages/reset-password-v2.svg";
+import {useSkin} from '../../../utility/hooks/useSkin';
+import InputPassword from '../../../@core/components/input-password-toggle';
+import * as Dark from '../../../../src/assets/images/pages/reset-password-v2-dark.svg';
+import * as Light from '../../../../src/assets/images/pages/reset-password-v2.svg';
 
 const ResetPasswordCover = () => {
   const { skin } = useSkin();
   const source = skin === 'dark'
-      ? Dark.default
-      : Light.default;
+    ? Dark.default
+    : Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

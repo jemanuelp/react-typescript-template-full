@@ -7,15 +7,15 @@ import AddEventSidebar from './AddEventSidebar';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchEvents, selectEvent, updateEvent, updateFilter, updateAllFilters, addEvent, removeEvent } from './store';
 import '../../../@core/scss/react/apps/app-calendar.scss';
-import {RootState} from "../../../redux/reducers/RootReducer";
-import {useRTL} from "../../../utility/hooks/useRTL";
+import {RootState} from '../../../redux/reducers/RootReducer';
+import {useRTL} from '../../../utility/hooks/useRTL';
 
 const calendarsColor = {
   Business: 'primary',
   Holiday: 'success',
   Personal: 'danger',
   Family: 'warning',
-  ETC: 'info'
+  ETC: 'info',
 };
 
 const CalendarComponent = () => {
@@ -38,8 +38,8 @@ const CalendarComponent = () => {
       calendar: '',
       guests: [],
       location: '',
-      description: ''
-    }
+      description: '',
+    },
   };
 
   const refetchEvents = () => {
@@ -59,7 +59,7 @@ const CalendarComponent = () => {
           <Col
             id='app-calendar-sidebar'
             className={classnames('col app-calendar-sidebar flex-grow-0 overflow-hidden d-flex flex-column', {
-              show: leftSidebarOpen
+              show: leftSidebarOpen,
             })}
           >
             <SidebarLeft
@@ -88,7 +88,7 @@ const CalendarComponent = () => {
           </Col>
           <div
             className={classnames('body-content-overlay', {
-              show: leftSidebarOpen
+              show: leftSidebarOpen,
             })}
             onClick={() => toggleSidebar(false)}
           ></div>

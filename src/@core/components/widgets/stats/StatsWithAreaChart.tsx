@@ -15,7 +15,7 @@ const StatsWithAreaChart = (props: any) => {
     <Card {...rest}>
       <CardBody
         className={classnames('pb-0', {
-          [className]: className
+          [className]: className,
         })}
       >
         <Avatar className='avatar-stats p-50 m-0' color={`light-${color}`} icon={icon} />
@@ -38,11 +38,11 @@ StatsWithAreaChart.propTypes = {
   color: PropTypes.string.isRequired,
   stats: PropTypes.string.isRequired,
   series: PropTypes.array.isRequired,
-  statTitle: PropTypes.string.isRequired
+  statTitle: PropTypes.string.isRequired,
 };
 
 // ** Default Props
 StatsWithAreaChart.defaultProps = {
   color: 'primary',
-  options: areaChartOptions
+  options: areaChartOptions,
 };

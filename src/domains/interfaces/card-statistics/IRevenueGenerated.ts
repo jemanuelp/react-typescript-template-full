@@ -1,5 +1,5 @@
-import {IAnalyticsData} from "./IAnalyticsData";
-import {ISerie} from "./ISerie";
+import {IAnalyticsData} from './IAnalyticsData';
+import {ISerie} from './ISerie';
 
 export interface IRevenueGenerated {
     series: ISerie[];

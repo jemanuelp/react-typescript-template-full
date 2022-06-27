@@ -1,4 +1,4 @@
-import {IMessage} from "./IMessage";
+import {IMessage} from './IMessage';
 
 export interface IChat {
     id?: number;

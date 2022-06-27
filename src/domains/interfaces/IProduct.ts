@@ -1,4 +1,4 @@
-import {ColorOptionsTypes} from "../enums/ColorOptionsTypes";
+import {ColorOptionsTypes} from '../enums/ColorOptionsTypes';
 
 export interface IProduct {
     id: number;

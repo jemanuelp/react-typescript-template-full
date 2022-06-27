@@ -3,7 +3,7 @@ import { ChevronDown } from 'react-feather';
 import DataTable from 'react-data-table-component';
 import Avatar from '../../../../@core/components/avatar';
 import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
-import {IProject} from "../../../../domains/interfaces/IProject";
+import {IProject} from '../../../../domains/interfaces/IProject';
 
 const projectsArr: IProject[] = [
   {
@@ -13,7 +13,7 @@ const projectsArr: IProject[] = [
     totalTasks: '233/240',
     subtitle: 'React Project',
     title: 'BGC eCommerce App',
-    img: require('src/assets/images/icons/brands/react-label.png').default
+    img: require('src/assets/images/icons/brands/react-label.png').default,
   },
   {
     hours: '89h',
@@ -22,7 +22,7 @@ const projectsArr: IProject[] = [
     progressColor: 'danger',
     subtitle: 'UI/UX Project',
     title: 'Falcon Logo Design',
-    img: require('src/assets/images/icons/brands/xd-label.png').default
+    img: require('src/assets/images/icons/brands/xd-label.png').default,
   },
   {
     progress: 90,
@@ -31,7 +31,7 @@ const projectsArr: IProject[] = [
     progressColor: 'success',
     subtitle: 'Vuejs Project',
     title: 'Dashboard Design',
-    img: require('src/assets/images/icons/brands/vue-label.png').default
+    img: require('src/assets/images/icons/brands/vue-label.png').default,
   },
   {
     hours: '45h',
@@ -40,7 +40,7 @@ const projectsArr: IProject[] = [
     progressColor: 'warning',
     subtitle: 'iPhone Project',
     title: 'Foodista mobile app',
-    img: require('src/assets/images/icons/brands/sketch-label.png').default
+    img: require('src/assets/images/icons/brands/sketch-label.png').default,
   },
   {
     progress: 73,
@@ -49,7 +49,7 @@ const projectsArr: IProject[] = [
     progressColor: 'info',
     subtitle: 'React Project',
     title: 'Dojo React Project',
-    img: require('src/assets/images/icons/brands/react-label.png').default
+    img: require('src/assets/images/icons/brands/react-label.png').default,
   },
   {
     progress: 81,
@@ -58,7 +58,7 @@ const projectsArr: IProject[] = [
     title: 'HTML Project',
     progressColor: 'success',
     subtitle: 'Crypto Website',
-    img: require('src/assets/images/icons/brands/html-label.png').default
+    img: require('src/assets/images/icons/brands/html-label.png').default,
   },
   {
     progress: 78,
@@ -67,8 +67,8 @@ const projectsArr: IProject[] = [
     progressColor: 'success',
     subtitle: 'Vuejs Project',
     title: 'Vue Admin template',
-    img: require('src/assets/images/icons/brands/vue-label.png').default
-  }
+    img: require('src/assets/images/icons/brands/vue-label.png').default,
+  },
 ];
 
 export const columns = [
@@ -89,11 +89,11 @@ export const columns = [
           </div>
         </div>
       );
-    }
+    },
   },
   {
     name: 'Total Tasks',
-    selector: (row: IProject) => row.totalTasks
+    selector: (row: IProject) => row.totalTasks,
   },
   {
     name: 'Progress',
@@ -110,12 +110,12 @@ export const columns = [
           />
         </div>
       );
-    }
+    },
   },
   {
     name: 'Hours',
-    selector: (row: IProject) => row.hours
-  }
+    selector: (row: IProject) => row.hours,
+  },
 ];
 
 const UserProjectsList = () => {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {RepeaterProptypes} from "../../../domains/proptypes/RepeaterProptypes";
+import {RepeaterProptypes} from '../../../domains/proptypes/RepeaterProptypes';
 
 const Repeater = (props: RepeaterProptypes) => {
   const { count, tag, children, ...rest } = props;
@@ -21,7 +21,7 @@ const Repeater = (props: RepeaterProptypes) => {
 
 // ** Default Props
 Repeater.defaultProps = {
-  tag: 'div'
+  tag: 'div',
 };
 
 export default Repeater;

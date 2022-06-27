@@ -1,31 +1,31 @@
-import { useTranslation } from 'react-i18next'
-import ReactCountryFlag from 'react-country-flag'
-import { UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
-import {LanguajeTypes} from "../../../../domains/enums/LanguajeTypes";
+import { useTranslation } from 'react-i18next';
+import ReactCountryFlag from 'react-country-flag';
+import { UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
+import {LanguajeTypes} from '../../../../domains/enums/LanguajeTypes';
 
 const IntlDropdown = () => {
-  const { i18n } = useTranslation()
+  const { i18n } = useTranslation();
 
-// ** Function to switch Language
+  // ** Function to switch Language
   const handleLangUpdate = (e: any, lang: any) => {
-    e.preventDefault()
-    i18n.changeLanguage(lang)
-  }
+    e.preventDefault();
+    i18n.changeLanguage(lang);
+  };
 
   const getSelectedLanguaje = (lang: any) => {
     switch (lang) {
-      case 'en':
-        return LanguajeTypes.en;
-      case 'de':
-        return LanguajeTypes.de;
-      case 'fr':
-        return LanguajeTypes.fr;
-      case 'pt':
-        return LanguajeTypes.pt;
-      default:
-        return LanguajeTypes.Default;
+    case 'en':
+      return LanguajeTypes.en;
+    case 'de':
+      return LanguajeTypes.de;
+    case 'fr':
+      return LanguajeTypes.fr;
+    case 'pt':
+      return LanguajeTypes.pt;
+    default:
+      return LanguajeTypes.Default;
     }
-  }
+  };
 
   return (
     <UncontrolledDropdown href='/' tag='li' className='dropdown-language nav-item'>
@@ -56,7 +56,7 @@ const IntlDropdown = () => {
         </DropdownItem>
       </DropdownMenu>
     </UncontrolledDropdown>
-  )
-}
+  );
+};
 
-export default IntlDropdown
+export default IntlDropdown;

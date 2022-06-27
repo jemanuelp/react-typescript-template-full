@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
 import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap';
-import {useSkin} from "../../../utility/hooks/useSkin";
-import InputPasswordToggle from "../../../@core/components/input-password-toggle";
+import {useSkin} from '../../../utility/hooks/useSkin';
+import InputPasswordToggle from '../../../@core/components/input-password-toggle';
 import '../../../@core/scss/react/pages/page-authentication.scss';
-import * as Dark from "../../../../src/assets/images/pages/register-v2-dark.svg";
-import * as Light from "../../../../src/assets/images/pages/register-v2.svg";
+import * as Dark from '../../../../src/assets/images/pages/register-v2-dark.svg';
+import * as Light from '../../../../src/assets/images/pages/register-v2.svg';
 
 const RegisterCover = () => {
   const { skin } = useSkin();
   const source = skin === 'dark'
-      ? Dark.default
-      : Light.default;
+    ? Dark.default
+    : Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

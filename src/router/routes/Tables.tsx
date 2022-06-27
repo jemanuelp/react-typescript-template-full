@@ -7,16 +7,16 @@ const DTAdvance = lazy(() => import('../../views/tables/data-tables/advance'));
 const TablesRoutes = [
   {
     path: '/tables/reactstrap',
-    element: <Reactstrap />
+    element: <Reactstrap />,
   },
   {
     path: '/datatables/basic',
-    element: <DTBasic />
+    element: <DTBasic />,
   },
   {
     path: '/datatables/advance',
-    element: <DTAdvance />
-  }
+    element: <DTAdvance />,
+  },
 ];
 
 export default TablesRoutes;

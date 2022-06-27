@@ -4,20 +4,20 @@ import img1 from '../../../../src/assets/images/banner/banner-21.jpg';
 import img2 from '../../../../src/assets/images/banner/banner-22.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-23.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-24.jpg';
-import {SwiperOptions} from "swiper/types/swiper-options";
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
+import {SwiperOptions} from 'swiper/types/swiper-options';
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
 
 const params: SwiperOptions = {
   effect: 'cube',
   pagination: {
-    clickable: true
+    clickable: true,
   },
   cubeEffect: {
     shadow: true,
     shadowOffset: 20,
     shadowScale: 0.94,
-    slideShadows: true
-  }
+    slideShadows: true,
+  },
 };
 
 const SwiperThreeD = ({ isRtl }: Partial<useRTLInterface>) => {

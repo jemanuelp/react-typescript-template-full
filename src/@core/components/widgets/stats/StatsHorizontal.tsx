@@ -8,18 +8,20 @@ const StatsHorizontal = ({ icon, color, stats, renderStats, statTitle, className
       <CardBody className={className}>
         <div className='d-flex justify-content-between align-items-center'>
           <div>
-            {renderStats ? (
-              renderStats
-            ) : (
-              <h2
-                className={classnames('fw-bolder', {
-                  'mb-0': !statsMargin,
-                  [statsMargin]: statsMargin
-                })}
-              >
-                {stats}
-              </h2>
-            )}
+            {renderStats
+              ? (
+                renderStats
+              )
+              : (
+                <h2
+                  className={classnames('fw-bolder', {
+                    'mb-0': !statsMargin,
+                    [statsMargin]: statsMargin,
+                  })}
+                >
+                  {stats}
+                </h2>
+              )}
 
             <p className='card-text'>{statTitle}</p>
           </div>
@@ -41,5 +43,5 @@ StatsHorizontal.propTypes = {
   icon: PropTypes.element.isRequired,
   color: PropTypes.string.isRequired,
   statTitle: PropTypes.string.isRequired,
-  statsMargin: PropTypes.oneOf(['mb-0', 'mb-25', 'mb-50', 'mb-75', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5'])
+  statsMargin: PropTypes.oneOf(['mb-0', 'mb-25', 'mb-50', 'mb-75', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5']),
 };

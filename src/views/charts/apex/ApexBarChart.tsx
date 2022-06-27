@@ -2,7 +2,7 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
-import {ApexOptions} from "apexcharts";
+import {ApexOptions} from 'apexcharts';
 
 const ApexBarChart = ({ info, direction } : { direction:string, info:string }) => {
   // ** Chart Options
@@ -62,7 +62,7 @@ const ApexBarChart = ({ info, direction } : { direction:string, info:string }) =
             options={{
               mode: 'range',
               defaultDate: [
-                  new Date(),
+                new Date(),
                 new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000)),
               ],
             }}

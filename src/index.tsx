@@ -24,24 +24,24 @@ import './@core/scss/core.scss';
 import './assets/scss/style.scss';
 
 import * as serviceWorker from './serviceWorker';
-import {createRoot} from "react-dom/client";
+import {createRoot} from 'react-dom/client';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);
 
 // ** Lazy load app
 const LazyApp = lazy(() => import('./App'));
 root.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <Suspense fallback={<Spinner />}>
-                <ThemeContext>
-                    <LazyApp />
-                    <Toaster position={themeConfig.layout.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
-                </ThemeContext>
-            </Suspense>
-        </Provider>
-    </BrowserRouter>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <Suspense fallback={<Spinner />}>
+        <ThemeContext>
+          <LazyApp />
+          <Toaster position={themeConfig.layout.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
+        </ThemeContext>
+      </Suspense>
+    </Provider>
+  </BrowserRouter>,
 );
 
 // If you want your app to work offline and load faster, you can change

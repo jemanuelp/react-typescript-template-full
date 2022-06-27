@@ -1,6 +1,6 @@
 import { Search } from 'react-feather';
 import { Card, CardBody, CardText, Form, Input, InputGroup, InputGroupText } from 'reactstrap';
-import {ChangeEvent} from "react";
+import {ChangeEvent} from 'react';
 
 const FaqFilter = ({ searchTerm, setSearchTerm, getFAQData }: any) => {
   const handleFaqFilter = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +13,7 @@ const FaqFilter = ({ searchTerm, setSearchTerm, getFAQData }: any) => {
       <Card
         className='faq-search'
         style={{
-          backgroundImage: `url(${require('src/assets/images/banner/banner.png').default})`
+          backgroundImage: `url(${require('src/assets/images/banner/banner.png').default})`,
         }}
       >
         <CardBody className='text-center'>

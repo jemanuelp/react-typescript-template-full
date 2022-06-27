@@ -33,11 +33,11 @@ StatsWithLineChart.propTypes = {
   color: PropTypes.string.isRequired,
   stats: PropTypes.string.isRequired,
   series: PropTypes.array.isRequired,
-  statTitle: PropTypes.string.isRequired
+  statTitle: PropTypes.string.isRequired,
 };
 
 // ** Default Props
 StatsWithLineChart.defaultProps = {
   options: lineChartOptions,
-  color: 'primary'
+  color: 'primary',
 };

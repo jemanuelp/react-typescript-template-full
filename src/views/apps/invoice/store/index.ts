@@ -1,27 +1,27 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {Dispatch} from "redux";
+import {Dispatch} from 'redux';
 
-export const getData = createAsyncThunk('appInvoice/getData', async (params: any) => {
+export const getData = createAsyncThunk('appInvoice/getData', async(params: any) => {
   const response = await axios.get('/apps/invoice/invoices', params);
   return {
     params,
     data: response.data.invoices,
     allData: response.data.allData,
-    totalPages: response.data.total
+    totalPages: response.data.total,
   };
 });
 
 export const deleteInvoice = createAsyncThunk(
-    'appInvoice/deleteInvoice',
-    async (
-        id: number,
-        { dispatch, getState }: {dispatch: Dispatch<any>, getState: Function}
-    ) => {
-  await axios.delete('/apps/invoice/delete', { data: { id } });
-  await dispatch(getData(getState().invoice.params));
-  return id;
-});
+  'appInvoice/deleteInvoice',
+  async(
+    id: number,
+    { dispatch, getState }: {dispatch: Dispatch<any>, getState: Function},
+  ) => {
+    await axios.delete('/apps/invoice/delete', { data: { id } });
+    await dispatch(getData(getState().invoice.params));
+    return id;
+  });
 
 export const appInvoiceSlice = createSlice({
   name: 'appInvoice',
@@ -29,7 +29,7 @@ export const appInvoiceSlice = createSlice({
     data: [],
     total: 1,
     params: {},
-    allData: []
+    allData: [],
   },
   reducers: {},
   extraReducers: builder => {
@@ -39,7 +39,7 @@ export const appInvoiceSlice = createSlice({
       state.total = action.payload.totalPages;
       state.params = action.payload.params;
     });
-  }
+  },
 });
 
 export default appInvoiceSlice.reducer;

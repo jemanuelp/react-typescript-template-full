@@ -36,7 +36,7 @@ const RippleButton = ({ className, children, onClick, ...rest }: any) => {
   return (
     <Button
       className={classnames('waves-effect', {
-        [className]: className
+        [className]: className,
       })}
       onClick={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -48,15 +48,17 @@ const RippleButton = ({ className, children, onClick, ...rest }: any) => {
       {...rest}
     >
       {children}
-      {isRippling ? (
-        <span
-          className='waves-ripple'
-          style={{
-            left: coords.x,
-            top: coords.y
-          }}
-        ></span>
-      ) : null}
+      {isRippling
+        ? (
+          <span
+            className='waves-ripple'
+            style={{
+              left: coords.x,
+              top: coords.y,
+            }}
+          ></span>
+        )
+        : null}
     </Button>
   );
 };

@@ -27,24 +27,24 @@ const renderRole = (row: any) => {
   const roleObj = {
     subscriber: {
       class: 'text-primary',
-      icon: User
+      icon: User,
     },
     maintainer: {
       class: 'text-success',
-      icon: Database
+      icon: Database,
     },
     editor: {
       class: 'text-info',
-      icon: Edit2
+      icon: Edit2,
     },
     author: {
       class: 'text-warning',
-      icon: Settings
+      icon: Settings,
     },
     admin: {
       class: 'text-danger',
-      icon: Slack
-    }
+      icon: Slack,
+    },
   };
 
   const validRole =  row.role as keyof typeof roleObj;
@@ -61,7 +61,7 @@ const renderRole = (row: any) => {
 const statusObj = {
   pending: 'light-warning',
   active: 'light-success',
-  inactive: 'light-secondary'
+  inactive: 'light-secondary',
 };
 
 export const columns = [
@@ -85,7 +85,7 @@ export const columns = [
           <small className='text-truncate text-muted mb-0'>{row.email}</small>
         </div>
       </div>
-    )
+    ),
   },
   {
     name: 'Role',
@@ -93,7 +93,7 @@ export const columns = [
     minWidth: '172px',
     sortField: 'role',
     selector: (row: any) => row.role,
-    cell: (row: any) => renderRole(row)
+    cell: (row: any) => renderRole(row),
   },
   {
     name: 'Plan',
@@ -101,7 +101,7 @@ export const columns = [
     sortable: true,
     sortField: 'currentPlan',
     selector: (row: any) => row.currentPlan,
-    cell: (row: any) => <span className='text-capitalize'>{row.currentPlan}</span>
+    cell: (row: any) => <span className='text-capitalize'>{row.currentPlan}</span>,
   },
   {
     name: 'Billing',
@@ -109,7 +109,7 @@ export const columns = [
     sortable: true,
     sortField: 'billing',
     selector: (row: any) => row.billing,
-    cell: (row: any) => <span className='text-capitalize'>{row.billing}</span>
+    cell: (row: any) => <span className='text-capitalize'>{row.billing}</span>,
   },
   {
     name: 'Status',
@@ -121,7 +121,7 @@ export const columns = [
       <Badge className='text-capitalize' color={statusObj[row.status as keyof typeof statusObj]} pill>
         {row.status}
       </Badge>
-    )
+    ),
   },
   {
     name: 'Actions',
@@ -161,6 +161,6 @@ export const columns = [
           </DropdownMenu>
         </UncontrolledDropdown>
       </div>
-    )
-  }
+    ),
+  },
 ];

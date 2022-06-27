@@ -14,7 +14,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {ISupportTracker} from "../../../../domains/interfaces/card-analytics/ISupportTracker";
+import {ISupportTracker} from '../../../../domains/interfaces/card-analytics/ISupportTracker';
 
 const SupportTracker = (props: { primary: string, danger: string}) => {
   const [data, setData] = useState<ISupportTracker | null>(null);
@@ -74,50 +74,50 @@ const SupportTracker = (props: { primary: string, danger: string}) => {
     series = [83];
 
   return data !== null
-? (
-    <Card>
-      <CardHeader className='pb-0'>
-        <CardTitle tag='h4'>{data.title}</CardTitle>
-        <UncontrolledDropdown className='chart-dropdown'>
-          <DropdownToggle color='' className='bg-transparent btn-sm border-0 p-50'>
+    ? (
+      <Card>
+        <CardHeader className='pb-0'>
+          <CardTitle tag='h4'>{data.title}</CardTitle>
+          <UncontrolledDropdown className='chart-dropdown'>
+            <DropdownToggle color='' className='bg-transparent btn-sm border-0 p-50'>
             Last 7 days
-          </DropdownToggle>
-          <DropdownMenu end>
-            {data.last_days.map(item => (
-              <DropdownItem className='w-100' key={item}>
-                {item}
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      </CardHeader>
-      <CardBody>
-        <Row>
-          <Col sm='2' className='d-flex flex-column flex-wrap text-center'>
-            <h1 className='font-large-2 fw-bolder mt-2 mb-0'>{data.totalTicket}</h1>
-            <CardText>Tickets</CardText>
-          </Col>
-          <Col sm='10' className='d-flex justify-content-center'>
-            <Chart options={options} series={series} type='radialBar' height={270} id='support-tracker-card' />
-          </Col>
-        </Row>
-        <div className='d-flex justify-content-between mt-1'>
-          <div className='text-center'>
-            <CardText className='mb-50'>New Tickets</CardText>
-            <span className='font-large-1 fw-bold'>{data.newTicket}</span>
+            </DropdownToggle>
+            <DropdownMenu end>
+              {data.last_days.map(item => (
+                <DropdownItem className='w-100' key={item}>
+                  {item}
+                </DropdownItem>
+              ))}
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </CardHeader>
+        <CardBody>
+          <Row>
+            <Col sm='2' className='d-flex flex-column flex-wrap text-center'>
+              <h1 className='font-large-2 fw-bolder mt-2 mb-0'>{data.totalTicket}</h1>
+              <CardText>Tickets</CardText>
+            </Col>
+            <Col sm='10' className='d-flex justify-content-center'>
+              <Chart options={options} series={series} type='radialBar' height={270} id='support-tracker-card' />
+            </Col>
+          </Row>
+          <div className='d-flex justify-content-between mt-1'>
+            <div className='text-center'>
+              <CardText className='mb-50'>New Tickets</CardText>
+              <span className='font-large-1 fw-bold'>{data.newTicket}</span>
+            </div>
+            <div className='text-center'>
+              <CardText className='mb-50'>Open Tickets</CardText>
+              <span className='font-large-1 fw-bold'>{data.openTicket}</span>
+            </div>
+            <div className='text-center'>
+              <CardText className='mb-50'>Response Time</CardText>
+              <span className='font-large-1 fw-bold'>{data.responseTime}d</span>
+            </div>
           </div>
-          <div className='text-center'>
-            <CardText className='mb-50'>Open Tickets</CardText>
-            <span className='font-large-1 fw-bold'>{data.openTicket}</span>
-          </div>
-          <div className='text-center'>
-            <CardText className='mb-50'>Response Time</CardText>
-            <span className='font-large-1 fw-bold'>{data.responseTime}d</span>
-          </div>
-        </div>
-      </CardBody>
-    </Card>
-  )
-: null;
+        </CardBody>
+      </Card>
+    )
+    : null;
 };
 export default SupportTracker;

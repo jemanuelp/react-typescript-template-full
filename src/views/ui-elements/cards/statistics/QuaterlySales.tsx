@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ShoppingCart } from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
-import {IQuarterlySales} from "../../../../domains/interfaces/card-statistics/IQuarterlySales";
+import {IQuarterlySales} from '../../../../domains/interfaces/card-statistics/IQuarterlySales';
 
 const QuarterlySales = (
-    { danger }: { danger: string },
+  { danger }: { danger: string },
 ) => {
   const [data, setData] = useState<IQuarterlySales | null>(null);
 
@@ -63,17 +63,17 @@ const QuarterlySales = (
   }, []);
 
   return data !== null
-? (
-    <StatsWithAreaChart
-      icon={<ShoppingCart size={21} />}
-      color='danger'
-      stats={data.analyticsData.sales ?? ''}
-      statTitle='Quarterly Sales'
-      options={options}
-      series={data.series}
-      type='area'
-    />
-  )
-: null;
+    ? (
+      <StatsWithAreaChart
+        icon={<ShoppingCart size={21} />}
+        color='danger'
+        stats={data.analyticsData.sales ?? ''}
+        statTitle='Quarterly Sales'
+        options={options}
+        series={data.series}
+        type='area'
+      />
+    )
+    : null;
 };
 export default QuarterlySales;

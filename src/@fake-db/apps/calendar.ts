@@ -5,11 +5,11 @@ const date = new Date();
 const nextDay = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
 
 const nextMonth = date.getMonth() === 11
-? new Date(date.getFullYear() + 1, 0, 1)
-: new Date(date.getFullYear(), date.getMonth() + 1, 1);
+  ? new Date(date.getFullYear() + 1, 0, 1)
+  : new Date(date.getFullYear(), date.getMonth() + 1, 1);
 const prevMonth = date.getMonth() === 11
-? new Date(date.getFullYear() - 1, 0, 1)
-: new Date(date.getFullYear(), date.getMonth() - 1, 1);
+  ? new Date(date.getFullYear() - 1, 0, 1)
+  : new Date(date.getFullYear(), date.getMonth() - 1, 1);
 
 const data = {
   events: [
@@ -49,7 +49,7 @@ const data = {
     {
       id: 4,
       url: '',
-      title: "Doctor's Appointment",
+      title: 'Doctor\'s Appointment',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
@@ -134,7 +134,7 @@ mock.onGet('/apps/calendar/events').reply(config => {
   const calendars = config.data.calendars;
 
   return [
-      200,
+    200,
     data.events.filter(event => calendars.includes(event.extendedProps.calendar)),
   ];
 });

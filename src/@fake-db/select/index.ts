@@ -38,8 +38,8 @@ const data = [
   },
   {
     id: '8',
-    value: "Schindler's List",
-    label: "Schindler's List",
+    value: 'Schindler\'s List',
+    label: 'Schindler\'s List',
   },
   {
     id: '9',
@@ -63,8 +63,8 @@ const data = [
   },
   {
     id: '13',
-    value: "One Flew Over the Cuckoo's Nest",
-    label: "One Flew Over the Cuckoo's Nest",
+    value: 'One Flew Over the Cuckoo\'s Nest',
+    label: 'One Flew Over the Cuckoo\'s Nest',
   },
   {
     id: '14',
@@ -143,8 +143,8 @@ const data = [
   },
   {
     id: '29',
-    value: "It's a Wonderful Life",
-    label: "It's a Wonderful Life",
+    value: 'It\'s a Wonderful Life',
+    label: 'It\'s a Wonderful Life',
   },
   {
     id: '30',
@@ -433,8 +433,8 @@ const data = [
   },
   {
     id: '87',
-    value: "Singin' in the Rain",
-    label: "Singin' in the Rain",
+    value: 'Singin\' in the Rain',
+    label: 'Singin\' in the Rain',
   },
   {
     id: '88',

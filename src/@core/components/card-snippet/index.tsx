@@ -41,5 +41,5 @@ CardSnippet.propTypes = {
   children: PropTypes.any,
   iconCode: PropTypes.node,
   className: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };

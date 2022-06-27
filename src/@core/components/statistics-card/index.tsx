@@ -16,7 +16,7 @@ const StatisticsCards = (props: any) => {
           'justify-content-between flex-row-reverse align-items-center': iconRight,
           'justify-content-center flex-column text-center': hideChart && !iconRight,
           'pb-0': !hideChart,
-          'pb-2': hideChart
+          'pb-2': hideChart,
         })}
       >
         <div className='icon-section'>
@@ -46,5 +46,5 @@ StatisticsCards.propTypes = {
   className: Proptypes.string,
   icon: Proptypes.node.isRequired,
   stat: Proptypes.string.isRequired,
-  statTitle: Proptypes.string.isRequired
+  statTitle: Proptypes.string.isRequired,
 };

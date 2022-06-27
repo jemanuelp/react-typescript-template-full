@@ -5,14 +5,14 @@ import { useForm, Controller } from 'react-hook-form';
 import { Facebook, Twitter, Mail, GitHub, HelpCircle, Coffee, X } from 'react-feather';
 import { Row, Col, Form, Input, Label, Alert, Button, CardText, CardTitle, UncontrolledTooltip } from 'reactstrap';
 import '../../../@core/scss/react/pages/page-authentication.scss';
-import {useSkin} from "../../../utility/hooks/useSkin";
-import Avatar from "../../../@core/components/avatar";
-import InputPasswordToggle from "../../../@core/components/input-password-toggle";
-import {handleLogin} from "../../../redux/authentication";
-import useJwt from "../../../auth/jwt/useJwt";
-import {getHomeRouteForLoggedInUser} from "../../../utility/Utils";
-import {ILogin} from "../../../domains/interfaces/ILogin";
-import {AxiosResponse} from "axios";
+import {useSkin} from '../../../utility/hooks/useSkin';
+import Avatar from '../../../@core/components/avatar';
+import InputPasswordToggle from '../../../@core/components/input-password-toggle';
+import {handleLogin} from '../../../redux/authentication';
+import useJwt from '../../../auth/jwt/useJwt';
+import {getHomeRouteForLoggedInUser} from '../../../utility/Utils';
+import {ILogin} from '../../../domains/interfaces/ILogin';
+import {AxiosResponse} from 'axios';
 // import { useContext } from 'react';
 // import {AbilityContext} from "../../../utility/context/Can";
 
@@ -36,11 +36,11 @@ const ToastContent = ({ t, name, role }: any) => {
 
 const defaultValues: ILogin = {
   password: 'admin',
-  loginEmail: 'admin@demo.com'
+  loginEmail: 'admin@demo.com',
 };
 
-import * as Dark from "../../../../src/assets/images/pages/login-v2-dark.svg";
-import * as Light from "../../../../src/assets/images/pages/login-v2.svg";
+import * as Dark from '../../../../src/assets/images/pages/login-v2-dark.svg';
+import * as Light from '../../../../src/assets/images/pages/login-v2.svg';
 const Login = () => {
   const { skin } = useSkin();
   const dispatch = useDispatch();
@@ -50,11 +50,11 @@ const Login = () => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
   const source = skin === 'dark'
-      ? Dark.default
-      : Light.default;
+    ? Dark.default
+    : Light.default;
 
   const onSubmit = (data: ILogin) => {
     if (Object.values(data).every((field) => field.length > 0)) {
@@ -65,7 +65,7 @@ const Login = () => {
           const data = {
             ...res.data.userData,
             accessToken: res.data.accessToken,
-            refreshToken: res.data.refreshToken
+            refreshToken: res.data.refreshToken,
           };
           dispatch(handleLogin(data));
           // ability.update(res.data.userData.ability);
@@ -79,7 +79,7 @@ const Login = () => {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
-            type: 'manual'
+            type: 'manual',
           });
         }
       }

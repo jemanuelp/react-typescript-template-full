@@ -7,7 +7,7 @@ const UserProfileSidebar = (props: any) => {
   const {
     user,
     handleUserSidebarRight,
-    userSidebarRight
+    userSidebarRight,
   } = props;
 
   return (

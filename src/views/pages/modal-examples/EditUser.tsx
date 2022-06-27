@@ -12,19 +12,19 @@ import {
   CardTitle,
   ModalBody,
   ModalHeader,
-  FormFeedback
+  FormFeedback,
 } from 'reactstrap';
 import Select from 'react-select';
 import { User, Check, X } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
-import {selectThemeColors} from "../../../utility/Utils";
-import {CountryOptions} from "../../../domains/const/options/CountryOptions";
+import {selectThemeColors} from '../../../utility/Utils';
+import {CountryOptions} from '../../../domains/const/options/CountryOptions';
 
 const statusOptions = [
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' },
-  { value: 'suspended', label: 'Suspended' }
+  { value: 'suspended', label: 'Suspended' },
 ];
 
 const languageOptions = [
@@ -32,13 +32,13 @@ const languageOptions = [
   { value: 'spanish', label: 'Spanish' },
   { value: 'french', label: 'French' },
   { value: 'german', label: 'German' },
-  { value: 'dutch', label: 'Dutch' }
+  { value: 'dutch', label: 'Dutch' },
 ];
 
 const defaultValues = {
   firstName: 'Bob',
   lastName: 'Barton',
-  username: 'bob.dev'
+  username: 'bob.dev',
 };
 
 const EditUserExample = () => {
@@ -48,7 +48,7 @@ const EditUserExample = () => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   const onSubmit = (data: any) => {
@@ -59,7 +59,7 @@ const EditUserExample = () => {
         if (data[key].length === 0) {
           const valid =  key as keyof typeof defaultValues;
           setError(valid, {
-            type: 'manual'
+            type: 'manual',
           });
         }
       }

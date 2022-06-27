@@ -1,31 +1,31 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {IProfileUser} from "../../../../domains/interfaces/IProfileUser";
-import {IChatContact} from "../../../../domains/interfaces/chats/IChatContact";
-import {IChats} from "../../../../domains/grouper/IChats";
-import {IUser} from "../../../../domains/interfaces/IUser";
+import {IProfileUser} from '../../../../domains/interfaces/IProfileUser';
+import {IChatContact} from '../../../../domains/interfaces/chats/IChatContact';
+import {IChats} from '../../../../domains/grouper/IChats';
+import {IUser} from '../../../../domains/interfaces/IUser';
 
-export const getUserProfile = createAsyncThunk('appChat/getTasks', async () => {
+export const getUserProfile = createAsyncThunk('appChat/getTasks', async() => {
   const response = await axios.get('/apps/chat/users/profile-user');
   return response.data;
 });
 
-export const getChatContacts = createAsyncThunk('appChat/getChatContacts', async () => {
+export const getChatContacts = createAsyncThunk('appChat/getChatContacts', async() => {
   const response = await axios.get('/apps/chat/chats-and-contacts');
   return response.data;
 });
 
-export const selectChat = createAsyncThunk('appChat/selectChat', async (id: number, { dispatch }) => {
+export const selectChat = createAsyncThunk('appChat/selectChat', async(id: number, { dispatch }) => {
   const response = await axios.get('/apps/chat/get-chat', { data: { id } });
   await dispatch(getChatContacts());
   return response.data;
 });
 
-export const sendMsg = createAsyncThunk('appChat/sendMsg', async (obj: any, { dispatch }) => {
+export const sendMsg = createAsyncThunk('appChat/sendMsg', async(obj: any, { dispatch }) => {
   const response = await axios.post('/apps/chat/send-msg', { obj });
   await dispatch(selectChat(Number((obj && obj.contact)
-      ? obj.contact.id
-      : 0)));
+    ? obj.contact.id
+    : 0)));
   return response.data;
 });
 
@@ -38,7 +38,7 @@ const initialState: {
   userProfile: {} as IProfileUser,
   contacts: [],
   chats: [],
-  selectedUser: {} as IUser
+  selectedUser: {} as IUser,
 };
 
 export const appChatSlice = createSlice({
@@ -57,7 +57,7 @@ export const appChatSlice = createSlice({
       .addCase(selectChat.fulfilled, (state, action) => {
         state.selectedUser = action.payload;
       });
-  }
+  },
 });
 export default appChatSlice.reducer;
 

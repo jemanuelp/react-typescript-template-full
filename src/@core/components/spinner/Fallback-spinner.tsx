@@ -1,4 +1,4 @@
-import logo from '../../../assets/images/logo/logo.png'
+import logo from '../../../assets/images/logo/logo.png';
 
 const SpinnerComponent = () => {
   return (
@@ -10,7 +10,7 @@ const SpinnerComponent = () => {
         <div className='effect-3 effects'></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SpinnerComponent
+export default SpinnerComponent;

@@ -12,17 +12,17 @@ import {
   CardTitle,
   ModalBody,
   ModalHeader,
-  FormFeedback
+  FormFeedback,
 } from 'reactstrap';
 import Select from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
 import { Home, Check, X, Briefcase } from 'react-feather';
 import '../../../@core/scss/react/libs/react-select/_react-select.scss';
-import {selectThemeColors} from "../../../utility/Utils";
+import {selectThemeColors} from '../../../utility/Utils';
 
 const defaultValues = {
   lastName: '',
-  firstName: ''
+  firstName: '',
 };
 
 const countryOptions = [
@@ -30,7 +30,7 @@ const countryOptions = [
   { value: 'usa', label: 'USA' },
   { value: 'france', label: 'France' },
   { value: 'russia', label: 'Russia' },
-  { value: 'canada', label: 'Canada' }
+  { value: 'canada', label: 'Canada' },
 ];
 
 const AddNewAddress = () => {
@@ -41,7 +41,7 @@ const AddNewAddress = () => {
     setError,
     clearErrors,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   const onSubmit = (data: any) => {
@@ -50,10 +50,10 @@ const AddNewAddress = () => {
       reset();
     } else {
       setError('firstName', {
-        type: 'manual'
+        type: 'manual',
       });
       setError('lastName', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };

@@ -5,7 +5,7 @@ import { offCanvasPlacement, offCanvasOptions } from './OffCanvasSourceCode';
 
 import OffCanvasOptions from './OffCanvasOptions';
 import OffCanvasPlacement from './OffCanvasPlacement';
-import BreadCrumbs from "../../../@core/components/breadcrumbs";
+import BreadCrumbs from '../../../@core/components/breadcrumbs';
 
 const OffCanvas = () => {
   useEffect(() => {

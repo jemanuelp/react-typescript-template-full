@@ -1,5 +1,5 @@
-import {ReactElement} from "react";
-import {Meta} from "./Meta";
+import {ReactElement} from 'react';
+import {Meta} from './Meta';
 
 export interface Route {
     path: string;

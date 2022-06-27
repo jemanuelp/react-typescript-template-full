@@ -73,7 +73,8 @@
     "eject": "react-app-rewired eject",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint src/**/*.ts src/**/*.tsx",
-    "lint:fix": "eslint src/**/*.ts src/**/*.tsx --fix"
+    "eslint": "eslint",
+    "lint:fix": "eslint --config .eslintrc.js --fix \"{src,apps,libs,test}/**/*.{ts,tsx}\""
   },
   "eslintConfig": {
     "extends": [

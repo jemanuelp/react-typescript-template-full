@@ -9,7 +9,7 @@ const data = [
   {
     title: 'User login',
     content: 'User login at 2:12pm',
-    meta: '12 mins ago'
+    meta: '12 mins ago',
   },
   {
     title: 'Meeting with john',
@@ -24,13 +24,13 @@ const data = [
           <span>CEO of Pixinvent</span>
         </div>
       </div>
-    )
+    ),
   },
   {
     title: 'Create a new react project for client',
     content: 'Add files to new design folder',
     meta: '2 days ago',
-    color: 'info'
+    color: 'info',
   },
   {
     title: 'Create Invoices for client',
@@ -42,8 +42,8 @@ const data = [
         <img className='me-1' src={pdf} alt='pdf' height='23' />
         <h6 className='mb-0'>invoice.pdf</h6>
       </div>
-    )
-  }
+    ),
+  },
 ];
 
 const UserTimeline = () => {

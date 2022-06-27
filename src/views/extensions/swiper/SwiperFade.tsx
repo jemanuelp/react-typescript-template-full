@@ -10,8 +10,8 @@ const params: SwiperProps = {
   effect: 'fade',
   navigation: true,
   pagination: {
-    clickable: true
-  }
+    clickable: true,
+  },
 };
 
 const SwiperFade = () => {

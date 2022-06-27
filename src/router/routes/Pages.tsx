@@ -22,96 +22,96 @@ const KBCategoryQuestion = lazy(() => import('../../views/pages/knowledge-base/K
 const PagesRoutes = [
   {
     path: '/pages/profile',
-    element: <Profile />
+    element: <Profile />,
   },
   {
     path: '/pages/faq',
-    element: <Faq />
+    element: <Faq />,
   },
   {
     path: '/pages/knowledge-base',
-    element: <KnowledgeBase />
+    element: <KnowledgeBase />,
   },
   {
     path: '/pages/knowledge-base/:category',
-    element: <KnowledgeBaseCategory />
+    element: <KnowledgeBaseCategory />,
   },
   {
     path: '/pages/knowledge-base/:category/:question',
-    element: <KBCategoryQuestion />
+    element: <KBCategoryQuestion />,
   },
   {
     path: '/pages/account-settings',
-    element: <AccountSettings />
+    element: <AccountSettings />,
   },
   {
     path: '/pages/license',
-    element: <License />
+    element: <License />,
   },
   {
     path: '/pages/api-key',
-    element: <ApiKey />
+    element: <ApiKey />,
   },
   {
     path: '/pages/modal-examples',
-    element: <ModalExamples />
+    element: <ModalExamples />,
   },
   {
     path: '/pages/blog/list',
-    element: <BlogList />
+    element: <BlogList />,
   },
   {
     path: '/pages/blog/detail/:id',
-    element: <BlogDetails />
+    element: <BlogDetails />,
   },
   {
     path: '/pages/blog/detail',
-    element: <Navigate to='/pages/blog/detail/1' />
+    element: <Navigate to='/pages/blog/detail/1' />,
   },
   {
     path: '/pages/blog/edit/:id',
-    element: <BlogEdit />
+    element: <BlogEdit />,
   },
   {
     path: '/pages/blog/edit',
-    element: <Navigate to='/pages/blog/edit/1' />
+    element: <Navigate to='/pages/blog/edit/1' />,
   },
   {
     path: '/pages/pricing',
-    element: <Pricing />
+    element: <Pricing />,
   },
   {
     path: '/misc/coming-soon',
     element: <ComingSoon />,
     meta: {
       publicRoute: true,
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/misc/not-authorized',
     element: <NotAuthorized />,
     meta: {
       publicRoute: true,
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/misc/maintenance',
     element: <Maintenance />,
     meta: {
       publicRoute: true,
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/misc/error',
     element: <Error />,
     meta: {
       publicRoute: true,
-      layout: 'blank'
-    }
-  }
+      layout: 'blank',
+    },
+  },
 ];
 
 export default PagesRoutes;

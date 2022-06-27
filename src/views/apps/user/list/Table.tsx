@@ -21,23 +21,23 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledDropdown
+  UncontrolledDropdown,
 } from 'reactstrap';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
-import {RootState} from "../../../../redux/reducers/RootReducer";
-import {TableColumn} from "react-data-table-component/dist/src/DataTable/types";
-import {PlanOptions, PlanOptionsTable} from "../../../../domains/const/options/PlanOptions";
-import {ISelectedOption} from "../../../../domains/interfaces/ISelectedOption";
+import {RootState} from '../../../../redux/reducers/RootReducer';
+import {TableColumn} from 'react-data-table-component/dist/src/DataTable/types';
+import {PlanOptions, PlanOptionsTable} from '../../../../domains/const/options/PlanOptions';
+import {ISelectedOption} from '../../../../domains/interfaces/ISelectedOption';
 
 // ** Table Header
 const CustomHeader = ({
-                          store,
-                          toggleSidebar,
-                          handlePerPage,
-                          rowsPerPage,
-                          handleFilter,
-                          searchTerm }: any
+  store,
+  toggleSidebar,
+  handlePerPage,
+  rowsPerPage,
+  handleFilter,
+  searchTerm }: any,
 ) => {
   // ** Converts table to CSV
   function convertArrayOfObjectsToCSV(array: Array<any>) {
@@ -187,16 +187,16 @@ const UsersList = () => {
         q: searchTerm,
         page: currentPage,
         perPage: rowsPerPage,
-          role: currentRole
-              ? currentRole.value
-              : '',
-          status: currentStatus
-              ? currentStatus.value
-              : '',
-          currentPlan: currentPlan
-              ? currentPlan.value
-              : ''
-      })
+        role: currentRole
+          ? currentRole.value
+          : '',
+        status: currentStatus
+          ? currentStatus.value
+          : '',
+        currentPlan: currentPlan
+          ? currentPlan.value
+          : '',
+      }),
     );
   }, [dispatch, store.data.length, sort, sortColumn, currentPage]);
 
@@ -207,14 +207,14 @@ const UsersList = () => {
     { value: 'author', label: 'Author' },
     { value: 'editor', label: 'Editor' },
     { value: 'maintainer', label: 'Maintainer' },
-    { value: 'subscriber', label: 'Subscriber' }
+    { value: 'subscriber', label: 'Subscriber' },
   ];
 
   const statusOptions = [
     { value: '', label: 'Select Status', number: 0 },
     { value: 'pending', label: 'Pending', number: 1 },
     { value: 'active', label: 'Active', number: 2 },
-    { value: 'inactive', label: 'Inactive', number: 3 }
+    { value: 'inactive', label: 'Inactive', number: 3 },
   ];
 
   // ** Function in get data on page change
@@ -227,15 +227,15 @@ const UsersList = () => {
         perPage: rowsPerPage,
         page: page.selected + 1,
         role: currentRole
-            ? currentRole.value
-            : '',
+          ? currentRole.value
+          : '',
         status: currentStatus
-            ? currentStatus.value
-            : '',
+          ? currentStatus.value
+          : '',
         currentPlan: currentPlan
-            ? currentPlan.value
-            : ''
-      })
+          ? currentPlan.value
+          : '',
+      }),
     );
     setCurrentPage(page.selected + 1);
   };
@@ -251,15 +251,15 @@ const UsersList = () => {
         perPage: value,
         page: currentPage,
         role: currentRole
-            ? currentRole.value
-            : '',
+          ? currentRole.value
+          : '',
         currentPlan: currentPlan
-            ? currentPlan.value
-            : '',
+          ? currentPlan.value
+          : '',
         status: currentStatus
-            ? currentStatus.value
-            : ''
-      })
+          ? currentStatus.value
+          : '',
+      }),
     );
     setRowsPerPage(value);
   };
@@ -275,15 +275,15 @@ const UsersList = () => {
         page: currentPage,
         perPage: rowsPerPage,
         role: currentRole
-            ? currentRole.value
-            : '',
+          ? currentRole.value
+          : '',
         status: currentStatus
-            ? currentStatus.value
-            : '',
+          ? currentStatus.value
+          : '',
         currentPlan: currentPlan
-            ? currentPlan.value
-            : ''
-      })
+          ? currentPlan.value
+          : '',
+      }),
     );
   };
 
@@ -298,8 +298,8 @@ const UsersList = () => {
         pageCount={count || 1}
         activeClassName='active'
         forcePage={currentPage !== 0
-? currentPage - 1
-: 0}
+          ? currentPage - 1
+          : 0}
         onPageChange={page => handlePagination(page)}
         pageClassName={'page-item'}
         nextLinkClassName={'page-link'}
@@ -316,18 +316,18 @@ const UsersList = () => {
   const dataToRender = () => {
     const filters = {
       role: currentRole
-          ? currentRole.value
-          : '',
+        ? currentRole.value
+        : '',
       currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
+        ? currentPlan.value
+        : '',
       status: currentStatus
-          ? currentStatus.value
-          : '',
-      q: searchTerm
+        ? currentStatus.value
+        : '',
+      q: searchTerm,
     };
 
-    const isFiltered = Object.keys(filters).some(function (k) {
+    const isFiltered = Object.keys(filters).some(function(k) {
       return filters[k as keyof typeof filters].length > 0;
     });
 
@@ -351,15 +351,15 @@ const UsersList = () => {
         page: currentPage,
         perPage: rowsPerPage,
         role: currentRole
-            ? currentRole.value
-            : '',
+          ? currentRole.value
+          : '',
         status: currentStatus
-            ? currentStatus.value
-            : '',
+          ? currentStatus.value
+          : '',
         currentPlan: currentPlan
-            ? currentPlan.value
-            : ''
-      })
+          ? currentPlan.value
+          : '',
+      }),
     );
   };
 
@@ -387,18 +387,18 @@ const UsersList = () => {
                       sort,
                       sortColumn,
                       q: searchTerm,
-                        role: data
-                            ? data.value
-                            : '',
-                        page: currentPage,
+                      role: data
+                        ? data.value
+                        : '',
+                      page: currentPage,
                       perPage: rowsPerPage,
                       status: currentStatus
-                          ? currentStatus.value
-                          : '',
+                        ? currentStatus.value
+                        : '',
                       currentPlan: currentPlan
-                          ? currentPlan.value
-                          : ''
-                    })
+                        ? currentPlan.value
+                        : '',
+                    }),
                   );
                 }}
               />
@@ -422,15 +422,15 @@ const UsersList = () => {
                       page: currentPage,
                       perPage: rowsPerPage,
                       role: currentRole
-                          ? currentRole.value
-                          : '',
+                        ? currentRole.value
+                        : '',
                       currentPlan: data
-                          ? data.value
-                          : '',
+                        ? data.value
+                        : '',
                       status: currentStatus
-                          ? currentStatus.value
-                          : ''
-                    })
+                        ? currentStatus.value
+                        : '',
+                    }),
                   );
                 }}
               />
@@ -453,16 +453,16 @@ const UsersList = () => {
                       q: searchTerm,
                       page: currentPage,
                       status: data
-                          ? data.value
-                          : '',
-                        perPage: rowsPerPage,
+                        ? data.value
+                        : '',
+                      perPage: rowsPerPage,
                       role: currentRole
-                          ? currentRole.value
-                          : '',
+                        ? currentRole.value
+                        : '',
                       currentPlan: currentPlan
-                          ? currentPlan.value
-                          : ''
-                    })
+                        ? currentPlan.value
+                        : '',
+                    }),
                   );
                 }}
               />

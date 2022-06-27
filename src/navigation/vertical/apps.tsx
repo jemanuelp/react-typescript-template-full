@@ -1,39 +1,39 @@
 // ** Icons Import
-import { Mail, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Shield } from 'react-feather'
+import { Mail, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Shield } from 'react-feather';
 
 export default [
   {
-    header: 'Apps & Pages'
+    header: 'Apps & Pages',
   },
   {
     id: 'email',
     title: 'Email',
     icon: <Mail size={20} />,
-    navLink: '/apps/email'
+    navLink: '/apps/email',
   },
   {
     id: 'chat',
     title: 'Chat',
     icon: <MessageSquare size={20} />,
-    navLink: '/apps/chat'
+    navLink: '/apps/chat',
   },
   {
     id: 'todo',
     title: 'Todo',
     icon: <CheckSquare size={20} />,
-    navLink: '/apps/todo'
+    navLink: '/apps/todo',
   },
   {
     id: 'calendar',
     title: 'Calendar',
     icon: <Calendar size={20} />,
-    navLink: '/apps/calendar'
+    navLink: '/apps/calendar',
   },
   {
     id: 'kanban',
     title: 'Kanban',
     icon: <CheckSquare size={20} />,
-    navLink: '/apps/kanban'
+    navLink: '/apps/kanban',
   },
   {
     id: 'invoiceApp',
@@ -44,27 +44,27 @@ export default [
         id: 'invoiceList',
         title: 'List',
         icon: <Circle size={12} />,
-        navLink: '/apps/invoice/list'
+        navLink: '/apps/invoice/list',
       },
       {
         id: 'invoicePreview',
         title: 'Preview',
         icon: <Circle size={12} />,
-        navLink: '/apps/invoice/preview'
+        navLink: '/apps/invoice/preview',
       },
       {
         id: 'invoiceEdit',
         title: 'Edit',
         icon: <Circle size={12} />,
-        navLink: '/apps/invoice/edit'
+        navLink: '/apps/invoice/edit',
       },
       {
         id: 'invoiceAdd',
         title: 'Add',
         icon: <Circle size={12} />,
-        navLink: '/apps/invoice/add'
-      }
-    ]
+        navLink: '/apps/invoice/add',
+      },
+    ],
   },
 
   {
@@ -76,15 +76,15 @@ export default [
         id: 'roles',
         title: 'Roles',
         icon: <Circle size={12} />,
-        navLink: '/apps/roles'
+        navLink: '/apps/roles',
       },
       {
         id: 'permissions',
         title: 'Permissions',
         icon: <Circle size={12} />,
-        navLink: '/apps/permissions'
-      }
-    ]
+        navLink: '/apps/permissions',
+      },
+    ],
   },
   {
     id: 'eCommerce',
@@ -95,27 +95,27 @@ export default [
         id: 'shop',
         title: 'Shop',
         icon: <Circle size={12} />,
-        navLink: '/apps/ecommerce/shop'
+        navLink: '/apps/ecommerce/shop',
       },
       {
         id: 'detail',
         title: 'Details',
         icon: <Circle size={12} />,
-        navLink: '/apps/ecommerce/product-detail'
+        navLink: '/apps/ecommerce/product-detail',
       },
       {
         id: 'wishList',
         title: 'Wish List',
         icon: <Circle size={12} />,
-        navLink: '/apps/ecommerce/wishlist'
+        navLink: '/apps/ecommerce/wishlist',
       },
       {
         id: 'checkout',
         title: 'Checkout',
         icon: <Circle size={12} />,
-        navLink: '/apps/ecommerce/checkout'
-      }
-    ]
+        navLink: '/apps/ecommerce/checkout',
+      },
+    ],
   },
   {
     id: 'users',
@@ -126,14 +126,14 @@ export default [
         id: 'list',
         title: 'List',
         icon: <Circle size={12} />,
-        navLink: '/apps/user/list'
+        navLink: '/apps/user/list',
       },
       {
         id: 'view',
         title: 'View',
         icon: <Circle size={12} />,
-        navLink: '/apps/user/view'
-      }
-    ]
-  }
-]
+        navLink: '/apps/user/view',
+      },
+    ],
+  },
+];

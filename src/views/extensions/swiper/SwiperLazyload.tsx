@@ -6,15 +6,15 @@ import img3 from '../../../../src/assets/images/banner/banner-7.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-20.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-5.jpg';
 import img6 from '../../../../src/assets/images/banner/banner-4.jpg';
-import {SwiperOptions} from "swiper/types/swiper-options";
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
+import {SwiperOptions} from 'swiper/types/swiper-options';
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
 
 const params: SwiperOptions = {
   lazy: true,
   navigation: true,
   pagination: {
-    clickable: true
-  }
+    clickable: true,
+  },
 };
 
 const SwiperLazyLoad = ({ isRtl }: Partial<useRTLInterface>) => {

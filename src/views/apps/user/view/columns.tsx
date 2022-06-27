@@ -12,7 +12,7 @@ import {
   Download,
   TrendingUp,
   CheckCircle,
-  ArrowDownCircle
+  ArrowDownCircle,
 } from 'react-feather';
 
 const invoiceStatusObj = {
@@ -21,7 +21,7 @@ const invoiceStatusObj = {
   Draft: { color: 'light-primary', icon: Save },
   Downloaded: { color: 'light-info', icon: ArrowDownCircle },
   'Past Due': { color: 'light-danger', icon: Info },
-  'Partial Payment': { color: 'light-warning', icon: PieChart }
+  'Partial Payment': { color: 'light-warning', icon: PieChart },
 };
 
 export const columns = [
@@ -31,7 +31,7 @@ export const columns = [
     sortField: 'id',
     minWidth: '107px',
     selector: (row: any) => row.id,
-    cell: (row: any) => <Link className='fw-bolder' to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>
+    cell: (row: any) => <Link className='fw-bolder' to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>,
   },
   {
     name: <TrendingUp size={14} />,
@@ -41,11 +41,11 @@ export const columns = [
     selector: (row: any) => row.invoiceStatus,
     cell: (row: any) => {
       const color = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
-              ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color
-              : 'primary',
-          Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
-              ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon
-              : Edit;
+          ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color
+          : 'primary',
+        Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
+          ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon
+          : Edit;
       return (
         <Fragment>
           <Avatar color={color} icon={<Icon size={14} />} id={`av-tooltip-${row.id}`} />
@@ -58,7 +58,7 @@ export const columns = [
           </UncontrolledTooltip>
         </Fragment>
       );
-    }
+    },
   },
 
   {
@@ -67,12 +67,12 @@ export const columns = [
     minWidth: '150px',
     sortField: 'total',
     selector: (row: any) => row.total,
-    cell: (row: any) => <span>${row.total || 0}</span>
+    cell: (row: any) => <span>${row.total || 0}</span>,
   },
   {
     minWidth: '200px',
     name: 'Issued Date',
-    cell: (row: any) => row.dueDate
+    cell: (row: any) => row.dueDate,
   },
   {
     name: 'Action',
@@ -96,6 +96,6 @@ export const columns = [
           Download Invoice
         </UncontrolledTooltip>
       </div>
-    )
-  }
+    ),
+  },
 ];

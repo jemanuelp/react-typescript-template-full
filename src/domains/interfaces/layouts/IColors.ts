@@ -1,4 +1,4 @@
-import {IColorProperty} from "./IColorProperty";
+import {IColorProperty} from './IColorProperty';
 
 export interface IColors {
     primary: IColorProperty;

@@ -1,10 +1,10 @@
 import Chart from 'react-apexcharts';
 import { ArrowDown } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle, Badge } from 'reactstrap';
-import {ApexOptions} from "apexcharts";
+import {ApexOptions} from 'apexcharts';
 
 const ApexLineChart = (
-    { direction, warning }:
+  { direction, warning }:
         { direction: string, warning: string },
 ) => {
   // ** Chart Options

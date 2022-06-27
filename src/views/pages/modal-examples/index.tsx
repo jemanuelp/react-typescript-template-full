@@ -8,7 +8,7 @@ import PricingExample from './PricingModal';
 import ShareProjectExample from './ShareProject';
 import AddNewAddressExample from './AddNewAddress';
 import AuthenticationExample from './Authentication';
-import Breadcrumbs from "../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../@core/components/breadcrumbs';
 
 const ModalExamples = () => {
   return (

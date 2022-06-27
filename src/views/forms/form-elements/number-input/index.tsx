@@ -9,7 +9,7 @@ import NumberInputDecimal from './NumberInputDecimal';
 import NumberInputControlled from './NumberInputControlled';
 
 import '../../../../@core/scss/react/libs/input-number/input-number.scss';
-import Breadcrumbs from "../../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 
 const NumberInput = () => {
   return (

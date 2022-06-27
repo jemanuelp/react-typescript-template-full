@@ -6,8 +6,8 @@ import Billing from './steps/Billing';
 import PersonalInfo from './steps/PersonalInfo';
 import AccountDetails from './steps/AccountDetails';
 import '../../../../@core/scss/react/pages/page-authentication.scss';
-import Wizard from "../../../../@core/components/wizard";
-import * as CreateAccountSvg from "../../../../../src/assets/images/pages/create-account.svg";
+import Wizard from '../../../../@core/components/wizard';
+import * as CreateAccountSvg from '../../../../../src/assets/images/pages/create-account.svg';
 
 const RegisterMultiSteps = () => {
   const ref = useRef(null);
@@ -19,22 +19,22 @@ const RegisterMultiSteps = () => {
       title: 'Account',
       subtitle: 'Enter username',
       icon: <Home size={18} />,
-      content: <AccountDetails stepper={stepper} />
+      content: <AccountDetails stepper={stepper} />,
     },
     {
       id: 'personal-info',
       title: 'Personal',
       subtitle: 'Enter Information',
       icon: <User size={18} />,
-      content: <PersonalInfo stepper={stepper} />
+      content: <PersonalInfo stepper={stepper} />,
     },
     {
       title: 'Billing',
       id: 'step-billing',
       subtitle: 'Payment Details',
       icon: <CreditCard size={18} />,
-      content: <Billing stepper={stepper} />
-    }
+      content: <Billing stepper={stepper} />,
+    },
   ];
 
   const source = CreateAccountSvg.default;

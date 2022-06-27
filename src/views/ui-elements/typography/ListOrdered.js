@@ -9,7 +9,6 @@ const ListOrdered = () => {
 
       <CardBody>
         <CardText>
-          {/* eslint-disable-next-line max-len */}
           List of items in which the order does explicitly matter. Use <code>&lt;ol type="1|a|A|i|I"&gt;</code>, The
           type attribute specifies the kind of marker to use in the list.
         </CardText>

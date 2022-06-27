@@ -1,4 +1,4 @@
-import useJwt from "../../@core/auth/jwt/useJwt";
+import useJwt from '../../@core/auth/jwt/useJwt';
 
 const jwt  = useJwt();
 

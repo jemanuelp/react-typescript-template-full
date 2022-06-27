@@ -1,5 +1,5 @@
 import mock from '../mock';
-import {ICardAnalytics} from "../../domains/grouper/ICardAnalytics";
+import {ICardAnalytics} from '../../domains/grouper/ICardAnalytics';
 
 const data: ICardAnalytics = {
   support_tracker: {

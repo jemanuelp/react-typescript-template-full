@@ -1,6 +1,6 @@
-import { Heart } from 'react-feather'
-import Proptypes from "prop-types";
-import {FooterLayoutTypes} from "../../../../domains/enums/FooterLayoutTypes";
+import { Heart } from 'react-feather';
+import Proptypes from 'prop-types';
+import {FooterLayoutTypes} from '../../../../domains/enums/FooterLayoutTypes';
 
 const Footer = () => {
   return (
@@ -17,12 +17,12 @@ const Footer = () => {
         <Heart size={14} />
       </span>
     </p>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 
 Footer.propTypes = {
-    footerType: Function,
-    footerClasses: Proptypes.object,
-}
+  footerType: Function,
+  footerClasses: Proptypes.object,
+};

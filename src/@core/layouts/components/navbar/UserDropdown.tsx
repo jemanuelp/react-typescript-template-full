@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { User, Mail, CheckSquare, MessageSquare, Settings, CreditCard, HelpCircle, Power } from 'react-feather'
-import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap'
-import defaultAvatar from '../../../../../src/assets/images/portrait/small/avatar-s-11.jpg'
-import Avatar from "../../../components/avatar";
+import { Link } from 'react-router-dom';
+import { User, Mail, CheckSquare, MessageSquare, Settings, CreditCard, HelpCircle, Power } from 'react-feather';
+import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
+import defaultAvatar from '../../../../../src/assets/images/portrait/small/avatar-s-11.jpg';
+import Avatar from '../../../components/avatar';
 
 const UserDropdown = () => {
   return (
@@ -50,7 +50,7 @@ const UserDropdown = () => {
         </DropdownItem>
       </DropdownMenu>
     </UncontrolledDropdown>
-  )
-}
+  );
+};
 
-export default UserDropdown
+export default UserDropdown;

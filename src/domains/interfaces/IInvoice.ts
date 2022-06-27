@@ -1,4 +1,4 @@
-import {ClientInterface} from "./Client.interface";
+import {ClientInterface} from './Client.interface';
 
 export interface IInvoice {
     id: number;

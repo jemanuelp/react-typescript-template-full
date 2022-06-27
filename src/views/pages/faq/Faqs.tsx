@@ -11,13 +11,13 @@ import {
   AccordionBody,
   AccordionItem,
   AccordionHeader,
-  UncontrolledAccordion
+  UncontrolledAccordion,
 } from 'reactstrap';
 
 import illustration from '../../../../src/assets/images/illustration/faq-illustrations.svg';
-import {IFaqData} from "../../../domains/interfaces/IFaqData";
-import {IconProps} from "react-feather";
-import {IQandA} from "../../../domains/interfaces/IQandA";
+import {IFaqData} from '../../../domains/interfaces/IFaqData';
+import {IconProps} from 'react-feather';
+import {IQandA} from '../../../domains/interfaces/IQandA';
 
 const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: Function }) => {
   const dataToRender = new Array<IFaqData>();
@@ -59,29 +59,31 @@ const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: F
               <span>{item.subtitle}</span>
             </div>
           </div>
-          {item.qandA.length ? (
-            <UncontrolledAccordion
+          {item.qandA.length
+            ? (
+              <UncontrolledAccordion
                 cssModule={{ className: 'accordion-margin mt-2'}}
                 open={''}
-            >
-              {item.qandA.map((r: IQandA, index: number) => {
-                return (
-                  <AccordionItem key={index + 1}>
-                    <AccordionHeader tag='h2' targetId={String(index + 1)}>
-                      {r.question}
-                    </AccordionHeader>
-                    <AccordionBody accordionId={String(index + 1)}>{r.ans}</AccordionBody>
-                  </AccordionItem>
-                );
-              })}
-            </UncontrolledAccordion>
-          ) : (
-            <div className='text-center p-5'>
-              <h5 className='p-1'>
-                <Icon.Info size='19' className='me-25' /> No Results Found
-              </h5>
-            </div>
-          )}
+              >
+                {item.qandA.map((r: IQandA, index: number) => {
+                  return (
+                    <AccordionItem key={index + 1}>
+                      <AccordionHeader tag='h2' targetId={String(index + 1)}>
+                        {r.question}
+                      </AccordionHeader>
+                      <AccordionBody accordionId={String(index + 1)}>{r.ans}</AccordionBody>
+                    </AccordionItem>
+                  );
+                })}
+              </UncontrolledAccordion>
+            )
+            : (
+              <div className='text-center p-5'>
+                <h5 className='p-1'>
+                  <Icon.Info size='19' className='me-25' /> No Results Found
+                </h5>
+              </div>
+            )}
         </TabPane>
       );
     });

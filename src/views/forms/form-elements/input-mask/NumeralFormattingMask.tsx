@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Cleave from 'cleave.js/react';
 import { Label } from 'reactstrap';
-import {CleaveOptions} from "cleave.js/options";
+import {CleaveOptions} from 'cleave.js/options';
 
 const NumeralFormattingMask = () => {
   const options: CleaveOptions = { numeral: true, numeralThousandsGroupStyle: 'thousand' };

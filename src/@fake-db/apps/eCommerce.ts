@@ -1,7 +1,7 @@
 import mock from '../mock';
 import {getRandomInt, paginateArray, randomDate, sortCompare} from '../utils';
-import {IProduct} from "../../domains/interfaces/IProduct";
-import {ColorOptionsTypes} from "../../domains/enums/ColorOptionsTypes";
+import {IProduct} from '../../domains/interfaces/IProduct';
+import {ColorOptionsTypes} from '../../domains/enums/ColorOptionsTypes';
 
 const nextDay = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
 const nextWeek = new Date(nextDay.getTime() + (7 * 24 * 60 * 60 * 1000));
@@ -404,7 +404,7 @@ mock.onGet('/apps/ecommerce/products').reply(config => {
   if (sortDesc) sortedData.reverse();
 
   const paginatedData = JSON.parse(
-      JSON.stringify(paginateArray(sortedData, perPage, page)),
+    JSON.stringify(paginateArray(sortedData, perPage, page)),
   );
 
   paginatedData.forEach((product: any) => {
@@ -432,8 +432,8 @@ mock.onGet('/apps/ecommerce/products').reply(config => {
 mock.onGet(/\/apps\/ecommerce\/products\/\d+/).reply(config => {
   // Get product id from URL
   let productId = (config && config.url)
-? config.url.substring(config.url.lastIndexOf('/') + 1)
-: 0;
+    ? config.url.substring(config.url.lastIndexOf('/') + 1)
+    : 0;
 
   // Convert Id to number
   productId = Number(productId);
@@ -527,8 +527,8 @@ mock.onPost('/apps/ecommerce/cart').reply(config => {
 mock.onDelete(/\/apps\/ecommerce\/cart\/\d+/).reply(config => {
   // Get product id from URL
   let productId = config && config.url
-? config.url.substring(config.url.lastIndexOf('/') + 1)
-: 0;
+    ? config.url.substring(config.url.lastIndexOf('/') + 1)
+    : 0;
 
   // Convert Id to number
   productId = Number(productId);
@@ -564,8 +564,8 @@ mock.onPost('/apps/ecommerce/wishlist').reply(config => {
 mock.onDelete(/\/apps\/ecommerce\/wishlist\/\d+/).reply(config => {
   // Get product id from URL
   let productId = config && config.url
-? config.url.substring(config.url.lastIndexOf('/') + 1)
-: 0;
+    ? config.url.substring(config.url.lastIndexOf('/') + 1)
+    : 0;
 
   // Convert Id to number
   productId = Number(productId);

@@ -16,7 +16,7 @@ import {
   ModalBody,
   CardHeader,
   ModalHeader,
-  FormFeedback
+  FormFeedback,
 } from 'reactstrap';
 
 import InputPasswordToggle from '../../../../@core/components/input-password-toggle';
@@ -36,7 +36,7 @@ const SignupSchema = yup.object().shape({
   confirmPassword: yup
     .string()
     .min(8)
-    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
 
 const recentDevicesArr = [
@@ -44,35 +44,35 @@ const recentDevicesArr = [
     device: 'Dell XPS 15',
     location: 'United States',
     browser: 'Chrome on Windows',
-    activity: '10, Jan 2021 20:07'
+    activity: '10, Jan 2021 20:07',
   },
   {
     location: 'Ghana',
     device: 'Google Pixel 3a',
     browser: 'Chrome on Android',
-    activity: '11, Jan 2021 10:16'
+    activity: '11, Jan 2021 10:16',
   },
   {
     location: 'Mayotte',
     device: 'Apple iMac',
     browser: 'Chrome on MacOS',
-    activity: '11, Jan 2021 12:10'
+    activity: '11, Jan 2021 12:10',
   },
   {
     location: 'Mauritania',
     device: 'Apple iPhone XR',
     browser: 'Chrome on iPhone',
-    activity: '12, Jan 2021 8:29'
-  }
+    activity: '12, Jan 2021 8:29',
+  },
 ];
 
 const defaultValues = {
   password: '',
-  confirmPassword: ''
+  confirmPassword: '',
 };
 
 const AppAuthComponent = (
-    { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function}
+  { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function},
 ) => {
   const toggle = () => {
     setShow(false);
@@ -116,7 +116,7 @@ const AppAuthComponent = (
 };
 
 const AppSMSComponent = (
-    { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function}
+  { setShow, setShowDetailModal }: {setShow: Function, setShowDetailModal: Function},
 ) => {
   const toggle = () => {
     setShow(false);
@@ -159,7 +159,7 @@ const SecurityTab = () => {
     control,
     trigger,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues, resolver: yupResolver(SignupSchema) });
 
   const onSubmit = (data: any) => {
@@ -358,12 +358,12 @@ const SecurityTab = () => {
         <ModalHeader className='bg-transparent' toggle={() => setShowDetailModal(!showDetailModal)}></ModalHeader>
         <ModalBody className='pb-5 px-sm-5 mx-50'>
           {authType === 'authApp'
-? (
-            <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-          )
-: (
-            <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-          )}
+            ? (
+              <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
+            )
+            : (
+              <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
+            )}
         </ModalBody>
       </Modal>
     </Fragment>

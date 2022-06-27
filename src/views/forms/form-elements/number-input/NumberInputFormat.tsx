@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardBody, Label } from 'reactstrap';
 const NumberInputFormat = () => {
   const numberWithCommas = (x: number | undefined) => {
     if (x === undefined) {
-        return '';
+      return '';
     }
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };

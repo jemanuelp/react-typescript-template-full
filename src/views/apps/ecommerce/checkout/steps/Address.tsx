@@ -1,6 +1,6 @@
 import { useForm, Controller } from 'react-hook-form';
 import { Form, Input, Card, Label, CardHeader, CardTitle, CardBody, CardText, Button, Row, Col } from 'reactstrap';
-import {IAddress} from "../../../../../domains/interfaces/IAddress";
+import {IAddress} from '../../../../../domains/interfaces/IAddress';
 
 const defaultValues: IAddress = {
   checkoutName: '',
@@ -9,7 +9,7 @@ const defaultValues: IAddress = {
   checkoutNumber: '',
   checkoutFlatNo: '',
   checkoutPincode: '',
-  checkoutLandmark: ''
+  checkoutLandmark: '',
 };
 
 const Address = (props: any) => {
@@ -19,7 +19,7 @@ const Address = (props: any) => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   // ** On form submit if there are no errors then go to next step
@@ -31,7 +31,7 @@ const Address = (props: any) => {
         if (data[key].length === 0) {
           const valid =  key as keyof typeof defaultValues;
           setError(valid, {
-            type: 'manual'
+            type: 'manual',
           });
         }
       }

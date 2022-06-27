@@ -29,22 +29,22 @@ const AuthenticationRoutes = [
     meta: {
       layout: 'blank',
       publicRoute: true,
-      restricted: true
-    }
+      restricted: true,
+    },
   },
   {
     path: '/pages/login-basic',
     element: <LoginBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/login-cover',
     element: <LoginCover />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/register',
@@ -52,29 +52,29 @@ const AuthenticationRoutes = [
     meta: {
       layout: 'blank',
       publicRoute: true,
-      restricted: true
-    }
+      restricted: true,
+    },
   },
   {
     path: '/pages/register-basic',
     element: <RegisterBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/register-cover',
     element: <RegisterCover />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/register-multi-steps',
     element: <RegisterMultiSteps />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
 
   {
@@ -84,65 +84,65 @@ const AuthenticationRoutes = [
     meta: {
       layout: 'blank',
       publicRoute: true,
-      restricted: true
-    }
+      restricted: true,
+    },
   },
   {
     path: '/pages/forgot-password-basic',
     element: <ForgotPasswordBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/forgot-password-cover',
     element: <ForgotPasswordCover />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/reset-password-basic',
     element: <ResetPasswordBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/reset-password-cover',
     element: <ResetPasswordCover />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/verify-email-basic',
     element: <VerifyEmailBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/verify-email-cover',
     element: <VerifyEmailCover />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/two-steps-basic',
     element: <TwoStepsBasic />,
     meta: {
-      layout: 'blank'
-    }
+      layout: 'blank',
+    },
   },
   {
     path: '/pages/two-steps-cover',
     element: <TwoStepsCover />,
     meta: {
-      layout: 'blank'
-    }
-  }
+      layout: 'blank',
+    },
+  },
 ];
 
 export default AuthenticationRoutes;

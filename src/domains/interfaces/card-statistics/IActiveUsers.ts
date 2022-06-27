@@ -1,4 +1,4 @@
-import {ISerie} from "./ISerie";
+import {ISerie} from './ISerie';
 
 export interface IActiveUsers {
     series: ISerie[];

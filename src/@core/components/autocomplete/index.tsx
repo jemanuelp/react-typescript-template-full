@@ -7,7 +7,7 @@ import { AlertCircle } from 'react-feather';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'src/@core/scss/base/bootstrap-extended/_include.scss';
 import './autocomplete.scss';
-import {useOnClickOutside} from "../../../utility/hooks/useOnClickOutside";
+import {useOnClickOutside} from '../../../utility/hooks/useOnClickOutside';
 
 const Autocomplete = (props: any) => {
   const container = useRef(null);
@@ -18,8 +18,8 @@ const Autocomplete = (props: any) => {
   const [activeSuggestion, setActiveSuggestion] = useState<number>(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [userInput, setUserInput] = useState(props.value
-? props.value
-: '');
+    ? props.value
+    : '');
   
   const navigate = useNavigate();
   let filteredData: any[] = [];
@@ -108,12 +108,12 @@ const Autocomplete = (props: any) => {
     const renderSuggestion = (item: any, i: any) => {
       if (!customRender) {
         const suggestionURL = item.link !== undefined && item.link !== null
-? item.link
-: null;
+          ? item.link
+          : null;
         return (
           <li
             className={classnames('suggestion-item', {
-              active: filteredData.indexOf(item) === activeSuggestion
+              active: filteredData.indexOf(item) === activeSuggestion,
             })}
             key={item[filterKey]}
             onClick={e => onSuggestionItemClick(suggestionURL, e)}
@@ -132,7 +132,7 @@ const Autocomplete = (props: any) => {
           activeSuggestion,
           onSuggestionItemClick,
           onSuggestionItemHover,
-          userInput
+          userInput,
         );
       } else {
         return null;
@@ -166,13 +166,13 @@ const Autocomplete = (props: any) => {
     if (sortSingleData.length) {
       return sortSingleData.map((suggestion: any, index: any) => {
         const suggestionURL = suggestion.link !== undefined && suggestion.link !== null
-? suggestion.link
-: null;
+          ? suggestion.link
+          : null;
         if (!customRender) {
           return (
             <li
               className={classnames('suggestion-item', {
-                active: filteredData.indexOf(suggestion) === activeSuggestion
+                active: filteredData.indexOf(suggestion) === activeSuggestion,
               })}
               key={suggestion[filterKey]}
               onClick={e => onSuggestionItemClick(suggestionURL, e)}
@@ -189,7 +189,7 @@ const Autocomplete = (props: any) => {
             activeSuggestion,
             onSuggestionItemClick,
             onSuggestionItemHover,
-            userInput
+            userInput,
           );
         } else {
           return null;
@@ -235,14 +235,14 @@ const Autocomplete = (props: any) => {
               <h6 className='suggestion-title'>{suggestion[filterHeaderKey]}</h6>
             </li>
             {sortData.length
-? (
-              renderGroupedSuggestion(sortData)
-            )
-: (
-              <li className='suggestion-item no-result'>
-                <AlertCircle size={15} /> <span className='align-middle ms-50'>No Result</span>
-              </li>
-            )}
+              ? (
+                renderGroupedSuggestion(sortData)
+              )
+              : (
+                <li className='suggestion-item no-result'>
+                  <AlertCircle size={15} /> <span className='align-middle ms-50'>No Result</span>
+                </li>
+              )}
           </Fragment>
         );
       });
@@ -295,7 +295,7 @@ const Autocomplete = (props: any) => {
     suggestionsListComponent = (
       <PerfectScrollbar
         className={classnames('suggestions-list', {
-          [props.wrapperClass]: props.wrapperClass
+          [props.wrapperClass]: props.wrapperClass,
         })}
         ref={suggestionsListRef}
         component='ul'
@@ -319,8 +319,8 @@ const Autocomplete = (props: any) => {
         onKeyDown={e => onKeyDown(e)}
         value={userInput}
         className={`autocomplete-search ${props.className
-? props.className
-: ''}`}
+          ? props.className
+          : ''}`}
         placeholder={props.placeholder}
         onClick={onInputClick}
         ref={inputElRef}
@@ -357,5 +357,5 @@ Autocomplete.propTypes = {
   className: PropTypes.string,
   customRender: PropTypes.func,
   defaultSuggestions: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
 };

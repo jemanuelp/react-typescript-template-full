@@ -8,7 +8,7 @@ const filters = [
   { label: 'Business', color: 'primary', className: 'form-check-primary mb-1' },
   { label: 'Family', color: 'warning', className: 'form-check-warning mb-1' },
   { label: 'Holiday', color: 'success', className: 'form-check-success mb-1' },
-  { label: 'ETC', color: 'info', className: 'form-check-info' }
+  { label: 'ETC', color: 'info', className: 'form-check-info' },
 ];
 
 const SidebarLeft = (props: any) => {
@@ -51,7 +51,7 @@ const SidebarLeft = (props: any) => {
                   <div
                     key={`${filter.label}-key`}
                     className={classnames('form-check', {
-                      [filter.className]: filter.className
+                      [filter.className]: filter.className,
                     })}
                   >
                     <Input

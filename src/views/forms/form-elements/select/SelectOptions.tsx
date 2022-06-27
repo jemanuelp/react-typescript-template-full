@@ -21,11 +21,11 @@ import {
   Linkedin,
   Dribbble,
   FileText,
-  Instagram
+  Instagram,
 } from 'react-feather';
-import {IColorOptions} from "../../../../domains/interfaces/IColorOptions";
-import {OnChangeValue, OptionsOrGroups} from "react-select/dist/declarations/src/types";
-import {selectThemeColors} from "../../../../utility/Utils";
+import {IColorOptions} from '../../../../domains/interfaces/IColorOptions';
+import {OnChangeValue, OptionsOrGroups} from 'react-select/dist/declarations/src/types';
+import {selectThemeColors} from '../../../../utility/Utils';
 
 const colorOptions: IColorOptions[] = [
   { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
@@ -33,7 +33,7 @@ const colorOptions: IColorOptions[] = [
   { value: 'purple', label: 'Purple', color: '#5243AA', isFixed: true },
   { value: 'red', label: 'Red', color: '#FF5630', isFixed: false },
   { value: 'orange', label: 'Orange', color: '#FF8B00', isFixed: false },
-  { value: 'yellow', label: 'Yellow', color: '#FFC400', isFixed: false }
+  { value: 'yellow', label: 'Yellow', color: '#FFC400', isFixed: false },
 ];
 
 const iconOptions = [
@@ -43,47 +43,47 @@ const iconOptions = [
       {
         value: 'facebook',
         label: 'Facebook',
-        icon: Facebook
+        icon: Facebook,
       },
       {
         value: 'twitter',
         label: 'Twitter',
-        icon: Twitter
+        icon: Twitter,
       },
       {
         value: 'linkedin',
         label: 'Linkedin',
-        icon: Linkedin
+        icon: Linkedin,
       },
       {
         value: 'github',
         label: 'Github',
-        icon: GitHub
+        icon: GitHub,
       },
       {
         value: 'instagram',
         label: 'Instagram',
-        icon: Instagram
+        icon: Instagram,
       },
       {
         value: 'dribbble',
         label: 'Dribbble',
-        icon: Dribbble
+        icon: Dribbble,
       },
       {
         value: 'gitlab',
         label: 'Gitlab',
-        icon: Gitlab
-      }
-    ]
+        icon: Gitlab,
+      },
+    ],
   },
   {
     label: 'File Types',
     options: [
       { value: 'pdf', label: 'PDF', icon: File },
       { value: 'txt', label: 'txt', icon: FileText },
-      { value: 'image', label: 'Image', icon: Image }
-    ]
+      { value: 'image', label: 'Image', icon: Image },
+    ],
   },
   {
     label: 'Others',
@@ -92,9 +92,9 @@ const iconOptions = [
       { value: 'chrome', label: 'Chrome', icon: Chrome },
       { value: 'safari', label: 'Safari', icon: Globe },
       { value: 'slack', label: 'Slack', icon: Slack },
-      { value: 'youtube', label: 'Youtube', icon: Youtube }
-    ]
-  }
+      { value: 'youtube', label: 'Youtube', icon: Youtube },
+    ],
+  },
 ];
 
 const OptionComponent = ({ data, ...props }: any) => {
@@ -116,8 +116,8 @@ const groupedOptions = [
       { value: 'Dark Chocolate', label: 'Dark Chocolate' },
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
-      { value: 'salted-caramel', label: 'Salted Caramel' }
-    ]
+      { value: 'salted-caramel', label: 'Salted Caramel' },
+    ],
   },
   {
     label: 'Snacks',
@@ -126,9 +126,9 @@ const groupedOptions = [
       { value: 'Burger', label: 'Burger' },
       { value: 'Pasta', label: 'Pasta' },
       { value: 'Pretzel', label: 'Pretzel' },
-      { value: 'Popcorn', label: 'Popcorn' }
-    ]
-  }
+      { value: 'Popcorn', label: 'Popcorn' },
+    ],
+  },
 ];
 
 const animatedComponents = makeAnimated();
@@ -142,7 +142,7 @@ const styles = {
   },
   multiValueRemove: (base: any, state: any) => {
     return state.data.isFixed ? { ...base, display: 'none' } : base;
-  }
+  },
 };
 
 const orderOptions = (values: any) => {
@@ -179,17 +179,17 @@ const SelectOptions = () => {
 
   const fixedOnChange = (value: any, { action, removedValue }: any) => {
     switch (action) {
-      case 'remove-value':
-      case 'pop-value':
-        if (removedValue.isFixed) {
-          return;
-        }
-        break;
-      case 'clear':
-        value = colorOptions.filter(v => v.isFixed);
-        break;
-      default:
-        break;
+    case 'remove-value':
+    case 'pop-value':
+      if (removedValue.isFixed) {
+        return;
+      }
+      break;
+    case 'clear':
+      value = colorOptions.filter(v => v.isFixed);
+      break;
+    default:
+      break;
     }
 
     value = orderOptions(value);
@@ -319,7 +319,7 @@ const SelectOptions = () => {
               className='react-select'
               classNamePrefix='select'
               components={{
-                Option: OptionComponent
+                Option: OptionComponent,
               }}
             />
           </Col>

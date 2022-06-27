@@ -4,7 +4,7 @@ import Faqs from './Faqs';
 import FaqFilter from './FaqFilter';
 import FaqContact from './FaqContact';
 import '../../../@core/scss/base/pages/page-faq.scss';
-import Breadcrumbs from "../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../@core/components/breadcrumbs';
 
 const Faq = () => {
   const [data, setData] = useState(null),

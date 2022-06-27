@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Play, DollarSign, HelpCircle, FileText, Archive } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const SwiperCenterSlidesStyle = ({ isRtl }: Partial<useRTLInterface>) => {
   const params: SwiperOptions = {
@@ -10,7 +10,7 @@ const SwiperCenterSlidesStyle = ({ isRtl }: Partial<useRTLInterface>) => {
     spaceBetween: 30,
     centeredSlides: true,
     navigation: true,
-    slideToClickedSlide: true
+    slideToClickedSlide: true,
   };
 
   return (

@@ -7,16 +7,16 @@ const Recharts = lazy(() => import('../../views/charts/recharts'));
 const ChartMapsRoutes = [
   {
     path: '/charts/apex',
-    element: <ApexCharts />
+    element: <ApexCharts />,
   },
   {
     path: '/charts/chartjs',
-    element: <ChartJS />
+    element: <ChartJS />,
   },
   {
     path: '/charts/recharts',
-    element: <Recharts />
-  }
+    element: <Recharts />,
+  },
 ];
 
 export default ChartMapsRoutes;

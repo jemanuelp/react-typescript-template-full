@@ -14,7 +14,7 @@ import ProfitLineChart from '../../ui-elements/cards/statistics/ProfitLineChart'
 import CardBrowserStates from '../../ui-elements/cards/advance/CardBrowserState';
 import '../../../@core/scss/react/libs/charts/apex-charts.scss';
 import '../../../@core/scss/base/pages/dashboard-ecommerce.scss';
-import {IColors} from "../../../domains/interfaces/layouts/IColors";
+import {IColors} from '../../../domains/interfaces/layouts/IColors';
 
 const EcommerceDashboard = () => {
   const { colors }  = useContext<{ colors: IColors }>(ThemeColors);

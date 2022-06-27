@@ -9,7 +9,7 @@ import {
   DropdownItem,
   BreadcrumbItem,
   DropdownToggle,
-  UncontrolledButtonDropdown
+  UncontrolledButtonDropdown,
 } from 'reactstrap';
 
 const BreadCrumbs = (props: any) => {
@@ -86,7 +86,7 @@ BreadCrumbs.propTypes = {
   data: Proptypes.arrayOf(
     Proptypes.shape({
       link: Proptypes.string,
-      title: Proptypes.string.isRequired
-    })
-  )
+      title: Proptypes.string.isRequired,
+    }),
+  ),
 };

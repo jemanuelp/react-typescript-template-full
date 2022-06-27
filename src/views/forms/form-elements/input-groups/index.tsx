@@ -14,9 +14,9 @@ import {
   inputGroupMerged,
   inputGroupCBRadio,
   inputGroupButtons,
-  inputGroupDropdowns
+  inputGroupDropdowns,
 } from './InputGroupSourceCode';
-import Breadcrumbs from "../../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 
 const InputGroups = () => {
   useEffect(() => {

@@ -23,11 +23,13 @@ const ScrollTop = (props: any) => {
   };
 
   return (
-    visible ? (
-      <div className='scroll-to-top' onClick={handleScrollToTop} {...rest}>
-        {children}
-      </div>
-    ) : null
+    visible
+      ? (
+        <div className='scroll-to-top' onClick={handleScrollToTop} {...rest}>
+          {children}
+        </div>
+      )
+      : null
   );
 };
 
@@ -37,9 +39,9 @@ ScrollTop.propTypes = {
   showOffset: Proptypes.number,
   children: Proptypes.any.isRequired,
   scrollBehaviour: Proptypes.oneOf(['smooth', 'instant', 'auto']),
-  className: Proptypes.string
+  className: Proptypes.string,
 };
 
 ScrollTop.defaultProps = {
-  scrollBehaviour: 'smooth'
+  scrollBehaviour: 'smooth',
 };

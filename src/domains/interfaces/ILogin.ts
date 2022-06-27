@@ -1,4 +1,4 @@
-import {InterfaceTypeString} from "./InterfaceTypeString";
+import {InterfaceTypeString} from './InterfaceTypeString';
 
 export interface ILogin extends InterfaceTypeString {
     loginEmail: string;

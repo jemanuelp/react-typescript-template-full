@@ -7,7 +7,7 @@ import BillingStep from './create-app-steps/BillingStep';
 import DatabaseStep from './create-app-steps/DatabaseStep';
 import FrameworkStep from './create-app-steps/FrameworkStep';
 import '../../../@core/scss/react/pages/modal-create-app.scss';
-import Wizard from "../../../@core/components/wizard";
+import Wizard from '../../../@core/components/wizard';
 
 const CreateAppExample = () => {
   const ref = useRef(null);
@@ -20,36 +20,36 @@ const CreateAppExample = () => {
       title: 'Details',
       subtitle: 'Enter App Details.',
       icon: <Book className='font-medium-3' />,
-      content: <DetailsStep stepper={stepper} />
+      content: <DetailsStep stepper={stepper} />,
     },
     {
       id: 'frameworks',
       title: 'Frameworks',
       subtitle: 'Select Framework',
       icon: <Package className='font-medium-3' />,
-      content: <FrameworkStep stepper={stepper} />
+      content: <FrameworkStep stepper={stepper} />,
     },
     {
       id: 'database',
       title: 'Database',
       subtitle: 'Select Database',
       icon: <Command className='font-medium-3' />,
-      content: <DatabaseStep stepper={stepper} />
+      content: <DatabaseStep stepper={stepper} />,
     },
     {
       id: 'billing',
       title: 'Billing',
       subtitle: 'Enter billing info',
       icon: <CreditCard className='font-medium-3' />,
-      content: <BillingStep stepper={stepper} />
+      content: <BillingStep stepper={stepper} />,
     },
     {
       id: 'submit',
       title: 'Submit',
       subtitle: 'Review & Submit',
       icon: <Check className='font-medium-3' />,
-      content: <SubmitStep stepper={stepper} setShow={setShow} />
-    }
+      content: <SubmitStep stepper={stepper} setShow={setShow} />,
+    },
   ];
 
   return (

@@ -20,72 +20,72 @@ const ExportSelected = lazy(() => import('../../views/extensions/import-export/E
 const ExtensionsRoutes = [
   {
     element: <SweetAlert />,
-    path: '/extensions/sweet-alert'
+    path: '/extensions/sweet-alert',
   },
   {
     element: <ReactHotToast />,
-    path: '/extensions/react-hot-toasts'
+    path: '/extensions/react-hot-toasts',
   },
   {
     element: <Sliders />,
-    path: '/extensions/slider'
+    path: '/extensions/slider',
   },
   {
     element: <DragAndDrop />,
-    path: '/extensions/drag-and-drop'
+    path: '/extensions/drag-and-drop',
   },
   {
     element: <Tour />,
-    path: '/extensions/tour'
+    path: '/extensions/tour',
   },
   {
     element: <CopyToClipboard />,
-    path: '/extensions/clipboard'
+    path: '/extensions/clipboard',
   },
   {
     element: <ReactPlayer />,
-    path: '/extensions/react-player'
+    path: '/extensions/react-player',
   },
   {
     element: <ContextMenu />,
-    path: '/extensions/context-menu'
+    path: '/extensions/context-menu',
   },
   {
     element: <Swiper />,
-    path: '/extensions/swiper'
+    path: '/extensions/swiper',
   },
   {
     path: '/access-control',
     element: <AccessControl />,
     meta: {
       action: 'read',
-      resource: 'ACL'
-    }
+      resource: 'ACL',
+    },
   },
   {
     element: <Ratings />,
-    path: '/extensions/ratings'
+    path: '/extensions/ratings',
   },
   {
     element: <Pagination />,
-    path: '/extensions/pagination'
+    path: '/extensions/pagination',
   },
   {
     element: <ImportComponent />,
-    path: '/extensions/import'
+    path: '/extensions/import',
   },
   {
     element: <ExportComponent />,
-    path: '/extensions/export'
+    path: '/extensions/export',
   },
   {
     element: <ExportSelected />,
-    path: '/extensions/export-selected'
+    path: '/extensions/export-selected',
   },
   {
     element: <I18nComponent />,
-    path: '/extensions/i18n'
-  }
+    path: '/extensions/i18n',
+  },
 ];
 
 export default ExtensionsRoutes;

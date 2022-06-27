@@ -1,7 +1,7 @@
-import {IAbility} from "./IAbility";
-import {IExtra} from "./IExtra";
-import {IChats} from "../grouper/IChats";
-import {IChatContact} from "./chats/IChatContact";
+import {IAbility} from './IAbility';
+import {IExtra} from './IExtra';
+import {IChats} from '../grouper/IChats';
+import {IChatContact} from './chats/IChatContact';
 
 export interface IUser {
     id?: number;

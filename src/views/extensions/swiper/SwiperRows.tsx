@@ -10,19 +10,19 @@ import img7 from '../../../../src/assets/images/banner/banner-32.jpg';
 import img8 from '../../../../src/assets/images/banner/banner-33.jpg';
 import img9 from '../../../../src/assets/images/banner/banner-34.jpg';
 import img10 from '../../../../src/assets/images/banner/banner-35.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   slidesPerView: 3,
   grid: {
     rows: 2,
-    fill: 'row'
+    fill: 'row',
   },
   spaceBetween: 30,
   pagination: {
-    clickable: true
-  }
+    clickable: true,
+  },
 };
 
 const SwiperMultiSlides = ({ isRtl }: Partial<useRTLInterface>) => {

@@ -14,23 +14,25 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
       className={classnames({
         'nav-item': !item.children,
         disabled: item.disabled,
-        active: item.navLink === activeItem
+        active: item.navLink === activeItem,
       })}
     >
       <LinkTag
         className='d-flex align-items-center'
         target={item.newTab ? '_blank' : undefined}
         
-        {...(item.externalLink === true ? {
-              href: item.navLink || '/'
-            } : {
-              to: item.navLink || '/',
-              className: ({ isActive }: any) => {
-                if (isActive && !item.disabled) {
-                  return 'd-flex align-items-center active';
-                }
+        {...(item.externalLink === true
+          ? {
+            href: item.navLink || '/',
+          }
+          : {
+            to: item.navLink || '/',
+            className: ({ isActive }: any) => {
+              if (isActive && !item.disabled) {
+                return 'd-flex align-items-center active';
               }
-            })}
+            },
+          })}
         onClick={(e: any) => {
           if (item.navLink.length === 0 || item.navLink === '#' || item.disabled === true) {
             e.preventDefault();
@@ -40,11 +42,13 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
         {item.icon}
         <span className='menu-item text-truncate'>{t(item.title)}</span>
 
-        {item.badge && item.badgeText ? (
-          <Badge className='ms-auto me-1' color={item.badge} pill>
-            {item.badgeText}
-          </Badge>
-        ) : null}
+        {item.badge && item.badgeText
+          ? (
+            <Badge className='ms-auto me-1' color={item.badge} pill>
+              {item.badgeText}
+            </Badge>
+          )
+          : null}
       </LinkTag>
     </li>
   );

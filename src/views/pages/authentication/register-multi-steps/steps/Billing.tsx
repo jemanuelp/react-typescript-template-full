@@ -21,7 +21,7 @@ const cardsObj = {
   diners: dinersCC,
   maestro: maestroCC,
   discover: discoverCC,
-  mastercard: mastercardCC
+  mastercard: mastercardCC,
 };
 
 const Billing = ({ stepper }: any) => {
@@ -31,9 +31,9 @@ const Billing = ({ stepper }: any) => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
-    defaultValues: { cardNumber: '' }
+    defaultValues: { cardNumber: '' },
   });
 
   const onSubmit = (data: any) => {
@@ -41,7 +41,7 @@ const Billing = ({ stepper }: any) => {
       alert('Submitted!!!!');
     } else {
       setError('cardNumber', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
@@ -114,16 +114,18 @@ const Billing = ({ stepper }: any) => {
                       creditCard: true,
                       onCreditCardTypeChanged: (type: any) => {
                         setCardType(type);
-                      }
+                      },
                     }}
                   />
                 )}
               />
-              {cardType !== '' && cardType !== 'unknown' ? (
-                <InputGroupText className='cursor-pointer p-25'>
-                  <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
-                </InputGroupText>
-              ) : null}
+              {cardType !== '' && cardType !== 'unknown'
+                ? (
+                  <InputGroupText className='cursor-pointer p-25'>
+                    <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
+                  </InputGroupText>
+                )
+                : null}
             </InputGroup>
             {errors.cardNumber && <FormFeedback className='d-block'>Please enter a valid card number</FormFeedback>}
           </Col>

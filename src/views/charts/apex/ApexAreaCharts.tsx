@@ -2,7 +2,7 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
-import {ApexOptions} from "apexcharts";
+import {ApexOptions} from 'apexcharts';
 const areaColors = {
   series3: '#a4f8cd',
   series2: '#60f2ca',
@@ -98,7 +98,7 @@ const ApexAreaCharts = ({ direction }: { direction: string }) => {
             options={{
               mode: 'range',
               defaultDate: [
-                  new Date(),
+                new Date(),
                 new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000)),
               ],
             }}

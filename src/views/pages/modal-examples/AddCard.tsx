@@ -14,7 +14,7 @@ import {
   InputGroup,
   ModalHeader,
   FormFeedback,
-  InputGroupText
+  InputGroupText,
 } from 'reactstrap';
 import classnames from 'classnames';
 import Cleave from 'cleave.js/react';
@@ -37,11 +37,11 @@ const cardsObj = {
   diners: dinersCC,
   maestro: maestroCC,
   discover: discoverCC,
-  mastercard: mastercardCC
+  mastercard: mastercardCC,
 };
 
 const defaultValues = {
-  cardNumber: ''
+  cardNumber: '',
 };
 
 const AddCardExample = () => {
@@ -54,7 +54,7 @@ const AddCardExample = () => {
     setError,
     clearErrors,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   const onSubmit = (data: any) => {
@@ -106,26 +106,28 @@ const AddCardExample = () => {
                         onChange={field.onChange}
                         placeholder='1356 3215 6548 7898'
                         className={classnames('form-control', {
-                          'is-invalid': errors.cardNumber
+                          'is-invalid': errors.cardNumber,
                         })}
                         options={{
                           creditCard: true,
                           onCreditCardTypeChanged: type => {
                             setCardType(type);
-                          }
+                          },
                         }}
                       />
                     );
                   }}
                 />
 
-                {cardType !== '' && cardType !== 'unknown' ? (
-                  <InputGroupText className='p-25'>
-                    <span className='add-card-type'>
-                      <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
-                    </span>
-                  </InputGroupText>
-                ) : null}
+                {cardType !== '' && cardType !== 'unknown'
+                  ? (
+                    <InputGroupText className='p-25'>
+                      <span className='add-card-type'>
+                        <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
+                      </span>
+                    </InputGroupText>
+                  )
+                  : null}
               </InputGroup>
               {errors.cardNumber && <FormFeedback className='d-block'>Please enter valid card number</FormFeedback>}
             </Col>

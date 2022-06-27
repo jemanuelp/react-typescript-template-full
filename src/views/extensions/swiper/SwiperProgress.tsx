@@ -5,13 +5,13 @@ import img2 from '../../../../src/assets/images/banner/banner-7.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-20.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-5.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-4.jpg';
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   navigation: true,
   pagination: {
-    type: 'progressbar'
-  }
+    type: 'progressbar',
+  },
 };
 
 const SwiperProgress = () => {

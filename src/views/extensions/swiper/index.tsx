@@ -8,7 +8,7 @@ import SwiperCore, {
   Pagination,
   EffectFade,
   EffectCube,
-  EffectCoverflow
+  EffectCoverflow,
 } from 'swiper';
 
 import SwiperCube from './3DEffect';
@@ -30,8 +30,8 @@ import CenterSlidesStyle2 from './CenteredSlidesStyle2';
 
 import { Row, Col } from 'reactstrap';
 import 'src/@core/scss/react/libs/swiper/swiper.scss';
-import {useRTL} from "../../../utility/hooks/useRTL";
-import ExtensionsHeader from "../../../@core/components/extensions-header";
+import {useRTL} from '../../../utility/hooks/useRTL';
+import ExtensionsHeader from '../../../@core/components/extensions-header';
 
 SwiperCore.use([Navigation, Grid, Pagination, EffectFade, EffectCube, EffectCoverflow, Autoplay, Lazy, Virtual]);
 

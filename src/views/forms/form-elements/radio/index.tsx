@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
 import RadioBasic from './RadioBasic';
 import RadioColors from './RadioColors';
-import Breadcrumbs from "../../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 
 const Radio = () => {
   return (

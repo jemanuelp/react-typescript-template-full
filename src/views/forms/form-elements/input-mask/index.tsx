@@ -9,7 +9,7 @@ import CreditCardMask from './CreditCardMask';
 import CustomDelimitersMask from './CustomDelimitersMask';
 import NumeralFormattingMask from './NumeralFormattingMask';
 import { Row, Col, Card, CardBody, CardTitle, CardHeader } from 'reactstrap';
-import Breadcrumbs from "../../../../@core/components/breadcrumbs";
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 
 const InputMask = () => {
   return (

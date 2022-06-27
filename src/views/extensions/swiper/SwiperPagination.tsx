@@ -5,13 +5,13 @@ import img2 from '../../../../src/assets/images/banner/banner-9.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-8.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-7.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-20.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   pagination: {
-    clickable: true
-  }
+    clickable: true,
+  },
 };
 
 const SwiperPagination = ({ isRtl }: Partial<useRTLInterface>) => {

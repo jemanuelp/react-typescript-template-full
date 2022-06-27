@@ -7,9 +7,9 @@ import img2 from '../../../../src/assets/images/banner/banner-12.jpg';
 import img3 from '../../../../src/assets/images/banner/banner-13.jpg';
 import img4 from '../../../../src/assets/images/banner/banner-14.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-15.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
-import {Swiper as SwiperClass} from "swiper/types";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
+import {Swiper as SwiperClass} from 'swiper/types';
 
 SwiperCore.use([Thumbs]);
 
@@ -21,16 +21,16 @@ const SwiperGallery = ({ isRtl }: Partial<useRTLInterface>) => {
     spaceBetween: 10,
     navigation: true,
     pagination: {
-      clickable: true
+      clickable: true,
     },
-    thumbs: { swiper: thumbsSwiper }
+    thumbs: { swiper: thumbsSwiper },
   };
 
   const paramsThumbs: SwiperOptions = {
     spaceBetween: 10,
     slidesPerView: 4,
     freeMode: true,
-    watchSlidesProgress: true
+    watchSlidesProgress: true,
   };
 
   return (

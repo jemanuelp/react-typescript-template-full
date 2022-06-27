@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Row, Col, CardTitle, CardText, Button, Form, Input } from 'reactstrap';
 import '../../../@core/scss/react/pages/page-authentication.scss';
-import {useSkin} from "../../../utility/hooks/useSkin";
-import * as Dark from "../../../../src/assets/images/pages/two-steps-verification-illustration-dark.svg";
-import * as Light from "../../../../src/assets/images/pages/two-steps-verification-illustration.svg";
+import {useSkin} from '../../../utility/hooks/useSkin';
+import * as Dark from '../../../../src/assets/images/pages/two-steps-verification-illustration-dark.svg';
+import * as Light from '../../../../src/assets/images/pages/two-steps-verification-illustration.svg';
 
 const TwoStepsCover = () => {
   const { skin } = useSkin();
   const source = skin === 'dark'
-      ? Dark.default
-      : Light.default;
+    ? Dark.default
+    : Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

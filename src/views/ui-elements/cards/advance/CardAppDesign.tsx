@@ -50,7 +50,6 @@ const CardAppDesign = () => {
         <Badge color='light-primary'>03 Sep, 20</Badge>
         <CardTitle className='mt-1 mb-75'>App design</CardTitle>
         <CardText className='font-small-2 mb-2'>
-          {/* eslint-disable-next-line max-len */}
           You can Find Only Post and Quotes Related to IOS like ipad app design, iphone app design
         </CardText>
         <div className='design-group mb-2 pt-50'>

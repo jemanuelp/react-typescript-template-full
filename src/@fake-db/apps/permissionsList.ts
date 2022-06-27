@@ -121,10 +121,10 @@ mock.onPost('/apps/permissions/add-permission').reply(config => {
   
   const moveElement = (array: any[], sourceIndex: any, destinationIndex: any) => {
     return array.map(a => (a === sourceIndex
-? array.find(a => a === destinationIndex)
-: a === destinationIndex
-? array.find(a => a === sourceIndex)
-: a),
+      ? array.find(a => a === destinationIndex)
+      : a === destinationIndex
+        ? array.find(a => a === sourceIndex)
+        : a),
     );
   };
 

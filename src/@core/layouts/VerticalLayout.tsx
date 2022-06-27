@@ -12,7 +12,7 @@ import FooterComponent from './components/footer';
 import NavbarComponent from './components/navbar';
 import SidebarComponent from './components/menu/vertical-menu';
 import {useRTL} from '../../utility/hooks/useRTL';
-import {useSkin} from "../../utility/hooks/useSkin";
+import {useSkin} from '../../utility/hooks/useSkin';
 import {useLayout} from '../../utility/hooks/useLayout';
 import {useNavbarType} from '../../utility/hooks/useNavbarType';
 import {useFooterType} from '../../utility/hooks/useFooterType';
@@ -20,8 +20,8 @@ import {useNavbarColor} from '../../utility/hooks/useNavbarColor';
 import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
 import '../scss/base/core/menu/menu-types/vertical-menu.scss';
 import '../scss/base/core/menu/menu-types/vertical-overlay-menu.scss';
-import {RootState} from "../../redux/reducers/RootReducer";
-import {FooterLayoutTypes} from "../../domains/enums/FooterLayoutTypes";
+import {RootState} from '../../redux/reducers/RootReducer';
+import {FooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
 
 const VerticalLayout = (props: any) => {
   const { menu, navbar, footer, children, menuData } = props;
@@ -83,21 +83,21 @@ const VerticalLayout = (props: any) => {
   const footerClasses = {
     static: 'footer-static',
     sticky: 'footer-fixed',
-    hidden: 'footer-hidden'
+    hidden: 'footer-hidden',
   };
 
   const navbarWrapperClasses = {
     floating: 'navbar-floating',
     sticky: 'navbar-sticky',
     static: 'navbar-static',
-    hidden: 'navbar-hidden'
+    hidden: 'navbar-hidden',
   };
 
   const navbarClasses = {
     floating: contentWidth === 'boxed' ? 'floating-nav container-xxl' : 'floating-nav',
     sticky: 'fixed-top',
     static: 'navbar-static-top',
-    hidden: 'd-none'
+    hidden: 'd-none',
   };
 
   const bgColorCondition = navbarColor !== '' && navbarColor !== 'light' && navbarColor !== 'white';
@@ -120,22 +120,24 @@ const VerticalLayout = (props: any) => {
           // Overlay Menu
           'vertical-overlay-menu': windowWidth < 1200,
           'menu-hide': !menuVisibility && windowWidth < 1200,
-          'menu-open': menuVisibility && windowWidth < 1200
-        }
+          'menu-open': menuVisibility && windowWidth < 1200,
+        },
       )}
       {...(isHidden ? { 'data-col': '1-column' } : {})}
     >
-      {!isHidden ? (
-        <SidebarComponent
-          skin={skin}
-          menu={menu}
-          menuData={menuData}
-          menuCollapsed={menuCollapsed}
-          menuVisibility={menuVisibility}
-          setMenuCollapsed={setMenuCollapsed}
-          setMenuVisibility={setMenuVisibility}
-        />
-      ) : null}
+      {!isHidden
+        ? (
+          <SidebarComponent
+            skin={skin}
+            menu={menu}
+            menuData={menuData}
+            menuCollapsed={menuCollapsed}
+            menuVisibility={menuVisibility}
+            setMenuCollapsed={setMenuCollapsed}
+            setMenuVisibility={setMenuVisibility}
+          />
+        )
+        : null}
 
       <Navbar
         expand='lg'
@@ -144,15 +146,17 @@ const VerticalLayout = (props: any) => {
         dark={skin === 'dark' || bgColorCondition}
         color={bgColorCondition ? navbarColor : undefined}
         className={classnames(
-          `header-navbar navbar align-items-center ${navbarClasses[navbarType] || 'floating-nav'} navbar-shadow`
+          `header-navbar navbar align-items-center ${navbarClasses[navbarType] || 'floating-nav'} navbar-shadow`,
         )}
       >
         <div className='navbar-container d-flex content'>
-          {navbar ? (
-            navbar({ skin, setSkin, setMenuVisibility })
-          ) : (
-            <NavbarComponent setMenuVisibility={setMenuVisibility} skin={skin} setSkin={setSkin} />
-          )}
+          {navbar
+            ? (
+              navbar({ skin, setSkin, setMenuVisibility })
+            )
+            : (
+              <NavbarComponent setMenuVisibility={setMenuVisibility} skin={skin} setSkin={setSkin} />
+            )}
         </div>
       </Navbar>
       {children}
@@ -160,14 +164,15 @@ const VerticalLayout = (props: any) => {
       {/* Vertical Nav Menu Overlay */}
       <div
         className={classnames('sidenav-overlay', {
-          show: menuVisibility
+          show: menuVisibility,
         })}
         onClick={() => setMenuVisibility(false)}
       ></div>
       {/* Vertical Nav Menu Overlay */}
 
-      {themeConfig.layout.customizer === true ? (
-        <Customizer
+      {themeConfig.layout.customizer === true
+        ? (
+          <Customizer
             skin={skin}
             isRTL={isRtl}
             type={layout}
@@ -187,8 +192,9 @@ const VerticalLayout = (props: any) => {
             setNavbarColor={setNavbarColor}
             setContentWidth={setContentWidth}
             setMenuCollapsed={setMenuCollapsed}
-        />
-      ) : null}
+          />
+        )
+        : null}
       {/*<footer*/}
       {/*  className={classnames(`footer footer-light ${footerClasses[footerType] || 'footer-static'}`, {*/}
       {/*    'd-none': footerType === FooterLayoutTypes.hidden*/}
@@ -197,15 +203,17 @@ const VerticalLayout = (props: any) => {
       {/*  {footer ? footer : <FooterComponent footerType={footerType} footerClasses={footerClasses} />}*/}
       {/*</footer>*/}
 
-      {themeConfig.layout.scrollTop ? (
-        <div className='scroll-to-top'>
-          <ScrollToTop showOffset={300} className='scroll-top d-block'>
-            <Button className='btn-icon' color='primary'>
-              <ArrowUp size={14} />
-            </Button>
-          </ScrollToTop>
-        </div>
-      ) : null}
+      {themeConfig.layout.scrollTop
+        ? (
+          <div className='scroll-to-top'>
+            <ScrollToTop showOffset={300} className='scroll-top d-block'>
+              <Button className='btn-icon' color='primary'>
+                <ArrowUp size={14} />
+              </Button>
+            </ScrollToTop>
+          </div>
+        )
+        : null}
     </div>
   );
 };

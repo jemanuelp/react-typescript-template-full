@@ -9,33 +9,33 @@ import img6 from '../../../../src/assets/images/banner/banner-35.jpg';
 import img7 from '../../../../src/assets/images/banner/banner-36.jpg';
 import img8 from '../../../../src/assets/images/banner/banner-37.jpg';
 import img9 from '../../../../src/assets/images/banner/banner-38.jpg';
-import {useRTLInterface} from "../../../utility/hooks/useRTL";
-import {SwiperOptions} from "swiper/types/swiper-options";
+import {useRTLInterface} from '../../../utility/hooks/useRTL';
+import {SwiperOptions} from 'swiper/types/swiper-options';
 
 const params: SwiperOptions = {
   slidesPerView: 5,
   spaceBetween: 50,
   pagination: {
-    clickable: true
+    clickable: true,
   },
   breakpoints: {
     1024: {
       slidesPerView: 4,
-      spaceBetween: 40
+      spaceBetween: 40,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 30
+      spaceBetween: 30,
     },
     640: {
       slidesPerView: 2,
-      spaceBetween: 20
+      spaceBetween: 20,
     },
     320: {
       slidesPerView: 1,
-      spaceBetween: 10
-    }
-  }
+      spaceBetween: 10,
+    },
+  },
 };
 
 const SwiperResponsive = ({ isRtl }: Partial<useRTLInterface>) => {

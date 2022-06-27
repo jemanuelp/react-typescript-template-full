@@ -24,8 +24,8 @@ const AnalyticsCards = () => {
       <Row className='match-height'>
         <Col lg='6' sm='12'>
           <SupportTracker
-              primary={context.colors.primary.main}
-              danger={context.colors.danger.main}
+            primary={context.colors.primary.main}
+            danger={context.colors.danger.main}
           />
         </Col>
         <Col lg='6' sm='12'>
@@ -35,8 +35,8 @@ const AnalyticsCards = () => {
       <Row className='match-height'>
         <Col lg='8' sm='12'>
           <RevenueReport
-              primary={context.colors.primary.main}
-              warning={context.colors.warning.main}
+            primary={context.colors.primary.main}
+            warning={context.colors.warning.main}
           />
         </Col>
         <Col lg='4' sm='12'>

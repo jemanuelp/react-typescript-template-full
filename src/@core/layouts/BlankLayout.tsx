@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import {useSkin} from "../../utility/hooks/useSkin";
+import {useSkin} from '../../utility/hooks/useSkin';
 import classnames from 'classnames';
 
 const BlankLayout = () => {
@@ -20,7 +20,7 @@ const BlankLayout = () => {
   return (
     <div
       className={classnames('blank-page', {
-        'dark-layout': skin === 'dark'
+        'dark-layout': skin === 'dark',
       })}
     >
       <div className='app-content content'>

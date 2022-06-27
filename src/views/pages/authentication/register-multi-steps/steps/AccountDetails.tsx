@@ -3,14 +3,14 @@ import * as yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { Form, Label, Input, Row, Col, Button, FormFeedback } from 'reactstrap';
-import InputPasswordToggle from "../../../../../@core/components/input-password-toggle";
+import InputPasswordToggle from '../../../../../@core/components/input-password-toggle';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 const defaultValues = {
   email: '',
   username: '',
   password: '',
-  confirmPassword: ''
+  confirmPassword: '',
 };
 
 const AccountDetails = ({ stepper }: any) => {
@@ -21,16 +21,16 @@ const AccountDetails = ({ stepper }: any) => {
     confirmPassword: yup
       .string()
       .required()
-      .oneOf([yup.ref(`password`), null], 'Passwords must match')
+      .oneOf([yup.ref('password'), null], 'Passwords must match'),
   });
 
   const {
     control,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
     defaultValues,
-    resolver: yupResolver(SignupSchema)
+    resolver: yupResolver(SignupSchema),
   });
 
   const onSubmit = (data: any) => {
@@ -60,12 +60,12 @@ const AccountDetails = ({ stepper }: any) => {
             {errors.username && <FormFeedback>{errors.username.message}</FormFeedback>}
           </Col>
           <Col md='6' className='mb-1'>
-            <Label className='form-label' for={`email`}>
+            <Label className='form-label' for={'email'}>
               Email
             </Label>
             <Controller
               control={control}
-                key='email'
+              key='email'
               name='email'
               render={({ field }) => (
                 <Input type='email' placeholder='john.doe@email.com' invalid={errors.email && true} {...field} />
@@ -77,7 +77,7 @@ const AccountDetails = ({ stepper }: any) => {
         <Row>
           <div className='form-password-toggle col-md-6 mb-1'>
             <Controller
-                key='password'
+              key='password'
               name='password'
               control={control}
               render={({ field }) => (
@@ -94,10 +94,10 @@ const AccountDetails = ({ stepper }: any) => {
           </div>
           <div className='form-password-toggle col-md-6 mb-1'>
             <Controller
-                control={control}
-                key='confirmPassword'
-                name='confirmPassword'
-                render={({field}) => (
+              control={control}
+              key='confirmPassword'
+              name='confirmPassword'
+              render={({field}) => (
                 <InputPasswordToggle
                   label='Confirm Password'
                   htmlFor='password'

@@ -1,4 +1,4 @@
-import {IItem} from "./IItem";
+import {IItem} from './IItem';
 
 export interface INavbar {
     groupTitle: string;
