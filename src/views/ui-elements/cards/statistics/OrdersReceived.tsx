@@ -2,12 +2,13 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Package} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
+import {IOrdersRecevied} from "../../../../domains/interfaces/card-statistics/IOrdersRecevied";
 
 const OrdersReceived = (
     { kFormatter, warning }:
         { kFormatter: Function, warning: string },
 ) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<IOrdersRecevied | null>(null);
 
     const options = {
         chart: {

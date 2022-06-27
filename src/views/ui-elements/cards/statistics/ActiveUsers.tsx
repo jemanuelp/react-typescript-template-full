@@ -2,9 +2,10 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {UserCheck} from 'react-feather';
 import StatsWithLineChart from '../../../../@core/components/widgets/stats/StatsWithLineChart';
+import {IActiveUsers} from "../../../../domains/interfaces/card-statistics/IActiveUsers";
 
 const ActiveUsers = ({success}: { success: string }) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<IActiveUsers | null>(null);
 
     useEffect(() => {
         axios.get('/card/card-statistics/active-users').then(res => setData(res.data));

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TinyChartStats from '../../../../@core/components/widgets/stats/TinyChartStats';
+import {IProfitLineChart} from "../../../../domains/interfaces/card-statistics/IProfitLineChart";
 
 const ProfitLineChart = ({ info }: { info:string }) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<IProfitLineChart | null>(null);
 
   useEffect(() => {
     axios.get('/card/card-statistics/profit-line-chart').then(res => setData(res.data));

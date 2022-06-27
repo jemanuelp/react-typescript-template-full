@@ -1,6 +1,7 @@
 import mock from '../mock';
+import {ICardStatistics} from "../../domains/grouper/ICardStatistics";
 
-const data = {
+const data: ICardStatistics = {
   orders_bar_chart: {
     title: 'Orders',
     statistics: '2,76k',

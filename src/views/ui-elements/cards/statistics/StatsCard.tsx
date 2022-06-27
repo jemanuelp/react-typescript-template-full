@@ -3,7 +3,9 @@ import {TrendingUp, User, Box, DollarSign} from 'react-feather';
 import Avatar from '../../../../@core/components/avatar';
 import {Card, CardHeader, CardTitle, CardBody, CardText, Row, Col} from 'reactstrap';
 
-const StatsCard = ({cols}) => {
+const StatsCard = (
+    {cols}: { cols: { md: string, sm: string, xs: string } },
+) => {
     const data = [
         {
             title: '230k',

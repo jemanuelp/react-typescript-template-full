@@ -1,33 +1,34 @@
 import { useEffect, useState } from 'react';
-
 import axios from 'axios';
 import { ShoppingCart } from 'react-feather';
+import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
+import {IQuarterlySales} from "../../../../domains/interfaces/card-statistics/IQuarterlySales";
 
-import StatsWithAreaChart from 'src/@core/components/widgets/stats/StatsWithAreaChart';
-
-const QuarterlySales = ({ danger }) => {
-  const [data, setData] = useState(null);
+const QuarterlySales = (
+    { danger }: { danger: string },
+) => {
+  const [data, setData] = useState<IQuarterlySales | null>(null);
 
   const options = {
     chart: {
       id: 'revenue',
       toolbar: {
-        show: false
+        show: false,
       },
       sparkline: {
-        enabled: true
-      }
+        enabled: true,
+      },
     },
     grid: {
-      show: false
+      show: false,
     },
     colors: [danger],
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     stroke: {
       curve: 'smooth',
-      width: 2.5
+      width: 2.5,
     },
     fill: {
       type: 'gradient',
@@ -35,42 +36,44 @@ const QuarterlySales = ({ danger }) => {
         shadeIntensity: 0.9,
         opacityFrom: 0.7,
         opacityTo: 0.5,
-        stops: [0, 80, 100]
-      }
+        stops: [0, 80, 100],
+      },
     },
 
     xaxis: {
       labels: {
-        show: false
+        show: false,
       },
       axisBorder: {
-        show: false
-      }
+        show: false,
+      },
     },
     yaxis: {
       labels: {
-        show: false
-      }
+        show: false,
+      },
     },
     tooltip: {
-      x: { show: false }
-    }
+      x: { show: false },
+    },
   };
 
   useEffect(() => {
     axios.get('/card/card-statistics/sales').then(res => setData(res.data));
   }, []);
 
-  return data !== null ? (
+  return data !== null
+? (
     <StatsWithAreaChart
       icon={<ShoppingCart size={21} />}
       color='danger'
-      stats={data.analyticsData.sales}
+      stats={data.analyticsData.sales ?? ''}
       statTitle='Quarterly Sales'
       options={options}
       series={data.series}
       type='area'
     />
-  ) : null;
+  )
+: null;
 };
 export default QuarterlySales;

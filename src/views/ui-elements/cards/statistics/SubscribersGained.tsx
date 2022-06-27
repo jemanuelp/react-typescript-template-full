@@ -2,9 +2,10 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Users} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
+import {ISubscribersGained} from "../../../../domains/interfaces/card-statistics/ISubscribersGained";
 
 const SubscribersGained = ({kFormatter}: { kFormatter: Function }) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<ISubscribersGained | null>(null);
 
     useEffect(() => {
         axios.get('/card/card-statistics/subscribers').then(res => setData(res.data));
