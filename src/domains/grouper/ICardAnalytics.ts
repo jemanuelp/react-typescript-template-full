@@ -1,11 +1,11 @@
-import {IAvgSessions} from "../interfaces/cards-analytics/IAvgSessions";
-import {ISupportTracker} from "../interfaces/cards-analytics/ISupportTracker";
-import {IRevenueReport} from "../interfaces/cards-analytics/IRevenueReport";
-import {IGoalOverview} from "../interfaces/cards-analytics/IGoalOverview";
-import {IRevenue} from "../interfaces/cards-analytics/IRevenue";
-import {IProductOrders} from "../interfaces/cards-analytics/IProductOrders";
-import {ISessionsDevice} from "../interfaces/cards-analytics/ISessionsDevice";
-import {ICustomers} from "../interfaces/cards-analytics/ICustomers";
+import {IAvgSessions} from "../interfaces/card-analytics/IAvgSessions";
+import {ISupportTracker} from "../interfaces/card-analytics/ISupportTracker";
+import {IRevenueReport} from "../interfaces/card-analytics/IRevenueReport";
+import {IGoalOverview} from "../interfaces/card-analytics/IGoalOverview";
+import {IRevenue} from "../interfaces/card-analytics/IRevenue";
+import {IProductOrders} from "../interfaces/card-analytics/IProductOrders";
+import {ISessionsDevice} from "../interfaces/card-analytics/ISessionsDevice";
+import {ICustomers} from "../interfaces/card-analytics/ICustomers";
 
 export interface ICardAnalytics {
     support_tracker: ISupportTracker;
