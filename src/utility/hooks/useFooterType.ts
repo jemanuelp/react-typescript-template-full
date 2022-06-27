@@ -5,7 +5,7 @@ import {FooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
 
 export interface useFooterTypeInterface {
   footerType: FooterLayoutTypes;
-  setFooterType: (type: FooterLayoutTypes) => void;
+  setFooterType: Function;
 }
 
 export const useFooterType = (): useFooterTypeInterface => {

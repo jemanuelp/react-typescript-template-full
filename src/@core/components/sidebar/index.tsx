@@ -23,9 +23,9 @@ const Sidebar = (props: SidebarPropTypes) => {
   } = props;
 
   // ** If user passes custom close btn render that else default close btn
-  const renderCloseBtn = closeBtn
-    ? closeBtn
-    : <X className='cursor-pointer' size={15} onClick={() => toggleSidebar}/>;
+  const renderCloseBtn = closeBtn ?
+    closeBtn :
+    <X className='cursor-pointer' size={15} onClick={() => toggleSidebar}/>;
 
   return (
     <Modal
@@ -46,11 +46,11 @@ const Sidebar = (props: SidebarPropTypes) => {
         'sidebar-sm': size === 'sm',
       })}
 
-      {...(width !== undefined
-        ? {
+      {...(width !== undefined ?
+        {
           style: {width: `${String(width)}px`},
-        }
-        : {})}
+        } :
+        {})}
       {...rest}
     >
       <ModalHeader

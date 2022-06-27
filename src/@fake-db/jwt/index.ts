@@ -105,12 +105,12 @@ mock.onPost('/jwt/register').reply((request: AxiosRequestConfig) => {
   const isEmailAlreadyInUse = data.users.find(user => user.email === email);
   const isUsernameAlreadyInUse = data.users.find(user => user.username === username);
   const error = {
-    email: isEmailAlreadyInUse
-      ? 'This email is already in use.'
-      : null,
-    username: isUsernameAlreadyInUse
-      ? 'This username is already in use.'
-      : null,
+    email: isEmailAlreadyInUse ?
+      'This email is already in use.' :
+      null,
+    username: isUsernameAlreadyInUse ?
+      'This username is already in use.' :
+      null,
   };
 
   if (!error.username && !error.email) {

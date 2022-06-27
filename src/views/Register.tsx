@@ -9,9 +9,9 @@ import '../@core/scss/react/pages/page-authentication.scss';
 const Register = () => {
   const { skin } = useSkin();
 
-  const illustration = (skin === 'dark')
-    ? 'register-v2-dark.svg'
-    : 'register-v2.svg';
+  const illustration = (skin === 'dark') ?
+    'register-v2-dark.svg' :
+    'register-v2.svg';
   const source = require(`../assets/images/pages/${illustration}`).default;
 
   return (

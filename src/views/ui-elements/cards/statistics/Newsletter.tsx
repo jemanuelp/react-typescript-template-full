@@ -70,8 +70,8 @@ const Newsletter = (
     },
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithLineChart
         icon={<Mail size={21}/>}
         color='warning'
@@ -81,8 +81,8 @@ const Newsletter = (
         type='line'
         options={options}
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default Newsletter;

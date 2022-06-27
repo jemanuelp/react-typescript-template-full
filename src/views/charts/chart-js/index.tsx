@@ -18,9 +18,9 @@ import {useSkin} from '../../../utility/hooks/useSkin';
 const ChartJS = () => {
   const { colors } = useContext(ThemeColors),
     { skin } = useSkin(),
-    labelColor = skin === 'dark'
-      ? '#b4b7bd'
-      : '#6e6b7b',
+    labelColor = skin === 'dark' ?
+      '#b4b7bd' :
+      '#6e6b7b',
     tooltipShadow = 'rgba(0, 0, 0, 0.25)',
     gridLineColor = 'rgba(200, 200, 200, 0.2)',
     lineChartPrimary = '#666ee8',

@@ -8,7 +8,6 @@ import {Button, Navbar} from 'reactstrap';
 import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
 import ScrollToTop from '../components/scrolltop';
-import FooterComponent from './components/footer';
 import NavbarComponent from './components/navbar';
 import SidebarComponent from './components/menu/vertical-menu';
 import {useRTL} from '../../utility/hooks/useRTL';
@@ -21,11 +20,9 @@ import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
 import '../scss/base/core/menu/menu-types/vertical-menu.scss';
 import '../scss/base/core/menu/menu-types/vertical-overlay-menu.scss';
 import {RootState} from '../../redux/reducers/RootReducer';
-import {FooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
 
 const VerticalLayout = (props: any) => {
-  const { menu, navbar, footer, children, menuData } = props;
-
+  const { menu, navbar, children, menuData } = props;
   const { isRtl, setIsRtl } = useRTL();
   const { skin, setSkin } = useSkin();
   const { navbarType, setNavbarType } = useNavbarType();
@@ -125,8 +122,8 @@ const VerticalLayout = (props: any) => {
       )}
       {...(isHidden ? { 'data-col': '1-column' } : {})}
     >
-      {!isHidden
-        ? (
+      {!isHidden ?
+        (
           <SidebarComponent
             skin={skin}
             menu={menu}
@@ -136,8 +133,8 @@ const VerticalLayout = (props: any) => {
             setMenuCollapsed={setMenuCollapsed}
             setMenuVisibility={setMenuVisibility}
           />
-        )
-        : null}
+        ) :
+        null}
 
       <Navbar
         expand='lg'
@@ -150,12 +147,16 @@ const VerticalLayout = (props: any) => {
         )}
       >
         <div className='navbar-container d-flex content'>
-          {navbar
-            ? (
+          {navbar ?
+            (
               navbar({ skin, setSkin, setMenuVisibility })
-            )
-            : (
-              <NavbarComponent setMenuVisibility={setMenuVisibility} skin={skin} setSkin={setSkin} />
+            ) :
+            (
+              <NavbarComponent
+                setMenuVisibility={setMenuVisibility}
+                skin={skin}
+                setSkin={setSkin}
+              />
             )}
         </div>
       </Navbar>
@@ -170,8 +171,8 @@ const VerticalLayout = (props: any) => {
       ></div>
       {/* Vertical Nav Menu Overlay */}
 
-      {themeConfig.layout.customizer === true
-        ? (
+      {themeConfig.layout.customizer === true ?
+        (
           <Customizer
             skin={skin}
             isRTL={isRtl}
@@ -193,8 +194,9 @@ const VerticalLayout = (props: any) => {
             setContentWidth={setContentWidth}
             setMenuCollapsed={setMenuCollapsed}
           />
-        )
-        : null}
+        ) :
+        null}
+      // TODO: Add a customizer for the footer
       {/*<footer*/}
       {/*  className={classnames(`footer footer-light ${footerClasses[footerType] || 'footer-static'}`, {*/}
       {/*    'd-none': footerType === FooterLayoutTypes.hidden*/}
@@ -203,8 +205,8 @@ const VerticalLayout = (props: any) => {
       {/*  {footer ? footer : <FooterComponent footerType={footerType} footerClasses={footerClasses} />}*/}
       {/*</footer>*/}
 
-      {themeConfig.layout.scrollTop
-        ? (
+      {themeConfig.layout.scrollTop ?
+        (
           <div className='scroll-to-top'>
             <ScrollToTop showOffset={300} className='scroll-top d-block'>
               <Button className='btn-icon' color='primary'>
@@ -212,8 +214,8 @@ const VerticalLayout = (props: any) => {
               </Button>
             </ScrollToTop>
           </div>
-        )
-        : null}
+        ) :
+        null}
     </div>
   );
 };

@@ -78,25 +78,24 @@ const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
 
         // ** Check for public or private route
         if (route.meta) {
-          route.meta.layout === 'blank'
-            ? (isBlank = true)
-            : (isBlank = false);
-          RouteTag = route.meta.publicRoute
-            ? PublicRoute
-            : PrivateRoute;
+          route.meta.layout === 'blank' ?
+            (isBlank = true) :
+            (isBlank = false);
+          RouteTag = route.meta.publicRoute ?
+            PublicRoute :
+            PrivateRoute;
         }
         if (route.element) {
           const Wrapper =
                         // eslint-disable-next-line multiline-ternary
-                        isObjEmpty(route.element.props) && !isBlank
-                          ? // eslint-disable-next-line multiline-ternary
-                          LayoutWrapper
-                          : Fragment;
+                        isObjEmpty(route.element.props) && !isBlank ? // eslint-disable-next-line multiline-ternary
+                          LayoutWrapper :
+                          Fragment;
 
           route.element = (
-            <Wrapper {...(!isBlank
-              ? getRouteMeta(route)
-              : {})}>
+            <Wrapper {...(!isBlank ?
+              getRouteMeta(route) :
+              {})}>
               <RouteTag route={route}>{route.element}</RouteTag>
             </Wrapper>
           );

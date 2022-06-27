@@ -4,9 +4,9 @@ import {useSkin} from '../../../utility/hooks/useSkin';
 
 const Maintenance = () => {
   const {skin} = useSkin();
-  const illustration = skin === 'dark'
-      ? 'under-maintenance-dark.svg'
-      : 'under-maintenance.svg',
+  const illustration = skin === 'dark' ?
+      'under-maintenance-dark.svg' :
+      'under-maintenance.svg',
     source = require(`src/assets/images/pages/${illustration}`).default;
 
   return (

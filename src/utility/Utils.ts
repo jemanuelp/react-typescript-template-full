@@ -5,9 +5,9 @@ export const isObjEmpty = (obj: object) => Object.keys(obj).length === 0;
 
 // ** Returns K format from a number
 export const kFormatter = (num: number) => {
-  return (num > 999
-    ? `${(num / 1000).toFixed(1)}k`
-    : num);
+  return (num > 999 ?
+    `${(num / 1000).toFixed(1)}k` :
+    num);
 };
 
 // ** Converts HTML to string

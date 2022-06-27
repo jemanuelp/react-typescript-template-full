@@ -43,8 +43,8 @@ const Avatar = forwardRef((props: any, ref) => {
       ref={ref}
       {...rest}
     >
-      {img === false || img === undefined
-        ? (
+      {img === false || img === undefined ?
+        (
           <span
             className={classnames('avatar-content', {
               'position-relative': badgeUp,
@@ -54,16 +54,16 @@ const Avatar = forwardRef((props: any, ref) => {
             {initials ? getInitials(content) : content}
 
             {icon ? icon : null}
-            {badgeUp
-              ? (
+            {badgeUp ?
+              (
                 <Badge color={badgeColor ? badgeColor : 'primary'} className='badge-sm badge-up' pill>
                   {badgeText ? badgeText : '0'}
                 </Badge>
-              )
-              : null}
+              ) :
+              null}
           </span>
-        )
-        : (
+        ) :
+        (
           <img
             className={classnames({
               [imgClassName]: imgClassName,
@@ -74,16 +74,16 @@ const Avatar = forwardRef((props: any, ref) => {
             width={imgWidth && !size ? imgWidth : 32}
           />
         )}
-      {status
-        ? (
+      {status ?
+        (
           <span
             className={classnames({
               [`avatar-status-${status}`]: status,
               [`avatar-status-${size}`]: size,
             })}
           ></span>
-        )
-        : null}
+        ) :
+        null}
     </Tag>
   );
 });

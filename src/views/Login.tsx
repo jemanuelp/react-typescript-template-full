@@ -8,9 +8,9 @@ import InputPasswordToggle from '../@core/components/input-password-toggle';
 const Login = () => {
   const { skin } = useSkin();
 
-  const illustration = skin === 'dark'
-      ? 'login-v2-dark.svg'
-      : 'login-v2.svg',
+  const illustration = skin === 'dark' ?
+      'login-v2-dark.svg' :
+      'login-v2.svg',
     source = require(`../assets/images/pages/${illustration}`).default;
 
   return (

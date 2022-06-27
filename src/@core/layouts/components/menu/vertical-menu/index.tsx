@@ -45,39 +45,46 @@ const Sidebar = (props: any) => {
         onMouseEnter={onMouseEnter}
         onMouseLeave={() => setMenuHover(false)}
       >
-        {menu ? (
-          menu({...props})
-        ) : (
-          <Fragment>
-            {/* Vertical Menu Header */}
-            <VerticalMenuHeader setGroupOpen={setGroupOpen} menuHover={menuHover} {...props} />
-            {/* Vertical Menu Header Shadow */}
-            <div className='shadow-bottom' ref={shadowRef}></div>
-            {/* Perfect Scrollbar */}
-            <PerfectScrollbar
-              className='main-menu-content'
-              options={{wheelPropagation: false}}
-              onScrollY={container => scrollMenu(container)}
-            >
-              <ul className='navigation navigation-main'>
-                <VerticalNavMenuItems
-                  items={menuData}
-                  menuData={menuData}
-                  menuHover={menuHover}
-                  groupOpen={groupOpen}
-                  activeItem={activeItem}
-                  groupActive={groupActive}
+        {
+          menu ?
+            (
+              menu({...props})
+            ) :
+            (
+              <Fragment>
+                {/* Vertical Menu Header */}
+                <VerticalMenuHeader
                   setGroupOpen={setGroupOpen}
-                  menuCollapsed={menuCollapsed}
-                  setActiveItem={setActiveItem}
-                  setGroupActive={setGroupActive}
-                  currentActiveGroup={currentActiveGroup}
-                  setCurrentActiveGroup={setCurrentActiveGroup}
+                  menuHover={menuHover}
+                  {...props}
                 />
-              </ul>
-            </PerfectScrollbar>
-          </Fragment>
-        )}
+                {/* Vertical Menu Header Shadow */}
+                <div className='shadow-bottom' ref={shadowRef}></div>
+                {/* Perfect Scrollbar */}
+                <PerfectScrollbar
+                  className='main-menu-content'
+                  options={{wheelPropagation: false}}
+                  onScrollY={container => scrollMenu(container)}
+                >
+                  <ul className='navigation navigation-main'>
+                    <VerticalNavMenuItems
+                      items={menuData}
+                      menuData={menuData}
+                      menuHover={menuHover}
+                      groupOpen={groupOpen}
+                      activeItem={activeItem}
+                      groupActive={groupActive}
+                      setGroupOpen={setGroupOpen}
+                      menuCollapsed={menuCollapsed}
+                      setActiveItem={setActiveItem}
+                      setGroupActive={setGroupActive}
+                      currentActiveGroup={currentActiveGroup}
+                      setCurrentActiveGroup={setCurrentActiveGroup}
+                    />
+                  </ul>
+                </PerfectScrollbar>
+              </Fragment>
+            )}
       </div>
     </Fragment>
   );

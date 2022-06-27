@@ -209,8 +209,8 @@ const AddCard = () => {
             <Col className='col-bill-to ps-0' xl='8'>
               <h6 className='invoice-to-title'>Invoice To:</h6>
               <div className='invoice-customer'>
-                {clients !== null
-                  ? (
+                {clients !== null ?
+                  (
                     <Fragment>
                       <Select
                         className='react-select'
@@ -224,8 +224,8 @@ const AddCard = () => {
                         }}
                         onChange={handleInvoiceToChange}
                       />
-                      {selected !== null
-                        ? (
+                      {selected !== null ?
+                        (
                           <div className='customer-details mt-1'>
                             <p className='mb-25'>{selected.name}</p>
                             <p className='mb-25'>{selected.company}</p>
@@ -234,11 +234,11 @@ const AddCard = () => {
                             <p className='mb-0'>{selected.contact}</p>
                             <p className='mb-0'>{selected.companyEmail}</p>
                           </div>
-                        )
-                        : null}
+                        ) :
+                        null}
                     </Fragment>
-                  )
-                  : null}
+                  ) :
+                  null}
               </div>
             </Col>
             <Col className='pe-0 mt-xl-0 mt-2' xl='4'>
@@ -279,9 +279,9 @@ const AddCard = () => {
           <Repeater count={count}>
             {
               (i: any) => {
-                const Tag = i === 0
-                  ? 'div'
-                  : SlideDown;
+                const Tag = i === 0 ?
+                  'div' :
+                  SlideDown;
                 return (
                   <Tag key={i} className='repeater-wrapper'>
                     <Row>

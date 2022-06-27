@@ -16,15 +16,15 @@ const AvatarGroup = (props: any) => {
       const ItemTag = item.tag ? item.tag : 'div';
       return (
         <Fragment key={i}>
-          {item.title
-            ? (
+          {item.title ?
+            (
               <UncontrolledTooltip placement={item.placement} target={item.title.split(' ').join('-')}>
                 {item.title}
               </UncontrolledTooltip>
-            )
-            : null}
-          {!item.meta
-            ? (
+            ) :
+            null}
+          {!item.meta ?
+            (
               <Avatar
                 tag={ItemTag}
                 className={classnames('pull-up', {
@@ -35,8 +35,8 @@ const AvatarGroup = (props: any) => {
                 title={undefined}
                 meta={undefined}
               />
-            )
-            : null}
+            ) :
+            null}
           {item.meta ? <ItemTag className='d-flex align-items-center ps-1'>{item.meta}</ItemTag> : null}
         </Fragment>
       );

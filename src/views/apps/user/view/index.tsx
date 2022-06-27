@@ -29,8 +29,8 @@ const UserView = () => {
     }
   };
 
-  return store.selectedUser !== null && store.selectedUser !== undefined
-    ? (
+  return store.selectedUser !== null && store.selectedUser !== undefined ?
+    (
       <div className='app-user-view'>
         <Row>
           <Col xl='4' lg='5' xs={{order: 1}} md={{order: 0, size: 5}}>
@@ -42,8 +42,8 @@ const UserView = () => {
           </Col>
         </Row>
       </div>
-    )
-    : (
+    ) :
+    (
       <Alert color='danger'>
         <h4 className='alert-heading'>User not found</h4>
         <div className='alert-body'>

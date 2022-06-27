@@ -78,7 +78,10 @@ const PersonalInfo = ({ stepper }: any) => {
             <Controller
               name='address'
               control={control}
-              render={({ field }) => <Input invalid={errors.address && true} {...field} />}
+              render={
+                ({ field }) => <Input invalid={errors.address && true} {...field}
+                />
+              }
             />
             {errors.address && <FormFeedback>{errors.address.message}</FormFeedback>}
           </Col>

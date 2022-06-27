@@ -8,9 +8,9 @@ import * as _ from 'lodash';
 const NotAuthorized = () => {
   const {skin} = useSkin();
 
-  const illustration = (skin === SkinTypes.dark)
-      ? 'not-authorized-dark.svg'
-      : 'not-authorized.svg',
+  const illustration = (skin === SkinTypes.dark) ?
+      'not-authorized-dark.svg' :
+      'not-authorized.svg',
     source = require(`../../src/assets/images/pages/${illustration}`).default;
   _.get(null, `../../src/assets/images/pages/${illustration}`);
   return (

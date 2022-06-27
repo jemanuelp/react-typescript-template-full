@@ -34,40 +34,40 @@ const ApexCharts = () => {
           </p>
         </Col>
         <Col sm='12'>
-          <ApexAreaChart direction={isRtl
-            ? 'rtl'
-            : 'ltr'}/>
+          <ApexAreaChart direction={isRtl ?
+            'rtl' :
+            'ltr'}/>
         </Col>
         <Col sm='12'>
-          <ApexColumnChart direction={isRtl
-            ? 'rtl'
-            : 'ltr'}/>
+          <ApexColumnChart direction={isRtl ?
+            'rtl' :
+            'ltr'}/>
         </Col>
         <Col sm='12'>
           <ApexScatterChart
-            direction={isRtl
-              ? 'rtl'
-              : 'ltr'}
+            direction={isRtl ?
+              'rtl' :
+              'ltr'}
             primary={colors.primary.main}
             success={colors.success.main}
             warning={colors.warning.main}
           />
         </Col>
         <Col sm='12'>
-          <ApexLineChart direction={isRtl
-            ? 'rtl'
-            : 'ltr'} warning={colors.warning.main}/>
+          <ApexLineChart direction={isRtl ?
+            'rtl' :
+            'ltr'} warning={colors.warning.main}/>
         </Col>
         <Col xl='6' lg='12'>
-          <ApexBarChart direction={isRtl
-            ? 'rtl'
-            : 'ltr'} info={colors.info.main}/>
+          <ApexBarChart direction={isRtl ?
+            'rtl' :
+            'ltr'} info={colors.info.main}/>
         </Col>
         <Col xl='6' lg='12'>
           <ApexCandlestickChart
-            direction={isRtl
-              ? 'rtl'
-              : 'ltr'}
+            direction={isRtl ?
+              'rtl' :
+              'ltr'}
             success={colors.success.main}
             danger={colors.danger.main}
           />

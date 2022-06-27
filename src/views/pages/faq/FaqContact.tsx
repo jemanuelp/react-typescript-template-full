@@ -8,6 +8,7 @@ const FaqContact = () => {
         <Col className='text-center' sm='12'>
           <h2>You still have a question?</h2>
           <p className='mb-3'>
+            {/* eslint-disable-next-line max-len */}
             If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
           </p>
         </Col>

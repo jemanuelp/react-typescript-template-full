@@ -79,8 +79,8 @@ const GoalOverview = (props: {
   },
     series = [83];
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader>
           <CardTitle tag='h4'>Goal Overview</CardTitle>
@@ -100,7 +100,7 @@ const GoalOverview = (props: {
           </Col>
         </Row>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default GoalOverview;

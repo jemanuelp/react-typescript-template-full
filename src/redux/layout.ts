@@ -6,9 +6,9 @@ import {MenuLayout} from '../domains/interfaces/layouts/MenuLayout';
 const initialMenu = (): MenuLayout => {
   const item = window.localStorage.getItem('menuCollapsed');
   //** Parse stored json or if none return initialValue
-  const menuCollapsed = item
-    ? JSON.parse(item)
-    : themeConfig.layout.menu.isCollapsed;
+  const menuCollapsed = item ?
+    JSON.parse(item) :
+    themeConfig.layout.menu.isCollapsed;
   return {
     isCollapsed: menuCollapsed,
     isHidden: themeConfig.layout.menu.isHidden,
@@ -18,17 +18,17 @@ const initialMenu = (): MenuLayout => {
 const initialDirection = () => {
   const item = window.localStorage.getItem('direction');
   //** Parse stored json or if none return initialValue
-  return item
-    ? JSON.parse(item)
-    : themeConfig.layout.isRTL;
+  return item ?
+    JSON.parse(item) :
+    themeConfig.layout.isRTL;
 };
 
 const initialSkin = () => {
   const item = window.localStorage.getItem('skin');
   //** Parse stored json or if none return initialValue
-  return item
-    ? JSON.parse(item)
-    : themeConfig.layout.skin;
+  return item ?
+    JSON.parse(item) :
+    themeConfig.layout.skin;
 };
 
 const initialState: Layout = {

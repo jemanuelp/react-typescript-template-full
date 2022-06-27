@@ -740,9 +740,9 @@ mock.onPost('/apps/users/add-user').reply(config => {
     if (!b || !b.id) {
       return a;
     }
-    return a.id > b.id
-      ? a
-      : b;
+    return a.id > b.id ?
+      a :
+      b;
   }).id;
 
   if (!highestValue) {
@@ -772,14 +772,14 @@ mock.onGet('/api/users/list/data').reply((config: any) => {
 
   const dataAsc = data.users.sort((a, b) => {
     // @ts-ignore
-    return (a[sortColumn] < b[sortColumn]
-      ? -1
-      : 1);
+    return (a[sortColumn] < b[sortColumn] ?
+      -1 :
+      1);
   });
 
-  const dataToFilter = sort === 'asc'
-    ? dataAsc
-    : dataAsc.reverse();
+  const dataToFilter = sort === 'asc' ?
+    dataAsc :
+    dataAsc.reverse();
 
   const filteredData = dataToFilter.filter(
     user => (user.email.toLowerCase().includes(queryLowered) ||

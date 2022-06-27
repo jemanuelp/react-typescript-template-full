@@ -114,25 +114,30 @@ const VerticalNavMenuGroup = ({
         open: openClassCondition(item.id),
         'menu-collapsed-open': groupActive.includes(item.id),
         'sidebar-group-active':
-          groupActive.includes(item.id) || groupOpen.includes(item.id) || currentActiveGroup.includes(item.id),
+          groupActive.includes(item.id) ||
+            groupOpen.includes(item.id) ||
+            currentActiveGroup.includes(item.id),
       })}
     >
       <Link className='d-flex align-items-center' to='/' onClick={e => onCollapseClick(e, item)}>
         {item.icon}
         <span className='menu-title text-truncate'>{t(item.title)}</span>
 
-        {item.badge && item.badgeText
-          ? (
+        {item.badge && item.badgeText ?
+          (
             <Badge className='ms-auto me-1' color={item.badge} pill>
               {item.badgeText}
             </Badge>
-          )
-          : null}
+          ) :
+          null}
       </Link>
 
       {/* Render Child Recursively Through VerticalNavMenuItems Component */}
       <ul className='menu-content'>
-        <Collapse isOpen={(groupActive && groupActive.includes(item.id)) || (groupOpen && groupOpen.includes(item.id))}>
+        <Collapse
+          isOpen={(groupActive && groupActive.includes(item.id)) ||
+                (groupOpen && groupOpen.includes(item.id))
+          }>
           <VerticalNavMenuItems
             {...rest}
             items={item.children}

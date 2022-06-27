@@ -1,14 +1,20 @@
 import Avatar from '../../avatar';
-
 import PropTypes from 'prop-types';
 import Chart from 'react-apexcharts';
-
 import { Card, CardHeader, CardText } from 'reactstrap';
-
-// ** Default Options
 import { lineChartOptions } from './ChartOptions';
 
-const StatsWithLineChart = ({ icon, color, stats, statTitle, series, options, type, height, ...rest }: any) => {
+const StatsWithLineChart = ({
+  icon,
+  color,
+  stats,
+  statTitle,
+  series,
+  options,
+  type,
+  height,
+  ...rest
+}: any) => {
   return (
     <Card {...rest}>
       <CardHeader className='align-items-start pb-0'>
@@ -18,7 +24,15 @@ const StatsWithLineChart = ({ icon, color, stats, statTitle, series, options, ty
         </div>
         <Avatar className='avatar-stats p-50 m-0' color={`light-${color}`} icon={icon} />
       </CardHeader>
-      <Chart options={options} series={series} type={type} height={height ? height : 100} />
+      <Chart
+        options={options}
+        series={series}
+        type={type}
+        height={
+          height ?
+            height :
+            100
+        } />
     </Card>
   );
 };

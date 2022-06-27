@@ -47,7 +47,10 @@ const NavbarBookmarks = (props: any) => {
             <NavItem key={item.target} className='d-none d-lg-block'>
               <NavLink tag={Link} to={item.link} id={item.target}>
                 <IconTag className='ficon' />
-                <UncontrolledTooltip target={item.target}>{item.title}</UncontrolledTooltip>
+                <UncontrolledTooltip
+                  target={item.target}>
+                  {item.title}
+                </UncontrolledTooltip>
               </NavLink>
             </NavItem>
           );
@@ -155,8 +158,8 @@ const NavbarBookmarks = (props: any) => {
             <div className='bookmark-input-icon'>
               <Icon.Search size={14} />
             </div>
-            {openSearch && store.suggestions.length
-              ? (
+            {openSearch && store.suggestions.length ?
+              (
                 <Autocomplete
                   wrapperClass={classnames('search-list search-list-bookmark', {
                     show: openSearch,
@@ -169,7 +172,10 @@ const NavbarBookmarks = (props: any) => {
                   suggestionLimit={!value.length ? store.bookmarks.length : 6}
                   placeholder='Search...'
                   externalClick={handleExternalClick}
-                  clearInput={(userInput: any, setUserInput: Function) => handleClearInput(setUserInput)}
+                  clearInput={(
+                    userInput: any,
+                    setUserInput: Function) => handleClearInput(setUserInput)
+                  }
                   onKeyDown={onKeyDown}
                   value={value}
                   onChange={handleInputChange}
@@ -185,7 +191,9 @@ const NavbarBookmarks = (props: any) => {
                     return (
                       <li
                         key={i}
-                        onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
+                        onMouseEnter={() => onSuggestionItemHover(
+                          filteredData.indexOf(item),
+                        )}
                         className={classnames('suggestion-item d-flex align-items-center justify-content-between', {
                           active: filteredData.indexOf(item) === activeSuggestion,
                         })}
@@ -217,8 +225,8 @@ const NavbarBookmarks = (props: any) => {
                     );
                   }}
                 />
-              )
-              : null}
+              ) :
+              null}
           </div>
         </NavItem>
       </ul>

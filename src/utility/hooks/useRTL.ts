@@ -5,7 +5,7 @@ import {RootState} from '../../redux/reducers/RootReducer';
 
 export interface useRTLInterface {
   isRtl: boolean;
-  setIsRtl: (isRtl: boolean) => void;
+  setIsRtl: Function;
 }
 
 export const useRTL = (): useRTLInterface => {

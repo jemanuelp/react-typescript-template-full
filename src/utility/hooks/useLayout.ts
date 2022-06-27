@@ -57,7 +57,11 @@ export const useLayout = () => {
       if (window.innerWidth <= breakpoint && store.lastLayout !== 'vertical' && store.type !== 'vertical') {
         setLayout(LayoutTypes.vertical);
       }
-      if (window.innerWidth >= breakpoint && store.lastLayout && store.lastLayout !== store.type) {
+      if (
+        window.innerWidth >= breakpoint &&
+          store.lastLayout &&
+          store.lastLayout !== store.type
+      ) {
         setLayout(store.lastLayout);
       }
     });

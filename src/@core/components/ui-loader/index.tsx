@@ -12,17 +12,19 @@ const UILoader = (props: any) => {
   return (
     <Tag className={classnames('ui-loader', { [className]: className, show: blocking })}>
       {children}
-      {blocking
-        ? (
+      {blocking ?
+        (
           <Fragment>
             <div
               className='overlay' 
-              {...(blocking && overlayColor ? { style: { backgroundColor: overlayColor } } : {})}
+              {...(blocking && overlayColor ?
+                { style: { backgroundColor: overlayColor } } :
+                {})}
             ></div>
             <div className='loader'>{loader}</div>
           </Fragment>
-        )
-        : null}
+        ) :
+        null}
     </Tag>
   );
 };

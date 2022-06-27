@@ -62,8 +62,8 @@ const QuarterlySales = (
     axios.get('/card/card-statistics/sales').then(res => setData(res.data));
   }, []);
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithAreaChart
         icon={<ShoppingCart size={21} />}
         color='danger'
@@ -73,7 +73,7 @@ const QuarterlySales = (
         series={data.series}
         type='area'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 export default QuarterlySales;

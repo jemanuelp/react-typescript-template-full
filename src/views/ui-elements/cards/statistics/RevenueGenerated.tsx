@@ -63,8 +63,8 @@ const RevenueGenerated = (
     axios.get('/card/card-statistics/revenue').then(res => setData(res.data));
   }, []);
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithAreaChart
         icon={<CreditCard size={21}/>}
         color='success'
@@ -74,7 +74,7 @@ const RevenueGenerated = (
         series={data.series}
         type='area'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 export default RevenueGenerated;

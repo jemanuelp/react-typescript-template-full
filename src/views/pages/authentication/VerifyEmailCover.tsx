@@ -7,9 +7,9 @@ import * as Light from '../../../../src/assets/images/pages/verify-email-illustr
 
 const VerifyEmailCover = () => {
   const {skin} = useSkin();
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

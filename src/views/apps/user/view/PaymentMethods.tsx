@@ -175,13 +175,13 @@ const PaymentMethods = () => {
       <Modal isOpen={show} toggle={() => setShow(!show)} className='modal-dialog-centered' onClosed={onModalClosed}>
         <ModalHeader className='bg-transparent' toggle={() => setShow(!show)}></ModalHeader>
         <ModalBody className='px-sm-5 mx-50 pb-5'>
-          <h1 className='text-center mb-1'>{selectedCondition
-            ? 'Edit'
-            : 'Add New'} Card</h1>
+          <h1 className='text-center mb-1'>{selectedCondition ?
+            'Edit' :
+            'Add New'} Card</h1>
           <p className='text-center'>
-            {selectedCondition
-              ? 'Edit your saved card details'
-              : 'Add card for future billing'}
+            {selectedCondition ?
+              'Edit your saved card details' :
+              'Add card for future billing'}
           </p>
           <Row tag={Form} className='gy-1 gx-2 mt-75' onSubmit={handleSubmit(onSubmit)}>
             <Col xs={12}>
@@ -207,13 +207,13 @@ const PaymentMethods = () => {
                     />
                   )}
                 />
-                {cardType !== '' && cardType !== 'unknown'
-                  ? (
+                {cardType !== '' && cardType !== 'unknown' ?
+                  (
                     <InputGroupText className='cursor-pointer p-25'>
                       <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
                     </InputGroupText>
-                  )
-                  : null}
+                  ) :
+                  null}
               </InputGroup>
               {errors.cardNumber && <FormFeedback className='d-block'>Please enter a valid card number</FormFeedback>}
             </Col>
@@ -221,9 +221,9 @@ const PaymentMethods = () => {
               <Label className='form-label' for='card-name'>
                 Name On Card
               </Label>
-              <Input id='card-name' placeholder='John Doe' defaultValue={(selectedCondition && selected)
-                ? selected.name
-                : ''}/>
+              <Input id='card-name' placeholder='John Doe' defaultValue={(selectedCondition && selected) ?
+                selected.name :
+                ''}/>
             </Col>
             <Col xs={6} md={3}>
               <Label className='form-label' for='exp-date'>
@@ -234,9 +234,9 @@ const PaymentMethods = () => {
                 placeholder='MM/YY'
                 className='form-control'
                 options={{ delimiter: '/', blocks: [2, 2] }}
-                value={(selectedCondition && selected)
-                  ? selected.expiryDate
-                  : ''}
+                value={(selectedCondition && selected) ?
+                  selected.expiryDate :
+                  ''}
               />
             </Col>
             <Col xs={6} md={3}>
@@ -248,9 +248,9 @@ const PaymentMethods = () => {
                 placeholder='654'
                 className='form-control'
                 options={{ blocks: [3] }}
-                value={(selectedCondition && selected)
-                  ? selected.cardCvc
-                  : ''}
+                value={(selectedCondition && selected) ?
+                  selected.cardCvc :
+                  ''}
               />
             </Col>
             <Col xs={12}>

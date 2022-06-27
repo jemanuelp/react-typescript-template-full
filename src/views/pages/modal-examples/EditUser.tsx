@@ -72,7 +72,9 @@ const EditUserExample = () => {
         <CardBody className='text-center'>
           <User className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Edit User Info</CardTitle>
-          <CardText>Use this modal to modify the existing user's current information.</CardText>
+          <CardText>
+            Use this modal to modify the existing user's current information.
+          </CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
           </Button>
@@ -105,7 +107,9 @@ const EditUserExample = () => {
                   );
                 }}
               />
-              {errors.firstName && <FormFeedback>Please enter a valid First Name</FormFeedback>}
+              {errors.firstName &&
+                  <FormFeedback>Please enter a valid First Name</FormFeedback>
+              }
             </Col>
             <Col md={6} xs={12}>
               <Label className='form-label' for='lastName'>
@@ -118,7 +122,9 @@ const EditUserExample = () => {
                   <Input {...field} id='lastName' placeholder='Doe' invalid={errors.lastName && true} />
                 )}
               />
-              {errors.lastName && <FormFeedback>Please enter a valid Last Name</FormFeedback>}
+              {errors.lastName &&
+                  <FormFeedback>Please enter a valid Last Name</FormFeedback>
+              }
             </Col>
             <Col xs={12}>
               <Label className='form-label' for='username'>
@@ -131,7 +137,9 @@ const EditUserExample = () => {
                   <Input {...field} id='username' placeholder='john.doe.007' invalid={errors.username && true} />
                 )}
               />
-              {errors.username && <FormFeedback>Please enter a valid Username</FormFeedback>}
+              {errors.username &&
+                  <FormFeedback>Please enter a valid Username</FormFeedback>
+              }
             </Col>
             <Col md={6} xs={12}>
               <Label className='form-label' for='email'>

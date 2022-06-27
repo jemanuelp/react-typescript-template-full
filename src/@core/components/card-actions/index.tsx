@@ -4,11 +4,11 @@ import { ChevronDown, RotateCw, X } from 'react-feather';
 import { Card, CardHeader, CardTitle, Collapse } from 'reactstrap';
 import UiLoader from '../ui-loader';
 
-enum IconActions {
-  collapse='collapse',
-  remove='remove',
-  reload='reload',
-}
+const IconActions = {
+  collapse: 'collapse',
+  remove: 'remove',
+  reload: 'reload',
+};
 
 abstract class PropTypesCardActions {
   removeIcon: any;
@@ -29,7 +29,15 @@ abstract class PropTypesCardActions {
 }
 
 const CardActions = (props: PropTypesCardActions) => {
-  const { title, actions, children, collapseIcon, reloadIcon, removeIcon, endReload } = props;
+  const {
+    title,
+    actions,
+    children,
+    collapseIcon,
+    reloadIcon,
+    removeIcon,
+    endReload,
+  } = props;
 
   const [reload, setReload] = useState(false);
   const [collapse, setCollapse] = useState(true);
@@ -105,11 +113,11 @@ const CardActions = (props: PropTypesCardActions) => {
   return (
     <BlockUiWrapper
       
-      {...(actions === IconActions.reload || actions.includes(IconActions.reload)
-        ? {
+      {...(actions === IconActions.reload || actions.includes(IconActions.reload) ?
+        {
           blocking: reload,
-        }
-        : {})}
+        } :
+        {})}
     >
       <Card
         className={classnames('card-action', {

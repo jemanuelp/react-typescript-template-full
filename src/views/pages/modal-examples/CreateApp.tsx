@@ -58,7 +58,10 @@ const CreateAppExample = () => {
         <CardBody className='text-center'>
           <Package className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Create App</CardTitle>
-          <CardText>Provide application data with this form modal popup example, easy to use in any page.</CardText>
+          <CardText>
+            {/* eslint-disable-next-line max-len */}
+            Provide application data with this form modal popup example, easy to use in any page.
+          </CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
           </Button>

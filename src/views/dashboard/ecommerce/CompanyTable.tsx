@@ -96,11 +96,11 @@ const CompanyTable = () => {
 
   const renderData = () => {
     return data.map(col => {
-      const IconTag = col.salesUp
-        ? (
+      const IconTag = col.salesUp ?
+        (
           <TrendingUp size={15} className='text-success'/>
-        )
-        : (
+        ) :
+        (
           <TrendingDown size={15} className='text-danger'/>
         );
 

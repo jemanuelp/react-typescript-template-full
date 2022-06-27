@@ -310,8 +310,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
               </div>
             </div>
           </div>
-          {type !== LayoutTypes.horizontal
-            ? (
+          {type !== LayoutTypes.horizontal ?
+            (
               <div className='form-switch mb-2 ps-0'>
                 <div className='d-flex align-items-center'>
                   <p className='fw-bold me-auto mb-0'>Menu Collapsed</p>
@@ -320,12 +320,15 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
                     id='menu-collapsed'
                     name='menu-collapsed'
                     checked={menu.isCollapsed}
-                    onChange={() => setMenuCollapsed && setMenuCollapsed(!menu.isCollapsed)}
+                    onChange={
+                      () => setMenuCollapsed &&
+                        setMenuCollapsed(!menu.isCollapsed)
+                    }
                   />
                 </div>
               </div>
-            )
-            : null}
+            ) :
+            null}
 
           <div className='form-switch mb-2 ps-0'>
             <div className='d-flex align-items-center'>
@@ -344,19 +347,19 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         <hr />
 
         <div className='px-2'>
-          {type !== LayoutTypes.horizontal
-            ? (
+          {type !== LayoutTypes.horizontal ?
+            (
               <div className='mb-2'>
                 <p className='fw-bold'>Navbar Color</p>
                 <ul className='list-inline unstyled-list'>{renderNavbarColors()}</ul>
               </div>
-            )
-            : null}
+            ) :
+            null}
 
           <div className='mb-2'>
-            <p className='fw-bold'>{type === LayoutTypes.horizontal
-              ? 'Menu'
-              : 'Navbar'} Type</p>
+            <p className='fw-bold'>{type === LayoutTypes.horizontal ?
+              'Menu' :
+              'Navbar'} Type</p>
             <div className='d-flex'>{renderNavbarTypeRadio()}</div>
           </div>
         </div>

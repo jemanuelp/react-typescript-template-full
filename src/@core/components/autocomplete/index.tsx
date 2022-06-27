@@ -17,9 +17,9 @@ const Autocomplete = (props: any) => {
   const [focused, setFocused] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState<number>(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [userInput, setUserInput] = useState(props.value
-    ? props.value
-    : '');
+  const [userInput, setUserInput] = useState(props.value ?
+    props.value :
+    '');
   
   const navigate = useNavigate();
   let filteredData: any[] = [];
@@ -107,9 +107,9 @@ const Autocomplete = (props: any) => {
 
     const renderSuggestion = (item: any, i: any) => {
       if (!customRender) {
-        const suggestionURL = item.link !== undefined && item.link !== null
-          ? item.link
-          : null;
+        const suggestionURL = item.link !== undefined && item.link !== null ?
+          item.link :
+          null;
         return (
           <li
             className={classnames('suggestion-item', {
@@ -151,8 +151,12 @@ const Autocomplete = (props: any) => {
     filteredData = [];
     const sortSingleData = suggestions
       .filter((i: any) => {
-        const startCondition = i[filterKey].toLowerCase().startsWith(userInput.toLowerCase()),
-          includeCondition = i[filterKey].toLowerCase().includes(userInput.toLowerCase());
+        const startCondition = i[filterKey].toLowerCase().startsWith(
+            userInput.toLowerCase(),
+          ),
+          includeCondition = i[filterKey].toLowerCase().includes(
+            userInput.toLowerCase(),
+          );
         if (startCondition) {
           return startCondition;
         } else if (!startCondition && includeCondition) {
@@ -165,9 +169,9 @@ const Autocomplete = (props: any) => {
     filteredData.push(...sortSingleData);
     if (sortSingleData.length) {
       return sortSingleData.map((suggestion: any, index: any) => {
-        const suggestionURL = suggestion.link !== undefined && suggestion.link !== null
-          ? suggestion.link
-          : null;
+        const suggestionURL = suggestion.link !== undefined && suggestion.link !== null ?
+          suggestion.link :
+          null;
         if (!customRender) {
           return (
             <li
@@ -216,8 +220,12 @@ const Autocomplete = (props: any) => {
       return suggestions.map((suggestion: any) => {
         const sortData = suggestion.data
           .filter((i: any) => {
-            const startCondition = i[filterKey].toLowerCase().startsWith(userInput.toLowerCase()),
-              includeCondition = i[filterKey].toLowerCase().includes(userInput.toLowerCase());
+            const startCondition = i[filterKey].toLowerCase().startsWith(
+                userInput.toLowerCase(),
+              ),
+              includeCondition = i[filterKey].toLowerCase().includes(
+                userInput.toLowerCase(),
+              );
             if (startCondition) {
               return startCondition;
             } else if (!startCondition && includeCondition) {
@@ -234,11 +242,11 @@ const Autocomplete = (props: any) => {
             <li className='suggestion-item suggestion-title-wrapper'>
               <h6 className='suggestion-title'>{suggestion[filterHeaderKey]}</h6>
             </li>
-            {sortData.length
-              ? (
+            {sortData.length ?
+              (
                 renderGroupedSuggestion(sortData)
-              )
-              : (
+              ) :
+              (
                 <li className='suggestion-item no-result'>
                   <AlertCircle size={15} /> <span className='align-middle ms-50'>No Result</span>
                 </li>
@@ -318,9 +326,9 @@ const Autocomplete = (props: any) => {
         }}
         onKeyDown={e => onKeyDown(e)}
         value={userInput}
-        className={`autocomplete-search ${props.className
-          ? props.className
-          : ''}`}
+        className={`autocomplete-search ${props.className ?
+          props.className :
+          ''}`}
         placeholder={props.placeholder}
         onClick={onInputClick}
         ref={inputElRef}

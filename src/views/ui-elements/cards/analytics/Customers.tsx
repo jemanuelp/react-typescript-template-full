@@ -72,8 +72,8 @@ const Customers = (props: {
     }
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader className='align-items-end'>
           <CardTitle tag='h4'>Customers</CardTitle>
@@ -95,8 +95,8 @@ const Customers = (props: {
           <div className='pt-25'>{renderChartInfo()}</div>
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default Customers;

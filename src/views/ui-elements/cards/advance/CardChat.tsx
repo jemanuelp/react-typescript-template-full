@@ -77,9 +77,9 @@ const CardChat = () => {
             senderId: number | undefined;
             messages: IMessage[];
         }[] = [];
-    let chatMessageSenderId = chatLog[0]
-      ? chatLog[0].senderId
-      : undefined;
+    let chatMessageSenderId = chatLog[0] ?
+      chatLog[0].senderId :
+      undefined;
     let msgGroup: any = {
       senderId: chatMessageSenderId,
       messages: [],
@@ -121,9 +121,9 @@ const CardChat = () => {
           <div className='chat-avatar'>
             <Avatar
               className='box-shadow-1 cursor-pointer'
-              img={item.senderId === 11
-                ? profilePic
-                : chatData.contact.avatar}
+              img={item.senderId === 11 ?
+                profilePic :
+                chatData.contact.avatar}
             />
           </div>
 

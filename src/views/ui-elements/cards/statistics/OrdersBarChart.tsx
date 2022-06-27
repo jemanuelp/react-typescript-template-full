@@ -68,8 +68,8 @@ const OrdersBarChart = (
     },
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <TinyChartStats
         height={70}
         type='bar'
@@ -78,8 +78,8 @@ const OrdersBarChart = (
         stats={data.statistics}
         series={data.series}
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default OrdersBarChart;

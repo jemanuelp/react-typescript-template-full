@@ -28,11 +28,11 @@ const HorizontalNavMenuLink = ({ item, isChild, setMenuOpen }: any) => {
         })}
         target={item.newTab ? '_blank' : undefined}
         
-        {...(item.externalLink === true
-          ? {
+        {...(item.externalLink === true ?
+          {
             href: item.navLink || '/',
-          }
-          : {
+          } :
+          {
             to: item.navLink || '/',
             className: ({ isActive }: any) => {
               const commonClass = 'd-flex align-items-center';

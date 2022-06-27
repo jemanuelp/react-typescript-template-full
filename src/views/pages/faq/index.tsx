@@ -23,8 +23,20 @@ const Faq = () => {
   return (
     <Fragment>
       <Breadcrumbs title='FAQ' data={[{ title: 'Pages' }, { title: 'FAQ' }]} />
-      <FaqFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} getFAQData={getFAQData} />
-      {data !== null ? <Faqs data={data} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> : null}
+      <FaqFilter
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        getFAQData={getFAQData}
+      />
+      {
+        data !== null ?
+          <Faqs
+            data={data}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          /> :
+          null
+      }
       <FaqContact />
     </Fragment>
   );

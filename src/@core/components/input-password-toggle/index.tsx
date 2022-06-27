@@ -35,13 +35,13 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
 
   return (
     <Fragment>
-      {label
-        ? (
+      {label ?
+        (
           <Label className='form-label' for={htmlFor}>
             {label}
           </Label>
-        )
-        : null}
+        ) :
+        null}
       <InputGroup
         className={classnames({
           [className]: className,
@@ -57,11 +57,11 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
             [inputClassName]: inputClassName,
           })}
           
-          {...(label && htmlFor
-            ? {
+          {...(label && htmlFor ?
+            {
               id: htmlFor,
-            }
-            : {})}
+            } :
+            {})}
           {...rest}
         />
         <InputGroupText className='cursor-pointer' onClick={() => setInputVisibility(!inputVisibility)}>

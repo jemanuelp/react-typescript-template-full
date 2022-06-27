@@ -48,8 +48,8 @@ const RippleButton = ({ className, children, onClick, ...rest }: any) => {
       {...rest}
     >
       {children}
-      {isRippling
-        ? (
+      {isRippling ?
+        (
           <span
             className='waves-ripple'
             style={{
@@ -57,8 +57,8 @@ const RippleButton = ({ className, children, onClick, ...rest }: any) => {
               top: coords.y,
             }}
           ></span>
-        )
-        : null}
+        ) :
+        null}
     </Button>
   );
 };

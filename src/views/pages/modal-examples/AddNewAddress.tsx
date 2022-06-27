@@ -70,7 +70,10 @@ const AddNewAddress = () => {
         <CardBody className='text-center'>
           <Home className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Add New Address</CardTitle>
-          <CardText>Ready to use form to collect user address data with validation and custom input support.</CardText>
+          <CardText>
+            {/* eslint-disable-next-line max-len */}
+            Ready to use form to collect user address data with validation and custom input support.
+          </CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
           </Button>
@@ -135,7 +138,12 @@ const AddNewAddress = () => {
                   <Input id='firstName' placeholder='John' invalid={errors.firstName && true} {...field} />
                 )}
               />
-              {errors.firstName && <FormFeedback>Please enter a valid First Name</FormFeedback>}
+              {
+                errors.firstName &&
+                  <FormFeedback>
+                    Please enter a valid First Name
+                  </FormFeedback>
+              }
             </Col>
             <Col xs={12} md={6}>
               <Label className='form-label' for='lastName'>
@@ -148,7 +156,12 @@ const AddNewAddress = () => {
                   <Input id='lastName' placeholder='Doe' invalid={errors.lastName && true} {...field} />
                 )}
               />
-              {errors.lastName && <FormFeedback>Please enter a valid Last Name</FormFeedback>}
+              {
+                errors.lastName &&
+                  <FormFeedback>
+                    Please enter a valid Last Name
+                  </FormFeedback>
+              }
             </Col>
             <Col xs={12}>
               <Label className='form-label' for='country'>

@@ -9,9 +9,9 @@ import * as Light from '../../../../src/assets/images/pages/forgot-password-v2.s
 
 const ForgotPassword = () => {
   const {skin} = useSkin();
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   if (!isUserLoggedIn()) {
     return (
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
                                 Forgot Password? 🔒
               </CardTitle>
               <CardText className='mb-2'>
-                                Enter your email and we'll send you instructions to reset your password
+                Enter your email and we'll send you instructions to reset your password
               </CardText>
               <Form className='auth-forgot-password-form mt-2' onSubmit={e => e.preventDefault()}>
                 <div className='mb-1'>

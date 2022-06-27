@@ -100,18 +100,18 @@ const AddEventSidebar = (props: any) => {
       display: 'block',
       extendedProps: {
         calendar: calendarLabel[0].label,
-        url: url.length
-          ? url
-          : undefined,
-        guests: guests.length
-          ? guests
-          : undefined,
-        location: location.length
-          ? location
-          : undefined,
-        desc: desc.length
-          ? desc
-          : undefined,
+        url: url.length ?
+          url :
+          undefined,
+        guests: guests.length ?
+          guests :
+          undefined,
+        location: location.length ?
+          location :
+          undefined,
+        desc: desc.length ?
+          desc :
+          undefined,
       },
     };
     dispatch(addEvent(obj));
@@ -157,15 +157,19 @@ const AddEventSidebar = (props: any) => {
       setDesc(selectedEvent.extendedProps.description || desc);
       setGuests(selectedEvent.extendedProps.guests || guests);
       setStartPicker(new Date(selectedEvent.start));
-      setEndPicker(selectedEvent.allDay
-        ? new Date(selectedEvent.start)
-        : new Date(selectedEvent.end));
+      setEndPicker(selectedEvent.allDay ?
+        new Date(selectedEvent.start) :
+        new Date(selectedEvent.end));
       setCalendarLabel([resolveLabel()]);
     }
   };
 
   // ** (UI) updateEventInCalendar
-  const updateEventInCalendar = (updatedEventData: any, propsToUpdate: any, extendedPropsToUpdate: any) => {
+  const updateEventInCalendar = (
+    updatedEventData: any,
+    propsToUpdate: any,
+    extendedPropsToUpdate: any,
+  ) => {
     const existingEvent = calendarApi.getEventById(updatedEventData.id);
 
     // ** Set event properties except date related
@@ -178,9 +182,12 @@ const AddEventSidebar = (props: any) => {
 
     // ** Set date related props
     // ? Docs: https://fullcalendar.io/docs/Event-setDates
-    existingEvent.setDates(new Date(updatedEventData.start), new Date(updatedEventData.end), {
-      allDay: updatedEventData.allDay,
-    });
+    existingEvent.setDates(
+      new Date(updatedEventData.start),
+      new Date(updatedEventData.end),
+      {
+        allDay: updatedEventData.allDay,
+      });
 
     // ** Set event's extendedProps
     // ? Docs: https://fullcalendar.io/docs/Event-setExtendedProp
@@ -200,9 +207,9 @@ const AddEventSidebar = (props: any) => {
         start: startPicker,
         end: endPicker,
         url,
-        display: !allDay
-          ? 'block'
-          : undefined,
+        display: !allDay ?
+          'block' :
+          undefined,
         extendedProps: {
           location,
           description: desc,
@@ -238,7 +245,10 @@ const AddEventSidebar = (props: any) => {
   };
 
   const EventActions = () => {
-    if (isObjEmpty(selectedEvent) || (!isObjEmpty(selectedEvent) && !selectedEvent.title.length)) {
+    if (isObjEmpty(selectedEvent) ||
+        (!isObjEmpty(selectedEvent) &&
+            !selectedEvent.title.length)
+    ) {
       return (
         <Fragment>
           <Button className='me-1' type='submit' color='primary'>
@@ -278,9 +288,9 @@ const AddEventSidebar = (props: any) => {
     >
       <ModalHeader className='mb-1' toggle={handleAddEventSidebar} close={CloseBtn} tag='div'>
         <h5 className='modal-title'>
-          {selectedEvent && selectedEvent.title && selectedEvent.title.length
-            ? 'Update'
-            : 'Add'} Event
+          {selectedEvent && selectedEvent.title && selectedEvent.title.length ?
+            'Update' :
+            'Add'} Event
         </h5>
       </ModalHeader>
       <PerfectScrollbar options={{wheelPropagation: false}}>
@@ -289,7 +299,12 @@ const AddEventSidebar = (props: any) => {
             onSubmit={handleSubmit(data => {
               if (data.title.length) {
                 if (isObjEmpty(errors)) {
-                  if (isObjEmpty(selectedEvent) || (!isObjEmpty(selectedEvent) && !selectedEvent.title.length)) {
+                  if (
+                    isObjEmpty(selectedEvent) ||
+                      (!isObjEmpty(selectedEvent) &&
+                          !selectedEvent.title.length
+                      )
+                  ) {
                     handleAddEvent();
                   } else {
                     handleUpdateEvent();
@@ -413,9 +428,9 @@ const AddEventSidebar = (props: any) => {
                 options={guestsOptions}
                 theme={selectThemeColors}
                 value={
-                  guests.length
-                    ? [...guests]
-                    : null}
+                  guests.length ?
+                    [...guests] :
+                    null}
                 onChange={data => setGuests([...data])}
                 components={{
                   Option: GuestsComponent,

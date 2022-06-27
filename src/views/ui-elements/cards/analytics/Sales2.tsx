@@ -82,9 +82,9 @@ const Sales2 = (props: {
           fontFamily: 'Montserrat',
         },
         formatter(val: any) {
-          return val > 999
-            ? `${(val / 1000).toFixed(1)}k`
-            : val;
+          return val > 999 ?
+            `${(val / 1000).toFixed(1)}k` :
+            val;
         },
       },
     },

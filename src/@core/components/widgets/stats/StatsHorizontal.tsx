@@ -2,17 +2,19 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Card, CardBody } from 'reactstrap';
 
-const StatsHorizontal = ({ icon, color, stats, renderStats, statTitle, className, statsMargin }: any) => {
+const StatsHorizontal = (
+  { icon, color, stats, renderStats, statTitle, className, statsMargin }: any,
+) => {
   return (
     <Card>
       <CardBody className={className}>
         <div className='d-flex justify-content-between align-items-center'>
           <div>
-            {renderStats
-              ? (
+            {renderStats ?
+              (
                 renderStats
-              )
-              : (
+              ) :
+              (
                 <h2
                   className={classnames('fw-bolder', {
                     'mb-0': !statsMargin,

@@ -21,11 +21,11 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
         className='d-flex align-items-center'
         target={item.newTab ? '_blank' : undefined}
         
-        {...(item.externalLink === true
-          ? {
+        {...(item.externalLink === true ?
+          {
             href: item.navLink || '/',
-          }
-          : {
+          } :
+          {
             to: item.navLink || '/',
             className: ({ isActive }: any) => {
               if (isActive && !item.disabled) {
@@ -42,13 +42,13 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
         {item.icon}
         <span className='menu-item text-truncate'>{t(item.title)}</span>
 
-        {item.badge && item.badgeText
-          ? (
+        {item.badge && item.badgeText ?
+          (
             <Badge className='ms-auto me-1' color={item.badge} pill>
               {item.badgeText}
             </Badge>
-          )
-          : null}
+          ) :
+          null}
       </LinkTag>
     </li>
   );

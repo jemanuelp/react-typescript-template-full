@@ -12,7 +12,14 @@ const filters = [
 ];
 
 const SidebarLeft = (props: any) => {
-  const { handleAddEventSidebar, toggleSidebar, updateFilter, updateAllFilters, store, dispatch } = props;
+  const {
+    handleAddEventSidebar,
+    toggleSidebar,
+    updateFilter,
+    updateAllFilters,
+    store,
+    dispatch,
+  } = props;
 
   const handleAddEventClick = () => {
     toggleSidebar(false);

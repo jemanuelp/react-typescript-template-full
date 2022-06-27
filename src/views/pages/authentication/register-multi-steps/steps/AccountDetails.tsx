@@ -107,7 +107,12 @@ const AccountDetails = ({ stepper }: any) => {
                 />
               )}
             />
-            {errors.confirmPassword && <FormFeedback>{errors.confirmPassword.message}</FormFeedback>}
+            {
+              errors.confirmPassword &&
+                <FormFeedback>
+                  {errors.confirmPassword.message}
+                </FormFeedback>
+            }
           </div>
         </Row>
         <Row>

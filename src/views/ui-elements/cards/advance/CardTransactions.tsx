@@ -55,9 +55,9 @@ const CardTransactions = () => {
               <small>{item.subtitle}</small>
             </div>
           </div>
-          <div className={`fw-bolder ${item.down
-            ? 'text-danger'
-            : 'text-success'}`}>{item.amount}</div>
+          <div className={`fw-bolder ${item.down ?
+            'text-danger' :
+            'text-success'}`}>{item.amount}</div>
         </div>
       );
     });

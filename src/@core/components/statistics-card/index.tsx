@@ -5,7 +5,19 @@ import Chart from 'react-apexcharts';
 import { Card, CardBody } from 'reactstrap';
 
 const StatisticsCards = (props: any) => {
-  const { className, hideChart, iconRight, iconBg, icon, stat, statTitle, options, series, type, height } = props;
+  const {
+    className,
+    hideChart,
+    iconRight,
+    iconBg,
+    icon,
+    stat,
+    statTitle,
+    options,
+    series,
+    type,
+    height,
+  } = props;
 
   return (
     <Card>
@@ -29,7 +41,17 @@ const StatisticsCards = (props: any) => {
           <p className='mb-0'>{statTitle}</p>
         </div>
       </CardBody>
-      {!hideChart && <Chart options={options} series={series} type={type} height={height ? height : 100} />}
+      {!hideChart &&
+          <Chart
+            options={options}
+            series={series}
+            type={type}
+            height={
+              height ?
+                height :
+                100
+            } />
+      }
     </Card>
   );
 };

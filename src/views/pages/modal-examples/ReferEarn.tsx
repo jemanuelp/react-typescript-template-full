@@ -47,6 +47,7 @@ const ReferEarnModal = () => {
           <Gift className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Refer & Earn</CardTitle>
           <CardText>
+            {/* eslint-disable-next-line max-len */}
             Use Refer & Earn modal to encourage your exiting customers refer their friends & colleague.
           </CardText>
           <Button color='primary' onClick={() => setShow(true)}>

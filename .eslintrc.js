@@ -20,9 +20,9 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production'
-      ? 'error'
-      : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ?
+      'error' :
+      'off',
 
     // Best Practices
     eqeqeq: 'error', //require the use of `===` and `!==`
@@ -82,6 +82,7 @@ module.exports = {
     'space-in-parens': 'error', //enforce consistent spacing inside parentheses
     'space-infix-ops': 'error', //require spacing around infix operators
     'space-unary-ops': 'error', //enforce consistent spacing before or after unary operators
+    'operator-linebreak': ['error', 'after'], //enforce consistent linebreak style for operators
 
     // ES6
     'arrow-spacing': 'error', //enforce consistent spacing before and after the arrow in arrow functions

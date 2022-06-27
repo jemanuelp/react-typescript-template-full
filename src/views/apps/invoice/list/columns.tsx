@@ -45,9 +45,9 @@ const renderClient = (row: any) => {
   if (row.avatar.length) {
     return <Avatar className='me-50' img={row.avatar} width='32' height='32'/>;
   } else {
-    return <Avatar color={color} className='me-50' content={row.client
-      ? row.client.name
-      : 'John Doe'} initials/>;
+    return <Avatar color={color} className='me-50' content={row.client ?
+      row.client.name :
+      'John Doe'} initials/>;
   }
 };
 
@@ -69,18 +69,18 @@ export const columns = [
     cell: (row: any) => {
       const color = invoiceStatusObj[
                     row.invoiceStatus as keyof typeof invoiceStatusObj
-        ]
-          ? invoiceStatusObj[
+        ] ?
+          invoiceStatusObj[
                         row.invoiceStatus as keyof typeof invoiceStatusObj
-          ].color
-          : 'primary',
+          ].color :
+          'primary',
         Icon = invoiceStatusObj[
                     row.invoiceStatus as keyof typeof invoiceStatusObj
-        ]
-          ? invoiceStatusObj[
+        ] ?
+          invoiceStatusObj[
                         row.invoiceStatus as keyof typeof invoiceStatusObj
-          ].icon
-          : Edit;
+          ].icon :
+          Edit;
       return (
         <Fragment>
           <Avatar color={color} icon={<Icon size={14}/>} id={`av-tooltip-${row.id}`}/>
@@ -102,12 +102,12 @@ export const columns = [
     sortField: 'client.name',
     // selector: row => row.client.name,
     cell: (row: any) => {
-      const name = row.client
-          ? row.client.name
-          : 'John Doe',
-        email = row.client
-          ? row.client.companyEmail
-          : 'johnDoe@email.com';
+      const name = row.client ?
+          row.client.name :
+          'John Doe',
+        email = row.client ?
+          row.client.companyEmail :
+          'johnDoe@email.com';
       return (
         <div className='d-flex justify-content-left align-items-center'>
           {renderClient(row)}
@@ -142,11 +142,11 @@ export const columns = [
     sortField: 'balance',
     // selector: row => row.balance,
     cell: (row: any) => {
-      return row.balance !== 0
-        ? (
+      return row.balance !== 0 ?
+        (
           <span>{row.balance}</span>
-        )
-        : (
+        ) :
+        (
           <Badge color='light-success' pill>
                         Paid
           </Badge>

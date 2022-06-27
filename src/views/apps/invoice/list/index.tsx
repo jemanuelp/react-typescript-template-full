@@ -170,9 +170,9 @@ const InvoiceList = () => {
         previousLinkClassName={'page-link'}
         previousClassName={'page-item prev'}
         onPageChange={page => handlePagination(page)}
-        forcePage={currentPage !== 0
-          ? currentPage - 1
-          : 0}
+        forcePage={currentPage !== 0 ?
+          currentPage - 1 :
+          0}
         containerClassName={'pagination react-paginate justify-content-end p-1'}
       />
     );

@@ -23,13 +23,13 @@ const ScrollTop = (props: any) => {
   };
 
   return (
-    visible
-      ? (
+    visible ?
+      (
         <div className='scroll-to-top' onClick={handleScrollToTop} {...rest}>
           {children}
         </div>
-      )
-      : null
+      ) :
+      null
   );
 };
 

@@ -431,9 +431,9 @@ mock.onGet('/apps/ecommerce/products').reply(config => {
 // ------------------------------------------------
 mock.onGet(/\/apps\/ecommerce\/products\/\d+/).reply(config => {
   // Get product id from URL
-  let productId = (config && config.url)
-    ? config.url.substring(config.url.lastIndexOf('/') + 1)
-    : 0;
+  let productId = (config && config.url) ?
+    config.url.substring(config.url.lastIndexOf('/') + 1) :
+    0;
 
   // Convert Id to number
   productId = Number(productId);
@@ -488,7 +488,9 @@ mock.onGet('/apps/ecommerce/cart').reply(() => {
 
     // Other data
     if (product) {
-      product.isInWishlist = data.userWishlist.findIndex(p => p.productId === cartProduct.productId) > -1;
+      product.isInWishlist = data.userWishlist.findIndex(p => {
+        return p.productId === cartProduct.productId;
+      }) > -1;
       product.qty = cartProduct.qty;
       product.shippingDate = randomDate(nextDay, nextWeek);
       product.offers = getRandomInt(1, 4);
@@ -526,9 +528,9 @@ mock.onPost('/apps/ecommerce/cart').reply(config => {
 // ------------------------------------------------
 mock.onDelete(/\/apps\/ecommerce\/cart\/\d+/).reply(config => {
   // Get product id from URL
-  let productId = config && config.url
-    ? config.url.substring(config.url.lastIndexOf('/') + 1)
-    : 0;
+  let productId = config && config.url ?
+    config.url.substring(config.url.lastIndexOf('/') + 1) :
+    0;
 
   // Convert Id to number
   productId = Number(productId);
@@ -563,9 +565,9 @@ mock.onPost('/apps/ecommerce/wishlist').reply(config => {
 // ------------------------------------------------
 mock.onDelete(/\/apps\/ecommerce\/wishlist\/\d+/).reply(config => {
   // Get product id from URL
-  let productId = config && config.url
-    ? config.url.substring(config.url.lastIndexOf('/') + 1)
-    : 0;
+  let productId = config && config.url ?
+    config.url.substring(config.url.lastIndexOf('/') + 1) :
+    0;
 
   // Convert Id to number
   productId = Number(productId);

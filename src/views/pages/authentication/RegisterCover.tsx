@@ -9,9 +9,9 @@ import * as Light from '../../../../src/assets/images/pages/register-v2.svg';
 
 const RegisterCover = () => {
   const { skin } = useSkin();
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

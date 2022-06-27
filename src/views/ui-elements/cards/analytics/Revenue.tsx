@@ -73,9 +73,9 @@ const Revenue = (props: {
           fontSize: '1rem',
         },
         formatter(val: number) {
-          return val > 999
-            ? `${(val / 1000).toFixed(0)}k`
-            : String(val);
+          return val > 999 ?
+            `${(val / 1000).toFixed(0)}k` :
+            String(val);
         },
       },
     },
@@ -101,8 +101,8 @@ const Revenue = (props: {
         data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000],
       },
     ];
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader>
           <CardTitle tag='h4'>Revenue</CardTitle>
@@ -128,7 +128,7 @@ const Revenue = (props: {
           <Chart options={options} series={series} type='line' height={240}/>
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default Revenue;

@@ -40,8 +40,15 @@ const OffCanvasPlacement = () => {
       <Button color='primary' onClick={toggleCanvasBottom}>
         Toggle Bottom
       </Button>
-      <Offcanvas direction={canvasPlacement} isOpen={canvasOpen} toggle={toggleCanvasStart}>
-        <OffcanvasHeader toggle={toggleCanvasStart}>OffCanvas {canvasPlacement}</OffcanvasHeader>
+      <Offcanvas
+        direction={canvasPlacement}
+        isOpen={canvasOpen}
+        toggle={toggleCanvasStart}
+      >
+        <OffcanvasHeader
+          toggle={toggleCanvasStart}>
+            OffCanvas {canvasPlacement}
+        </OffcanvasHeader>
         <OffcanvasBody
           className={classnames({
             'my-auto mx-0 flex-grow-0': canvasPlacement === 'start' || canvasPlacement === 'end',
@@ -52,8 +59,11 @@ const OffCanvasPlacement = () => {
               'text-center': canvasPlacement === 'start' || canvasPlacement === 'end',
             })}
           >
+            {/* eslint-disable-next-line max-len */}
             Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web
+            {/* eslint-disable-next-line max-len */}
             designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have
+            {/* eslint-disable-next-line max-len */}
             scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
           </p>
           <Button

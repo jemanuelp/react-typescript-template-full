@@ -160,19 +160,19 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
               {renderUserImg()}
               <div className='d-flex flex-column align-items-center text-center'>
                 <div className='user-info'>
-                  <h4>{selectedUser !== null
-                    ? selectedUser.fullName
-                    : 'Eleanor Aguilar'}</h4>
-                  {selectedUser !== null
-                    ? (<Badge
+                  <h4>{selectedUser !== null ?
+                    selectedUser.fullName :
+                    'Eleanor Aguilar'}</h4>
+                  {selectedUser !== null ?
+                    (<Badge
                       color={roleColors[
                                                 // eslint-disable-next-line max-len
                                                 selectedUser.role as keyof typeof roleColors
                       ]}
                       className='text-capitalize'>
                       {selectedUser.role}
-                    </Badge>)
-                    : null}
+                    </Badge>) :
+                    null}
                 </div>
               </div>
             </div>
@@ -199,8 +199,8 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
           </div>
           <h4 className='fw-bolder border-bottom pb-50 mb-1'>Details</h4>
           <div className='info-container'>
-            {selectedUser !== null
-              ? (
+            {selectedUser !== null ?
+              (
                 <ul className='list-unstyled'>
                   <li className='mb-75'>
                     <span className='fw-bolder me-25'>Username:</span>
@@ -226,17 +226,17 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
                   </li>
                   <li className='mb-75'>
                     <span className='fw-bolder me-25'>Tax ID:</span>
-                    <span>Tax-{(selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string')
-                      ? selectedUser.contact.substr(
+                    <span>Tax-{(selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string') ?
+                      selectedUser.contact.substr(
                         selectedUser.contact.length - 4,
-                      )
-                      : ''}</span>
+                      ) :
+                      ''}</span>
                   </li>
                   <li className='mb-75'>
                     <span className='fw-bolder me-25'>Contact:</span>
-                    <span>{selectedUser.contact && typeof selectedUser.contact === 'string'
-                      ? selectedUser.contact
-                      : ''}</span>
+                    <span>{selectedUser.contact && typeof selectedUser.contact === 'string' ?
+                      selectedUser.contact :
+                      ''}</span>
                   </li>
                   <li className='mb-75'>
                     <span className='fw-bolder me-25'>Language:</span>
@@ -247,8 +247,8 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
                     <span>England</span>
                   </li>
                 </ul>
-              )
-              : null}
+              ) :
+              null}
           </div>
           <div className='d-flex justify-content-center pt-2'>
             <Button color='primary' onClick={() => setShow(true)}>
@@ -348,11 +348,11 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
                   id='tax-id'
                   placeholder='Tax-1234'
                   defaultValue={
-                    (selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string')
-                      ? selectedUser.contact.substr(
+                    (selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string') ?
+                      selectedUser.contact.substr(
                         selectedUser.contact.length - 4,
-                      )
-                      : ''
+                      ) :
+                      ''
                   }
                 />
               </Col>
@@ -361,9 +361,9 @@ const UserInfoCard = ({selectedUser}: { selectedUser: IUser }) => {
                                     Contact
                 </Label>
                 <Input id='contact' defaultValue={
-                  (selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string')
-                    ? selectedUser.contact
-                    : ''} placeholder='+1 609 933 4422'/>
+                  (selectedUser && selectedUser.contact && typeof selectedUser.contact === 'string') ?
+                    selectedUser.contact :
+                    ''} placeholder='+1 609 933 4422'/>
               </Col>
               <Col md={6} xs={12}>
                 <Label className='form-label' for='language'>

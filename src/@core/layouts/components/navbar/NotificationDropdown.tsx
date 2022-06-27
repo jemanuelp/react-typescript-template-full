@@ -104,24 +104,24 @@ const NotificationDropdown = () => {
                   'align-items-center': item.switch,
                 })}
               >
-                {!item.switch
-                  ? (
+                {!item.switch ?
+                  (
                     <Fragment>
                       <div className='me-1'>
                         <Avatar
-                          {...(item.img
-                            ? { img: item.img, imgHeight: 32, imgWidth: 32 }
-                            : item.avatarContent
-                              ? {
+                          {...(item.img ?
+                            { img: item.img, imgHeight: 32, imgWidth: 32 } :
+                            item.avatarContent ?
+                              {
                                 content: item.avatarContent,
                                 color: item.color,
-                              }
-                              : item.avatarIcon
-                                ? {
+                              } :
+                              item.avatarIcon ?
+                                {
                                   icon: item.avatarIcon,
                                   color: item.color,
-                                }
-                                : null)}
+                                } :
+                                null)}
                         />
                       </div>
                       <div className='list-item-body flex-grow-1'>
@@ -129,8 +129,8 @@ const NotificationDropdown = () => {
                         <small className='notification-text'>{item.subtitle}</small>
                       </div>
                     </Fragment>
-                  )
-                  : (
+                  ) :
+                  (
                     <Fragment>
                       {item.title}
                       {item.switch}

@@ -6,9 +6,9 @@ import '../@core/scss/base/pages/page-misc.scss';
 const Error = () => {
   const { skin } = useSkin();
 
-  const illustration = skin === 'dark'
-      ? 'error-dark.svg'
-      : 'error.svg',
+  const illustration = skin === 'dark' ?
+      'error-dark.svg' :
+      'error.svg',
     source = require(`../assets/images/pages/${illustration}`).default;
   return (
     <div className='misc-wrapper'>

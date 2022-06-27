@@ -1,4 +1,4 @@
-import Chart, {Props} from 'react-apexcharts';
+import Chart from 'react-apexcharts';
 import {MoreVertical} from 'react-feather';
 import {
   Card,

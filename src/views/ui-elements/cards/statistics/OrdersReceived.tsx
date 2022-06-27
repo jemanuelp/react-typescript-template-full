@@ -64,8 +64,8 @@ const OrdersReceived = (
     return () => setData(null);
   }, []);
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithAreaChart
         icon={<Package size={21}/>}
         color='warning'
@@ -75,7 +75,7 @@ const OrdersReceived = (
         series={data.series}
         type='area'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 export default OrdersReceived;

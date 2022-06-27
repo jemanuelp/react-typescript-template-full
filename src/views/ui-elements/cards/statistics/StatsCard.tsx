@@ -37,9 +37,9 @@ const StatsCard = (
   const renderData = () => {
     return data.map((item, index) => {
       const colMargin = Object.keys(cols);
-      const margin = index === 2
-        ? 'sm'
-        : colMargin[0];
+      const margin = index === 2 ?
+        'sm' :
+        colMargin[0];
       return (
         <Col
           key={index}

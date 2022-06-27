@@ -23,9 +23,9 @@ export const selectChat = createAsyncThunk('appChat/selectChat', async(id: numbe
 
 export const sendMsg = createAsyncThunk('appChat/sendMsg', async(obj: any, { dispatch }) => {
   const response = await axios.post('/apps/chat/send-msg', { obj });
-  await dispatch(selectChat(Number((obj && obj.contact)
-    ? obj.contact.id
-    : 0)));
+  await dispatch(selectChat(Number((obj && obj.contact) ?
+    obj.contact.id :
+    0)));
   return response.data;
 });
 

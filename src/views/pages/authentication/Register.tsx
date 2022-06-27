@@ -34,9 +34,9 @@ const Register = () => {
     formState: { errors },
   } = useForm({ defaultValues });
 
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   const onSubmit = (data: any) => {
     const tempData = { ...data };
@@ -163,9 +163,9 @@ const Register = () => {
                   )}
                 />
                 {
-                  errors.username
-                    ? <FormFeedback>{errors.username.message}</FormFeedback>
-                    : null
+                  errors.username ?
+                    <FormFeedback>{errors.username.message}</FormFeedback> :
+                    null
                 }
               </div>
               <div className='mb-1'>
@@ -180,9 +180,9 @@ const Register = () => {
                   )}
                 />
                 {
-                  errors.email
-                    ? <FormFeedback>{errors.email.message}</FormFeedback>
-                    : null
+                  errors.email ?
+                    <FormFeedback>{errors.email.message}</FormFeedback> :
+                    null
                 }
               </div>
               <div className='mb-1'>

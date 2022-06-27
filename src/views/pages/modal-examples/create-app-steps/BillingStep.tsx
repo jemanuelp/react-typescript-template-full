@@ -45,13 +45,13 @@ const BillingStep = ({ stepper }: any) => {
                 },
               }}
             />
-            {cardType !== '' && cardType !== 'unknown'
-              ? (
+            {cardType !== '' && cardType !== 'unknown' ?
+              (
                 <InputGroupText>
                   <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
                 </InputGroupText>
-              )
-              : null}
+              ) :
+              null}
           </InputGroup>
         </Col>
         <Col md={6}>

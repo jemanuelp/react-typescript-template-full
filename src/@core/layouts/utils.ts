@@ -29,7 +29,12 @@ export const resolveHorizontalNavMenuItemComponent = (item: any) => {
 export const isNavLinkActive = (link: any, currentURL: any, routerProps: any) => {
   return (
     currentURL === link ||
-    (routerProps && routerProps.meta && routerProps.meta.navLink && routerProps.meta.navLink === link)
+    (
+      routerProps &&
+        routerProps.meta &&
+        routerProps.meta.navLink &&
+        routerProps.meta.navLink === link
+    )
   );
   // return currentURL === link
 };
@@ -56,7 +61,15 @@ export const hasActiveChild = (item: any, currentUrl: any) => {
     }
 
     // Check if the child has a link and is active
-    if (child && child.navLink && currentUrl && (child.navLink === currentUrl || currentUrl.includes(child.navLink))) {
+    if (
+      child &&
+        child.navLink &&
+        currentUrl &&
+        (
+          child.navLink === currentUrl ||
+            currentUrl.includes(child.navLink)
+        )
+    ) {
       return true;
     }
   }
@@ -72,7 +85,11 @@ export const hasActiveChild = (item: any, currentUrl: any) => {
  * @param openGroup
  * @param currentActiveGroup
  */
-export const removeChildren = (children: any, openGroup: any, currentActiveGroup: any) => {
+export const removeChildren = (
+  children: any,
+  openGroup: any,
+  currentActiveGroup: any,
+) => {
   children.forEach((child: any) => {
     if (!currentActiveGroup.includes(child.id)) {
       const index = openGroup.indexOf(child.id);
@@ -86,7 +103,9 @@ export const CanViewMenuGroup = (item: any) => {
   const ability = useContext(AbilityContext);
   // ! This same logic is used in canViewHorizontalNavMenuGroup and canViewHorizontalNavMenuHeaderGroup. So make sure to update logic in them as well
   // @ts-ignore
-  const hasAnyVisibleChild = item.children && item.children.some((i: any) => ability.can(i.action, i.resource));
+  const hasAnyVisibleChild = item.children && item.children.some(
+    (i: any) => ability.can(i.action, i.resource),
+  );
 
   // ** If resource and action is defined in item => Return based on children visibility (Hide group if no child is visible)
   // ** Else check for ability using provided resource and action along with checking if has any visible child

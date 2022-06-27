@@ -68,8 +68,8 @@ const ActiveUsers = ({success}: { success: string }) => {
     },
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithLineChart
         icon={<UserCheck size={21}/>}
         color='success'
@@ -79,8 +79,8 @@ const ActiveUsers = ({success}: { success: string }) => {
         options={options}
         type='line'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default ActiveUsers;

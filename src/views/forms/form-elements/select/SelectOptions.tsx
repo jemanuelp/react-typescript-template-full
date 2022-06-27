@@ -146,7 +146,9 @@ const styles = {
 };
 
 const orderOptions = (values: any) => {
-  if (values.length > 0) return values.filter((v: any) => v.isFixed).concat(values.filter((v: any) => !v.isFixed));
+  if (values.length > 0) return values
+    .filter((v: any) => v.isFixed)
+    .concat(values.filter((v: any) => !v.isFixed));
 };
 
 const formatGroupLabel = (data: any) => (
@@ -161,10 +163,14 @@ const formatGroupLabel = (data: any) => (
 const SelectOptions = () => {
   const [params, setParams] = useState('');
   const [selectedDBVal, setSelectedDBVal] = useState(null);
-  const [fixedValue, setFixedValue] = useState(orderOptions([colorOptions[0], colorOptions[1], colorOptions[3]]));
+  const [fixedValue, setFixedValue] = useState(
+    orderOptions([colorOptions[0], colorOptions[1], colorOptions[3]]),
+  );
 
   const filterColors1 = (inputValue: string) => {
-    return colorOptions.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
+    return colorOptions.filter(i => {
+      return i.label.toLowerCase().includes(inputValue.toLowerCase());
+    });
   };
 
   const loadOptions = (inputValue: string, callback: Function) => {
@@ -174,7 +180,9 @@ const SelectOptions = () => {
   };
 
   const filterColors2 = (inputValue: string): IColorOptions[] => {
-    return colorOptions.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
+    return colorOptions.filter(i => {
+      return i.label.toLowerCase().includes(inputValue.toLowerCase());
+    });
   };
 
   const fixedOnChange = (value: any, { action, removedValue }: any) => {

@@ -5,7 +5,7 @@ import {NavbarLayoutTypes} from '../../domains/enums/NavbarLayoutTypes';
 
 export interface useNavbarTypeInterface {
     navbarType: NavbarLayoutTypes;
-    setNavbarType: (navbarType: NavbarLayoutTypes) => void;
+    setNavbarType: Function;
 }
 
 export const useNavbarType = (): useNavbarTypeInterface => {

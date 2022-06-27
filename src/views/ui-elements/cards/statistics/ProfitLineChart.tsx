@@ -94,8 +94,8 @@ const ProfitLineChart = ({ info }: { info:string }) => {
     },
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <TinyChartStats
         height={70}
         type='line'
@@ -104,8 +104,8 @@ const ProfitLineChart = ({ info }: { info:string }) => {
         stats={data.statistics}
         series={data.series}
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default ProfitLineChart;

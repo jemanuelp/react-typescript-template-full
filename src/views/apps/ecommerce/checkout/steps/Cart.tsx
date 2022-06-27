@@ -97,15 +97,15 @@ const Cart = (props: any) => {
             <div className='item-wrapper'>
               <div className='item-cost'>
                 <h4 className='item-price'>${item.price}</h4>
-                {item.hasFreeShipping
-                  ? (
+                {item.hasFreeShipping ?
+                  (
                     <CardText className='shipping'>
                       <Badge color='light-success' pill>
                       Free Shipping
                       </Badge>
                     </CardText>
-                  )
-                  : null}
+                  ) :
+                  null}
               </div>
             </div>
             <Button className='mt-1 remove-wishlist' color='light' onClick={() => dispatch(deleteCartItem(item.id))}>
@@ -133,9 +133,9 @@ const Cart = (props: any) => {
 
   return (
     <div className='list-view product-checkout'>
-      <div className='checkout-items'>{products.length
-        ? renderCart()
-        : <h4>Your cart is empty</h4>}</div>
+      <div className='checkout-items'>{products.length ?
+        renderCart() :
+        <h4>Your cart is empty</h4>}</div>
       <div className='checkout-options'>
         <Card>
           <CardBody>

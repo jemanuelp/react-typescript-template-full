@@ -4,9 +4,9 @@ import {useSkin} from '../../../utility/hooks/useSkin';
 
 const ComingSoon = () => {
   const {skin} = useSkin();
-  const illustration = skin === 'dark'
-      ? 'coming-soon-dark.svg'
-      : 'coming-soon.svg',
+  const illustration = skin === 'dark' ?
+      'coming-soon-dark.svg' :
+      'coming-soon.svg',
     source = require(`src/assets/images/pages/${illustration}`).default;
 
   return (

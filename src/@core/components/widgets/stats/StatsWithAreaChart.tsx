@@ -10,7 +10,18 @@ import { Card, CardBody } from 'reactstrap';
 import { areaChartOptions } from './ChartOptions';
 
 const StatsWithAreaChart = (props: any) => {
-  const { icon, color, stats, statTitle, series, options, type, height, className, ...rest } = props;
+  const {
+    icon,
+    color,
+    stats,
+    statTitle,
+    series,
+    options,
+    type,
+    height,
+    className,
+    ...rest
+  } = props;
   return (
     <Card {...rest}>
       <CardBody
@@ -22,7 +33,16 @@ const StatsWithAreaChart = (props: any) => {
         <h2 className='fw-bolder mt-1'>{stats}</h2>
         <p className='card-text'>{statTitle}</p>
       </CardBody>
-      <Chart options={options} series={series} type={type} height={height ? height : 100} />
+      <Chart
+        options={options}
+        series={series}
+        type={type}
+        height={
+          height ?
+            height :
+            100
+        }
+      />
     </Card>
   );
 };

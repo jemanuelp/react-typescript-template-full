@@ -5,7 +5,13 @@ import { getUserData, getHomeRouteForLoggedInUser } from '../../../../../utility
 import themeConfig from '../../../../../configs/themeConfig';
 
 const VerticalMenuHeader = (props: any) => {
-  const { menuCollapsed, setMenuCollapsed, setMenuVisibility, setGroupOpen, menuHover } = props;
+  const {
+    menuCollapsed,
+    setMenuCollapsed,
+    setMenuVisibility,
+    setGroupOpen,
+    menuHover,
+  } = props;
 
   const user = getUserData();
 

@@ -1086,9 +1086,9 @@ mock.onPost('/api/bookmarks/update').reply(config => {
   const obj = searchArr[0].data.find(item => item.id === id);
 
   if (obj) {
-    const isBookmarked = (obj && obj.isBookmarked)
-      ? !obj.isBookmarked
-      : false;
+    const isBookmarked = (obj && obj.isBookmarked) ?
+      !obj.isBookmarked :
+      false;
     Object.assign(obj, {isBookmarked});
   }
 

@@ -187,15 +187,15 @@ const UsersList = () => {
         q: searchTerm,
         page: currentPage,
         perPage: rowsPerPage,
-        role: currentRole
-          ? currentRole.value
-          : '',
-        status: currentStatus
-          ? currentStatus.value
-          : '',
-        currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
+        role: currentRole ?
+          currentRole.value :
+          '',
+        status: currentStatus ?
+          currentStatus.value :
+          '',
+        currentPlan: currentPlan ?
+          currentPlan.value :
+          '',
       }),
     );
   }, [dispatch, store.data.length, sort, sortColumn, currentPage]);
@@ -226,15 +226,15 @@ const UsersList = () => {
         q: searchTerm,
         perPage: rowsPerPage,
         page: page.selected + 1,
-        role: currentRole
-          ? currentRole.value
-          : '',
-        status: currentStatus
-          ? currentStatus.value
-          : '',
-        currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
+        role: currentRole ?
+          currentRole.value :
+          '',
+        status: currentStatus ?
+          currentStatus.value :
+          '',
+        currentPlan: currentPlan ?
+          currentPlan.value :
+          '',
       }),
     );
     setCurrentPage(page.selected + 1);
@@ -250,15 +250,15 @@ const UsersList = () => {
         q: searchTerm,
         perPage: value,
         page: currentPage,
-        role: currentRole
-          ? currentRole.value
-          : '',
-        currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
-        status: currentStatus
-          ? currentStatus.value
-          : '',
+        role: currentRole ?
+          currentRole.value :
+          '',
+        currentPlan: currentPlan ?
+          currentPlan.value :
+          '',
+        status: currentStatus ?
+          currentStatus.value :
+          '',
       }),
     );
     setRowsPerPage(value);
@@ -274,15 +274,15 @@ const UsersList = () => {
         sortColumn,
         page: currentPage,
         perPage: rowsPerPage,
-        role: currentRole
-          ? currentRole.value
-          : '',
-        status: currentStatus
-          ? currentStatus.value
-          : '',
-        currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
+        role: currentRole ?
+          currentRole.value :
+          '',
+        status: currentStatus ?
+          currentStatus.value :
+          '',
+        currentPlan: currentPlan ?
+          currentPlan.value :
+          '',
       }),
     );
   };
@@ -297,9 +297,9 @@ const UsersList = () => {
         nextLabel={''}
         pageCount={count || 1}
         activeClassName='active'
-        forcePage={currentPage !== 0
-          ? currentPage - 1
-          : 0}
+        forcePage={currentPage !== 0 ?
+          currentPage - 1 :
+          0}
         onPageChange={page => handlePagination(page)}
         pageClassName={'page-item'}
         nextLinkClassName={'page-link'}
@@ -315,15 +315,15 @@ const UsersList = () => {
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
-      role: currentRole
-        ? currentRole.value
-        : '',
-      currentPlan: currentPlan
-        ? currentPlan.value
-        : '',
-      status: currentStatus
-        ? currentStatus.value
-        : '',
+      role: currentRole ?
+        currentRole.value :
+        '',
+      currentPlan: currentPlan ?
+        currentPlan.value :
+        '',
+      status: currentStatus ?
+        currentStatus.value :
+        '',
       q: searchTerm,
     };
 
@@ -350,15 +350,15 @@ const UsersList = () => {
         q: searchTerm,
         page: currentPage,
         perPage: rowsPerPage,
-        role: currentRole
-          ? currentRole.value
-          : '',
-        status: currentStatus
-          ? currentStatus.value
-          : '',
-        currentPlan: currentPlan
-          ? currentPlan.value
-          : '',
+        role: currentRole ?
+          currentRole.value :
+          '',
+        status: currentStatus ?
+          currentStatus.value :
+          '',
+        currentPlan: currentPlan ?
+          currentPlan.value :
+          '',
       }),
     );
   };
@@ -387,17 +387,17 @@ const UsersList = () => {
                       sort,
                       sortColumn,
                       q: searchTerm,
-                      role: data
-                        ? data.value
-                        : '',
+                      role: data ?
+                        data.value :
+                        '',
                       page: currentPage,
                       perPage: rowsPerPage,
-                      status: currentStatus
-                        ? currentStatus.value
-                        : '',
-                      currentPlan: currentPlan
-                        ? currentPlan.value
-                        : '',
+                      status: currentStatus ?
+                        currentStatus.value :
+                        '',
+                      currentPlan: currentPlan ?
+                        currentPlan.value :
+                        '',
                     }),
                   );
                 }}
@@ -421,15 +421,15 @@ const UsersList = () => {
                       q: searchTerm,
                       page: currentPage,
                       perPage: rowsPerPage,
-                      role: currentRole
-                        ? currentRole.value
-                        : '',
-                      currentPlan: data
-                        ? data.value
-                        : '',
-                      status: currentStatus
-                        ? currentStatus.value
-                        : '',
+                      role: currentRole ?
+                        currentRole.value :
+                        '',
+                      currentPlan: data ?
+                        data.value :
+                        '',
+                      status: currentStatus ?
+                        currentStatus.value :
+                        '',
                     }),
                   );
                 }}
@@ -452,16 +452,16 @@ const UsersList = () => {
                       sortColumn,
                       q: searchTerm,
                       page: currentPage,
-                      status: data
-                        ? data.value
-                        : '',
+                      status: data ?
+                        data.value :
+                        '',
                       perPage: rowsPerPage,
-                      role: currentRole
-                        ? currentRole.value
-                        : '',
-                      currentPlan: currentPlan
-                        ? currentPlan.value
-                        : '',
+                      role: currentRole ?
+                        currentRole.value :
+                        '',
+                      currentPlan: currentPlan ?
+                        currentPlan.value :
+                        '',
                     }),
                   );
                 }}

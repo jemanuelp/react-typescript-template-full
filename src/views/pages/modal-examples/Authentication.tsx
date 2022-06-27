@@ -29,6 +29,7 @@ const AppAuthComponent = ({ setShow, setShowDetailModal }: any) => {
       <h1 className='text-center mb-2 pb-50'>Add Authenticator App</h1>
       <h4>Authenticator Apps</h4>
       <p>
+        {/* eslint-disable-next-line max-len */}
         Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the QR
         code. It will generate a 6 digit code for you to enter below.
       </p>
@@ -68,7 +69,10 @@ const AppSMSComponent = ({ setShow, setShowDetailModal }: any) => {
     <Fragment>
       <h1 className='text-center mb-2 pb-50'>Add your number</h1>
       <h4>Verify Your Mobile Number for SMS</h4>
-      <p>Enter your mobile phone number with country code and we will send you a verification code.</p>
+      <p>
+        {/* eslint-disable-next-line max-len */}
+        Enter your mobile phone number with country code and we will send you a verification code.
+      </p>
       <Row className='gy-1 mt-1'>
         <Col xs={12}>
           <Cleave
@@ -108,6 +112,7 @@ const AuthenticationExample = () => {
           <Key className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Two Factor Auth</CardTitle>
           <CardText>
+            {/* eslint-disable-next-line max-len */}
             Use this modal to enhance your application security by enabling two factor authentication.
           </CardText>
           <Button color='primary' onClick={() => setShow(true)}>
@@ -143,6 +148,7 @@ const AuthenticationExample = () => {
               <span>
                 <span className='custom-option-item-title d-block h3'>Authenticator Apps</span>
                 <span className='mt-75'>
+                  {/* eslint-disable-next-line max-len */}
                   Get codes from an app like Google Authenticator, Microsoft Authenticator, Authy or 1Password.
                 </span>
               </span>
@@ -181,12 +187,18 @@ const AuthenticationExample = () => {
       >
         <ModalHeader className='bg-transparent' toggle={() => setShowDetailModal(!showDetailModal)}></ModalHeader>
         <ModalBody className='pb-5 px-sm-5 mx-50'>
-          {authType === 'authApp'
-            ? (
-              <AppAuthComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
-            )
-            : (
-              <AppSMSComponent setShow={setShow} setShowDetailModal={setShowDetailModal} />
+          {authType === 'authApp' ?
+            (
+              <AppAuthComponent
+                setShow={setShow}
+                setShowDetailModal={setShowDetailModal}
+              />
+            ) :
+            (
+              <AppSMSComponent
+                setShow={setShow}
+                setShowDetailModal={setShowDetailModal}
+              />
             )}
         </ModalBody>
       </Modal>

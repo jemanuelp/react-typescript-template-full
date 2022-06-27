@@ -10,7 +10,6 @@ import SwiperCore, {
   EffectCube,
   EffectCoverflow,
 } from 'swiper';
-
 import SwiperCube from './3DEffect';
 import SwiperRows from './SwiperRows';
 import SwiperFade from './SwiperFade';
@@ -27,13 +26,22 @@ import SwiperPagination from './SwiperPagination';
 import SwiperMultiSlides from './SwiperMultiSlides';
 import CenterSlidesStyle1 from './CenteredSlidesStyle1';
 import CenterSlidesStyle2 from './CenteredSlidesStyle2';
-
 import { Row, Col } from 'reactstrap';
 import 'src/@core/scss/react/libs/swiper/swiper.scss';
 import {useRTL} from '../../../utility/hooks/useRTL';
 import ExtensionsHeader from '../../../@core/components/extensions-header';
 
-SwiperCore.use([Navigation, Grid, Pagination, EffectFade, EffectCube, EffectCoverflow, Autoplay, Lazy, Virtual]);
+SwiperCore.use([
+  Navigation,
+  Grid,
+  Pagination,
+  EffectFade,
+  EffectCube,
+  EffectCoverflow,
+  Autoplay,
+  Lazy,
+  Virtual,
+]);
 
 const Slider = () => {
   const { isRtl } = useRTL();

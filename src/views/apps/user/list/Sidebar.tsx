@@ -21,9 +21,9 @@ const defaultValues: Partial<IUser> = {
 };
 
 const checkIsValid = (data: Partial<IUser>) => {
-  return Object.values(data).every((field: any) => (typeof field === 'object'
-    ? field !== null
-    : field.length > 0));
+  return Object.values(data).every((field: any) => (typeof field === 'object' ?
+    field !== null :
+    field.length > 0));
 };
 
 const SidebarNewUsers = ({ open, toggleSidebar }: any) => {

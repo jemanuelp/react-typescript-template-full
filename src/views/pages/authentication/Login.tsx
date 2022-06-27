@@ -52,9 +52,9 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues });
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   const onSubmit = (data: ILogin) => {
     if (Object.values(data).every((field) => field.length > 0)) {

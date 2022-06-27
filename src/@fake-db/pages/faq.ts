@@ -186,9 +186,9 @@ mock.onGet('/faq/data').reply(config => {
     });
     filteredData[categoryName as keyof typeof filteredData] = {
       ...categoryObj,
-      qandA: filteredQAndAOfCategory.length
-        ? filteredQAndAOfCategory
-        : [],
+      qandA: filteredQAndAOfCategory.length ?
+        filteredQAndAOfCategory :
+        [],
     };
   });
 

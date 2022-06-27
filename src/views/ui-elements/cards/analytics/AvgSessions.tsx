@@ -67,8 +67,8 @@ const AvgSessions = (props: { primary: string }) => {
       },
     ];
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardBody>
           <Row className='pb-50'>
@@ -128,7 +128,7 @@ const AvgSessions = (props: { primary: string }) => {
           </Row>
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default AvgSessions;

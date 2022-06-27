@@ -71,7 +71,10 @@ const AddCardExample = () => {
         <CardBody className='text-center'>
           <CreditCard className='font-large-2 mb-1' />
           <CardTitle tag='h5'>Add New Card</CardTitle>
-          <CardText>Quickly collect the credit card details, built in input mask and form validation support.</CardText>
+          <CardText>
+            {/* eslint-disable-next-line max-len */}
+            Quickly collect the credit card details, built in input mask and form validation support.
+          </CardText>
           <Button color='primary' onClick={() => setShow(true)}>
             Show
           </Button>
@@ -119,15 +122,15 @@ const AddCardExample = () => {
                   }}
                 />
 
-                {cardType !== '' && cardType !== 'unknown'
-                  ? (
+                {cardType !== '' && cardType !== 'unknown' ?
+                  (
                     <InputGroupText className='p-25'>
                       <span className='add-card-type'>
                         <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
                       </span>
                     </InputGroupText>
-                  )
-                  : null}
+                  ) :
+                  null}
               </InputGroup>
               {errors.cardNumber && <FormFeedback className='d-block'>Please enter valid card number</FormFeedback>}
             </Col>

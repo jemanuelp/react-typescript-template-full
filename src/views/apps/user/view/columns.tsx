@@ -40,12 +40,12 @@ export const columns = [
     sortField: 'invoiceStatus',
     selector: (row: any) => row.invoiceStatus,
     cell: (row: any) => {
-      const color = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
-          ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color
-          : 'primary',
-        Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj]
-          ? invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon
-          : Edit;
+      const color = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj] ?
+          invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color :
+          'primary',
+        Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj] ?
+          invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon :
+          Edit;
       return (
         <Fragment>
           <Avatar color={color} icon={<Icon size={14} />} id={`av-tooltip-${row.id}`} />

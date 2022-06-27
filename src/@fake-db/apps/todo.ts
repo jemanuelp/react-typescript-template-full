@@ -338,9 +338,9 @@ mock.onGet('/apps/todo/tasks').reply(config => {
   const filteredData = data.tasks.filter((task: ITask2) => {
     if (filter || tag) {
       return (
-        task.title.toLowerCase().includes(queryLowered) && hasFilter(task) && (tag
-          ? task.tags.includes(tag)
-          : true)
+        task.title.toLowerCase().includes(queryLowered) && hasFilter(task) && (tag ?
+          task.tags.includes(tag) :
+          true)
       );
     } else {
       return task.title.toLowerCase().includes(queryLowered) ||
@@ -365,12 +365,12 @@ mock.onGet('/apps/todo/tasks').reply(config => {
 
     // If sorting is by assignee => Use `fullName` of assignee
     else if (key === 'assignee') {
-      fieldA = a.assignee
-        ? a.assignee.fullName
-        : null;
-      fieldB = b.assignee
-        ? b.assignee.fullName
-        : null;
+      fieldA = a.assignee ?
+        a.assignee.fullName :
+        null;
+      fieldB = b.assignee ?
+        b.assignee.fullName :
+        null;
     } else {
       fieldA = a[key];
       fieldB = b[key];

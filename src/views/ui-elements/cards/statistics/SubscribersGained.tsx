@@ -12,8 +12,8 @@ const SubscribersGained = ({kFormatter}: { kFormatter: Function }) => {
     return () => setData(null);
   }, []);
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithAreaChart
         icon={<Users size={21}/>}
         color='primary'
@@ -22,8 +22,8 @@ const SubscribersGained = ({kFormatter}: { kFormatter: Function }) => {
         series={data.series}
         type='area'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default SubscribersGained;

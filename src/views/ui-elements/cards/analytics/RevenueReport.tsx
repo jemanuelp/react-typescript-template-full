@@ -116,8 +116,8 @@ const RevenueReport = (props: {
       },
     };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card className='card-revenue-budget'>
         <Row className='mx-0'>
           <Col className='revenue-report-wrapper' md='8' xs='12'>
@@ -160,8 +160,8 @@ const RevenueReport = (props: {
           </Col>
         </Row>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default RevenueReport;

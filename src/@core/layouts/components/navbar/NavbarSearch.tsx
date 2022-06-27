@@ -78,8 +78,8 @@ const NavbarSearch = () => {
         <div className='search-input-icon'>
           <Icon.Search />
         </div>
-        {navbarSearch
-          ? (
+        {navbarSearch ?
+          (
             <Autocomplete
               className='form-control'
               suggestions={suggestions}
@@ -105,7 +105,13 @@ const NavbarSearch = () => {
                       active: filteredData.indexOf(item) === activeSuggestion,
                     })}
                     key={i}
-                    onClick={e => handleListItemClick(onSuggestionItemClick, item.link, e)}
+                    onClick={
+                      e => handleListItemClick(
+                        onSuggestionItemClick,
+                        item.link,
+                        e,
+                      )
+                    }
                     onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
                   >
                     <div
@@ -114,42 +120,42 @@ const NavbarSearch = () => {
                       })}
                     >
                       <div className='item-container d-flex'>
-                        {item.icon
-                          ? (
+                        {item.icon ?
+                          (
                             <IconTag size={17} />
-                          )
-                          : item.file
-                            ? (
+                          ) :
+                          item.file ?
+                            (
                               <img src={item.file} height='36' width='28' alt={item.title} />
-                            )
-                            : item.img
-                              ? (
+                            ) :
+                            item.img ?
+                              (
                                 <img className='rounded-circle mt-25' src={item.img} height='28' width='28' alt={item.title} />
-                              )
-                              : null}
+                              ) :
+                              null}
                         <div className='item-info ms-1'>
                           <p className='align-middle mb-0'>{item.title}</p>
-                          {item.by || item.email
-                            ? (
+                          {item.by || item.email ?
+                            (
                               <small className='text-muted'>{item.by ? item.by : item.email ? item.email : null}</small>
-                            )
-                            : null}
+                            ) :
+                            null}
                         </div>
                       </div>
-                      {item.size || item.date
-                        ? (
+                      {item.size || item.date ?
+                        (
                           <div className='meta-container'>
                             <small className='text-muted'>{item.size ? item.size : item.date ? item.date : null}</small>
                           </div>
-                        )
-                        : null}
+                        ) :
+                        null}
                     </div>
                   </li>
                 );
               }}
             />
-          )
-          : null}
+          ) :
+          null}
         <div className='search-input-close'>
           <Icon.X
             className='ficon'

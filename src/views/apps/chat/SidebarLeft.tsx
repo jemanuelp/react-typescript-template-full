@@ -51,14 +51,14 @@ const SidebarLeft = (props: any) => {
           </li>
         );
       } else {
-        const arrToMap = query.length && filteredChat.length
-          ? filteredChat
-          : chats;
+        const arrToMap = query.length && filteredChat.length ?
+          filteredChat :
+          chats;
 
         return arrToMap.map((item: any) => {
-          const time = formatDateToMonthShort(item.chat.lastMessage
-            ? item.chat.lastMessage.time
-            : new Date());
+          const time = formatDateToMonthShort(item.chat.lastMessage ?
+            item.chat.lastMessage.time :
+            new Date());
 
           return (
             <li
@@ -72,20 +72,20 @@ const SidebarLeft = (props: any) => {
               <div className='chat-info flex-grow-1'>
                 <h5 className='mb-0'>{item.fullName}</h5>
                 <CardText className='text-truncate'>
-                  {item.chat.lastMessage
-                    ? item.chat.lastMessage.message
-                    : chats[chats.length - 1].message}
+                  {item.chat.lastMessage ?
+                    item.chat.lastMessage.message :
+                    chats[chats.length - 1].message}
                 </CardText>
               </div>
               <div className='chat-meta text-nowrap'>
                 <small className='float-end mb-25 chat-time ms-25'>{time}</small>
-                {item.chat.unseenMsgs >= 1
-                  ? (
+                {item.chat.unseenMsgs >= 1 ?
+                  (
                     <Badge className='float-end' color='danger' pill>
                       {item.chat.unseenMsgs}
                     </Badge>
-                  )
-                  : null}
+                  ) :
+                  null}
               </div>
             </li>
           );
@@ -106,9 +106,9 @@ const SidebarLeft = (props: any) => {
           </li>
         );
       } else {
-        const arrToMap = query.length && filteredContacts.length
-          ? filteredContacts
-          : contacts;
+        const arrToMap = query.length && filteredContacts.length ?
+          filteredContacts :
+          contacts;
         return arrToMap.map((item: any) => {
           return (
             <li key={item.fullName} onClick={() => handleUserClick(item.id)}>
@@ -151,8 +151,8 @@ const SidebarLeft = (props: any) => {
     }
   };
 
-  return store
-    ? (
+  return store ?
+    (
       <div className='sidebar-left'>
         <div className='sidebar'>
           <div
@@ -291,8 +291,8 @@ const SidebarLeft = (props: any) => {
             <div className='chat-fixed-search'>
               <div className='d-flex align-items-center w-100'>
                 <div className='sidebar-profile-toggle' onClick={handleUserSidebarLeft}>
-                  {Object.keys(userProfile).length
-                    ? (
+                  {Object.keys(userProfile).length ?
+                    (
                       <Avatar
                         className='avatar-border'
                         img={userProfile.avatar}
@@ -300,8 +300,8 @@ const SidebarLeft = (props: any) => {
                         imgHeight='42'
                         imgWidth='42'
                       />
-                    )
-                    : null}
+                    ) :
+                    null}
                 </div>
                 <InputGroup className='input-group-merge ms-1 w-100'>
                   <InputGroupText className='round'>
@@ -326,8 +326,8 @@ const SidebarLeft = (props: any) => {
           </div>
         </div>
       </div>
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default SidebarLeft;

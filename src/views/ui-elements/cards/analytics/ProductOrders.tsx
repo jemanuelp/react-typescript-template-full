@@ -76,8 +76,8 @@ const ProductOrders = (props: {
   },
     series = [70, 52, 26];
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader>
           <CardTitle tag='h4'>Product Orders</CardTitle>
@@ -119,7 +119,7 @@ const ProductOrders = (props: {
           </div>
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default ProductOrders;

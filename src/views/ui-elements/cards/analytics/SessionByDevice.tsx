@@ -69,11 +69,11 @@ const SessionByDevice = (
             </div>
             <div>
               <span>{item.upDown}%</span>
-              {item.upDown > 0
-                ? (
+              {item.upDown > 0 ?
+                (
                   <Icon.ArrowUp size={14} className='ms-25 text-success'/>
-                )
-                : (
+                ) :
+                (
                   <Icon.ArrowDown size={14} className='ms-25 text-danger'/>
                 )}
             </div>
@@ -83,8 +83,8 @@ const SessionByDevice = (
     }
   };
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader className='align-items-end'>
           <CardTitle tag='h4'>Session By Device</CardTitle>
@@ -106,7 +106,7 @@ const SessionByDevice = (
           {renderChartInfo()}
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default SessionByDevice;

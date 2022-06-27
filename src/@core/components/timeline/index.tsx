@@ -38,8 +38,8 @@ const Timeline = (props: any) => {
                 })}
               >
                 <h6>{item.title}</h6>
-                {item.meta
-                  ? (
+                {item.meta ?
+                  (
                     <span
                       className={classnames('timeline-event-time', {
                         [item.metaClassName]: item.metaClassName,
@@ -47,8 +47,8 @@ const Timeline = (props: any) => {
                     >
                       {item.meta}
                     </span>
-                  )
-                  : null}
+                  ) :
+                  null}
               </div>
               <p
                 className={classnames({

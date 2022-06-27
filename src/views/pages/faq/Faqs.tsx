@@ -19,7 +19,10 @@ import {IFaqData} from '../../../domains/interfaces/IFaqData';
 import {IconProps} from 'react-feather';
 import {IQandA} from '../../../domains/interfaces/IQandA';
 
-const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: Function }) => {
+const Faqs = (
+  { data }:
+        { data: IFaqData[], searchTerm: string, setSearchTerm: Function },
+) => {
   const dataToRender = new Array<IFaqData>();
 
   const [activeTab, setActiveTab] = useState('Payment');
@@ -35,7 +38,10 @@ const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: F
       const IconTag = item.icon;
       return (
         <NavItem key={item.title} tag='li'>
-          <NavLink active={activeTab === item.title} onClick={() => toggleTab(item.title)}>
+          <NavLink
+            active={activeTab === item.title}
+            onClick={() => toggleTab(item.title)}
+          >
             <IconTag size={18} className='me-1' />
             <span className='fw-bold'>{item.title}</span>
           </NavLink>
@@ -59,8 +65,8 @@ const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: F
               <span>{item.subtitle}</span>
             </div>
           </div>
-          {item.qandA.length
-            ? (
+          {item.qandA.length ?
+            (
               <UncontrolledAccordion
                 cssModule={{ className: 'accordion-margin mt-2'}}
                 open={''}
@@ -71,13 +77,17 @@ const Faqs = ({ data }: { data: IFaqData[], searchTerm: string, setSearchTerm: F
                       <AccordionHeader tag='h2' targetId={String(index + 1)}>
                         {r.question}
                       </AccordionHeader>
-                      <AccordionBody accordionId={String(index + 1)}>{r.ans}</AccordionBody>
+                      <AccordionBody
+                        accordionId={String(index + 1)}
+                      >
+                        {r.ans}
+                      </AccordionBody>
                     </AccordionItem>
                   );
                 })}
               </UncontrolledAccordion>
-            )
-            : (
+            ) :
+            (
               <div className='text-center p-5'>
                 <h5 className='p-1'>
                   <Icon.Info size='19' className='me-25' /> No Results Found

@@ -64,9 +64,9 @@ const ChatLog = (props: ChatProptypes) => {
     }
 
     const formattedChatLog: IChat[] = [];
-    let chatMessageSenderId = chatLog[0]
-      ? chatLog[0].senderId
-      : undefined;
+    let chatMessageSenderId = chatLog[0] ?
+      chatLog[0].senderId :
+      undefined;
     let msgGroup: IChat = {
       senderId: chatMessageSenderId,
       messages: [],
@@ -111,11 +111,11 @@ const ChatLog = (props: ChatProptypes) => {
               imgWidth={36}
               imgHeight={36}
               className='box-shadow-1 cursor-pointer'
-              img={item.senderId === 11
-                ? userProfile.avatar
-                : (selectedUser && selectedUser.contact && typeof selectedUser.contact !== 'string')
-                  ? selectedUser.contact.avatar
-                  : ''}
+              img={item.senderId === 11 ?
+                userProfile.avatar :
+                (selectedUser && selectedUser.contact && typeof selectedUser.contact !== 'string') ?
+                  selectedUser.contact.avatar :
+                  ''}
             />
           </div>
           <div className='chat-body'>
@@ -156,9 +156,9 @@ const ChatLog = (props: ChatProptypes) => {
   };
 
   // ** ChatWrapper tag based on chat's length
-  const ChatWrapper = Object.keys(selectedUser).length && selectedUser.chat
-    ? PerfectScrollbar
-    : 'div';
+  const ChatWrapper = Object.keys(selectedUser).length && selectedUser.chat ?
+    PerfectScrollbar :
+    'div';
 
   return (
     <div className='chat-app-window'>
@@ -170,8 +170,8 @@ const ChatLog = (props: ChatProptypes) => {
           Start Conversation
         </h4>
       </div>
-      {Object.keys(selectedUser).length
-        ? (
+      {Object.keys(selectedUser).length ?
+        (
           <div className={classnames('active-chat', { 'd-none': selectedUser === null })}>
             <div className='chat-navbar'>
               <header className='chat-header'>
@@ -190,17 +190,17 @@ const ChatLog = (props: ChatProptypes) => {
                         selectedUser.contact &&
                         typeof selectedUser.contact !== 'string' &&
                         selectedUser.contact.avatar
-                      )
-                        ? selectedUser.contact.avatar
-                        : ''}
+                      ) ?
+                        selectedUser.contact.avatar :
+                        ''}
                     status={
                       (selectedUser &&
                         selectedUser.contact &&
                         typeof selectedUser.contact !== 'string' &&
                         selectedUser.contact.status
-                      )
-                        ? selectedUser.contact.status
-                        : ''}
+                      ) ?
+                        selectedUser.contact.status :
+                        ''}
                     className='avatar-border user-profile-toggle m-0 me-1'
                     onClick={() => handleAvatarClick(selectedUser.contact)}
                   />
@@ -210,9 +210,9 @@ const ChatLog = (props: ChatProptypes) => {
                       selectedUser.contact &&
                       selectedUser.contact &&
                       typeof selectedUser.contact === 'string'
-                    )
-                      ? selectedUser.contact
-                      : ''
+                    ) ?
+                      selectedUser.contact :
+                      ''
                   }</h6>
                 </div>
                 <div className='d-flex align-items-center'>
@@ -246,9 +246,9 @@ const ChatLog = (props: ChatProptypes) => {
             </div>
 
             <ChatWrapper ref={chatArea} className='user-chats' options={{ wheelPropagation: false }}>
-              {selectedUser.chat
-                ? <div className='chats'>{renderChats()}</div>
-                : null}
+              {selectedUser.chat ?
+                <div className='chats'>{renderChats()}</div> :
+                null}
             </ChatWrapper>
 
             <Form className='chat-app-form' onSubmit={e => handleSendMsg(e)}>
@@ -274,8 +274,8 @@ const ChatLog = (props: ChatProptypes) => {
               </Button>
             </Form>
           </div>
-        )
-        : null}
+        ) :
+        null}
     </div>
   );
 };

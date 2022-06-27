@@ -11,8 +11,8 @@ const SiteTraffic = () => {
     axios.get('/card/card-statistics/site-traffic').then(res => setData(res.data));
   }, []);
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <StatsWithLineChart
         icon={<Monitor size={21}/>}
         color='primary'
@@ -21,8 +21,8 @@ const SiteTraffic = () => {
         series={data.series}
         type='line'
       />
-    )
-    : null;
+    ) :
+    null;
 };
 
 export default SiteTraffic;

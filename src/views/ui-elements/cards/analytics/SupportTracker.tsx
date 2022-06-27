@@ -73,8 +73,8 @@ const SupportTracker = (props: { primary: string, danger: string}) => {
     },
     series = [83];
 
-  return data !== null
-    ? (
+  return data !== null ?
+    (
       <Card>
         <CardHeader className='pb-0'>
           <CardTitle tag='h4'>{data.title}</CardTitle>
@@ -117,7 +117,7 @@ const SupportTracker = (props: { primary: string, danger: string}) => {
           </div>
         </CardBody>
       </Card>
-    )
-    : null;
+    ) :
+    null;
 };
 export default SupportTracker;

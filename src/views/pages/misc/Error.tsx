@@ -7,9 +7,9 @@ import * as Light from '../../../../src/assets/images/pages/error.svg';
 
 const Error = () => {
   const {skin} = useSkin();
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   return (
     <div className='misc-wrapper'>

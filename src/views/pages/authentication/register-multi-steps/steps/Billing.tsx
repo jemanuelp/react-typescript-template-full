@@ -119,13 +119,13 @@ const Billing = ({ stepper }: any) => {
                   />
                 )}
               />
-              {cardType !== '' && cardType !== 'unknown'
-                ? (
+              {cardType !== '' && cardType !== 'unknown' ?
+                (
                   <InputGroupText className='cursor-pointer p-25'>
                     <img height='24' alt='card-type' src={cardsObj[cardType as keyof typeof cardsObj]} />
                   </InputGroupText>
-                )
-                : null}
+                ) :
+                null}
             </InputGroup>
             {errors.cardNumber && <FormFeedback className='d-block'>Please enter a valid card number</FormFeedback>}
           </Col>

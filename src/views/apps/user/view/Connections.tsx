@@ -116,17 +116,17 @@ const connections = () => {
                   <div className='me-1'>
                     <p className='fw-bolder mb-0'>{item.title}</p>
                     {
-                      item.linked
-                        ? (<a href={item.url} target='_blank'>@pixinvent</a>)
-                        : (<span>Not Connected</span>)
+                      item.linked ?
+                        (<a href={item.url} target='_blank'>@pixinvent</a>) :
+                        (<span>Not Connected</span>)
                     }
                   </div>
                   <div className='mt-50 mt-sm-0'>
                     <Button outline className='btn-icon'>
                       {
-                        item.linked
-                          ? <X className='font-medium-3'/>
-                          : <Link className='font-medium-3'/>}
+                        item.linked ?
+                          <X className='font-medium-3'/> :
+                          <Link className='font-medium-3'/>}
                     </Button>
                   </div>
                 </div>

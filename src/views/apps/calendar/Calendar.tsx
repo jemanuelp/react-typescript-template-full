@@ -33,9 +33,9 @@ const Calendar = (props: any) => {
 
   // ** calendarOptions(Props)
   const calendarOptions: CalendarOptions = {
-    events: store.events.length
-      ? store.events
-      : [],
+    events: store.events.length ?
+      store.events :
+      [],
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
     initialView: 'dayGridMonth',
     headerToolbar: {
@@ -130,9 +130,9 @@ const Calendar = (props: any) => {
     // ref: calendarRef,
 
     // Get direction from app state (store)
-    direction: isRtl
-      ? 'rtl'
-      : 'ltr',
+    direction: isRtl ?
+      'rtl' :
+      'ltr',
   };
 
   return (

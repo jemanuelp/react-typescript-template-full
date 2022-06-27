@@ -9,9 +9,9 @@ import * as Light from '../../../../src/assets/images/pages/not-authorized.svg';
 const NotAuthorized = () => {
   const {skin} = useSkin();
   const user = getUserData();
-  const source = skin === 'dark'
-    ? Dark.default
-    : Light.default;
+  const source = skin === 'dark' ?
+    Dark.default :
+    Light.default;
 
   return (
     <div className='misc-wrapper'>
@@ -80,9 +80,9 @@ const NotAuthorized = () => {
             tag={Link}
             color='primary'
             className='btn-sm-block mb-1'
-            to={user
-              ? getHomeRouteForLoggedInUser(user.role)
-              : '/'}
+            to={user ?
+              getHomeRouteForLoggedInUser(user.role) :
+              '/'}
           >
                         Back to Home
           </Button>
