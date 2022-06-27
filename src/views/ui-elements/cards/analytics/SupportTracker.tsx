@@ -1,11 +1,6 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
-
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
-
-// ** Reactstrap Imports
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Chart from 'react-apexcharts';
 import {
   Row,
   Col,
@@ -17,17 +12,17 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledDropdown
-} from 'reactstrap'
+  UncontrolledDropdown,
+} from 'reactstrap';
+import {ISupportTracker} from "../../../../domains/interfaces/cards/ISupportTracker";
 
-const SupportTracker = props => {
-  // ** State
-  const [data, setData] = useState(null)
+const SupportTracker = (props: { primary: string, danger: string}) => {
+  const [data, setData] = useState<ISupportTracker | null>(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/support-tracker').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
+    axios.get('/card/card-analytics/support-tracker').then(res => setData(res.data));
+    return () => setData(null);
+  }, []);
 
   const options = {
       plotOptions: {
@@ -37,25 +32,25 @@ const SupportTracker = props => {
           startAngle: -150,
           endAngle: 150,
           hollow: {
-            size: '65%'
+            size: '65%',
           },
           track: {
             background: '#fff',
-            strokeWidth: '100%'
+            strokeWidth: '100%',
           },
           dataLabels: {
             name: {
               offsetY: -5,
               fontFamily: 'Montserrat',
-              fontSize: '1rem'
+              fontSize: '1rem',
             },
             value: {
               offsetY: 15,
               fontFamily: 'Montserrat',
-              fontSize: '1.714rem'
-            }
-          }
-        }
+              fontSize: '1.714rem',
+            },
+          },
+        },
       },
       colors: [props.danger],
       fill: {
@@ -68,17 +63,18 @@ const SupportTracker = props => {
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: 1,
-          stops: [0, 100]
-        }
+          stops: [0, 100],
+        },
       },
       stroke: {
-        dashArray: 8
+        dashArray: 8,
       },
-      labels: ['Completed Tickets']
+      labels: ['Completed Tickets'],
     },
-    series = [83]
+    series = [83];
 
-  return data !== null ? (
+  return data !== null
+? (
     <Card>
       <CardHeader className='pb-0'>
         <CardTitle tag='h4'>{data.title}</CardTitle>
@@ -121,6 +117,7 @@ const SupportTracker = props => {
         </div>
       </CardBody>
     </Card>
-  ) : null
-}
-export default SupportTracker
+  )
+: null;
+};
+export default SupportTracker;

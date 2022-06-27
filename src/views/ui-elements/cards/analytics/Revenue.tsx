@@ -1,21 +1,17 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
-import { Settings } from 'react-feather'
+import axios from 'axios';
+import Chart from 'react-apexcharts';
+import { Settings } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const Revenue = props => {
-  // ** State
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/revenue').then(res => setData(res.data))
-  }, [])
+    axios.get('/card/card-analytics/revenue').then(res => setData(res.data));
+  }, []);
 
   const options = {
       chart: {
@@ -76,7 +72,7 @@ const Revenue = props => {
             fontSize: '1rem'
           },
           formatter(val) {
-            return val > 999 ? `${(val / 1000).toFixed(0)}k` : val
+            return val > 999 ? `${(val / 1000).toFixed(0)}k` : val;
           }
         }
       },
@@ -101,7 +97,7 @@ const Revenue = props => {
         name: 'Last Month',
         data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000]
       }
-    ]
+    ];
   return data !== null ? (
     <Card>
       <CardHeader>
@@ -128,6 +124,6 @@ const Revenue = props => {
         <Chart options={options} series={series} type='line' height={240} />
       </CardBody>
     </Card>
-  ) : null
-}
-export default Revenue
+  ) : null;
+};
+export default Revenue;

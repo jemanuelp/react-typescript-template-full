@@ -1,12 +1,9 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
-import { Circle } from 'react-feather'
+import axios from 'axios';
+import Chart from 'react-apexcharts';
+import { Circle } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Card,
   CardBody,
@@ -16,15 +13,14 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const ProductOrders = props => {
-  // ** State
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/product-orders').then(res => setData(res.data))
-  }, [])
+    axios.get('/card/card-analytics/product-orders').then(res => setData(res.data));
+  }, []);
 
   const options = {
       labels: ['Finished', 'Pending', 'Rejected'],
@@ -54,7 +50,7 @@ const ProductOrders = props => {
 
               formatter() {
                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                return 42459
+                return 42459;
               }
             }
           }
@@ -75,7 +71,7 @@ const ProductOrders = props => {
         }
       }
     },
-    series = [70, 52, 26]
+    series = [70, 52, 26];
 
   return data !== null ? (
     <Card>
@@ -119,6 +115,6 @@ const ProductOrders = props => {
         </div>
       </CardBody>
     </Card>
-  ) : null
-}
-export default ProductOrders
+  ) : null;
+};
+export default ProductOrders;

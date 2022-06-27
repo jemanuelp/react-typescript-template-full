@@ -1,9 +1,7 @@
-// ** Third Party Components
-import Chart from 'react-apexcharts'
-import { Settings } from 'react-feather'
+import Chart from 'react-apexcharts';
+import { Settings } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const Sales2 = props => {
   const options = {
@@ -82,7 +80,7 @@ const Sales2 = props => {
             fontFamily: 'Montserrat'
           },
           formatter(val) {
-            return val > 999 ? `${(val / 1000).toFixed(1)}k` : val
+            return val > 999 ? `${(val / 1000).toFixed(1)}k` : val;
           }
         }
       },
@@ -95,7 +93,7 @@ const Sales2 = props => {
         name: 'Sales',
         data: [140, 180, 150, 205, 160, 295, 125, 255, 205, 305, 240, 295]
       }
-    ]
+    ];
   return (
     <Card>
       <CardHeader className='align-items-start'>
@@ -111,6 +109,6 @@ const Sales2 = props => {
         <Chart options={options} series={series} type='line' height={240} />
       </CardBody>
     </Card>
-  )
-}
-export default Sales2
+  );
+};
+export default Sales2;

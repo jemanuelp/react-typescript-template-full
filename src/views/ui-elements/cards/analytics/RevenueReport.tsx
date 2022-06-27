@@ -1,11 +1,8 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
+import axios from 'axios';
+import Chart from 'react-apexcharts';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -16,16 +13,15 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledButtonDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const RevenueReport = props => {
-  // ** State
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/revenue-report').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
+    axios.get('/card/card-analytics/revenue-report').then(res => setData(res.data));
+    return () => setData(null);
+  }, []);
 
   const revenueOptions = {
       chart: {
@@ -89,7 +85,7 @@ const RevenueReport = props => {
         name: 'Expense',
         data: [-145, -80, -60, -180, -100, -60, -85, -75, -100]
       }
-    ]
+    ];
 
   const budgetSeries = [
       {
@@ -115,7 +111,7 @@ const RevenueReport = props => {
       tooltip: {
         enabled: false
       }
-    }
+    };
 
   return data !== null ? (
     <Card className='card-revenue-budget'>
@@ -159,7 +155,7 @@ const RevenueReport = props => {
         </Col>
       </Row>
     </Card>
-  ) : null
-}
+  ) : null;
+};
 
-export default RevenueReport
+export default RevenueReport;

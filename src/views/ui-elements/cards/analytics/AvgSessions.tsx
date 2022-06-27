@@ -1,14 +1,7 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
-
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
-
-// ** Utils
-import { kFormatter } from '@utils'
-
-// ** Reactstrap Imports
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Chart from 'react-apexcharts';
+import { kFormatter } from '../../../../utility/Utils';
 import {
   Row,
   Col,
@@ -20,58 +13,59 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledDropdown
-} from 'reactstrap'
+  UncontrolledDropdown,
+} from 'reactstrap';
+import {IAvgSessions} from "../../../../domains/interfaces/cards/IAvgSessions";
 
-const AvgSessions = props => {
-  // ** States
-  const [data, setData] = useState(null)
+const AvgSessions = (props: { primary: string }) => {
+  const [data, setData] = useState<IAvgSessions | null>(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/avg-sessions').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
+    axios.get('/card/card-analytics/avg-sessions').then(res => setData(res.data));
+    return () => setData(null);
+  }, []);
 
   const options = {
       chart: {
         sparkline: { enabled: true },
-        toolbar: { show: false }
+        toolbar: { show: false },
       },
       grid: {
         show: false,
         padding: {
           left: 0,
-          right: 0
-        }
+          right: 0,
+        },
       },
       states: {
         hover: {
-          filter: 'none'
-        }
+          filter: 'none',
+        },
       },
       colors: ['#ebf0f7', '#ebf0f7', props.primary, '#ebf0f7', '#ebf0f7', '#ebf0f7'],
       plotOptions: {
         bar: {
           columnWidth: '45%',
           distributed: true,
-          borderRadius: [10]
-        }
+          borderRadius: [10],
+        },
       },
       tooltip: {
-        x: { show: false }
+        x: { show: false },
       },
       xaxis: {
-        type: 'numeric'
-      }
+        type: 'numeric',
+      },
     },
     series = [
       {
         name: 'Sessions',
-        data: [75, 125, 225, 175, 125, 75, 25]
-      }
-    ]
+        data: [75, 125, 225, 175, 125, 75, 25],
+      },
+    ];
 
-  return data !== null ? (
+  return data !== null
+? (
     <Card>
       <CardBody>
         <Row className='pb-50'>
@@ -131,6 +125,7 @@ const AvgSessions = props => {
         </Row>
       </CardBody>
     </Card>
-  ) : null
-}
-export default AvgSessions
+  )
+: null;
+};
+export default AvgSessions;

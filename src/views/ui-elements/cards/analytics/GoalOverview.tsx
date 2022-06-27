@@ -1,22 +1,18 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import Chart from 'react-apexcharts'
-import { HelpCircle } from 'react-feather'
+import axios from 'axios';
+import Chart from 'react-apexcharts';
+import { HelpCircle } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap';
 
 const GoalOverview = props => {
-  // ** State
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/card/card-analytics/goal-overview').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
+    axios.get('/card/card-analytics/goal-overview').then(res => setData(res.data));
+    return () => setData(null);
+  }, []);
 
   const options = {
       chart: {
@@ -79,7 +75,7 @@ const GoalOverview = props => {
         }
       }
     },
-    series = [83]
+    series = [83];
 
   return data !== null ? (
     <Card>
@@ -101,6 +97,6 @@ const GoalOverview = props => {
         </Col>
       </Row>
     </Card>
-  ) : null
-}
-export default GoalOverview
+  ) : null;
+};
+export default GoalOverview;

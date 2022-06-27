@@ -1,18 +1,16 @@
-// ** Third Party Components
-import Chart from 'react-apexcharts'
+import Chart from 'react-apexcharts';
 
-// ** Reactstrap Imports
-import { Card, CardTitle, CardText, CardBody, Row, Col } from 'reactstrap'
+import { Card, CardTitle, CardText, CardBody, Row, Col } from 'reactstrap';
 
-const Earnings = ({ success }) => {
+const Earnings = ({ success }: { success: string }) => {
   const options = {
     chart: {
       toolbar: {
-        show: false
-      }
+        show: false,
+      },
     },
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     legend: { show: false },
     comparedResult: [2, -3, 8],
@@ -23,8 +21,8 @@ const Earnings = ({ success }) => {
       padding: {
         right: -20,
         bottom: -8,
-        left: -20
-      }
+        left: -20,
+      },
     },
     plotOptions: {
       pie: {
@@ -33,61 +31,61 @@ const Earnings = ({ success }) => {
           labels: {
             show: true,
             name: {
-              offsetY: 15
+              offsetY: 15,
             },
             value: {
               offsetY: -15,
-              formatter(val) {
-                return `${parseInt(val)} %`
-              }
+              formatter(val: any) {
+                return `${parseInt(val)} %`;
+              },
             },
             total: {
               show: true,
               offsetY: 15,
               label: 'App',
               formatter() {
-                return '53%'
-              }
-            }
-          }
-        }
-      }
+                return '53%';
+              },
+            },
+          },
+        },
+      },
     },
     responsive: [
       {
         breakpoint: 1325,
         options: {
           chart: {
-            height: 100
-          }
-        }
+            height: 100,
+          },
+        },
       },
       {
         breakpoint: 1200,
         options: {
           chart: {
-            height: 120
-          }
-        }
+            height: 120,
+          },
+        },
       },
       {
         breakpoint: 1065,
         options: {
           chart: {
-            height: 100
-          }
-        }
+            height: 100,
+          },
+        },
       },
       {
         breakpoint: 992,
         options: {
           chart: {
-            height: 120
-          }
-        }
-      }
-    ]
-  }
+            height: 120,
+          },
+        },
+      },
+    ],
+  };
 
   return (
     <Card className='earnings-card'>
@@ -108,7 +106,7 @@ const Earnings = ({ success }) => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default Earnings
+export default Earnings;

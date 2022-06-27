@@ -1,8 +1,6 @@
-// ** Third Party Components
-import Chart from 'react-apexcharts'
-import { MoreVertical, Circle } from 'react-feather'
+import Chart from 'react-apexcharts';
+import { MoreVertical, Circle } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Card,
   CardBody,
@@ -13,7 +11,7 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const Sales = props => {
   const options = {
@@ -85,7 +83,7 @@ const Sales = props => {
         name: 'Visit',
         data: [70, 75, 70, 76, 20, 85]
       }
-    ]
+    ];
   return (
     <Card>
       <CardHeader className='d-flex justify-content-between align-items-start pb-1'>
@@ -124,6 +122,6 @@ const Sales = props => {
         <Chart options={options} series={series} type='radar' height={300} />
       </CardBody>
     </Card>
-  )
-}
-export default Sales
+  );
+};
+export default Sales;
