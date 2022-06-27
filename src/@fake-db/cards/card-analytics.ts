@@ -1,6 +1,7 @@
 import mock from '../mock';
+import {ICardAnalytics} from "../../domains/grouper/ICardAnalytics";
 
-const data = {
+const data: ICardAnalytics = {
   support_tracker: {
     title: 'Support Tracker',
     last_days: ['Last 28 Days', 'Last Month', 'Last Year'],
