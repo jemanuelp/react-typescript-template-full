@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import {useSkin} from "../utility/hooks/useSkin";
+import {useSkin} from '../utility/hooks/useSkin';
 import '../@core/scss/base/pages/page-misc.scss';
 
 const Error = () => {
   const { skin } = useSkin();
 
   const illustration = skin === 'dark'
-? 'error-dark.svg'
-: 'error.svg',
+      ? 'error-dark.svg'
+      : 'error.svg',
     source = require(`../assets/images/pages/${illustration}`).default;
   return (
     <div className='misc-wrapper'>

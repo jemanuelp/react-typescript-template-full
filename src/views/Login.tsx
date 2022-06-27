@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
 import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap';
 import '../@core/scss/react/pages/page-authentication.scss';
-import {useSkin} from "../utility/hooks/useSkin";
-import InputPasswordToggle from "../@core/components/input-password-toggle";
+import {useSkin} from '../utility/hooks/useSkin';
+import InputPasswordToggle from '../@core/components/input-password-toggle';
 
 const Login = () => {
   const { skin } = useSkin();
 
   const illustration = skin === 'dark'
-? 'login-v2-dark.svg'
-: 'login-v2.svg',
+      ? 'login-v2-dark.svg'
+      : 'login-v2.svg',
     source = require(`../assets/images/pages/${illustration}`).default;
 
   return (

@@ -1,11 +1,11 @@
-import {ToastPosition} from "react-hot-toast";
-import {LayoutTypes} from "../domains/enums/LayoutTypes";
-import {ThemeConfig} from "../domains/interfaces/layouts/ThemeConfig";
-import {SkinTypes} from "../domains/enums/SkinTypes";
-import {RouterTransitionTypes} from "../domains/enums/RouterTransitionTypes";
-import {ContentWidthTypes} from "../domains/enums/ContentWidthTypes";
-import {NavbarLayoutTypes} from "../domains/enums/NavbarLayoutTypes";
-import {FooterLayoutTypes} from "../domains/enums/FooterLayoutTypes";
+import {ToastPosition} from 'react-hot-toast';
+import {LayoutTypes} from '../domains/enums/LayoutTypes';
+import {ThemeConfig} from '../domains/interfaces/layouts/ThemeConfig';
+import {SkinTypes} from '../domains/enums/SkinTypes';
+import {RouterTransitionTypes} from '../domains/enums/RouterTransitionTypes';
+import {ContentWidthTypes} from '../domains/enums/ContentWidthTypes';
+import {NavbarLayoutTypes} from '../domains/enums/NavbarLayoutTypes';
+import {FooterLayoutTypes} from '../domains/enums/FooterLayoutTypes';
 
 const toastPosition: ToastPosition = 'top-right';
 
@@ -17,7 +17,7 @@ const themeConfig: ThemeConfig = {
   },
   layout: {
     isRTL: false,
-    skin: "light", // light, dark, bordered, semi-dark
+    skin: 'light', // light, dark, bordered, semi-dark
     routerTransition: RouterTransitionTypes.fadeIn, // fadeIn, fadeInLeft, zoomIn, none or check this for more transition https://animate.style/
     type: LayoutTypes.vertical, // vertical, horizontal
     contentWidth: ContentWidthTypes.boxed, // full, boxed

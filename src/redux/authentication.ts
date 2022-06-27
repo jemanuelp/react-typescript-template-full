@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import useJwt from "../@core/auth/jwt/useJwt";
+import useJwt from '../@core/auth/jwt/useJwt';
 
 const config = useJwt().jwtConfig;
 
 const initialUser = () => {
   const item = window.localStorage.getItem('userData');
   return item
-      ? JSON.parse(item)
-      : {};
+    ? JSON.parse(item)
+    : {};
 };
 
 export const authSlice = createSlice({
@@ -21,14 +21,14 @@ export const authSlice = createSlice({
       state[config.storageTokenKeyName as keyof typeof state] =
           action.payload[config.storageTokenKeyName];
       state[config.storageRefreshTokenKeyName as keyof typeof state] = action.payload[
-          config.storageRefreshTokenKeyName
-          ];
+        config.storageRefreshTokenKeyName
+      ];
       localStorage.setItem('userData', JSON.stringify(action.payload));
       localStorage.setItem(
-          config.storageTokenKeyName, JSON.stringify(action.payload.accessToken),
+        config.storageTokenKeyName, JSON.stringify(action.payload.accessToken),
       );
       localStorage.setItem(
-          config.storageRefreshTokenKeyName, JSON.stringify(action.payload.refreshToken),
+        config.storageRefreshTokenKeyName, JSON.stringify(action.payload.refreshToken),
       );
     },
     handleLogout: state => {

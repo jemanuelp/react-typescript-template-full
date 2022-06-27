@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import {useSkin} from "../utility/hooks/useSkin";
+import {useSkin} from '../utility/hooks/useSkin';
 import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
-import InputPasswordToggle from "../@core/components/input-password-toggle";
+import InputPasswordToggle from '../@core/components/input-password-toggle';
 import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap';
 
 import '../@core/scss/react/pages/page-authentication.scss';
@@ -10,8 +10,8 @@ const Register = () => {
   const { skin } = useSkin();
 
   const illustration = (skin === 'dark')
-? 'register-v2-dark.svg'
-: 'register-v2.svg';
+    ? 'register-v2-dark.svg'
+    : 'register-v2.svg';
   const source = require(`../assets/images/pages/${illustration}`).default;
 
   return (
