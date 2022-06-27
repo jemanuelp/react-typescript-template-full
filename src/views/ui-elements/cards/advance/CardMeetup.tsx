@@ -1,57 +1,50 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
-import AvatarGroup from '@components/avatar-group'
-
-// ** Icons Imports
-import { Calendar, MapPin } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Card, CardTitle, CardBody, CardText } from 'reactstrap'
-
-// ** Images
-import illustration from '@src/assets/images/illustration/email.svg'
+import Avatar from '../../../../@core/components/avatar';
+import AvatarGroup from '../../../../@core/components/avatar-group';
+import { Calendar, MapPin } from 'react-feather';
+import { Card, CardTitle, CardBody, CardText } from 'reactstrap';
+import illustration from '../../../../../src/assets/images/illustration/email.svg';
 
 const CardMeetup = () => {
   const data = [
     {
       title: 'Billy Hopkins',
       placement: 'bottom',
-      img: require('@src/assets/images/portrait/small/avatar-s-9.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
       imgHeight: 33,
-      imgWidth: 33
+      imgWidth: 33,
     },
     {
       title: 'Amy Carson',
       placement: 'bottom',
-      img: require('@src/assets/images/portrait/small/avatar-s-6.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
       imgHeight: 33,
-      imgWidth: 33
+      imgWidth: 33,
     },
     {
       title: 'Brandon Miles',
       placement: 'bottom',
-      img: require('@src/assets/images/portrait/small/avatar-s-8.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
       imgHeight: 33,
-      imgWidth: 33
+      imgWidth: 33,
     },
     {
       title: 'Daisy Weber',
       placement: 'bottom',
-      img: require('@src/assets/images/portrait/small/avatar-s-7.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
       imgHeight: 33,
-      imgWidth: 33
+      imgWidth: 33,
     },
     {
       title: 'Jenny Looper',
       placement: 'bottom',
-      img: require('@src/assets/images/portrait/small/avatar-s-20.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
       imgHeight: 33,
-      imgWidth: 33
+      imgWidth: 33,
     },
     {
-      meta: '+42'
-    }
-  ]
+      meta: '+42',
+    },
+  ];
 
   return (
     <Card className='card-developer-meetup'>
@@ -88,7 +81,7 @@ const CardMeetup = () => {
         <AvatarGroup data={data} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardMeetup
+export default CardMeetup;

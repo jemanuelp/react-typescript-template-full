@@ -1,55 +1,51 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
-import Timeline from '@components/timeline'
-import AvatarGroup from '@components/avatar-group'
+import Avatar from '../../../../@core/components/avatar';
+import Timeline from '../../../../@core/components/timeline';
+import AvatarGroup from '../../../../@core/components/avatar-group';
 
-// ** Icons Imports
-import { List, MoreVertical } from 'react-feather'
+import { List, MoreVertical } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Images
-import jsonImg from '@src/assets/images/icons/json.png'
-import ceo from '@src/assets/images/portrait/small/avatar-s-9.jpg'
+import jsonImg from '../../../../../src/assets/images/icons/json.png';
+import ceo from '../../../../../src/assets/images/portrait/small/avatar-s-9.jpg';
 
 const avatarGroupArr = [
   {
     title: 'Billy Hopkins',
-    img: require('@src/assets/images/portrait/small/avatar-s-9.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
     placement: 'bottom',
     imgHeight: 33,
-    imgWidth: 33
+    imgWidth: 33,
   },
   {
     title: 'Amy Carson',
-    img: require('@src/assets/images/portrait/small/avatar-s-6.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
     placement: 'bottom',
     imgHeight: 33,
-    imgWidth: 33
+    imgWidth: 33,
   },
   {
     title: 'Brandon Miles',
-    img: require('@src/assets/images/portrait/small/avatar-s-8.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
     placement: 'bottom',
     imgHeight: 33,
-    imgWidth: 33
+    imgWidth: 33,
   },
   {
     title: 'Daisy Weber',
-    img: require('@src/assets/images/portrait/small/avatar-s-7.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
     placement: 'bottom',
     imgHeight: 33,
-    imgWidth: 33
+    imgWidth: 33,
   },
   {
     title: 'Jenny Looper',
-    img: require('@src/assets/images/portrait/small/avatar-s-20.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
     placement: 'bottom',
     imgHeight: 33,
-    imgWidth: 33
-  }
-]
+    imgWidth: 33,
+  },
+];
 
 const data = [
   {
@@ -62,7 +58,7 @@ const data = [
         <img className='me-1' src={jsonImg} alt='data.json' height='23' />
         <div className='mb-0'>data.json</div>
       </div>
-    )
+    ),
   },
   {
     title: 'Client Meeting',
@@ -78,7 +74,7 @@ const data = [
           <span>CEO of Infibeam</span>
         </div>
       </div>
-    )
+    ),
   },
   {
     title: 'Create a new project for client',
@@ -86,16 +82,16 @@ const data = [
     color: 'info',
     meta: '2 days ago',
     metaClassName: 'me-1',
-    customContent: <AvatarGroup data={avatarGroupArr} />
+    customContent: <AvatarGroup data={avatarGroupArr} />,
   },
   {
     title: 'Create a new project for client',
     content: 'Add files to new design folder',
     color: 'danger',
     meta: '5 days ago',
-    metaClassName: 'me-1'
-  }
-]
+    metaClassName: 'me-1',
+  },
+];
 
 const UserTimeline = () => {
   return (
@@ -111,7 +107,7 @@ const UserTimeline = () => {
         <Timeline className='ms-50 mb-0' data={data} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default UserTimeline
+export default UserTimeline;

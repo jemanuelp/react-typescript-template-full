@@ -1,11 +1,8 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import { Card, CardBody, CardText, Button, Badge } from 'reactstrap'
+import { Card, CardBody, CardText, Button, Badge } from 'reactstrap';
 
-// ** Images
-import profileImg from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import profileImg from 'src/assets/images/portrait/small/avatar-s-7.jpg';
 
 const CardJob = () => {
   return (
@@ -47,7 +44,7 @@ const CardJob = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardJob
+export default CardJob;

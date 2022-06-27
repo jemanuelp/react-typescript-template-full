@@ -1,36 +1,25 @@
-// ** React Imports
-import { Fragment, useContext } from 'react'
-
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
-
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
-
-// ** Demo Components
-import CardJob from './CardJob'
-import CardChat from './CardChat'
-import CardMedal from './CardMedal'
-import CardMeetup from './CardMeetup'
-import CardPayment from './CardPayment'
-import CardProfile from './CardProfile'
-import CardBusiness from './CardBusiness'
-import CardAppDesign from './CardAppDesign'
-import CardUserTimeline from './CardUserTimeline'
-import CardBrowserState from './CardBrowserState'
-import CardTransactions from './CardTransactions'
-import CardEmployeesTasks from './CardEmployeesTask'
-import CardCongratulations from './CardCongratulations'
-
-// ** Context
-import { ThemeColors } from '@src/utility/context/ThemeColors'
+import { Fragment, useContext } from 'react';
+import { Row, Col } from 'reactstrap';
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
+import CardJob from './CardJob';
+import CardChat from './CardChat';
+import CardMedal from './CardMedal';
+import CardMeetup from './CardMeetup';
+import CardPayment from './CardPayment';
+import CardProfile from './CardProfile';
+import CardBusiness from './CardBusiness';
+import CardAppDesign from './CardAppDesign';
+import CardUserTimeline from './CardUserTimeline';
+import CardBrowserState from './CardBrowserState';
+import CardTransactions from './CardTransactions';
+import CardEmployeesTasks from './CardEmployeesTask';
+import CardCongratulations from './CardCongratulations';
+import { ThemeColors } from '../../../../utility/context/ThemeColors';
 
 const Cards = () => {
-  // ** Context
-  const { colors } = useContext(ThemeColors)
-
-  // ** Vars
-  const trackBgColor = '#e9ecef'
+  const { colors } = useContext(ThemeColors);
+  
+  const trackBgColor = '#e9ecef';
   return (
     <Fragment>
       <Breadcrumbs title='Advanced Cards' data={[{ title: 'Cards' }, { title: 'Advanced Card' }]} />
@@ -80,7 +69,7 @@ const Cards = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;

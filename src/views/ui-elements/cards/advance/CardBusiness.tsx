@@ -58,6 +58,7 @@ const CardBusiness = () => {
         <MoreVertical size={18} className='cursor-pointer' />
       </CardHeader>
       <CardBody>
+        {/* eslint-disable-next-line max-len */}
         <CardText>Here, i focus ona range of items and featured that we use in life without giving them</CardText>
         <h6 className='mb-75'>Basic price is $130</h6>
         <div className='business-items'>{renderOptions()}</div>

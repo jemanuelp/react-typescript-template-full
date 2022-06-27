@@ -1,8 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Button } from 'reactstrap'
-
-// ** Images
-import medal from '@src/assets/images/illustration/badge.svg'
+import { Card, CardBody, CardText, Button } from 'reactstrap';
+import medal from '../../../../../src/assets/images/illustration/badge.svg';
 
 const CardMedal = () => {
   return (
@@ -19,7 +16,7 @@ const CardMedal = () => {
         <img className='congratulation-medal' src={medal} alt='Medal Pic' />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardMedal
+export default CardMedal;

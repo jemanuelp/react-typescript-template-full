@@ -1,12 +1,7 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Reactstrap Imports
-import { Card, CardBody, CardImg, Badge } from 'reactstrap'
-
-// ** Images
-import coverImg from '@src/assets/images/banner/banner-12.jpg'
-import profileImg from '@src/assets/images/portrait/small/avatar-s-9.jpg'
+import Avatar from '../../../../@core/components/avatar';
+import { Card, CardBody, CardImg, Badge } from 'reactstrap';
+import coverImg from '../../../../../src/assets/images/banner/banner-12.jpg';
+import profileImg from '../../../../../src/assets/images/portrait/small/avatar-s-9.jpg';
 
 const CardProfile = () => {
   return (
@@ -40,7 +35,7 @@ const CardProfile = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardProfile
+export default CardProfile;
