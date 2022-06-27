@@ -13,7 +13,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {ICustomers} from "../../../../domains/interfaces/cards/ICustomers";
+import {ICustomers} from "../../../../domains/interfaces/cards-analytics/ICustomers";
 
 const Customers = (props: {
     primary: string,

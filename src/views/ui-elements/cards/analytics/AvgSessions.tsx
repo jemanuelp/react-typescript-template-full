@@ -15,7 +15,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {IAvgSessions} from "../../../../domains/interfaces/cards/IAvgSessions";
+import {IAvgSessions} from "../../../../domains/interfaces/cards-analytics/IAvgSessions";
 
 const AvgSessions = (props: { primary: string }) => {
   const [data, setData] = useState<IAvgSessions | null>(null);
