@@ -1,6 +1,5 @@
 import { PolarArea } from 'react-chartjs-2';
 import { MoreVertical } from 'react-feather';
-
 import {
   Card,
   CardHeader,
@@ -9,11 +8,27 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from 'reactstrap';
 
-const ChartjsPolarAreaChart = props => {
-  const { primary, greyColor, labelColor, yellowColor, infoColorShade, warningColorShade, successColorShade } = props;
+const ChartjsPolarAreaChart = (props: {
+  greyColor: string,
+  labelColor: string,
+  yellowColor: string,
+  primary: string,
+  infoColorShade: string,
+  warningColorShade: string,
+  successColorShade: string,
+}) => {
+  const {
+    primary,
+    greyColor,
+    labelColor,
+    yellowColor,
+    infoColorShade,
+    warningColorShade,
+    successColorShade,
+  } = props;
 
   // ** Chart Options
   const options = {
@@ -23,14 +38,14 @@ const ChartjsPolarAreaChart = props => {
     layout: {
       padding: {
         top: -5,
-        bottom: -45
-      }
+        bottom: -45,
+      },
     },
     scales: {
       r: {
         grid: { display: false },
-        ticks: { display: false }
-      }
+        ticks: { display: false },
+      },
     },
     plugins: {
       legend: {
@@ -39,10 +54,10 @@ const ChartjsPolarAreaChart = props => {
           padding: 25,
           boxWidth: 9,
           color: labelColor,
-          usePointStyle: true
-        }
-      }
-    }
+          usePointStyle: true,
+        },
+      },
+    },
   };
 
   // ** Chart Data
@@ -53,9 +68,16 @@ const ChartjsPolarAreaChart = props => {
         borderWidth: 0,
         label: 'Population (millions)',
         data: [19, 17.5, 15, 13.5, 11, 9],
-        backgroundColor: [primary, yellowColor, warningColorShade, infoColorShade, greyColor, successColorShade]
-      }
-    ]
+        backgroundColor: [
+          primary,
+          yellowColor,
+          warningColorShade,
+          infoColorShade,
+          greyColor,
+          successColorShade,
+        ],
+      },
+    ],
   };
 
   return (

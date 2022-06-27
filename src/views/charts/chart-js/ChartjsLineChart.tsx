@@ -1,8 +1,16 @@
 import { Line } from 'react-chartjs-2';
-
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
 
-const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineChartDanger, lineChartPrimary }) => {
+const ChartjsLineChart = (
+  { labelColor, gridLineColor, warningColorShade, lineChartDanger, lineChartPrimary }:
+        {
+          labelColor: string,
+          gridLineColor: string,
+          warningColorShade: string,
+          lineChartDanger: string,
+          lineChartPrimary: string
+        },
+) => {
   // ** Chart Options
   const options = {
     responsive: true,
@@ -13,8 +21,8 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         ticks: { color: labelColor },
         grid: {
           borderColor: gridLineColor,
-          color: gridLineColor
-        }
+          color: gridLineColor,
+        },
       },
       y: {
         min: 0,
@@ -22,13 +30,13 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         scaleLabel: { display: true },
         ticks: {
           stepSize: 100,
-          color: labelColor
+          color: labelColor,
         },
         grid: {
           borderColor: gridLineColor,
-          color: gridLineColor
-        }
-      }
+          color: gridLineColor,
+        },
+      },
     },
     plugins: {
       legend: {
@@ -38,10 +46,10 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
           boxWidth: 10,
           marginBottom: 25,
           color: labelColor,
-          usePointStyle: true
-        }
-      }
-    }
+          usePointStyle: true,
+        },
+      },
+    },
   };
 
   // ** Chart Data
@@ -60,7 +68,7 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         borderColor: lineChartDanger,
         pointBorderColor: 'transparent',
         backgroundColor: lineChartDanger,
-        pointHoverBackgroundColor: lineChartDanger
+        pointHoverBackgroundColor: lineChartDanger,
       },
       {
         data: [80, 125, 105, 130, 215, 195, 140, 160, 230, 300, 220, 170, 210, 200, 280],
@@ -74,7 +82,7 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         borderColor: lineChartPrimary,
         pointBorderColor: 'transparent',
         backgroundColor: lineChartPrimary,
-        pointHoverBackgroundColor: lineChartPrimary
+        pointHoverBackgroundColor: lineChartPrimary,
       },
       {
         data: [80, 99, 82, 90, 115, 115, 74, 75, 130, 155, 125, 90, 140, 130, 180],
@@ -88,20 +96,20 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         borderColor: warningColorShade,
         backgroundColor: warningColorShade,
         pointBorderColor: warningColorShade,
-        pointHoverBackgroundColor: warningColorShade
-      }
-    ]
+        pointHoverBackgroundColor: warningColorShade,
+      },
+    ],
   };
 
   //** To add spacing between legends and chart
   const plugins = [
     {
-      beforeInit(chart) {
-        chart.legend.afterFit = function () {
+      beforeInit(chart: any) {
+        chart.legend.afterFit = function() {
           this.height += 20;
         };
-      }
-    }
+      },
+    },
   ];
 
   return (

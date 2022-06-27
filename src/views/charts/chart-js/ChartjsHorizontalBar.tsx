@@ -1,10 +1,12 @@
 import { Bar } from 'react-chartjs-2';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
 
-const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info }) => {
+const ChartjsHorizontalBarChart = (
+  { warning, gridLineColor, labelColor, info }:
+      { warning: string, gridLineColor: string, labelColor: string, info: string },
+) => {
   // ** Chart Options
   const options = {
     indexAxis: 'y',
@@ -15,12 +17,12 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
       bar: {
         borderRadius: {
           topRight: 15,
-          bottomRight: 15
-        }
-      }
+          bottomRight: 15,
+        },
+      },
     },
     layout: {
-      padding: { top: -4 }
+      padding: { top: -4 },
     },
     scales: {
       x: {
@@ -28,25 +30,25 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
         grid: {
           drawTicks: false,
           color: gridLineColor,
-          borderColor: 'transparent'
+          borderColor: 'transparent',
         },
-        ticks: { color: labelColor }
+        ticks: { color: labelColor },
       },
       y: {
         grid: {
           display: false,
-          borderColor: gridLineColor
+          borderColor: gridLineColor,
         },
-        ticks: { color: labelColor }
-      }
+        ticks: { color: labelColor },
+      },
     },
     plugins: {
       legend: {
         align: 'end',
         position: 'top',
-        labels: { color: labelColor }
-      }
-    }
+        labels: { color: labelColor },
+      },
+    },
   };
 
   // ** Chart Data
@@ -58,16 +60,16 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
         label: 'Market Data',
         backgroundColor: warning,
         borderColor: 'transparent',
-        data: [710, 350, 580, 460, 120]
+        data: [710, 350, 580, 460, 120],
       },
       {
         maxBarThickness: 15,
         backgroundColor: info,
         label: 'Personal Data',
         borderColor: 'transparent',
-        data: [430, 590, 510, 240, 360]
-      }
-    ]
+        data: [430, 590, 510, 240, 360],
+      },
+    ],
   };
 
   return (
@@ -83,7 +85,10 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
+              defaultDate: [
+                new Date(),
+                new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000)),
+              ],
             }}
           />
         </div>

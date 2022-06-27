@@ -1,10 +1,12 @@
 import { Bar } from 'react-chartjs-2';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-const ChartjsBarChart = ({ success, gridLineColor, labelColor }) => {
+const ChartjsBarChart = (
+  { success, gridLineColor, labelColor }:
+      { success: string, gridLineColor: string, labelColor: string },
+) => {
   // ** Chart Options
   const options = {
     responsive: true,
@@ -14,26 +16,26 @@ const ChartjsBarChart = ({ success, gridLineColor, labelColor }) => {
       x: {
         grid: {
           color: gridLineColor,
-          borderColor: gridLineColor
+          borderColor: gridLineColor,
         },
-        ticks: { color: labelColor }
+        ticks: { color: labelColor },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
           color: gridLineColor,
-          borderColor: gridLineColor
+          borderColor: gridLineColor,
         },
         ticks: {
           stepSize: 100,
-          color: labelColor
-        }
-      }
+          color: labelColor,
+        },
+      },
     },
     plugins: {
-      legend: { display: false }
-    }
+      legend: { display: false },
+    },
   };
 
   // ** Chart data
@@ -51,7 +53,7 @@ const ChartjsBarChart = ({ success, gridLineColor, labelColor }) => {
       '16/12',
       '17/12',
       '18/12',
-      '19/12'
+      '19/12',
     ],
     datasets: [
       {
@@ -59,9 +61,9 @@ const ChartjsBarChart = ({ success, gridLineColor, labelColor }) => {
         backgroundColor: success,
         borderColor: 'transparent',
         borderRadius: { topRight: 15, topLeft: 15 },
-        data: [275, 90, 190, 205, 125, 85, 55, 87, 127, 150, 230, 280, 190]
-      }
-    ]
+        data: [275, 90, 190, 205, 125, 85, 55, 87, 127, 150, 230, 280, 190],
+      },
+    ],
   };
 
   return (
@@ -74,7 +76,10 @@ const ChartjsBarChart = ({ success, gridLineColor, labelColor }) => {
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
+              defaultDate: [
+                new Date(),
+                new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000)),
+              ],
             }}
           />
         </div>

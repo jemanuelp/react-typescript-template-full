@@ -1,9 +1,16 @@
 import { Bubble } from 'react-chartjs-2';
 import { ArrowDown } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody, Badge } from 'reactstrap';
 
-const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLineColor }) => {
+const ChartjsRadarChart = (
+  { labelColor, primaryColorShade, yellowColor, gridLineColor }:
+        {
+          labelColor: string,
+          primaryColorShade: string,
+          yellowColor: string,
+          gridLineColor: string
+        },
+) => {
   // ** Chart Options
   const options = {
     responsive: true,
@@ -14,29 +21,29 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
         max: 140,
         grid: {
           color: gridLineColor,
-          borderColor: gridLineColor
+          borderColor: gridLineColor,
         },
         ticks: {
           stepSize: 10,
-          color: labelColor
-        }
+          color: labelColor,
+        },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
           color: gridLineColor,
-          borderColor: gridLineColor
+          borderColor: gridLineColor,
         },
         ticks: {
           stepSize: 100,
-          color: labelColor
-        }
-      }
+          color: labelColor,
+        },
+      },
     },
     plugins: {
-      legend: { display: false }
-    }
+      legend: { display: false },
+    },
   };
 
   // ** Chart data
@@ -60,8 +67,8 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
           { x: 100, y: 310, r: 5 },
           { x: 110, y: 240, r: 5 },
           { x: 120, y: 270, r: 7 },
-          { x: 130, y: 300, r: 6 }
-        ]
+          { x: 130, y: 300, r: 6 },
+        ],
       },
       {
         label: 'Dataset 2',
@@ -80,10 +87,10 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
           { x: 100, y: 220, r: 7 },
           { x: 120, y: 230, r: 4 },
           { x: 110, y: 320, r: 15 },
-          { x: 130, y: 330, r: 7 }
-        ]
-      }
-    ]
+          { x: 130, y: 330, r: 7 },
+        ],
+      },
+    ],
   };
 
   return (

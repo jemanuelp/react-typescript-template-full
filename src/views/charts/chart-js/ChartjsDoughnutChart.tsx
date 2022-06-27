@@ -1,25 +1,31 @@
 import { Doughnut } from 'react-chartjs-2';
 import { Monitor, Tablet, ArrowDown, ArrowUp } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor, primary }) => {
+const ChartjsRadarChart = (
+  { tooltipShadow, successColorShade, warningLightColor, primary }:
+        {
+          tooltipShadow: string,
+          successColorShade: string,
+          warningLightColor: string,
+          primary: string
+        },
+) => {
   // ** Chart Options
   const options = {
     maintainAspectRatio: false,
     cutout: 60,
     animation: {
       resize: {
-        duration: 500
-      }
+        duration: 500,
+      },
     },
     plugins: {
       legend: { display: false },
       tooltips: {
         callbacks: {
-          label(context) {
-            console.log(context);
-            const label = context.label || '';
+          label(context: any) {
+            let label = context.label || '';
             if (label) {
               label += 'Ronak: ';
             }
@@ -27,7 +33,7 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
               label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
             }
             return label;
-          }
+          },
         },
         // Updated default tooltip UI
         shadowOffsetX: 1,
@@ -36,9 +42,9 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
         shadowColor: tooltipShadow,
         backgroundColor: '#fff',
         titleFontColor: '#000',
-        bodyFontColor: '#000'
-      }
-    }
+        bodyFontColor: '#000',
+      },
+    },
   };
 
   // ** Chart data
@@ -49,9 +55,9 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
         data: [10, 10, 80],
         backgroundColor: [successColorShade, warningLightColor, primary],
         borderWidth: 0,
-        pointStyle: 'rectRounded'
-      }
-    ]
+        pointStyle: 'rectRounded',
+      },
+    ],
   };
 
   return (

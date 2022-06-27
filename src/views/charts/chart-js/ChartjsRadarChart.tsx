@@ -1,15 +1,16 @@
 import { useRef, useState, useEffect } from 'react';
-
 import { Radar } from 'react-chartjs-2';
-
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
-  const [chartData, setChartData] = useState({
-    datasets: []
+const ChartjsRadarChart = (
+  { gridLineColor, labelColor }:
+        { gridLineColor: string, labelColor: string },
+) => {
+  const [chartData, setChartData] = useState<{ labels: string[], datasets: any[] }>({
+    labels: [],
+    datasets: [],
   });
-  
-  const chartRef = useRef(null);
+  const chartRef = useRef<any | null>(null);
 
   // ** Chart Options
   const options = {
@@ -17,29 +18,29 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
     maintainAspectRatio: false,
     animation: { duration: 500 },
     layout: {
-      padding: { top: -20 }
+      padding: { top: -20 },
     },
     scales: {
       r: {
         ticks: {
           display: false,
           maxTicksLimit: 1,
-          color: labelColor
+          color: labelColor,
         },
         grid: { color: gridLineColor },
         pointLabels: { color: labelColor },
-        angleLines: { color: gridLineColor }
-      }
+        angleLines: { color: gridLineColor },
+      },
     },
     plugins: {
       legend: {
         position: 'top',
         labels: {
           padding: 25,
-          color: labelColor
-        }
-      }
-    }
+          color: labelColor,
+        },
+      },
+    },
   };
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
       gradientRed.addColorStop(0, 'rgba(255,161,161, 0.9)');
       gradientRed.addColorStop(1, 'rgba(255,161,161, 0.8)');
 
-      const chartData = {
+      const chartData: { labels: string[], datasets: any[] } = {
         labels: ['STA', 'STR', 'AGI', 'VIT', 'CHA', 'INT'],
         datasets: [
           {
@@ -64,7 +65,7 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
             backgroundColor: gradientRed,
             data: [25, 59, 90, 81, 60, 82],
             pointBorderColor: 'transparent',
-            pointBackgroundColor: 'transparent'
+            pointBackgroundColor: 'transparent',
           },
           {
             fill: true,
@@ -73,9 +74,9 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
             backgroundColor: gradientBlue,
             data: [40, 100, 40, 90, 40, 90],
             pointBorderColor: 'transparent',
-            pointBackgroundColor: 'transparent'
-          }
-        ]
+            pointBackgroundColor: 'transparent',
+          },
+        ],
       };
 
       setChartData(chartData);
@@ -85,12 +86,12 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
   //** To add spacing between legends and chart
   const plugins = [
     {
-      beforeInit(chart) {
-        chart.legend.afterFit = function () {
+      beforeInit(chart: any) {
+        chart.legend.afterFit = function() {
           this.height += 20;
         };
-      }
-    }
+      },
+    },
   ];
 
   return (
@@ -100,7 +101,13 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
       </CardHeader>
       <CardBody>
         <div style={{ height: '355px' }}>
-          <Radar ref={chartRef} data={chartData} options={options} height={355} plugins={plugins} />
+          <Radar
+            ref={chartRef}
+            data={chartData}
+            options={options}
+            height={355}
+            plugins={plugins}
+          />
         </div>
       </CardBody>
     </Card>
