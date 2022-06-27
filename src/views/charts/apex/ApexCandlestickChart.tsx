@@ -2,6 +2,7 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexCandleStickChart = (
     {
@@ -15,7 +16,7 @@ const ApexCandleStickChart = (
     },
 ) => {
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {

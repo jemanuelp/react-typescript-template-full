@@ -1,5 +1,6 @@
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 // ** heat chart data generator
 function generateDataHeat(count: number, yrange: {
@@ -23,7 +24,7 @@ function generateDataHeat(count: number, yrange: {
 
 const ApexHeatmapChart = () => {
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {

@@ -2,6 +2,7 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import {Calendar} from 'react-feather';
 import {Card, CardHeader, CardTitle, CardBody} from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexColumnCharts = ({direction}: { direction: string }) => {
     const columnColors = {
@@ -11,7 +12,7 @@ const ApexColumnCharts = ({direction}: { direction: string }) => {
     };
 
     // ** Chart Options
-    const options = {
+    const options: ApexOptions = {
         chart: {
             height: 400,
             type: 'bar',
@@ -41,7 +42,7 @@ const ApexColumnCharts = ({direction}: { direction: string }) => {
         },
         legend: {
             position: 'top',
-            horizontalAlign: 'start',
+            horizontalAlign: 'left',
         },
         colors: [columnColors.series1, columnColors.series2],
         stroke: {

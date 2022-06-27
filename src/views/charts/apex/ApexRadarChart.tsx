@@ -1,5 +1,6 @@
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexRadiarChart = () => {
   const donutColors = {
@@ -8,7 +9,7 @@ const ApexRadiarChart = () => {
   };
 
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       toolbar: {
         show: false,

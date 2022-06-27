@@ -2,10 +2,11 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexBarChart = ({ info, direction } : { direction:string, info:string }) => {
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {
@@ -26,7 +27,7 @@ const ApexBarChart = ({ info, direction } : { direction:string, info:string }) =
         },
       },
     },
-    colors: info,
+    colors: [info],
     dataLabels: {
       enabled: false,
     },

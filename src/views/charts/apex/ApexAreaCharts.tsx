@@ -2,6 +2,7 @@ import Chart from 'react-apexcharts';
 import Flatpickr from 'react-flatpickr';
 import { Calendar } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 const areaColors = {
   series3: '#a4f8cd',
   series2: '#60f2ca',
@@ -10,7 +11,7 @@ const areaColors = {
 
 const ApexAreaCharts = ({ direction }: { direction: string }) => {
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {
@@ -26,7 +27,7 @@ const ApexAreaCharts = ({ direction }: { direction: string }) => {
     },
     legend: {
       position: 'top',
-      horizontalAlign: 'start',
+      horizontalAlign: 'left',
     },
     grid: {
       xaxis: {

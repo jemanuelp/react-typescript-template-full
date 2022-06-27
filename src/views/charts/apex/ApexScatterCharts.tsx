@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardTitle, CardBody, ButtonGroup, Button } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexScatterCharts = (
     {
@@ -17,7 +18,7 @@ const ApexScatterCharts = (
   const [active, setActive] = useState('daily');
 
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     chart: {
       zoom: {
         enabled: true,
@@ -37,7 +38,7 @@ const ApexScatterCharts = (
     },
     legend: {
       position: 'top',
-      horizontalAlign: 'start',
+      horizontalAlign: 'left',
     },
     colors: [warning, primary, success],
 
@@ -55,7 +56,7 @@ const ApexScatterCharts = (
   };
 
   // ** Chart Series
-  const series = [
+  const series: ApexOptions['series'] = [
     {
       name: 'Angular',
       data: [

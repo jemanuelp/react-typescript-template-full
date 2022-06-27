@@ -1,5 +1,6 @@
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
+import {ApexOptions} from "apexcharts";
 
 const ApexRadialbar = () => {
   const donutColors = {
@@ -11,11 +12,10 @@ const ApexRadialbar = () => {
   };
 
   // ** Chart Options
-  const options = {
+  const options: ApexOptions = {
     colors: [donutColors.series1, donutColors.series2, donutColors.series4],
     plotOptions: {
       radialBar: {
-        size: 185,
         hollow: {
           size: '25%',
         },
