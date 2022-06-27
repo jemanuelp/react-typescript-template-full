@@ -1,19 +1,17 @@
-// ** Third Party Components
-import Chart from 'react-apexcharts'
-import { MoreVertical } from 'react-feather'
-
-// ** Reactstrap Imports
+import Chart, {Props} from 'react-apexcharts';
+import {MoreVertical} from 'react-feather';
 import {
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
-  CardHeader,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
-  UncontrolledDropdown
-} from 'reactstrap'
+    Card,
+    CardBody,
+    CardText,
+    CardTitle,
+    CardHeader,
+    DropdownMenu,
+    DropdownItem,
+    DropdownToggle,
+    UncontrolledDropdown,
+} from 'reactstrap';
+import {CardBrowserStateProptypes} from "../../../../domains/proptypes/CardBrowserStateProptypes";
 
 const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => {
     const statesArr = [
@@ -268,27 +266,27 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
         });
     };
 
-  return (
-    <Card className='card-browser-states'>
-      <CardHeader>
-        <div>
-          <CardTitle tag='h4'>Browser States</CardTitle>
-          <CardText className='font-small-2'>Counter August 2020</CardText>
-        </div>
-        <UncontrolledDropdown className='chart-dropdown'>
-          <DropdownToggle color='' className='bg-transparent btn-sm border-0 p-50'>
-            <MoreVertical size={18} className='cursor-pointer' />
-          </DropdownToggle>
-          <DropdownMenu end>
-            <DropdownItem className='w-100'>Last 28 Days</DropdownItem>
-            <DropdownItem className='w-100'>Last Month</DropdownItem>
-            <DropdownItem className='w-100'>Last Year</DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      </CardHeader>
-      <CardBody>{renderStates()}</CardBody>
-    </Card>
-  )
-}
+    return (
+        <Card className='card-browser-states'>
+            <CardHeader>
+                <div>
+                    <CardTitle tag='h4'>Browser States</CardTitle>
+                    <CardText className='font-small-2'>Counter August 2020</CardText>
+                </div>
+                <UncontrolledDropdown className='chart-dropdown'>
+                    <DropdownToggle color='' className='bg-transparent btn-sm border-0 p-50'>
+                        <MoreVertical size={18} className='cursor-pointer'/>
+                    </DropdownToggle>
+                    <DropdownMenu end>
+                        <DropdownItem className='w-100'>Last 28 Days</DropdownItem>
+                        <DropdownItem className='w-100'>Last Month</DropdownItem>
+                        <DropdownItem className='w-100'>Last Year</DropdownItem>
+                    </DropdownMenu>
+                </UncontrolledDropdown>
+            </CardHeader>
+            <CardBody>{renderStates()}</CardBody>
+        </Card>
+    );
+};
 
-export default CardBrowserState
+export default CardBrowserState;

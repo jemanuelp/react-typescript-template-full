@@ -1,8 +1,5 @@
-// ** Icons Imports
-import { MoreVertical } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label, Badge, Button } from 'reactstrap'
+import { MoreVertical } from 'react-feather';
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label, Badge, Button } from 'reactstrap';
 
 const CardBusiness = () => {
   const dataArr = [
@@ -10,28 +7,28 @@ const CardBusiness = () => {
       id: 'option-1',
       title: 'Option #1',
       badgeColor: 'light-success',
-      amount: '+$39'
+      amount: '+$39',
     },
     {
       id: 'option-2',
       title: 'Option #2',
       badgeColor: 'light-primary',
       amount: '+$85',
-      checked: true
+      checked: true,
     },
     {
       id: 'option-3',
       title: 'Option #3',
       badgeColor: 'light-success',
-      amount: '+$199'
+      amount: '+$199',
     },
     {
       id: 'option-4',
       title: 'Option #4',
       badgeColor: 'light-success',
-      amount: '+$459'
-    }
-  ]
+      amount: '+$459',
+    },
+  ];
 
   const renderOptions = () => {
     return dataArr.map(item => {
@@ -47,9 +44,9 @@ const CardBusiness = () => {
             <Badge color={item.badgeColor}>{item.amount}</Badge>
           </div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card className='business-card'>
@@ -67,7 +64,7 @@ const CardBusiness = () => {
         </Button>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardBusiness
+export default CardBusiness;

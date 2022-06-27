@@ -1,53 +1,48 @@
-// ** Third Party Components
-import classnames from 'classnames'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Reactstrap Imports
-import { Card, CardTitle, CardBody, CardText, Badge, Button } from 'reactstrap'
+import classnames from 'classnames';
+import Avatar from '../../../../@core/components/avatar';
+import { Card, CardTitle, CardBody, CardText, Badge, Button } from 'reactstrap';
 
 const CardAppDesign = () => {
   const avatarArr = [
     {
-      img: require('@src/assets/images/portrait/small/avatar-s-9.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
       imgHeight: 34,
-      imgWidth: 34
+      imgWidth: 34,
     },
     {
       content: 'PI',
-      color: 'light-danger'
+      color: 'light-danger',
     },
     {
-      img: require('@src/assets/images/portrait/small/avatar-s-14.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-14.jpg').default,
       imgHeight: 34,
-      imgWidth: 34
+      imgWidth: 34,
     },
     {
-      img: require('@src/assets/images/portrait/small/avatar-s-7.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
       imgHeight: 34,
-      imgWidth: 34
+      imgWidth: 34,
     },
     {
       content: 'AL',
-      color: 'light-secondary'
-    }
-  ]
+      color: 'light-secondary',
+    },
+  ];
 
   const designPlanningArr = [
     {
       title: 'Due Date',
-      subtitle: '12 Apr, 21'
+      subtitle: '12 Apr, 21',
     },
     {
       title: 'Budget',
-      subtitle: '$49251.91'
+      subtitle: '$49251.91',
     },
     {
       title: 'Cost',
-      subtitle: '$840.99'
-    }
-  ]
+      subtitle: '$840.99',
+    },
+  ];
 
   return (
     <Card className='card-app-design'>
@@ -68,7 +63,7 @@ const CardAppDesign = () => {
         <div className='design-group pt-25'>
           <h6 className='section-label'>Members</h6>
           {avatarArr.map((obj, index) => {
-            return <Avatar key={index} className={classnames({ 'me-75': index !== avatarArr.length - 1 })} {...obj} />
+            return <Avatar key={index} className={classnames({ 'me-75': index !== avatarArr.length - 1 })} {...obj} />;
           })}
         </div>
         <div className='design-planning-wrapper mb-2 py-75'>
@@ -84,7 +79,7 @@ const CardAppDesign = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardAppDesign
+export default CardAppDesign;

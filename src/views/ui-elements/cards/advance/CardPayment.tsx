@@ -1,8 +1,5 @@
-// ** Third Party Components
-import Cleave from 'cleave.js/react'
-
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Form, Label, Input, Button, Row, Col } from 'reactstrap'
+import Cleave from 'cleave.js/react';
+import { Card, CardHeader, CardTitle, CardBody, Form, Label, Input, Button, Row, Col } from 'reactstrap';
 
 const CardPayment = () => {
   return (
@@ -57,7 +54,7 @@ const CardPayment = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardPayment
+export default CardPayment;

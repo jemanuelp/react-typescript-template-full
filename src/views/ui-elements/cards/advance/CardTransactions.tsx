@@ -1,11 +1,7 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from '../../../../@core/components/avatar';
+import * as Icon from 'react-feather';
 
-// ** Icons Imports
-import * as Icon from 'react-feather'
-
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const CardTransactions = () => {
   const transactionsArr = [
@@ -15,21 +11,21 @@ const CardTransactions = () => {
       subtitle: 'Starbucks',
       amount: '- $74',
       Icon: Icon['Pocket'],
-      down: true
+      down: true,
     },
     {
       title: 'Bank Transfer',
       color: 'light-success',
       subtitle: 'Add Money',
       amount: '+ $480',
-      Icon: Icon['Check']
+      Icon: Icon['Check'],
     },
     {
       title: 'Paypal',
       color: 'light-danger',
       subtitle: 'Add Money',
       amount: '+ $590',
-      Icon: Icon['DollarSign']
+      Icon: Icon['DollarSign'],
     },
     {
       title: 'Mastercard',
@@ -37,16 +33,16 @@ const CardTransactions = () => {
       subtitle: 'Ordered Food',
       amount: '- $12',
       Icon: Icon['CreditCard'],
-      down: true
+      down: true,
     },
     {
       title: 'Transfer',
       color: 'light-info',
       subtitle: 'Refund',
       amount: '+ $98',
-      Icon: Icon['TrendingUp']
-    }
-  ]
+      Icon: Icon['TrendingUp'],
+    },
+  ];
 
   const renderTransactions = () => {
     return transactionsArr.map(item => {
@@ -59,11 +55,13 @@ const CardTransactions = () => {
               <small>{item.subtitle}</small>
             </div>
           </div>
-          <div className={`fw-bolder ${item.down ? 'text-danger' : 'text-success'}`}>{item.amount}</div>
+          <div className={`fw-bolder ${item.down
+? 'text-danger'
+: 'text-success'}`}>{item.amount}</div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card className='card-transaction'>
@@ -73,7 +71,7 @@ const CardTransactions = () => {
       </CardHeader>
       <CardBody>{renderTransactions()}</CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default CardTransactions
+export default CardTransactions;
