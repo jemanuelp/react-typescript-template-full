@@ -1,17 +1,13 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
-// ** Utils
-import { selectThemeColors } from '@utils'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Third Party Components
-import Select from 'react-select'
-import { useForm, Controller } from 'react-hook-form'
-import { Copy, MoreVertical, Edit2, Trash2 } from 'react-feather'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Reactstrap Imports
+import Select from 'react-select';
+import { useForm, Controller } from 'react-hook-form';
+import { Copy, MoreVertical, Edit2, Trash2 } from 'react-feather';
+
 import {
   Row,
   Col,
@@ -30,10 +26,10 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 // ** Illustrations
-import illustration from '@src/assets/images/illustration/pricing-Illustration.svg'
+import illustration from 'src/assets/images/illustration/pricing-Illustration.svg';
 
 const data = [
   {
@@ -54,7 +50,7 @@ const data = [
     key: '2e915e59-3105-47f2-8838-6e46bf83b711',
     date: 'Created on 28 Apr 2020, 12:21 GTM+4:10'
   }
-]
+];
 
 const keyOptions = [
   { value: 'full-control', label: 'Full Control' },
@@ -63,30 +59,30 @@ const keyOptions = [
   { value: 'list-folder', label: 'List Folder Contents' },
   { value: 'read-only', label: 'Read Only' },
   { value: 'read-write', label: 'Read Write' }
-]
+];
 
 const defaultValues = {
   apiKeyName: ''
-}
+};
 
 const ApiKey = () => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (data.apiKeyName.length) {
-      return null
+      return null;
     } else {
       setError('apiKeyName', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -187,7 +183,7 @@ const ApiKey = () => {
         </CardBody>
       </Card>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ApiKey
+export default ApiKey;

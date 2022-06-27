@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Row, Col, CardText } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Row, Col, CardText } from 'reactstrap';
 
 const DescriptionListtext = () => {
   return (
@@ -73,6 +73,6 @@ const DescriptionListtext = () => {
         </dl>
       </CardBody>
     </Card>
-  )
-}
-export default DescriptionListtext
+  );
+};
+export default DescriptionListtext;

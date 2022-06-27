@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-// ** Icons Imports
-import { ChevronLeft, ChevronRight } from 'react-feather'
+import { ChevronLeft, ChevronRight } from 'react-feather';
 
 const PaginationWarning = () => {
   return (
@@ -53,6 +51,6 @@ const PaginationWarning = () => {
         </PaginationLink>
       </PaginationItem>
     </Pagination>
-  )
-}
-export default PaginationWarning
+  );
+};
+export default PaginationWarning;

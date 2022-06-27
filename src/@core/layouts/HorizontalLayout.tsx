@@ -67,8 +67,7 @@ const HorizontalLayout = (props: any) => {
         });
         return () => cleanup();
     }, []);
-
-    // ** Vars
+    
     const footerClasses = {
         static: 'footer-static',
         sticky: 'footer-fixed',
@@ -82,7 +81,9 @@ const HorizontalLayout = (props: any) => {
     };
 
     const navbarClasses = {
-        floating: contentWidth === 'boxed' ? 'floating-nav container-xxl' : 'floating-nav',
+        floating: contentWidth === 'boxed'
+? 'floating-nav container-xxl'
+: 'floating-nav',
         sticky: 'fixed-top'
     };
 
@@ -96,13 +97,17 @@ const HorizontalLayout = (props: any) => {
         <div
             className={classnames(`wrapper horizontal-layout horizontal-menu 
         ${navbarWrapperClasses[
-                    navbarType === NavbarLayoutTypes.hidden ? NavbarLayoutTypes.floating : navbarType
+                    navbarType === NavbarLayoutTypes.hidden
+? NavbarLayoutTypes.floating
+: navbarType
                     ] || 'navbar-floating'} 
         ${
                     footerClasses[footerType] || 'footer-static'
                 } menu-expanded`
             )}
-            {...(isHidden ? {'data-col': '1-column'} : {})}
+            {...(isHidden
+? {'data-col': '1-column'}
+: {})}
         >
             <Navbar
                 expand='lg'
@@ -127,7 +132,9 @@ const HorizontalLayout = (props: any) => {
                 )}
 
                 <div className='navbar-container d-flex content'>
-                    {navbar ? navbar({skin, setSkin}) : <NavbarComponent skin={skin} setSkin={setSkin}/>}
+                    {navbar
+? navbar({skin, setSkin})
+: <NavbarComponent skin={skin} setSkin={setSkin}/>}
                 </div>
             </Navbar>
             {!isHidden ? (
@@ -140,9 +147,13 @@ const HorizontalLayout = (props: any) => {
                         className={classnames(`header-navbar navbar-horizontal navbar-shadow menu-border`,
                             {
                               [
-                                  navbarClasses[(navbarType === NavbarLayoutTypes.floating || navbarType === NavbarLayoutTypes.sticky) ? navbarType : NavbarLayoutTypes.floating]
+                                  navbarClasses[(navbarType === NavbarLayoutTypes.floating || navbarType === NavbarLayoutTypes.sticky)
+? navbarType
+: NavbarLayoutTypes.floating]
                                   ]: navbarType !== 'static',
-                                'floating-nav': (((navbarType === NavbarLayoutTypes.floating || navbarType === NavbarLayoutTypes.sticky) ? navbarType : NavbarLayoutTypes.floating)
+                                'floating-nav': (((navbarType === NavbarLayoutTypes.floating || navbarType === NavbarLayoutTypes.sticky)
+? navbarType
+: NavbarLayoutTypes.floating)
                                     && navbarType !== 'static') || navbarType === 'floating'
                             })}>
                         {
@@ -153,7 +164,8 @@ const HorizontalLayout = (props: any) => {
             ) : null}
 
             {children}
-            {themeConfig.layout.customizer === true ? (
+            {themeConfig.layout.customizer === true
+? (
                 <Customizer
                     skin={skin}
                     isRTL={isRtl}
@@ -174,16 +186,20 @@ const HorizontalLayout = (props: any) => {
                     setNavbarColor={setNavbarColor}
                     setContentWidth={setContentWidth}
                 />
-            ) : null}
+            )
+: null}
             <footer
                 className={classnames(`footer footer-light ${footerClasses[footerType] || 'footer-static'}`, {
                     'd-none': footerType === 'hidden'
                 })}
             >
-                {footer ? footer : <FooterComponent footerType={footerType} footerClasses={footerClasses}/>}
+                {footer
+? footer
+: <FooterComponent footerType={footerType} footerClasses={footerClasses}/>}
             </footer>
 
-            {themeConfig.layout.scrollTop === true ? (
+            {themeConfig.layout.scrollTop === true
+? (
                 <div className='scroll-to-top'>
                     <ScrollToTop showOffset={300} className={'scroll-top d-block'}>
                         <Button className='btn-icon' color='primary'>
@@ -191,7 +207,8 @@ const HorizontalLayout = (props: any) => {
                         </Button>
                     </ScrollToTop>
                 </div>
-            ) : null}
+            )
+: null}
         </div>
     );
 };

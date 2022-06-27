@@ -1,8 +1,6 @@
-// ** Third Party Components
-import Nouislider from 'nouislider-react'
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const SliderScalePips = ({ direction }) => {
   return (
@@ -29,7 +27,7 @@ const SliderScalePips = ({ direction }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderScalePips
+export default SliderScalePips;

@@ -1,5 +1,4 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
 const DividerPosition = () => {
   return (
@@ -24,6 +23,6 @@ const DividerPosition = () => {
         <div className='divider-text'>End</div>
       </div>
     </Fragment>
-  )
-}
-export default DividerPosition
+  );
+};
+export default DividerPosition;

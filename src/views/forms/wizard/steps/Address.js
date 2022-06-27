@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Icons Imports
-import { ArrowLeft, ArrowRight } from 'react-feather'
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Input, Form, Button } from 'reactstrap'
+import { Label, Row, Col, Input, Form, Button } from 'reactstrap';
 
 const Address = ({ stepper, type }) => {
   return (
@@ -60,7 +57,7 @@ const Address = ({ stepper, type }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Address
+export default Address;

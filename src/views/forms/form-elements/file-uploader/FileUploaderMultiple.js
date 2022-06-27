@@ -1,44 +1,41 @@
-// ** React Imports
-import { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Button, ListGroup, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Button, ListGroup, ListGroupItem } from 'reactstrap';
 
 // ** Third Party Imports
-import { useDropzone } from 'react-dropzone'
-import { FileText, X, DownloadCloud } from 'react-feather'
+import { useDropzone } from 'react-dropzone';
+import { FileText, X, DownloadCloud } from 'react-feather';
 
 const FileUploaderMultiple = () => {
-  // ** State
-  const [files, setFiles] = useState([])
+  const [files, setFiles] = useState([]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: acceptedFiles => {
-      setFiles([...files, ...acceptedFiles.map(file => Object.assign(file))])
+      setFiles([...files, ...acceptedFiles.map(file => Object.assign(file))]);
     }
-  })
+  });
 
   const renderFilePreview = file => {
     if (file.type.startsWith('image')) {
-      return <img className='rounded' alt={file.name} src={URL.createObjectURL(file)} height='28' width='28' />
+      return <img className='rounded' alt={file.name} src={URL.createObjectURL(file)} height='28' width='28' />;
     } else {
-      return <FileText size='28' />
+      return <FileText size='28' />;
     }
-  }
+  };
 
   const handleRemoveFile = file => {
-    const uploadedFiles = files
-    const filtered = uploadedFiles.filter(i => i.name !== file.name)
-    setFiles([...filtered])
-  }
+    const uploadedFiles = files;
+    const filtered = uploadedFiles.filter(i => i.name !== file.name);
+    setFiles([...filtered]);
+  };
 
   const renderFileSize = size => {
     if (Math.round(size / 100) / 10 > 1000) {
-      return `${(Math.round(size / 100) / 10000).toFixed(1)} mb`
+      return `${(Math.round(size / 100) / 10000).toFixed(1)} mb`;
     } else {
-      return `${(Math.round(size / 100) / 10).toFixed(1)} kb`
+      return `${(Math.round(size / 100) / 10).toFixed(1)} kb`;
     }
-  }
+  };
 
   const fileList = files.map((file, index) => (
     <ListGroupItem key={`${file.name}-${index}`} className='d-flex align-items-center justify-content-between'>
@@ -53,11 +50,11 @@ const FileUploaderMultiple = () => {
         <X size={14} />
       </Button>
     </ListGroupItem>
-  ))
+  ));
 
   const handleRemoveAllFiles = () => {
-    setFiles([])
-  }
+    setFiles([]);
+  };
 
   return (
     <Card>
@@ -92,7 +89,7 @@ const FileUploaderMultiple = () => {
         ) : null}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default FileUploaderMultiple
+export default FileUploaderMultiple;

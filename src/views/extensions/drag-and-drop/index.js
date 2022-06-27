@@ -1,22 +1,17 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import DndClone from './DndClone'
-import DndCards from './DndCards'
-import DndHandle from './DndHandle'
-import DndMultiple from './DndMultiple'
-import DndMultiDrag from './DndMultiDrag'
-import DndListGroup from './DndListGroup'
+import DndClone from './DndClone';
+import DndCards from './DndCards';
+import DndHandle from './DndHandle';
+import DndMultiple from './DndMultiple';
+import DndMultiDrag from './DndMultiDrag';
+import DndListGroup from './DndListGroup';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Styles
-import '@styles/react/libs/drag-and-drop/drag-and-drop.scss'
+import 'src/@core/scss/react/libs/drag-and-drop/drag-and-drop.scss';
 
 const DragAndDrop = () => {
   return (
@@ -47,7 +42,7 @@ const DragAndDrop = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default DragAndDrop
+export default DragAndDrop;

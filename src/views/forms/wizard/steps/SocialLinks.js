@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Icons Imports
-import { ArrowLeft } from 'react-feather'
+import { ArrowLeft } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Form, Input, Button } from 'reactstrap'
+import { Label, Row, Col, Form, Input, Button } from 'reactstrap';
 
 const SocialLinks = ({ stepper, type }) => {
   return (
@@ -54,7 +51,7 @@ const SocialLinks = ({ stepper, type }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SocialLinks
+export default SocialLinks;

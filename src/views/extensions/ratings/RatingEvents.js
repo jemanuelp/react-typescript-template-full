@@ -1,12 +1,10 @@
-// ** Third Party Components
-import Rating from 'react-rating'
-import { Star } from 'react-feather'
+import Rating from 'react-rating';
+import { Star } from 'react-feather';
 
 // ** Demo Component
-import RatingsHover from './RatingsHover'
+import RatingsHover from './RatingsHover';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap';
 
 const RatingEvents = ({ filledColor, dir }) => {
   return (
@@ -32,7 +30,7 @@ const RatingEvents = ({ filledColor, dir }) => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RatingEvents
+export default RatingEvents;

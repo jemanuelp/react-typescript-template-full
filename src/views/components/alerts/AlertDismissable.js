@@ -1,12 +1,9 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+import { Alert } from 'reactstrap';
 
 const AlertDismissable = () => {
-  // ** State
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(true);
 
   return (
     <div className='demo-spacing-0'>
@@ -16,6 +13,6 @@ const AlertDismissable = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default AlertDismissable
+  );
+};
+export default AlertDismissable;

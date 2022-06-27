@@ -1,24 +1,19 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, CardHeader, CardTitle } from 'reactstrap'
+import { Row, Col, Card, CardBody, CardHeader, CardTitle } from 'reactstrap';
 
-// ** Demo Components
-import PickerTime from './PickerTime'
-import PickerRange from './PickerRange'
-import PickerInline from './PickerInline'
-import PickerDefault from './PickerDefault'
-import PickerDateTime from './PickerDateTime'
-import PickerMultipleDates from './PickerMultipleDates'
-import PickerHumanFriendly from './PickerHumanFriendly'
-import PickerDisabledRange from './PickerDisabledRange'
+import PickerTime from './PickerTime';
+import PickerRange from './PickerRange';
+import PickerInline from './PickerInline';
+import PickerDefault from './PickerDefault';
+import PickerDateTime from './PickerDateTime';
+import PickerMultipleDates from './PickerMultipleDates';
+import PickerHumanFriendly from './PickerHumanFriendly';
+import PickerDisabledRange from './PickerDisabledRange';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Styles
-import '@styles/react/libs/flatpickr/flatpickr.scss'
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 
 const Pickers = () => {
   return (
@@ -58,6 +53,6 @@ const Pickers = () => {
         </CardBody>
       </Card>
     </Fragment>
-  )
-}
-export default Pickers
+  );
+};
+export default Pickers;

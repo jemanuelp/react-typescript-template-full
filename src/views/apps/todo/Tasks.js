@@ -1,19 +1,15 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
 // ** Blank Avatar Image
-import blankAvatar from '@src/assets/images/avatars/avatar-blank.png'
+import blankAvatar from 'src/assets/images/avatars/avatar-blank.png';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { ReactSortable } from 'react-sortablejs'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Menu, Search, MoreVertical } from 'react-feather'
+import classnames from 'classnames';
+import { ReactSortable } from 'react-sortablejs';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Menu, Search, MoreVertical } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Input,
   Badge,
@@ -23,10 +19,9 @@ import {
   InputGroupText,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const Tasks = props => {
-  // ** Props
   const {
     query,
     tasks,
@@ -40,23 +35,23 @@ const Tasks = props => {
     reOrderTasks,
     handleTaskSidebar,
     handleMainSidebar
-  } = props
+  } = props;
 
   // ** Function to selectTask on click
   const handleTaskClick = obj => {
-    dispatch(selectTask(obj))
-    handleTaskSidebar()
-  }
+    dispatch(selectTask(obj));
+    handleTaskSidebar();
+  };
 
   // ** Returns avatar color based on task tag
   const resolveAvatarVariant = tags => {
-    if (tags.includes('high')) return 'light-primary'
-    if (tags.includes('medium')) return 'light-warning'
-    if (tags.includes('low')) return 'light-success'
-    if (tags.includes('update')) return 'light-danger'
-    if (tags.includes('team')) return 'light-info'
-    return 'light-primary'
-  }
+    if (tags.includes('high')) return 'light-primary';
+    if (tags.includes('medium')) return 'light-warning';
+    if (tags.includes('low')) return 'light-success';
+    if (tags.includes('update')) return 'light-danger';
+    if (tags.includes('team')) return 'light-info';
+    return 'light-primary';
+  };
 
   // ** Renders task tags
   const renderTags = arr => {
@@ -66,27 +61,26 @@ const Tasks = props => {
       medium: 'light-warning',
       high: 'light-danger',
       update: 'light-info'
-    }
+    };
 
     return arr.map(item => (
       <Badge className='text-capitalize' key={item} color={badgeColor[item]} pill>
         {item}
       </Badge>
-    ))
-  }
+    ));
+  };
 
-  // ** Renders Avatar
   const renderAvatar = obj => {
-    const item = obj.assignee
+    const item = obj.assignee;
 
     if (item.avatar === undefined || item.avatar === null) {
-      return <Avatar img={blankAvatar} imgHeight='32' imgWidth='32' />
+      return <Avatar img={blankAvatar} imgHeight='32' imgWidth='32' />;
     } else if (item.avatar !== '') {
-      return <Avatar img={item.avatar} imgHeight='32' imgWidth='32' />
+      return <Avatar img={item.avatar} imgHeight='32' imgWidth='32' />;
     } else {
-      return <Avatar color={resolveAvatarVariant(obj.tags)} content={item.fullName} initials />
+      return <Avatar color={resolveAvatarVariant(obj.tags)} content={item.fullName} initials />;
     }
-  }
+  };
 
   const renderTasks = () => {
     return (
@@ -95,13 +89,13 @@ const Tasks = props => {
         options={{ wheelPropagation: false }}
         containerRef={ref => {
           if (ref) {
-            ref._getBoundingClientRect = ref.getBoundingClientRect
+            ref._getBoundingClientRect = ref.getBoundingClientRect;
 
             ref.getBoundingClientRect = () => {
-              const original = ref._getBoundingClientRect()
+              const original = ref._getBoundingClientRect();
 
-              return { ...original, height: Math.floor(original.height) }
-            }
+              return { ...original, height: Math.floor(original.height) };
+            };
           }
         }}
       >
@@ -132,8 +126,8 @@ const Tasks = props => {
                           checked={item.isCompleted}
                           onClick={e => e.stopPropagation()}
                           onChange={e => {
-                            e.stopPropagation()
-                            dispatch(updateTask({ ...item, isCompleted: e.target.checked }))
+                            e.stopPropagation();
+                            dispatch(updateTask({ ...item, isCompleted: e.target.checked }));
                           }}
                         />
                       </div>
@@ -153,7 +147,7 @@ const Tasks = props => {
                     </div>
                   </div>
                 </li>
-              )
+              );
             })}
           </ReactSortable>
         ) : (
@@ -162,21 +156,21 @@ const Tasks = props => {
           </div>
         )}
       </PerfectScrollbar>
-    )
-  }
+    );
+  };
 
   // ** Function to getTasks based on search query
   const handleFilter = e => {
-    setQuery(e.target.value)
-    dispatch(getTasks(params))
-  }
+    setQuery(e.target.value);
+    dispatch(getTasks(params));
+  };
 
   // ** Function to getTasks based on sort
   const handleSort = (e, val) => {
-    e.preventDefault()
-    setSort(val)
-    dispatch(getTasks({ ...params }))
-  }
+    e.preventDefault();
+    setSort(val);
+    dispatch(getTasks({ ...params }));
+  };
 
   return (
     <div className='todo-app-list'>
@@ -217,7 +211,7 @@ const Tasks = props => {
       </div>
       {renderTasks()}
     </div>
-  )
-}
+  );
+};
 
-export default Tasks
+export default Tasks;

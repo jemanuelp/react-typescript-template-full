@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardTitle, CardBody, CardText, Row, Col, Button } from 'reactstrap'
+import { Card, CardTitle, CardBody, CardText, Row, Col, Button } from 'reactstrap';
 
 const CardTextAlignment = () => {
   return (
@@ -44,7 +42,7 @@ const CardTextAlignment = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardTextAlignment
+export default CardTextAlignment;

@@ -1,10 +1,8 @@
-// ** Third Party Components
-import { Calendar } from 'react-feather'
-import Flatpickr from 'react-flatpickr'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { Calendar } from 'react-feather';
+import Flatpickr from 'react-flatpickr';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 // ** Chart Data
 const data = [
@@ -86,7 +84,7 @@ const data = [
     clicks: 220,
     visits: 375
   }
-]
+];
 
 const CustomTooltip = data => {
   if (data.active && data.payload) {
@@ -108,15 +106,15 @@ const CustomTooltip = data => {
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};
 
 const SimpleAreaChart = () => {
   return (
@@ -129,7 +127,6 @@ const SimpleAreaChart = () => {
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              // eslint-disable-next-line no-mixed-operators
               defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
             }}
           />
@@ -172,6 +169,6 @@ const SimpleAreaChart = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimpleAreaChart
+  );
+};
+export default SimpleAreaChart;

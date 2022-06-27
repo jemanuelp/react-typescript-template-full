@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Icons Imports
-import { ArrowDown, Star, Check, XCircle, Clock } from 'react-feather'
+import { ArrowDown, Star, Check, XCircle, Clock } from 'react-feather';
 
 const DividerIcon = () => {
   return (
@@ -37,6 +35,6 @@ const DividerIcon = () => {
         </div>
       </div>
     </Fragment>
-  )
-}
-export default DividerIcon
+  );
+};
+export default DividerIcon;

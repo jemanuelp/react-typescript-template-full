@@ -1,18 +1,14 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { ReactSortable } from 'react-sortablejs'
+import { ReactSortable } from 'react-sortablejs';
 
-// ** Images
-import img1 from '@src/assets/images/portrait/small/avatar-s-12.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-12.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
+import img3 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
+import img4 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
+import img5 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, ListGroupItem } from 'reactstrap';
 
 const listItems = [
   {
@@ -45,11 +41,10 @@ const listItems = [
     name: 'Linda M. English',
     content: 'Chupa chups tiramisu apple pie biscuit sweet roll bonbon macaroon toffee icing.'
   }
-]
+];
 
 const DndListGroup = () => {
-  // ** State
-  const [listArr, setListArr] = useState(listItems)
+  const [listArr, setListArr] = useState(listItems);
   return (
     <Card>
       <CardHeader>
@@ -79,12 +74,12 @@ const DndListGroup = () => {
                   </div>
                 </div>
               </ListGroupItem>
-            )
+            );
           })}
         </ReactSortable>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default DndListGroup
+export default DndListGroup;

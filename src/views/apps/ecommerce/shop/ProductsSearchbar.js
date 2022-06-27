@@ -1,12 +1,8 @@
-// ** Icons Imports
-import { Search } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Row, Col, InputGroup, Input, InputGroupText } from 'reactstrap'
+import { Search } from 'react-feather';
+import { Row, Col, InputGroup, Input, InputGroupText } from 'reactstrap';
 
 const ProductsSearchbar = props => {
-  // ** Props
-  const { dispatch, getProducts, store } = props
+  const { dispatch, getProducts, store } = props;
 
   return (
     <div id='ecommerce-searchbar' className='ecommerce-searchbar'>
@@ -25,7 +21,7 @@ const ProductsSearchbar = props => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsSearchbar
+export default ProductsSearchbar;

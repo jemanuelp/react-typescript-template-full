@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 // ** Chart Data
 const data = [
@@ -46,7 +44,7 @@ const data = [
     'iPhone 11': 23,
     'Samsung s20': 43
   }
-]
+];
 
 const SimpleRadarChart = ({ series1, series3 }) => {
   return (
@@ -80,6 +78,6 @@ const SimpleRadarChart = ({ series1, series3 }) => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimpleRadarChart
+  );
+};
+export default SimpleRadarChart;

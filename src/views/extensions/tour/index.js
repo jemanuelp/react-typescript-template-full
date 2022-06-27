@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext } from 'react';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap'
+import { Row, Col, Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import { ShepherdTour, ShepherdTourContext } from 'react-shepherd'
+import { ShepherdTour, ShepherdTourContext } from 'react-shepherd';
 
-// ** Styles
-import 'shepherd.js/dist/css/shepherd.css'
-import '@styles/react/libs/shepherd-tour/shepherd-tour.scss'
+import 'shepherd.js/dist/css/shepherd.css';
+import 'src/@core/scss/react/libs/shepherd-tour/shepherd-tour.scss';
 
 const backBtnClass = 'btn btn-sm btn-outline-primary',
-  nextBtnClass = 'btn btn-sm btn-primary btn-next'
+  nextBtnClass = 'btn btn-sm btn-primary btn-next';
 
-let instance = null
+let instance = null;
 
 const steps = [
   {
@@ -88,18 +83,18 @@ const steps = [
       }
     ]
   }
-]
+];
 
 const Content = () => {
-  const tour = useContext(ShepherdTourContext)
-  instance = tour
+  const tour = useContext(ShepherdTourContext);
+  instance = tour;
 
   return (
     <Button color='primary' onClick={() => tour.start()} outline>
       Start Tour
     </Button>
-  )
-}
+  );
+};
 
 const TourComponent = () => {
   return (
@@ -129,7 +124,7 @@ const TourComponent = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default TourComponent
+export default TourComponent;

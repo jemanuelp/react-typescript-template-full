@@ -1,18 +1,10 @@
-// ** Custom Components & Plugins
-import classnames from 'classnames'
-import { Star, Paperclip } from 'react-feather'
-
-// ** Custom Component Import
-import Avatar from '@components/avatar'
-
-// ** Utils
-import { htmlToString } from '@utils'
-
-// ** Reactstrap Imports
-import { Input, Label } from 'reactstrap'
+import classnames from 'classnames';
+import { Star, Paperclip } from 'react-feather';
+import Avatar from 'src/@core/components/avatar';
+import { htmlToString } from 'src/utility/Utils';
+import { Input, Label } from 'reactstrap';
 
 const MailCard = props => {
-  // ** Props
   const {
     mail,
     dispatch,
@@ -23,22 +15,22 @@ const MailCard = props => {
     handleMailClick,
     handleMailReadUpdate,
     formatDateToMonthShort
-  } = props
+  } = props;
 
   // ** Function to render labels
   const renderLabels = arr => {
     if (arr && arr.length) {
       return arr.map(label => (
         <span key={label} className={`bullet bullet-${labelColors[label]} bullet-sm mx-50`}></span>
-      ))
+      ));
     }
-  }
+  };
 
   // ** Function to handle read & mail click
   const onMailClick = () => {
-    handleMailClick(mail.id)
-    handleMailReadUpdate([mail.id], true)
-  }
+    handleMailClick(mail.id);
+    handleMailReadUpdate([mail.id], true);
+  };
 
   return (
     <li onClick={() => onMailClick(mail.id)} className={classnames('d-flex user-mail', { 'mail-read': mail.isRead })}>
@@ -63,8 +55,8 @@ const MailCard = props => {
               onChange={e => e.stopPropagation()}
               checked={selectedMails.includes(mail.id)}
               onClick={e => {
-                dispatch(selectMail(mail.id))
-                e.stopPropagation()
+                dispatch(selectMail(mail.id));
+                e.stopPropagation();
               }}
             />
             <Label onClick={e => e.stopPropagation()} for={`${mail.from.name}-${mail.id}`}></Label>
@@ -72,8 +64,8 @@ const MailCard = props => {
           <div
             className='email-favorite'
             onClick={e => {
-              e.stopPropagation()
-              dispatch(updateMails({ emailIds: [mail.id], dataToUpdate: { isStarred: !mail.isStarred } }))
+              e.stopPropagation();
+              dispatch(updateMails({ emailIds: [mail.id], dataToUpdate: { isStarred: !mail.isStarred } }));
             }}
           >
             <Star
@@ -102,7 +94,7 @@ const MailCard = props => {
         </div>
       </div>
     </li>
-  )
-}
+  );
+};
 
-export default MailCard
+export default MailCard;

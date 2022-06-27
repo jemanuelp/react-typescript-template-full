@@ -1,11 +1,9 @@
-// ** Custom Components
-import Timeline from '@components/timeline'
+import Timeline from 'src/@core/components/timeline';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardHeader, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardHeader, CardTitle } from 'reactstrap';
 
 // ** Timeline Data
-import { basicData } from './data'
+import { basicData } from './data';
 
 const BasicTimeline = () => {
   return (
@@ -17,7 +15,7 @@ const BasicTimeline = () => {
         <Timeline data={basicData} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default BasicTimeline
+export default BasicTimeline;

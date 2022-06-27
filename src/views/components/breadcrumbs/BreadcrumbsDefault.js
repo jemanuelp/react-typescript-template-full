@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-// ** Icons Imports
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const BreadcrumbsDefault = () => {
   return (
@@ -22,6 +19,6 @@ const BreadcrumbsDefault = () => {
         </BreadcrumbItem>
       </Breadcrumb>
     </Fragment>
-  )
-}
-export default BreadcrumbsDefault
+  );
+};
+export default BreadcrumbsDefault;

@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Row, Col } from 'reactstrap';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
+import ReactPaginate from 'react-paginate';
 
 const PaginationPositions = () => {
   return (
@@ -72,6 +70,6 @@ const PaginationPositions = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default PaginationPositions
+  );
+};
+export default PaginationPositions;

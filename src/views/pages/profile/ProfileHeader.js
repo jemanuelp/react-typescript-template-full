@@ -1,17 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Icons Imports
-import { AlignJustify, Rss, Info, Image, Users, Edit } from 'react-feather'
+import { AlignJustify, Rss, Info, Image, Users, Edit } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardImg, Collapse, Navbar, Nav, NavItem, NavLink, Button } from 'reactstrap'
+import { Card, CardImg, Collapse, Navbar, Nav, NavItem, NavLink, Button } from 'reactstrap';
 
 const ProfileHeader = ({ data }) => {
-  // ** States
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen)
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <Card className='profile-header mb-2'>
@@ -69,7 +65,7 @@ const ProfileHeader = ({ data }) => {
         </Navbar>
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileHeader
+export default ProfileHeader;

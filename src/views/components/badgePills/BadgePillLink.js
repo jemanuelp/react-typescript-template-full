@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+import { Badge } from 'reactstrap';
 
-// ** Icons Imports
-import { Link } from 'react-feather'
+import { Link } from 'react-feather';
 
 const BadgePillLink = () => {
   return (
@@ -10,6 +8,6 @@ const BadgePillLink = () => {
       <Link size={12} />
       <span className='align-middle ms-50'>Link Badge Pill</span>
     </Badge>
-  )
-}
-export default BadgePillLink
+  );
+};
+export default BadgePillLink;

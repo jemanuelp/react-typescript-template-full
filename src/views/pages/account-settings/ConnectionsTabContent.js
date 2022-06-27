@@ -1,71 +1,69 @@
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardBody, CardTitle, Input, Label, Button } from 'reactstrap'
+import { Row, Col, Card, CardHeader, CardBody, CardTitle, Input, Label, Button } from 'reactstrap';
 
-// ** Icons Imports
-import { Check, X, Link } from 'react-feather'
+import { Check, X, Link } from 'react-feather';
 
 const connectedAccounts = [
   {
     checked: true,
     title: 'Google',
     subtitle: 'Calendar and contacts',
-    logo: require('@src/assets/images/icons/social/google.png').default
+    logo: require('src/assets/images/icons/social/google.png').default
   },
   {
     checked: false,
     title: 'Slack',
     subtitle: 'Communication',
-    logo: require('@src/assets/images/icons/social/slack.png').default
+    logo: require('src/assets/images/icons/social/slack.png').default
   },
   {
     checked: true,
     title: 'Github',
     subtitle: 'Git repositories',
-    logo: require('@src/assets/images/icons/social/github.png').default
+    logo: require('src/assets/images/icons/social/github.png').default
   },
   {
     checked: false,
     title: 'Mailchimp',
     subtitle: 'Email marketing service',
-    logo: require('@src/assets/images/icons/social/mailchimp.png').default
+    logo: require('src/assets/images/icons/social/mailchimp.png').default
   },
   {
     checked: false,
     title: 'Asana',
     subtitle: 'Communication',
-    logo: require('@src/assets/images/icons/social/asana.png').default
+    logo: require('src/assets/images/icons/social/asana.png').default
   }
-]
+];
 
 const socialAccounts = [
   {
     linked: false,
     title: 'Facebook',
-    logo: require('@src/assets/images/icons/social/facebook.png').default
+    logo: require('src/assets/images/icons/social/facebook.png').default
   },
   {
     linked: true,
     title: 'Twitter',
     url: 'https://twitter.com/pixinvent',
-    logo: require('@src/assets/images/icons/social/twitter.png').default
+    logo: require('src/assets/images/icons/social/twitter.png').default
   },
   {
     linked: true,
     title: 'Linkedin',
     url: 'https://www.linkedin.com/company/pixinvent/',
-    logo: require('@src/assets/images/icons/social/linkedin.png').default
+    logo: require('src/assets/images/icons/social/linkedin.png').default
   },
   {
     linked: false,
     title: 'Dribbble',
-    logo: require('@src/assets/images/icons/social/dribbble.png').default
+    logo: require('src/assets/images/icons/social/dribbble.png').default
   },
   {
     linked: false,
     title: 'Behance',
-    logo: require('@src/assets/images/icons/social/behance.png').default
+    logo: require('src/assets/images/icons/social/behance.png').default
   }
-]
+];
 
 const ConnectionsTabContent = () => {
   return (
@@ -103,7 +101,7 @@ const ConnectionsTabContent = () => {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </CardBody>
         </Card>
@@ -139,13 +137,13 @@ const ConnectionsTabContent = () => {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </CardBody>
         </Card>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ConnectionsTabContent
+export default ConnectionsTabContent;

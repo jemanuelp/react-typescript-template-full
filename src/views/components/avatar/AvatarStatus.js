@@ -1,11 +1,9 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Icons Imports
-import { GitHub } from 'react-feather'
+import { GitHub } from 'react-feather';
 
 // ** Avatar Image
-import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg';
 
 const AvatarStatus = () => {
   return (
@@ -15,6 +13,6 @@ const AvatarStatus = () => {
       <Avatar color='light-primary' icon={<GitHub size={14} />} status='away' />
       <Avatar color='light-success' content='AB' status='online' />
     </div>
-  )
-}
-export default AvatarStatus
+  );
+};
+export default AvatarStatus;

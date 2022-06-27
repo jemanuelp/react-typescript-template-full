@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const ListInline = () => {
   return (
@@ -31,6 +31,6 @@ const ListInline = () => {
         </ul>
       </CardBody>
     </Card>
-  )
-}
-export default ListInline
+  );
+};
+export default ListInline;

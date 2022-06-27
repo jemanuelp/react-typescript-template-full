@@ -1,10 +1,8 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
-import { Calendar } from 'react-feather'
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
+import Flatpickr from 'react-flatpickr';
+import { Calendar } from 'react-feather';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 // ** Chart Data
 const angularData = [
@@ -23,7 +21,7 @@ const angularData = [
   { x: 11.0, y: 220 },
   { x: 12.0, y: 170 },
   { x: 13.0, y: 230 }
-]
+];
 
 const vueData = [
   { x: 14.0, y: 220 },
@@ -39,7 +37,7 @@ const vueData = [
   { x: 17.0, y: 280 },
   { x: 22.0, y: 300 },
   { x: 18.0, y: 120 }
-]
+];
 
 const reactData = [
   { x: 14.0, y: 290 },
@@ -53,7 +51,7 @@ const reactData = [
   { x: 20.0, y: 200 },
   { x: 22.0, y: 90 },
   { x: 20.0, y: 120 }
-]
+];
 
 const SimpleScatterChart = ({ primary, success, danger }) => {
   return (
@@ -66,7 +64,6 @@ const SimpleScatterChart = ({ primary, success, danger }) => {
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              // eslint-disable-next-line no-mixed-operators
               defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
             }}
           />
@@ -102,6 +99,6 @@ const SimpleScatterChart = ({ primary, success, danger }) => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimpleScatterChart
+  );
+};
+export default SimpleScatterChart;

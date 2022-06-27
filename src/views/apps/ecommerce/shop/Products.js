@@ -1,19 +1,11 @@
-// ** React Imports
-import { Fragment } from 'react'
-
-// ** Product components
-import ProductCards from './ProductCards'
-import ProductsHeader from './ProductsHeader'
-import ProductsSearchbar from './ProductsSearchbar'
-
-// ** Third Party Components
-import classnames from 'classnames'
-
-// ** Reactstrap Imports
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import { Fragment } from 'react';
+import ProductCards from './ProductCards';
+import ProductsHeader from './ProductsHeader';
+import ProductsSearchbar from './ProductsSearchbar';
+import classnames from 'classnames';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 const ProductsPage = props => {
-  // ** Props
   const {
     store,
     dispatch,
@@ -27,23 +19,23 @@ const ProductsPage = props => {
     deleteCartItem,
     setSidebarOpen,
     deleteWishlistItem
-  } = props
+  } = props;
 
   // ** Handles pagination
   const handlePageChange = val => {
     if (val === 'next') {
-      dispatch(getProducts({ ...store.params, page: store.params.page + 1 }))
+      dispatch(getProducts({ ...store.params, page: store.params.page + 1 }));
     } else if (val === 'prev') {
-      dispatch(getProducts({ ...store.params, page: store.params.page - 1 }))
+      dispatch(getProducts({ ...store.params, page: store.params.page - 1 }));
     } else {
-      dispatch(getProducts({ ...store.params, page: val }))
+      dispatch(getProducts({ ...store.params, page: val }));
     }
-  }
+  };
 
   // ** Render pages
   const renderPageItems = () => {
     const arrLength =
-      store.totalProducts !== 0 && store.products.length !== 0 ? Number(store.totalProducts) / store.products.length : 3
+      store.totalProducts !== 0 && store.products.length !== 0 ? Number(store.totalProducts) / store.products.length : 3;
 
     return new Array(Math.trunc(arrLength)).fill().map((item, index) => {
       return (
@@ -56,16 +48,16 @@ const ProductsPage = props => {
             {index + 1}
           </PaginationLink>
         </PaginationItem>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** handle next page click
   const handleNext = () => {
     if (store.params.page !== Number(store.totalProducts) / store.products.length) {
-      handlePageChange('next')
+      handlePageChange('next');
     }
-  }
+  };
 
   return (
     <div className='content-detached content-right'>
@@ -124,7 +116,7 @@ const ProductsPage = props => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

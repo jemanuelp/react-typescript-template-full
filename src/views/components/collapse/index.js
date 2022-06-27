@@ -1,28 +1,23 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import CollapseBasic from './CollapseBasic'
-import CollapseHorizontal from './CollapseHorizontal'
-import CollapseMultipleTargets from './CollapseMultipleTargets'
+import CollapseBasic from './CollapseBasic';
+import CollapseHorizontal from './CollapseHorizontal';
+import CollapseMultipleTargets from './CollapseMultipleTargets';
 
 // ** Source Code
-import { collapseBasic, collapseHorizontal, collapseMultipleTargets } from './CollapseSourceCode'
+import { collapseBasic, collapseHorizontal, collapseMultipleTargets } from './CollapseSourceCode';
 
 const Collapse = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -48,6 +43,6 @@ const Collapse = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Collapse
+  );
+};
+export default Collapse;

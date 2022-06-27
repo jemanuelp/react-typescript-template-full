@@ -13,7 +13,6 @@ import {
   InputGroupText
 } from 'reactstrap';
 
-// ** Icons Imports
 import { User, Mail, Smartphone, Lock } from 'react-feather';
 
 const VerticalFormIcons = () => {

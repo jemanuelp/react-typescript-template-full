@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Icons Imports
-import { ArrowLeft, ArrowRight } from 'react-feather'
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Input, Form, Button } from 'reactstrap'
+import { Label, Row, Col, Input, Form, Button } from 'reactstrap';
 
 const AccountDetails = ({ stepper, type }) => {
   return (
@@ -61,7 +58,7 @@ const AccountDetails = ({ stepper, type }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default AccountDetails
+export default AccountDetails;

@@ -1,7 +1,5 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
 import {
   Form,
   Label,
@@ -12,10 +10,9 @@ import {
   DropdownToggle,
   ButtonDropdown,
   UncontrolledButtonDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Icons Imports
-import { Wifi, WifiOff, PhoneOff, BellOff, Bell, VolumeX, Volume2 } from 'react-feather'
+import { Wifi, WifiOff, PhoneOff, BellOff, Bell, VolumeX, Volume2 } from 'react-feather';
 
 const icons = [
   {
@@ -42,23 +39,22 @@ const icons = [
     id: 6,
     item: <PhoneOff size={15} />
   }
-]
+];
 
 const DropdownVariations = () => {
-  // ** States
-  const [formDropdown, setFormDropdown] = useState(false)
-  const [activeIcon, setActiveIcon] = useState(<Wifi size={15} />)
+  const [formDropdown, setFormDropdown] = useState(false);
+  const [activeIcon, setActiveIcon] = useState(<Wifi size={15} />);
 
-  const toggleIcon = icon => setActiveIcon(icon)
-  const toggleFormDropdown = () => setFormDropdown(!formDropdown)
+  const toggleIcon = icon => setActiveIcon(icon);
+  const toggleFormDropdown = () => setFormDropdown(!formDropdown);
 
   const renderIconItem = icons.map(icon => {
     return (
       <DropdownItem tag='span' key={icon.id} onClick={() => toggleIcon(icon.item)}>
         {icon.item}
       </DropdownItem>
-    )
-  })
+    );
+  });
   return (
     <div className='demo-inline-spacing'>
       <UncontrolledButtonDropdown direction='up'>
@@ -115,8 +111,8 @@ const DropdownVariations = () => {
           <Form
             className='px-2 py-2'
             onSubmit={e => {
-              e.preventDefault()
-              setFormDropdown(false)
+              e.preventDefault();
+              setFormDropdown(false);
             }}
           >
             <div className='mb-2'>
@@ -147,8 +143,8 @@ const DropdownVariations = () => {
             tag='a'
             href='#'
             onClick={e => {
-              e.preventDefault()
-              setFormDropdown(false)
+              e.preventDefault();
+              setFormDropdown(false);
             }}
           >
             New around here? Sign up
@@ -158,8 +154,8 @@ const DropdownVariations = () => {
             tag='a'
             href='#'
             onClick={e => {
-              e.preventDefault()
-              setFormDropdown(false)
+              e.preventDefault();
+              setFormDropdown(false);
             }}
           >
             Forgot password?
@@ -167,7 +163,7 @@ const DropdownVariations = () => {
         </DropdownMenu>
       </ButtonDropdown>
     </div>
-  )
-}
+  );
+};
 
-export default DropdownVariations
+export default DropdownVariations;

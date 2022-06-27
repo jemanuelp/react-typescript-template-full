@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Label } from 'reactstrap'
+import { Label } from 'reactstrap';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
+import Flatpickr from 'react-flatpickr';
 
 const PickerDateTime = () => {
-  // ** State
-  const [picker, setPicker] = useState(new Date())
+  const [picker, setPicker] = useState(new Date());
 
   return (
     <Fragment>
@@ -24,7 +20,7 @@ const PickerDateTime = () => {
         onChange={date => setPicker(date)}
       />
     </Fragment>
-  )
-}
+  );
+};
 
-export default PickerDateTime
+export default PickerDateTime;

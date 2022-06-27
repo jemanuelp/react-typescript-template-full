@@ -1,5 +1,4 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
 const AvatarInitials = () => {
   return (
@@ -9,6 +8,6 @@ const AvatarInitials = () => {
       <Avatar color='light-success' content='Peter Ingraham' size='lg' initials />
       <Avatar color='light-danger' content='Peter Ingraham' size='xl' initials />
     </div>
-  )
-}
-export default AvatarInitials
+  );
+};
+export default AvatarInitials;

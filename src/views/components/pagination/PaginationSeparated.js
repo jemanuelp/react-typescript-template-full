@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 const PaginationSeparated = () => {
   return (
@@ -46,6 +46,6 @@ const PaginationSeparated = () => {
         <PaginationLink href='#' onClick={e => e.preventDefault()}></PaginationLink>
       </PaginationItem>
     </Pagination>
-  )
-}
-export default PaginationSeparated
+  );
+};
+export default PaginationSeparated;

@@ -1,21 +1,17 @@
-// ** React Imports
-import { useRef, useState } from 'react'
+import { useRef, useState } from 'react';
 
-// ** Custom Components
-import Wizard from '@components/wizard'
+import Wizard from 'src/@core/components/wizard';
 
 // ** Steps
-import Address from './steps/Address'
-import SocialLinks from './steps/SocialLinks'
-import PersonalInfo from './steps/PersonalInfo'
-import AccountDetails from './steps/AccountDetails'
+import Address from './steps/Address';
+import SocialLinks from './steps/SocialLinks';
+import PersonalInfo from './steps/PersonalInfo';
+import AccountDetails from './steps/AccountDetails';
 
 const WizardVertical = () => {
-  // ** Ref
-  const ref = useRef(null)
+  const ref = useRef(null);
 
-  // ** State
-  const [stepper, setStepper] = useState(null)
+  const [stepper, setStepper] = useState(null);
 
   const steps = [
     {
@@ -42,7 +38,7 @@ const WizardVertical = () => {
       subtitle: 'Add Social Links',
       content: <SocialLinks stepper={stepper} type='wizard-vertical' />
     }
-  ]
+  ];
 
   return (
     <div className='vertical-wizard'>
@@ -56,7 +52,7 @@ const WizardVertical = () => {
         instance={el => setStepper(el)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default WizardVertical
+export default WizardVertical;

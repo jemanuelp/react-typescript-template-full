@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Row, Col, Table } from 'reactstrap'
+
+import { Card, CardBody, CardText, Row, Col, Table } from 'reactstrap';
 
 const PreviewCard = ({ data }) => {
   return data !== null ? (
@@ -223,7 +223,7 @@ const PreviewCard = ({ data }) => {
       </CardBody>
       {/* /Invoice Note */}
     </Card>
-  ) : null
-}
+  ) : null;
+};
 
-export default PreviewCard
+export default PreviewCard;

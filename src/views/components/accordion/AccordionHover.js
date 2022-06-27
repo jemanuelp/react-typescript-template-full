@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap'
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 
 const AccordionHover = () => {
-  // ** State
-  const [open, setOpen] = useState('')
+  const [open, setOpen] = useState('');
 
   const toggle = id => {
-    open === id ? setOpen() : setOpen(id)
-  }
+    open === id ? setOpen() : setOpen(id);
+  };
 
   return (
     <Accordion open={open} toggle={toggle}>
@@ -49,6 +46,6 @@ const AccordionHover = () => {
         </AccordionBody>
       </AccordionItem>
     </Accordion>
-  )
-}
-export default AccordionHover
+  );
+};
+export default AccordionHover;

@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ModalConfig = [
   {
@@ -41,19 +39,18 @@ const ModalConfig = [
     modalTitle: 'Fullscreen Modal',
     modalClass: 'modal-fullscreen'
   }
-]
+];
 
 const ModalSizes = () => {
-  // ** State
-  const [modal, setModal] = useState(null)
+  const [modal, setModal] = useState(null);
 
   const toggleModal = id => {
     if (modal !== id) {
-      setModal(id)
+      setModal(id);
     } else {
-      setModal(null)
+      setModal(null);
     }
-  }
+  };
 
   const renderModal = ModalConfig.map(item => {
     return (
@@ -161,9 +158,9 @@ const ModalSizes = () => {
           </ModalFooter>
         </Modal>
       </Fragment>
-    )
-  })
+    );
+  });
 
-  return <div className='demo-inline-spacing'>{renderModal}</div>
-}
-export default ModalSizes
+  return <div className='demo-inline-spacing'>{renderModal}</div>;
+};
+export default ModalSizes;

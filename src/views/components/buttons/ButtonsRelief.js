@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+
+import { Button } from 'reactstrap';
 
 const ReliefButtons = () => {
   return (
@@ -12,6 +12,6 @@ const ReliefButtons = () => {
       <Button color='relief-info'>Info</Button>
       <Button color='relief-dark'>Dark</Button>
     </div>
-  )
-}
-export default ReliefButtons
+  );
+};
+export default ReliefButtons;

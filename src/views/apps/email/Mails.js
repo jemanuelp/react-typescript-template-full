@@ -1,19 +1,10 @@
-// ** React Imports
-import { Fragment } from 'react'
-
-// ** Mail Components Imports
-import MailCard from './MailCard'
-import MailDetails from './MailDetails'
-import ComposePopUp from './ComposePopup'
-
-// ** Utils
-import { formatDateToMonthShort } from '@utils'
-
-// ** Third Party Components
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Menu, Search, Folder, Tag, Mail, Trash, Edit2, Info } from 'react-feather'
-
-// ** Reactstrap Imports
+import { Fragment } from 'react';
+import MailCard from './MailCard';
+import MailDetails from './MailDetails';
+import ComposePopUp from './ComposePopup';
+import { formatDateToMonthShort } from 'src/utility/Utils';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Menu, Search, Folder, Tag, Mail, Trash, Edit2, Info } from 'react-feather';
 import {
   Input,
   Label,
@@ -23,10 +14,9 @@ import {
   InputGroupText,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const Mails = props => {
-  // ** Props
   const {
     query,
     store,
@@ -44,59 +34,53 @@ const Mails = props => {
     updateMailLabel,
     resetSelectedMail,
     selectCurrentMail
-  } = props
+  } = props;
 
-  const { mails, selectedMails } = store
+  const { mails, selectedMails } = store;
 
-  // ** States
-
-  // ** Variables
   const labelColors = {
     personal: 'success',
     company: 'primary',
     important: 'warning',
     private: 'danger'
-  }
+  };
 
   // ** Handles Update Functions
   const handleMailClick = id => {
-    dispatch(selectCurrentMail(id))
-    setOpenMail(true)
-  }
+    dispatch(selectCurrentMail(id));
+    setOpenMail(true);
+  };
 
   // ** Handles SelectAll
   const handleSelectAll = e => {
-    dispatch(selectAllMail(e.target.checked))
-  }
-
-  /*eslint-disable */
+    dispatch(selectAllMail(e.target.checked));
+  };
 
   // ** Handles Folder Update
   const handleFolderUpdate = (e, folder, ids = selectedMails) => {
-    e.preventDefault()
-    dispatch(updateMails({ emailIds: ids, dataToUpdate: { folder } }))
-    dispatch(resetSelectedMail())
-  }
+    e.preventDefault();
+    dispatch(updateMails({ emailIds: ids, dataToUpdate: { folder } }));
+    dispatch(resetSelectedMail());
+  };
 
   // ** Handles Label Update
   const handleLabelsUpdate = (e, label, ids = selectedMails) => {
-    e.preventDefault()
-    dispatch(updateMailLabel({ emailIds: ids, label }))
-    dispatch(resetSelectedMail())
-  }
+    e.preventDefault();
+    dispatch(updateMailLabel({ emailIds: ids, label }));
+    dispatch(resetSelectedMail());
+  };
 
   // ** Handles Mail Read Update
   const handleMailReadUpdate = (arr, bool) => {
-    dispatch(updateMails({ emailIds: arr, dataToUpdate: { isRead: bool } })).then(() => dispatch(resetSelectedMail()))
-    dispatch(selectAllMail(false))
-  }
+    dispatch(updateMails({ emailIds: arr, dataToUpdate: { isRead: bool } })).then(() => dispatch(resetSelectedMail()));
+    dispatch(selectAllMail(false));
+  };
 
   // ** Handles Move to Trash
   const handleMailToTrash = ids => {
-    dispatch(updateMails({ emailIds: ids, dataToUpdate: { folder: 'trash' } }))
-    dispatch(resetSelectedMail())
-  }
-  /*eslint-enable */
+    dispatch(updateMails({ emailIds: ids, dataToUpdate: { folder: 'trash' } }));
+    dispatch(resetSelectedMail());
+  };
 
   // ** Renders Mail
   const renderMails = () => {
@@ -115,10 +99,10 @@ const Mails = props => {
             handleMailReadUpdate={handleMailReadUpdate}
             formatDateToMonthShort={formatDateToMonthShort}
           />
-        )
-      })
+        );
+      });
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -279,7 +263,7 @@ const Mails = props => {
       />
       <ComposePopUp composeOpen={composeOpen} toggleCompose={toggleCompose} />
     </Fragment>
-  )
-}
+  );
+};
 
-export default Mails
+export default Mails;

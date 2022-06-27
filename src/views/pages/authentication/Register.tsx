@@ -1,4 +1,3 @@
-import {useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
@@ -6,11 +5,15 @@ import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
 import {Row, Col, CardTitle, CardText, Label, Button, Form, FormFeedback, Input} from 'reactstrap';
 import '../../../@core/scss/react/pages/page-authentication.scss';
 import {useSkin} from "../../../utility/hooks/useSkin";
-import {AbilityContext} from "../../../utility/context/Can";
 import InputPasswordToggle from "../../../@core/components/input-password-toggle";
 import useJwt from "../../../auth/jwt/useJwt";
 import {handleLogin} from "../../../redux/authentication";
-import {IRegisterResponse} from "../../../domains/interfaces/IRegisterResponse";
+import {AxiosResponse} from "axios";
+import * as Dark from "../../../../src/assets/images/pages/register-v2-dark.svg";
+import * as Light from "../../../../src/assets/images/pages/register-v2.svg";
+// import {AbilityContext} from "../../../utility/context/Can";
+// import {useContext} from 'react';
+// import {IRegisterResponse} from "../../../domains/interfaces/IRegisterResponse";
 
 const defaultValues = {
   email: '',
@@ -20,7 +23,7 @@ const defaultValues = {
 };
 
 const Register = () => {
-  const ability = useContext<IRegisterResponse>(AbilityContext);
+  // const ability = useContext<IRegisterResponse>(AbilityContext);
   const { skin } = useSkin();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,8 +34,9 @@ const Register = () => {
     formState: { errors }
   } = useForm({ defaultValues });
 
-  const illustration = skin === 'dark' ? 'register-v2-dark.svg' : 'register-v2.svg',
-    source = require(`@src/assets/images/pages/${illustration}`).default;
+  const source = skin === 'dark'
+      ? Dark.default
+      : Light.default;
 
   const onSubmit = (data: any) => {
     const tempData = { ...data };
@@ -41,7 +45,7 @@ const Register = () => {
       const { username, email, password } = data;
       useJwt
         .register({ username, email, password })
-        .then(res => {
+        .then((res: AxiosResponse<any>) => {
           if (res.data.error) {
             for (const property in res.data.error) {
               if (res.data.error[property] !== null) {
@@ -54,14 +58,14 @@ const Register = () => {
             }
           } else {
             const data = { ...res.data.user, accessToken: res.data.accessToken };
-            if (ability && ability.update) {
-              ability.update(res.data.user.ability);
-            }
+            // if (ability && ability.update) {
+            //   ability.update(res.data.user.ability);
+            // }
             dispatch(handleLogin(data));
             navigate('/');
           }
         })
-        .catch(err => console.log(err));
+        .catch((err: any) => console.log(err));
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
@@ -158,7 +162,11 @@ const Register = () => {
                     <Input autoFocus placeholder='johndoe' invalid={errors.username && true} {...field} />
                   )}
                 />
-                {errors.username ? <FormFeedback>{errors.username.message}</FormFeedback> : null}
+                {
+                  errors.username
+                      ? <FormFeedback>{errors.username.message}</FormFeedback>
+                      : null
+                }
               </div>
               <div className='mb-1'>
                 <Label className='form-label' for='register-email'>
@@ -171,7 +179,11 @@ const Register = () => {
                     <Input type='email' placeholder='john@example.com' invalid={errors.email && true} {...field} />
                   )}
                 />
-                {errors.email ? <FormFeedback>{errors.email.message}</FormFeedback> : null}
+                {
+                  errors.email
+                      ? <FormFeedback>{errors.email.message}</FormFeedback>
+                      : null
+                }
               </div>
               <div className='mb-1'>
                 <Label className='form-label' for='register-password'>

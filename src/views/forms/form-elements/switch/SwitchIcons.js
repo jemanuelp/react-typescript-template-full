@@ -1,8 +1,6 @@
-// ** Icons Imports
-import { Check, X } from 'react-feather'
+import { Check, X } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap';
 
 const CustomLabel = ({ htmlFor }) => {
   return (
@@ -14,8 +12,8 @@ const CustomLabel = ({ htmlFor }) => {
         <X size={14} />
       </span>
     </Label>
-  )
-}
+  );
+};
 
 const SwitchIcons = () => {
   return (
@@ -95,6 +93,6 @@ const SwitchIcons = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SwitchIcons
+  );
+};
+export default SwitchIcons;

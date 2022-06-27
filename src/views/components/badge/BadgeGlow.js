@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+
+import { Badge } from 'reactstrap';
 
 const BadgeGlow = () => {
   return (
@@ -26,6 +26,6 @@ const BadgeGlow = () => {
         Dark
       </Badge>
     </div>
-  )
-}
-export default BadgeGlow
+  );
+};
+export default BadgeGlow;

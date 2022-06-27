@@ -1,4 +1,3 @@
-// ** Third Party Components
 import Proptypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -67,7 +66,6 @@ const Timeline = (props: any) => {
 
 export default Timeline;
 
-// ** PropTypes
 Timeline.propTypes = {
   tag: Proptypes.string,
   className: Proptypes.string,

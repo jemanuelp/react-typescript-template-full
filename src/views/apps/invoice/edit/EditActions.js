@@ -1,9 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-
-// ** Reactstrap Imports
-import { Card, CardBody, Button, Input } from 'reactstrap'
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardBody, Button, Input } from 'reactstrap';
 
 const EditActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
   return (
@@ -63,7 +60,7 @@ const EditActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default EditActions
+export default EditActions;

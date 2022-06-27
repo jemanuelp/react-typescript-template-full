@@ -4,15 +4,12 @@ import SocialLinks from './steps/SocialLinks';
 import PersonalInfo from './steps/PersonalInfo';
 import AccountDetails from './steps/AccountDetails';
 
-// ** Icons Imports
 import { FileText, User, MapPin, Link } from 'react-feather';
 import Wizard from "../../../@core/components/wizard";
 
 const WizardModern = () => {
-  // ** Ref
   const ref = useRef(null);
 
-  // ** State
   const [stepper, setStepper] = useState(null);
 
   const steps = [

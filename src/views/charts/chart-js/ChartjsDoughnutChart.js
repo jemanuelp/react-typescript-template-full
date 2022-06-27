@@ -1,9 +1,7 @@
-// ** Third Party Components
-import { Doughnut } from 'react-chartjs-2'
-import { Monitor, Tablet, ArrowDown, ArrowUp } from 'react-feather'
+import { Doughnut } from 'react-chartjs-2';
+import { Monitor, Tablet, ArrowDown, ArrowUp } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor, primary }) => {
   // ** Chart Options
@@ -20,15 +18,15 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
       tooltips: {
         callbacks: {
           label(context) {
-            console.log(context)
-            const label = context.label || ''
+            console.log(context);
+            const label = context.label || '';
             if (label) {
-              label += 'Ronak: '
+              label += 'Ronak: ';
             }
             if (context.parsed.y !== null) {
-              label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y)
+              label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
             }
-            return label
+            return label;
           }
         },
         // Updated default tooltip UI
@@ -41,7 +39,7 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
         bodyFontColor: '#000'
       }
     }
-  }
+  };
 
   // ** Chart data
   const data = {
@@ -54,7 +52,7 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
         pointStyle: 'rectRounded'
       }
     ]
-  }
+  };
 
   return (
     <Card>
@@ -97,7 +95,7 @@ const ChartjsRadarChart = ({ tooltipShadow, successColorShade, warningLightColor
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsRadarChart
+export default ChartjsRadarChart;

@@ -1,5 +1,4 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
 const DividerStyle = () => {
   return (
@@ -16,6 +15,6 @@ const DividerStyle = () => {
         <div className='divider-text'>Solid</div>
       </div>
     </Fragment>
-  )
-}
-export default DividerStyle
+  );
+};
+export default DividerStyle;

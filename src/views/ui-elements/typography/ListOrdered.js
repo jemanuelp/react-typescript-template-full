@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const ListOrdered = () => {
   return (
@@ -35,6 +35,6 @@ const ListOrdered = () => {
         </ol>
       </CardBody>
     </Card>
-  )
-}
-export default ListOrdered
+  );
+};
+export default ListOrdered;

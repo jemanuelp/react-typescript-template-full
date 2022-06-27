@@ -1,11 +1,9 @@
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button, Row, Col } from 'reactstrap';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const BasicSweetCallback = () => {
   const handleConfirmText = () => {
@@ -29,10 +27,10 @@ const BasicSweetCallback = () => {
           customClass: {
             confirmButton: 'btn btn-success'
           }
-        })
+        });
       }
-    })
-  }
+    });
+  };
 
   const handleConfirmCancel = () => {
     return MySwal.fire({
@@ -55,7 +53,7 @@ const BasicSweetCallback = () => {
           customClass: {
             confirmButton: 'btn btn-success'
           }
-        })
+        });
       } else if (result.dismiss === MySwal.DismissReason.cancel) {
         MySwal.fire({
           title: 'Cancelled',
@@ -64,10 +62,10 @@ const BasicSweetCallback = () => {
           customClass: {
             confirmButton: 'btn btn-success'
           }
-        })
+        });
       }
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -92,7 +90,7 @@ const BasicSweetCallback = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default BasicSweetCallback
+export default BasicSweetCallback;

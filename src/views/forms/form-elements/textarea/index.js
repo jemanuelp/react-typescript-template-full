@@ -1,12 +1,9 @@
 import { Fragment } from 'react';
 
-// ** Reactstrap Imports
 import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs';
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
 import TextareaDefault from './TextareaDefault';
 import TextareaCounter from './TextareaCounter';
 import TextareaFloatingLabel from './TextareaFloatingLabel';

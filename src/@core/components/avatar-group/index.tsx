@@ -52,7 +52,6 @@ const AvatarGroup = (props: any) => {
 
 export default AvatarGroup;
 
-// ** PropTypes
 AvatarGroup.propTypes = {
   data: Proptypes.array.isRequired,
   tag: Proptypes.oneOfType([Proptypes.func, Proptypes.string])

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Nav, NavItem, NavLink } from 'reactstrap'
+
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const NavBasic = () => {
   return (
@@ -21,6 +21,6 @@ const NavBasic = () => {
         </NavLink>
       </NavItem>
     </Nav>
-  )
-}
-export default NavBasic
+  );
+};
+export default NavBasic;

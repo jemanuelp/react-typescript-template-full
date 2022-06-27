@@ -1,11 +1,8 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Custom Components
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete';
 
 const AutoCompleteSections = () => {
-  // ** State
   const [suggestions] = useState([
     {
       groupTitle: '1970s',
@@ -74,7 +71,7 @@ const AutoCompleteSections = () => {
         }
       ]
     }
-  ])
+  ]);
 
   return (
     <AutoComplete
@@ -85,6 +82,6 @@ const AutoCompleteSections = () => {
       suggestions={suggestions}
       filterHeaderKey='groupTitle'
     />
-  )
-}
-export default AutoCompleteSections
+  );
+};
+export default AutoCompleteSections;

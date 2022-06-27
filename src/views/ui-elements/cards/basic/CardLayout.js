@@ -1,9 +1,7 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Demo Components
-import CardGroup from './CardGroup'
-import GridCards from './GridCards'
+import CardGroup from './CardGroup';
+import GridCards from './GridCards';
 
 const CardLayout = () => {
   return (
@@ -14,7 +12,7 @@ const CardLayout = () => {
       <h6 className='my-3 text-muted'>Grid Card</h6>
       <GridCards />
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardLayout
+export default CardLayout;

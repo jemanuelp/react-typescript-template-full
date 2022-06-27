@@ -1,12 +1,9 @@
-// ** React Imports
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { Star, ShoppingCart, DollarSign, Heart, Share2, Facebook, Twitter, Youtube, Instagram } from 'react-feather'
+import classnames from 'classnames';
+import { Star, ShoppingCart, DollarSign, Heart, Share2, Facebook, Twitter, Youtube, Instagram } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -16,19 +13,17 @@ import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledButtonDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const Product = props => {
-  // ** Props
-  const { data, deleteWishlistItem, dispatch, addToWishlist, getProduct, productId, addToCart } = props
+  const { data, deleteWishlistItem, dispatch, addToWishlist, getProduct, productId, addToCart } = props;
 
-  // ** State
-  const [selectedColor, setSelectedColor] = useState('primary')
+  const [selectedColor, setSelectedColor] = useState('primary');
 
   // ** Renders color options
   const renderColorOptions = () => {
     return data.colorOptions.map((color, index) => {
-      const isLastColor = data.colorOptions.length - 1 === index
+      const isLastColor = data.colorOptions.length - 1 === index;
 
       return (
         <li
@@ -43,30 +38,30 @@ const Product = props => {
             <div className={`filloption bg-${color}`}></div>
           </div>
         </li>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** Handle Wishlist item toggle
   const handleWishlist = val => {
     if (val) {
-      dispatch(deleteWishlistItem(productId))
+      dispatch(deleteWishlistItem(productId));
     } else {
-      dispatch(addToWishlist(productId))
+      dispatch(addToWishlist(productId));
     }
-    dispatch(getProduct(productId))
-  }
+    dispatch(getProduct(productId));
+  };
 
   // ** Handle Move/Add to cart
   const handleCartBtn = (id, val) => {
     if (val === false) {
-      dispatch(addToCart(id))
+      dispatch(addToCart(id));
     }
-    dispatch(getProduct(productId))
-  }
+    dispatch(getProduct(productId));
+  };
 
   // ** Condition btn tag
-  const CartBtnTag = data.isInCart ? Link : 'button'
+  const CartBtnTag = data.isInCart ? Link : 'button';
 
   return (
     <Row className='my-2'>
@@ -96,7 +91,7 @@ const Product = props => {
                     })}
                   />
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
@@ -128,13 +123,10 @@ const Product = props => {
             className='btn-cart me-0 me-sm-1 mb-1 mb-sm-0'
             color='primary'
             onClick={() => handleCartBtn(data.id, data.isInCart)}
-            /*eslint-disable */
-            {...(data.isInCart
-              ? {
+            
+            {...(data.isInCart ? {
                   to: '/apps/ecommerce/checkout'
-                }
-              : {})}
-            /*eslint-enable */
+                } : {})}
           >
             <ShoppingCart className='me-50' size={14} />
             {data.isInCart ? 'View in cart' : 'Move to cart'}
@@ -175,7 +167,7 @@ const Product = props => {
         </div>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

@@ -1,15 +1,12 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Edit2, X } from 'react-feather'
+import toast from 'react-hot-toast';
+import { Edit2, X } from 'react-feather';
 
 // ** Avatar Image
-import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg';
 
 const ToastCustom = () => {
   const handleClick = () => {
@@ -31,8 +28,8 @@ const ToastCustom = () => {
           minWidth: '300px'
         }
       }
-    )
-  }
+    );
+  };
 
   return (
     <Card>
@@ -47,7 +44,7 @@ const ToastCustom = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastCustom
+export default ToastCustom;

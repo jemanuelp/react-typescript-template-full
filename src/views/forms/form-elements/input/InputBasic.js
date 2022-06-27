@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Label, Input, FormText, Row, Col } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Label, Input, FormText, Row, Col } from 'reactstrap';
 
 const InputBasic = () => {
   return (
@@ -55,6 +55,6 @@ const InputBasic = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default InputBasic
+  );
+};
+export default InputBasic;

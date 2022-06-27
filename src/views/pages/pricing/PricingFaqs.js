@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Row, Col, AccordionBody, AccordionItem, AccordionHeader, UncontrolledAccordion } from 'reactstrap'
+
+import { Row, Col, AccordionBody, AccordionItem, AccordionHeader, UncontrolledAccordion } from 'reactstrap';
 
 const PricingFaqs = ({ data }) => {
   return (
@@ -17,13 +17,13 @@ const PricingFaqs = ({ data }) => {
                   </AccordionHeader>
                   <AccordionBody accordionId={String(index + 1)}>{r.ans}</AccordionBody>
                 </AccordionItem>
-              )
+              );
             })}
           </UncontrolledAccordion>
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default PricingFaqs
+export default PricingFaqs;

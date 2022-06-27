@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button, UncontrolledTooltip } from 'reactstrap'
+
+import { Button, UncontrolledTooltip } from 'reactstrap';
 
 const TooltipPosition = () => {
   return (
@@ -32,6 +32,6 @@ const TooltipPosition = () => {
         Tooltip on Left
       </UncontrolledTooltip>
     </div>
-  )
-}
-export default TooltipPosition
+  );
+};
+export default TooltipPosition;

@@ -1,48 +1,42 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import toast from 'react-hot-toast'
-import * as Icons from 'react-feather'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import classnames from 'classnames';
+import toast from 'react-hot-toast';
+import * as Icons from 'react-feather';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
-import Breadcrumbs from '@components/breadcrumbs'
+import Avatar from 'src/@core/components/avatar';
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, Input, CardBody, InputGroup, InputGroupText, UncontrolledTooltip } from 'reactstrap'
+import { Row, Col, Card, Input, CardBody, InputGroup, InputGroupText, UncontrolledTooltip } from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/ui-feather.scss'
+import 'src/@core/scss/base/pages/ui-feather.scss';
 
 const FeatherIcons = () => {
-  const IconsArr = []
+  const IconsArr = [];
 
-  // ** States
   const [query, setQuery] = useState([]),
     [filteredArr, setFilteredArr] = useState([]),
-    [active, setActive] = useState(null)
+    [active, setActive] = useState(null);
 
   for (const key in Icons) {
-    IconsArr.push(key)
+    IconsArr.push(key);
   }
 
   const handleFilter = val => {
-    const arr = []
+    const arr = [];
     if (val.length) {
       IconsArr.filter(icon => {
         if (icon.toLowerCase().includes(val.toLowerCase())) {
-          arr.push(icon)
+          arr.push(icon);
         }
-      })
+      });
     }
-    setFilteredArr([...arr])
-  }
+    setFilteredArr([...arr]);
+  };
 
   const handleIconCardClick = icon => {
-    setActive(icon)
+    setActive(icon);
     toast(() => (
       <div className='d-flex'>
         <div className='me-1'>
@@ -55,14 +49,14 @@ const FeatherIcons = () => {
           </span>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   const renderIcons = () => {
-    const dataToRender = query.length ? filteredArr : IconsArr
+    const dataToRender = query.length ? filteredArr : IconsArr;
     if (dataToRender.length) {
       return dataToRender.map(icon => {
-        const IconTag = Icons[icon]
+        const IconTag = Icons[icon];
         return (
           <Fragment key={icon}>
             <CopyToClipboard text={`<${icon} />`}>
@@ -85,16 +79,16 @@ const FeatherIcons = () => {
               {icon.replace(/([A-Z])/g, ' $1').trim()}
             </UncontrolledTooltip>
           </Fragment>
-        )
-      })
+        );
+      });
     } else {
       return (
         <div className='d-flex align-items-center justify-content-center w-100'>
           <h4 className='mb-0'>No Icons Found!</h4>
         </div>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -109,8 +103,8 @@ const FeatherIcons = () => {
               <Input
                 placeholder='Search icons...'
                 onChange={e => {
-                  handleFilter(e.target.value)
-                  setQuery(e.target.value)
+                  handleFilter(e.target.value);
+                  setQuery(e.target.value);
                 }}
               />
             </InputGroup>
@@ -121,6 +115,6 @@ const FeatherIcons = () => {
         {renderIcons()}
       </div>
     </Fragment>
-  )
-}
-export default FeatherIcons
+  );
+};
+export default FeatherIcons;

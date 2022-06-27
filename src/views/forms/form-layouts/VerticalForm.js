@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Row, Col, Form, Card, Label, Input, Button, CardBody, CardTitle, CardHeader } from 'reactstrap'
+
+import { Row, Col, Form, Card, Label, Input, Button, CardBody, CardTitle, CardHeader } from 'reactstrap';
 
 const VerticalForm = () => {
   return (
@@ -57,6 +57,6 @@ const VerticalForm = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
-export default VerticalForm
+  );
+};
+export default VerticalForm;

@@ -1,14 +1,10 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Progress, Input, Label, UncontrolledTooltip } from 'reactstrap'
+import { Card, CardBody, CardText, Progress, Input, Label, UncontrolledTooltip } from 'reactstrap';
 
 const ProfilePolls = ({ data }) => {
   const renderOptions = () => {
@@ -45,13 +41,13 @@ const ProfilePolls = ({ data }) => {
                     {user.username}
                   </UncontrolledTooltip>
                 </Fragment>
-              )
+              );
             })}
           </div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card>
@@ -61,7 +57,7 @@ const ProfilePolls = ({ data }) => {
         {renderOptions()}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfilePolls
+export default ProfilePolls;

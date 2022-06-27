@@ -14,5 +14,5 @@ const JWT_DEFAULT_CONFIG: JWTConfig = {
   // ** Value of this property will be used as key to store JWT token in storage
   storageTokenKeyName: 'accessToken',
   storageRefreshTokenKeyName: 'refreshToken'
-}
-export default JWT_DEFAULT_CONFIG
+};
+export default JWT_DEFAULT_CONFIG;

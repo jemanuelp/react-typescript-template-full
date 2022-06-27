@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+
+import { Alert } from 'reactstrap';
 
 const AlertTitle = () => {
   return (
@@ -15,6 +15,6 @@ const AlertTitle = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default AlertTitle
+  );
+};
+export default AlertTitle;

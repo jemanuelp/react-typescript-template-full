@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+
+import { Alert } from 'reactstrap';
 
 const AlertColors = () => {
   return (
@@ -54,6 +54,6 @@ const AlertColors = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default AlertColors
+  );
+};
+export default AlertColors;

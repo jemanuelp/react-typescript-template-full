@@ -1,27 +1,22 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Demo Components
-import DropdownFlat from './DropdownFlat'
-import DropdownBasic from './DropdownBasic'
-import DropdownSplit from './DropdownSplit'
-import DropdownSizes from './DropdownSizes'
-import DropdownOutline from './DropdownOutline'
-import DropdownGradient from './DropdownGradient'
-import DropdownDirections from './DropdownDirections'
-import DropdownVariations from './DropdownVariations'
-import DropdownControlled from './DropdownControlled'
-import DropdownUncontrolled from './DropdownUncontrolled'
+import DropdownFlat from './DropdownFlat';
+import DropdownBasic from './DropdownBasic';
+import DropdownSplit from './DropdownSplit';
+import DropdownSizes from './DropdownSizes';
+import DropdownOutline from './DropdownOutline';
+import DropdownGradient from './DropdownGradient';
+import DropdownDirections from './DropdownDirections';
+import DropdownVariations from './DropdownVariations';
+import DropdownControlled from './DropdownControlled';
+import DropdownUncontrolled from './DropdownUncontrolled';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
 // ** Source Code
 import {
@@ -34,13 +29,13 @@ import {
   dropdownDirections,
   dropdownVariations,
   dropdownControlled,
-  dropdownUncontrolled
-} from './DropdownsSourceCode'
+  dropdownUncontrolled,
+} from './DropdownsSourceCode';
 
 const Dropdowns = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -127,6 +122,6 @@ const Dropdowns = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Dropdowns
+  );
+};
+export default Dropdowns;

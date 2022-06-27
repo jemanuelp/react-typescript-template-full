@@ -1,38 +1,33 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, Form, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap'
+import { Row, Col, Card, Form, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap';
 
-// ** Third Party Components
-import * as yup from 'yup'
-import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-// ** Custom Components
-import InputPasswordToggle from '@components/input-password-toggle'
+import InputPasswordToggle from 'src/@core/components/input-password-toggle';
 
-// ** Demo Components
-import ApiKeysList from './ApiKeysList'
-import CreateApiKey from './CreateApikey'
-import TwoFactorAuth from './TwoFactorAuth'
-import RecentDevices from './RecentDevices'
+import ApiKeysList from './ApiKeysList';
+import CreateApiKey from './CreateApikey';
+import TwoFactorAuth from './TwoFactorAuth';
+import RecentDevices from './RecentDevices';
 
 const showErrors = (field, valueLen, min) => {
   if (valueLen === 0) {
-    return `${field} field is required`
+    return `${field} field is required`;
   } else if (valueLen > 0 && valueLen < min) {
-    return `${field} must be at least ${min} characters`
+    return `${field} must be at least ${min} characters`;
   } else {
-    return ''
+    return '';
   }
-}
+};
 
 const defaultValues = {
   newPassword: '',
   currentPassword: '',
-  retypeNewPassword: ''
-}
+  retypeNewPassword: '',
+};
 
 const SecurityTabContent = () => {
   const SignupSchema = yup.object().shape({
@@ -48,31 +43,31 @@ const SecurityTabContent = () => {
       .string()
       .min(8, obj => showErrors('Retype New Password', obj.value.length, obj.min))
       .required()
-      .oneOf([yup.ref(`newPassword`), null], 'Passwords must match')
-  })
-  // ** Hooks
+      .oneOf([yup.ref(`newPassword`), null], 'Passwords must match'),
+  });
+  
   const {
     control,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
     defaultValues,
-    resolver: yupResolver(SignupSchema)
-  })
+    resolver: yupResolver(SignupSchema),
+  });
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
-      return null
+      return null;
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
-            type: 'manual'
-          })
+            type: 'manual',
+          });
         }
       }
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -165,7 +160,7 @@ const SecurityTabContent = () => {
       <ApiKeysList />
       <RecentDevices />
     </Fragment>
-  )
-}
+  );
+};
 
-export default SecurityTabContent
+export default SecurityTabContent;

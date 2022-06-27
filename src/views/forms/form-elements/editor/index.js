@@ -1,16 +1,12 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import EditorControlled from './EditorControlled'
-import EditorUncontrolled from './EditorUncontrolled'
-import ExtensionsHeader from '@components/extensions-header'
+import EditorControlled from './EditorControlled';
+import EditorUncontrolled from './EditorUncontrolled';
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Styles
-import '@styles/react/libs/editor/editor.scss'
+import 'src/@core/scss/react/libs/editor/editor.scss';
 
 const Editor = () => {
   return (
@@ -30,7 +26,7 @@ const Editor = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Editor
+export default Editor;

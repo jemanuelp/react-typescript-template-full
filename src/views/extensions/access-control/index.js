@@ -1,15 +1,12 @@
-// ** React Imports
-import { useContext } from 'react'
+import { useContext } from 'react';
 
-// ** Context
-import { AbilityContext } from '@src/utility/context/Can'
+import { AbilityContext } from 'src/utility/context/Can';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const AccessControl = () => {
-  // ** Context
-  const ability = useContext(AbilityContext)
+  
+  const ability = useContext(AbilityContext);
   return (
     <Row>
       <Col md='6' sm='12'>
@@ -21,7 +18,8 @@ const AccessControl = () => {
           </CardBody>
         </Card>
       </Col>
-      {ability.can('read', 'Analytics') ? (
+      {ability.can('read', 'Analytics')
+? (
         <Col md='6' sm='12'>
           <Card>
             <CardBody>
@@ -31,9 +29,10 @@ const AccessControl = () => {
             </CardBody>
           </Card>
         </Col>
-      ) : null}
+      )
+: null}
     </Row>
-  )
-}
+  );
+};
 
-export default AccessControl
+export default AccessControl;

@@ -1,18 +1,15 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 
 const TabsVerticalRight = () => {
-  // ** State
-  const [active, setActive] = useState('1')
+  const [active, setActive] = useState('1');
 
   const toggle = tab => {
     if (active !== tab) {
-      setActive(tab)
+      setActive(tab);
     }
-  }
+  };
 
   return (
     <div className='nav-vertical'>
@@ -21,7 +18,7 @@ const TabsVerticalRight = () => {
           <NavLink
             active={active === '1'}
             onClick={() => {
-              toggle('1')
+              toggle('1');
             }}
           >
             Tab 1
@@ -31,7 +28,7 @@ const TabsVerticalRight = () => {
           <NavLink
             active={active === '2'}
             onClick={() => {
-              toggle('2')
+              toggle('2');
             }}
           >
             Tab 2
@@ -41,7 +38,7 @@ const TabsVerticalRight = () => {
           <NavLink
             active={active === '3'}
             onClick={() => {
-              toggle('3')
+              toggle('3');
             }}
           >
             Tab 3
@@ -72,6 +69,6 @@ const TabsVerticalRight = () => {
         </TabPane>
       </TabContent>
     </div>
-  )
-}
-export default TabsVerticalRight
+  );
+};
+export default TabsVerticalRight;

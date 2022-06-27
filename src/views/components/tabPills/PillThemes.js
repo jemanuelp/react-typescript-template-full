@@ -1,22 +1,19 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const PillThemes = () => {
-  // ** States
-  const [pillInfo, setPillInfo] = useState(1)
-  const [pillDanger, setPillDanger] = useState(1)
-  const [pillSuccess, setPillSuccess] = useState(1)
-  const [pillWarning, setPillWarning] = useState(1)
-  const [pillSecondary, setPillSecondary] = useState(1)
+  const [pillInfo, setPillInfo] = useState(1);
+  const [pillDanger, setPillDanger] = useState(1);
+  const [pillSuccess, setPillSuccess] = useState(1);
+  const [pillWarning, setPillWarning] = useState(1);
+  const [pillSecondary, setPillSecondary] = useState(1);
 
-  const toggleInfo = tab => setPillInfo(tab)
-  const toggleDanger = tab => setPillDanger(tab)
-  const toggleSuccess = tab => setPillSuccess(tab)
-  const toggleWarning = tab => setPillWarning(tab)
-  const toggleSecondary = tab => setPillSecondary(tab)
+  const toggleInfo = tab => setPillInfo(tab);
+  const toggleDanger = tab => setPillDanger(tab);
+  const toggleSuccess = tab => setPillSuccess(tab);
+  const toggleWarning = tab => setPillWarning(tab);
+  const toggleSecondary = tab => setPillSecondary(tab);
 
   return (
     <Fragment>
@@ -103,6 +100,6 @@ const PillThemes = () => {
         </NavItem>
       </Nav>
     </Fragment>
-  )
-}
-export default PillThemes
+  );
+};
+export default PillThemes;

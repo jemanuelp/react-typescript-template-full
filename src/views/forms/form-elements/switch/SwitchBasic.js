@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap';
 
 const SwitchBasic = () => {
   return (
@@ -24,6 +24,6 @@ const SwitchBasic = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SwitchBasic
+  );
+};
+export default SwitchBasic;

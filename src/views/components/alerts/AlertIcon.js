@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+import { Alert } from 'reactstrap';
 
-// ** Icons Imports
-import { Star } from 'react-feather'
+import { Star } from 'react-feather';
 
 const AlertIcon = () => {
   return (
@@ -16,6 +14,6 @@ const AlertIcon = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default AlertIcon
+  );
+};
+export default AlertIcon;

@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 const DropdownControlled = () => {
-  // ** States
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen)
-  }
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
@@ -29,6 +26,6 @@ const DropdownControlled = () => {
         </DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
-  )
-}
-export default DropdownControlled
+  );
+};
+export default DropdownControlled;

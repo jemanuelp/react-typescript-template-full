@@ -5,7 +5,7 @@ export const getBookmarks = createAsyncThunk('layout/getBookmarks', async () => 
   const response = await axios.get('/api/bookmarks/data');
   return {
     data: response.data.suggestions,
-    bookmarks: response.data.bookmarks
+    bookmarks: response.data.bookmarks,
   };
 });
 
@@ -24,12 +24,12 @@ export const layoutSlice = createSlice({
   initialState: {
     query: '',
     bookmarks: new Array<Bookmark>(),
-    suggestions: []
+    suggestions: [],
   },
   reducers: {
     handleSearchQuery: (state, action) => {
       state.query = action.payload;
-    }
+    },
   },
   extraReducers: builder => {
     builder
@@ -49,7 +49,9 @@ export const layoutSlice = createSlice({
         });
 
         // ** Get index to add or remove bookmark from array
-        const bookmarkIndex = state.bookmarks.findIndex((x: any) => x.id === action.payload);
+        const bookmarkIndex = state.bookmarks.findIndex((x: any) => {
+          return x.id === action.payload;
+        });
 
         if (bookmarkIndex === -1) {
           // @ts-ignore
@@ -60,7 +62,7 @@ export const layoutSlice = createSlice({
           state.bookmarks.splice(bookmarkIndex, 1);
         }
       });
-  }
+  },
 });
 
 export const { handleSearchQuery } = layoutSlice.actions;

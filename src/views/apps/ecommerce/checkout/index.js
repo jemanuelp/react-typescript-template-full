@@ -1,38 +1,29 @@
-// ** React Imports
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react';
 
-// ** Custom Components
-import Wizard from '@components/wizard'
-import BreadCrumbs from '@components/breadcrumbs'
+import Wizard from 'src/@core/components/wizard';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Steps
-import Cart from './steps/Cart'
-import Address from './steps/Address'
-import Payment from './steps/Payment'
+import Cart from './steps/Cart';
+import Address from './steps/Address';
+import Payment from './steps/Payment';
 
-// ** Third Party Components
-import { ShoppingCart, Home, CreditCard } from 'react-feather'
+import { ShoppingCart, Home, CreditCard } from 'react-feather';
 
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getCartItems, deleteCartItem, deleteWishlistItem, addToWishlist } from '../store'
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartItems, deleteCartItem, deleteWishlistItem, addToWishlist } from '../store';
 
-// ** Styles
-import '@styles/base/pages/app-ecommerce.scss'
+import 'src/@core/scss/base/pages/app-ecommerce.scss';
 
 const Checkout = () => {
-  // ** Ref & State
-  const ref = useRef(null)
-  const [stepper, setStepper] = useState(null)
+  const ref = useRef(null);
+  const [stepper, setStepper] = useState(null);
 
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.ecommerce)
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.ecommerce);
 
-  // ** Get Cart Items on mount
   useEffect(() => {
-    dispatch(getCartItems())
-  }, [])
+    dispatch(getCartItems());
+  }, []);
 
   const steps = [
     {
@@ -66,7 +57,7 @@ const Checkout = () => {
       icon: <CreditCard size={18} />,
       content: <Payment stepper={stepper} />
     }
-  ]
+  ];
 
   return (
     <Fragment>
@@ -81,7 +72,7 @@ const Checkout = () => {
         }}
       />
     </Fragment>
-  )
-}
+  );
+};
 
-export default Checkout
+export default Checkout;

@@ -1,9 +1,7 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { X } from 'react-feather'
+import toast from 'react-hot-toast';
+import { X } from 'react-feather';
 
 const ToastError = () => {
   return (
@@ -19,7 +17,7 @@ const ToastError = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastError
+export default ToastError;

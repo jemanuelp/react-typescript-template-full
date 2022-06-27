@@ -1,18 +1,14 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-import { Fragment, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { Fragment, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import classnames from 'classnames'
-import { MessageSquare } from 'react-feather'
+import axios from 'axios';
+import classnames from 'classnames';
+import { MessageSquare } from 'react-feather';
 
-// ** Custom Components
-import Sidebar from '../BlogSidebar'
-import Avatar from '@components/avatar'
-import Breadcrumbs from '@components/breadcrumbs'
+import Sidebar from '../BlogSidebar';
+import Avatar from 'src/@core/components/avatar';
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -25,18 +21,16 @@ import {
   Pagination,
   PaginationItem,
   PaginationLink
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/page-blog.scss'
+import 'src/@core/scss/base/pages/page-blog.scss';
 
 const BlogList = () => {
-  // ** States
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/blog/list/data').then(res => setData(res.data))
-  }, [])
+    axios.get('/blog/list/data').then(res => setData(res.data));
+  }, []);
 
   const badgeColorsArr = {
     Quote: 'light-info',
@@ -44,7 +38,7 @@ const BlogList = () => {
     Gaming: 'light-danger',
     Video: 'light-warning',
     Food: 'light-success'
-  }
+  };
   const renderRenderList = () => {
     return data.map(item => {
       const renderTags = () => {
@@ -61,9 +55,9 @@ const BlogList = () => {
                 {tag}
               </Badge>
             </a>
-          )
-        })
-      }
+          );
+        });
+      };
 
       return (
         <Col key={item.title} md='6'>
@@ -105,9 +99,9 @@ const BlogList = () => {
             </CardBody>
           </Card>
         </Col>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Fragment>
@@ -172,7 +166,7 @@ const BlogList = () => {
         <Sidebar />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default BlogList
+export default BlogList;

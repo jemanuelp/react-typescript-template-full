@@ -1,18 +1,18 @@
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-import Avatar from '@components/avatar'
-import AvatarGroup from '@components/avatar-group'
+import Avatar from 'src/@core/components/avatar';
+import AvatarGroup from 'src/@core/components/avatar-group';
 
-import pdf from '@src/assets/images/icons/file-icons/pdf.png'
-import ceo from '@src/assets/images/portrait/small/avatar-s-9.jpg'
-import interview from '@src/assets/images/portrait/small/avatar-s-20.jpg'
-import user1 from '@src/assets/images/portrait/small/avatar-s-25.jpg'
-import user2 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
-import user3 from '@src/assets/images/portrait/small/avatar-s-10.jpg'
+import pdf from 'src/assets/images/icons/file-icons/pdf.png';
+import ceo from 'src/assets/images/portrait/small/avatar-s-9.jpg';
+import interview from 'src/assets/images/portrait/small/avatar-s-20.jpg';
+import user1 from 'src/assets/images/portrait/small/avatar-s-25.jpg';
+import user2 from 'src/assets/images/portrait/small/avatar-s-7.jpg';
+import user3 from 'src/assets/images/portrait/small/avatar-s-10.jpg';
 
-import { Button, UncontrolledCollapse, ListGroup, ListGroupItem, Badge } from 'reactstrap'
+import { Button, UncontrolledCollapse, ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
-import { Share2, MessageSquare, PhoneCall, PenTool, User, FileText, MapPin, ShoppingBag, Server } from 'react-feather'
+import { Share2, MessageSquare, PhoneCall, PenTool, User, FileText, MapPin, ShoppingBag, Server } from 'react-feather';
 
 const avatarGroupBasic = [
   {
@@ -33,7 +33,7 @@ const avatarGroupBasic = [
     imgHeight: 30,
     imgWidth: 30
   }
-]
+];
 
 const avatarGroupIcons = [
   {
@@ -54,7 +54,7 @@ const avatarGroupIcons = [
     imgHeight: 30,
     imgWidth: 30
   }
-]
+];
 
 export const basicData = [
   {
@@ -198,7 +198,7 @@ export const basicData = [
       </div>
     )
   }
-]
+];
 
 export const iconsData = [
   {
@@ -348,4 +348,4 @@ export const iconsData = [
       </div>
     )
   }
-]
+];

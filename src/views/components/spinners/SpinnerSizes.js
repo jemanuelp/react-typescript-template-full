@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Spinner } from 'reactstrap'
+
+import { Spinner } from 'reactstrap';
 
 const SpinnerSizes = () => {
   return (
@@ -17,6 +17,6 @@ const SpinnerSizes = () => {
         <Spinner type='grow' style={{ height: '3rem', width: '3rem' }} />
       </div>
     </div>
-  )
-}
-export default SpinnerSizes
+  );
+};
+export default SpinnerSizes;

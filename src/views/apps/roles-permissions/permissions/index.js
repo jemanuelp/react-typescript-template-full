@@ -1,11 +1,9 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card } from 'reactstrap'
+import { Card } from 'reactstrap';
 
 // ** Table Import
-import Table from './Table'
+import Table from './Table';
 
 const Permissions = () => {
   return (
@@ -18,7 +16,7 @@ const Permissions = () => {
         </div>
       </Card>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Permissions
+export default Permissions;

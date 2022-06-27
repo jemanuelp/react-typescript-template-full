@@ -1,21 +1,17 @@
-// ** Custom Components
-import AvatarGroup from '@components/avatar-group'
+import AvatarGroup from 'src/@core/components/avatar-group';
 
-// ** Images
-import react from '@src/assets/images/icons/react.svg'
-import figma from '@src/assets/images/icons/figma.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import react from 'src/assets/images/icons/react.svg';
+import figma from 'src/assets/images/icons/figma.svg';
+import vuejs from 'src/assets/images/icons/vuejs.svg';
+import angular from 'src/assets/images/icons/angular.svg';
+import bootstrap from 'src/assets/images/icons/bootstrap.svg';
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg';
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg';
 
-// ** Icons Imports
-import { MoreVertical, Edit, Trash } from 'react-feather'
+import { MoreVertical, Edit, Trash } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 
 const avatarGroupData1 = [
   {
@@ -36,7 +32,7 @@ const avatarGroupData1 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData2 = [
   {
@@ -57,7 +53,7 @@ const avatarGroupData2 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData3 = [
   {
@@ -78,7 +74,7 @@ const avatarGroupData3 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData4 = [
   {
@@ -99,7 +95,7 @@ const avatarGroupData4 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData5 = [
   {
@@ -120,7 +116,7 @@ const avatarGroupData5 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData6 = [
   {
@@ -141,7 +137,7 @@ const avatarGroupData6 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData7 = [
   {
@@ -162,7 +158,7 @@ const avatarGroupData7 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData8 = [
   {
@@ -183,7 +179,7 @@ const avatarGroupData8 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData9 = [
   {
@@ -204,7 +200,7 @@ const avatarGroupData9 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const avatarGroupData10 = [
   {
@@ -225,7 +221,7 @@ const avatarGroupData10 = [
     imgHeight: 26,
     imgWidth: 26
   }
-]
+];
 
 const TableContextual = () => {
   return (
@@ -542,7 +538,7 @@ const TableContextual = () => {
         </tr>
       </tbody>
     </Table>
-  )
-}
+  );
+};
 
-export default TableContextual
+export default TableContextual;

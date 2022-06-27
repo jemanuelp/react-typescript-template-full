@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -17,19 +15,16 @@ import {
   ModalHeader,
   FormFeedback,
   UncontrolledTooltip
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Third Party Components
-import { Copy, Info } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
+import { Copy, Info } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Custom Components
-import AvatarGroup from '@components/avatar-group'
+import AvatarGroup from 'src/@core/components/avatar-group';
 
 // ** FAQ Illustrations
-import illustration from '@src/assets/images/illustration/faq-illustrations.svg'
+import illustration from 'src/assets/images/illustration/faq-illustrations.svg';
 
-// ** Vars
 const data = [
   {
     totalUsers: 4,
@@ -38,22 +33,22 @@ const data = [
       {
         size: 'sm',
         title: 'Vinnie Mostowy',
-        img: require('@src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default
       },
       {
         size: 'sm',
         title: 'Allen Rieske',
-        img: require('@src/assets/images/avatars/12.png').default
+        img: require('src/assets/images/avatars/12.png').default
       },
       {
         size: 'sm',
         title: 'Julee Rossignol',
-        img: require('@src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default
       },
       {
         size: 'sm',
         title: 'Kaith Dsouza',
-        img: require('@src/assets/images/avatars/11.png').default
+        img: require('src/assets/images/avatars/11.png').default
       }
     ]
   },
@@ -64,27 +59,27 @@ const data = [
       {
         size: 'sm',
         title: 'Jimmy Ressula',
-        img: require('@src/assets/images/avatars/4.png').default
+        img: require('src/assets/images/avatars/4.png').default
       },
       {
         size: 'sm',
         title: 'John Doe',
-        img: require('@src/assets/images/avatars/1.png').default
+        img: require('src/assets/images/avatars/1.png').default
       },
       {
         size: 'sm',
         title: 'Kristi Lawker',
-        img: require('@src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default
       },
       {
         size: 'sm',
         title: 'Kaith D',
-        img: require('@src/assets/images/avatars/5.png').default
+        img: require('src/assets/images/avatars/5.png').default
       },
       {
         size: 'sm',
         title: 'Danny Paul',
-        img: require('@src/assets/images/avatars/7.png').default
+        img: require('src/assets/images/avatars/7.png').default
       }
     ]
   },
@@ -95,27 +90,27 @@ const data = [
       {
         size: 'sm',
         title: 'Andrew Tye',
-        img: require('@src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default
       },
       {
         size: 'sm',
         title: 'Rishi Swaat',
-        img: require('@src/assets/images/avatars/9.png').default
+        img: require('src/assets/images/avatars/9.png').default
       },
       {
         size: 'sm',
         title: 'Rossie Kim',
-        img: require('@src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default
       },
       {
         size: 'sm',
         title: 'Kim Merchent',
-        img: require('@src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default
       },
       {
         size: 'sm',
         title: 'Sam Dsouza',
-        img: require('@src/assets/images/avatars/8.png').default
+        img: require('src/assets/images/avatars/8.png').default
       }
     ]
   },
@@ -126,27 +121,27 @@ const data = [
       {
         size: 'sm',
         title: 'Kim Karlos',
-        img: require('@src/assets/images/avatars/3.png').default
+        img: require('src/assets/images/avatars/3.png').default
       },
       {
         size: 'sm',
         title: 'Katy Turner',
-        img: require('@src/assets/images/avatars/9.png').default
+        img: require('src/assets/images/avatars/9.png').default
       },
       {
         size: 'sm',
         title: 'Peter Adward',
-        img: require('@src/assets/images/avatars/12.png').default
+        img: require('src/assets/images/avatars/12.png').default
       },
       {
         size: 'sm',
         title: 'Kaith Dsouza',
-        img: require('@src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default
       },
       {
         size: 'sm',
         title: 'John Parker',
-        img: require('@src/assets/images/avatars/11.png').default
+        img: require('src/assets/images/avatars/11.png').default
       }
     ]
   },
@@ -157,31 +152,31 @@ const data = [
       {
         size: 'sm',
         title: 'Kim Merchent',
-        img: require('@src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default
       },
       {
         size: 'sm',
         title: 'Sam Dsouza',
-        img: require('@src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default
       },
       {
         size: 'sm',
         title: 'Nurvi Karlos',
-        img: require('@src/assets/images/avatars/3.png').default
+        img: require('src/assets/images/avatars/3.png').default
       },
       {
         size: 'sm',
         title: 'Andrew Tye',
-        img: require('@src/assets/images/avatars/8.png').default
+        img: require('src/assets/images/avatars/8.png').default
       },
       {
         size: 'sm',
         title: 'Rossie Kim',
-        img: require('@src/assets/images/avatars/9.png').default
+        img: require('src/assets/images/avatars/9.png').default
       }
     ]
   }
-]
+];
 
 const rolesArr = [
   'User Management',
@@ -193,14 +188,12 @@ const rolesArr = [
   'API Control',
   'Repository Management',
   'Payroll'
-]
+];
 
 const RoleCards = () => {
-  // ** States
-  const [show, setShow] = useState(false)
-  const [modalType, setModalType] = useState('Add New')
-
-  // ** Hooks
+  const [show, setShow] = useState(false);
+  const [modalType, setModalType] = useState('Add New');
+  
   const {
     reset,
     control,
@@ -208,27 +201,27 @@ const RoleCards = () => {
     setValue,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues: { roleName: '' } })
+  } = useForm({ defaultValues: { roleName: '' } });
 
   const onSubmit = data => {
     if (data.roleName.length) {
-      setShow(false)
+      setShow(false);
     } else {
       setError('roleName', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   const onReset = () => {
-    setShow(false)
-    reset({ roleName: '' })
-  }
+    setShow(false);
+    reset({ roleName: '' });
+  };
 
   const handleModalClosed = () => {
-    setModalType('Add New')
-    setValue('roleName')
-  }
+    setModalType('Add New');
+    setValue('roleName');
+  };
 
   return (
     <Fragment>
@@ -249,9 +242,9 @@ const RoleCards = () => {
                         to='/'
                         className='role-edit-modal'
                         onClick={e => {
-                          e.preventDefault()
-                          setModalType('Edit')
-                          setShow(true)
+                          e.preventDefault();
+                          setModalType('Edit');
+                          setShow(true);
                         }}
                       >
                         <small className='fw-bolder'>Edit Role</small>
@@ -264,7 +257,7 @@ const RoleCards = () => {
                 </CardBody>
               </Card>
             </Col>
-          )
+          );
         })}
         <Col xl={4} md={6}>
           <Card>
@@ -280,8 +273,8 @@ const RoleCards = () => {
                     color='primary'
                     className='text-nowrap mb-1'
                     onClick={() => {
-                      setModalType('Add New')
-                      setShow(true)
+                      setModalType('Add New');
+                      setShow(true);
                     }}
                   >
                     Add New Role
@@ -367,7 +360,7 @@ const RoleCards = () => {
                           </div>
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </Table>
@@ -384,7 +377,7 @@ const RoleCards = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default RoleCards
+export default RoleCards;

@@ -1,24 +1,20 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, Collapse, Button } from 'reactstrap'
+import { Row, Col, Collapse, Button } from 'reactstrap';
 
-// ** Images
-import collapseImg1 from '@src/assets/images/slider/06.jpg'
-import collapseImg2 from '@src/assets/images/slider/08.jpg'
+import collapseImg1 from 'src/assets/images/slider/06.jpg';
+import collapseImg2 from 'src/assets/images/slider/08.jpg';
 
 const CollapseMultipleTargets = () => {
-  // ** States
-  const [firstCollapse, setFirstCollapse] = useState(false)
-  const [secondCollapse, setSecondCollapse] = useState(false)
+  const [firstCollapse, setFirstCollapse] = useState(false);
+  const [secondCollapse, setSecondCollapse] = useState(false);
 
-  const toggleFirstCollapse = () => setFirstCollapse(!firstCollapse)
-  const toggleSecondCollapse = () => setSecondCollapse(!secondCollapse)
+  const toggleFirstCollapse = () => setFirstCollapse(!firstCollapse);
+  const toggleSecondCollapse = () => setSecondCollapse(!secondCollapse);
   const toggleBothCollapses = () => {
-    setFirstCollapse(!firstCollapse)
-    setSecondCollapse(!secondCollapse)
-  }
+    setFirstCollapse(!firstCollapse);
+    setSecondCollapse(!secondCollapse);
+  };
 
   return (
     <div>
@@ -61,7 +57,7 @@ const CollapseMultipleTargets = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default CollapseMultipleTargets
+export default CollapseMultipleTargets;

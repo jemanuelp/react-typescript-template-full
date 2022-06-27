@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap';
 
 const TextareaFloatingLabel = () => {
   return (
@@ -26,6 +26,6 @@ const TextareaFloatingLabel = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default TextareaFloatingLabel
+  );
+};
+export default TextareaFloatingLabel;

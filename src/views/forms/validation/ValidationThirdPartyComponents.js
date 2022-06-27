@@ -1,29 +1,23 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import Select from 'react-select'
-import toast from 'react-hot-toast'
-import classnames from 'classnames'
-import Cleave from 'cleave.js/react'
-import { Check } from 'react-feather'
-import Flatpickr from 'react-flatpickr'
-import 'cleave.js/dist/addons/cleave-phone.us'
-import { useForm, Controller } from 'react-hook-form'
+import Select from 'react-select';
+import toast from 'react-hot-toast';
+import classnames from 'classnames';
+import Cleave from 'cleave.js/react';
+import { Check } from 'react-feather';
+import Flatpickr from 'react-flatpickr';
+import 'cleave.js/dist/addons/cleave-phone.us';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Utils
-import { selectThemeColors } from '@utils'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Reactstrap Imports
-import { Card, Form, Label, Button, CardBody, CardTitle, CardHeader, InputGroup, InputGroupText } from 'reactstrap'
+import { Card, Form, Label, Button, CardBody, CardTitle, CardHeader, InputGroup, InputGroupText } from 'reactstrap';
 
-// ** Styles
-import '@styles/react/libs/flatpickr/flatpickr.scss'
-import '@styles/react/libs/react-select/_react-select.scss'
-import '@styles/react/pages/page-form-validation.scss'
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
+import 'src/@core/scss/react/pages/page-form-validation.scss';
 
 const colourOptions = [
   { value: 'ocean', label: 'Ocean' },
@@ -31,23 +25,21 @@ const colourOptions = [
   { value: 'purple', label: 'Purple' },
   { value: 'red', label: 'Red' },
   { value: 'orange', label: 'Orange' }
-]
+];
 
 const defaultValues = {
   phoneNumber: '',
   ReactSelect: null,
   reactFlatpickr: null
-}
+};
 
 const ValidationThirdPartyComponents = () => {
-  // ** State
-  const [data, setData] = useState(null)
-
-  // ** Hooks
-  const { reset, handleSubmit, control } = useForm({ defaultValues })
+  const [data, setData] = useState(null);
+  
+  const { reset, handleSubmit, control } = useForm({ defaultValues });
 
   const onSubmit = data => {
-    setData(data)
+    setData(data);
     if (data.ReactSelect !== null && data.reactFlatpickr !== null && data.phoneNumber.length) {
       toast(
         <div className='d-flex'>
@@ -69,17 +61,17 @@ const ValidationThirdPartyComponents = () => {
             </ul>
           </div>
         </div>
-      )
+      );
     }
-  }
+  };
 
   const handleReset = () => {
     reset({
       phoneNumber: '',
       ReactSelect: '',
       reactFlatpickr: ''
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -166,7 +158,7 @@ const ValidationThirdPartyComponents = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ValidationThirdPartyComponents
+export default ValidationThirdPartyComponents;

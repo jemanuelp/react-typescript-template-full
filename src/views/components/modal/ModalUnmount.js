@@ -1,18 +1,15 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Form, Row, Col } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Form, Row, Col } from 'reactstrap';
 
 const ModalDestructuring = () => {
-  // ** States
-  const [visibility, setVisibility] = useState(false)
-  const [unmountOnClose, setUnmountOnClose] = useState(true)
+  const [visibility, setVisibility] = useState(false);
+  const [unmountOnClose, setUnmountOnClose] = useState(true);
 
   const changeUnmountOnClose = e => {
-    const value = e.target.value
-    setUnmountOnClose(JSON.parse(value))
-  }
+    const value = e.target.value;
+    setUnmountOnClose(JSON.parse(value));
+  };
 
   return (
     <Fragment>
@@ -47,6 +44,6 @@ const ModalDestructuring = () => {
         </ModalFooter>
       </Modal>
     </Fragment>
-  )
-}
-export default ModalDestructuring
+  );
+};
+export default ModalDestructuring;

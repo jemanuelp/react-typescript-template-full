@@ -1,37 +1,26 @@
-// ** React Imports
-import { useEffect, Fragment } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemFeatures from './ItemFeatures';
+import ProductDetails from './ProductDetails';
+import RelatedProducts from './RelatedProducts';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
+import { Card, CardBody } from 'reactstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProduct, deleteWishlistItem, addToWishlist, addToCart } from '../store';
 
-// ** Product detail components
-import ItemFeatures from './ItemFeatures'
-import ProductDetails from './ProductDetails'
-import RelatedProducts from './RelatedProducts'
-
-// ** Custom Components
-import BreadCrumbs from '@components/breadcrumbs'
-
-// ** Reactstrap Imports
-import { Card, CardBody } from 'reactstrap'
-
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getProduct, deleteWishlistItem, addToWishlist, addToCart } from '../store'
-
-import '@styles/base/pages/app-ecommerce-details.scss'
+import 'src/@core/scss/base/pages/app-ecommerce-details.scss';
 
 const Details = () => {
-  // ** Vars
-  const params = useParams().product
-  const productId = params.substring(params.lastIndexOf('-') + 1)
+  const params = useParams().product;
+  const productId = params.substring(params.lastIndexOf('-') + 1);
 
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.ecommerce)
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.ecommerce);
 
   // ** ComponentDidMount : Get product
   useEffect(() => {
-    dispatch(getProduct(productId))
-  }, [])
+    dispatch(getProduct(productId));
+  }, []);
 
   return (
     <Fragment>
@@ -58,7 +47,7 @@ const Details = () => {
         ) : null}
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;

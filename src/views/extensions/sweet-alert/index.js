@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import SweetAlertTypes from './SweetAlertTypes'
-import SweetAlertBasic from './SweetAlertBasic'
-import SweetAlertOptions from './SweetAlertOptions'
-import SweetAlertCallback from './SweetAlertCallback'
-import SweetAlertPositions from './SweetAlertPositions'
-import SweetAlertAnimations from './SweetAlertAnimations'
+import SweetAlertTypes from './SweetAlertTypes';
+import SweetAlertBasic from './SweetAlertBasic';
+import SweetAlertOptions from './SweetAlertOptions';
+import SweetAlertCallback from './SweetAlertCallback';
+import SweetAlertPositions from './SweetAlertPositions';
+import SweetAlertAnimations from './SweetAlertAnimations';
 
-// ** Styles
-import 'animate.css/animate.css'
-import '@styles/base/plugins/extensions/ext-component-sweet-alerts.scss'
+import 'animate.css/animate.css';
+import 'src/@core/scss/base/plugins/extensions/ext-component-sweet-alerts.scss';
 
 const SweetAlert = () => {
   return (
@@ -48,7 +43,7 @@ const SweetAlert = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SweetAlert
+export default SweetAlert;

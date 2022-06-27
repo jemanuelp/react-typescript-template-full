@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+
+import { Button } from 'reactstrap';
 
 const RoundButtons = () => {
   return (
@@ -26,6 +26,6 @@ const RoundButtons = () => {
         Dark
       </Button.Ripple>
     </div>
-  )
-}
-export default RoundButtons
+  );
+};
+export default RoundButtons;

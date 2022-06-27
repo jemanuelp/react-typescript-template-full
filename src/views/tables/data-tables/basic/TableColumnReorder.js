@@ -1,25 +1,20 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Table Columns
-import { data, reOrderColumns } from '../data'
+import { data, reOrderColumns } from '../data';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
+import ReactPaginate from 'react-paginate';
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle } from 'reactstrap'
+import { Card, CardHeader, CardTitle } from 'reactstrap';
 
 const DataTablesReOrder = () => {
-  // ** States
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
 
   // ** Function to handle Pagination
   const handlePagination = page => {
-    setCurrentPage(page.selected)
-  }
+    setCurrentPage(page.selected);
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => (
@@ -43,7 +38,7 @@ const DataTablesReOrder = () => {
       onPageChange={page => handlePagination(page)}
       containerClassName='pagination react-paginate separated-pagination pagination-sm justify-content-end pe-1 mt-1'
     />
-  )
+  );
 
   return (
     <Card className='overflow-hidden'>
@@ -64,7 +59,7 @@ const DataTablesReOrder = () => {
         />
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default DataTablesReOrder
+export default DataTablesReOrder;

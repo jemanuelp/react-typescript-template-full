@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Spinner } from 'reactstrap'
+
+import { Spinner } from 'reactstrap';
 
 const SpinnerColors = () => {
   return (
@@ -13,6 +13,6 @@ const SpinnerColors = () => {
       <Spinner color='light' />
       <Spinner color='dark' />
     </div>
-  )
-}
-export default SpinnerColors
+  );
+};
+export default SpinnerColors;

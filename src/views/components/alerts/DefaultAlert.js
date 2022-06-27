@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+
+import { Alert } from 'reactstrap';
 
 const DefaultAlert = () => {
   return (
@@ -11,6 +11,6 @@ const DefaultAlert = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default DefaultAlert
+  );
+};
+export default DefaultAlert;

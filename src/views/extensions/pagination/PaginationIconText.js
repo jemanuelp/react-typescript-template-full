@@ -1,16 +1,14 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
+import ReactPaginate from 'react-paginate';
 
 const Previous = () => {
-  return <span className='align-middle d-none d-md-inline-block'>Prev</span>
-}
+  return <span className='align-middle d-none d-md-inline-block'>Prev</span>;
+};
 
 const Next = () => {
-  return <span className='align-middle d-none d-md-inline-block'>Next </span>
-}
+  return <span className='align-middle d-none d-md-inline-block'>Next </span>;
+};
 
 const IconTextPagination = () => {
   return (
@@ -39,6 +37,6 @@ const IconTextPagination = () => {
         />
       </CardBody>
     </Card>
-  )
-}
-export default IconTextPagination
+  );
+};
+export default IconTextPagination;

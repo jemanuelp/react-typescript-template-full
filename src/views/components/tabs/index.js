@@ -1,25 +1,20 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import TabsEnd from './TabsEnd'
-import TabsBasic from './TabsBasic'
-import TabsIcons from './TabsIcons'
-import TabsFilled from './TabsFilled'
-import TabsCentered from './TabsCentered'
-import TabsJustified from './TabsJustified'
-import TabsVerticalLeft from './TabsVerticalLeft'
-import TabsVerticalRight from './TabsVerticalRight'
+import TabsEnd from './TabsEnd';
+import TabsBasic from './TabsBasic';
+import TabsIcons from './TabsIcons';
+import TabsFilled from './TabsFilled';
+import TabsCentered from './TabsCentered';
+import TabsJustified from './TabsJustified';
+import TabsVerticalLeft from './TabsVerticalLeft';
+import TabsVerticalRight from './TabsVerticalRight';
 
 // ** Source Code
 import {
@@ -29,13 +24,13 @@ import {
   tabsCentered,
   tabsJustified,
   tabsVerticalLeft,
-  tabsVerticalRight
-} from './TabSourceCode'
+  tabsVerticalRight,
+} from './TabSourceCode';
 
 const Tabs = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Tabs' data={[{ title: 'Components' }, { title: 'Tabs' }]} />
@@ -86,6 +81,6 @@ const Tabs = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Tabs
+  );
+};
+export default Tabs;

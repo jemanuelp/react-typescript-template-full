@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input } from 'reactstrap';
 
 const TextareaDefault = () => {
   return (
@@ -15,6 +15,6 @@ const TextareaDefault = () => {
         <Input type='textarea' name='text' id='exampleText' rows='3' placeholder='Textarea' />
       </CardBody>
     </Card>
-  )
-}
-export default TextareaDefault
+  );
+};
+export default TextareaDefault;

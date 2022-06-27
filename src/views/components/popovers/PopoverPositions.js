@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap'
+
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 const PopoverPositions = () => {
   return (
@@ -36,7 +36,7 @@ const PopoverPositions = () => {
         <PopoverBody>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cumque.</PopoverBody>
       </UncontrolledPopover>
     </div>
-  )
-}
+  );
+};
 
-export default PopoverPositions
+export default PopoverPositions;

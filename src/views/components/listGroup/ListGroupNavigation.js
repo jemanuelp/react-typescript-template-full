@@ -1,21 +1,17 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem, Row, Col, TabContent, TabPane, CardText } from 'reactstrap'
+import { ListGroup, ListGroupItem, Row, Col, TabContent, TabPane, CardText } from 'reactstrap';
 
 const ListGroupNavigation = () => {
-  // ** State
-  const [activeList, setActiveLIst] = useState('1')
+  const [activeList, setActiveLIst] = useState('1');
 
   const toggleList = list => {
     if (activeList !== list) {
-      setActiveLIst(list)
+      setActiveLIst(list);
     }
-  }
+  };
 
   return (
     <Row>
@@ -111,6 +107,6 @@ const ListGroupNavigation = () => {
         </TabContent>
       </Col>
     </Row>
-  )
-}
-export default ListGroupNavigation
+  );
+};
+export default ListGroupNavigation;

@@ -4,7 +4,7 @@ import { Check } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import Avatar from '@components/avatar';
+import Avatar from 'src/@core/components/avatar';
 import { Card, CardHeader, CardTitle, CardBody, Button, Form, Label, Input, FormFeedback } from 'reactstrap';
 
 const ValidationOnChange = () => {
@@ -14,8 +14,7 @@ const ValidationOnChange = () => {
     firstName: yup.string().min(3).required(),
     password: yup.string().min(6).required()
   });
-
-  // ** Hooks
+  
   const {
     reset,
     control,

@@ -1,8 +1,6 @@
-// ** Third Party Components
-import Nouislider from 'nouislider-react'
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const SliderLimit = ({ direction }) => {
   return (
@@ -28,7 +26,7 @@ const SliderLimit = ({ direction }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderLimit
+export default SliderLimit;

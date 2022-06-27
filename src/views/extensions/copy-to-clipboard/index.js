@@ -1,32 +1,27 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import toast from 'react-hot-toast';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardTitle, CardBody, Button, Input } from 'reactstrap'
+import { Row, Col, Card, CardHeader, CardTitle, CardBody, Button, Input } from 'reactstrap';
 
 const Clipboard = () => {
-  // ** State
-  const [value, setValue] = useState('Copy Me!')
-  const [copied, setCopied] = useState(false)
+  const [value, setValue] = useState('Copy Me!');
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = ({ target: { value } }) => {
-    setValue(value)
+    setValue(value);
     if (copied) {
-      setCopied(false)
+      setCopied(false);
     }
-  }
+  };
 
   const onCopy = () => {
-    setCopied(true)
-    toast.success('Copied To Clipboard !')
-  }
+    setCopied(true);
+    toast.success('Copied To Clipboard !');
+  };
 
   return (
     <Fragment>
@@ -59,7 +54,7 @@ const Clipboard = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Clipboard
+export default Clipboard;

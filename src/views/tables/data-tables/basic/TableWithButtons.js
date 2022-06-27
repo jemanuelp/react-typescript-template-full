@@ -1,18 +1,15 @@
-// ** React Imports
-import { Fragment, useState, forwardRef } from 'react'
+import { Fragment, useState, forwardRef } from 'react';
 
 // ** Table Data & Columns
-import { data, columns } from '../data'
+import { data, columns } from '../data';
 
 // ** Add New Modal Component
-import AddNewModal from './AddNewModal'
+import AddNewModal from './AddNewModal';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
-import DataTable from 'react-data-table-component'
-import { ChevronDown, Share, Printer, FileText, File, Grid, Copy, Plus } from 'react-feather'
+import ReactPaginate from 'react-paginate';
+import DataTable from 'react-data-table-component';
+import { ChevronDown, Share, Printer, FileText, File, Grid, Copy, Plus } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -26,30 +23,29 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledButtonDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 // ** Bootstrap Checkbox Component
 const BootstrapCheckbox = forwardRef((props, ref) => (
   <div className='form-check'>
     <Input type='checkbox' ref={ref} {...props} />
   </div>
-))
+));
 
 const DataTableWithButtons = () => {
-  // ** States
-  const [modal, setModal] = useState(false)
-  const [currentPage, setCurrentPage] = useState(0)
-  const [searchValue, setSearchValue] = useState('')
-  const [filteredData, setFilteredData] = useState([])
+  const [modal, setModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [searchValue, setSearchValue] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
 
   // ** Function to handle Modal toggle
-  const handleModal = () => setModal(!modal)
+  const handleModal = () => setModal(!modal);
 
   // ** Function to handle filter
   const handleFilter = e => {
-    const value = e.target.value
-    let updatedData = []
-    setSearchValue(value)
+    const value = e.target.value;
+    let updatedData = [];
+    setSearchValue(value);
 
     const status = {
       1: { title: 'Current', color: 'light-primary' },
@@ -57,7 +53,7 @@ const DataTableWithButtons = () => {
       3: { title: 'Rejected', color: 'light-danger' },
       4: { title: 'Resigned', color: 'light-warning' },
       5: { title: 'Applied', color: 'light-info' }
-    }
+    };
 
     if (value.length) {
       updatedData = data.filter(item => {
@@ -68,7 +64,7 @@ const DataTableWithButtons = () => {
           item.age.toLowerCase().startsWith(value.toLowerCase()) ||
           item.salary.toLowerCase().startsWith(value.toLowerCase()) ||
           item.start_date.toLowerCase().startsWith(value.toLowerCase()) ||
-          status[item.status].title.toLowerCase().startsWith(value.toLowerCase())
+          status[item.status].title.toLowerCase().startsWith(value.toLowerCase());
 
         const includes =
           item.full_name.toLowerCase().includes(value.toLowerCase()) ||
@@ -77,23 +73,23 @@ const DataTableWithButtons = () => {
           item.age.toLowerCase().includes(value.toLowerCase()) ||
           item.salary.toLowerCase().includes(value.toLowerCase()) ||
           item.start_date.toLowerCase().includes(value.toLowerCase()) ||
-          status[item.status].title.toLowerCase().includes(value.toLowerCase())
+          status[item.status].title.toLowerCase().includes(value.toLowerCase());
 
         if (startsWith) {
-          return startsWith
+          return startsWith;
         } else if (!startsWith && includes) {
-          return includes
-        } else return null
-      })
-      setFilteredData(updatedData)
-      setSearchValue(value)
+          return includes;
+        } else return null;
+      });
+      setFilteredData(updatedData);
+      setSearchValue(value);
     }
-  }
+  };
 
   // ** Function to handle Pagination
   const handlePagination = page => {
-    setCurrentPage(page.selected)
-  }
+    setCurrentPage(page.selected);
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => (
@@ -117,50 +113,50 @@ const DataTableWithButtons = () => {
       previousClassName='page-item prev-item'
       containerClassName='pagination react-paginate separated-pagination pagination-sm justify-content-end pe-1 mt-1'
     />
-  )
+  );
 
   // ** Converts table to CSV
   function convertArrayOfObjectsToCSV(array) {
-    let result
+    let result;
 
-    const columnDelimiter = ','
-    const lineDelimiter = '\n'
-    const keys = Object.keys(data[0])
+    const columnDelimiter = ',';
+    const lineDelimiter = '\n';
+    const keys = Object.keys(data[0]);
 
-    result = ''
-    result += keys.join(columnDelimiter)
-    result += lineDelimiter
+    result = '';
+    result += keys.join(columnDelimiter);
+    result += lineDelimiter;
 
     array.forEach(item => {
-      let ctr = 0
+      let ctr = 0;
       keys.forEach(key => {
-        if (ctr > 0) result += columnDelimiter
+        if (ctr > 0) result += columnDelimiter;
 
-        result += item[key]
+        result += item[key];
 
-        ctr++
-      })
-      result += lineDelimiter
-    })
+        ctr++;
+      });
+      result += lineDelimiter;
+    });
 
-    return result
+    return result;
   }
 
   // ** Downloads CSV
   function downloadCSV(array) {
-    const link = document.createElement('a')
-    let csv = convertArrayOfObjectsToCSV(array)
-    if (csv === null) return
+    const link = document.createElement('a');
+    let csv = convertArrayOfObjectsToCSV(array);
+    if (csv === null) return;
 
-    const filename = 'export.csv'
+    const filename = 'export.csv';
 
     if (!csv.match(/^data:text\/csv/i)) {
-      csv = `data:text/csv;charset=utf-8,${csv}`
+      csv = `data:text/csv;charset=utf-8,${csv}`;
     }
 
-    link.setAttribute('href', encodeURI(csv))
-    link.setAttribute('download', filename)
-    link.click()
+    link.setAttribute('href', encodeURI(csv));
+    link.setAttribute('download', filename);
+    link.click();
   }
 
   return (
@@ -236,7 +232,7 @@ const DataTableWithButtons = () => {
       </Card>
       <AddNewModal open={modal} handleModal={handleModal} />
     </Fragment>
-  )
-}
+  );
+};
 
-export default DataTableWithButtons
+export default DataTableWithButtons;

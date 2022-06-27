@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle, Row, Col } from 'reactstrap'
+import { Button, UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle, Row, Col } from 'reactstrap';
 
 const DropdownSizes = () => {
   return (
@@ -115,6 +113,6 @@ const DropdownSizes = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default DropdownSizes
+  );
+};
+export default DropdownSizes;

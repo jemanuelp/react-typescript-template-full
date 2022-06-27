@@ -1,28 +1,22 @@
-// ** React Imports
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react';
 
 // ** Shop Components
-import Sidebar from './Sidebar'
-import Products from './Products'
+import Sidebar from './Sidebar';
+import Products from './Products';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, getProducts, getCartItems, addToWishlist, deleteCartItem, deleteWishlistItem } from '../store'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, getProducts, getCartItems, addToWishlist, deleteCartItem, deleteWishlistItem } from '../store';
 
-// ** Styles
-import '@styles/react/apps/app-ecommerce.scss'
+import 'src/@core/scss/react/apps/app-ecommerce.scss';
 
 const Shop = () => {
-  // ** States
-  const [activeView, setActiveView] = useState('grid')
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-
-  // ** Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.ecommerce)
+  const [activeView, setActiveView] = useState('grid');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.ecommerce);
 
   // ** Get products
   useEffect(() => {
@@ -33,8 +27,8 @@ const Shop = () => {
         perPage: 9,
         page: 1
       })
-    )
-  }, [dispatch])
+    );
+  }, [dispatch]);
 
   return (
     <Fragment>
@@ -55,6 +49,6 @@ const Shop = () => {
       />
       <Sidebar sidebarOpen={sidebarOpen} />
     </Fragment>
-  )
-}
-export default Shop
+  );
+};
+export default Shop;

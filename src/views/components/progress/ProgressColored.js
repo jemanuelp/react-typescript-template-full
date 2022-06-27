@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Progress } from 'reactstrap'
+
+import { Progress } from 'reactstrap';
 
 const ProgressColored = () => {
   return (
@@ -12,6 +12,6 @@ const ProgressColored = () => {
       <Progress className='progress-bar-info' value={75} />
       <Progress className='progress-bar-dark' value={85} />
     </div>
-  )
-}
-export default ProgressColored
+  );
+};
+export default ProgressColored;

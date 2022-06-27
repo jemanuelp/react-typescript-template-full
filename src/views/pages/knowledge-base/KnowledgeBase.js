@@ -1,30 +1,23 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-import { Fragment, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { Fragment, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
+import axios from 'axios';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import KnowledgeBaseHeader from './KnowledgeBaseHeader'
+import KnowledgeBaseHeader from './KnowledgeBaseHeader';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, CardImg } from 'reactstrap'
+import { Row, Col, Card, CardBody, CardImg } from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/page-knowledge-base.scss'
+import 'src/@core/scss/base/pages/page-knowledge-base.scss';
 
 const KnowledgeBase = () => {
-  // ** States
   const [data, setData] = useState(null),
-    [searchTerm, setSearchTerm] = useState('')
+    [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('/faq/data/knowledge_base').then(res => setData(res.data))
-  }, [])
+    axios.get('/faq/data/knowledge_base').then(res => setData(res.data));
+  }, []);
 
   const Content = ({ item }) => (
     <Col className='kb-search-content' key={item.id} md='4' sm='6'>
@@ -38,34 +31,36 @@ const KnowledgeBase = () => {
         </Link>
       </Card>
     </Col>
-  )
+  );
 
   const renderContent = () => {
     return data.map(item => {
       const titleCondition = item.title.toLowerCase().includes(searchTerm.toLowerCase()),
-        descCondition = item.desc.toLowerCase().includes(searchTerm.toLowerCase())
+        descCondition = item.desc.toLowerCase().includes(searchTerm.toLowerCase());
 
       if (searchTerm.length < 1) {
-        return <Content key={item.id} item={item} />
+        return <Content key={item.id} item={item} />;
       } else if (titleCondition || descCondition) {
-        return <Content key={item.id} item={item} />
+        return <Content key={item.id} item={item} />;
       } else {
-        return null
+        return null;
       }
-    })
-  }
+    });
+  };
 
   return (
     <Fragment>
       <Breadcrumbs title='Knowledge Base' data={[{ title: 'Pages' }, { title: 'Knowledge Base' }]} />
       <KnowledgeBaseHeader searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {data !== null ? (
+      {data !== null
+? (
         <div id='knowledge-base-content'>
           <Row className='kb-search-content-info match-height'>{renderContent()}</Row>
         </div>
-      ) : null}
+      )
+: null}
     </Fragment>
-  )
-}
+  );
+};
 
-export default KnowledgeBase
+export default KnowledgeBase;

@@ -1,27 +1,22 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import ToastTranslucent from './ToastTranslucent'
-import ToastHeaderIcons from './ToastHeaderIcons'
+import ToastTranslucent from './ToastTranslucent';
+import ToastHeaderIcons from './ToastHeaderIcons';
 
 // ** Source Code
-import { toastHeaderIcons, toastTranslucent } from './ToastSourceCode'
+import { toastHeaderIcons, toastTranslucent } from './ToastSourceCode';
 
 const Toasts = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Toasts' data={[{ title: 'Components' }, { title: 'Toasts' }]} />
@@ -45,6 +40,6 @@ const Toasts = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Toasts
+  );
+};
+export default Toasts;

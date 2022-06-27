@@ -1,7 +1,5 @@
-// ** Icon Imports
-import { Award, Clock, Shield } from 'react-feather'
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Award, Clock, Shield } from 'react-feather';
+import { Row, Col, CardText } from 'reactstrap';
 
 const ItemFeatures = () => {
   return (
@@ -30,7 +28,7 @@ const ItemFeatures = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ItemFeatures
+export default ItemFeatures;

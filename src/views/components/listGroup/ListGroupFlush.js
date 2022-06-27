@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem } from 'reactstrap'
+
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const ListGroupFlush = () => {
   return (
@@ -10,6 +10,6 @@ const ListGroupFlush = () => {
       <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
       <ListGroupItem>consectetur adipisicing elit. Veniam, nulla.</ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupFlush
+  );
+};
+export default ListGroupFlush;

@@ -1,11 +1,8 @@
-// ** Third Party Components
-import Select from 'react-select'
+import Select from 'react-select';
 
-// ** Utils
-import { selectThemeColors } from '@utils'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Row, Col, Label } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Row, Col, Label } from 'reactstrap';
 
 const colourOptions = [
   { value: 'ocean', label: 'Ocean' },
@@ -13,7 +10,7 @@ const colourOptions = [
   { value: 'purple', label: 'Purple' },
   { value: 'red', label: 'Red' },
   { value: 'orange', label: 'Orange' }
-]
+];
 
 const SelectReact = () => {
   return (
@@ -84,6 +81,6 @@ const SelectReact = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default SelectReact
+  );
+};
+export default SelectReact;

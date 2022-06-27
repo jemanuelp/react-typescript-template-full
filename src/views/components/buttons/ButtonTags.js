@@ -1,9 +1,7 @@
-// ** React Imports
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-// ** Reactstrap Imports
-import { Button, Alert } from 'reactstrap'
+import { Button, Alert } from 'reactstrap';
 
 const ButtonTags = () => {
   return (
@@ -34,6 +32,6 @@ const ButtonTags = () => {
         <input className='btn btn-primary' type='submit' value='Submit' />
       </div>
     </Fragment>
-  )
-}
-export default ButtonTags
+  );
+};
+export default ButtonTags;

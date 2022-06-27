@@ -1,16 +1,13 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 
 const PillFilled = () => {
-  // ** States
-  const [active, setActive] = useState('1')
+  const [active, setActive] = useState('1');
 
   const toggle = tab => {
-    setActive(tab)
-  }
+    setActive(tab);
+  };
   return (
     <Fragment>
       <Nav pills fill>
@@ -18,7 +15,7 @@ const PillFilled = () => {
           <NavLink
             active={active === '1'}
             onClick={() => {
-              toggle('1')
+              toggle('1');
             }}
           >
             Home
@@ -28,7 +25,7 @@ const PillFilled = () => {
           <NavLink
             active={active === '2'}
             onClick={() => {
-              toggle('2')
+              toggle('2');
             }}
           >
             Profile
@@ -41,7 +38,7 @@ const PillFilled = () => {
           <NavLink
             active={active === '3'}
             onClick={() => {
-              toggle('3')
+              toggle('3');
             }}
           >
             About
@@ -75,6 +72,6 @@ const PillFilled = () => {
         </TabPane>
       </TabContent>
     </Fragment>
-  )
-}
-export default PillFilled
+  );
+};
+export default PillFilled;

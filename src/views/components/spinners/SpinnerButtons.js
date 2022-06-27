@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button, Spinner } from 'reactstrap'
+
+import { Button, Spinner } from 'reactstrap';
 
 const SpinnerButton = () => {
   return (
@@ -22,6 +22,6 @@ const SpinnerButton = () => {
         <span className='ms-50'>Loading...</span>
       </Button>
     </div>
-  )
-}
-export default SpinnerButton
+  );
+};
+export default SpinnerButton;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+
+import { Badge } from 'reactstrap';
 
 const BadgePillLight = () => {
   return (
@@ -23,6 +23,6 @@ const BadgePillLight = () => {
         Info
       </Badge>
     </div>
-  )
-}
-export default BadgePillLight
+  );
+};
+export default BadgePillLight;

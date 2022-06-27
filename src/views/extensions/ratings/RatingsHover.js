@@ -1,19 +1,16 @@
-// ** React Imports
-import { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react';
 
-// ** Third Party Components
-import Rating from 'react-rating'
-import { Star } from 'react-feather'
+import Rating from 'react-rating';
+import { Star } from 'react-feather';
 
 const RatingsHover = ({ filledColor, dir }) => {
-  // ** State
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
 
   const onHover = rate => {
     if (rate !== undefined) {
-      setValue(rate)
+      setValue(rate);
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -30,7 +27,7 @@ const RatingsHover = ({ filledColor, dir }) => {
         <span className='fw-bold'>Ratings: {value}</span>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default RatingsHover
+export default RatingsHover;

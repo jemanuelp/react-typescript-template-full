@@ -1,10 +1,8 @@
-// ** Third Party Components
-import { Line } from 'react-chartjs-2'
-import Flatpickr from 'react-flatpickr'
-import { Calendar } from 'react-feather'
+import { Line } from 'react-chartjs-2';
+import Flatpickr from 'react-flatpickr';
+import { Calendar } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const ChartjsAreaChart = ({ labelColor, gridLineColor, blueColor, blueLightColor, greyLightColor }) => {
   // ** Chart Options
@@ -47,7 +45,7 @@ const ChartjsAreaChart = ({ labelColor, gridLineColor, blueColor, blueLightColor
         }
       }
     }
-  }
+  };
 
   // ** Chart data
   const data = {
@@ -115,7 +113,7 @@ const ChartjsAreaChart = ({ labelColor, gridLineColor, blueColor, blueLightColor
         data: [240, 195, 160, 215, 185, 215, 185, 200, 250, 210, 195, 250, 235, 300, 315]
       }
     ]
-  }
+  };
 
   return (
     <Card>
@@ -127,7 +125,6 @@ const ChartjsAreaChart = ({ labelColor, gridLineColor, blueColor, blueLightColor
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              // eslint-disable-next-line no-mixed-operators
               defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
             }}
           />
@@ -139,7 +136,7 @@ const ChartjsAreaChart = ({ labelColor, gridLineColor, blueColor, blueLightColor
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsAreaChart
+export default ChartjsAreaChart;

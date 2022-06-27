@@ -1,17 +1,13 @@
-// ** Reactstrap Imports
-import { Row, Col, Form, Input, Label, Button, Card, CardHeader, CardTitle, CardBody, FormFeedback } from 'reactstrap'
+import { Row, Col, Form, Input, Label, Button, Card, CardHeader, CardTitle, CardBody, FormFeedback } from 'reactstrap';
 
-// ** Third Party Components
-import Select from 'react-select'
-import Cleave from 'cleave.js/react'
-import 'cleave.js/dist/addons/cleave-phone.us'
-import { useForm, Controller } from 'react-hook-form'
+import Select from 'react-select';
+import Cleave from 'cleave.js/react';
+import 'cleave.js/dist/addons/cleave-phone.us';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Utils
-import { selectThemeColors } from '@utils'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Styles
-import '@styles/react/libs/react-select/_react-select.scss'
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 
 const countryOptions = [
   { value: 'uk', label: 'UK' },
@@ -19,35 +15,35 @@ const countryOptions = [
   { value: 'france', label: 'France' },
   { value: 'russia', label: 'Russia' },
   { value: 'canada', label: 'Canada' }
-]
+];
 
 const defaultValues = {
   companyName: '',
   billingEmail: ''
-}
+};
 
 const BillingAddress = () => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
-      return null
+      return null;
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual'
-          })
+          });
         }
       }
     }
-  }
+  };
 
   return (
     <Card>
@@ -157,7 +153,7 @@ const BillingAddress = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default BillingAddress
+export default BillingAddress;

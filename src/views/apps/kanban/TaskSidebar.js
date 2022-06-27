@@ -1,38 +1,32 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Badge, Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap'
+import { Badge, Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap';
 
-// ** Redux Imports
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
-import { useDropzone } from 'react-dropzone'
-import { X, DownloadCloud } from 'react-feather'
-import Select, { components } from 'react-select' //eslint-disable-line
-import { useForm, Controller } from 'react-hook-form'
-import PerfectScrollbar from 'react-perfect-scrollbar'
+import Flatpickr from 'react-flatpickr';
+import { useDropzone } from 'react-dropzone';
+import { X, DownloadCloud } from 'react-feather';
+import Select, { components } from 'react-select';
+import { useForm, Controller } from 'react-hook-form';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // ** Actions
-import { updateTask, handleSelectTask } from './store'
+import { updateTask, handleSelectTask } from './store';
 
-// ** Utils
-import { isObjEmpty, selectThemeColors } from '@utils'
+import { isObjEmpty, selectThemeColors } from 'src/utility/Utils';
 
-// ** Assignee Avatars
-import img1 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img6 from '@src/assets/images/portrait/small/avatar-s-11.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
+import img3 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
+import img4 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
+import img5 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
+import img6 from 'src/assets/images/portrait/small/avatar-s-11.jpg';
 
-// ** Styles Imports
-import '@styles/react/libs/flatpickr/flatpickr.scss'
-import '@styles/react/libs/react-select/_react-select.scss'
-import '@styles/react/libs/file-uploader/file-uploader.scss'
+ Imports;
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
+import 'src/@core/scss/react/libs/file-uploader/file-uploader.scss';
 
 // ** Assignee Select Options
 const assigneeOptions = [
@@ -48,7 +42,7 @@ const assigneeOptions = [
   { value: 'George Costanza', label: 'George Costanza', img: img5 },
   { value: 'Charlie Kelly', label: 'Charlie Kelly', img: img4 },
   { value: 'Dennis Reynolds', label: 'Dennis Reynolds', img: img3 }
-]
+];
 
 // ** Label Select Options
 const labelOptions = [
@@ -58,27 +52,24 @@ const labelOptions = [
   { value: 'Images', label: 'Images' },
   { value: 'Code Review', label: 'Code Review' },
   { value: 'Charts & Maps', label: 'Charts & Maps' }
-]
+];
 
 const TaskSidebar = props => {
-  // ** Props
-  const { sidebarOpen, labelColors, selectedTask, handleTaskSidebarToggle } = props
+  const { sidebarOpen, labelColors, selectedTask, handleTaskSidebarToggle } = props;
 
-  // ** State
-  const [desc, setDesc] = useState('')
-  const [files, setFiles] = useState([])
-  const [labels, setLabels] = useState([])
-  const [dueDate, setDueDate] = useState(new Date())
-  const [assignedTo, setAssignedTo] = useState(null)
-
-  // ** Hooks
-  const dispatch = useDispatch()
+  const [desc, setDesc] = useState('');
+  const [files, setFiles] = useState([]);
+  const [labels, setLabels] = useState([]);
+  const [dueDate, setDueDate] = useState(new Date());
+  const [assignedTo, setAssignedTo] = useState(null);
+  
+  const dispatch = useDispatch();
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     onDrop: acceptedFiles => {
-      setFiles([...acceptedFiles.map(file => Object.assign(file))])
+      setFiles([...acceptedFiles.map(file => Object.assign(file))]);
     }
-  })
+  });
 
   const {
     control,
@@ -89,7 +80,7 @@ const TaskSidebar = props => {
     formState: { errors }
   } = useForm({
     defaultValues: { title: '' }
-  })
+  });
 
   // ** Custom Select Components
   const LabelOptions = ({ data, ...props }) => {
@@ -97,8 +88,8 @@ const TaskSidebar = props => {
       <components.Option {...props}>
         <Badge color={`light-${labelColors[data.label]}`}>{data.label}</Badge>
       </components.Option>
-    )
-  }
+    );
+  };
 
   const AssigneeComponent = ({ data, ...props }) => {
     return (
@@ -108,62 +99,62 @@ const TaskSidebar = props => {
           <p className='mb-0'>{data.label}</p>
         </div>
       </components.Option>
-    )
-  }
+    );
+  };
 
   // ** Function to run when sidebar opens
   const handleSidebarOpened = () => {
     if (!isObjEmpty(selectedTask)) {
-      setValue('title', selectedTask.title)
-      setDueDate(selectedTask.dueDate)
-      setDesc(selectedTask.description)
+      setValue('title', selectedTask.title);
+      setDueDate(selectedTask.dueDate);
+      setDesc(selectedTask.description);
       if (selectedTask.coverImage) {
-        setFiles([selectedTask.coverImage])
+        setFiles([selectedTask.coverImage]);
       }
       if (selectedTask.assignedTo.length) {
-        const arr = []
+        const arr = [];
         selectedTask.assignedTo.map(assignee => {
-          arr.push({ value: assignee.title, label: assignee.title, img: assignee.img })
-        })
-        setAssignedTo(arr)
+          arr.push({ value: assignee.title, label: assignee.title, img: assignee.img });
+        });
+        setAssignedTo(arr);
       }
       if (selectedTask.labels.length) {
-        const labelsArr = []
+        const labelsArr = [];
         selectedTask.labels.map(label => {
-          labelsArr.push({ value: label, label })
-        })
-        setLabels(labelsArr)
+          labelsArr.push({ value: label, label });
+        });
+        setLabels(labelsArr);
       }
     }
-  }
+  };
 
   // ** Function to run when sidebar closes
   const handleSidebarClosed = () => {
-    setDesc('')
-    setFiles([])
-    setLabels([])
-    setValue('title', '')
-    setDueDate(new Date())
-    clearErrors()
-    dispatch(handleSelectTask({}))
-    setAssignedTo(null)
-  }
+    setDesc('');
+    setFiles([]);
+    setLabels([]);
+    setValue('title', '');
+    setDueDate(new Date());
+    clearErrors();
+    dispatch(handleSelectTask({}));
+    setAssignedTo(null);
+  };
 
   const onSubmit = data => {
     if (data.title.length) {
-      const labelsArr = []
-      const assignedArr = []
+      const labelsArr = [];
+      const assignedArr = [];
 
       if (assignedTo.length) {
         assignedTo.map(item => {
-          assignedArr.push({ title: item.label, img: item.img })
-        })
+          assignedArr.push({ title: item.label, img: item.img });
+        });
       }
 
       if (labels.length) {
         labels.map(label => {
-          labelsArr.push(label.label)
-        })
+          labelsArr.push(label.label);
+        });
       }
 
       dispatch(
@@ -174,61 +165,57 @@ const TaskSidebar = props => {
           labels: labelsArr,
           description: desc,
           assignedTo: assignedArr,
-          // eslint-disable-next-line multiline-ternary
-          ...(files.length && typeof files[0] !== 'string'
-            ? // eslint-disable-next-line multiline-ternary
-              {
+          ...(files.length && typeof files[0] !== 'string' ? {
                 coverImage: URL.createObjectURL(files[0])
-              }
-            : {})
+              } : {})
         })
-      )
-      handleTaskSidebarToggle()
+      );
+      handleTaskSidebarToggle();
     } else {
-      setError('title')
+      setError('title');
     }
-  }
+  };
 
   const renderUploadedImage = () => {
     if (files.length && typeof files[0] !== 'string') {
       // @ts-ignore
       return files.map(file => (
         <img key={file.name} alt={file.name} className='single-file-image img-fluid' src={URL.createObjectURL(file)} />
-      ))
+      ));
     } else {
       if (typeof files[0] === 'string') {
-        return <img alt='task-img' className='single-file-image img-fluid' src={files[0]} />
+        return <img alt='task-img' className='single-file-image img-fluid' src={files[0]} />;
       }
     }
-  }
+  };
 
   const handleResetFields = () => {
-    setDesc('')
+    setDesc('');
 
-    setValue('title', store.selectedTask.title)
-    setDueDate(store.selectedTask.dueDate)
+    setValue('title', store.selectedTask.title);
+    setDueDate(store.selectedTask.dueDate);
     if (selectedTask.assignedTo.length) {
-      const arr = []
+      const arr = [];
       selectedTask.assignedTo.map(assignee => {
-        arr.push({ value: assignee.title, label: assignee.title, img: assignee.img })
-      })
+        arr.push({ value: assignee.title, label: assignee.title, img: assignee.img });
+      });
 
-      setAssignedTo(arr)
+      setAssignedTo(arr);
     }
     if (selectedTask.labels.length) {
-      const labels = []
+      const labels = [];
       selectedTask.labels.map(label => {
-        labels.push({ value: label, label })
-      })
-      setLabels(labels)
+        labels.push({ value: label, label });
+      });
+      setLabels(labels);
     }
 
     if (selectedTask.coverImage) {
-      setFiles([selectedTask.coverImage])
+      setFiles([selectedTask.coverImage]);
     } else {
-      setFiles([])
+      setFiles([]);
     }
-  }
+  };
 
   return (
     <Modal
@@ -294,7 +281,7 @@ const TaskSidebar = props => {
                 theme={selectThemeColors}
                 components={{ Option: LabelOptions }}
                 onChange={data => {
-                  setLabels(data !== null ? [...data] : [])
+                  setLabels(data !== null ? [...data] : []);
                 }}
               />
             </div>
@@ -351,7 +338,7 @@ const TaskSidebar = props => {
         </PerfectScrollbar>
       </Form>
     </Modal>
-  )
-}
+  );
+};
 
-export default TaskSidebar
+export default TaskSidebar;

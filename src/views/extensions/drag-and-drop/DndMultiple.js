@@ -1,23 +1,19 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { ReactSortable } from 'react-sortablejs'
+import { ReactSortable } from 'react-sortablejs';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, ListGroupItem } from 'reactstrap';
 
-// ** Images
-import img1 from '@src/assets/images/portrait/small/avatar-s-12.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
-import img6 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import img7 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import img8 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
-import img9 from '@src/assets/images/portrait/small/avatar-s-8.jpg'
-import img10 from '@src/assets/images/portrait/small/avatar-s-9.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-12.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
+import img3 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
+import img4 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
+import img5 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
+import img6 from 'src/assets/images/portrait/small/avatar-s-5.jpg';
+import img7 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
+import img8 from 'src/assets/images/portrait/small/avatar-s-7.jpg';
+import img9 from 'src/assets/images/portrait/small/avatar-s-8.jpg';
+import img10 from 'src/assets/images/portrait/small/avatar-s-9.jpg';
 
 const array = {
   list1: [
@@ -84,12 +80,11 @@ const array = {
       content: 'Chupa chups tiramisu apple pie biscuit sweet roll bonbon macaroon toffee icing.'
     }
   ]
-}
+};
 
 const DndMultiple = () => {
-  // ** States
-  const [listArr1, setListArr1] = useState(array.list1)
-  const [listArr2, setListArr2] = useState(array.list2)
+  const [listArr1, setListArr1] = useState(array.list1);
+  const [listArr2, setListArr2] = useState(array.list2);
 
   return (
     <Card>
@@ -129,7 +124,7 @@ const DndMultiple = () => {
                       </div>
                     </div>
                   </ListGroupItem>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
@@ -161,14 +156,14 @@ const DndMultiple = () => {
                       </div>
                     </div>
                   </ListGroupItem>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default DndMultiple
+export default DndMultiple;

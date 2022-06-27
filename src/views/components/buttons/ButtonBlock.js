@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Row, Col } from 'reactstrap'
+import { Button, Row, Col } from 'reactstrap';
 
 const ButtonBlock = () => {
   return (
@@ -18,7 +16,7 @@ const ButtonBlock = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ButtonBlock
+export default ButtonBlock;

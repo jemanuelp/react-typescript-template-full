@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Row, Col } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Row, Col } from 'reactstrap';
 
 const InputFloating = () => {
   return (
@@ -29,6 +29,6 @@ const InputFloating = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default InputFloating
+  );
+};
+export default InputFloating;

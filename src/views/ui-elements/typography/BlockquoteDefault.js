@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap';
 
 const BlockquoteDefault = () => {
   return (
@@ -20,6 +20,6 @@ const BlockquoteDefault = () => {
         </blockquote>
       </CardBody>
     </Card>
-  )
-}
-export default BlockquoteDefault
+  );
+};
+export default BlockquoteDefault;

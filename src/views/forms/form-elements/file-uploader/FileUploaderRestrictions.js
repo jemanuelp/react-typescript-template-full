@@ -1,17 +1,14 @@
-// ** React Imports
-import { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Button, ListGroup, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Button, ListGroup, ListGroupItem } from 'reactstrap';
 
 // ** Third Party Imports
-import toast from 'react-hot-toast'
-import { useDropzone } from 'react-dropzone'
-import { X, DownloadCloud } from 'react-feather'
+import toast from 'react-hot-toast';
+import { useDropzone } from 'react-dropzone';
+import { X, DownloadCloud } from 'react-feather';
 
 const FileUploaderRestrictions = () => {
-  // ** State
-  const [files, setFiles] = useState([])
+  const [files, setFiles] = useState([]);
 
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
@@ -20,26 +17,26 @@ const FileUploaderRestrictions = () => {
     },
     onDrop: (acceptedFiles, rejectedFiles) => {
       if (rejectedFiles.length) {
-        toast.error('You can only upload image Files!.')
+        toast.error('You can only upload image Files!.');
       } else {
-        setFiles([...files, ...acceptedFiles.map(file => Object.assign(file))])
+        setFiles([...files, ...acceptedFiles.map(file => Object.assign(file))]);
       }
     }
-  })
+  });
 
   const handleRemoveFile = file => {
-    const uploadedFiles = files
-    const filtered = uploadedFiles.filter(i => i.name !== file.name)
-    setFiles([...filtered])
-  }
+    const uploadedFiles = files;
+    const filtered = uploadedFiles.filter(i => i.name !== file.name);
+    setFiles([...filtered]);
+  };
 
   const renderFileSize = size => {
     if (Math.round(size / 100) / 10 > 1000) {
-      return `${(Math.round(size / 100) / 10000).toFixed(1)} mb`
+      return `${(Math.round(size / 100) / 10000).toFixed(1)} mb`;
     } else {
-      return `${(Math.round(size / 100) / 10).toFixed(1)} kb`
+      return `${(Math.round(size / 100) / 10).toFixed(1)} kb`;
     }
-  }
+  };
 
   const fileList = files.map((file, index) => (
     <ListGroupItem key={`${file.name}-${index}`} className='d-flex align-items-center justify-content-between'>
@@ -56,11 +53,11 @@ const FileUploaderRestrictions = () => {
         <X size={14} />
       </Button>
     </ListGroupItem>
-  ))
+  ));
 
   const handleRemoveAllFiles = () => {
-    setFiles([])
-  }
+    setFiles([]);
+  };
 
   return (
     <Card>
@@ -95,7 +92,7 @@ const FileUploaderRestrictions = () => {
         ) : null}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default FileUploaderRestrictions
+export default FileUploaderRestrictions;

@@ -1,28 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 import themeConfig from "../configs/themeConfig";
-import {Layout} from "../domains/interfaces/Layout";
-import {MenuLayout} from "../domains/interfaces/MenuLayout";
+import {Layout} from "../domains/interfaces/layouts/Layout";
+import {MenuLayout} from "../domains/interfaces/layouts/MenuLayout";
 
 const initialMenu = (): MenuLayout => {
   const item = window.localStorage.getItem('menuCollapsed');
   //** Parse stored json or if none return initialValue
-  const menuCollapsed = item ? JSON.parse(item) : themeConfig.layout.menu.isCollapsed;
+  const menuCollapsed = item
+? JSON.parse(item)
+: themeConfig.layout.menu.isCollapsed;
     return {
       isCollapsed: menuCollapsed,
-      isHidden: themeConfig.layout.menu.isHidden
+      isHidden: themeConfig.layout.menu.isHidden,
     };
 };
 
 const initialDirection = () => {
   const item = window.localStorage.getItem('direction');
   //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.isRTL;
+  return item
+? JSON.parse(item)
+: themeConfig.layout.isRTL;
 };
 
 const initialSkin = () => {
   const item = window.localStorage.getItem('skin');
   //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.skin;
+  return item
+? JSON.parse(item)
+: themeConfig.layout.skin;
 };
 
 const initialState: Layout = {
@@ -32,14 +38,14 @@ const initialState: Layout = {
   lastLayout: themeConfig.layout.type,
   menu: initialMenu(),
   footer: {
-    type: themeConfig.layout.footer.type
+    type: themeConfig.layout.footer.type,
   },
   navbar: {
     type: themeConfig.layout.navbar.type,
-    backgroundColor: themeConfig.layout.navbar.backgroundColor
+    backgroundColor: themeConfig.layout.navbar.backgroundColor,
   },
   contentWidth: themeConfig.layout.contentWidth,
-  routerTransition: themeConfig.layout.routerTransition
+  routerTransition: themeConfig.layout.routerTransition,
 };
 
 export const layoutSlice = createSlice({
@@ -81,8 +87,8 @@ export const layoutSlice = createSlice({
     },
     handleRouterTransition: (state: Layout, action: any) => {
       state.routerTransition = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
@@ -96,7 +102,7 @@ export const {
   handleNavbarColor,
   handleContentWidth,
   handleMenuCollapsed,
-  handleRouterTransition
+  handleRouterTransition,
 } = layoutSlice.actions;
 
 export default layoutSlice.reducer;

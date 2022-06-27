@@ -1,17 +1,13 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import BasicHookForm from './BasicHookForm'
-import ValidationSchema from './ValidationSchema'
-import AsyncValidationForm from './AsyncValidation'
-import ValidationThirdPartyComponents from './ValidationThirdPartyComponents'
+import BasicHookForm from './BasicHookForm';
+import ValidationSchema from './ValidationSchema';
+import AsyncValidationForm from './AsyncValidation';
+import ValidationThirdPartyComponents from './ValidationThirdPartyComponents';
 
 const ReactHookForm = () => {
   return (
@@ -32,7 +28,7 @@ const ReactHookForm = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ReactHookForm
+export default ReactHookForm;

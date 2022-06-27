@@ -1,9 +1,7 @@
-// ** Third Party Components
-import { Bubble } from 'react-chartjs-2'
-import { ArrowDown } from 'react-feather'
+import { Bubble } from 'react-chartjs-2';
+import { ArrowDown } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Badge } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Badge } from 'reactstrap';
 
 const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLineColor }) => {
   // ** Chart Options
@@ -39,7 +37,7 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
     plugins: {
       legend: { display: false }
     }
-  }
+  };
 
   // ** Chart data
   const data = {
@@ -86,7 +84,7 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
         ]
       }
     ]
-  }
+  };
 
   return (
     <Card>
@@ -106,7 +104,7 @@ const ChartjsRadarChart = ({ labelColor, primaryColorShade, yellowColor, gridLin
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsRadarChart
+export default ChartjsRadarChart;

@@ -1,19 +1,15 @@
-// ** React Imports
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
+import axios from 'axios';
 
-// ** Custom Components
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete';
 
 const AutoCompleteAjax = () => {
-  // ** State
-  const [suggestions, setSuggestions] = useState([])
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/autocomplete/data').then(response => setSuggestions(response.data.autoComplete))
-  }, [])
+    axios.get('/api/autocomplete/data').then(response => setSuggestions(response.data.autoComplete));
+  }, []);
 
   return suggestions.length ? (
     <AutoComplete
@@ -23,6 +19,6 @@ const AutoCompleteAjax = () => {
       suggestionLimit={4}
       placeholder='Search for any of the top 250 IMDB movies'
     />
-  ) : null
-}
-export default AutoCompleteAjax
+  ) : null;
+};
+export default AutoCompleteAjax;

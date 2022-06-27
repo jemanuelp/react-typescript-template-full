@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Progress } from 'reactstrap'
+
+import { Progress } from 'reactstrap';
 
 const ProgressLabeled = () => {
   return (
@@ -24,6 +24,6 @@ const ProgressLabeled = () => {
         85%
       </Progress>
     </div>
-  )
-}
-export default ProgressLabeled
+  );
+};
+export default ProgressLabeled;

@@ -53,7 +53,7 @@ export const inputGroupMerged = (
       {`
 
 import { Search } from 'react-feather'
-import InputPasswordToggle from '@components/input-password-toggle'
+import InputPasswordToggle from 'src/@core/components/input-password-toggle'
 import { InputGroup, Input, InputGroupText } from 'reactstrap'
 
 const InputGroupMerged = () => {

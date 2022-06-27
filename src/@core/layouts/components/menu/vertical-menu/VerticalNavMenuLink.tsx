@@ -1,13 +1,13 @@
-import { NavLink } from 'react-router-dom'
-import classnames from 'classnames'
-import { useTranslation } from 'react-i18next'
-import { Badge } from 'reactstrap'
+import { NavLink } from 'react-router-dom';
+import classnames from 'classnames';
+import { useTranslation } from 'react-i18next';
+import { Badge } from 'reactstrap';
 
 const VerticalNavMenuLink = ({ item, activeItem }: any) => {
   // ** Conditional Link Tag, if item has newTab or externalLink props use <a> tag else use NavLink
-  const LinkTag: any = item.externalLink ? 'a' : NavLink
+  const LinkTag: any = item.externalLink ? 'a' : NavLink;
 
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <li
@@ -20,22 +20,20 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
       <LinkTag
         className='d-flex align-items-center'
         target={item.newTab ? '_blank' : undefined}
-        /*eslint-disable */
-        {...(item.externalLink === true
-          ? {
+        
+        {...(item.externalLink === true ? {
               href: item.navLink || '/'
-            }
-          : {
+            } : {
               to: item.navLink || '/',
               className: ({ isActive }: any) => {
                 if (isActive && !item.disabled) {
-                  return 'd-flex align-items-center active'
+                  return 'd-flex align-items-center active';
                 }
               }
             })}
         onClick={(e: any) => {
           if (item.navLink.length === 0 || item.navLink === '#' || item.disabled === true) {
-            e.preventDefault()
+            e.preventDefault();
           }
         }}
       >
@@ -49,7 +47,7 @@ const VerticalNavMenuLink = ({ item, activeItem }: any) => {
         ) : null}
       </LinkTag>
     </li>
-  )
-}
+  );
+};
 
-export default VerticalNavMenuLink
+export default VerticalNavMenuLink;

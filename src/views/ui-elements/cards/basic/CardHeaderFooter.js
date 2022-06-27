@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, CardFooter, Row, Col, Button } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, CardFooter, Row, Col, Button } from 'reactstrap';
 
 const CardHeaderFooter = () => {
   return (
@@ -56,7 +54,7 @@ const CardHeaderFooter = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardHeaderFooter
+export default CardHeaderFooter;

@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap'
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 
 const AccordionMargin = () => {
-  // ** State
-  const [open, setOpen] = useState('')
+  const [open, setOpen] = useState('');
 
   const toggle = id => {
-    open === id ? setOpen() : setOpen(id)
-  }
+    open === id ? setOpen() : setOpen(id);
+  };
 
   return (
     <Accordion className='accordion-margin' open={open} toggle={toggle}>
@@ -50,6 +47,6 @@ const AccordionMargin = () => {
         </AccordionBody>
       </AccordionItem>
     </Accordion>
-  )
-}
-export default AccordionMargin
+  );
+};
+export default AccordionMargin;

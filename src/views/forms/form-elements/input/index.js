@@ -1,19 +1,15 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import InputFile from './InputFile'
-import InputBasic from './InputBasic'
-import InputSizes from './InputSizes'
-import InputState from './InputStates'
-import InputFloating from './InputFloating'
-import InputHorizontalSize from './InputHorizontalSize'
+import InputFile from './InputFile';
+import InputBasic from './InputBasic';
+import InputSizes from './InputSizes';
+import InputState from './InputStates';
+import InputFloating from './InputFloating';
+import InputHorizontalSize from './InputHorizontalSize';
 
 const Input = () => {
   return (
@@ -40,6 +36,6 @@ const Input = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Input
+  );
+};
+export default Input;

@@ -1,11 +1,8 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { ReactSortable } from 'react-sortablejs'
+import { ReactSortable } from 'react-sortablejs';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, ListGroupItem } from 'reactstrap';
 
 const array = {
   list1: [
@@ -52,12 +49,11 @@ const array = {
       content: 'Vestibulum at eros'
     }
   ]
-}
+};
 
 const DndMultiple = () => {
-  // ** States
-  const [listArr1, setListArr1] = useState(array.list1)
-  const [listArr2, setListArr2] = useState(array.list2)
+  const [listArr1, setListArr1] = useState(array.list1);
+  const [listArr2, setListArr2] = useState(array.list2);
 
   return (
     <Card>
@@ -85,7 +81,7 @@ const DndMultiple = () => {
                     <span className='handle'>+</span>
                     {item.content}
                   </ListGroupItem>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
@@ -105,14 +101,14 @@ const DndMultiple = () => {
                     <span className='handle'>+</span>
                     {item.content}
                   </ListGroupItem>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default DndMultiple
+export default DndMultiple;

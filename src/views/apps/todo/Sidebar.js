@@ -1,41 +1,37 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Mail, Star, Check, Trash, Plus } from 'react-feather'
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Mail, Star, Check, Trash, Plus } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Button, ListGroup, ListGroupItem } from 'reactstrap'
+import { Button, ListGroup, ListGroupItem } from 'reactstrap';
 
 const TodoSidebar = props => {
-  // ** Props
-  const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props
+  const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props;
 
   // ** Functions To Handle List Item Filter
   const handleFilter = filter => {
-    dispatch(getTasks({ ...params, filter }))
-  }
+    dispatch(getTasks({ ...params, filter }));
+  };
 
   const handleTag = tag => {
-    dispatch(getTasks({ ...params, tag }))
-  }
+    dispatch(getTasks({ ...params, tag }));
+  };
 
   // ** Functions To Active List Item
   const handleActiveItem = value => {
     if ((params.filter && params.filter === value) || (params.tag && params.tag === value)) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   // ** Functions To Handle Add Task Click
   const handleAddClick = () => {
-    handleTaskSidebar()
-    setMainSidebar()
-  }
+    handleTaskSidebar();
+    setMainSidebar();
+  };
 
   return (
     <div
@@ -160,7 +156,7 @@ const TodoSidebar = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoSidebar
+export default TodoSidebar;

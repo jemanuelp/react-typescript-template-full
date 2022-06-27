@@ -1,19 +1,14 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { ReactSortable } from 'react-sortablejs'
+import classnames from 'classnames';
+import { ReactSortable } from 'react-sortablejs';
 
-// ** Custom Hooks
-import { useRTL } from '@hooks/useRTL'
+import { useRTL } from '@hooks/useRTL';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, Badge } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, Badge } from 'reactstrap';
 
 const DndClone = () => {
-  // ** State
-  const [isRtl] = useRTL()
+  const [isRtl] = useRTL();
 
   const source1 = [
     {
@@ -40,7 +35,7 @@ const DndClone = () => {
       text: 'Discord',
       color: 'light-warning'
     }
-  ]
+  ];
   const source2 = [
     {
       text: 'Github',
@@ -66,10 +61,10 @@ const DndClone = () => {
       text: 'Amazon',
       color: 'light-warning'
     }
-  ]
+  ];
 
-  const [list, setList] = useState(source1)
-  const [list2, setList2] = useState(source2)
+  const [list, setList] = useState(source1);
+  const [list2, setList2] = useState(source2);
 
   return (
     <Card>
@@ -96,7 +91,7 @@ const DndClone = () => {
                   <Badge className='draggable' key={`${item.text}-${index}`} color={item.color} pill>
                     {item.text}
                   </Badge>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
@@ -115,14 +110,14 @@ const DndClone = () => {
                   <Badge className='draggable' key={`${item.text}-${index}`} color={item.color} pill>
                     {item.text}
                   </Badge>
-                )
+                );
               })}
             </ReactSortable>
           </Col>
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default DndClone
+export default DndClone;

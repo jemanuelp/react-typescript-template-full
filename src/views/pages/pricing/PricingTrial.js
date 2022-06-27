@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Row, Col, Button } from 'reactstrap'
+import { Row, Col, Button } from 'reactstrap';
 
-// ** Images
-import trialSvg from '@src/assets/images/illustration/pricing-Illustration.svg'
+import trialSvg from 'src/assets/images/illustration/pricing-Illustration.svg';
 
 const PricingTrial = () => {
   return (
@@ -29,7 +27,7 @@ const PricingTrial = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default PricingTrial
+export default PricingTrial;

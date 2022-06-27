@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+import { Button } from 'reactstrap';
 
-// ** Icons Imports
-import { Search, Inbox, Camera } from 'react-feather'
+import { Search, Inbox, Camera } from 'react-feather';
 
 const ButtonsIconOnly = () => {
   return (
@@ -32,6 +30,6 @@ const ButtonsIconOnly = () => {
         <Search size={16} />
       </Button.Ripple>
     </div>
-  )
-}
-export default ButtonsIconOnly
+  );
+};
+export default ButtonsIconOnly;

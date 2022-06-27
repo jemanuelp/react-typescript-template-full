@@ -1,12 +1,9 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { UserPlus } from 'react-feather'
+import classnames from 'classnames';
+import { UserPlus } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
 const ProfileFriendsSuggestions = ({ data }) => {
   const renderSuggestion = () => {
@@ -30,9 +27,9 @@ const ProfileFriendsSuggestions = ({ data }) => {
             </Button>
           </div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card>
@@ -41,7 +38,7 @@ const ProfileFriendsSuggestions = ({ data }) => {
         {renderSuggestion()}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileFriendsSuggestions
+export default ProfileFriendsSuggestions;

@@ -1,25 +1,20 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import NavEnd from './NavEnd'
-import NavBasic from './NavBasic'
-import NavBorder from './NavBorder'
-import NavCenter from './NavCenter'
-import NavDivider from './NavDivider'
-import NavVertical from './NavVertical'
-import NavSquareBorder from './NavSquareBorder'
-import NavVerticalBorder from './NavVerticalBorder'
+import NavEnd from './NavEnd';
+import NavBasic from './NavBasic';
+import NavBorder from './NavBorder';
+import NavCenter from './NavCenter';
+import NavDivider from './NavDivider';
+import NavVertical from './NavVertical';
+import NavSquareBorder from './NavSquareBorder';
+import NavVerticalBorder from './NavVerticalBorder';
 
 // ** Source Code
 import {
@@ -30,13 +25,13 @@ import {
   navDivider,
   navVertical,
   navSquareBorder,
-  navVerticalBorder
-} from './NavComponentSourceCode'
+  navVerticalBorder,
+} from './NavComponentSourceCode';
 
 const NavComponent = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Navs' data={[{ title: 'Components' }, { title: 'Navs' }]} />
@@ -107,6 +102,6 @@ const NavComponent = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default NavComponent
+  );
+};
+export default NavComponent;

@@ -1,9 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
 // ** Roles Components
-import Table from './Table'
-import RoleCards from './RoleCards'
+import Table from './Table';
+import RoleCards from './RoleCards';
 
 const Roles = () => {
   return (
@@ -20,7 +19,7 @@ const Roles = () => {
         <Table />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Roles
+export default Roles;

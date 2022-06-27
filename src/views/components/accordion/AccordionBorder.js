@@ -1,16 +1,12 @@
-// ** React Imports
-import { useState } from 'react'
-
-// ** Reactstrap Imports
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap'
+import { useState } from 'react';
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 
 const AccordionBorder = () => {
-  // ** State
-  const [open, setOpen] = useState('')
+  const [open, setOpen] = useState('');
 
   const toggle = id => {
-    open === id ? setOpen() : setOpen(id)
-  }
+    open === id ? setOpen() : setOpen(id);
+  };
 
   return (
     <Accordion className='accordion-border' open={open} toggle={toggle}>
@@ -49,6 +45,6 @@ const AccordionBorder = () => {
         </AccordionBody>
       </AccordionItem>
     </Accordion>
-  )
-}
-export default AccordionBorder
+  );
+};
+export default AccordionBorder;

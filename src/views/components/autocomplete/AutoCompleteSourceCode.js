@@ -3,7 +3,7 @@ export const basicExample = (
     <code className='language-jsx'>
       {`
 import React, { useState } from 'react'
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete'
 
 const AutoCompleteBasic = () => {
   const [suggestions] = useState([
@@ -50,14 +50,14 @@ export default AutoCompleteBasic
 `}
     </code>
   </pre>
-)
+);
 
 export const sectionExample = (
   <pre>
     <code className='language-jsx'>
       {`
 import React, { useState } from 'react'
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete'
 
 const AutoCompleteSections = () => {
   const [suggestions] = useState([
@@ -145,7 +145,7 @@ export default AutoCompleteSections
 `}
     </code>
   </pre>
-)
+);
 
 export const ajaxExample = (
   <pre>
@@ -153,7 +153,7 @@ export const ajaxExample = (
       {`
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete'
 
 const AutoCompleteAjax = () => {
   const [suggestions, setSuggestions] = useState([])
@@ -178,7 +178,7 @@ export default AutoCompleteAjax
 `}
     </code>
   </pre>
-)
+);
 
 export const customRenderExample = (
   <pre>
@@ -186,13 +186,13 @@ export const customRenderExample = (
       {`
 import React, { useState } from 'react'
 import classnames from 'classnames'
-import AutoComplete from '@components/autocomplete'
-import img1 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import img6 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
+import AutoComplete from 'src/@core/components/autocomplete'
+import img1 from 'src/assets/images/portrait/small/avatar-s-1.jpg'
+import img2 from 'src/assets/images/portrait/small/avatar-s-2.jpg'
+import img3 from 'src/assets/images/portrait/small/avatar-s-3.jpg'
+import img4 from 'src/assets/images/portrait/small/avatar-s-4.jpg'
+import img5 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import img6 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
 
 const AutoCompleteRender = () => {
   const [suggestions] = useState([
@@ -265,14 +265,14 @@ export default AutoCompleteRender
 `}
     </code>
   </pre>
-)
+);
 
 export const defaultSuggestionsExample = (
   <pre>
     <code className='language-jsx'>
       {`
 import React, { useState } from 'react'
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete'
 
 const AutoCompleteDefaultSuggestions = () => {
   const [suggestions] = useState([
@@ -320,14 +320,14 @@ export default AutoCompleteDefaultSuggestions
 `}
     </code>
   </pre>
-)
+);
 
 export const searchLimitExample = (
   <pre>
     <code className='language-jsx'>
       {`
 import React, { useState } from 'react'
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete'
 
 const AutoCompleteSearchLimit = () => {
   const [suggestions] = useState([
@@ -374,4 +374,4 @@ export default AutoCompleteSearchLimit
 `}
     </code>
   </pre>
-)
+);

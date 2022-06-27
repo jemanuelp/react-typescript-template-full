@@ -1,5 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {IProfileUser} from "../../../../domains/interfaces/IProfileUser";
+import {IChatContact} from "../../../../domains/interfaces/chats/IChatContact";
+import {IChats} from "../../../../domains/grouper/IChats";
+import {IUser} from "../../../../domains/interfaces/IUser";
 
 export const getUserProfile = createAsyncThunk('appChat/getTasks', async () => {
   const response = await axios.get('/apps/chat/users/profile-user');
@@ -12,25 +16,34 @@ export const getChatContacts = createAsyncThunk('appChat/getChatContacts', async
 });
 
 export const selectChat = createAsyncThunk('appChat/selectChat', async (id: number, { dispatch }) => {
-  const response = await axios.get('/apps/chat/get-chat', { id });
+  const response = await axios.get('/apps/chat/get-chat', { data: { id } });
   await dispatch(getChatContacts());
   return response.data;
 });
 
-export const sendMsg = createAsyncThunk('appChat/sendMsg', async (obj, { dispatch }) => {
+export const sendMsg = createAsyncThunk('appChat/sendMsg', async (obj: any, { dispatch }) => {
   const response = await axios.post('/apps/chat/send-msg', { obj });
-  await dispatch(selectChat(Number(obj.contact.id)));
+  await dispatch(selectChat(Number((obj && obj.contact)
+      ? obj.contact.id
+      : 0)));
   return response.data;
 });
 
+const initialState: {
+  userProfile: IProfileUser,
+  contacts: IChatContact[],
+  chats: IChats[],
+  selectedUser: IUser
+} = {
+  userProfile: {} as IProfileUser,
+  contacts: [],
+  chats: [],
+  selectedUser: {} as IUser
+};
+
 export const appChatSlice = createSlice({
   name: 'appChat',
-  initialState: {
-    chats: [],
-    contacts: [],
-    userProfile: {},
-    selectedUser: {}
-  },
+  initialState,
   reducers: {},
   extraReducers: builder => {
     builder
@@ -46,5 +59,6 @@ export const appChatSlice = createSlice({
       });
   }
 });
-
 export default appChatSlice.reducer;
+
+export type AppChatState = ReturnType<typeof appChatSlice.reducer>;

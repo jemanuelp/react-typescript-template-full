@@ -1,37 +1,32 @@
-// ** Reactstrap Imports
-import { Badge, Card, CardBody } from 'reactstrap'
+import { Badge, Card, CardBody } from 'reactstrap';
 
-// ** Custom Components
-import AvatarGroup from '@components/avatar-group'
+import AvatarGroup from 'src/@core/components/avatar-group';
 
 // ** Third Party Imports
-import classnames from 'classnames'
-import { Paperclip, MessageSquare } from 'react-feather'
+import classnames from 'classnames';
+import { Paperclip, MessageSquare } from 'react-feather';
 
-// ** Redux Imports
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 
 // ** Actions
-import { handleSelectTask } from './store'
+import { handleSelectTask } from './store';
 
 const KanbanTasks = props => {
-  // ** Props
-  const { task, labelColors, handleTaskSidebarToggle } = props
-
-  // ** Hooks
-  const dispatch = useDispatch()
+  const { task, labelColors, handleTaskSidebarToggle } = props;
+  
+  const dispatch = useDispatch();
 
   const handleTaskClick = () => {
-    dispatch(handleSelectTask(task))
-    handleTaskSidebarToggle()
-  }
+    dispatch(handleSelectTask(task));
+    handleTaskSidebarToggle();
+  };
 
   const renderLabels = () => {
     if (task.labels.length) {
       return (
         <div className='mb-1'>
           {task.labels.map((label, index) => {
-            const isLastChip = task.labels[task.labels.length - 1] === label
+            const isLastChip = task.labels[task.labels.length - 1] === label;
 
             return (
               <Badge
@@ -43,14 +38,14 @@ const KanbanTasks = props => {
               >
                 {label}
               </Badge>
-            )
+            );
           })}
         </div>
-      )
+      );
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   const renderAttachmentsComments = () => {
     if ((task.attachments && task.attachments.length) || (task.comments && task.comments.length)) {
@@ -69,19 +64,19 @@ const KanbanTasks = props => {
             </div>
           ) : null}
         </div>
-      )
+      );
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   const taskFooterClasses = () => {
     if (task.comments && !task.comments.length && task.attachments && !task.attachments.length) {
-      return 'justify-content-end'
+      return 'justify-content-end';
     } else {
-      return 'justify-content-between'
+      return 'justify-content-between';
     }
-  }
+  };
 
   const renderTaskFooter = () => {
     return (task.attachments && task.attachments.length) ||
@@ -93,8 +88,8 @@ const KanbanTasks = props => {
           <div>{task.assignedTo.length ? <AvatarGroup data={task.assignedTo} /> : null}</div>
         ) : null}
       </div>
-    ) : null
-  }
+    ) : null;
+  };
 
   return (
     <Card onClick={handleTaskClick} className='task' data-board-id={task.boardId} data-task-id={task.id}>
@@ -110,7 +105,7 @@ const KanbanTasks = props => {
         {renderTaskFooter()}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default KanbanTasks
+export default KanbanTasks;

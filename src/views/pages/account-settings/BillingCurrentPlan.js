@@ -1,6 +1,5 @@
-// ** React Imports
-import { Fragment, useState, useEffect } from 'react'
-// ** Reactstrap Imports
+import { Fragment, useState, useEffect } from 'react';
+
 import {
   Row,
   Col,
@@ -15,49 +14,45 @@ import {
   CardTitle,
   ModalBody,
   CardHeader,
-  ModalHeader
-} from 'reactstrap'
+  ModalHeader,
+} from 'reactstrap';
 
-// ** Demo Components
-import PricingCard from '@src/views/pages/pricing/PricingCards'
+import PricingCard from 'src/views/pages/pricing/PricingCards';
 
-// ** Third Party Components
-import axios from 'axios'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-// ** Styles
-import '@styles/base/pages/page-pricing.scss'
-import '@styles/base/plugins/extensions/ext-component-sweet-alerts.scss'
+import 'src/@core/scss/base/pages/page-pricing.scss';
+import 'src/@core/scss/base/plugins/extensions/ext-component-sweet-alerts.scss';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const BillingCurrentPlan = () => {
-  // ** States
-  const [show, setShow] = useState(false)
-  const [data, setData] = useState(null)
-  const [duration, setDuration] = useState('monthly')
+  const [show, setShow] = useState(false);
+  const [data, setData] = useState(null);
+  const [duration, setDuration] = useState('monthly');
 
   useEffect(() => {
     axios.get('/pricing/data').then(res => {
-      const dataArr = []
+      const dataArr = [];
 
       Object.entries(res.data).forEach(([key, val]) => {
         if (key !== 'qandA') {
-          dataArr.push(val)
-          setData([...dataArr])
+          dataArr.push(val);
+          setData([...dataArr]);
         }
-      })
-    })
-  }, [])
+      });
+    });
+  }, []);
 
   const onChange = e => {
     if (e.target.checked) {
-      setDuration('yearly')
+      setDuration('yearly');
     } else {
-      setDuration('monthly')
+      setDuration('monthly');
     }
-  }
+  };
 
   const handleConfirmCancel = () => {
     return MySwal.fire({
@@ -68,9 +63,9 @@ const BillingCurrentPlan = () => {
       confirmButtonText: 'Yes',
       customClass: {
         confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-outline-danger ms-1'
+        cancelButton: 'btn btn-outline-danger ms-1',
       },
-      buttonsStyling: false
+      buttonsStyling: false,
     }).then(function (result) {
       if (result.value) {
         MySwal.fire({
@@ -78,21 +73,21 @@ const BillingCurrentPlan = () => {
           title: 'Unsubscribed!',
           text: 'Your subscription cancelled successfully.',
           customClass: {
-            confirmButton: 'btn btn-success'
-          }
-        })
+            confirmButton: 'btn btn-success',
+          },
+        });
       } else if (result.dismiss === MySwal.DismissReason.cancel) {
         MySwal.fire({
           title: 'Cancelled',
           text: 'Unsubscription Cancelled!!',
           icon: 'error',
           customClass: {
-            confirmButton: 'btn btn-success'
-          }
-        })
+            confirmButton: 'btn btn-success',
+          },
+        });
       }
-    })
-  }
+    });
+  };
 
   return (
     <Fragment>
@@ -174,7 +169,7 @@ const BillingCurrentPlan = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default BillingCurrentPlan
+export default BillingCurrentPlan;

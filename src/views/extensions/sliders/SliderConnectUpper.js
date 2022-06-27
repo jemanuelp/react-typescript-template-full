@@ -1,8 +1,6 @@
-// ** Third Party Components
-import Nouislider from 'nouislider-react'
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const SliderConnectUpper = ({ direction }) => {
   return (
@@ -26,7 +24,7 @@ const SliderConnectUpper = ({ direction }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderConnectUpper
+export default SliderConnectUpper;

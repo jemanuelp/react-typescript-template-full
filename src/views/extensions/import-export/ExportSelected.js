@@ -1,10 +1,7 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -18,11 +15,10 @@ import {
   ModalBody,
   ModalHeader,
   ModalFooter
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { utils, writeFile } from 'xlsx'
+import classnames from 'classnames';
+import { utils, writeFile } from 'xlsx';
 
 const initialData = [
   {
@@ -95,93 +91,92 @@ const initialData = [
     email: 'Rey.Padberg@karina.biz',
     website: 'ambrose.net'
   }
-]
+];
 
 const ExportSelected = () => {
-  // ** States
-  const [data] = useState(initialData)
-  const [value, setValue] = useState('')
-  const [modal, setModal] = useState(false)
-  const [fileName, setFileName] = useState('')
-  const [filteredData, setFilteredData] = useState([])
-  const [dataToExport, setDataToExport] = useState([])
-  const [fileFormat, setFileFormat] = useState('xlsx')
-  const [selectedRows, setSelectedRows] = useState([])
+  const [data] = useState(initialData);
+  const [value, setValue] = useState('');
+  const [modal, setModal] = useState(false);
+  const [fileName, setFileName] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+  const [dataToExport, setDataToExport] = useState([]);
+  const [fileFormat, setFileFormat] = useState('xlsx');
+  const [selectedRows, setSelectedRows] = useState([]);
 
-  const toggleModal = () => setModal(!modal)
+  const toggleModal = () => setModal(!modal);
 
   const handleFilter = e => {
-    let filteredData = []
-    const value = e.target.value
-    setValue(value)
+    let filteredData = [];
+    const value = e.target.value;
+    setValue(value);
     if (value.length) {
       filteredData = data.filter(col => {
         const startsWithCondition =
           col.name.toLowerCase().startsWith(value.toLowerCase()) ||
           col.email.toLowerCase().startsWith(value.toLowerCase()) ||
           col.website.toLowerCase().startsWith(value.toLowerCase()) ||
-          col.id.toString().toLowerCase().startsWith(value.toLowerCase())
+          col.id.toString().toLowerCase().startsWith(value.toLowerCase());
 
         const includesCondition =
           col.name.toLowerCase().includes(value.toLowerCase()) ||
           col.email.toLowerCase().includes(value.toLowerCase()) ||
           col.website.toLowerCase().includes(value.toLowerCase()) ||
-          col.id.toString().toLowerCase().includes(value.toLowerCase())
+          col.id.toString().toLowerCase().includes(value.toLowerCase());
 
-        if (startsWithCondition) return startsWithCondition
-        else if (!startsWithCondition && includesCondition) return includesCondition
-        else return null
-      })
-      setValue(value)
-      setFilteredData(filteredData)
+        if (startsWithCondition) return startsWithCondition;
+        else if (!startsWithCondition && includesCondition) return includesCondition;
+        else return null;
+      });
+      setValue(value);
+      setFilteredData(filteredData);
     }
-  }
+  };
 
   const handleExport = () => {
-    const exportArr = dataToExport
+    const exportArr = dataToExport;
     data.map(item => {
       if (selectedRows.includes(item.id)) {
-        return exportArr.push(item)
+        return exportArr.push(item);
       } else {
-        return null
+        return null;
       }
-    })
-    setDataToExport([...exportArr])
-    const name = fileName.length ? `${fileName}.${fileFormat}` : `excel-sheet.${fileFormat}`
-    const wb = utils.json_to_sheet(dataToExport)
-    const wbout = utils.book_new()
-    utils.book_append_sheet(wbout, wb, 'test')
-    writeFile(wbout, name)
-    toggleModal()
-  }
+    });
+    setDataToExport([...exportArr]);
+    const name = fileName.length ? `${fileName}.${fileFormat}` : `excel-sheet.${fileFormat}`;
+    const wb = utils.json_to_sheet(dataToExport);
+    const wbout = utils.book_new();
+    utils.book_append_sheet(wbout, wb, 'test');
+    writeFile(wbout, name);
+    toggleModal();
+  };
 
   const handleSelect = id => {
-    const selectedRowsArr = selectedRows
+    const selectedRowsArr = selectedRows;
     if (!selectedRowsArr.includes(id)) {
-      selectedRowsArr.push(id)
+      selectedRowsArr.push(id);
     } else if (selectedRowsArr.includes(id)) {
-      selectedRowsArr.splice(selectedRowsArr.indexOf(id), 1)
+      selectedRowsArr.splice(selectedRowsArr.indexOf(id), 1);
     } else {
-      return null
+      return null;
     }
-    setSelectedRows([...selectedRowsArr])
-  }
+    setSelectedRows([...selectedRowsArr]);
+  };
 
   const handleSelectAll = () => {
-    let selectedRowsArr = selectedRows
+    let selectedRowsArr = selectedRows;
     if (selectedRowsArr.length < data.length) {
-      const ids = data.map(i => i.id)
-      selectedRowsArr = ids
+      const ids = data.map(i => i.id);
+      selectedRowsArr = ids;
     } else if (selectedRowsArr.length === data.length) {
-      selectedRowsArr = []
+      selectedRowsArr = [];
     } else {
-      return null
+      return null;
     }
 
-    setSelectedRows(selectedRowsArr)
-  }
+    setSelectedRows(selectedRowsArr);
+  };
 
-  const array = value ? filteredData : data
+  const array = value ? filteredData : data;
   const renderTableData = array.map(col => {
     return (
       <tr
@@ -205,8 +200,8 @@ const ExportSelected = () => {
         <td>{col.website}</td>
         <td>{col.id}</td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <Fragment>
@@ -279,7 +274,7 @@ const ExportSelected = () => {
               name='customSelect'
               value={fileFormat}
               onChange={e => {
-                setFileFormat(e.target.value)
+                setFileFormat(e.target.value);
               }}
             >
               <option>xlsx</option>
@@ -298,7 +293,7 @@ const ExportSelected = () => {
         </ModalFooter>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ExportSelected
+export default ExportSelected;

@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap'
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 const PopoverUncontrolled = () => {
   return (
@@ -17,6 +15,6 @@ const PopoverUncontrolled = () => {
         </PopoverBody>
       </UncontrolledPopover>
     </Fragment>
-  )
-}
-export default PopoverUncontrolled
+  );
+};
+export default PopoverUncontrolled;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap'
+
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 const PopoverTriggers = () => {
   return (
@@ -40,6 +40,6 @@ const PopoverTriggers = () => {
         </PopoverBody>
       </UncontrolledPopover>
     </div>
-  )
-}
-export default PopoverTriggers
+  );
+};
+export default PopoverTriggers;

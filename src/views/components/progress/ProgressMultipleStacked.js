@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Progress } from 'reactstrap'
+
+import { Progress } from 'reactstrap';
 
 const ProgressMultipleStacked = () => {
   return (
@@ -14,6 +14,6 @@ const ProgressMultipleStacked = () => {
         10%
       </Progress>
     </Progress>
-  )
-}
-export default ProgressMultipleStacked
+  );
+};
+export default ProgressMultipleStacked;

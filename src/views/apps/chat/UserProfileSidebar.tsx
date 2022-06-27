@@ -1,16 +1,14 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from '../../../@core/components/avatar';
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { X, Mail, PhoneCall, Clock, Tag, Star, Image, Trash, Slash } from 'react-feather';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-
-// ** Reactstrap Imports
-import { X, Mail, PhoneCall, Clock, Tag, Star, Image, Trash, Slash } from 'react-feather'
-
-const UserProfileSidebar = props => {
-  // ** Props
-  const { user, handleUserSidebarRight, userSidebarRight } = props
+const UserProfileSidebar = (props: any) => {
+  const {
+    user,
+    handleUserSidebarRight,
+    userSidebarRight
+  } = props;
 
   return (
     <div className={classnames('user-profile-sidebar', { show: userSidebarRight === true })}>
@@ -78,7 +76,7 @@ const UserProfileSidebar = props => {
         </div>
       </PerfectScrollbar>
     </div>
-  )
-}
+  );
+};
 
-export default UserProfileSidebar
+export default UserProfileSidebar;

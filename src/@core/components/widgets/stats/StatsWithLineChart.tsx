@@ -1,15 +1,12 @@
-// ** Custom Components
-import Avatar from '../../avatar'
+import Avatar from '../../avatar';
 
-// ** Third Party Components
-import PropTypes from 'prop-types'
-import Chart from 'react-apexcharts'
+import PropTypes from 'prop-types';
+import Chart from 'react-apexcharts';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardText } from 'reactstrap'
+import { Card, CardHeader, CardText } from 'reactstrap';
 
 // ** Default Options
-import { lineChartOptions } from './ChartOptions'
+import { lineChartOptions } from './ChartOptions';
 
 const StatsWithLineChart = ({ icon, color, stats, statTitle, series, options, type, height, ...rest }: any) => {
   return (
@@ -23,12 +20,11 @@ const StatsWithLineChart = ({ icon, color, stats, statTitle, series, options, ty
       </CardHeader>
       <Chart options={options} series={series} type={type} height={height ? height : 100} />
     </Card>
-  )
-}
+  );
+};
 
-export default StatsWithLineChart
+export default StatsWithLineChart;
 
-// ** PropTypes
 StatsWithLineChart.propTypes = {
   type: PropTypes.string,
   height: PropTypes.string,
@@ -38,10 +34,10 @@ StatsWithLineChart.propTypes = {
   stats: PropTypes.string.isRequired,
   series: PropTypes.array.isRequired,
   statTitle: PropTypes.string.isRequired
-}
+};
 
 // ** Default Props
 StatsWithLineChart.defaultProps = {
   options: lineChartOptions,
   color: 'primary'
-}
+};

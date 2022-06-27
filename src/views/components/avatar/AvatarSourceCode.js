@@ -3,8 +3,8 @@ export const avatarSizes = (
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
-import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import Avatar from 'src/@core/components/avatar'
+import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg'
 
 const AvatarSizes = () => {
   return (
@@ -20,14 +20,14 @@ export default AvatarSizes
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarInitials = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar'
 
 const AvatarInitials = () => {
   return (
@@ -43,14 +43,14 @@ export default AvatarInitials
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarColors = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar'
 
 const AvatarColors = () => {
   return (
@@ -68,14 +68,14 @@ export default AvatarColors
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarLightColors = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar'
 
 const AvatarLightColors = () => {
   return (
@@ -93,14 +93,14 @@ export default AvatarLightColors
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarIcons = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar'
 import { GitHub, Calendar, Inbox, Camera, Award, Star } from 'react-feather'
 
 const AvatarIcons = () => {
@@ -119,16 +119,16 @@ export default AvatarIcons
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarStatus = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar'
 import { GitHub } from 'react-feather'
-import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg'
 
 const AvatarStatus = () => {
   return (
@@ -144,30 +144,30 @@ export default AvatarStatus
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarGroup = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import AvatarGroup from '@components/avatar-group'
+import AvatarGroup from 'src/@core/components/avatar-group'
 
 const data = [
   {
-    img: require('@src/assets/images/portrait/small/avatar-s-5.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-5.jpg')
   },
   {
-    img: require('@src/assets/images/portrait/small/avatar-s-7.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-7.jpg')
   },
   {
-    img: require('@src/assets/images/portrait/small/avatar-s-10.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-10.jpg')
   },
   {
-    img: require('@src/assets/images/portrait/small/avatar-s-11.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-11.jpg')
   },
   {
-    img: require('@src/assets/images/portrait/small/avatar-s-20.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-20.jpg')
   }
 ]
 
@@ -179,35 +179,35 @@ export default AvatarGroupComponent
 `}
     </code>
   </pre>
-)
+);
 
 export const avatarGroupTooltip = (
   <pre>
     <code className='language-jsx'>
       {`
 
-import AvatarGroup from '@components/avatar-group'
+import AvatarGroup from 'src/@core/components/avatar-group'
 
 const data = [
   {
     title: 'Vinnie Mostowy',
-    img: require('@src/assets/images/portrait/small/avatar-s-5.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-5.jpg')
   },
   {
     title: 'Elicia Rieske',
-    img: require('@src/assets/images/portrait/small/avatar-s-7.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-7.jpg')
   },
   {
     title: 'Julee Rossignol',
-    img: require('@src/assets/images/portrait/small/avatar-s-10.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-10.jpg')
   },
   {
     title: 'Darcey Nooner',
-    img: require('@src/assets/images/portrait/small/avatar-s-11.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-11.jpg')
   },
   {
     title: 'Jenny Looper',
-    img: require('@src/assets/images/portrait/small/avatar-s-20.jpg')
+    img: require('src/assets/images/portrait/small/avatar-s-20.jpg')
   }
 ]
 
@@ -219,4 +219,4 @@ export default AvatarGroupComponent
 `}
     </code>
   </pre>
-)
+);

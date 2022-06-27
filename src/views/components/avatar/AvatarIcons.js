@@ -1,8 +1,6 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Icons Imports
-import { GitHub, Calendar, Inbox, Camera, Award, Star } from 'react-feather'
+import { GitHub, Calendar, Inbox, Camera, Award, Star } from 'react-feather';
 
 const AvatarIcons = () => {
   return (
@@ -14,6 +12,6 @@ const AvatarIcons = () => {
       <Avatar color='light-warning' icon={<Award size={14} />} />
       <Avatar color='light-info' icon={<Star size={14} />} />
     </div>
-  )
-}
-export default AvatarIcons
+  );
+};
+export default AvatarIcons;

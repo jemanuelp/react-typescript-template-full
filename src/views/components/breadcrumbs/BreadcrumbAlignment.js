@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-// ** Icons Imports
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const BreadcrumbsAlignment = () => {
   return (
@@ -50,6 +47,6 @@ const BreadcrumbsAlignment = () => {
         </Breadcrumb>
       </div>
     </Fragment>
-  )
-}
-export default BreadcrumbsAlignment
+  );
+};
+export default BreadcrumbsAlignment;

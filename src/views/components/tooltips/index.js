@@ -1,28 +1,23 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import TooltipPositions from './TooltipPositions'
-import TooltipControlled from './TooltipControlled'
-import TooltipUncontrolled from './TooltipUncontrolled'
+import TooltipPositions from './TooltipPositions';
+import TooltipControlled from './TooltipControlled';
+import TooltipUncontrolled from './TooltipUncontrolled';
 
 // ** Source Code
-import { tooltipControlled, tooltipUncontrolled, tooltipPosition } from './TooltipSourceCode'
+import { tooltipControlled, tooltipUncontrolled, tooltipPosition } from './TooltipSourceCode';
 
 const Tooltips = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -58,6 +53,6 @@ const Tooltips = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Tooltips
+  );
+};
+export default Tooltips;

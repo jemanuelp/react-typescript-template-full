@@ -1,27 +1,20 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { Star } from 'react-feather'
-import SwiperCore, { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
+import classnames from 'classnames';
+import { Star } from 'react-feather';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { CardText } from 'reactstrap';
+import img1 from 'src/assets/images/elements/apple-watch.png';
+import img2 from 'src/assets/images/elements/macbook-pro.png';
+import img3 from 'src/assets/images/elements/homepod.png';
+import img4 from 'src/assets/images/elements/magic-mouse.png';
+import img5 from 'src/assets/images/elements/iphone-x.png';
 
-// ** Reactstrap Imports
-import { CardText } from 'reactstrap'
-
-// ** Related products images
-import img1 from '@src/assets/images/elements/apple-watch.png'
-import img2 from '@src/assets/images/elements/macbook-pro.png'
-import img3 from '@src/assets/images/elements/homepod.png'
-import img4 from '@src/assets/images/elements/magic-mouse.png'
-import img5 from '@src/assets/images/elements/iphone-x.png'
-
-// ** Styles
-import '@styles/react/libs/swiper/swiper.scss'
+import 'src/@core/scss/react/libs/swiper/swiper.scss';
 
 const RelatedProducts = () => {
-  SwiperCore.use([Navigation])
+  SwiperCore.use([Navigation]);
 
   // ** Related products Slides
   const slides = [
@@ -60,7 +53,7 @@ const RelatedProducts = () => {
       price: 1559.99,
       img: img5
     }
-  ]
+  ];
 
   // ** Slider params
   const params = {
@@ -86,7 +79,7 @@ const RelatedProducts = () => {
         spaceBetween: 55
       }
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -118,18 +111,18 @@ const RelatedProducts = () => {
                             })}
                           />
                         </li>
-                      )
+                      );
                     })}
                   </ul>
                   <CardText className='text-primary mb-0'>${slide.price}</CardText>
                 </div>
               </a>
             </SwiperSlide>
-          )
+          );
         })}
       </Swiper>
     </Fragment>
-  )
-}
+  );
+};
 
-export default RelatedProducts
+export default RelatedProducts;

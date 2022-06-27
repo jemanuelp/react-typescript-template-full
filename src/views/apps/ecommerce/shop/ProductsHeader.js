@@ -1,8 +1,5 @@
-// ** Third Party Components
-import classnames from 'classnames'
-import { Menu, Grid, List } from 'react-feather'
-
-// ** Reactstrap Imports
+import classnames from 'classnames';
+import { Menu, Grid, List } from 'react-feather';
 import {
   Row,
   Col,
@@ -12,18 +9,17 @@ import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledButtonDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const ProductsHeader = props => {
-  // ** Props
-  const { activeView, setActiveView, dispatch, getProducts, store, setSidebarOpen } = props
+  const { activeView, setActiveView, dispatch, getProducts, store, setSidebarOpen } = props;
 
   // ** Sorting obj
   const sortToggleText = {
     'price-desc': 'Highest',
     'price-asc': 'Lowest',
     featured: 'Featured'
-  }
+  };
 
   return (
     <div className='ecommerce-header'>
@@ -93,7 +89,7 @@ const ProductsHeader = props => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsHeader
+export default ProductsHeader;

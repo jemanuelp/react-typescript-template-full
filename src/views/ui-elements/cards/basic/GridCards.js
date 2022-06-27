@@ -1,10 +1,8 @@
-// ** React Imports
-import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText, CardFooter } from 'reactstrap'
+import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText, CardFooter } from 'reactstrap';
 
-// ** Images
-import img1 from '@src/assets/images/slider/03.jpg'
-import img2 from '@src/assets/images/slider/02.jpg'
-import img3 from '@src/assets/images/slider/01.jpg'
+import img1 from 'src/assets/images/slider/03.jpg';
+import img2 from 'src/assets/images/slider/02.jpg';
+import img3 from 'src/assets/images/slider/01.jpg';
 
 const GridCardsComponent = () => {
   return (
@@ -52,7 +50,7 @@ const GridCardsComponent = () => {
         </Card>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default GridCardsComponent
+export default GridCardsComponent;

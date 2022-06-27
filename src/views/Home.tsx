@@ -28,7 +28,8 @@ const Home = () => {
         </CardHeader>
         <CardBody>
           <CardText>
-            We carefully crafted JWT flow so you can implement JWT with ease and with minimum efforts.
+            We carefully crafted JWT flow so you can implement JWT
+            with ease and with minimum efforts.
           </CardText>
           <CardText>
             Please read our{' '}

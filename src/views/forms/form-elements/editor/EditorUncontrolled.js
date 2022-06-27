@@ -1,8 +1,6 @@
-// ** Third Party Components
-import { Editor } from 'react-draft-wysiwyg'
+import { Editor } from 'react-draft-wysiwyg';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const EditorUncontrolled = () => {
   return (
@@ -14,7 +12,7 @@ const EditorUncontrolled = () => {
         <Editor />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default EditorUncontrolled
+export default EditorUncontrolled;

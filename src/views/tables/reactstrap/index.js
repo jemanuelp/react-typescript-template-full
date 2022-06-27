@@ -1,29 +1,24 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardBody, CardText } from 'reactstrap'
+import { Row, Col, CardBody, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import prism from 'prismjs'
+import prism from 'prismjs';
 
-// ** Demo Components
-import TableDark from './TableDark'
-import TableBasic from './TableBasic'
-import TableHover from './TableHover'
-import TableSmall from './TableSmall'
-import TableStriped from './TableStriped'
-import TableBordered from './TableBordered'
-import TableTheadDark from './TableTheadDark'
-import TableContextual from './TableContextual'
-import TableResponsive from './TableResponsive'
-import TableBorderless from './TableBorderless'
-import TableTheadLight from './TableTheadLight'
-import TableStripedDark from './TableStripedDark'
+import TableDark from './TableDark';
+import TableBasic from './TableBasic';
+import TableHover from './TableHover';
+import TableSmall from './TableSmall';
+import TableStriped from './TableStriped';
+import TableBordered from './TableBordered';
+import TableTheadDark from './TableTheadDark';
+import TableContextual from './TableContextual';
+import TableResponsive from './TableResponsive';
+import TableBorderless from './TableBorderless';
+import TableTheadLight from './TableTheadLight';
+import TableStripedDark from './TableStripedDark';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import Breadcrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
 // ** Source Code
 import {
@@ -37,13 +32,13 @@ import {
   tableResponsive,
   tableContextual,
   tableStripedDark,
-  tableTheadOptions
-} from './TableSourceCode'
+  tableTheadOptions,
+} from './TableSourceCode';
 
 const Tables = () => {
   useEffect(() => {
-    prism.highlightAll()
-  })
+    prism.highlightAll();
+  });
 
   return (
     <Fragment>
@@ -167,7 +162,7 @@ const Tables = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Tables
+export default Tables;

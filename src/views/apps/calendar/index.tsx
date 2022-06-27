@@ -19,17 +19,13 @@ const calendarsColor = {
 };
 
 const CalendarComponent = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const store = useSelector((state: RootState) => state.calendar);
-
-  const [calendarApi, setCalendarApi] = useState(null);
+  const [calendarApi, setCalendarApi] = useState<any>(null);
   const [addSidebarOpen, setAddSidebarOpen] = useState(false);
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
-
   const {isRtl} = useRTL();
-
   const handleAddEventSidebar = () => setAddSidebarOpen(!addSidebarOpen);
-
   const toggleSidebar = (val: any) => setLeftSidebarOpen(val);
 
   const blankEvent = {

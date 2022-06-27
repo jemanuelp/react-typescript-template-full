@@ -1,15 +1,12 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap';
 
 const ModalBasic = () => {
-  // ** States
-  const [basicModal, setBasicModal] = useState(false)
-  const [centeredModal, setCenteredModal] = useState(false)
-  const [disabledModal, setDisabledModal] = useState(false)
-  const [disabledAnimation, setDisabledAnimation] = useState(false)
+  const [basicModal, setBasicModal] = useState(false);
+  const [centeredModal, setCenteredModal] = useState(false);
+  const [disabledModal, setDisabledModal] = useState(false);
+  const [disabledAnimation, setDisabledAnimation] = useState(false);
 
   return (
     <div className='demo-inline-spacing'>
@@ -100,6 +97,6 @@ const ModalBasic = () => {
         </Modal>
       </div>
     </div>
-  )
-}
-export default ModalBasic
+  );
+};
+export default ModalBasic;

@@ -1,82 +1,76 @@
-// ** React Imports
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardTitle, CardHeader, CardBody, Row, Col, Table, Button, Progress, Input } from 'reactstrap'
+import { Card, CardTitle, CardHeader, CardBody, Row, Col, Table, Button, Progress, Input } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
-import ReactPlayer from 'react-player'
+import Prism from 'prismjs';
+import ReactPlayer from 'react-player';
 
 const pad = string => {
-  return `0${string}`.slice(-2)
-}
+  return `0${string}`.slice(-2);
+};
 const format = seconds => {
-  const date = new Date(seconds * 1000)
-  const hh = date.getUTCHours()
-  const mm = date.getUTCMinutes()
-  const ss = pad(date.getUTCSeconds())
+  const date = new Date(seconds * 1000);
+  const hh = date.getUTCHours();
+  const mm = date.getUTCMinutes();
+  const ss = pad(date.getUTCSeconds());
   if (hh) {
-    return `${hh}:${pad(mm)}:${ss}`
+    return `${hh}:${pad(mm)}:${ss}`;
   }
-  return `${mm}:${ss}`
-}
+  return `${mm}:${ss}`;
+};
 
 const MediaPlayerAudio = () => {
-  // ** Ref
-  const audioRef = useRef(null)
+  const audioRef = useRef(null);
+  
+  const urlLink = 'https://soundcloud.com/2ghost/we-will-rock-you';
 
-  // ** Vars
-  const urlLink = 'https://soundcloud.com/2ghost/we-will-rock-you'
-
-  // ** States
-  const [url, setUrl] = useState(urlLink)
-  const [played, setPlayed] = useState(0)
-  const [loaded, setLoaded] = useState(0)
-  const [muted, setMuted] = useState(false)
-  const [volume, setVolume] = useState(0.75)
-  const [duration, setDuration] = useState(0)
-  const [seeking, setSeeking] = useState(null)
-  const [playing, setPlaying] = useState(false)
+  const [url, setUrl] = useState(urlLink);
+  const [played, setPlayed] = useState(0);
+  const [loaded, setLoaded] = useState(0);
+  const [muted, setMuted] = useState(false);
+  const [volume, setVolume] = useState(0.75);
+  const [duration, setDuration] = useState(0);
+  const [seeking, setSeeking] = useState(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    Prism.highlightAll()
-  })
+    Prism.highlightAll();
+  });
 
   const load = url => {
-    setUrl(url)
-    setPlayed(0)
-    setLoaded(0)
-  }
-  const handlePlayPause = () => setPlaying(!playing)
+    setUrl(url);
+    setPlayed(0);
+    setLoaded(0);
+  };
+  const handlePlayPause = () => setPlaying(!playing);
   const handleStop = () => {
-    setPlaying(false)
-    setUrl(null)
-  }
-  const handleVolumeChange = e => setVolume(parseFloat(e.target.value))
-  const handleToggleMuted = () => setMuted(!muted)
-  const handlePlay = () => setPlaying(true)
-  const handlePause = () => setPlaying(false)
-  const handleSeekMouseDown = () => setSeeking(true)
+    setPlaying(false);
+    setUrl(null);
+  };
+  const handleVolumeChange = e => setVolume(parseFloat(e.target.value));
+  const handleToggleMuted = () => setMuted(!muted);
+  const handlePlay = () => setPlaying(true);
+  const handlePause = () => setPlaying(false);
+  const handleSeekMouseDown = () => setSeeking(true);
   const handleSeekChange = e => {
-    setPlayed(parseFloat(e.target.value))
-  }
+    setPlayed(parseFloat(e.target.value));
+  };
   const handleSeekMouseUp = e => {
-    setSeeking(false)
-    audioRef.current.seekTo(parseFloat(e.target.value))
-  }
+    setSeeking(false);
+    audioRef.current.seekTo(parseFloat(e.target.value));
+  };
   const handleProgress = state => {
     if (!seeking) {
-      setPlayed(state.played)
-      setLoaded(state.loaded)
+      setPlayed(state.played);
+      setLoaded(state.loaded);
     }
-  }
-  const handleDuration = duration => setDuration(duration)
+  };
+  const handleDuration = duration => setDuration(duration);
   useEffect(() => {
     if (url === null) {
-      load(urlLink)
+      load(urlLink);
     }
-  })
+  });
 
   // for duration, elapsed and remaining time
   const Duration = ({ className, seconds }) => {
@@ -84,11 +78,11 @@ const MediaPlayerAudio = () => {
       <time dateTime={`P${Math.round(seconds)}S`} className={className}>
         {format(seconds)}
       </time>
-    )
-  }
-  const preDuration = <Duration seconds={duration}></Duration>
-  const preElapsed = <Duration seconds={duration * played}></Duration>
-  const preRemaining = <Duration seconds={duration * (1 - played)}></Duration>
+    );
+  };
+  const preDuration = <Duration seconds={duration}></Duration>;
+  const preElapsed = <Duration seconds={duration * played}></Duration>;
+  const preRemaining = <Duration seconds={duration * (1 - played)}></Duration>;
 
   return (
     <Card className='overflow-hidden'>
@@ -124,7 +118,9 @@ const MediaPlayerAudio = () => {
                       Stop
                     </Button>
                     <Button variant='primary' outline onClick={handlePlayPause} className='my-25'>
-                      {playing ? 'Pause' : 'Play'}
+                      {playing
+? 'Pause'
+: 'Play'}
                     </Button>
                   </td>
                 </tr>
@@ -191,7 +187,7 @@ const MediaPlayerAudio = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default MediaPlayerAudio
+export default MediaPlayerAudio;

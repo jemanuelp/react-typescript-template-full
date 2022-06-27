@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+
+import { Badge } from 'reactstrap';
 
 const BadgeLight = () => {
   return (
@@ -12,6 +12,6 @@ const BadgeLight = () => {
       <Badge color='light-info'>Info</Badge>
       <Badge color='light-dark'>Dark</Badge>
     </div>
-  )
-}
-export default BadgeLight
+  );
+};
+export default BadgeLight;

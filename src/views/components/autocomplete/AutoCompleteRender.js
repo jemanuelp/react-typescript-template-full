@@ -1,20 +1,16 @@
-// ** React Imports
-import { useState } from 'react'
-import classnames from 'classnames'
+import { useState } from 'react';
+import classnames from 'classnames';
 
-// ** Custom Components
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete';
 
-// ** Images
-import img1 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import img6 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
+import img3 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
+import img4 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
+import img5 from 'src/assets/images/portrait/small/avatar-s-5.jpg';
+import img6 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
 
 const AutoCompleteRender = () => {
-  // ** State
   const [suggestions] = useState([
     {
       name: 'Jake Shelton',
@@ -40,7 +36,7 @@ const AutoCompleteRender = () => {
       name: 'Brian Moore',
       img: img5
     }
-  ])
+  ]);
 
   return (
     <AutoComplete
@@ -56,7 +52,7 @@ const AutoCompleteRender = () => {
             active: filteredData.indexOf(suggestion) === activeSuggestion
           })}
           onClick={e => {
-            onSuggestionItemClick(null, e)
+            onSuggestionItemClick(null, e);
           }}
         >
           <img src={suggestion.img} alt={suggestion.name} height='32' width='32' className='me-1' />
@@ -64,6 +60,6 @@ const AutoCompleteRender = () => {
         </li>
       )}
     />
-  )
-}
-export default AutoCompleteRender
+  );
+};
+export default AutoCompleteRender;

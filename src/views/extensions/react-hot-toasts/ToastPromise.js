@@ -1,28 +1,26 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Clock } from 'react-feather'
+import toast from 'react-hot-toast';
+import { Clock } from 'react-feather';
 
 const ToastPromise = () => {
   const handleClick = () => {
     const myPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.random() < 0.5) {
-          resolve('foo')
+          resolve('foo');
         } else {
-          reject('fox')
+          reject('fox');
         }
-      }, 1000)
-    })
+      }, 1000);
+    });
 
     return toast.promise(myPromise, {
       loading: 'Loading',
       success: 'Got the data',
       error: 'Error when fetching'
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -37,7 +35,7 @@ const ToastPromise = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastPromise
+export default ToastPromise;

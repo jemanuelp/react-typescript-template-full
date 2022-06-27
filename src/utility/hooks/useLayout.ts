@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { handleLayout, handleLastLayout } from '../../redux/layout'
 import {RootState} from "../../redux/reducers/RootReducer";
-import {Layout} from "../../domains/interfaces/Layout";
+import {Layout} from "../../domains/interfaces/layouts/Layout";
 import {LayoutTypes} from "../../domains/enums/LayoutTypes";
 
 export interface useLayoutInterface {

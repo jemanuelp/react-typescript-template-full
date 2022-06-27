@@ -1,10 +1,8 @@
-// ** Reactstrap Imports
-import { CardGroup, Card, CardImg, CardBody, CardTitle, CardText, CardFooter } from 'reactstrap'
+import { CardGroup, Card, CardImg, CardBody, CardTitle, CardText, CardFooter } from 'reactstrap';
 
-// ** Images
-import img1 from '@src/assets/images/slider/01.jpg'
-import img2 from '@src/assets/images/slider/05.jpg'
-import img3 from '@src/assets/images/slider/03.jpg'
+import img1 from 'src/assets/images/slider/01.jpg';
+import img2 from 'src/assets/images/slider/05.jpg';
+import img3 from 'src/assets/images/slider/03.jpg';
 
 const CardGroupComponent = () => {
   return (
@@ -46,7 +44,7 @@ const CardGroupComponent = () => {
         </CardFooter>
       </Card>
     </CardGroup>
-  )
-}
+  );
+};
 
-export default CardGroupComponent
+export default CardGroupComponent;

@@ -1,16 +1,12 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import Nouislider from 'nouislider-react'
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Input, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Input, Row, Col } from 'reactstrap';
 
 const SliderWithInput = ({ direction }) => {
-  // ** States
-  const [upperConnect, setUpperConnect] = useState(10)
-  const [lowerConnect, setLowerConnect] = useState(30.0)
+  const [upperConnect, setUpperConnect] = useState(10);
+  const [lowerConnect, setLowerConnect] = useState(30.0);
 
   return (
     <Card>
@@ -178,7 +174,7 @@ const SliderWithInput = ({ direction }) => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderWithInput
+export default SliderWithInput;

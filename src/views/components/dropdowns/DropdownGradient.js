@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+
+import { UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 
 const DropdownGradient = () => {
   return (
@@ -117,6 +117,6 @@ const DropdownGradient = () => {
         </DropdownMenu>
       </UncontrolledButtonDropdown>
     </div>
-  )
-}
-export default DropdownGradient
+  );
+};
+export default DropdownGradient;

@@ -1,12 +1,10 @@
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Menu, Item, Submenu, useContextMenu } from 'react-contexify'
+import toast from 'react-hot-toast';
+import { Menu, Item, Submenu, useContextMenu } from 'react-contexify';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap';
 
 const ContextSubMenu = () => {
-  const { show } = useContextMenu({ id: 'submenu_id' })
+  const { show } = useContextMenu({ id: 'submenu_id' });
 
   return (
     <Card>
@@ -32,7 +30,7 @@ const ContextSubMenu = () => {
         </Menu>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ContextSubMenu
+export default ContextSubMenu;

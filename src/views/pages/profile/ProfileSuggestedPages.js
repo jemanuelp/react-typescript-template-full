@@ -1,12 +1,9 @@
-// ** Third Party Components
-import classnames from 'classnames'
-import { Star } from 'react-feather'
+import classnames from 'classnames';
+import { Star } from 'react-feather';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Reactstrap Imports
-import { Card, CardBody } from 'reactstrap'
+import { Card, CardBody } from 'reactstrap';
 
 const ProfileSuggestedPages = ({ data }) => {
   const renderSuggestions = () => {
@@ -32,9 +29,9 @@ const ProfileSuggestedPages = ({ data }) => {
             />
           </div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card>
@@ -43,7 +40,7 @@ const ProfileSuggestedPages = ({ data }) => {
         {renderSuggestions()}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileSuggestedPages
+export default ProfileSuggestedPages;

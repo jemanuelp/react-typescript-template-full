@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Label, Input, Row, Col } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Label, Input, Row, Col } from 'reactstrap';
 
 const InputFile = () => {
   return (
@@ -25,6 +25,6 @@ const InputFile = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default InputFile
+  );
+};
+export default InputFile;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap';
 
 const DisplayHeadings = () => {
   return (
@@ -40,6 +40,6 @@ const DisplayHeadings = () => {
         </tbody>
       </Table>
     </Card>
-  )
-}
-export default DisplayHeadings
+  );
+};
+export default DisplayHeadings;

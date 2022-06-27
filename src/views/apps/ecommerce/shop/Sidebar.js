@@ -1,24 +1,15 @@
-// ** Custom Hooks
-import { useRTL } from '@hooks/useRTL'
-
-// ** Third Party Components
-import wNumb from 'wnumb'
-import classnames from 'classnames'
-import { Star } from 'react-feather'
-import Nouislider from 'nouislider-react'
-
-// ** Reactstrap Imports
-import { Card, CardBody, Row, Col, Input, Button, Label } from 'reactstrap'
-
-// ** Styles
-import '@styles/react/libs/noui-slider/noui-slider.scss'
+import { useRTL } from '@hooks/useRTL';
+import wNumb from 'wnumb';
+import classnames from 'classnames';
+import { Star } from 'react-feather';
+import Nouislider from 'nouislider-react';
+import { Card, CardBody, Row, Col, Input, Button, Label } from 'reactstrap';
+import 'src/@core/scss/react/libs/noui-slider/noui-slider.scss';
 
 const Sidebar = props => {
-  // ** Props
-  const { sidebarOpen } = props
-
-  // ** Hooks
-  const [isRtl] = useRTL()
+  const { sidebarOpen } = props;
+  
+  const [isRtl] = useRTL();
 
   // ** Array of categories
   const categories = [
@@ -63,7 +54,7 @@ const Sidebar = props => {
       id: 'video-games',
       title: 'Video Games'
     }
-  ]
+  ];
 
   // ** Array of brands
   const brands = [
@@ -109,7 +100,7 @@ const Sidebar = props => {
       title: 'Whirlpool',
       total: 298
     }
-  ]
+  ];
 
   // ** Array of ratings
   const ratings = [
@@ -129,7 +120,7 @@ const Sidebar = props => {
       ratings: 1,
       total: 190
     }
-  ]
+  ];
 
   return (
     <div className='sidebar-detached sidebar-left'>
@@ -224,7 +215,7 @@ const Sidebar = props => {
                           </Label>
                         </div>
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
@@ -242,7 +233,7 @@ const Sidebar = props => {
                         </div>
                         <span>{brand.total}</span>
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
@@ -263,14 +254,14 @@ const Sidebar = props => {
                                   })}
                                 />
                               </li>
-                            )
+                            );
                           })}
                           <li>& up</li>
                         </ul>
                       </a>
                       <div className='stars-received'>{item.total}</div>
                     </div>
-                  )
+                  );
                 })}
               </div>
               <div id='clear-filters'>
@@ -283,7 +274,7 @@ const Sidebar = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

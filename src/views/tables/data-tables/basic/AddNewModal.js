@@ -1,22 +1,17 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
-import { User, Briefcase, Mail, Calendar, DollarSign, X } from 'react-feather'
+import Flatpickr from 'react-flatpickr';
+import { User, Briefcase, Mail, Calendar, DollarSign, X } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Modal, Input, Label, Button, ModalHeader, ModalBody, InputGroup, InputGroupText } from 'reactstrap'
+import { Modal, Input, Label, Button, ModalHeader, ModalBody, InputGroup, InputGroupText } from 'reactstrap';
 
-// ** Styles
-import '@styles/react/libs/flatpickr/flatpickr.scss'
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 
 const AddNewModal = ({ open, handleModal }) => {
-  // ** State
-  const [Picker, setPicker] = useState(new Date())
+  const [Picker, setPicker] = useState(new Date());
 
   // ** Custom close btn
-  const CloseBtn = <X className='cursor-pointer' size={15} onClick={handleModal} />
+  const CloseBtn = <X className='cursor-pointer' size={15} onClick={handleModal} />;
 
   return (
     <Modal
@@ -93,7 +88,7 @@ const AddNewModal = ({ open, handleModal }) => {
         </Button>
       </ModalBody>
     </Modal>
-  )
-}
+  );
+};
 
-export default AddNewModal
+export default AddNewModal;

@@ -1,10 +1,7 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-// ** Reactstrap Imports
 import {
   Nav,
   TabPane,
@@ -15,18 +12,17 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle
-} from 'reactstrap'
+} from 'reactstrap';
 
 const PillBasic = () => {
-  // ** States
-  const [active, setActive] = useState('1')
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [active, setActive] = useState('1');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen)
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   const toggle = tab => {
-    setActive(tab)
-  }
+    setActive(tab);
+  };
   return (
     <Fragment>
       <Nav pills>
@@ -34,7 +30,7 @@ const PillBasic = () => {
           <NavLink
             active={active === '1'}
             onClick={() => {
-              toggle('1')
+              toggle('1');
             }}
           >
             Home
@@ -44,7 +40,7 @@ const PillBasic = () => {
           <NavLink
             active={active === '2'}
             onClick={() => {
-              toggle('2')
+              toggle('2');
             }}
           >
             Profile
@@ -65,7 +61,7 @@ const PillBasic = () => {
               className='w-100'
               active={active === '3'}
               onClick={() => {
-                toggle('3')
+                toggle('3');
               }}
             >
               @fat
@@ -74,7 +70,7 @@ const PillBasic = () => {
               className='w-100'
               active={active === '4'}
               onClick={() => {
-                toggle('4')
+                toggle('4');
               }}
             >
               @mdo
@@ -85,7 +81,7 @@ const PillBasic = () => {
           <NavLink
             active={active === '5'}
             onClick={() => {
-              toggle('5')
+              toggle('5');
             }}
           >
             About
@@ -135,6 +131,6 @@ const PillBasic = () => {
         </TabPane>
       </TabContent>
     </Fragment>
-  )
-}
-export default PillBasic
+  );
+};
+export default PillBasic;

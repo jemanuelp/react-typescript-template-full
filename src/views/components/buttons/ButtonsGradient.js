@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+
+import { Button } from 'reactstrap';
 
 const GradientButtons = () => {
   return (
@@ -12,6 +12,6 @@ const GradientButtons = () => {
       <Button color='gradient-info'>Info</Button>
       <Button color='gradient-dark'>Dark</Button>
     </div>
-  )
-}
-export default GradientButtons
+  );
+};
+export default GradientButtons;

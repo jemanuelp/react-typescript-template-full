@@ -6,7 +6,6 @@ import { Card, CardHeader, CardBody, CardTitle, Collapse } from 'reactstrap';
 const CardSnippet = (props: any) => {
   const { title, children, noBody, code, iconCode } = props;
 
-  // ** State
   const [isOpen, setIsOpen] = useState(false);
 
   // ** If user passes custom icon then render that else render default icon
@@ -36,7 +35,6 @@ const CardSnippet = (props: any) => {
 
 export default CardSnippet;
 
-// ** PropTypes
 CardSnippet.propTypes = {
   code: PropTypes.node,
   noBody: PropTypes.bool,

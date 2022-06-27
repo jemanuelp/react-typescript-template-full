@@ -9,11 +9,12 @@ import img4 from '../../../../src/assets/images/banner/banner-14.jpg';
 import img5 from '../../../../src/assets/images/banner/banner-15.jpg';
 import {useRTLInterface} from "../../../utility/hooks/useRTL";
 import {SwiperOptions} from "swiper/types/swiper-options";
+import {Swiper as SwiperClass} from "swiper/types";
 
 SwiperCore.use([Thumbs]);
 
 const SwiperGallery = ({ isRtl }: Partial<useRTLInterface>) => {
-  const [thumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
 
   const params = {
     className: 'swiper-gallery',
@@ -26,12 +27,10 @@ const SwiperGallery = ({ isRtl }: Partial<useRTLInterface>) => {
   };
 
   const paramsThumbs: SwiperOptions = {
-    // className: 'gallery-thumbs',
     spaceBetween: 10,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true
-    // onSwiper: setThumbsSwiper
   };
 
   return (
@@ -58,7 +57,7 @@ const SwiperGallery = ({ isRtl }: Partial<useRTLInterface>) => {
               <img src={img5} alt='swiper 5' className='img-fluid' />
             </SwiperSlide>
           </Swiper>
-          <Swiper {...paramsThumbs}>
+          <Swiper {...paramsThumbs} className='gallery-thumbs' onSwiper={setThumbsSwiper}>
             <SwiperSlide>
               <img src={img1} alt='swiper 1' className='img-fluid' />
             </SwiperSlide>

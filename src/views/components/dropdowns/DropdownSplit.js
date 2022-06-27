@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button, UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+
+import { Button, UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 
 const DropdownSplit = () => {
   return (
@@ -136,6 +136,6 @@ const DropdownSplit = () => {
         </DropdownMenu>
       </UncontrolledButtonDropdown>
     </div>
-  )
-}
-export default DropdownSplit
+  );
+};
+export default DropdownSplit;

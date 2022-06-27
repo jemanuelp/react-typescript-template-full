@@ -1,14 +1,14 @@
-// ** Reactstrap Imports
-import { Input } from 'reactstrap'
+
+import { Input } from 'reactstrap';
 
 const PricingHeader = ({ duration, setDuration }) => {
   const onChange = e => {
     if (e.target.checked) {
-      setDuration('yearly')
+      setDuration('yearly');
     } else {
-      setDuration('monthly')
+      setDuration('monthly');
     }
-  }
+  };
 
   return (
     <div className='text-center'>
@@ -24,7 +24,7 @@ const PricingHeader = ({ duration, setDuration }) => {
         <h6 className='ms-50 mb-0'>Annually</h6>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PricingHeader
+export default PricingHeader;

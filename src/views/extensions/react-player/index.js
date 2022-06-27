@@ -1,16 +1,12 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import MediaPlayerVideo from './MediaPlayerVideo'
-import MediaPlayerAudio from './MediaPlayerAudio'
-import MediaPlayerControlled from './MediaPlayerControlled'
+import MediaPlayerVideo from './MediaPlayerVideo';
+import MediaPlayerAudio from './MediaPlayerAudio';
+import MediaPlayerControlled from './MediaPlayerControlled';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
 const ReactPlayer = () => {
   return (
@@ -32,7 +28,7 @@ const ReactPlayer = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ReactPlayer
+export default ReactPlayer;

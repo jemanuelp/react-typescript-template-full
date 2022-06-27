@@ -1,16 +1,14 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Grid } from 'react-feather'
+import toast from 'react-hot-toast';
+import { Grid } from 'react-feather';
 
 const ToastCustomPosition = () => {
   const handleClick = () => {
     return toast.success('Always at the bottom.', {
       position: 'bottom-right'
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -25,7 +23,7 @@ const ToastCustomPosition = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastCustomPosition
+export default ToastCustomPosition;

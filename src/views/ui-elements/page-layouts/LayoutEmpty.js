@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+import { Alert } from 'reactstrap';
 
 const LayoutEmpty = () => {
   return (
@@ -27,7 +24,7 @@ const LayoutEmpty = () => {
         </div>
       </Alert>
     </Fragment>
-  )
-}
+  );
+};
 
-export default LayoutEmpty
+export default LayoutEmpty;

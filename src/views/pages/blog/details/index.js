@@ -1,9 +1,7 @@
-// ** React Imports
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import classnames from 'classnames'
+import axios from 'axios';
+import classnames from 'classnames';
 import {
   Share2,
   GitHub,
@@ -14,17 +12,14 @@ import {
   Linkedin,
   CornerUpLeft,
   MessageSquare
-} from 'react-feather'
+} from 'react-feather';
 
-// ** Utils
-import { kFormatter } from '@utils'
+import { kFormatter } from 'src/utility/Utils';
 
-// ** Custom Components
-import Sidebar from '../BlogSidebar'
-import Avatar from '@components/avatar'
-import Breadcrumbs from '@components/breadcrumbs'
+import Sidebar from '../BlogSidebar';
+import Avatar from 'src/@core/components/avatar';
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -42,21 +37,18 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/page-blog.scss'
+import 'src/@core/scss/base/pages/page-blog.scss';
 
-// ** Images
-import cmtImg from '@src/assets/images/portrait/small/avatar-s-6.jpg'
+import cmtImg from 'src/assets/images/portrait/small/avatar-s-6.jpg';
 
 const BlogDetails = () => {
-  // ** States
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/blog/list/data/detail').then(res => setData(res.data))
-  }, [])
+    axios.get('/blog/list/data/detail').then(res => setData(res.data));
+  }, []);
 
   const badgeColorsArr = {
     Quote: 'light-info',
@@ -64,7 +56,7 @@ const BlogDetails = () => {
     Gaming: 'light-danger',
     Video: 'light-warning',
     Food: 'light-success'
-  }
+  };
 
   const renderTags = () => {
     return data.blog.tags.map((tag, index) => {
@@ -80,9 +72,9 @@ const BlogDetails = () => {
             {tag}
           </Badge>
         </a>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const renderComments = () => {
     return data.comments.map(comment => {
@@ -107,9 +99,9 @@ const BlogDetails = () => {
             </div>
           </CardBody>
         </Card>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Fragment>
@@ -254,7 +246,7 @@ const BlogDetails = () => {
         <Sidebar />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default BlogDetails
+export default BlogDetails;

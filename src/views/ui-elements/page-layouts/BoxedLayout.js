@@ -1,12 +1,9 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+import { Alert } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
-import Ecommerce from '../../dashboard/ecommerce'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
+import Ecommerce from '../../dashboard/ecommerce';
 
 const BoxedLayout = () => {
   return (
@@ -29,7 +26,7 @@ const BoxedLayout = () => {
       </Alert>
       <Ecommerce />
     </Fragment>
-  )
-}
+  );
+};
 
-export default BoxedLayout
+export default BoxedLayout;

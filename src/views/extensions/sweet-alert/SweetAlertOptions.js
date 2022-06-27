@@ -1,14 +1,11 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap';
 
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-// ** Images
-import alertImg from '@src/assets/images/slider/04.jpg'
+import alertImg from 'src/assets/images/slider/04.jpg';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const SweetAlertOptions = () => {
   const handleImageAlert = () => {
@@ -21,32 +18,32 @@ const SweetAlertOptions = () => {
       imageAlt: 'Custom image',
       customClass: { confirmButton: 'btn btn-primary' },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleTimeoutAlert = () => {
-    let timerInterval
+    let timerInterval;
     Swal.fire({
       title: 'Auto close alert!',
       html: 'I will close in <b></b> seconds.',
       timerProgressBar: true,
       timer: 2000,
       didOpen() {
-        Swal.showLoading()
-        const b = Swal.getHtmlContainer().querySelector('b')
+        Swal.showLoading();
+        const b = Swal.getHtmlContainer().querySelector('b');
         timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft()
-        }, 100)
+          b.textContent = Swal.getTimerLeft();
+        }, 100);
       },
       willClose() {
-        clearInterval(timerInterval)
+        clearInterval(timerInterval);
       }
     }).then(function (result) {
       if (result.dismiss === Swal.DismissReason.timer) {
-        console.log('I was closed by the timer')
+        console.log('I was closed by the timer');
       }
-    })
-  }
+    });
+  };
 
   const handleClickOutside = () => {
     return MySwal.fire({
@@ -56,8 +53,8 @@ const SweetAlertOptions = () => {
       allowOutsideClick: true,
       customClass: { confirmButton: 'btn btn-primary' },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleAjax = () => {
     MySwal.fire({
@@ -79,13 +76,13 @@ const SweetAlertOptions = () => {
         return fetch(`//api.github.com/users/${login}`)
           .then(function (response) {
             if (!response.ok) {
-              throw new Error(response.statusText)
+              throw new Error(response.statusText);
             }
-            return response.json()
+            return response.json();
           })
           .catch(function (error) {
-            MySwal.showValidationMessage(`Request failed:  ${error}`)
-          })
+            MySwal.showValidationMessage(`Request failed:  ${error}`);
+          });
       }
     }).then(function (result) {
       if (result.value) {
@@ -95,10 +92,10 @@ const SweetAlertOptions = () => {
           customClass: {
             confirmButton: 'btn btn-primary'
           }
-        })
+        });
       }
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -122,7 +119,7 @@ const SweetAlertOptions = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SweetAlertOptions
+export default SweetAlertOptions;

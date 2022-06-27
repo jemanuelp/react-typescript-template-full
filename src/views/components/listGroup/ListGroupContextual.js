@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem } from 'reactstrap'
+
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const ListGroupContextual = () => {
   return (
@@ -12,6 +12,6 @@ const ListGroupContextual = () => {
       <ListGroupItem color='info'>A simple info list group item</ListGroupItem>
       <ListGroupItem color='dark'>A simple dark list group item</ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupContextual
+  );
+};
+export default ListGroupContextual;

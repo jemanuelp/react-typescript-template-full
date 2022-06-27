@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap';
 
 const CustomizingHeadings = () => {
   return (
@@ -61,6 +61,6 @@ const CustomizingHeadings = () => {
         </tbody>
       </Table>
     </Card>
-  )
-}
-export default CustomizingHeadings
+  );
+};
+export default CustomizingHeadings;

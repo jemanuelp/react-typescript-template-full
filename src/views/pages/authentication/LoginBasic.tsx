@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Mail, GitHub } from 'react-feather';
 import { Card, CardBody, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap';
-import '@styles/react/pages/page-authentication.scss';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 import InputPasswordToggle from "../../../@core/components/input-password-toggle";
 
 const LoginBasic = () => {

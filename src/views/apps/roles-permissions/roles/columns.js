@@ -1,23 +1,18 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Store & Actions
-import { store } from '@store/store'
-import { getUser } from '@src/views/apps/user/store'
+import { store } from 'src/redux/store';
+import { getUser } from 'src/views/apps/user/store';
 
-// ** Icons Imports
-import { Slack, User, Settings, Database, Edit2, Eye } from 'react-feather'
+import { Slack, User, Settings, Database, Edit2, Eye } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+import { Badge } from 'reactstrap';
 
 // ** Renders Client Columns
 const renderClient = row => {
   if (row.avatar.length) {
-    return <Avatar className='me-1' img={row.avatar} width='32' height='32' />
+    return <Avatar className='me-1' img={row.avatar} width='32' height='32' />;
   } else {
     return (
       <Avatar
@@ -26,9 +21,9 @@ const renderClient = row => {
         content={row.fullName || 'John Doe'}
         color={row.avatarColor || 'light-primary'}
       />
-    )
+    );
   }
-}
+};
 
 // ** Renders Role Columns
 const renderRole = row => {
@@ -53,23 +48,23 @@ const renderRole = row => {
       class: 'text-danger',
       icon: Slack
     }
-  }
+  };
 
-  const Icon = roleObj[row.role] ? roleObj[row.role].icon : Edit2
+  const Icon = roleObj[row.role] ? roleObj[row.role].icon : Edit2;
 
   return (
     <span className='text-truncate text-capitalize align-middle'>
       <Icon size={18} className={`${roleObj[row.role] ? roleObj[row.role].class : ''} me-50`} />
       {row.role}
     </span>
-  )
-}
+  );
+};
 
 const statusObj = {
   pending: 'light-warning',
   active: 'light-success',
   inactive: 'light-secondary'
-}
+};
 
 export const columns = [
   {
@@ -141,4 +136,4 @@ export const columns = [
       </Link>
     )
   }
-]
+];

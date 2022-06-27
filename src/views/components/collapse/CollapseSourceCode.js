@@ -3,7 +3,7 @@ export const collapseBasic = (
     <code className='language-jsx'>{`import { useState } from 'react'
 import { Collapse, Button } from 'reactstrap'
 
-import collapseImg from '@src/assets/images/slider/04.jpg'
+import collapseImg from 'src/assets/images/slider/04.jpg'
 
 const CollapseBasic = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,15 +37,15 @@ const CollapseBasic = () => {
 export default CollapseBasic
 `}</code>
   </pre>
-)
+);
 
 export const collapseMultipleTargets = (
   <pre>
     <code className='language-jsx'>{`import { useState } from 'react'
 import { Row, Col, Collapse, Button } from 'reactstrap'
 
-import collapseImg1 from '@src/assets/images/slider/06.jpg'
-import collapseImg2 from '@src/assets/images/slider/08.jpg'
+import collapseImg1 from 'src/assets/images/slider/06.jpg'
+import collapseImg2 from 'src/assets/images/slider/08.jpg'
 
 const CollapseMultipleTargets = () => {
   const [firstCollapse, setFirstCollapse] = useState(false)
@@ -105,14 +105,14 @@ const CollapseMultipleTargets = () => {
 export default CollapseMultipleTargets
 `}</code>
   </pre>
-)
+);
 
 export const collapseHorizontal = (
   <pre>
     <code className='language-jsx'>{`import { useState } from 'react'
 import { Collapse, Button } from 'reactstrap'
 
-import collapseImg from '@src/assets/images/slider/08.jpg'
+import collapseImg from 'src/assets/images/slider/08.jpg'
 
 const CollapseHorizontal = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -139,4 +139,4 @@ const CollapseHorizontal = () => {
 export default CollapseHorizontal
 `}</code>
   </pre>
-)
+);

@@ -1,43 +1,40 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import { ArrowLeft } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
+import { ArrowLeft } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap'
+import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap';
 
 const defaultValues = {
   google: '',
   twitter: '',
   facebook: '',
   linkedin: ''
-}
+};
 
 const SocialLinks = ({ stepper }) => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
-      alert('submitted')
+      alert('submitted');
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual',
             message: `Please enter a valid ${key} url`
-          })
+          });
         }
       }
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -117,7 +114,7 @@ const SocialLinks = ({ stepper }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SocialLinks
+export default SocialLinks;

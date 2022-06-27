@@ -1,13 +1,10 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap'
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
-// ** Images
-import sliderImage1 from '@src/assets/images/slider/09.jpg'
-import sliderImage2 from '@src/assets/images/slider/08.jpg'
-import sliderImage3 from '@src/assets/images/slider/10.jpg'
+import sliderImage1 from 'src/assets/images/slider/09.jpg';
+import sliderImage2 from 'src/assets/images/slider/08.jpg';
+import sliderImage3 from 'src/assets/images/slider/10.jpg';
 
 const images = [
   {
@@ -31,37 +28,36 @@ const images = [
     caption:
       'Pudding sweet pie gummies. Chocolate bar sweet tiramisu cheesecake chocolate cotton candy pastry muffin Marshmallow cake powder icing.'
   }
-]
+];
 
 const CarouselCaptions = () => {
-  // ** States
-  const [animating, setAnimating] = useState(0)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [animating, setAnimating] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const onExiting = () => {
-    setAnimating(true)
-  }
+    setAnimating(true);
+  };
 
   const onExited = () => {
-    setAnimating(false)
-  }
+    setAnimating(false);
+  };
 
   const next = () => {
-    if (animating) return
-    const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1
-    setActiveIndex(nextIndex)
-  }
+    if (animating) return;
+    const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
 
   const previous = () => {
-    if (animating) return
-    const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1
-    setActiveIndex(nextIndex)
-  }
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  };
 
   const goToIndex = newIndex => {
-    if (animating) return
-    setActiveIndex(newIndex)
-  }
+    if (animating) return;
+    setActiveIndex(newIndex);
+  };
 
   const slides = images.map(item => {
     return (
@@ -69,8 +65,8 @@ const CarouselCaptions = () => {
         <img src={item.src} className='img-fluid' alt={item.id} />
         <CarouselCaption captionText={item.caption} captionHeader={<span className='text-white'>{item.header}</span>} />
       </CarouselItem>
-    )
-  })
+    );
+  });
   return (
     <Carousel activeIndex={activeIndex} next={next} previous={previous} keyboard={false} interval={500000}>
       <CarouselIndicators items={images} activeIndex={activeIndex} onClickHandler={goToIndex} />
@@ -78,7 +74,7 @@ const CarouselCaptions = () => {
       <CarouselControl direction='prev' directionText='Previous' onClickHandler={previous} />
       <CarouselControl direction='next' directionText='Next' onClickHandler={next} />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselCaptions
+export default CarouselCaptions;

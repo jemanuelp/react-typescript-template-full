@@ -1,12 +1,9 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { CheckCircle, Star } from 'react-feather'
+import classnames from 'classnames';
+import { CheckCircle, Star } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardText } from 'reactstrap'
+import { Card, CardBody, CardText } from 'reactstrap';
 
 const ProfileTwitterFeeds = ({ data }) => {
   const renderFeeds = () => {
@@ -42,9 +39,9 @@ const ProfileTwitterFeeds = ({ data }) => {
             <small>{feed.tags}</small>
           </a>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card>
@@ -53,7 +50,7 @@ const ProfileTwitterFeeds = ({ data }) => {
         {renderFeeds()}
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileTwitterFeeds
+export default ProfileTwitterFeeds;

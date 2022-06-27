@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardBody, CardText } from 'reactstrap'
+
+import { Card, CardBody, CardText } from 'reactstrap';
 
 const ProfileAbout = ({ data }) => {
   return (
@@ -25,7 +25,7 @@ const ProfileAbout = ({ data }) => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileAbout
+export default ProfileAbout;

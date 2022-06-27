@@ -1,25 +1,20 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-import { useEffect, useState, Fragment } from 'react'
+import { Link } from 'react-router-dom';
+import { useEffect, useState, Fragment } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import classnames from 'classnames'
-import * as Icon from 'react-feather'
+import axios from 'axios';
+import classnames from 'classnames';
+import * as Icon from 'react-feather';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Reactstrap Imports
-import { InputGroup, Input, InputGroupText } from 'reactstrap'
+import { InputGroup, Input, InputGroupText } from 'reactstrap';
 
 const BlogSidebar = () => {
-  // ** States
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/blog/list/data/sidebar').then(res => setData(res.data))
-  }, [])
+    axios.get('/blog/list/data/sidebar').then(res => setData(res.data));
+  }, []);
 
   const CategoryColorsArr = {
     Quote: 'light-info',
@@ -27,7 +22,7 @@ const BlogSidebar = () => {
     Gaming: 'light-danger',
     Video: 'light-warning',
     Food: 'light-success'
-  }
+  };
 
   const renderRecentPosts = () => {
     return data.recentPosts.map((post, index) => {
@@ -50,13 +45,13 @@ const BlogSidebar = () => {
             <div className='text-muted mb-0'>{post.createdTime}</div>
           </div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const renderCategories = () => {
     return data.categories.map((item, index) => {
-      const IconTag = Icon[item.icon]
+      const IconTag = Icon[item.icon];
 
       return (
         <div
@@ -72,9 +67,9 @@ const BlogSidebar = () => {
             <div className='blog-category-title text-body'>{item.category}</div>
           </a>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <div className='sidebar-detached sidebar-right'>
@@ -105,7 +100,7 @@ const BlogSidebar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogSidebar
+export default BlogSidebar;

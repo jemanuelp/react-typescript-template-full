@@ -1,5 +1,4 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
 const AvatarLightColors = () => {
   return (
@@ -11,6 +10,6 @@ const AvatarLightColors = () => {
       <Avatar color='light-warning' content='PI' />
       <Avatar color='light-info' content='PI' />
     </div>
-  )
-}
-export default AvatarLightColors
+  );
+};
+export default AvatarLightColors;

@@ -1,24 +1,20 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Utils
-import { isObjEmpty } from '@utils'
+import { isObjEmpty } from 'src/utility/Utils';
 
-// ** Third Party Components
-import * as yup from 'yup'
-import { useForm, Controller } from 'react-hook-form'
-import { ArrowLeft, ArrowRight } from 'react-feather'
-import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup';
+import { useForm, Controller } from 'react-hook-form';
+import { ArrowLeft, ArrowRight } from 'react-feather';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-// ** Reactstrap Imports
-import { Form, Label, Input, Row, Col, Button, FormFeedback } from 'reactstrap'
+import { Form, Label, Input, Row, Col, Button, FormFeedback } from 'reactstrap';
 
 const defaultValues = {
   email: '',
   username: '',
   password: '',
   confirmPassword: ''
-}
+};
 
 const AccountDetails = ({ stepper }) => {
   const SignupSchema = yup.object().shape({
@@ -29,9 +25,7 @@ const AccountDetails = ({ stepper }) => {
       .string()
       .required()
       .oneOf([yup.ref(`password`), null], 'Passwords must match')
-  })
-
-  // ** Hooks
+  });
 
   const {
     control,
@@ -40,13 +34,13 @@ const AccountDetails = ({ stepper }) => {
   } = useForm({
     defaultValues,
     resolver: yupResolver(SignupSchema)
-  })
+  });
 
   const onSubmit = () => {
     if (isObjEmpty(errors)) {
-      stepper.next()
+      stepper.next();
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -121,7 +115,7 @@ const AccountDetails = ({ stepper }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default AccountDetails
+export default AccountDetails;

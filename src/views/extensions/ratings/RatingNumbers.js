@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import Rating from 'react-rating'
+import Rating from 'react-rating';
 
 const RatingNumbers = props => {
   return (
@@ -20,7 +18,7 @@ const RatingNumbers = props => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RatingNumbers
+export default RatingNumbers;

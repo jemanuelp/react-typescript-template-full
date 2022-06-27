@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+
+import { Badge } from 'reactstrap';
 
 const BadgeContextual = () => {
   return (
@@ -12,6 +12,6 @@ const BadgeContextual = () => {
       <Badge color='info'>Info</Badge>
       <Badge color='dark'>Dark</Badge>
     </div>
-  )
-}
-export default BadgeContextual
+  );
+};
+export default BadgeContextual;

@@ -173,7 +173,7 @@ const SelectOptions = () => {
     }, 2000);
   };
 
-  const filterColors2 = (inputValue: string) => {
+  const filterColors2 = (inputValue: string): IColorOptions[] => {
     return colorOptions.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
   };
 
@@ -210,7 +210,7 @@ const SelectOptions = () => {
     setSelectedDBVal(value);
   };
 
-  const promiseOptions = (inputValue: string) => {
+  const promiseOptions = (inputValue: string): Promise<IColorOptions[]> => {
     return new Promise(resolve => {
       resolve(filterColors2(inputValue));
     });

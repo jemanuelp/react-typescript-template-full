@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import BasicCheckbox from './CheckboxBasic'
-import ColoredCheckbox from './CheckboxColors'
+import BasicCheckbox from './CheckboxBasic';
+import ColoredCheckbox from './CheckboxColors';
 
 const Checkbox = () => {
   return (
@@ -24,6 +20,6 @@ const Checkbox = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Checkbox
+  );
+};
+export default Checkbox;

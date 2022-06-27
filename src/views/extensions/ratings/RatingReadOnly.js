@@ -1,9 +1,7 @@
-// ** Third Party Components
-import Rating from 'react-rating'
-import { Star } from 'react-feather'
+import Rating from 'react-rating';
+import { Star } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const RatingReadOnly = ({ filledColor, dir }) => {
   return (
@@ -21,7 +19,7 @@ const RatingReadOnly = ({ filledColor, dir }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RatingReadOnly
+export default RatingReadOnly;

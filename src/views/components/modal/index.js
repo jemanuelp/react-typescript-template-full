@@ -1,31 +1,26 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Demo Components
-import ModalBasic from './ModalBasic'
-import ModalSizes from './ModalSizes'
-import ModalThemes from './ModalThemes'
-import ModalEvents from './ModalEvents'
-import ModalUnmount from './ModalUnmount'
-import ModalFormAndScroll from './ModalFormAndScroll'
+import ModalBasic from './ModalBasic';
+import ModalSizes from './ModalSizes';
+import ModalThemes from './ModalThemes';
+import ModalEvents from './ModalEvents';
+import ModalUnmount from './ModalUnmount';
+import ModalFormAndScroll from './ModalFormAndScroll';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
 // ** Source Code
-import { modalBasic, modalTheme, modalSizes, modalEvents, modalForm, modalUnmount } from './ModalSourceCode'
+import { modalBasic, modalTheme, modalSizes, modalEvents, modalForm, modalUnmount } from './ModalSourceCode';
 
 const Modals = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -81,6 +76,6 @@ const Modals = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Modals
+  );
+};
+export default Modals;

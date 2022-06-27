@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Row, Col, Card, CardTitle, CardHeader, CardBody, Table, Input, Button } from 'reactstrap'
+
+import { Row, Col, Card, CardTitle, CardHeader, CardBody, Table, Input, Button } from 'reactstrap';
 
 const typesArr = [
   {
@@ -18,7 +18,7 @@ const typesArr = [
     title: 'A new device is linked',
     defaultChecked: ['browser']
   }
-]
+];
 const NotificationsTabContent = () => {
   return (
     <Card>
@@ -60,7 +60,7 @@ const NotificationsTabContent = () => {
                   </div>
                 </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </Table>
@@ -83,7 +83,7 @@ const NotificationsTabContent = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default NotificationsTabContent
+export default NotificationsTabContent;

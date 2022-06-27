@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardText } from 'reactstrap';
 
-// ** Icons Imports
-import { ArrowRight, ChevronRight } from 'react-feather'
+import { ArrowRight, ChevronRight } from 'react-feather';
 
 const ListIcons = () => {
   return (
@@ -45,6 +43,6 @@ const ListIcons = () => {
         </ul>
       </CardBody>
     </Card>
-  )
-}
-export default ListIcons
+  );
+};
+export default ListIcons;

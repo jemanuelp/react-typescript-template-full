@@ -1,28 +1,24 @@
-// ** React Imports
-import { useState, Fragment, useEffect } from 'react'
+import { useState, Fragment, useEffect } from 'react';
 
-// ** Custom Components
-import UILoader from '@components/ui-loader'
-import Spinner from '@components/spinner/Loading-spinner'
+import UILoader from 'src/@core/components/ui-loader';
+import Spinner from 'src/@core/components/spinner/Loading-spinner';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody, Button } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardText, CardBody, Button } from 'reactstrap';
 
 const MessageBlocking = () => {
-  // ** State
-  const [block, setBlock] = useState(false)
+  const [block, setBlock] = useState(false);
 
   useEffect(() => {
-    return () => setBlock(false)
-  }, [])
+    return () => setBlock(false);
+  }, []);
 
   const handleBlock = () => {
-    setBlock(true)
+    setBlock(true);
 
     setTimeout(() => {
-      setBlock(false)
-    }, 3000)
-  }
+      setBlock(false);
+    }, 3000);
+  };
 
   const Loader = () => {
     return (
@@ -30,8 +26,8 @@ const MessageBlocking = () => {
         <Spinner />
         <CardText className='mb-0 mt-1 text-white'>Please Wait...</CardText>
       </Fragment>
-    )
-  }
+    );
+  };
 
   return (
     <UILoader blocking={block} loader={<Loader />}>
@@ -51,7 +47,7 @@ const MessageBlocking = () => {
         </CardBody>
       </Card>
     </UILoader>
-  )
-}
+  );
+};
 
-export default MessageBlocking
+export default MessageBlocking;

@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Alert } from 'reactstrap'
+import { Alert } from 'reactstrap';
 
 const LayoutBlank = () => {
   return (
@@ -28,7 +26,7 @@ const LayoutBlank = () => {
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default LayoutBlank
+export default LayoutBlank;

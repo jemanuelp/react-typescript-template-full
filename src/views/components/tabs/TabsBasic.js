@@ -1,18 +1,15 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 
 const TabsBasic = () => {
-  // ** State
-  const [active, setActive] = useState('1')
+  const [active, setActive] = useState('1');
 
   const toggle = tab => {
     if (active !== tab) {
-      setActive(tab)
+      setActive(tab);
     }
-  }
+  };
   return (
     <Fragment>
       <Nav tabs>
@@ -20,7 +17,7 @@ const TabsBasic = () => {
           <NavLink
             active={active === '1'}
             onClick={() => {
-              toggle('1')
+              toggle('1');
             }}
           >
             Home
@@ -30,7 +27,7 @@ const TabsBasic = () => {
           <NavLink
             active={active === '2'}
             onClick={() => {
-              toggle('2')
+              toggle('2');
             }}
           >
             Service
@@ -43,7 +40,7 @@ const TabsBasic = () => {
           <NavLink
             active={active === '3'}
             onClick={() => {
-              toggle('3')
+              toggle('3');
             }}
           >
             Account
@@ -86,6 +83,6 @@ const TabsBasic = () => {
         </TabPane>
       </TabContent>
     </Fragment>
-  )
-}
-export default TabsBasic
+  );
+};
+export default TabsBasic;

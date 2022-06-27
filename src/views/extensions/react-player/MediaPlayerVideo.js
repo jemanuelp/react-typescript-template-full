@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
 const MediaPlayerVideo = () => {
   return (
@@ -19,7 +17,7 @@ const MediaPlayerVideo = () => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default MediaPlayerVideo
+export default MediaPlayerVideo;

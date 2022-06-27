@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem, CardText } from 'reactstrap'
+
+import { ListGroup, ListGroupItem, CardText } from 'reactstrap';
 
 const ListGroupCustom = () => {
   return (
@@ -35,6 +35,6 @@ const ListGroupCustom = () => {
         <small className='text-secondary'>Donec id elit non mi porta.</small>
       </ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupCustom
+  );
+};
+export default ListGroupCustom;

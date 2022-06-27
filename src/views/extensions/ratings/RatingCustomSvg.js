@@ -1,9 +1,7 @@
-// ** Third Party Components
-import Rating from 'react-rating'
-import { Sun, Cloud, CloudLightning, CloudSnow, CloudDrizzle } from 'react-feather'
+import Rating from 'react-rating';
+import { Sun, Cloud, CloudLightning, CloudSnow, CloudDrizzle } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const RatingCustomSvg = ({ dir }) => {
   return (
@@ -25,7 +23,7 @@ const RatingCustomSvg = ({ dir }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RatingCustomSvg
+export default RatingCustomSvg;

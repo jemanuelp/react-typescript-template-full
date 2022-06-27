@@ -1,7 +1,5 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -15,21 +13,20 @@ import {
   ModalBody,
   CardHeader,
   ModalHeader
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Third Party Components
-import Cleave from 'cleave.js/react'
-import 'cleave.js/dist/addons/cleave-phone.us'
-import { Settings, MessageSquare, ChevronRight } from 'react-feather'
+import Cleave from 'cleave.js/react';
+import 'cleave.js/dist/addons/cleave-phone.us';
+import { Settings, MessageSquare, ChevronRight } from 'react-feather';
 
 // ** QR Code
-import qrCode from '@src/assets/images/icons/qrcode.png'
+import qrCode from 'src/assets/images/icons/qrcode.png';
 
 const AppAuthComponent = ({ setShow, setShowDetailModal }) => {
   const toggle = () => {
-    setShow(false)
-    setShowDetailModal(false)
-  }
+    setShow(false);
+    setShowDetailModal(false);
+  };
 
   return (
     <Fragment>
@@ -63,14 +60,14 @@ const AppAuthComponent = ({ setShow, setShowDetailModal }) => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
 const AppSMSComponent = ({ setShow, setShowDetailModal }) => {
   const toggle = () => {
-    setShow(false)
-    setShowDetailModal(false)
-  }
+    setShow(false);
+    setShowDetailModal(false);
+  };
   return (
     <Fragment>
       <h1 className='text-center mb-2 pb-50'>Add your number</h1>
@@ -95,18 +92,18 @@ const AppSMSComponent = ({ setShow, setShowDetailModal }) => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
 const TwoFactorAuth = () => {
-  const [show, setShow] = useState(false)
-  const [authType, setAuthType] = useState('authApp')
-  const [showDetailModal, setShowDetailModal] = useState(false)
+  const [show, setShow] = useState(false);
+  const [authType, setAuthType] = useState('authApp');
+  const [showDetailModal, setShowDetailModal] = useState(false);
 
   const handleContinue = () => {
-    setShow(false)
-    setShowDetailModal(true)
-  }
+    setShow(false);
+    setShowDetailModal(true);
+  };
   return (
     <Fragment>
       <Card>
@@ -198,7 +195,7 @@ const TwoFactorAuth = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default TwoFactorAuth
+export default TwoFactorAuth;

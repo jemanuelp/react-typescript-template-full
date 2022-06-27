@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input } from 'reactstrap';
 
 const ModalForm = () => {
-  // ** States
-  const [formModal, setFormModal] = useState(false)
-  const [firstModal, setFirstModal] = useState(false)
-  const [secondModal, setSecondModal] = useState(false)
-  const [scrollModal, setScrollModal] = useState(false)
-  const [scrollInnerModal, setScrollInnerModal] = useState(false)
+  const [formModal, setFormModal] = useState(false);
+  const [firstModal, setFirstModal] = useState(false);
+  const [secondModal, setSecondModal] = useState(false);
+  const [scrollModal, setScrollModal] = useState(false);
+  const [scrollInnerModal, setScrollInnerModal] = useState(false);
 
   return (
     <div className='demo-inline-spacing'>
@@ -221,6 +218,6 @@ const ModalForm = () => {
         </Modal>
       </div>
     </div>
-  )
-}
-export default ModalForm
+  );
+};
+export default ModalForm;

@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+import { Badge } from 'reactstrap';
 
-// ** Icons Imports
-import { Bell } from 'react-feather'
+import { Bell } from 'react-feather';
 
 const BadgePillNotification = () => {
   return (
@@ -26,6 +24,6 @@ const BadgePillNotification = () => {
         <Bell className='text-info' size={22} />
       </div>
     </div>
-  )
-}
-export default BadgePillNotification
+  );
+};
+export default BadgePillNotification;

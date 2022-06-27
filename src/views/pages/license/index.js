@@ -1,14 +1,10 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Icons Imports
-import { Check, X } from 'react-feather'
+import { Check, X } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Alert, Card, Button, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap'
+import { Alert, Card, Button, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap';
 
 const data = [
   {
@@ -47,7 +43,7 @@ const data = [
     single: <X size={20} className='text-danger' />,
     multiple: <X size={20} className='text-danger' />
   }
-]
+];
 
 const License = () => {
   return (
@@ -80,7 +76,7 @@ const License = () => {
                     <td>{item.multiple}</td>
                     <td>{item.extended}</td>
                   </tr>
-                )
+                );
               })}
             </tbody>
           </Table>
@@ -132,7 +128,7 @@ const License = () => {
         </CardBody>
       </Card>
     </Fragment>
-  )
-}
+  );
+};
 
-export default License
+export default License;

@@ -1,17 +1,14 @@
-// ** React Imports
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, Table } from 'reactstrap'
+import { Row, Col, Table } from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/app-invoice-print.scss'
+import 'src/@core/scss/base/pages/app-invoice-print.scss';
 
 const Print = () => {
   // ** Print on mount
   useEffect(() => {
-    setTimeout(() => window.print(), 50)
-  }, [])
+    setTimeout(() => window.print(), 50);
+  }, []);
 
   return (
     <div className='invoice-print p-3'>
@@ -214,7 +211,7 @@ const Print = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default Print
+export default Print;

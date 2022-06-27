@@ -1,15 +1,11 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import axios from 'axios'
-import { MoreVertical, Edit, FileText, Archive, Trash } from 'react-feather'
+import axios from 'axios';
+import { MoreVertical, Edit, FileText, Archive, Trash } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Badge, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import { Badge, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-// ** Vars
-const states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary']
+const states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
 
 const status = {
   1: { title: 'Current', color: 'light-primary' },
@@ -17,14 +13,14 @@ const status = {
   3: { title: 'Rejected', color: 'light-danger' },
   4: { title: 'Resigned', color: 'light-warning' },
   5: { title: 'Applied', color: 'light-info' }
-}
+};
 
-export let data
+export let data;
 
 // ** Get initial Data
 axios.get('/api/datatables/initial-data').then(response => {
-  data = response.data
-})
+  data = response.data;
+});
 
 // ** Table Zero Config Column
 export const basicColumns = [
@@ -64,7 +60,7 @@ export const basicColumns = [
     minWidth: '175px',
     selector: row => row.salary
   }
-]
+];
 // ** Table ReOrder Column
 export const reOrderColumns = [
   {
@@ -109,7 +105,7 @@ export const reOrderColumns = [
     minWidth: '175px',
     selector: row => row.salary
   }
-]
+];
 
 // ** Expandable table component
 const ExpandableTable = ({ data }) => {
@@ -125,8 +121,8 @@ const ExpandableTable = ({ data }) => {
         <span className='fw-bold'>Post:</span> {data.post}
       </p>
     </div>
-  )
-}
+  );
+};
 
 // ** Table Common Column
 export const columns = [
@@ -136,10 +132,12 @@ export const columns = [
     sortable: row => row.full_name,
     cell: row => (
       <div className='d-flex align-items-center'>
-        {row.avatar === '' ? (
+        {row.avatar === ''
+? (
           <Avatar color={`light-${states[row.status]}`} content={row.full_name} initials />
-        ) : (
-          <Avatar img={require(`@src/assets/images/portrait/small/avatar-s-${row.avatar}`).default} />
+        )
+: (
+          <Avatar img={require(`src/assets/images/portrait/small/avatar-s-${row.avatar}`).default} />
         )}
         <div className='user-info text-truncate ms-1'>
           <span className='d-block fw-bold text-truncate'>{row.full_name}</span>
@@ -182,7 +180,7 @@ export const columns = [
         <Badge color={status[row.status].color} pill>
           {status[row.status].title}
         </Badge>
-      )
+      );
     }
   },
   {
@@ -212,10 +210,10 @@ export const columns = [
           </UncontrolledDropdown>
           <Edit size={15} />
         </div>
-      )
+      );
     }
   }
-]
+];
 
 // ** Table Intl Column
 export const multiLingColumns = [
@@ -260,7 +258,7 @@ export const multiLingColumns = [
         <Badge color={status[row.status].color} pill>
           {status[row.status].title}
         </Badge>
-      )
+      );
     }
   },
   {
@@ -290,10 +288,10 @@ export const multiLingColumns = [
           </UncontrolledDropdown>
           <Edit size={15} />
         </div>
-      )
+      );
     }
   }
-]
+];
 
 // ** Table Server Side Column
 export const serverSideColumns = [
@@ -333,7 +331,7 @@ export const serverSideColumns = [
     minWidth: '150px',
     selector: row => row.salary
   }
-]
+];
 
 // ** Table Adv Search Column
 export const advSearchColumns = [
@@ -374,6 +372,6 @@ export const advSearchColumns = [
     minWidth: '100px',
     selector: row => row.salary
   }
-]
+];
 
-export default ExpandableTable
+export default ExpandableTable;

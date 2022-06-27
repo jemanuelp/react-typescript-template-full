@@ -1,34 +1,25 @@
-// ** React Imports
-import { useState } from 'react'
-
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
-import Repeater from '@components/repeater'
-import { SlideDown } from 'react-slidedown'
-import { X, Plus, Hash } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Row, Col, Card, Input, Label, Button, CardBody, CardText, InputGroup, InputGroupText } from 'reactstrap'
-
-// ** Styles
-import 'react-slidedown/lib/slidedown.css'
-import '@styles/react/libs/flatpickr/flatpickr.scss'
-import '@styles/base/pages/app-invoice.scss'
+import { useState } from 'react';
+import Flatpickr from 'react-flatpickr';
+import Repeater from 'src/@core/components/repeater';
+import { SlideDown } from 'react-slidedown';
+import { X, Plus, Hash } from 'react-feather';
+import { Row, Col, Card, Input, Label, Button, CardBody, CardText, InputGroup, InputGroupText } from 'reactstrap';
+import 'react-slidedown/lib/slidedown.css';
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import 'src/@core/scss/base/pages/app-invoice.scss';
 
 const InvoiceEditCard = ({ data }) => {
-  // ** States
-  const [count, setCount] = useState(1)
-  const [picker, setPicker] = useState(new Date(data.invoice.issuedDate))
-  const [dueDatepicker, setDueDatePicker] = useState(new Date(data.invoice.dueDate))
+  const [count, setCount] = useState(1);
+  const [picker, setPicker] = useState(new Date(data.invoice.issuedDate));
+  const [dueDatepicker, setDueDatePicker] = useState(new Date(data.invoice.dueDate));
 
-  // ** Deletes form
   const deleteForm = e => {
-    e.preventDefault()
-    e.target.closest('.repeater-wrapper').remove()
-  }
+    e.preventDefault();
+    e.target.closest('.repeater-wrapper').remove();
+  };
 
   const note =
-    'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!'
+    'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!';
 
   return (
     <Card className='invoice-preview-card'>
@@ -179,7 +170,7 @@ const InvoiceEditCard = ({ data }) => {
       <CardBody className='invoice-padding invoice-product-details'>
         <Repeater count={count}>
           {i => {
-            const Tag = i === 0 ? 'div' : SlideDown
+            const Tag = i === 0 ? 'div' : SlideDown;
             return (
               <Tag key={i} className='repeater-wrapper'>
                 <Row>
@@ -217,7 +208,7 @@ const InvoiceEditCard = ({ data }) => {
                   </Col>
                 </Row>
               </Tag>
-            )
+            );
           }}
         </Repeater>
 
@@ -284,7 +275,7 @@ const InvoiceEditCard = ({ data }) => {
       </CardBody>
       {/* /Invoice Note */}
     </Card>
-  )
-}
+  );
+};
 
-export default InvoiceEditCard
+export default InvoiceEditCard;

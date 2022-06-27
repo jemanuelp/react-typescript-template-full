@@ -1,24 +1,19 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import AlertIcon from './AlertIcon'
-import AlertTitle from './AlertTitle'
-import AlertColors from './AlertColors'
-import AlertExample from './AlertExample'
-import DefaultAlert from './DefaultAlert'
-import AlertDismissable from './AlertDismissable'
-import AlertUncontrolled from './AlertUncontrolled'
+import AlertIcon from './AlertIcon';
+import AlertTitle from './AlertTitle';
+import AlertColors from './AlertColors';
+import AlertExample from './AlertExample';
+import DefaultAlert from './DefaultAlert';
+import AlertDismissable from './AlertDismissable';
+import AlertUncontrolled from './AlertUncontrolled';
 
 // ** Source Code
 import {
@@ -28,13 +23,13 @@ import {
   defaultAlert,
   alertExample,
   alertDismissable,
-  alertUncontrolled
-} from './AlertSourceCode'
+  alertUncontrolled,
+} from './AlertSourceCode';
 
 const Alerts = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Alerts' data={[{ title: 'Components' }, { title: 'Alerts' }]} />
@@ -95,6 +90,6 @@ const Alerts = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Alerts
+  );
+};
+export default Alerts;

@@ -1,24 +1,19 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import PillsEnd from './PillsEnd'
-import PillsBasic from './PillsBasic'
-import PillThemes from './PillThemes'
-import PillsFilled from './PillsFilled'
-import PillsCentered from './PillsCentered'
-import PillsVertical from './PillsVertical'
-import PillsJustified from './PillsJustified'
+import PillsEnd from './PillsEnd';
+import PillsBasic from './PillsBasic';
+import PillThemes from './PillThemes';
+import PillsFilled from './PillsFilled';
+import PillsCentered from './PillsCentered';
+import PillsVertical from './PillsVertical';
+import PillsJustified from './PillsJustified';
 
 // ** Source Code
 import {
@@ -28,13 +23,13 @@ import {
   pillsFilled,
   pillsCentered,
   pillsJustified,
-  pillsVertical
-} from './TabPillsSourceCode'
+  pillsVertical,
+} from './TabPillsSourceCode';
 
 const PillTabs = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Pills' data={[{ title: 'Components' }, { title: 'Pills' }]} />
@@ -76,6 +71,6 @@ const PillTabs = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default PillTabs
+  );
+};
+export default PillTabs;

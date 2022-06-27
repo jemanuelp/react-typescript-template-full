@@ -29,7 +29,7 @@ import CenterSlidesStyle1 from './CenteredSlidesStyle1';
 import CenterSlidesStyle2 from './CenteredSlidesStyle2';
 
 import { Row, Col } from 'reactstrap';
-import '@styles/react/libs/swiper/swiper.scss';
+import 'src/@core/scss/react/libs/swiper/swiper.scss';
 import {useRTL} from "../../../utility/hooks/useRTL";
 import ExtensionsHeader from "../../../@core/components/extensions-header";
 

@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap'
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 
 const PillsVertical = () => {
-  // ** States
-  const [active, setActive] = useState('1')
+  const [active, setActive] = useState('1');
 
   const toggle = tab => {
-    setActive(tab)
-  }
+    setActive(tab);
+  };
   return (
     <Row>
       <Col md='3' sm='12'>
@@ -19,7 +16,7 @@ const PillsVertical = () => {
             <NavLink
               active={active === '1'}
               onClick={() => {
-                toggle('1')
+                toggle('1');
               }}
             >
               Pill 1
@@ -29,7 +26,7 @@ const PillsVertical = () => {
             <NavLink
               active={active === '2'}
               onClick={() => {
-                toggle('2')
+                toggle('2');
               }}
             >
               Pill 2
@@ -39,7 +36,7 @@ const PillsVertical = () => {
             <NavLink
               active={active === '3'}
               onClick={() => {
-                toggle('3')
+                toggle('3');
               }}
             >
               Pill 3
@@ -79,6 +76,6 @@ const PillsVertical = () => {
         </TabContent>
       </Col>
     </Row>
-  )
-}
-export default PillsVertical
+  );
+};
+export default PillsVertical;

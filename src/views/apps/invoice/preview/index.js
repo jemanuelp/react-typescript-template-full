@@ -1,41 +1,35 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
-// ** Third Party Components
-import axios from 'axios'
+import axios from 'axios';
 
-// ** Reactstrap Imports
-import { Row, Col, Alert } from 'reactstrap'
+import { Row, Col, Alert } from 'reactstrap';
 
 // ** Invoice Preview Components
-import PreviewCard from './PreviewCard'
-import PreviewActions from './PreviewActions'
-import AddPaymentSidebar from '../shared-sidebar/SidebarAddPayment'
-import SendInvoiceSidebar from '../shared-sidebar/SidebarSendInvoice'
+import PreviewCard from './PreviewCard';
+import PreviewActions from './PreviewActions';
+import AddPaymentSidebar from '../shared-sidebar/SidebarAddPayment';
+import SendInvoiceSidebar from '../shared-sidebar/SidebarSendInvoice';
 
-// ** Styles
-import '@styles/base/pages/app-invoice.scss'
+import 'src/@core/scss/base/pages/app-invoice.scss';
 
 const InvoicePreview = () => {
-  // ** HooksVars
-  const { id } = useParams()
+  const { id } = useParams();
 
-  // ** States
-  const [data, setData] = useState(null)
-  const [sendSidebarOpen, setSendSidebarOpen] = useState(false)
-  const [addPaymentOpen, setAddPaymentOpen] = useState(false)
+  const [data, setData] = useState(null);
+  const [sendSidebarOpen, setSendSidebarOpen] = useState(false);
+  const [addPaymentOpen, setAddPaymentOpen] = useState(false);
 
   // ** Functions to toggle add & send sidebar
-  const toggleSendSidebar = () => setSendSidebarOpen(!sendSidebarOpen)
-  const toggleAddSidebar = () => setAddPaymentOpen(!addPaymentOpen)
+  const toggleSendSidebar = () => setSendSidebarOpen(!sendSidebarOpen);
+  const toggleAddSidebar = () => setAddPaymentOpen(!addPaymentOpen);
 
   // ** Get invoice on mount based on id
   useEffect(() => {
     axios.get(`/api/invoice/invoices/${id}`).then(response => {
-      setData(response.data)
-    })
-  }, [])
+      setData(response.data);
+    });
+  }, []);
 
   return data !== null && data.invoice !== undefined ? (
     <div className='invoice-preview-wrapper'>
@@ -58,7 +52,7 @@ const InvoicePreview = () => {
         <Link to='/apps/invoice/list'>Invoice List</Link>
       </div>
     </Alert>
-  )
-}
+  );
+};
 
-export default InvoicePreview
+export default InvoicePreview;

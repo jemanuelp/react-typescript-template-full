@@ -1,8 +1,6 @@
-// ** Third Party Components
-import Nouislider from 'nouislider-react'
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const SliderValues = ({ direction }) => {
   const colorOptions = {
@@ -21,7 +19,7 @@ const SliderValues = ({ direction }) => {
       stepped: true,
       density: 5
     }
-  }
+  };
 
   return (
     <Card>
@@ -48,7 +46,7 @@ const SliderValues = ({ direction }) => {
         <Nouislider className='slider-info mt-md-1 mt-3 mb-4' {...colorOptions} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderValues
+export default SliderValues;

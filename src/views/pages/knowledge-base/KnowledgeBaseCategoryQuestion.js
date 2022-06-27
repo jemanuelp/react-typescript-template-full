@@ -1,31 +1,26 @@
-// ** React Imports
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import { Info, Smartphone } from 'react-feather'
+import axios from 'axios';
+import { Info, Smartphone } from 'react-feather';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from 'reactstrap'
+import { Row, Col, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
 const KnowledgeBaseCategoryQuestion = () => {
-  // ** State
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/faq/data/question').then(res => setData(res.data))
-  }, [])
+    axios.get('/faq/data/question').then(res => setData(res.data));
+  }, []);
 
   const renderRelatedQuestions = () => {
     return data.relatedQuestions.map(i => (
       <ListGroupItem className='text-body' tag='a' href='/' key={i.id} onClick={e => e.preventDefault()}>
         {i.question}
       </ListGroupItem>
-    ))
-  }
+    ));
+  };
 
   return (
     <Fragment>
@@ -66,7 +61,7 @@ const KnowledgeBaseCategoryQuestion = () => {
         </div>
       ) : null}
     </Fragment>
-  )
-}
+  );
+};
 
-export default KnowledgeBaseCategoryQuestion
+export default KnowledgeBaseCategoryQuestion;

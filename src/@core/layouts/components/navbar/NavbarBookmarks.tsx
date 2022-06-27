@@ -26,11 +26,9 @@ interface BookmarkProps {
 const NavbarBookmarks = (props: any) => {
   const { setMenuVisibility } = props;
 
-  // ** State
   const [value, setValue] = useState('');
   const [openSearch, setOpenSearch] = useState<boolean>(false);
-
-  // ** Store Vars
+  
   const dispatch = useDispatch();
   const store = useSelector((state: RootState) => state.navbar);
 

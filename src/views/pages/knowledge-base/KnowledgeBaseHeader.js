@@ -1,24 +1,22 @@
-// ** Icons Imports
-import { Search } from 'react-feather'
+import { Search } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Form, Input, InputGroup, InputGroupText } from 'reactstrap'
+import { Card, CardBody, CardText, Form, Input, InputGroup, InputGroupText } from 'reactstrap';
 
 const FaqFilter = ({ searchTerm, setSearchTerm, handleFilter }) => {
   const onChange = e => {
     if (handleFilter) {
-      handleFilter(e)
+      handleFilter(e);
     } else {
-      setSearchTerm(e.target.value)
+      setSearchTerm(e.target.value);
     }
-  }
+  };
 
   return (
     <div id='knowledge-base-search'>
       <Card
         className='knowledge-base-bg'
         style={{
-          backgroundImage: `url(${require('@src/assets/images/banner/banner.png').default})`
+          backgroundImage: `url(${require('src/assets/images/banner/banner.png').default})`
         }}
       >
         <CardBody className='text-center'>
@@ -37,7 +35,7 @@ const FaqFilter = ({ searchTerm, setSearchTerm, handleFilter }) => {
         </CardBody>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default FaqFilter
+export default FaqFilter;

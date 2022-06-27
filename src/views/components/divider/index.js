@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import DividerText from './DividerText'
-import DividerIcons from './DividerIcons'
-import DividerStyle from './DividerStyle'
-import DividerColors from './DividerColors'
-import DividerDefault from './DividerDefault'
-import DividerPosition from './DividerPosition'
+import DividerText from './DividerText';
+import DividerIcons from './DividerIcons';
+import DividerStyle from './DividerStyle';
+import DividerColors from './DividerColors';
+import DividerDefault from './DividerDefault';
+import DividerPosition from './DividerPosition';
 
 // ** Source Code
 import {
@@ -26,13 +21,13 @@ import {
   dividerStyle,
   dividerColors,
   dividerDefault,
-  dividerPosition
-} from './DividerSourceCode'
+  dividerPosition,
+} from './DividerSourceCode';
 
 const Divider = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Divider' data={[{ title: 'Components' }, { title: 'Divider' }]} />
@@ -87,6 +82,6 @@ const Divider = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Divider
+  );
+};
+export default Divider;

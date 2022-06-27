@@ -1,19 +1,20 @@
-import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { Facebook, Twitter, Mail, GitHub, HelpCircle, Coffee, X } from 'react-feather';
 import { Row, Col, Form, Input, Label, Alert, Button, CardText, CardTitle, UncontrolledTooltip } from 'reactstrap';
-import '@styles/react/pages/page-authentication.scss';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 import {useSkin} from "../../../utility/hooks/useSkin";
 import Avatar from "../../../@core/components/avatar";
-import {AbilityContext} from "../../../utility/context/Can";
 import InputPasswordToggle from "../../../@core/components/input-password-toggle";
 import {handleLogin} from "../../../redux/authentication";
 import useJwt from "../../../auth/jwt/useJwt";
 import {getHomeRouteForLoggedInUser} from "../../../utility/Utils";
 import {ILogin} from "../../../domains/interfaces/ILogin";
+import {AxiosResponse} from "axios";
+// import { useContext } from 'react';
+// import {AbilityContext} from "../../../utility/context/Can";
 
 const ToastContent = ({ t, name, role }: any) => {
   return (
@@ -26,7 +27,8 @@ const ToastContent = ({ t, name, role }: any) => {
           <h6>{name}</h6>
           <X size={12} className='cursor-pointer' onClick={() => toast.dismiss(t.id)} />
         </div>
-        <span>You have successfully logged in as an {role} user to Vuexy. Now you can start to explore. Enjoy!</span>
+        <span>You have successfully logged in as an {role} user to Vuexy.
+          Now you can start to explore. Enjoy!</span>
       </div>
     </div>
   );
@@ -37,34 +39,42 @@ const defaultValues: ILogin = {
   loginEmail: 'admin@demo.com'
 };
 
+import * as Dark from "../../../../src/assets/images/pages/login-v2-dark.svg";
+import * as Light from "../../../../src/assets/images/pages/login-v2.svg";
 const Login = () => {
   const { skin } = useSkin();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const ability = useContext(AbilityContext);
+  // const ability = useContext(AbilityContext);
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
   } = useForm({ defaultValues });
-  const illustration = skin === 'dark' ? 'login-v2-dark.svg' : 'login-v2.svg',
-    source = require(`@src/assets/images/pages/${illustration}`).default;
+  const source = skin === 'dark'
+      ? Dark.default
+      : Light.default;
 
   const onSubmit = (data: ILogin) => {
     if (Object.values(data).every((field) => field.length > 0)) {
+      console.log('entroooo');
       useJwt
         .login({ email: data.loginEmail, password: data.password })
-        .then((res) => {
-          const data = { ...res.data.userData, accessToken: res.data.accessToken, refreshToken: res.data.refreshToken };
+        .then((res: AxiosResponse<any>) => {
+          const data = {
+            ...res.data.userData,
+            accessToken: res.data.accessToken,
+            refreshToken: res.data.refreshToken
+          };
           dispatch(handleLogin(data));
-          ability.update(res.data.userData.ability);
+          // ability.update(res.data.userData.ability);
           navigate(getHomeRouteForLoggedInUser(data.role));
           toast(t => (
             <ToastContent t={t} role={data.role || 'admin'} name={data.fullName || data.username || 'John Doe'} />
           ));
         })
-        .catch(err => console.log(err));
+        .catch((err: any) => console.log(err));
     } else {
       for (const key in data) {
         if (data[key].length === 0) {

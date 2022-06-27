@@ -1,27 +1,23 @@
-// ** React Imports
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-// ** Custom Components
-import UILoader from '@components/ui-loader'
+import UILoader from 'src/@core/components/ui-loader';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody, Button } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardText, CardBody, Button } from 'reactstrap';
 
 const BasicBlocking = () => {
-  // ** State
-  const [block, setBlock] = useState(false)
+  const [block, setBlock] = useState(false);
 
   useEffect(() => {
-    return () => setBlock(false)
-  }, [])
+    return () => setBlock(false);
+  }, []);
 
   const handleBlock = () => {
-    setBlock(true)
+    setBlock(true);
 
     setTimeout(() => {
-      setBlock(false)
-    }, 2000)
-  }
+      setBlock(false);
+    }, 2000);
+  };
 
   return (
     <UILoader blocking={block}>
@@ -41,7 +37,7 @@ const BasicBlocking = () => {
         </CardBody>
       </Card>
     </UILoader>
-  )
-}
+  );
+};
 
-export default BasicBlocking
+export default BasicBlocking;

@@ -1,18 +1,13 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import Select from 'react-select'
-import { ArrowLeft, ArrowRight } from 'react-feather'
+import Select from 'react-select';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
-// ** Utils
-import { selectThemeColors } from '@utils'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Form, Input, Button } from 'reactstrap'
+import { Label, Row, Col, Form, Input, Button } from 'reactstrap';
 
-// ** Styles
-import '@styles/react/libs/react-select/_react-select.scss'
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 
 const PersonalInfo = ({ stepper, type }) => {
   const countryOptions = [
@@ -22,7 +17,7 @@ const PersonalInfo = ({ stepper, type }) => {
     { value: 'France', label: 'France' },
     { value: 'Italy', label: 'Italy' },
     { value: 'Australia', label: 'Australia' }
-  ]
+  ];
 
   const languageOptions = [
     { value: 'English', label: 'English' },
@@ -30,7 +25,7 @@ const PersonalInfo = ({ stepper, type }) => {
     { value: 'Spanish', label: 'Spanish' },
     { value: 'Italian', label: 'Italian' },
     { value: 'Japanese', label: 'Japanese' }
-  ]
+  ];
 
   return (
     <Fragment>
@@ -95,7 +90,7 @@ const PersonalInfo = ({ stepper, type }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default PersonalInfo
+export default PersonalInfo;

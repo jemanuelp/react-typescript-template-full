@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import { Heart, MessageSquare, Share2 } from 'react-feather'
+import classnames from 'classnames';
+import { Heart, MessageSquare, Share2 } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Row, Col, UncontrolledTooltip, Input, Label, Button } from 'reactstrap'
+import { Card, CardBody, CardText, Row, Col, UncontrolledTooltip, Input, Label, Button } from 'reactstrap';
 
 const ProfilePosts = ({ data }) => {
   const renderPosts = () => {
@@ -63,7 +59,7 @@ const ProfilePosts = ({ data }) => {
                             {user.username}
                           </UncontrolledTooltip>
                         </Fragment>
-                      )
+                      );
                     })}
                   </div>
                   <a href='/' className='text-muted text-nowrap ms-50' onClick={e => e.preventDefault()}>
@@ -113,9 +109,9 @@ const ProfilePosts = ({ data }) => {
             </Button>
           </CardBody>
         </Card>
-      )
-    })
-  }
-  return renderPosts()
-}
-export default ProfilePosts
+      );
+    });
+  };
+  return renderPosts();
+};
+export default ProfilePosts;

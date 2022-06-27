@@ -1,10 +1,8 @@
-// ** Third Party Components
-import { Bar } from 'react-chartjs-2'
-import Flatpickr from 'react-flatpickr'
-import { Calendar } from 'react-feather'
+import { Bar } from 'react-chartjs-2';
+import Flatpickr from 'react-flatpickr';
+import { Calendar } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
 
 const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info }) => {
   // ** Chart Options
@@ -49,7 +47,7 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
         labels: { color: labelColor }
       }
     }
-  }
+  };
 
   // ** Chart Data
   const data = {
@@ -70,7 +68,7 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
         data: [430, 590, 510, 240, 360]
       }
     ]
-  }
+  };
 
   return (
     <Card>
@@ -85,7 +83,6 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              // eslint-disable-next-line no-mixed-operators
               defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
             }}
           />
@@ -97,7 +94,7 @@ const ChartjsHorizontalBarChart = ({ warning, gridLineColor, labelColor, info })
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsHorizontalBarChart
+export default ChartjsHorizontalBarChart;

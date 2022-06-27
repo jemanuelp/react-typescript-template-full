@@ -1,14 +1,14 @@
 export const tableBasic = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -237,19 +237,19 @@ const TableBasic = () => {
 export default TableBasic
 `}</code>
   </pre>
-)
+);
 
 export const tableDark = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -478,19 +478,19 @@ const TableDark = () => {
 export default TableDark
 `}</code>
   </pre>
-)
+);
 
 export const tableTheadOptions = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -718,19 +718,19 @@ const TableTheadDark = () => {
 
 export default TableTheadDark`}</code>
   </pre>
-)
+);
 
 export const tableStriped = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -959,19 +959,19 @@ const TableStriped = () => {
 export default TableStriped
 `}</code>
   </pre>
-)
+);
 
 export const tableStripedDark = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -1199,19 +1199,19 @@ const TableStripedDark = () => {
 export default TableStripedDark
 `}</code>
   </pre>
-)
+);
 
 export const tableBorderless = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -1440,19 +1440,19 @@ const TableBorderless = () => {
 export default TableBorderless
 `}</code>
   </pre>
-)
+);
 
 export const tableBordered = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -1681,19 +1681,19 @@ const TableBordered = () => {
 export default TableBordered
 `}</code>
   </pre>
-)
+);
 
 export const tableHover = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -1922,19 +1922,19 @@ const TableHover = () => {
 export default TableHover
 `}</code>
   </pre>
-)
+);
 
 export const tableSmall = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -2163,20 +2163,20 @@ const TableSmall = () => {
 export default TableSmall
 `}</code>
   </pre>
-)
+);
 
 export const tableContextual = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
-import AvatarGroup from '@components/avatar-group'
-import react from '@src/assets/images/icons/react.svg'
-import figma from '@src/assets/images/icons/figma.svg'
-import vuejs from '@src/assets/images/icons/vuejs.svg'
-import angular from '@src/assets/images/icons/angular.svg'
-import bootstrap from '@src/assets/images/icons/bootstrap.svg'
-import avatar1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import avatar2 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar3 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import AvatarGroup from 'src/@core/components/avatar-group'
+import react from 'src/assets/images/icons/react.svg'
+import figma from 'src/assets/images/icons/figma.svg'
+import vuejs from 'src/assets/images/icons/vuejs.svg'
+import angular from 'src/assets/images/icons/angular.svg'
+import bootstrap from 'src/assets/images/icons/bootstrap.svg'
+import avatar1 from 'src/assets/images/portrait/small/avatar-s-5.jpg'
+import avatar2 from 'src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar3 from 'src/assets/images/portrait/small/avatar-s-7.jpg'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { Table, Badge, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
@@ -2711,7 +2711,7 @@ const TableContextual = () => {
 export default TableContextual
 `}</code>
   </pre>
-)
+);
 
 export const tableResponsive = (
   <pre className='language-jsx'>
@@ -2840,4 +2840,4 @@ const TableResponsive = () => {
 export default TableResponsive
 `}</code>
   </pre>
-)
+);

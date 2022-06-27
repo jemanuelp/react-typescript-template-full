@@ -1,9 +1,7 @@
-// ** Images
-import img1 from '@src/assets/images/portrait/small/avatar-s-5.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-5.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap';
 
 const BlockquotesAvatar = () => {
   return (
@@ -43,6 +41,6 @@ const BlockquotesAvatar = () => {
         </blockquote>
       </CardBody>
     </Card>
-  )
-}
-export default BlockquotesAvatar
+  );
+};
+export default BlockquotesAvatar;

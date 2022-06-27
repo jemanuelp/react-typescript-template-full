@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardBody, Button, Form, Label, Input } fro
 import Avatar from "../../components/avatar";
 
 const AsyncValidationForm = () => {
-  // ** Hooks
+  
   const {
     reset,
     control,

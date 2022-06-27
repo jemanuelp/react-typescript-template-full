@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardText, CardBody } from 'reactstrap';
 
 const NamingSource = () => {
   return (
@@ -25,6 +25,6 @@ const NamingSource = () => {
         </blockquote>
       </CardBody>
     </Card>
-  )
-}
-export default NamingSource
+  );
+};
+export default NamingSource;

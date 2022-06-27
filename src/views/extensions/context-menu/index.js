@@ -1,22 +1,17 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Demo Components
-import ContextSubMenu from './ContextSubmenu'
-import ContextMenuBasic from './ContextMenuBasic'
-import ContextMenuLeftClick from './ContextMenuLeftClick'
-import ContextMenuDoubleClick from './ContextMenuDoubleClick'
-import ContextMenuAnimation from './ContextMenuAnimation'
+import ContextSubMenu from './ContextSubmenu';
+import ContextMenuBasic from './ContextMenuBasic';
+import ContextMenuLeftClick from './ContextMenuLeftClick';
+import ContextMenuDoubleClick from './ContextMenuDoubleClick';
+import ContextMenuAnimation from './ContextMenuAnimation';
 
-// ** Styles
-import 'react-contexify/dist/ReactContexify.min.css'
-import '@styles/react/libs/context-menu/context-menu.scss'
+import 'react-contexify/dist/ReactContexify.min.css';
+import 'src/@core/scss/react/libs/context-menu/context-menu.scss';
 
 const Contexify = () => {
   return (
@@ -44,7 +39,7 @@ const Contexify = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Contexify
+export default Contexify;

@@ -1,30 +1,24 @@
-// ** React Imports
-import { Fragment, useState, useEffect, memo } from 'react'
+import { Fragment, useState, useEffect, memo } from 'react';
 
-// ** Table Columns
-import { serverSideColumns } from '../data'
+import { serverSideColumns } from '../data';
 
-// ** Store & Actions
-import { getData } from '../store'
-import { useSelector, useDispatch } from 'react-redux'
+import { getData } from '../store';
+import { useSelector, useDispatch } from 'react-redux';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
+import ReactPaginate from 'react-paginate';
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, Input, Label, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, Input, Label, Row, Col } from 'reactstrap';
 
 const DataTableServerSide = () => {
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.dataTables)
+  
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.dataTables);
 
-  // ** States
-  const [currentPage, setCurrentPage] = useState(1)
-  const [rowsPerPage, setRowsPerPage] = useState(7)
-  const [searchValue, setSearchValue] = useState('')
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(7);
+  const [searchValue, setSearchValue] = useState('');
 
   // ** Get data on mount
   useEffect(() => {
@@ -34,12 +28,12 @@ const DataTableServerSide = () => {
         perPage: rowsPerPage,
         q: searchValue
       })
-    )
-  }, [dispatch])
+    );
+  }, [dispatch]);
 
   // ** Function to handle filter
   const handleFilter = e => {
-    setSearchValue(e.target.value)
+    setSearchValue(e.target.value);
 
     dispatch(
       getData({
@@ -47,8 +41,8 @@ const DataTableServerSide = () => {
         perPage: rowsPerPage,
         q: e.target.value
       })
-    )
-  }
+    );
+  };
 
   // ** Function to handle Pagination and get data
   const handlePagination = page => {
@@ -58,9 +52,9 @@ const DataTableServerSide = () => {
         perPage: rowsPerPage,
         q: searchValue
       })
-    )
-    setCurrentPage(page.selected + 1)
-  }
+    );
+    setCurrentPage(page.selected + 1);
+  };
 
   // ** Function to handle per page
   const handlePerPage = e => {
@@ -70,13 +64,13 @@ const DataTableServerSide = () => {
         perPage: parseInt(e.target.value),
         q: searchValue
       })
-    )
-    setRowsPerPage(parseInt(e.target.value))
-  }
+    );
+    setRowsPerPage(parseInt(e.target.value));
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => {
-    const count = Math.ceil(store.total / rowsPerPage)
+    const count = Math.ceil(store.total / rowsPerPage);
 
     return (
       <ReactPaginate
@@ -102,27 +96,27 @@ const DataTableServerSide = () => {
           'pagination react-paginate separated-pagination pagination-sm justify-content-end pe-1 mt-1'
         }
       />
-    )
-  }
+    );
+  };
 
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
       q: searchValue
-    }
+    };
 
     const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0
-    })
+      return filters[k].length > 0;
+    });
 
     if (store.data.length > 0) {
-      return store.data
+      return store.data;
     } else if (store.data.length === 0 && isFiltered) {
-      return []
+      return [];
     } else {
-      return store.allData.slice(0, rowsPerPage)
+      return store.allData.slice(0, rowsPerPage);
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -179,7 +173,7 @@ const DataTableServerSide = () => {
         </div>
       </Card>
     </Fragment>
-  )
-}
+  );
+};
 
-export default memo(DataTableServerSide)
+export default memo(DataTableServerSide);

@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-// ** Icons Imports
-import { ChevronLeft, ChevronRight } from 'react-feather'
+import { ChevronLeft, ChevronRight } from 'react-feather';
 
 const PaginationIconsAndText = () => {
   return (
@@ -45,6 +43,6 @@ const PaginationIconsAndText = () => {
         </PaginationLink>
       </PaginationItem>
     </Pagination>
-  )
-}
-export default PaginationIconsAndText
+  );
+};
+export default PaginationIconsAndText;

@@ -1,9 +1,7 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { CheckCircle } from 'react-feather'
+import toast from 'react-hot-toast';
+import { CheckCircle } from 'react-feather';
 
 const ToastSuccess = () => {
   return (
@@ -19,7 +17,7 @@ const ToastSuccess = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastSuccess
+export default ToastSuccess;

@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Label } from 'reactstrap'
+import { Label } from 'reactstrap';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
+import Flatpickr from 'react-flatpickr';
 
 const Timepickers = () => {
-  // ** State
-  const [basic, setBasic] = useState(new Date())
+  const [basic, setBasic] = useState(new Date());
 
   return (
     <Fragment>
@@ -29,7 +25,7 @@ const Timepickers = () => {
         onChange={date => setBasic(date)}
       />
     </Fragment>
-  )
-}
+  );
+};
 
-export default Timepickers
+export default Timepickers;

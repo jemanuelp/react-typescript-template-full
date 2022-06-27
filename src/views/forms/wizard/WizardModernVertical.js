@@ -1,24 +1,19 @@
-// ** React Imports
-import { useRef, useState } from 'react'
+import { useRef, useState } from 'react';
 
-// ** Custom Components
-import Wizard from '@components/wizard'
+import Wizard from 'src/@core/components/wizard';
 
 // ** Steps
-import Address from './steps/Address'
-import SocialLinks from './steps/SocialLinks'
-import PersonalInfo from './steps/PersonalInfo'
-import AccountDetails from './steps/AccountDetails'
+import Address from './steps/Address';
+import SocialLinks from './steps/SocialLinks';
+import PersonalInfo from './steps/PersonalInfo';
+import AccountDetails from './steps/AccountDetails';
 
-// ** Icons Imports
-import { FileText, User, MapPin, Link } from 'react-feather'
+import { FileText, User, MapPin, Link } from 'react-feather';
 
 const WizardModernVertical = () => {
-  // ** Ref
-  const ref = useRef(null)
+  const ref = useRef(null);
 
-  // ** State
-  const [stepper, setStepper] = useState(null)
+  const [stepper, setStepper] = useState(null);
 
   const steps = [
     {
@@ -49,7 +44,7 @@ const WizardModernVertical = () => {
       icon: <Link size={18} />,
       content: <SocialLinks stepper={stepper} type='modern-vertical' />
     }
-  ]
+  ];
 
   return (
     <div className='modern-vertical-wizard'>
@@ -63,7 +58,7 @@ const WizardModernVertical = () => {
         instance={el => setStepper(el)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default WizardModernVertical
+export default WizardModernVertical;

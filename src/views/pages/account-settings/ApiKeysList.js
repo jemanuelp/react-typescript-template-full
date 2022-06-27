@@ -1,7 +1,5 @@
-// ** Icons Imports
-import { Copy, MoreVertical, Edit2, Trash2 } from 'react-feather'
+import { Copy, MoreVertical, Edit2, Trash2 } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -15,7 +13,7 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const data = [
   {
@@ -36,7 +34,7 @@ const data = [
     key: '2e915e59-3105-47f2-8838-6e46bf83b711',
     date: 'Created on 28 Apr 2020, 12:21 GTM+4:10'
   }
-]
+];
 
 const ApiKeysList = () => {
   return (
@@ -88,7 +86,7 @@ const ApiKeysList = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ApiKeysList
+export default ApiKeysList;

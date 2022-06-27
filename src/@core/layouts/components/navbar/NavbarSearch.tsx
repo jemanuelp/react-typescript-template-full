@@ -1,70 +1,69 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import classnames from 'classnames'
-import * as Icon from 'react-feather'
-import { NavItem, NavLink } from 'reactstrap'
-import { useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import classnames from 'classnames';
+import * as Icon from 'react-feather';
+import { NavItem, NavLink } from 'reactstrap';
+import { useDispatch } from 'react-redux';
 import {handleSearchQuery} from "../../../../redux/navbar";
 import Autocomplete from "../../../components/autocomplete";
 
 const NavbarSearch = () => {
-  // ** Store Vars
-  const dispatch = useDispatch()
+  
+  const dispatch = useDispatch();
 
-  // ** States
-  const [suggestions, setSuggestions] = useState([])
-  const [navbarSearch, setNavbarSearch] = useState(false)
+  const [suggestions, setSuggestions] = useState([]);
+  const [navbarSearch, setNavbarSearch] = useState(false);
 
   // ** ComponentDidMount
   useEffect(() => {
     axios.get('/api/main-search/data').then(({ data }) => {
-      setSuggestions(data.searchArr)
-    })
-  }, [])
+      setSuggestions(data.searchArr);
+    });
+  }, []);
 
   // ** Removes query in store
-  const handleClearQueryInStore = () => dispatch(handleSearchQuery(''))
+  const handleClearQueryInStore = () => dispatch(handleSearchQuery(''));
 
   // ** Function to handle external Input click
   const handleExternalClick = () => {
     if (navbarSearch) {
-      setNavbarSearch(false)
-      handleClearQueryInStore()
+      setNavbarSearch(false);
+      handleClearQueryInStore();
     }
-  }
+  };
 
   // ** Function to clear input value
   const handleClearInput = (setUserInput: any) => {
     if (!navbarSearch) {
-      setUserInput('')
-      handleClearQueryInStore()
+      setUserInput('');
+      handleClearQueryInStore();
     }
-  }
+  };
 
   // ** Function to close search on ESC & ENTER Click
   const onKeyDown = (e: any) => {
     if (e.keyCode === 27 || e.keyCode === 13) {
       setTimeout(() => {
-        setNavbarSearch(false)
-        handleClearQueryInStore()
-      }, 1)
+        setNavbarSearch(false);
+        handleClearQueryInStore();
+      }, 1);
     }
-  }
+  };
 
   // ** Function to handle search suggestion Click
   const handleSuggestionItemClick = () => {
-    setNavbarSearch(false)
-    handleClearQueryInStore()
-  }
+    setNavbarSearch(false);
+    handleClearQueryInStore();
+  };
 
   // ** Function to handle search list Click
   const handleListItemClick = (func: Function, link: string, e: any) => {
-    func(link, e)
+    func(link, e);
     setTimeout(() => {
-      setNavbarSearch(false)
-    }, 1)
-    handleClearQueryInStore()
-  }
+      setNavbarSearch(false);
+    }, 1);
+    handleClearQueryInStore();
+  };
 
   return (
     <NavItem className='nav-search' onClick={() => setNavbarSearch(true)}>
@@ -98,7 +97,7 @@ const NavbarSearch = () => {
                            activeSuggestion: any,
                            onSuggestionItemClick: any,
                            onSuggestionItemHover: any) => {
-              const IconTag = item.icon ? item.icon : 'X'
+              const IconTag = item.icon ? item.icon : 'X';
               return (
                 <li
                   className={classnames('suggestion-item', {
@@ -135,7 +134,7 @@ const NavbarSearch = () => {
                     ) : null}
                   </div>
                 </li>
-              )
+              );
             }}
           />
         ) : null}
@@ -143,15 +142,15 @@ const NavbarSearch = () => {
           <Icon.X
             className='ficon'
             onClick={e => {
-              e.stopPropagation()
-              setNavbarSearch(false)
-              handleClearQueryInStore()
+              e.stopPropagation();
+              setNavbarSearch(false);
+              handleClearQueryInStore();
             }}
           />
         </div>
       </div>
     </NavItem>
-  )
-}
+  );
+};
 
-export default NavbarSearch
+export default NavbarSearch;

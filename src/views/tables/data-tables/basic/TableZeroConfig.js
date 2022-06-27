@@ -1,12 +1,9 @@
-// ** Table Columns
-import { data, basicColumns } from '../data'
+import { data, basicColumns } from '../data';
 
-// ** Third Party Components
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle } from 'reactstrap'
+import { Card, CardHeader, CardTitle } from 'reactstrap';
 
 const DataTablesBasic = () => {
   return (
@@ -26,7 +23,7 @@ const DataTablesBasic = () => {
         />
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default DataTablesBasic
+export default DataTablesBasic;

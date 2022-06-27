@@ -10,7 +10,6 @@ enum IconActions {
   reload='reload',
 }
 
-// ** PropTypes
 abstract class PropTypesCardActions {
   removeIcon: any;
   reloadIcon: any;
@@ -32,7 +31,6 @@ abstract class PropTypesCardActions {
 const CardActions = (props: PropTypesCardActions) => {
   const { title, actions, children, collapseIcon, reloadIcon, removeIcon, endReload } = props;
 
-  // ** States
   const [reload, setReload] = useState(false);
   const [collapse, setCollapse] = useState(true);
   const [visibility, setVisibility] = useState(true);
@@ -106,13 +104,10 @@ const CardActions = (props: PropTypesCardActions) => {
 
   return (
     <BlockUiWrapper
-      /*eslint-disable */
-      {...(actions === IconActions.reload || actions.includes(IconActions.reload)
-        ? {
+      
+      {...(actions === IconActions.reload || actions.includes(IconActions.reload) ? {
             blocking: reload
-          }
-        : {})}
-      /*eslint-enable */
+          } : {})}
     >
       <Card
         className={classnames('card-action', {

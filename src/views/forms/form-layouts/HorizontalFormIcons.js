@@ -1,4 +1,3 @@
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -12,10 +11,9 @@ import {
   CardHeader,
   InputGroup,
   InputGroupText
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Icons Imports
-import { User, Mail, Smartphone, Lock } from 'react-feather'
+import { User, Mail, Smartphone, Lock } from 'react-feather';
 
 const HorizontalFormIcons = () => {
   return (
@@ -103,6 +101,6 @@ const HorizontalFormIcons = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
-export default HorizontalFormIcons
+  );
+};
+export default HorizontalFormIcons;

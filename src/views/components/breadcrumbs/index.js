@@ -1,28 +1,23 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Demo Components
-import BreadCrumbStyles from './BreadcrumbStyles'
-import BreadcrumbsDefault from './BreadcrumbsDefault'
-import BreadCrumbsPage from '@components/breadcrumbs'
-import BreadCrumbAlignment from './BreadcrumbAlignment'
+import BreadCrumbStyles from './BreadcrumbStyles';
+import BreadcrumbsDefault from './BreadcrumbsDefault';
+import BreadCrumbsPage from 'src/@core/components/breadcrumbs';
+import BreadCrumbAlignment from './BreadcrumbAlignment';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
+import Card from 'src/@core/components/card-snippet';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
 // ** Source Code
-import { breadcrumbsAlignment, breadcrumbsDefault, breadcrumbsStyles } from './BreadCrumbsSourceCode'
+import { breadcrumbsAlignment, breadcrumbsDefault, breadcrumbsStyles } from './BreadCrumbsSourceCode';
 
 const BreadCrumbs = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -55,6 +50,6 @@ const BreadCrumbs = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default BreadCrumbs
+  );
+};
+export default BreadCrumbs;

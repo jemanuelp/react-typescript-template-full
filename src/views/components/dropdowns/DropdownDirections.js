@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+
+import { UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 
 const DropdownDirections = () => {
   return (
@@ -69,6 +69,6 @@ const DropdownDirections = () => {
         </DropdownMenu>
       </UncontrolledButtonDropdown>
     </div>
-  )
-}
-export default DropdownDirections
+  );
+};
+export default DropdownDirections;

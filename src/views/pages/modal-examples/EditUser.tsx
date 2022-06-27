@@ -17,21 +17,14 @@ import {
 import Select from 'react-select';
 import { User, Check, X } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
-import '@styles/react/libs/react-select/_react-select.scss';
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import {selectThemeColors} from "../../../utility/Utils";
+import {CountryOptions} from "../../../domains/const/options/CountryOptions";
 
 const statusOptions = [
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' },
   { value: 'suspended', label: 'Suspended' }
-];
-
-const countryOptions = [
-  { value: 'uk', label: 'UK' },
-  { value: 'usa', label: 'USA' },
-  { value: 'france', label: 'France' },
-  { value: 'russia', label: 'Russia' },
-  { value: 'canada', label: 'Canada' }
 ];
 
 const languageOptions = [
@@ -195,9 +188,9 @@ const EditUserExample = () => {
                 isClearable={false}
                 className='react-select'
                 classNamePrefix='select'
-                options={countryOptions}
+                options={CountryOptions}
                 theme={selectThemeColors}
-                defaultValue={countryOptions[0]}
+                defaultValue={CountryOptions[0]}
               />
             </Col>
             <Col xs={12}>

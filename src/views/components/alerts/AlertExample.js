@@ -1,26 +1,22 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Icons Imports
-import { AlertCircle } from 'react-feather'
+import { AlertCircle } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Alert, Label, Input } from 'reactstrap'
+import { Alert, Label, Input } from 'reactstrap';
 
 const AlertExample = () => {
-  // ** States
-  const [visible, setVisible] = useState(true)
-  const [inputTerm, setInputTerm] = useState('')
+  const [visible, setVisible] = useState(true);
+  const [inputTerm, setInputTerm] = useState('');
 
   const handleInput = e => {
-    setInputTerm(e.target.value)
+    setInputTerm(e.target.value);
 
     if (e.target.value.length > 0 && isNaN(e.target.value)) {
-      setVisible(true)
+      setVisible(true);
     } else {
-      setVisible(false)
+      setVisible(false);
     }
-  }
+  };
 
   return (
     <div className='demo-spacing-0'>
@@ -39,6 +35,6 @@ const AlertExample = () => {
         </div>
       </Alert>
     </div>
-  )
-}
-export default AlertExample
+  );
+};
+export default AlertExample;

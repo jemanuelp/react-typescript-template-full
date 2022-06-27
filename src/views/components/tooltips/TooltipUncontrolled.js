@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, UncontrolledTooltip } from 'reactstrap'
+import { Button, UncontrolledTooltip } from 'reactstrap';
 
 const TooltipUncontrolled = () => {
   return (
@@ -14,6 +12,6 @@ const TooltipUncontrolled = () => {
         Hello World !
       </UncontrolledTooltip>
     </Fragment>
-  )
-}
-export default TooltipUncontrolled
+  );
+};
+export default TooltipUncontrolled;

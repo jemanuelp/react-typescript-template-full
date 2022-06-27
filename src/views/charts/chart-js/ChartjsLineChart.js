@@ -1,8 +1,6 @@
-// ** Third Party Components
-import { Line } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, CardSubtitle } from 'reactstrap';
 
 const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineChartDanger, lineChartPrimary }) => {
   // ** Chart Options
@@ -44,7 +42,7 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         }
       }
     }
-  }
+  };
 
   // ** Chart Data
   const data = {
@@ -93,18 +91,18 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         pointHoverBackgroundColor: warningColorShade
       }
     ]
-  }
+  };
 
   //** To add spacing between legends and chart
   const plugins = [
     {
       beforeInit(chart) {
         chart.legend.afterFit = function () {
-          this.height += 20
-        }
+          this.height += 20;
+        };
       }
     }
-  ]
+  ];
 
   return (
     <Card>
@@ -122,7 +120,7 @@ const ChartjsLineChart = ({ labelColor, gridLineColor, warningColorShade, lineCh
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsLineChart
+export default ChartjsLineChart;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem } from 'reactstrap'
+
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const ListGroupTag = () => {
   return (
@@ -23,6 +23,6 @@ const ListGroupTag = () => {
         Vestibulum at eros
       </ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupTag
+  );
+};
+export default ListGroupTag;

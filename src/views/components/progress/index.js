@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import ProgressBasic from './ProgressBasic'
-import ProgressColored from './ProgressColored'
-import ProgressLabeled from './ProgressLabeled'
-import ProgressStriped from './ProgressStriped'
-import ProgressAnimated from './ProgressAnimated'
-import ProgressMultipleStacked from './ProgressMultipleStacked'
+import ProgressBasic from './ProgressBasic';
+import ProgressColored from './ProgressColored';
+import ProgressLabeled from './ProgressLabeled';
+import ProgressStriped from './ProgressStriped';
+import ProgressAnimated from './ProgressAnimated';
+import ProgressMultipleStacked from './ProgressMultipleStacked';
 
 // ** Source Code
 import {
@@ -26,13 +21,13 @@ import {
   progressLabeled,
   progressStriped,
   progressAnimated,
-  progressMultipleStacked
-} from './ProgressSourceCode'
+  progressMultipleStacked,
+} from './ProgressSourceCode';
 
 const Progress = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Progress' data={[{ title: 'Components' }, { title: 'Progress' }]} />
@@ -82,6 +77,6 @@ const Progress = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Progress
+  );
+};
+export default Progress;

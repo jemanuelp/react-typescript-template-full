@@ -1,23 +1,19 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Demo Components
-import PaginationIcon from './PaginationIcon'
-import PaginationInfo from './PaginationInfo'
-import BasicPagination from './BasicPagination'
-import PaginationSizes from './PaginationSizes'
-import PaginationDanger from './PaginationDanger'
-import PaginationWarning from './PaginationWarning'
-import PaginationSuccess from './PaginationSuccess'
-import SepratedPagination from './SepratedPagination'
-import PaginationIconText from './PaginationIconText'
-import PaginationPositions from './PaginationPositions'
+import PaginationIcon from './PaginationIcon';
+import PaginationInfo from './PaginationInfo';
+import BasicPagination from './BasicPagination';
+import PaginationSizes from './PaginationSizes';
+import PaginationDanger from './PaginationDanger';
+import PaginationWarning from './PaginationWarning';
+import PaginationSuccess from './PaginationSuccess';
+import SepratedPagination from './SepratedPagination';
+import PaginationIconText from './PaginationIconText';
+import PaginationPositions from './PaginationPositions';
 
 const ReactPaginate = () => {
   return (
@@ -61,7 +57,7 @@ const ReactPaginate = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ReactPaginate
+export default ReactPaginate;

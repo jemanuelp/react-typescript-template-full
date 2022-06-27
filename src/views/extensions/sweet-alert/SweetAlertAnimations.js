@@ -1,11 +1,9 @@
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const AnimatedSweetAlert = () => {
   const handleBounceIn = () => {
@@ -18,8 +16,8 @@ const AnimatedSweetAlert = () => {
         popup: 'animate__animated animate__bounceIn'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleFadeIn = () => {
     return MySwal.fire({
@@ -31,8 +29,8 @@ const AnimatedSweetAlert = () => {
         popup: 'animate__animated animate__fadeIn'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleFlipIn = () => {
     return MySwal.fire({
@@ -44,8 +42,8 @@ const AnimatedSweetAlert = () => {
         popup: 'animate__animated animate__flipInX'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleTada = () => {
     return MySwal.fire({
@@ -57,8 +55,8 @@ const AnimatedSweetAlert = () => {
         popup: 'animate__animated animate__tada'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleShake = () => {
     return MySwal.fire({
@@ -70,8 +68,8 @@ const AnimatedSweetAlert = () => {
         popup: 'animate__animated animate__shakeX'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -101,7 +99,7 @@ const AnimatedSweetAlert = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default AnimatedSweetAlert
+export default AnimatedSweetAlert;

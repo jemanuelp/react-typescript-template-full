@@ -1,11 +1,6 @@
-// ** React Imports
 import { Link } from 'react-router-dom';
-
-// ** Reactstrap Imports
 import { Card, CardBody, CardTitle, CardText, Button, Form, Input } from 'reactstrap';
-
-// ** Styles
-import '@styles/react/pages/page-authentication.scss';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 
 const TwoStepsBasic = () => {
   return (
@@ -68,6 +63,7 @@ const TwoStepsBasic = () => {
               Two Step Verification 💬
             </CardTitle>
             <CardText className='mb-75'>
+              {/* eslint-disable-next-line max-len */}
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </CardText>
             <CardText className='fw-bolder mb-2'>******0789</CardText>

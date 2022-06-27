@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Nav, NavItem, NavLink } from 'reactstrap'
+
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const NavVertical = () => {
   return (
@@ -21,6 +21,6 @@ const NavVertical = () => {
         </NavLink>
       </NavItem>
     </Nav>
-  )
-}
-export default NavVertical
+  );
+};
+export default NavVertical;

@@ -1,40 +1,34 @@
-// ** React Imports
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
 // ** Deom Charts
-import BarChart from './ChartjsBarChart'
-import LineChart from './ChartjsLineChart'
-import AreaChart from './ChartjsAreaChart'
-import RadarChart from './ChartjsRadarChart'
-import BubbleChart from './ChartjsBubbleChart'
-import ScatterChart from './ChartjsScatterChart'
-import DoughnutChart from './ChartjsDoughnutChart'
-import PolarAreaChart from './ChartjsPolarAreaChart'
-import HorizontalBarChart from './ChartjsHorizontalBar'
+import BarChart from './ChartjsBarChart';
+import LineChart from './ChartjsLineChart';
+import AreaChart from './ChartjsAreaChart';
+import RadarChart from './ChartjsRadarChart';
+import BubbleChart from './ChartjsBubbleChart';
+import ScatterChart from './ChartjsScatterChart';
+import DoughnutChart from './ChartjsDoughnutChart';
+import PolarAreaChart from './ChartjsPolarAreaChart';
+import HorizontalBarChart from './ChartjsHorizontalBar';
 
-// ** Custom Hooks
-import { useSkin } from '@hooks/useSkin'
+import { useSkin } from '@hooks/useSkin';
 
-// ** Context
-import { ThemeColors } from '@src/utility/context/ThemeColors'
+import { ThemeColors } from 'src/utility/context/ThemeColors';
 
-// ** Third Party Components
-import 'chart.js/auto'
+import 'chart.js/auto';
 
-// ** Styles
-import '@styles/react/libs/flatpickr/flatpickr.scss'
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 
 const ChartJS = () => {
-  // ** Context, Hooks & Vars
   const { colors } = useContext(ThemeColors),
     { skin } = useSkin(),
-    labelColor = skin === 'dark' ? '#b4b7bd' : '#6e6b7b',
+    labelColor = skin === 'dark'
+? '#b4b7bd'
+: '#6e6b7b',
     tooltipShadow = 'rgba(0, 0, 0, 0.25)',
     gridLineColor = 'rgba(200, 200, 200, 0.2)',
     lineChartPrimary = '#666ee8',
@@ -48,7 +42,7 @@ const ChartJS = () => {
     greyColor = '#4F5D70',
     blueColor = '#2c9aff',
     blueLightColor = '#84D0FF',
-    greyLightColor = '#EDF1F4'
+    greyLightColor = '#EDF1F4';
 
   return (
     <Fragment>
@@ -133,7 +127,7 @@ const ChartJS = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ChartJS
+export default ChartJS;

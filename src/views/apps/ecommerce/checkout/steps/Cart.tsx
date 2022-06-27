@@ -4,14 +4,23 @@ import InputNumber from 'rc-input-number';
 import { X, Heart, Star, Plus, Minus } from 'react-feather';
 import { Card, CardBody, CardText, Button, Badge, InputGroup, Input, InputGroupText } from 'reactstrap';
 import '../../../../../@core/scss/react/libs/input-number/input-number.scss';
+import {FormatRangeOptions} from "@fullcalendar/common";
 
 const Cart = (props: any) => {
-  const { products, stepper, deleteCartItem, dispatch, addToWishlist, deleteWishlistItem, getCartItems } = props;
+  const {
+    products,
+    stepper,
+    deleteCartItem,
+    dispatch,
+    addToWishlist,
+    deleteWishlistItem,
+    getCartItems
+  } = props;
 
   // ** Function to convert Date
   const formatDate = (
       value: string,
-      formatting: { month: 'short', day: 'numeric', year: 'numeric' } = {'MM', 'dd', 'YY'}
+      formatting: FormatRangeOptions = { month: "short", day: "numeric", year: "numeric" }
   ) => {
     if (!value) return value;
     return new Intl.DateTimeFormat('en-US', formatting).format(new Date(value));
@@ -29,7 +38,7 @@ const Cart = (props: any) => {
 
   // ** Render cart items
   const renderCart = () => {
-    return products.map(item => {
+    return products.map((item: any) => {
       return (
         <Card key={item.name} className='ecommerce-card'>
           <div className='item-img'>
@@ -40,7 +49,9 @@ const Cart = (props: any) => {
           <CardBody>
             <div className='item-name'>
               <h6 className='mb-0'>
-                <Link to={`/apps/ecommerce/product-detail/${item.slug}`}>{item.name}</Link>
+                <Link to={`/apps/ecommerce/product-detail/${item.slug}`}>
+                  {item.name}
+                </Link>
               </h6>
               <span className='item-company'>
                 By
@@ -50,7 +61,7 @@ const Cart = (props: any) => {
               </span>
               <div className='item-rating'>
                 <ul className='unstyled-list list-inline'>
-                  {new Array(5).fill().map((listItem, index) => {
+                  {new Array(5).map((listItem, index) => {
                     return (
                       <li key={index} className='ratings-list-item me-25'>
                         <Star
@@ -86,13 +97,15 @@ const Cart = (props: any) => {
             <div className='item-wrapper'>
               <div className='item-cost'>
                 <h4 className='item-price'>${item.price}</h4>
-                {item.hasFreeShipping ? (
+                {item.hasFreeShipping
+? (
                   <CardText className='shipping'>
                     <Badge color='light-success' pill>
                       Free Shipping
                     </Badge>
                   </CardText>
-                ) : null}
+                )
+: null}
               </div>
             </div>
             <Button className='mt-1 remove-wishlist' color='light' onClick={() => dispatch(deleteCartItem(item.id))}>
@@ -120,7 +133,9 @@ const Cart = (props: any) => {
 
   return (
     <div className='list-view product-checkout'>
-      <div className='checkout-items'>{products.length ? renderCart() : <h4>Your cart is empty</h4>}</div>
+      <div className='checkout-items'>{products.length
+? renderCart()
+: <h4>Your cart is empty</h4>}</div>
       <div className='checkout-options'>
         <Card>
           <CardBody>

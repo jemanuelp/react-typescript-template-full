@@ -1,33 +1,28 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Custom Components
-import Repeater from '@components/repeater'
+import Repeater from 'src/@core/components/repeater';
 
-// ** Third Party Components
-import { X, Plus } from 'react-feather'
-import { SlideDown } from 'react-slidedown'
+import { X, Plus } from 'react-feather';
+import { SlideDown } from 'react-slidedown';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardBody, CardText, Form, Label, Input, Button } from 'reactstrap'
+import { Row, Col, Card, CardHeader, CardBody, CardText, Form, Label, Input, Button } from 'reactstrap';
 const RepeatingForm = () => {
-  // ** State
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(1);
 
   const increaseCount = () => {
-    setCount(count + 1)
-  }
+    setCount(count + 1);
+  };
 
   const deleteForm = e => {
-    e.preventDefault()
+    e.preventDefault();
     const slideDownWrapper = e.target.closest('.react-slidedown'),
-      form = e.target.closest('form')
+      form = e.target.closest('form');
     if (slideDownWrapper) {
-      slideDownWrapper.remove()
+      slideDownWrapper.remove();
     } else {
-      form.remove()
+      form.remove();
     }
-  }
+  };
 
   return (
     <Card>
@@ -44,7 +39,7 @@ const RepeatingForm = () => {
         </CardText>
         <Repeater count={count}>
           {i => {
-            const Tag = i === 0 ? 'div' : SlideDown
+            const Tag = i === 0 ? 'div' : SlideDown;
             return (
               <Tag key={i}>
                 <Form>
@@ -92,7 +87,7 @@ const RepeatingForm = () => {
                   </Row>
                 </Form>
               </Tag>
-            )
+            );
           }}
         </Repeater>
         <Button className='btn-icon' color='primary' onClick={increaseCount}>
@@ -101,7 +96,7 @@ const RepeatingForm = () => {
         </Button>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RepeatingForm
+export default RepeatingForm;

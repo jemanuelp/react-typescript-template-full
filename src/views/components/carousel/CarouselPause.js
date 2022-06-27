@@ -1,10 +1,8 @@
-// ** Reactstrap Imports
-import { UncontrolledCarousel } from 'reactstrap'
+import { UncontrolledCarousel } from 'reactstrap';
 
-// ** Images
-import sliderImage1 from '@src/assets/images/slider/04.jpg'
-import sliderImage2 from '@src/assets/images/slider/03.jpg'
-import sliderImage3 from '@src/assets/images/slider/05.jpg'
+import sliderImage1 from 'src/assets/images/slider/04.jpg';
+import sliderImage2 from 'src/assets/images/slider/03.jpg';
+import sliderImage3 from 'src/assets/images/slider/05.jpg';
 
 const images = [
   {
@@ -25,9 +23,9 @@ const images = [
     caption: '',
     altText: 'Slide 3'
   }
-]
+];
 
 const CarouselPause = () => {
-  return <UncontrolledCarousel items={images} pause='hover' keyboard={false} />
-}
-export default CarouselPause
+  return <UncontrolledCarousel items={images} pause='hover' keyboard={false} />;
+};
+export default CarouselPause;

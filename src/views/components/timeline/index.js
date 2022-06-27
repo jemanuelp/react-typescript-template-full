@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import BasicTimeline from './BasicTimeline'
-import IconsTimeline from './IconsTimeline'
+import BasicTimeline from './BasicTimeline';
+import IconsTimeline from './IconsTimeline';
 
-// ** Custom Components
-import BreadCrumbs from '@components/breadcrumbs'
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
 const Timeline = () => {
   return (
@@ -24,7 +20,7 @@ const Timeline = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Timeline
+export default Timeline;

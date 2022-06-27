@@ -1,11 +1,8 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, ButtonGroup, Row, Col } from 'reactstrap'
+import { Button, ButtonGroup, Row, Col } from 'reactstrap';
 
-// ** Icons Imports
-import { Facebook, Twitter, Instagram } from 'react-feather'
+import { Facebook, Twitter, Instagram } from 'react-feather';
 
 const ButtonGroups = () => {
   return (
@@ -33,6 +30,6 @@ const ButtonGroups = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default ButtonGroups
+  );
+};
+export default ButtonGroups;

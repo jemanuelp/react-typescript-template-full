@@ -1,7 +1,5 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -17,10 +15,9 @@ import {
   InputGroup,
   ModalHeader,
   InputGroupText
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Icons Imports
-import { Award, Gift, MessageSquare, Clipboard, Facebook, Twitter, Linkedin } from 'react-feather'
+import { Award, Gift, MessageSquare, Clipboard, Facebook, Twitter, Linkedin } from 'react-feather';
 
 const data = [
   {
@@ -38,11 +35,10 @@ const data = [
     title: 'Free Trial 🎉',
     subtitle: 'Your friend will get 30 days free trial'
   }
-]
+];
 
 const ReferEarnModal = () => {
-  // ** State
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   return (
     <Fragment>
@@ -82,7 +78,7 @@ const ReferEarnModal = () => {
                       <p>{item.subtitle}</p>
                     </div>
                   </Col>
-                )
+                );
               })}
             </Row>
           </div>
@@ -133,7 +129,7 @@ const ReferEarnModal = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ReferEarnModal
+export default ReferEarnModal;

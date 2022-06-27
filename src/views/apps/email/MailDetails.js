@@ -1,15 +1,7 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** Utils
-import { formatDate } from '@utils'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Third Party Components
-import classnames from 'classnames'
-
+import { Fragment, useState } from 'react';
+import { formatDate } from 'src/utility/Utils';
+import Avatar from 'src/@core/components/avatar';
+import classnames from 'classnames';
 import {
   Star,
   Tag,
@@ -25,10 +17,8 @@ import {
   MoreVertical,
   CornerUpLeft,
   CornerUpRight
-} from 'react-feather'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-
-// ** Reactstrap Imports
+} from 'react-feather';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
   Row,
   Col,
@@ -42,10 +32,9 @@ import {
   DropdownItem,
   DropdownToggle,
   UncontrolledDropdown
-} from 'reactstrap'
+} from 'reactstrap';
 
 const MailDetails = props => {
-  // ** Props
   const {
     mail,
     openMail,
@@ -59,10 +48,9 @@ const MailDetails = props => {
     handleLabelsUpdate,
     handleMailReadUpdate,
     formatDateToMonthShort
-  } = props
+  } = props;
 
-  // ** States
-  const [showReplies, setShowReplies] = useState(false)
+  const [showReplies, setShowReplies] = useState(false);
 
   // ** Renders Labels
   const renderLabels = arr => {
@@ -71,9 +59,9 @@ const MailDetails = props => {
         <Badge key={label} color={`light-${labelColors[label]}`} className='me-50 text-capitalize' pill>
           {label}
         </Badge>
-      ))
+      ));
     }
-  }
+  };
 
   // ** Renders Attachments
   const renderAttachments = arr => {
@@ -91,9 +79,9 @@ const MailDetails = props => {
           <span className='text-muted fw-bolder align-text-top'>{item.fileName}</span>
           <span className='text-muted font-small-2 ms-25'>{`(${item.size})`}</span>
         </a>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** Renders Messages
   const renderMessage = obj => {
@@ -169,8 +157,8 @@ const MailDetails = props => {
           </CardFooter>
         ) : null}
       </Card>
-    )
-  }
+    );
+  };
 
   // ** Renders Replies
   const renderReplies = arr => {
@@ -179,29 +167,29 @@ const MailDetails = props => {
         <Row key={index}>
           <Col sm='12'>{renderMessage(obj)}</Col>
         </Row>
-      ))
+      ));
     }
-  }
+  };
 
   // ** Handle show replies, go back, folder & read click functions
   const handleShowReplies = e => {
-    e.preventDefault()
-    setShowReplies(true)
-  }
+    e.preventDefault();
+    setShowReplies(true);
+  };
 
   const handleGoBack = () => {
-    setOpenMail(false)
-  }
+    setOpenMail(false);
+  };
 
   const handleFolderClick = (e, folder, id) => {
-    handleFolderUpdate(e, folder, [id])
-    handleGoBack()
-  }
+    handleFolderUpdate(e, folder, [id]);
+    handleGoBack();
+  };
 
   const handleReadClick = () => {
-    handleMailReadUpdate([mail.id], false)
-    handleGoBack()
-  }
+    handleMailReadUpdate([mail.id], false);
+    handleGoBack();
+  };
 
   return (
     <div
@@ -224,7 +212,7 @@ const MailDetails = props => {
                   <span
                     className='action-icon favorite'
                     onClick={() => {
-                      dispatch(updateMails({ emailIds: [mail.id], dataToUpdate: { isStarred: !mail.isStarred } }))
+                      dispatch(updateMails({ emailIds: [mail.id], dataToUpdate: { isStarred: !mail.isStarred } }));
                     }}
                   >
                     <Star
@@ -325,8 +313,8 @@ const MailDetails = props => {
                   <span
                     className='action-icon'
                     onClick={() => {
-                      handleMailToTrash([mail.id])
-                      handleGoBack()
+                      handleMailToTrash([mail.id]);
+                      handleGoBack();
                     }}
                   >
                     <Trash size={18} />
@@ -338,7 +326,7 @@ const MailDetails = props => {
                       'action-icon': mail.hasPreviousMail
                     })}
                     onClick={() => {
-                      return mail.hasPreviousMail ? dispatch(paginateMail({ dir: 'next', emailId: mail.id })) : null
+                      return mail.hasPreviousMail ? dispatch(paginateMail({ dir: 'next', emailId: mail.id })) : null;
                     }}
                   >
                     <ChevronLeft
@@ -355,7 +343,7 @@ const MailDetails = props => {
                       'action-icon': mail.hasNextMail
                     })}
                     onClick={() => {
-                      return mail.hasNextMail ? dispatch(paginateMail({ dir: 'previous', emailId: mail.id })) : null
+                      return mail.hasNextMail ? dispatch(paginateMail({ dir: 'previous', emailId: mail.id })) : null;
                     }}
                   >
                     <ChevronRight
@@ -415,7 +403,7 @@ const MailDetails = props => {
         </Fragment>
       ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default MailDetails
+export default MailDetails;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'react-feather';
 import { Card, CardBody, CardTitle, CardText, Form, Label, Button } from 'reactstrap';
-import '@styles/react/pages/page-authentication.scss';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 import InputPasswordToggle from "../../../@core/components/input-password-toggle";
 
 const ResetPasswordBasic = () => {

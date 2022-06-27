@@ -1,49 +1,43 @@
-// ** React Imports
-import { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import Flatpickr from 'react-flatpickr'
-import { Editor } from 'react-draft-wysiwyg'
-import { X, Star, Trash } from 'react-feather'
-import Select, { components } from 'react-select' //eslint-disable-line
-import { useForm, Controller } from 'react-hook-form'
-import { EditorState, ContentState } from 'draft-js'
+import classnames from 'classnames';
+import Flatpickr from 'react-flatpickr';
+import { Editor } from 'react-draft-wysiwyg';
+import { X, Star, Trash } from 'react-feather';
+import Select, { components } from 'react-select';
+import { useForm, Controller } from 'react-hook-form';
+import { EditorState, ContentState } from 'draft-js';
 
-// ** Reactstrap Imports
-import { Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap'
+import { Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap';
 
-// ** Utils
-import { isObjEmpty, selectThemeColors } from '@utils'
+import { isObjEmpty, selectThemeColors } from 'src/utility/Utils';
 
-// ** Assignee Avatars
-import img1 from '@src/assets/images/portrait/small/avatar-s-3.jpg'
-import img2 from '@src/assets/images/portrait/small/avatar-s-1.jpg'
-import img3 from '@src/assets/images/portrait/small/avatar-s-4.jpg'
-import img4 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import img5 from '@src/assets/images/portrait/small/avatar-s-2.jpg'
-import img6 from '@src/assets/images/portrait/small/avatar-s-11.jpg'
+import img1 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
+import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
+import img3 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
+import img4 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
+import img5 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
+import img6 from 'src/assets/images/portrait/small/avatar-s-11.jpg';
 
-// ** Styles Imports
-import '@styles/react/libs/editor/editor.scss'
-import '@styles/react/libs/flatpickr/flatpickr.scss'
-import '@styles/react/libs/react-select/_react-select.scss'
+ Imports;
+import 'src/@core/scss/react/libs/editor/editor.scss';
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 
 // ** Function to capitalize the first letter of string
-const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
+const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
 
 // ** Modal Header
 const ModalHeader = props => {
-  // ** Props
   const { children, store, handleTaskSidebar, setDeleted, deleted, important, setImportant, deleteTask, dispatch } =
-    props
+    props;
 
   // ** Function to delete task
   const handleDeleteTask = () => {
-    setDeleted(!deleted)
-    dispatch(deleteTask(store.selectedTask.id))
-    handleTaskSidebar()
-  }
+    setDeleted(!deleted);
+    dispatch(deleteTask(store.selectedTask.id));
+    handleTaskSidebar();
+  };
 
   return (
     <div className='modal-header d-flex align-items-center justify-content-between mb-1'>
@@ -64,21 +58,19 @@ const ModalHeader = props => {
         <X className='fw-normal mt-25' size={16} onClick={handleTaskSidebar} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const TaskSidebar = props => {
-  // ** Props
-  const { open, handleTaskSidebar, store, dispatch, updateTask, selectTask, addTask, deleteTask } = props
+  const { open, handleTaskSidebar, store, dispatch, updateTask, selectTask, addTask, deleteTask } = props;
 
-  // ** States
-  const [assignee, setAssignee] = useState({ value: 'pheobe', label: 'Pheobe Buffay', img: img1 })
-  const [tags, setTags] = useState([])
-  const [desc, setDesc] = useState(EditorState.createEmpty())
-  const [completed, setCompleted] = useState(false)
-  const [important, setImportant] = useState(false)
-  const [deleted, setDeleted] = useState(false)
-  const [dueDate, setDueDate] = useState(new Date())
+  const [assignee, setAssignee] = useState({ value: 'pheobe', label: 'Pheobe Buffay', img: img1 });
+  const [tags, setTags] = useState([]);
+  const [desc, setDesc] = useState(EditorState.createEmpty());
+  const [completed, setCompleted] = useState(false);
+  const [important, setImportant] = useState(false);
+  const [deleted, setDeleted] = useState(false);
+  const [dueDate, setDueDate] = useState(new Date());
 
   const {
     control,
@@ -89,7 +81,7 @@ const TaskSidebar = props => {
     formState: { errors }
   } = useForm({
     defaultValues: { title: '' }
-  })
+  });
 
   // ** Assignee Select Options
   const assigneeOptions = [
@@ -99,7 +91,7 @@ const TaskSidebar = props => {
     { value: 'monica', label: 'Monica Geller', img: img4 },
     { value: 'joey', label: 'Joey Tribbiani', img: img5 },
     { value: 'Rachel', label: 'Rachel Green', img: img6 }
-  ]
+  ];
 
   // ** Tag Select Options
   const tagOptions = [
@@ -108,7 +100,7 @@ const TaskSidebar = props => {
     { value: 'medium', label: 'Medium' },
     { value: 'high', label: 'High' },
     { value: 'update', label: 'Update' }
-  ]
+  ];
 
   // ** Custom Assignee Component
   const AssigneeComponent = ({ data, ...props }) => {
@@ -119,8 +111,8 @@ const TaskSidebar = props => {
           <p className='mb-0'>{data.label}</p>
         </div>
       </components.Option>
-    )
-  }
+    );
+  };
 
   // ** Returns sidebar title
   const handleSidebarTitle = () => {
@@ -134,84 +126,84 @@ const TaskSidebar = props => {
         >
           {completed === true ? 'Completed' : 'Mark Complete'}
         </Button>
-      )
+      );
     } else {
-      return 'Add Task'
+      return 'Add Task';
     }
-  }
+  };
 
   // ** Function to run when sidebar opens
   const handleSidebarOpened = () => {
-    const { selectedTask } = store
+    const { selectedTask } = store;
     if (!isObjEmpty(selectedTask)) {
-      setValue('title', selectedTask.title)
-      setCompleted(selectedTask.isCompleted)
-      setImportant(selectedTask.isImportant)
+      setValue('title', selectedTask.title);
+      setCompleted(selectedTask.isCompleted);
+      setImportant(selectedTask.isImportant);
       setAssignee([
         {
           value: selectedTask.assignee.fullName,
           label: selectedTask.assignee.fullName,
           img: selectedTask.assignee.avatar
         }
-      ])
-      setDueDate(selectedTask.dueDate)
+      ]);
+      setDueDate(selectedTask.dueDate);
       if (typeof selectedTask.description === 'string') {
-        setDesc(EditorState.createWithContent(ContentState.createFromText(selectedTask.description)))
+        setDesc(EditorState.createWithContent(ContentState.createFromText(selectedTask.description)));
       } else {
-        const obj = selectedTask.description._immutable.currentContent.blockMap
-        const property = Object.keys(obj).map(val => val)
+        const obj = selectedTask.description._immutable.currentContent.blockMap;
+        const property = Object.keys(obj).map(val => val);
 
-        setDesc(EditorState.createWithContent(ContentState.createFromText(obj[property].text)))
+        setDesc(EditorState.createWithContent(ContentState.createFromText(obj[property].text)));
       }
 
       if (selectedTask.tags.length) {
-        const tags = []
+        const tags = [];
         selectedTask.tags.map(tag => {
-          tags.push({ value: tag, label: capitalize(tag) })
-        })
-        setTags(tags)
+          tags.push({ value: tag, label: capitalize(tag) });
+        });
+        setTags(tags);
       }
     }
-  }
+  };
 
   // ** Function to run when sidebar closes
   const handleSidebarClosed = () => {
-    setTags([])
-    setDesc('')
-    setValue('title', '')
-    setAssignee({ value: 'pheobe', label: 'Pheobe Buffay', img: img1 })
-    setCompleted(false)
-    setImportant(false)
-    setDueDate(new Date())
-    dispatch(selectTask({}))
-    clearErrors()
-  }
+    setTags([]);
+    setDesc('');
+    setValue('title', '');
+    setAssignee({ value: 'pheobe', label: 'Pheobe Buffay', img: img1 });
+    setCompleted(false);
+    setImportant(false);
+    setDueDate(new Date());
+    dispatch(selectTask({}));
+    clearErrors();
+  };
 
   // ** Function to reset fields
   const handleResetFields = () => {
-    const descValue = EditorState.createWithContent(ContentState.createFromText(store.selectedTask.description))
+    const descValue = EditorState.createWithContent(ContentState.createFromText(store.selectedTask.description));
 
-    setValue('title', store.selectedTask.title)
-    setDesc(descValue)
-    setCompleted(store.selectedTask.isCompleted)
-    setImportant(store.selectedTask.isImportant)
-    setDeleted(store.selectedTask.isDeleted)
-    setDueDate(store.selectedTask.dueDate)
+    setValue('title', store.selectedTask.title);
+    setDesc(descValue);
+    setCompleted(store.selectedTask.isCompleted);
+    setImportant(store.selectedTask.isImportant);
+    setDeleted(store.selectedTask.isDeleted);
+    setDueDate(store.selectedTask.dueDate);
     if (store.selectedTask.assignee.fullName !== assignee.label) {
       setAssignee({
         value: store.selectedTask.assignee.fullName,
         label: store.selectedTask.assignee.fullName,
         img: store.selectedTask.assignee.avatar
-      })
+      });
     }
     if (store.selectedTask.tags.length) {
-      const tags = []
+      const tags = [];
       store.selectedTask.tags.map(tag => {
-        tags.push({ value: tag, label: capitalize(tag) })
-      })
-      setTags(tags)
+        tags.push({ value: tag, label: capitalize(tag) });
+      });
+      setTags(tags);
     }
-  }
+  };
 
   // ** Renders Footer Buttons
   const renderFooterButtons = () => {
@@ -225,7 +217,7 @@ const TaskSidebar = props => {
             Reset
           </Button>
         </Fragment>
-      )
+      );
     } else {
       return (
         <Fragment>
@@ -236,23 +228,23 @@ const TaskSidebar = props => {
             Cancel
           </Button>
         </Fragment>
-      )
+      );
     }
-  }
+  };
 
   const onSubmit = data => {
-    const newTaskTag = []
+    const newTaskTag = [];
 
-    const doesInclude = !isObjEmpty(store.selectedTask) && assignee.label === store.selectedTask.assignee.fullName
+    const doesInclude = !isObjEmpty(store.selectedTask) && assignee.label === store.selectedTask.assignee.fullName;
 
     if (tags.length) {
-      tags.map(tag => newTaskTag.push(tag.value))
+      tags.map(tag => newTaskTag.push(tag.value));
     }
 
     const newAssignee = {
       fullName: assignee.label,
       avatar: assignee.img
-    }
+    };
     const state = {
       dueDate,
       title: data.title,
@@ -262,23 +254,23 @@ const TaskSidebar = props => {
       isDeleted: deleted,
       isImportant: important,
       assignee: doesInclude || assignee.label === undefined ? store.selectedTask.assignee : newAssignee
-    }
+    };
 
     if (data.title.length) {
       if (isObjEmpty(errors)) {
         if (isObjEmpty(store.selectedTask) || (!isObjEmpty(store.selectedTask) && !store.selectedTask.title.length)) {
-          dispatch(addTask(state))
+          dispatch(addTask(state));
         } else {
-          dispatch(updateTask({ ...state, id: store.selectedTask.id }))
+          dispatch(updateTask({ ...state, id: store.selectedTask.id }));
         }
-        handleTaskSidebar()
+        handleTaskSidebar();
       }
     } else {
       setError('title', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
   return (
     <Modal
       isOpen={open}
@@ -365,7 +357,7 @@ const TaskSidebar = props => {
               theme={selectThemeColors}
               value={tags}
               onChange={data => {
-                setTags(data !== null ? [...data] : [])
+                setTags(data !== null ? [...data] : []);
               }}
             />
           </div>
@@ -390,7 +382,7 @@ const TaskSidebar = props => {
         </ModalBody>
       </Form>
     </Modal>
-  )
-}
+  );
+};
 
-export default TaskSidebar
+export default TaskSidebar;

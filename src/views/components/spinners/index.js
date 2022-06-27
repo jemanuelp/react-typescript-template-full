@@ -1,26 +1,21 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import SpinnerFlex from './SpinnerFlex'
-import SpinnerFloat from './SpinnerFloat'
-import SpinnerSizes from './SpinnerSizes'
-import SpinnerGrow from './SpinnerGrowing'
-import SpinnerBorder from './SpinnerBorder'
-import SpinnerColors from './SpinnerColors'
-import SpinnerButtons from './SpinnerButtons'
-import SpinnerGrowColors from './SpinnerGrowingColored'
-import SpinnerTextAlignment from './SpinnerTextAlignment'
+import SpinnerFlex from './SpinnerFlex';
+import SpinnerFloat from './SpinnerFloat';
+import SpinnerSizes from './SpinnerSizes';
+import SpinnerGrow from './SpinnerGrowing';
+import SpinnerBorder from './SpinnerBorder';
+import SpinnerColors from './SpinnerColors';
+import SpinnerButtons from './SpinnerButtons';
+import SpinnerGrowColors from './SpinnerGrowingColored';
+import SpinnerTextAlignment from './SpinnerTextAlignment';
 
 // ** Source Code
 import {
@@ -32,13 +27,13 @@ import {
   spinnerColors,
   spinnerGrowing,
   spinnerGrowColors,
-  spinnerTextAlignment
-} from './SpinnerSourceCode'
+  spinnerTextAlignment,
+} from './SpinnerSourceCode';
 
 const Spinners = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -115,6 +110,6 @@ const Spinners = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Spinners
+  );
+};
+export default Spinners;

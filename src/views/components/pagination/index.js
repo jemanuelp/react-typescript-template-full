@@ -1,27 +1,22 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import PaginationInfo from './PaginationInfo'
-import PaginationIcon from './PaginationIcons'
-import PaginationBasic from './PaginationBasic'
-import PaginationSizes from './PaginationSizes'
-import PaginationDanger from './PaginationDanger'
-import PaginationSuccess from './PaginationSuccess'
-import PaginationWarning from './PaginationWarning'
-import PaginationPositions from './PaginationPositions'
-import PaginationSeparated from './PaginationSeparated'
-import PaginationIconText from './PaginationIconsAndText'
+import PaginationInfo from './PaginationInfo';
+import PaginationIcon from './PaginationIcons';
+import PaginationBasic from './PaginationBasic';
+import PaginationSizes from './PaginationSizes';
+import PaginationDanger from './PaginationDanger';
+import PaginationSuccess from './PaginationSuccess';
+import PaginationWarning from './PaginationWarning';
+import PaginationPositions from './PaginationPositions';
+import PaginationSeparated from './PaginationSeparated';
+import PaginationIconText from './PaginationIconsAndText';
 
 // ** Source Code
 import {
@@ -34,13 +29,13 @@ import {
   paginationWarning,
   paginationPositions,
   paginationSeparated,
-  paginationIconsAndText
-} from './PaginationSourceCode'
+  paginationIconsAndText,
+} from './PaginationSourceCode';
 
 const Pagination = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -126,6 +121,6 @@ const Pagination = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Pagination
+  );
+};
+export default Pagination;

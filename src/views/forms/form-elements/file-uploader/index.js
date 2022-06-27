@@ -1,19 +1,14 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Demo Components
-import FileUploaderSingle from './FileUploaderSingle'
-import FileUploaderMultiple from './FileUploaderMultiple'
-import FileUploaderRestrictions from './FileUploaderRestrictions'
+import FileUploaderSingle from './FileUploaderSingle';
+import FileUploaderMultiple from './FileUploaderMultiple';
+import FileUploaderRestrictions from './FileUploaderRestrictions';
 
-// ** Styles
-import '@styles/react/libs/file-uploader/file-uploader.scss'
+import 'src/@core/scss/react/libs/file-uploader/file-uploader.scss';
 
 const Uploader = () => {
   return (
@@ -36,7 +31,7 @@ const Uploader = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Uploader
+export default Uploader;

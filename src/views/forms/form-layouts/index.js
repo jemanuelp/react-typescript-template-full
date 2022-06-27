@@ -1,18 +1,14 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import VerticalForm from './VerticalForm'
-import HorizontalForm from './HorizontalForm'
-import VerticalFormIcons from './VerticalFormIcons'
-import MultipleColumnForm from './MultipleColumnForm'
-import HorizontalFormIcons from './HorizontalFormIcons'
+import VerticalForm from './VerticalForm';
+import HorizontalForm from './HorizontalForm';
+import VerticalFormIcons from './VerticalFormIcons';
+import MultipleColumnForm from './MultipleColumnForm';
+import HorizontalFormIcons from './HorizontalFormIcons';
 
 const FormLayouts = () => {
   return (
@@ -36,6 +32,6 @@ const FormLayouts = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default FormLayouts
+  );
+};
+export default FormLayouts;

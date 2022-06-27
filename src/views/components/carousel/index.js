@@ -1,15 +1,15 @@
-import { Fragment, useEffect } from 'react'
-import { Info } from 'react-feather'
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
-import CarouselBasic from './CarouselBasic'
-import CarouselCaptions from './CarouselCaptions'
-import CarouselUncontrolled from './CarouselUncontrolled'
-import CarouselInterval from './CarouselInterval'
-import CarouselKeyboard from './CarouselKeyboard'
-import CarouselPause from './CarouselPause'
-import Prism from 'prismjs'
-import { Row, Col, CardText, Alert } from 'reactstrap'
+import { Fragment, useEffect } from 'react';
+import { Info } from 'react-feather';
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
+import CarouselBasic from './CarouselBasic';
+import CarouselCaptions from './CarouselCaptions';
+import CarouselUncontrolled from './CarouselUncontrolled';
+import CarouselInterval from './CarouselInterval';
+import CarouselKeyboard from './CarouselKeyboard';
+import CarouselPause from './CarouselPause';
+import Prism from 'prismjs';
+import { Row, Col, CardText, Alert } from 'reactstrap';
 import {
   carouselBasic,
   carouselCaptions,
@@ -17,12 +17,12 @@ import {
   carouselPause,
   carouselKeyboard,
   carouselUncontrolled
-} from './CarouselSourceCode'
+} from './CarouselSourceCode';
 
 const Carousel = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Carousel' data={[{ title: 'Components' }, { title: 'Carousel' }]} />
@@ -82,6 +82,6 @@ const Carousel = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Carousel
+  );
+};
+export default Carousel;

@@ -1,9 +1,7 @@
-// ** Third Party Components
-import wNumb from 'wnumb'
-import Nouislider from 'nouislider-react'
+import wNumb from 'wnumb';
+import Nouislider from 'nouislider-react';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const SliderTooltips = ({ direction }) => {
   return (
@@ -34,7 +32,7 @@ const SliderTooltips = ({ direction }) => {
         />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderTooltips
+export default SliderTooltips;

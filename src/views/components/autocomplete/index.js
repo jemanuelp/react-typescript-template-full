@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import AutoCompleteAjax from './AutoCompleteAjax'
-import AutoCompleteBasic from './AutoCompleteBasic'
-import AutoCompleteRender from './AutoCompleteRender'
-import AutoCompleteSections from './AutoCompleteSections'
-import AutoCompleteSearchLimit from './AutoCompleteLimit'
-import AutoCompleteSuggestions from './AutoCompleteSuggestions'
+import AutoCompleteAjax from './AutoCompleteAjax';
+import AutoCompleteBasic from './AutoCompleteBasic';
+import AutoCompleteRender from './AutoCompleteRender';
+import AutoCompleteSections from './AutoCompleteSections';
+import AutoCompleteSearchLimit from './AutoCompleteLimit';
+import AutoCompleteSuggestions from './AutoCompleteSuggestions';
 
 // ** Source Code
 import {
@@ -26,13 +21,13 @@ import {
   sectionExample,
   searchLimitExample,
   customRenderExample,
-  defaultSuggestionsExample
-} from './AutoCompleteSourceCode'
+  defaultSuggestionsExample,
+} from './AutoCompleteSourceCode';
 
 const AutoComplete = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Auto Complete' data={[{ title: 'Components' }, { title: 'Auto Complete' }]} />
@@ -69,6 +64,6 @@ const AutoComplete = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default AutoComplete
+  );
+};
+export default AutoComplete;

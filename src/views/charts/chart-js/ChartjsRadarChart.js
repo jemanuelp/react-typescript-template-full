@@ -1,20 +1,15 @@
-// ** React Imports
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import { Radar } from 'react-chartjs-2'
+import { Radar } from 'react-chartjs-2';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
-  // ** States
   const [chartData, setChartData] = useState({
     datasets: []
-  })
-
-  // ** Hooks
-  const chartRef = useRef(null)
+  });
+  
+  const chartRef = useRef(null);
 
   // ** Chart Options
   const options = {
@@ -45,19 +40,19 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
         }
       }
     }
-  }
+  };
 
   useEffect(() => {
     if (!chartRef.current) {
     } else {
       // For radar gradient color
-      const gradientBlue = chartRef.current.ctx.createLinearGradient(0, 0, 0, 150)
-      gradientBlue.addColorStop(0, 'rgba(155,136,250, 0.9)')
-      gradientBlue.addColorStop(1, 'rgba(155,136,250, 0.8)')
+      const gradientBlue = chartRef.current.ctx.createLinearGradient(0, 0, 0, 150);
+      gradientBlue.addColorStop(0, 'rgba(155,136,250, 0.9)');
+      gradientBlue.addColorStop(1, 'rgba(155,136,250, 0.8)');
 
-      const gradientRed = chartRef.current.ctx.createLinearGradient(0, 0, 0, 150)
-      gradientRed.addColorStop(0, 'rgba(255,161,161, 0.9)')
-      gradientRed.addColorStop(1, 'rgba(255,161,161, 0.8)')
+      const gradientRed = chartRef.current.ctx.createLinearGradient(0, 0, 0, 150);
+      gradientRed.addColorStop(0, 'rgba(255,161,161, 0.9)');
+      gradientRed.addColorStop(1, 'rgba(255,161,161, 0.8)');
 
       const chartData = {
         labels: ['STA', 'STR', 'AGI', 'VIT', 'CHA', 'INT'],
@@ -81,22 +76,22 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
             pointBackgroundColor: 'transparent'
           }
         ]
-      }
+      };
 
-      setChartData(chartData)
+      setChartData(chartData);
     }
-  }, [])
+  }, []);
 
   //** To add spacing between legends and chart
   const plugins = [
     {
       beforeInit(chart) {
         chart.legend.afterFit = function () {
-          this.height += 20
-        }
+          this.height += 20;
+        };
       }
     }
-  ]
+  ];
 
   return (
     <Card>
@@ -109,7 +104,7 @@ const ChartjsRadarChart = ({ gridLineColor, labelColor }) => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsRadarChart
+export default ChartjsRadarChart;

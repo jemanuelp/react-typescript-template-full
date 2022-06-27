@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Eye, EyeOff } from 'react-feather';
 
-// ** Reactstrap Imports
 import { InputGroup, Input, InputGroupText, Label } from 'reactstrap';
 
 const InputPasswordToggle = forwardRef((props: any, ref) => {
@@ -21,7 +20,6 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
     ...rest
   } = props;
 
-  // ** State
   const [inputVisibility, setInputVisibility] = useState(visible);
 
   // ** Renders Icon Based On Visibility
@@ -56,14 +54,11 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
           className={classnames({
             [inputClassName]: inputClassName
           })}
-          /*eslint-disable */
-          {...(label && htmlFor
-            ? {
+          
+          {...(label && htmlFor ? {
                 id: htmlFor
-              }
-            : {})}
+              } : {})}
           {...rest}
-          /*eslint-enable */
         />
         <InputGroupText className='cursor-pointer' onClick={() => setInputVisibility(!inputVisibility)}>
           {renderIcon()}
@@ -75,7 +70,6 @@ const InputPasswordToggle = forwardRef((props: any, ref) => {
 
 export default InputPasswordToggle;
 
-// ** PropTypes
 InputPasswordToggle.propTypes = {
   invalid: PropTypes.bool,
   hideIcon: PropTypes.node,

@@ -1,29 +1,24 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, Alert, CardText } from 'reactstrap'
+import { Row, Col, Alert, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
-import { Info } from 'react-feather'
+import Prism from 'prismjs';
+import { Info } from 'react-feather';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import ListGroupTags from './ListGroupTag'
-import ListGroupFlush from './ListGroupFlush'
-import ListGroupIcons from './ListGroupIcons'
-import ListGroupCustom from './ListGroupCustom'
-import ListGroupBadges from './ListGroupBadges'
-import ListGroupSimple from './ListGroupSimple'
-import ListGroupNumbered from './ListGroupNumbered'
-import ListGroupDisabled from './ListGroupDisabled'
-import ListGroupContextual from './ListGroupContextual'
-import ListGroupHorizontal from './ListGroupHorizontal'
-import ListGroupNavigation from './ListGroupNavigation'
+import ListGroupTags from './ListGroupTag';
+import ListGroupFlush from './ListGroupFlush';
+import ListGroupIcons from './ListGroupIcons';
+import ListGroupCustom from './ListGroupCustom';
+import ListGroupBadges from './ListGroupBadges';
+import ListGroupSimple from './ListGroupSimple';
+import ListGroupNumbered from './ListGroupNumbered';
+import ListGroupDisabled from './ListGroupDisabled';
+import ListGroupContextual from './ListGroupContextual';
+import ListGroupHorizontal from './ListGroupHorizontal';
+import ListGroupNavigation from './ListGroupNavigation';
 
 // ** Source Code
 import {
@@ -37,13 +32,13 @@ import {
   listGroupDisabled,
   listGroupContextual,
   listGroupHorizontal,
-  listGroupNavigation
-} from './ListGroupSourceCode'
+  listGroupNavigation,
+} from './ListGroupSourceCode';
 
 const ListGroup = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -143,7 +138,7 @@ const ListGroup = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ListGroup
+export default ListGroup;

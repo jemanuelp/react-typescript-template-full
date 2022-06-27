@@ -1,23 +1,18 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import BadgeGlow from './BadgePillGlow'
-import BadgePillBlock from './BadgeBlock'
-import BadgePillLink from './BadgePillLink'
-import BadgePillLight from './BadgePillLight'
-import BadgeNotification from './BadgeNotification'
-import BadgePillContextual from './BadgePillContextual'
+import BadgeGlow from './BadgePillGlow';
+import BadgePillBlock from './BadgeBlock';
+import BadgePillLink from './BadgePillLink';
+import BadgePillLight from './BadgePillLight';
+import BadgeNotification from './BadgeNotification';
+import BadgePillContextual from './BadgePillContextual';
 
 // ** Source Code
 import {
@@ -26,13 +21,13 @@ import {
   badgePillBlock,
   badgePillLight,
   badgePillContextual,
-  badgePillNotification
-} from './BadgePillSourceCode'
+  badgePillNotification,
+} from './BadgePillSourceCode';
 
 const BadgePill = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Pill Badges' data={[{ title: 'Components' }, { title: 'Pill Badges' }]} />
@@ -91,6 +86,6 @@ const BadgePill = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default BadgePill
+  );
+};
+export default BadgePill;

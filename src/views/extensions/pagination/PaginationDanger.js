@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
+import ReactPaginate from 'react-paginate';
 const PaginationDanger = () => {
   return (
     <Card>
@@ -30,6 +28,6 @@ const PaginationDanger = () => {
         />
       </CardBody>
     </Card>
-  )
-}
-export default PaginationDanger
+  );
+};
+export default PaginationDanger;

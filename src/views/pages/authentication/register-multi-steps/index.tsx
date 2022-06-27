@@ -7,6 +7,7 @@ import PersonalInfo from './steps/PersonalInfo';
 import AccountDetails from './steps/AccountDetails';
 import '../../../../@core/scss/react/pages/page-authentication.scss';
 import Wizard from "../../../../@core/components/wizard";
+import * as CreateAccountSvg from "../../../../../src/assets/images/pages/create-account.svg";
 
 const RegisterMultiSteps = () => {
   const ref = useRef(null);
@@ -36,7 +37,7 @@ const RegisterMultiSteps = () => {
     }
   ];
 
-  const source = require('@src/assets/images/pages/create-account.svg').default;
+  const source = CreateAccountSvg.default;
 
   return (
     <div className='auth-wrapper auth-cover'>

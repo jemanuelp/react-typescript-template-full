@@ -1,13 +1,10 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ModalEvents = () => {
-  // ** States
-  const [modalOpened, setModalOpened] = useState(false)
-  const [modalClosed, setModalClosed] = useState(false)
+  const [modalOpened, setModalOpened] = useState(false);
+  const [modalClosed, setModalClosed] = useState(false);
 
   return (
     <div className='demo-inline-spacing'>
@@ -56,7 +53,7 @@ const ModalEvents = () => {
         </Modal>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ModalEvents
+export default ModalEvents;

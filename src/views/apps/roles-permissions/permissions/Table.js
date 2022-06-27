@@ -1,25 +1,23 @@
-// ** React Imports
-import { useEffect, useState, Fragment } from 'react'
+import { useEffect, useState, Fragment } from 'react';
 
-// ** Table Columns
-import { columns } from './columns'
 
-// ** Reactstrap Imports
-import { Alert, Row, Col, Label, Form, Input, Button, Modal, ModalHeader, ModalBody, FormFeedback } from 'reactstrap'
+import { columns } from './columns';
 
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getData, addPermission, deletePermission, selectPermission, updatePermission } from '../store'
+import { Alert, Row, Col, Label, Form, Input, Button, Modal, ModalHeader, ModalBody, FormFeedback } from 'reactstrap';
 
-// ** Third party Components
-import classnames from 'classnames'
-import ReactPaginate from 'react-paginate'
-import DataTable from 'react-data-table-component'
-import { useForm, Controller } from 'react-hook-form'
-import { ChevronDown, Edit, Trash } from 'react-feather'
 
-// ** Styles
-import '@styles/react/libs/tables/react-dataTable-component.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import { getData, addPermission, deletePermission, selectPermission, updatePermission } from '../store';
+
+
+import classnames from 'classnames';
+import ReactPaginate from 'react-paginate';
+import DataTable from 'react-data-table-component';
+import { useForm, Controller } from 'react-hook-form';
+import { ChevronDown, Edit, Trash } from 'react-feather';
+
+
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
 
 const CustomHeader = ({
   role,
@@ -80,13 +78,13 @@ const CustomHeader = ({
         </div>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
 const Table = () => {
-  // ** Store Vars & Hooks
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.permissions)
+   & Hooks
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.permissions);
   const {
     reset,
     control,
@@ -94,14 +92,13 @@ const Table = () => {
     setValue,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues: { permissionName: '' } })
+  } = useForm({ defaultValues: { permissionName: '' } });
 
-  // ** States
-  const [show, setShow] = useState(false)
-  const [assignedTo, setAssignedTo] = useState('')
-  const [searchTerm, setSearchTerm] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
+  const [show, setShow] = useState(false);
+  const [assignedTo, setAssignedTo] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   // ** Get data on mount
   useEffect(() => {
@@ -112,8 +109,8 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }, [dispatch, store.data.length])
+    );
+  }, [dispatch, store.data.length]);
 
   // ** Function in get data on page change
   const handlePagination = page => {
@@ -124,13 +121,13 @@ const Table = () => {
         perPage: rowsPerPage,
         page: page.selected + 1
       })
-    )
-    setCurrentPage(page.selected + 1)
-  }
+    );
+    setCurrentPage(page.selected + 1);
+  };
 
   // ** Function in get data on rows per page
   const handlePerPage = e => {
-    const value = parseInt(e.currentTarget.value)
+    const value = parseInt(e.currentTarget.value);
     dispatch(
       getData({
         assignedTo,
@@ -138,13 +135,13 @@ const Table = () => {
         perPage: value,
         page: currentPage
       })
-    )
-    setRowsPerPage(value)
-  }
+    );
+    setRowsPerPage(value);
+  };
 
   // ** Function in get data on search query change
   const handleFilter = val => {
-    setSearchTerm(val)
+    setSearchTerm(val);
     dispatch(
       getData({
         q: val,
@@ -152,12 +149,12 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }
+    );
+  };
 
   // ** Function to filter Roles
   const handleAssignedToChange = val => {
-    setAssignedTo(val)
+    setAssignedTo(val);
     dispatch(
       getData({
         q: searchTerm,
@@ -165,12 +162,12 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }
+    );
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => {
-    const count = Number(Math.ceil(store.total / rowsPerPage))
+    const count = Number(Math.ceil(store.total / rowsPerPage));
 
     return (
       <ReactPaginate
@@ -188,53 +185,53 @@ const Table = () => {
         pageLinkClassName={'page-link'}
         containerClassName={'pagination react-paginate justify-content-end my-2 pe-1'}
       />
-    )
-  }
+    );
+  };
 
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
       q: searchTerm
-    }
+    };
 
     const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0
-    })
+      return filters[k].length > 0;
+    });
 
     if (store.data.length > 0) {
-      return store.data
+      return store.data;
     } else if (store.data.length === 0 && isFiltered) {
-      return []
+      return [];
     } else {
-      return store.allData.slice(0, rowsPerPage)
+      return store.allData.slice(0, rowsPerPage);
     }
-  }
+  };
 
   const handleEditClick = data => {
-    dispatch(selectPermission(data))
-    setValue('permissionName', data.name)
-    setShow(true)
-  }
+    dispatch(selectPermission(data));
+    setValue('permissionName', data.name);
+    setShow(true);
+  };
 
   const handleModalClosed = () => {
-    dispatch(selectPermission(null))
-    setValue('permissionName', '')
-  }
+    dispatch(selectPermission(null));
+    setValue('permissionName', '');
+  };
 
   const onSubmit = data => {
     if (data.permissionName.length) {
       if (store.selected !== null) {
-        dispatch(updatePermission({ name: data.permissionName, id: store.selected.id }))
+        dispatch(updatePermission({ name: data.permissionName, id: store.selected.id }));
       } else {
-        dispatch(addPermission({ name: data.permissionName }))
+        dispatch(addPermission({ name: data.permissionName }));
       }
-      setShow(false)
+      setShow(false);
     } else {
       setError('permissionName', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   const updatedColumns = [
     ...columns,
@@ -255,23 +252,23 @@ const Table = () => {
               <Trash className='font-medium-2' />
             </Button>
           </div>
-        )
+        );
       }
     }
-  ]
+  ];
 
   const handleDiscard = () => {
-    reset()
-    setShow(false)
-  }
+    reset();
+    setShow(false);
+  };
 
   const renderModalSubtitle = () => {
     if (store.selected !== null) {
-      return 'Edit permission as per your requirements.'
+      return 'Edit permission as per your requirements.';
     } else {
-      return 'Permissions you may use and assign to your users.'
+      return 'Permissions you may use and assign to your users.';
     }
-  }
+  };
 
   const renderForm = () => {
     if (store.selected === null) {
@@ -308,7 +305,7 @@ const Table = () => {
             </Button>
           </Col>
         </Row>
-      )
+      );
     } else {
       return (
         <Fragment>
@@ -350,9 +347,9 @@ const Table = () => {
             </Col>
           </Row>
         </Fragment>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -398,7 +395,7 @@ const Table = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

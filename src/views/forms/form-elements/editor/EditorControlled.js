@@ -1,16 +1,12 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { EditorState } from 'draft-js'
-import { Editor } from 'react-draft-wysiwyg'
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const EditorControlled = () => {
-  // ** State
-  const [value, setValue] = useState(EditorState.createEmpty())
+  const [value, setValue] = useState(EditorState.createEmpty());
 
   return (
     <Card>
@@ -21,7 +17,7 @@ const EditorControlled = () => {
         <Editor editorState={value} onEditorStateChange={data => setValue(data)} />
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default EditorControlled
+export default EditorControlled;

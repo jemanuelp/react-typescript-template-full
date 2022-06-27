@@ -1,12 +1,9 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Tooltip } from 'reactstrap'
+import { Button, Tooltip } from 'reactstrap';
 
 const TooltipControlled = () => {
-  // ** State
-  const [tooltipOpen, setTooltipOpen] = useState(false)
+  const [tooltipOpen, setTooltipOpen] = useState(false);
 
   return (
     <Fragment>
@@ -22,6 +19,6 @@ const TooltipControlled = () => {
         Hello World !
       </Tooltip>
     </Fragment>
-  )
-}
-export default TooltipControlled
+  );
+};
+export default TooltipControlled;

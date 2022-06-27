@@ -1,29 +1,24 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import PopoverTriggers from './PopoverTriggers'
-import PopoverPositions from './PopoverPositions'
-import PopoverControlled from './PopoverControlled'
-import PopoverUncontrolled from './PopoverUncontrolled'
+import PopoverTriggers from './PopoverTriggers';
+import PopoverPositions from './PopoverPositions';
+import PopoverControlled from './PopoverControlled';
+import PopoverUncontrolled from './PopoverUncontrolled';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
 // ** Source Code
-import { popoverControlled, popoverUncontrolled, popoverPositions, popoverTriggers } from './PopoverSourceCode'
+import { popoverControlled, popoverUncontrolled, popoverPositions, popoverTriggers } from './PopoverSourceCode';
 
 const Popover = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -68,6 +63,6 @@ const Popover = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Popover
+  );
+};
+export default Popover;

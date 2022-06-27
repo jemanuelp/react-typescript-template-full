@@ -1,18 +1,13 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Third Party Components
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import TableServerSide from './TableServerSide'
-import TableAdvSearch from './TableAdvSearch'
+import TableServerSide from './TableServerSide';
+import TableAdvSearch from './TableAdvSearch';
 
-// ** Styles
-import '@styles/react/libs/tables/react-dataTable-component.scss'
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
 
 const Tables = () => {
   return (
@@ -27,7 +22,7 @@ const Tables = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Tables
+export default Tables;

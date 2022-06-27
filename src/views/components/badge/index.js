@@ -1,31 +1,26 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import BadgeLink from './BadgeLink'
-import BadgeGlow from './BadgeGlow'
-import BadgeBlock from './BadgeBlock'
-import BadgeIcons from './BadgeIcons'
-import BadgeLight from './BadgeLight'
-import BadgeContextual from './BadgeContextual'
+import BadgeLink from './BadgeLink';
+import BadgeGlow from './BadgeGlow';
+import BadgeBlock from './BadgeBlock';
+import BadgeIcons from './BadgeIcons';
+import BadgeLight from './BadgeLight';
+import BadgeContextual from './BadgeContextual';
 
 // ** Source Code
-import { badgeContextual, badgeGlow, badgeLight, badgeIcons, badgeLink, badgeBlock } from './BadgeSourceCode'
+import { badgeContextual, badgeGlow, badgeLight, badgeIcons, badgeLink, badgeBlock } from './BadgeSourceCode';
 
 const Badges = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
   return (
     <Fragment>
       <BreadCrumbs title='Badges' data={[{ title: 'Components' }, { title: 'Badges' }]} />
@@ -80,6 +75,6 @@ const Badges = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Badges
+  );
+};
+export default Badges;

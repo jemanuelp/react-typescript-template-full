@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Toast, ToastBody, ToastHeader, Spinner, Row, Col } from 'reactstrap'
+
+import { Toast, ToastBody, ToastHeader, Spinner, Row, Col } from 'reactstrap';
 
 const logo = (
   <svg viewBox='0 0 139 95' version='1.1' height='14'>
@@ -50,9 +50,9 @@ const logo = (
       </g>
     </g>
   </svg>
-)
+);
 
-const close = <button type='button' className='ms-1 btn-close'></button>
+const close = <button type='button' className='ms-1 btn-close'></button>;
 
 const ToastHeaderIcons = () => {
   return (
@@ -124,6 +124,6 @@ const ToastHeaderIcons = () => {
         </Toast>
       </Col>
     </Row>
-  )
-}
-export default ToastHeaderIcons
+  );
+};
+export default ToastHeaderIcons;

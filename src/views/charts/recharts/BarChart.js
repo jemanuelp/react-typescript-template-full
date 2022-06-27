@@ -1,10 +1,8 @@
-// ** Third Party Components
-import { Calendar } from 'react-feather'
-import Flatpickr from 'react-flatpickr'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { Calendar } from 'react-feather';
+import Flatpickr from 'react-flatpickr';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 // ** Chart Data
 const data = [
@@ -78,7 +76,7 @@ const data = [
     oneplus: 70,
     motorola: 110
   }
-]
+];
 
 const CustomTooltip = data => {
   if (data.active && data.payload) {
@@ -100,15 +98,15 @@ const CustomTooltip = data => {
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};
 
 const SimpleBarChart = () => {
   return (
@@ -121,7 +119,6 @@ const SimpleBarChart = () => {
             className='form-control flat-picker bg-transparent border-0 shadow-none'
             options={{
               mode: 'range',
-              // eslint-disable-next-line no-mixed-operators
               defaultDate: [new Date(), new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000)]
             }}
           />
@@ -163,6 +160,6 @@ const SimpleBarChart = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimpleBarChart
+  );
+};
+export default SimpleBarChart;

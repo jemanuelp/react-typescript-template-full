@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
-import CardAction from '@components/card-actions'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
+import CardAction from 'src/@core/components/card-actions';
 
-// ** Icons Imports
-import { ChevronDown, RotateCw, X } from 'react-feather'
+import { ChevronDown, RotateCw, X } from 'react-feather';
 
-// ** Reactstrap Imports
-import { CardBody, CardText, Row, Col, Table } from 'reactstrap'
+import { CardBody, CardText, Row, Col, Table } from 'reactstrap';
 
 const CardActions = () => {
   return (
@@ -21,7 +17,7 @@ const CardActions = () => {
             title='Card Actions'
             actions={['collapse', 'reload', 'remove']}
             endReload={endLoading => {
-              setTimeout(() => endLoading(), 2000)
+              setTimeout(() => endLoading(), 2000);
             }}
           >
             <CardBody className='pt-0'>
@@ -80,7 +76,7 @@ const CardActions = () => {
             title='Reload'
             actions='reload'
             endReload={endLoading => {
-              setTimeout(() => endLoading(), 2000)
+              setTimeout(() => endLoading(), 2000);
             }}
           >
             <CardBody className='pt-0'>
@@ -109,6 +105,6 @@ const CardActions = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default CardActions
+  );
+};
+export default CardActions;

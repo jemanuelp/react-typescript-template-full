@@ -1,23 +1,20 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, ButtonGroup, Row, Col, CardText } from 'reactstrap'
+import { Button, ButtonGroup, Row, Col, CardText } from 'reactstrap';
 
 const ButtonCheckboxRadio = () => {
-  // ** States
-  const [cSelected, setCSelected] = useState([1])
-  const [rSelected, setRSelected] = useState(1)
+  const [cSelected, setCSelected] = useState([1]);
+  const [rSelected, setRSelected] = useState(1);
 
   const onCheckboxBtnClick = selected => {
-    const index = cSelected.indexOf(selected)
+    const index = cSelected.indexOf(selected);
     if (index < 0) {
-      cSelected.push(selected)
+      cSelected.push(selected);
     } else {
-      cSelected.splice(index, 1)
+      cSelected.splice(index, 1);
     }
-    setCSelected([...cSelected])
-  }
+    setCSelected([...cSelected]);
+  };
 
   return (
     <Row>
@@ -50,7 +47,7 @@ const ButtonCheckboxRadio = () => {
         <CardText>Selected: {rSelected}</CardText>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ButtonCheckboxRadio
+export default ButtonCheckboxRadio;

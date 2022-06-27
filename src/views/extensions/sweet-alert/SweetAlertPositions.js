@@ -1,11 +1,9 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const SweetAlertPositions = () => {
   const handleTopStart = () => {
@@ -15,8 +13,8 @@ const SweetAlertPositions = () => {
       title: 'Your work has been saved',
       showConfirmButton: false,
       timer: 1500
-    })
-  }
+    });
+  };
 
   const handleTopEnd = () => {
     return MySwal.fire({
@@ -25,8 +23,8 @@ const SweetAlertPositions = () => {
       title: 'Your work has been saved',
       showConfirmButton: false,
       timer: 1500
-    })
-  }
+    });
+  };
 
   const handleBottomStart = () => {
     return MySwal.fire({
@@ -35,8 +33,8 @@ const SweetAlertPositions = () => {
       title: 'Your work has been saved',
       showConfirmButton: false,
       timer: 1500
-    })
-  }
+    });
+  };
 
   const handleBottomEnd = () => {
     return MySwal.fire({
@@ -45,8 +43,8 @@ const SweetAlertPositions = () => {
       title: 'Your work has been saved',
       showConfirmButton: false,
       timer: 1500
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -77,7 +75,7 @@ const SweetAlertPositions = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SweetAlertPositions
+export default SweetAlertPositions;

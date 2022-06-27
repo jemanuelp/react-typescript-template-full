@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Progress } from 'reactstrap'
+
+import { Progress } from 'reactstrap';
 
 const ProgressAnimated = () => {
   return (
@@ -10,6 +10,6 @@ const ProgressAnimated = () => {
       <Progress animated striped className='progress-bar-warning' value={80} />
       <Progress animated striped className='progress-bar-info' value={100} />
     </div>
-  )
-}
-export default ProgressAnimated
+  );
+};
+export default ProgressAnimated;

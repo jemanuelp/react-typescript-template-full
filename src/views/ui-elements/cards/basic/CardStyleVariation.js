@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 const CardStyleVariation = () => {
   return (
@@ -121,7 +119,7 @@ const CardStyleVariation = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardStyleVariation
+export default CardStyleVariation;

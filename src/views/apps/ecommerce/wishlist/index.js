@@ -1,47 +1,36 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-import { Fragment, useEffect } from 'react'
-
-// ** Custom Components
-import BreadCrumbs from '@components/breadcrumbs'
-
-// ** Third Party Components
-import classnames from 'classnames'
-import { Star, X, ShoppingCart, Info } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Card, CardBody, CardText, Button, Alert } from 'reactstrap'
-
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getWishlistItems, deleteWishlistItem, addToCart, getCartItems } from '../store'
-
-// ** Styles
-import '@styles/base/pages/app-ecommerce.scss'
+import { Link } from 'react-router-dom';
+import { Fragment, useEffect } from 'react';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
+import classnames from 'classnames';
+import { Star, X, ShoppingCart, Info } from 'react-feather';
+import { Card, CardBody, CardText, Button, Alert } from 'reactstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { getWishlistItems, deleteWishlistItem, addToCart, getCartItems } from '../store';
+import 'src/@core/scss/base/pages/app-ecommerce.scss';
 
 const Wishlist = () => {
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.ecommerce)
+  
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.ecommerce);
 
   //** ComponentDidMount : get wishlist items
   useEffect(() => {
-    dispatch(getWishlistItems())
-  }, [])
+    dispatch(getWishlistItems());
+  }, []);
 
   // ** Handle Move/Add to cart
   const handleCartBtn = (id, val) => {
     if (val === false) {
-      dispatch(addToCart(id))
+      dispatch(addToCart(id));
     }
-    dispatch(getWishlistItems())
-    dispatch(getCartItems())
-  }
+    dispatch(getWishlistItems());
+    dispatch(getCartItems());
+  };
 
   // ** Renders wishlist products
   const renderWishlist = () => {
     return store.wishlist.map(item => {
-      const CartBtnTag = item.isInCart ? Link : 'button'
+      const CartBtnTag = item.isInCart ? Link : 'button';
       return (
         <Card className='ecommerce-card' key={item.name}>
           <div className='item-img text-center mx-auto'>
@@ -63,7 +52,7 @@ const Wishlist = () => {
                           })}
                         />
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
@@ -81,7 +70,7 @@ const Wishlist = () => {
               className='btn-wishlist remove-wishlist'
               color='light'
               onClick={() => {
-                dispatch(deleteWishlistItem(item.id))
+                dispatch(deleteWishlistItem(item.id));
               }}
             >
               <X className='me-25' size={14} />
@@ -92,22 +81,19 @@ const Wishlist = () => {
               tag={CartBtnTag}
               className='btn-cart move-cart'
               onClick={() => handleCartBtn(item.id, item.isInCart)}
-              /*eslint-disable */
-              {...(item.isInCart
-                ? {
+              
+              {...(item.isInCart ? {
                     to: '/apps/ecommerce/checkout'
-                  }
-                : {})}
-              /*eslint-enable */
+                  } : {})}
             >
               <ShoppingCart className='me-50' size={14} />
               <span>{item.isInCart ? 'View In Cart' : 'Add To Cart'}</span>
             </Button>
           </div>
         </Card>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Fragment>
@@ -123,7 +109,7 @@ const Wishlist = () => {
         </Alert>
       )}
     </Fragment>
-  )
-}
+  );
+};
 
-export default Wishlist
+export default Wishlist;

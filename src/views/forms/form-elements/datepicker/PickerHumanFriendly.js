@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Label } from 'reactstrap'
+import { Label } from 'reactstrap';
 
-// ** Third Party Components
-import Flatpickr from 'react-flatpickr'
+import Flatpickr from 'react-flatpickr';
 
 const PickerHumanFriendly = () => {
-  // ** State
-  const [picker, setPicker] = useState(new Date())
+  const [picker, setPicker] = useState(new Date());
   return (
     <Fragment>
       <Label className='form-label' for='hf-picker'>
@@ -27,7 +23,7 @@ const PickerHumanFriendly = () => {
         }}
       />
     </Fragment>
-  )
-}
+  );
+};
 
-export default PickerHumanFriendly
+export default PickerHumanFriendly;

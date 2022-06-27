@@ -1,9 +1,7 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Card, CardBody, Button } from 'reactstrap';
 
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Smile } from 'react-feather'
+import toast from 'react-hot-toast';
+import { Smile } from 'react-feather';
 
 const ToastEmoji = () => {
   return (
@@ -19,7 +17,7 @@ const ToastEmoji = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ToastEmoji
+export default ToastEmoji;

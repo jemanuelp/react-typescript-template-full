@@ -1,30 +1,25 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
-// ** Demo Components
-import ButtonTags from './ButtonTags'
-import FlatButtons from './ButtonsFlat'
-import IconButtons from './ButtonsIcon'
-import ButtonSizes from './ButtonSizes'
-import ButtonBlock from './ButtonBlock'
-import ButtonGroups from './ButtonGroup'
-import RoundButtons from './ButtonsRound'
-import FilledButtons from './ButtonsFilled'
-import ReliefButtons from './ButtonsRelief'
-import OutlineButtons from './ButtonsOutline'
-import GradientButtons from './ButtonsGradient'
-import IconOnlyButtons from './ButtonsIconOnly'
-import ButtonCheckboxRadio from './ButtonCheckboxRadio'
+import ButtonTags from './ButtonTags';
+import FlatButtons from './ButtonsFlat';
+import IconButtons from './ButtonsIcon';
+import ButtonSizes from './ButtonSizes';
+import ButtonBlock from './ButtonBlock';
+import ButtonGroups from './ButtonGroup';
+import RoundButtons from './ButtonsRound';
+import FilledButtons from './ButtonsFilled';
+import ReliefButtons from './ButtonsRelief';
+import OutlineButtons from './ButtonsOutline';
+import GradientButtons from './ButtonsGradient';
+import IconOnlyButtons from './ButtonsIconOnly';
+import ButtonCheckboxRadio from './ButtonCheckboxRadio';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
 // ** Source Code
 import {
@@ -40,13 +35,13 @@ import {
   reliefButtons,
   outlineButtons,
   gradientButtons,
-  iconOnlyButtons
-} from './ButtonsSourceCode'
+  iconOnlyButtons,
+} from './ButtonsSourceCode';
 
 const Buttons = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -150,6 +145,6 @@ const Buttons = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Buttons
+  );
+};
+export default Buttons;

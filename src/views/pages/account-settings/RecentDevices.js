@@ -1,8 +1,8 @@
-// ** Reactstrap Imports\
-import { Card, CardHeader, CardTitle, CardBody, Table } from 'reactstrap'
+\
+import { Card, CardHeader, CardTitle, CardBody, Table } from 'reactstrap';
 
 // ** Chrome Logo
-import chromeLogo from '@src/assets/images/icons/google-chrome.png'
+import chromeLogo from 'src/assets/images/icons/google-chrome.png';
 
 const recentDevicesArr = [
   {
@@ -29,7 +29,7 @@ const recentDevicesArr = [
     browser: 'Chrome on iPhone',
     activity: '12, Jan 2021 8:29'
   }
-]
+];
 
 const RecentDevices = () => {
   return (
@@ -59,13 +59,13 @@ const RecentDevices = () => {
                   <td>{item.location}</td>
                   <td>{item.activity}</td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </Table>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default RecentDevices
+export default RecentDevices;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Input, Label } from 'reactstrap';
 
 const CheckboxCustom = () => {
   return (
@@ -51,6 +51,6 @@ const CheckboxCustom = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default CheckboxCustom
+  );
+};
+export default CheckboxCustom;

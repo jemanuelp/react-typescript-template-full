@@ -1,7 +1,5 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -14,11 +12,10 @@ import {
   ListGroup,
   CardSubtitle,
   ListGroupItem
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Images
-import img1 from '@src/assets/images/slider/01.jpg'
-import img2 from '@src/assets/images/slider/02.jpg'
+import img1 from 'src/assets/images/slider/01.jpg';
+import img2 from 'src/assets/images/slider/02.jpg';
 
 const CardContentTypes = () => {
   return (
@@ -99,7 +96,7 @@ const CardContentTypes = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardContentTypes
+export default CardContentTypes;

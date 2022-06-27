@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardText, CardBody, Input, Label, Row, Col } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardText, CardBody, Input, Label, Row, Col } from 'reactstrap';
 
 const InputSizes = () => {
   return (
@@ -42,6 +42,6 @@ const InputSizes = () => {
         </Row>
       </CardBody>
     </Card>
-  )
-}
-export default InputSizes
+  );
+};
+export default InputSizes;

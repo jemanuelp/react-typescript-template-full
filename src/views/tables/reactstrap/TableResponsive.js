@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Table } from 'reactstrap'
+
+import { Table } from 'reactstrap';
 
 const TableResponsive = () => {
   return (
@@ -117,7 +117,7 @@ const TableResponsive = () => {
         </tr>
       </tbody>
     </Table>
-  )
-}
+  );
+};
 
-export default TableResponsive
+export default TableResponsive;

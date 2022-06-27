@@ -1,12 +1,7 @@
-// ** React Imports
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-
-// ** Third Party Components
-import DataTable from 'react-data-table-component'
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import Avatar from 'src/@core/components/avatar';
+import DataTable from 'react-data-table-component';
 import {
   Eye,
   Send,
@@ -26,9 +21,7 @@ import {
   ChevronDown,
   MoreVertical,
   ArrowDownCircle
-} from 'react-feather'
-
-// ** Reactstrap Imports
+} from 'react-feather';
 import {
   Card,
   Badge,
@@ -40,13 +33,9 @@ import {
   UncontrolledTooltip,
   UncontrolledDropdown,
   UncontrolledButtonDropdown
-} from 'reactstrap'
-
-// ** Styles
-import '@styles/react/apps/app-invoice.scss'
-import '@styles/react/libs/tables/react-dataTable-component.scss'
-
-// ** Vars
+} from 'reactstrap';
+import 'src/@core/scss/react/apps/app-invoice.scss';
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
 const invoiceStatusObj = {
   Sent: { color: 'light-secondary', icon: Send },
   Paid: { color: 'light-success', icon: CheckCircle },
@@ -54,7 +43,7 @@ const invoiceStatusObj = {
   Downloaded: { color: 'light-info', icon: ArrowDownCircle },
   'Past Due': { color: 'light-danger', icon: Info },
   'Partial Payment': { color: 'light-warning', icon: PieChart }
-}
+};
 
 const data = [
   {
@@ -88,7 +77,7 @@ const data = [
     },
     service: 'UI/UX Design & Development',
     total: 5219,
-    avatar: require('@src/assets/images/avatars/10-small.png').default,
+    avatar: require('src/assets/images/avatars/10-small.png').default,
     invoiceStatus: 'Downloaded',
     balance: 0,
     dueDate: '15 Dec 2019'
@@ -106,7 +95,7 @@ const data = [
     },
     service: 'Unlimited Extended License',
     total: 3719,
-    avatar: require('@src/assets/images/avatars/1-small.png').default,
+    avatar: require('src/assets/images/avatars/1-small.png').default,
     invoiceStatus: 'Paid',
     balance: 0,
     dueDate: '03 Nov 2019'
@@ -124,7 +113,7 @@ const data = [
     },
     service: 'Software Development',
     total: 4749,
-    avatar: require('@src/assets/images/avatars/9-small.png').default,
+    avatar: require('src/assets/images/avatars/9-small.png').default,
     invoiceStatus: 'Sent',
     balance: 0,
     dueDate: '11 Feb 2020'
@@ -142,12 +131,12 @@ const data = [
     },
     service: 'UI/UX Design & Development',
     total: 4056,
-    avatar: require('@src/assets/images/avatars/10-small.png').default,
+    avatar: require('src/assets/images/avatars/10-small.png').default,
     invoiceStatus: 'Draft',
     balance: '$815',
     dueDate: '30 Jun 2019'
   }
-]
+];
 
 const columns = [
   {
@@ -164,7 +153,7 @@ const columns = [
     selector: ({ invoiceStatus }) => invoiceStatus,
     cell: row => {
       const color = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].color : 'primary',
-        Icon = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].icon : Edit
+        Icon = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].icon : Edit;
       return (
         <Fragment>
           <Avatar color={color} icon={<Icon size={14} />} id={`av-tooltip-${row.id}`} />
@@ -176,7 +165,7 @@ const columns = [
             <span className='fw-bold'>Due Date:</span> {row.dueDate}
           </UncontrolledTooltip>
         </Fragment>
-      )
+      );
     }
   },
   {
@@ -208,7 +197,7 @@ const columns = [
         <Badge color='light-success' pill>
           Paid
         </Badge>
-      )
+      );
     }
   },
   {
@@ -253,7 +242,7 @@ const columns = [
       </div>
     )
   }
-]
+];
 
 const BillingHistory = () => (
   <div className='invoice-list-wrapper'>
@@ -300,6 +289,6 @@ const BillingHistory = () => (
       </div>
     </Card>
   </div>
-)
+);
 
-export default BillingHistory
+export default BillingHistory;

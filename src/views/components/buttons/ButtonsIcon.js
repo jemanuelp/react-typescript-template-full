@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+import { Button } from 'reactstrap';
 
-// ** Icons Imports
-import { Home, Star, Check } from 'react-feather'
+import { Home, Star, Check } from 'react-feather';
 
 const ButtonsIcon = () => {
   return (
@@ -24,6 +22,6 @@ const ButtonsIcon = () => {
         <span className='align-middle ms-25'>Home</span>
       </Button.Ripple>
     </div>
-  )
-}
-export default ButtonsIcon
+  );
+};
+export default ButtonsIcon;

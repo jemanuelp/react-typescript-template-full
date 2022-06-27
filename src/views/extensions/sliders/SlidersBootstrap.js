@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap';
 
 const SlidersBootstrap = () => {
   return (
@@ -22,7 +22,7 @@ const SlidersBootstrap = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SlidersBootstrap
+export default SlidersBootstrap;

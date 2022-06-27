@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
-import Avatar from '../../../components/avatar'
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Bell, X, Check, AlertTriangle } from 'react-feather'
-import { Button, Badge, Input, DropdownMenu, DropdownItem, DropdownToggle, UncontrolledDropdown } from 'reactstrap'
+import { Fragment } from 'react';
+import Avatar from '../../../components/avatar';
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Bell, X, Check, AlertTriangle } from 'react-feather';
+import { Button, Badge, Input, DropdownMenu, DropdownItem, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
 
 const NotificationDropdown = () => {
   const notificationsArray = [
@@ -17,7 +17,7 @@ const NotificationDropdown = () => {
       )
     },
     {
-      img: require('@src/assets/images/portrait/small/avatar-s-3.jpg').default,
+      img: require('src/assets/images/portrait/small/avatar-s-3.jpg').default,
       subtitle: 'You have 10 unread messages.',
       title: (
         <p className='media-heading'>
@@ -73,10 +73,10 @@ const NotificationDropdown = () => {
         </p>
       )
     }
-  ]
+  ];
 
   // ** Function to render Notifications
-  /*eslint-disable */
+  
   const renderNotificationItems = () => {
     return (
       <PerfectScrollbar
@@ -94,7 +94,7 @@ const NotificationDropdown = () => {
               href={item.switch ? '#' : '/'}
               onClick={e => {
                 if (!item.switch) {
-                  e.preventDefault()
+                  e.preventDefault();
                 }
               }}
             >
@@ -108,19 +108,13 @@ const NotificationDropdown = () => {
                   <Fragment>
                     <div className='me-1'>
                       <Avatar
-                        {...(item.img
-                          ? { img: item.img, imgHeight: 32, imgWidth: 32 }
-                          : item.avatarContent
-                          ? {
+                        {...(item.img ? { img: item.img, imgHeight: 32, imgWidth: 32 } : item.avatarContent ? {
                               content: item.avatarContent,
                               color: item.color
-                            }
-                          : item.avatarIcon
-                          ? {
+                            } : item.avatarIcon ? {
                               icon: item.avatarIcon,
                               color: item.color
-                            }
-                          : null)}
+                            } : null)}
                       />
                     </div>
                     <div className='list-item-body flex-grow-1'>
@@ -136,12 +130,11 @@ const NotificationDropdown = () => {
                 )}
               </div>
             </a>
-          )
+          );
         })}
       </PerfectScrollbar>
-    )
-  }
-  /*eslint-enable */
+    );
+  };
 
   return (
     <UncontrolledDropdown tag='li' className='dropdown-notification nav-item me-25'>
@@ -168,7 +161,7 @@ const NotificationDropdown = () => {
         </li>
       </DropdownMenu>
     </UncontrolledDropdown>
-  )
-}
+  );
+};
 
-export default NotificationDropdown
+export default NotificationDropdown;

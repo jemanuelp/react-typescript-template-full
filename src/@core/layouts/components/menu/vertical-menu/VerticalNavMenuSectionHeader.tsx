@@ -1,5 +1,4 @@
-// ** Third Party Components
-import { MoreHorizontal } from 'react-feather'
+import { MoreHorizontal } from 'react-feather';
 
 const VerticalNavMenuSectionHeader = ({ item }: any) => {
   return (
@@ -7,7 +6,7 @@ const VerticalNavMenuSectionHeader = ({ item }: any) => {
       <span>{item.header}</span>
       <MoreHorizontal className='feather-more-horizontal' />
     </li>
-  )
-}
+  );
+};
 
-export default VerticalNavMenuSectionHeader
+export default VerticalNavMenuSectionHeader;

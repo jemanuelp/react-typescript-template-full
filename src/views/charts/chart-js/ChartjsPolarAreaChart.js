@@ -1,8 +1,6 @@
-// ** Third Party Components
-import { PolarArea } from 'react-chartjs-2'
-import { MoreVertical } from 'react-feather'
+import { PolarArea } from 'react-chartjs-2';
+import { MoreVertical } from 'react-feather';
 
-// ** Reactstrap Imports
 import {
   Card,
   CardHeader,
@@ -12,11 +10,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from 'reactstrap'
+} from 'reactstrap';
 
 const ChartjsPolarAreaChart = props => {
-  // ** Props
-  const { primary, greyColor, labelColor, yellowColor, infoColorShade, warningColorShade, successColorShade } = props
+  const { primary, greyColor, labelColor, yellowColor, infoColorShade, warningColorShade, successColorShade } = props;
 
   // ** Chart Options
   const options = {
@@ -46,7 +43,7 @@ const ChartjsPolarAreaChart = props => {
         }
       }
     }
-  }
+  };
 
   // ** Chart Data
   const data = {
@@ -59,7 +56,7 @@ const ChartjsPolarAreaChart = props => {
         backgroundColor: [primary, yellowColor, warningColorShade, infoColorShade, greyColor, successColorShade]
       }
     ]
-  }
+  };
 
   return (
     <Card>
@@ -82,7 +79,7 @@ const ChartjsPolarAreaChart = props => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsPolarAreaChart
+export default ChartjsPolarAreaChart;

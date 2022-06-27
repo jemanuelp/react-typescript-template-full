@@ -81,7 +81,6 @@ const BreadCrumbs = (props: any) => {
 };
 export default BreadCrumbs;
 
-// ** PropTypes
 BreadCrumbs.propTypes = {
   title: Proptypes.string.isRequired,
   data: Proptypes.arrayOf(

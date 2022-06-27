@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { UncontrolledAlert } from 'reactstrap'
+
+import { UncontrolledAlert } from 'reactstrap';
 
 const AlertUncontrolled = () => {
   return (
@@ -10,6 +10,6 @@ const AlertUncontrolled = () => {
         </div>
       </UncontrolledAlert>
     </div>
-  )
-}
-export default AlertUncontrolled
+  );
+};
+export default AlertUncontrolled;

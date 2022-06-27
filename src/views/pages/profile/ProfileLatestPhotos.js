@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardBody, Row, Col } from 'reactstrap'
+
+import { Card, CardBody, Row, Col } from 'reactstrap';
 
 const ProfileLatestPhotos = ({ data }) => {
   const renderPhotos = () => {
@@ -10,9 +10,9 @@ const ProfileLatestPhotos = ({ data }) => {
             <img className='img-fluid rounded' src={item.img} alt='latest-photo' />
           </a>
         </Col>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <Card>
@@ -21,7 +21,7 @@ const ProfileLatestPhotos = ({ data }) => {
         <Row>{renderPhotos()}</Row>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ProfileLatestPhotos
+export default ProfileLatestPhotos;

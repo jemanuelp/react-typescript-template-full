@@ -1,30 +1,24 @@
-// ** React Imports
-import { useState, useEffect, forwardRef } from 'react'
+import { useState, useEffect, forwardRef } from 'react';
 
-// ** Table Columns
-import { columns } from './columns'
+import { columns } from './columns';
 
-// ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllData, getData } from '@src/views/apps/user/store'
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllData, getData } from 'src/views/apps/user/store';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
+import ReactPaginate from 'react-paginate';
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
 
-// ** Reactstrap Imports
-import { Card, Input, Row, Col } from 'reactstrap'
+import { Card, Input, Row, Col } from 'reactstrap';
 
-// ** Styles
-import '@styles/react/libs/tables/react-dataTable-component.scss'
+import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
 
 // ** Bootstrap Checkbox Component
 const BootstrapCheckbox = forwardRef((props, ref) => (
   <div className='form-check'>
     <Input type='checkbox' ref={ref} {...props} />
   </div>
-))
+));
 
 // ** Table Header
 const CustomHeader = ({ plan, handlePlanChange, handlePerPage, rowsPerPage, handleFilter, searchTerm }) => {
@@ -75,25 +69,24 @@ const CustomHeader = ({ plan, handlePlanChange, handlePerPage, rowsPerPage, hand
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
 const Table = () => {
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const store = useSelector(state => state.users)
+  
+  const dispatch = useDispatch();
+  const store = useSelector(state => state.users);
 
-  // ** States
-  const [plan, setPlan] = useState('')
-  const [sort, setSort] = useState('desc')
-  const [searchTerm, setSearchTerm] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
-  const [sortColumn, setSortColumn] = useState('id')
+  const [plan, setPlan] = useState('');
+  const [sort, setSort] = useState('desc');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [sortColumn, setSortColumn] = useState('id');
 
   // ** Get data on mount
   useEffect(() => {
-    dispatch(getAllData())
+    dispatch(getAllData());
     dispatch(
       getData({
         sort,
@@ -105,8 +98,8 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }, [dispatch, store.data.length])
+    );
+  }, [dispatch, store.data.length]);
 
   // ** Function in get data on page change
   const handlePagination = page => {
@@ -121,13 +114,13 @@ const Table = () => {
         perPage: rowsPerPage,
         page: page.selected + 1
       })
-    )
-    setCurrentPage(page.selected + 1)
-  }
+    );
+    setCurrentPage(page.selected + 1);
+  };
 
   // ** Function in get data on rows per page
   const handlePerPage = e => {
-    const value = parseInt(e.currentTarget.value)
+    const value = parseInt(e.currentTarget.value);
     dispatch(
       getData({
         sort,
@@ -139,13 +132,13 @@ const Table = () => {
         currentPlan: plan,
         page: currentPage
       })
-    )
-    setRowsPerPage(value)
-  }
+    );
+    setRowsPerPage(value);
+  };
 
   // ** Function in get data on search query change
   const handleFilter = val => {
-    setSearchTerm(val)
+    setSearchTerm(val);
     dispatch(
       getData({
         q: val,
@@ -157,11 +150,11 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }
+    );
+  };
 
   const handlePlanChange = val => {
-    setPlan(val)
+    setPlan(val);
     dispatch(
       getData({
         sort,
@@ -173,12 +166,12 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }
+    );
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => {
-    const count = Number(Math.ceil(store.total / rowsPerPage))
+    const count = Number(Math.ceil(store.total / rowsPerPage));
 
     return (
       <ReactPaginate
@@ -196,31 +189,31 @@ const Table = () => {
         pageLinkClassName={'page-link'}
         containerClassName={'pagination react-paginate justify-content-end my-2 pe-1'}
       />
-    )
-  }
+    );
+  };
 
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
       q: searchTerm
-    }
+    };
 
     const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0
-    })
+      return filters[k].length > 0;
+    });
 
     if (store.data.length > 0) {
-      return store.data
+      return store.data;
     } else if (store.data.length === 0 && isFiltered) {
-      return []
+      return [];
     } else {
-      return store.allData.slice(0, rowsPerPage)
+      return store.allData.slice(0, rowsPerPage);
     }
-  }
+  };
 
   const handleSort = (column, sortDirection) => {
-    setSort(sortDirection)
-    setSortColumn(column.sortField)
+    setSort(sortDirection);
+    setSortColumn(column.sortField);
     dispatch(
       getData({
         sort,
@@ -232,8 +225,8 @@ const Table = () => {
         page: currentPage,
         perPage: rowsPerPage
       })
-    )
-  }
+    );
+  };
 
   return (
     <Card>
@@ -265,7 +258,7 @@ const Table = () => {
         />
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

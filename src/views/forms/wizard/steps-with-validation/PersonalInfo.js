@@ -1,48 +1,43 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import Select from 'react-select'
-import { useForm, Controller } from 'react-hook-form'
-import { ArrowLeft, ArrowRight } from 'react-feather'
+import Select from 'react-select';
+import { useForm, Controller } from 'react-hook-form';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
-// ** Utils
-import { selectThemeColors } from '@utils'
+import { selectThemeColors } from 'src/utility/Utils';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap'
+import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap';
 
-// ** Styles
-import '@styles/react/libs/react-select/_react-select.scss'
+import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 
 const defaultValues = {
   lastName: '',
   firstName: ''
-}
+};
 
 const PersonalInfo = ({ stepper }) => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
-      stepper.next()
+      stepper.next();
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual',
             message: `Please enter a valid ${key}`
-          })
+          });
         }
       }
     }
-  }
+  };
 
   const countryOptions = [
     { value: 'UK', label: 'UK' },
@@ -51,7 +46,7 @@ const PersonalInfo = ({ stepper }) => {
     { value: 'France', label: 'France' },
     { value: 'Italy', label: 'Italy' },
     { value: 'Australia', label: 'Australia' }
-  ]
+  ];
 
   const languageOptions = [
     { value: 'English', label: 'English' },
@@ -59,7 +54,7 @@ const PersonalInfo = ({ stepper }) => {
     { value: 'Spanish', label: 'Spanish' },
     { value: 'Italian', label: 'Italian' },
     { value: 'Japanese', label: 'Japanese' }
-  ]
+  ];
 
   return (
     <Fragment>
@@ -136,7 +131,7 @@ const PersonalInfo = ({ stepper }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default PersonalInfo
+export default PersonalInfo;

@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
-// ** Icons Imports
-import { User, Lock, Bookmark, Link, Bell } from 'react-feather'
+import { User, Lock, Bookmark, Link, Bell } from 'react-feather';
 
 const Tabs = ({ activeTab, toggleTab }) => {
   return (
@@ -38,7 +36,7 @@ const Tabs = ({ activeTab, toggleTab }) => {
         </NavLink>
       </NavItem>
     </Nav>
-  )
-}
+  );
+};
 
-export default Tabs
+export default Tabs;

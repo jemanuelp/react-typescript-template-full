@@ -1,11 +1,6 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-
-// ** Reactstrap Imports
-import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
-
-// ** Styles
-import '@styles/react/pages/page-authentication.scss'
+import { Link } from 'react-router-dom';
+import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 
 const VerifyEmailBasic = () => {
   return (
@@ -84,7 +79,7 @@ const VerifyEmailBasic = () => {
         </Card>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VerifyEmailBasic
+export default VerifyEmailBasic;

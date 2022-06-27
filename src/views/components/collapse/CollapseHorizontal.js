@@ -1,17 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Collapse, Button } from 'reactstrap'
+import { Collapse, Button } from 'reactstrap';
 
-// ** Images
-import collapseImg from '@src/assets/images/slider/08.jpg'
+import collapseImg from 'src/assets/images/slider/08.jpg';
 
 const CollapseHorizontal = () => {
-  // ** States
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen)
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
@@ -27,7 +23,7 @@ const CollapseHorizontal = () => {
         </div>
       </Collapse>
     </div>
-  )
-}
+  );
+};
 
-export default CollapseHorizontal
+export default CollapseHorizontal;

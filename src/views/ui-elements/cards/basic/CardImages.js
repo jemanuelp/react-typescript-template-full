@@ -1,13 +1,10 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Card, CardImg, CardTitle, CardBody, CardImgOverlay, CardText, Row, Col } from 'reactstrap'
+import { Card, CardImg, CardTitle, CardBody, CardImgOverlay, CardText, Row, Col } from 'reactstrap';
 
-// ** Images
-import img1 from '@src/assets/images/slider/06.jpg'
-import img2 from '@src/assets/images/slider/09.jpg'
-import img3 from '@src/assets/images/slider/10.jpg'
+import img1 from 'src/assets/images/slider/06.jpg';
+import img2 from 'src/assets/images/slider/09.jpg';
+import img3 from 'src/assets/images/slider/10.jpg';
 
 const CardImages = () => {
   return (
@@ -63,7 +60,7 @@ const CardImages = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardImages
+export default CardImages;

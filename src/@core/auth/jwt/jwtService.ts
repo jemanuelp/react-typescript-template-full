@@ -23,7 +23,6 @@ export default class JwtService {
 
         // ** If token is present add it to request's Authorization Header
         if (accessToken) {
-          // ** eslint-disable-next-line no-param-reassign
           config.headers.Authorization = `${this.jwtConfig.tokenType} ${accessToken}`;
         }
         return config;
@@ -71,6 +70,7 @@ export default class JwtService {
     this.subscribers = this.subscribers.filter((callback: any) => callback(accessToken));
   }
 
+  // eslint-disable-next-line no-unused-vars
   addSubscriber(callback: (accessToken: never) => void) {
     this.subscribers.push(callback);
   }

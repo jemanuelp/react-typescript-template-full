@@ -1,8 +1,6 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ModalConfig = [
   {
@@ -47,19 +45,18 @@ const ModalConfig = [
     modalColor: 'modal-dark',
     btnColor: 'dark'
   }
-]
+];
 
 const ModalTheme = () => {
-  // ** State
-  const [modal, setModal] = useState(null)
+  const [modal, setModal] = useState(null);
 
   const toggleModal = id => {
     if (modal !== id) {
-      setModal(id)
+      setModal(id);
     } else {
-      setModal(null)
+      setModal(null);
     }
-  }
+  };
 
   const renderModal = ModalConfig.map(item => {
     return (
@@ -86,9 +83,9 @@ const ModalTheme = () => {
           </ModalFooter>
         </Modal>
       </div>
-    )
-  })
+    );
+  });
 
-  return <div className='demo-inline-spacing'>{renderModal}</div>
-}
-export default ModalTheme
+  return <div className='demo-inline-spacing'>{renderModal}</div>;
+};
+export default ModalTheme;

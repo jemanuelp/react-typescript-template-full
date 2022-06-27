@@ -1,13 +1,10 @@
-// ** Third Party Components
-import Select from 'react-select'
-import { selectThemeColors } from '@utils'
-import { useForm, Controller } from 'react-hook-form'
+import Select from 'react-select';
+import { selectThemeColors } from 'src/utility/Utils';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, Form, Label, Input, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap'
+import { Row, Col, Card, Form, Label, Input, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap';
 
-// ** Images
-import illustration from '@src/assets/images/illustration/pricing-Illustration.svg'
+import illustration from 'src/assets/images/illustration/pricing-Illustration.svg';
 
 const keyOptions = [
   { value: 'full-control', label: 'Full Control' },
@@ -16,30 +13,30 @@ const keyOptions = [
   { value: 'list-folder', label: 'List Folder Contents' },
   { value: 'read-only', label: 'Read Only' },
   { value: 'read-write', label: 'Read Write' }
-]
+];
 
 const defaultValues = {
   apiKeyName: ''
-}
+};
 
 const CreateApiKey = () => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (data.apiKeyName.length) {
-      return null
+      return null;
     } else {
       setError('apiKeyName', {
         type: 'manual'
-      })
+      });
     }
-  }
+  };
 
   return (
     <Card>
@@ -90,7 +87,7 @@ const CreateApiKey = () => {
         </Col>
       </Row>
     </Card>
-  )
-}
+  );
+};
 
-export default CreateApiKey
+export default CreateApiKey;

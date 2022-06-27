@@ -1,15 +1,11 @@
-// ** React Imports
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react';
 
-// ** Third Party Components
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 
-// ** Custom Components
-import Card from '@components/card-snippet'
-import BreadCrumbs from '@components/breadcrumbs'
+import Card from 'src/@core/components/card-snippet';
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Reactstrap Imports
-import { Row, Col, CardText } from 'reactstrap'
+import { Row, Col, CardText } from 'reactstrap';
 
 // ** Source Code
 import {
@@ -17,21 +13,20 @@ import {
   accordionBorder,
   accordionMargin,
   accordionControlled,
-  accordionWithoutArrow
-} from './AccordionSourceCode'
+  accordionWithoutArrow,
+} from './AccordionSourceCode';
 
-// ** Demo Components
-import AccordionHover from './AccordionHover'
-import AccordionBorder from './AccordionBorder'
-import AccordionMargin from './AccordionMargin'
-import AccordionControlled from './AccordionControlled'
-import AccordionUncontrolled from './AccordionUncontrolled'
-import AccordionWithoutArrow from './AccordionWithoutArrow'
+import AccordionHover from './AccordionHover';
+import AccordionBorder from './AccordionBorder';
+import AccordionMargin from './AccordionMargin';
+import AccordionControlled from './AccordionControlled';
+import AccordionUncontrolled from './AccordionUncontrolled';
+import AccordionWithoutArrow from './AccordionWithoutArrow';
 
 const Accordion = () => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <Fragment>
@@ -81,6 +76,6 @@ const Accordion = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Accordion
+  );
+};
+export default Accordion;

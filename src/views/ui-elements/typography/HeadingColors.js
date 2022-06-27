@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap';
 
 const HeadingColors = () => {
   return (
@@ -49,6 +49,6 @@ const HeadingColors = () => {
         </tbody>
       </Table>
     </Card>
-  )
-}
-export default HeadingColors
+  );
+};
+export default HeadingColors;

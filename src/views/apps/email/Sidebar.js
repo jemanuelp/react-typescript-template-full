@@ -1,48 +1,40 @@
-// ** React Imports
-import { Link, useParams } from 'react-router-dom'
-
-// ** Third Party Components
-import classnames from 'classnames'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Mail, Send, Edit2, Star, Info, Trash } from 'react-feather'
-
-// ** Reactstrap Imports
-import { Button, ListGroup, ListGroupItem, Badge } from 'reactstrap'
+import { Link, useParams } from 'react-router-dom';
+import classnames from 'classnames';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Mail, Send, Edit2, Star, Info, Trash } from 'react-feather';
+import { Button, ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
 const Sidebar = props => {
-  // ** Props
   const { store, sidebarOpen, toggleCompose, dispatch, getMails, resetSelectedMail, setSidebarOpen, setOpenMail } =
-    props
-
-  // ** Vars
-  const params = useParams()
+    props;
+  const params = useParams();
 
   // ** Functions To Handle Folder, Label & Compose
   const handleFolder = folder => {
-    setOpenMail(false)
-    dispatch(getMails({ ...store.params, folder }))
-    dispatch(resetSelectedMail())
-  }
+    setOpenMail(false);
+    dispatch(getMails({ ...store.params, folder }));
+    dispatch(resetSelectedMail());
+  };
 
   const handleLabel = label => {
-    setOpenMail(false)
-    dispatch(getMails({ ...store.params, label }))
-    dispatch(resetSelectedMail())
-  }
+    setOpenMail(false);
+    dispatch(getMails({ ...store.params, label }));
+    dispatch(resetSelectedMail());
+  };
 
   const handleComposeClick = () => {
-    toggleCompose()
-    setSidebarOpen(false)
-  }
+    toggleCompose();
+    setSidebarOpen(false);
+  };
 
   // ** Functions To Active List Item
   const handleActiveItem = value => {
     if ((params.folder && params.folder === value) || (params.label && params.label === value)) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   return (
     <div
@@ -184,7 +176,7 @@ const Sidebar = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

@@ -7,16 +7,13 @@ import VerticalNavMenuItems from './VerticalNavMenuItems';
 const Sidebar = (props: any) => {
     const {menuCollapsed, menu, skin, menuData} = props;
 
-    // ** States
     const [groupOpen, setGroupOpen] = useState([]);
     const [groupActive, setGroupActive] = useState([]);
     const [currentActiveGroup, setCurrentActiveGroup] = useState([]);
     const [activeItem, setActiveItem] = useState(null);
 
-    // ** Menu Hover State
     const [menuHover, setMenuHover] = useState(false);
 
-    // ** Ref
     const shadowRef = useRef<HTMLDivElement>(null);
 
     // ** Function to handle Mouse Enter

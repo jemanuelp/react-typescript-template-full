@@ -1,7 +1,5 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -20,23 +18,22 @@ import {
   ModalHeader,
   FormFeedback,
   InputGroupText
-} from 'reactstrap'
+} from 'reactstrap';
 
-// ** Third Party Components
-import classnames from 'classnames'
-import Cleave from 'cleave.js/react'
-import { Check, X } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
+import classnames from 'classnames';
+import Cleave from 'cleave.js/react';
+import { Check, X } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
 
 // ** Card Images
-import jcbCC from '@src/assets/images/icons/payments/jcb-cc.png'
-import amexCC from '@src/assets/images/icons/payments/amex-cc.png'
-import uatpCC from '@src/assets/images/icons/payments/uatp-cc.png'
-import visaCC from '@src/assets/images/icons/payments/visa-cc.png'
-import dinersCC from '@src/assets/images/icons/payments/diners-cc.png'
-import maestroCC from '@src/assets/images/icons/payments/maestro-cc.png'
-import discoverCC from '@src/assets/images/icons/payments/discover-cc.png'
-import mastercardCC from '@src/assets/images/icons/payments/mastercard-cc.png'
+import jcbCC from 'src/assets/images/icons/payments/jcb-cc.png';
+import amexCC from 'src/assets/images/icons/payments/amex-cc.png';
+import uatpCC from 'src/assets/images/icons/payments/uatp-cc.png';
+import visaCC from 'src/assets/images/icons/payments/visa-cc.png';
+import dinersCC from 'src/assets/images/icons/payments/diners-cc.png';
+import maestroCC from 'src/assets/images/icons/payments/maestro-cc.png';
+import discoverCC from 'src/assets/images/icons/payments/discover-cc.png';
+import mastercardCC from 'src/assets/images/icons/payments/mastercard-cc.png';
 
 const cardsObj = {
   jcb: jcbCC,
@@ -47,7 +44,7 @@ const cardsObj = {
   maestro: maestroCC,
   discover: discoverCC,
   mastercard: mastercardCC
-}
+};
 
 const data = [
   {
@@ -58,7 +55,7 @@ const data = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('@src/assets/images/icons/payments/mastercard.png').default
+    imgSrc: require('src/assets/images/icons/payments/mastercard.png').default
   },
   {
     cardCvc: '681',
@@ -66,41 +63,39 @@ const data = [
     expiryDate: '02/24',
     name: 'Mildred Wagner',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('@src/assets/images/icons/payments/visa.png').default
+    imgSrc: require('src/assets/images/icons/payments/visa.png').default
   }
-]
+];
 
 const PaymentMethods = () => {
-  // ** States
-  const [show, setShow] = useState(false)
-  const [cardType, setCardType] = useState('')
-  const [selected, setSelected] = useState(null)
-  const [modalCardType, setModalCardType] = useState('')
-  const [paymentMethod, setPaymentMethod] = useState('card')
-
-  // ** Hooks
+  const [show, setShow] = useState(false);
+  const [cardType, setCardType] = useState('');
+  const [selected, setSelected] = useState(null);
+  const [modalCardType, setModalCardType] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('card');
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues: { cardInput: '' } })
+  } = useForm({ defaultValues: { cardInput: '' } });
 
   const onSubmit = data => {
     if (data.cardInput.length <= 0) {
       setError('cardInput', {
         type: 'manual',
         message: 'Please Enter Valid Card Number'
-      })
+      });
     }
-  }
+  };
 
-  const selectedCondition = selected !== null
+  const selectedCondition = selected !== null;
 
   const openEditModal = card => {
-    setSelected(card)
-    setShow(true)
-  }
+    setSelected(card);
+    setShow(true);
+  };
 
   return (
     <Fragment>
@@ -228,7 +223,7 @@ const PaymentMethods = () => {
               <h6 className='fw-bolder mb-2'>My Cards</h6>
               <div className='added-cards'>
                 {data.map((card, index) => {
-                  const isLastCard = index === data[data.length - 1]
+                  const isLastCard = index === data[data.length - 1];
                   return (
                     <div
                       key={index}
@@ -262,7 +257,7 @@ const PaymentMethods = () => {
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </Col>
@@ -295,7 +290,7 @@ const PaymentMethods = () => {
                   options={{
                     creditCard: true,
                     onCreditCardTypeChanged: type => {
-                      setModalCardType(type)
+                      setModalCardType(type);
                     }
                   }}
                 />
@@ -366,7 +361,7 @@ const PaymentMethods = () => {
         </ModalBody>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default PaymentMethods
+export default PaymentMethods;

@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Row, Col, CardTitle, CardText, Button, Form, Input } from 'reactstrap';
-import '@styles/react/pages/page-authentication.scss';
+import '../../../@core/scss/react/pages/page-authentication.scss';
 import {useSkin} from "../../../utility/hooks/useSkin";
+import * as Dark from "../../../../src/assets/images/pages/two-steps-verification-illustration-dark.svg";
+import * as Light from "../../../../src/assets/images/pages/two-steps-verification-illustration.svg";
 
 const TwoStepsCover = () => {
   const { skin } = useSkin();
-
-  const illustration =
-      skin === 'dark' ? 'two-steps-verification-illustration-dark.svg' : 'two-steps-verification-illustration.svg',
-    source = require(`@src/assets/images/pages/${illustration}`).default;
+  const source = skin === 'dark'
+      ? Dark.default
+      : Light.default;
 
   return (
     <div className='auth-wrapper auth-cover'>
@@ -75,6 +76,7 @@ const TwoStepsCover = () => {
               Two Step Verification 💬
             </CardTitle>
             <CardText className='mb-75'>
+              {/* eslint-disable-next-line max-len */}
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </CardText>
             <CardText className='fw-bolder mb-2'>******0789</CardText>

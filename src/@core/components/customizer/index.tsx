@@ -1,16 +1,17 @@
-import {useState} from 'react'
-import Select from 'react-select'
-import classnames from 'classnames'
-import {selectThemeColors} from '../../../utility/Utils'
-import {Settings, X} from 'react-feather'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import {Input, Label} from 'reactstrap'
-import '../../../../src/@core/scss/react/libs/react-select/_react-select.scss'
-import {Layout} from "../../../domains/interfaces/Layout";
-import {LayoutSetterState} from "../../../domains/interfaces/LayoutSetterState";
+import {useState} from 'react';
+import Select from 'react-select';
+import classnames from 'classnames';
+import {selectThemeColors} from '../../../utility/Utils';
+import {Settings, X} from 'react-feather';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import {Input, Label} from 'reactstrap';
+import '../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
+import {Layout} from "../../../domains/interfaces/layouts/Layout";
+import {LayoutSetterState} from "../../../domains/interfaces/layouts/LayoutSetterState";
 import {LayoutTypes} from "../../../domains/enums/LayoutTypes";
 import {NavbarLayoutTypes} from "../../../domains/enums/NavbarLayoutTypes";
 import {FooterLayoutTypes} from "../../../domains/enums/FooterLayoutTypes";
+import {SkinTypes} from "../../../domains/enums/SkinTypes";
 
 const Customizer = (props: (Layout & LayoutSetterState)) => {
   const {
@@ -33,16 +34,15 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
     setNavbarColor,
     setContentWidth,
     setMenuCollapsed
-  } = props
+  } = props;
 
-  // ** State
-  const [openCustomizer, setOpenCustomizer] = useState(false)
+  const [openCustomizer, setOpenCustomizer] = useState(false);
 
   // ** Toggles Customizer
   const handleToggle = (e: any) => {
-    e.preventDefault()
-    setOpenCustomizer(!openCustomizer)
-  }
+    e.preventDefault();
+    setOpenCustomizer(!openCustomizer);
+  };
 
   // ** Render Layout Skin Options
   const renderSkinsRadio = () => {
@@ -50,7 +50,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
       {
         name: 'light',
         label: 'Light',
-        checked: skin === 'light'
+        checked: skin === SkinTypes.light
       },
       {
         name: 'bordered',
@@ -67,10 +67,10 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         label: 'Semi Dark',
         checked: skin === 'semi-dark'
       }
-    ]
+    ];
 
     return skinsArr.map((radio, index) => {
-      const marginCondition = index !== skinsArr.length - 1
+      const marginCondition = index !== skinsArr.length - 1;
 
       if (type === LayoutTypes.horizontal && radio.name === 'semi-dark') {
         return null;
@@ -83,13 +83,13 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
             {radio.label}
           </Label>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** Render Navbar Colors Options
   const renderNavbarColors = () => {
-    const colorsArr = ['white', 'primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark']
+    const colorsArr = ['white', 'primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark'];
 
     return colorsArr.map(color => (
       <li
@@ -100,8 +100,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         })}
         onClick={() => setNavbarColor(color)}
       ></li>
-    ))
-  }
+    ));
+  };
 
   // ** Render Navbar Type Options
   const renderNavbarTypeRadio = () => {
@@ -126,13 +126,13 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         label: 'Hidden',
         checked: navbar.type === NavbarLayoutTypes.hidden
       }
-    ]
+    ];
 
     return navbarTypeArr.map((radio, index) => {
-      const marginCondition = index !== navbarTypeArr.length - 1
+      const marginCondition = index !== navbarTypeArr.length - 1;
 
       if (type === LayoutTypes.horizontal && radio.name === 'hidden') {
-        return null
+        return null;
       }
 
       return (
@@ -142,9 +142,9 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
             {radio.label}
           </Label>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // ** Render Footer Type Options
   const renderFooterTypeRadio = () => {
@@ -164,10 +164,10 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         label: 'Hidden',
         checked: footer.type === FooterLayoutTypes.hidden
       }
-    ]
+    ];
 
     return footerTypeArr.map((radio, index) => {
-      const marginCondition = index !== footerTypeArr.length - 1
+      const marginCondition = index !== footerTypeArr.length - 1;
 
       return (
         <div key={index} className={classnames('form-check', { 'mb-2 me-1': marginCondition })}>
@@ -181,9 +181,9 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
             {radio.label}
           </Label>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   // **  Router Transition Options
   const transitionOptions = [
@@ -191,10 +191,10 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
     { value: 'fadeInLeft', label: 'Fade In Left' },
     { value: 'zoomIn', label: 'Zoom In' },
     { value: 'none', label: 'None' }
-  ]
+  ];
 
   // ** Get Current Transition
-  const transitionValue = transitionOptions.find(i => i.value === routerTransition)
+  const transitionValue = transitionOptions.find(i => i.value === routerTransition);
 
   return (
     <div
@@ -286,8 +286,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
                   id='vertical-layout'
                   checked={type === LayoutTypes.vertical}
                   onChange={() => {
-                    setLayout('vertical')
-                    setLastLayout('vertical')
+                    setLayout('vertical');
+                    setLastLayout('vertical');
                   }}
                 />
                 <Label className='form-check-label' for='vertical-layout'>
@@ -300,8 +300,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
                   id='horizontal-layout'
                   checked={type === LayoutTypes.horizontal}
                   onChange={() => {
-                    setLayout('horizontal')
-                    setLastLayout('horizontal')
+                    setLayout('horizontal');
+                    setLastLayout('horizontal');
                   }}
                 />
                 <Label className='form-check-label' for='horizontal-layout'>
@@ -310,7 +310,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
               </div>
             </div>
           </div>
-          {type !== LayoutTypes.horizontal ? (
+          {type !== LayoutTypes.horizontal
+? (
             <div className='form-switch mb-2 ps-0'>
               <div className='d-flex align-items-center'>
                 <p className='fw-bold me-auto mb-0'>Menu Collapsed</p>
@@ -323,7 +324,8 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
                 />
               </div>
             </div>
-          ) : null}
+          )
+: null}
 
           <div className='form-switch mb-2 ps-0'>
             <div className='d-flex align-items-center'>
@@ -342,15 +344,19 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         <hr />
 
         <div className='px-2'>
-          {type !== LayoutTypes.horizontal ? (
+          {type !== LayoutTypes.horizontal
+? (
             <div className='mb-2'>
               <p className='fw-bold'>Navbar Color</p>
               <ul className='list-inline unstyled-list'>{renderNavbarColors()}</ul>
             </div>
-          ) : null}
+          )
+: null}
 
           <div className='mb-2'>
-            <p className='fw-bold'>{type === LayoutTypes.horizontal ? 'Menu' : 'Navbar'} Type</p>
+            <p className='fw-bold'>{type === LayoutTypes.horizontal
+? 'Menu'
+: 'Navbar'} Type</p>
             <div className='d-flex'>{renderNavbarTypeRadio()}</div>
           </div>
         </div>
@@ -365,7 +371,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         </div>
       </PerfectScrollbar>
     </div>
-  )
-}
+  );
+};
 
-export default Customizer
+export default Customizer;

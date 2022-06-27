@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Progress } from 'reactstrap'
+
+import { Progress } from 'reactstrap';
 
 const ProgressBasic = () => {
   return (
@@ -25,6 +25,6 @@ const ProgressBasic = () => {
         <Progress value='100' />
       </div>
     </div>
-  )
-}
-export default ProgressBasic
+  );
+};
+export default ProgressBasic;

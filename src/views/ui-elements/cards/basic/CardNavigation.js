@@ -1,7 +1,5 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -16,24 +14,23 @@ import {
   CardTitle,
   CardHeader,
   TabContent
-} from 'reactstrap'
+} from 'reactstrap';
 
 const CardNavigation = () => {
-  // ** States
-  const [activeTab, setTabActive] = useState('1')
-  const [activePill, setPillActive] = useState('1')
+  const [activeTab, setTabActive] = useState('1');
+  const [activePill, setPillActive] = useState('1');
 
   const togglePills = tab => {
     if (activePill !== tab) {
-      setPillActive(tab)
+      setPillActive(tab);
     }
-  }
+  };
 
   const toggleTabs = tab => {
     if (activeTab !== tab) {
-      setTabActive(tab)
+      setTabActive(tab);
     }
-  }
+  };
   return (
     <Fragment>
       <h5 className='mt-3 mb-2'>Navigation</h5>
@@ -46,7 +43,7 @@ const CardNavigation = () => {
                   <NavLink
                     active={activePill === '1'}
                     onClick={() => {
-                      togglePills('1')
+                      togglePills('1');
                     }}
                   >
                     Home
@@ -56,7 +53,7 @@ const CardNavigation = () => {
                   <NavLink
                     active={activePill === '2'}
                     onClick={() => {
-                      togglePills('2')
+                      togglePills('2');
                     }}
                   >
                     Profile
@@ -95,7 +92,7 @@ const CardNavigation = () => {
                   <NavLink
                     active={activeTab === '1'}
                     onClick={() => {
-                      toggleTabs('1')
+                      toggleTabs('1');
                     }}
                   >
                     Home
@@ -105,7 +102,7 @@ const CardNavigation = () => {
                   <NavLink
                     active={activeTab === '2'}
                     onClick={() => {
-                      toggleTabs('2')
+                      toggleTabs('2');
                     }}
                   >
                     Profile
@@ -138,7 +135,7 @@ const CardNavigation = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardNavigation
+export default CardNavigation;

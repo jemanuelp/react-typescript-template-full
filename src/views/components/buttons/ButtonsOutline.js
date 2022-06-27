@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+
+import { Button } from 'reactstrap';
 
 const OutlineButtons = () => {
   return (
@@ -26,6 +26,6 @@ const OutlineButtons = () => {
         Dark
       </Button.Ripple>
     </div>
-  )
-}
-export default OutlineButtons
+  );
+};
+export default OutlineButtons;

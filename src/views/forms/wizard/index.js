@@ -1,17 +1,13 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Demo Components
-import WizardModern from './WizardModern'
-import WizardVertical from './WizardVertical'
-import WizardHorizontal from './WizardHorizontal'
-import WizardModernVertical from './WizardModernVertical'
+import WizardModern from './WizardModern';
+import WizardVertical from './WizardVertical';
+import WizardHorizontal from './WizardHorizontal';
+import WizardModernVertical from './WizardModernVertical';
 
-// ** Custom Components
-import BreadCrumbs from '@components/breadcrumbs'
+import BreadCrumbs from 'src/@core/components/breadcrumbs';
 
 const Wizard = () => {
   return (
@@ -32,6 +28,6 @@ const Wizard = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Wizard
+  );
+};
+export default Wizard;

@@ -1,25 +1,21 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Table columns & Expandable Data
-import ExpandableTable, { data, columns } from '../data'
+ & Expandable Data
+import ExpandableTable, { data, columns } from '../data';
 
-// ** Third Party Components
-import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
-import DataTable from 'react-data-table-component'
+import ReactPaginate from 'react-paginate';
+import { ChevronDown } from 'react-feather';
+import DataTable from 'react-data-table-component';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle } from 'reactstrap'
+import { Card, CardHeader, CardTitle } from 'reactstrap';
 
 const DataTableWithButtons = () => {
-  // ** State
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
 
   // ** Function to handle filter
   const handlePagination = page => {
-    setCurrentPage(page.selected)
-  }
+    setCurrentPage(page.selected);
+  };
 
   // ** Custom Pagination
   const CustomPagination = () => (
@@ -43,7 +39,7 @@ const DataTableWithButtons = () => {
       previousClassName='page-item prev-item'
       containerClassName={'pagination react-paginate separated-pagination pagination-sm justify-content-end pe-1'}
     />
-  )
+  );
 
   return (
     <Card>
@@ -67,7 +63,7 @@ const DataTableWithButtons = () => {
         />
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default DataTableWithButtons
+export default DataTableWithButtons;

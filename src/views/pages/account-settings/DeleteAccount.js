@@ -1,29 +1,26 @@
-// ** Reactstrap Imports
-import { Card, Button, CardHeader, CardTitle, CardBody, Alert, Form, Input, Label, FormFeedback } from 'reactstrap'
+import { Card, Button, CardHeader, CardTitle, CardBody, Alert, Form, Input, Label, FormFeedback } from 'reactstrap';
 
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import classnames from 'classnames'
-import { useForm, Controller } from 'react-hook-form'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import classnames from 'classnames';
+import { useForm, Controller } from 'react-hook-form';
+import withReactContent from 'sweetalert2-react-content';
 
-// ** Styles
-import '@styles/base/plugins/extensions/ext-component-sweet-alerts.scss'
+import 'src/@core/scss/base/plugins/extensions/ext-component-sweet-alerts.scss';
 
 const defaultValues = {
   confirmCheckbox: false
-}
+};
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const DeleteAccount = () => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const handleConfirmDelete = () => {
     return MySwal.fire({
@@ -46,7 +43,7 @@ const DeleteAccount = () => {
           customClass: {
             confirmButton: 'btn btn-success'
           }
-        })
+        });
       } else if (result.dismiss === MySwal.DismissReason.cancel) {
         MySwal.fire({
           title: 'Cancelled',
@@ -55,18 +52,18 @@ const DeleteAccount = () => {
           customClass: {
             confirmButton: 'btn btn-success'
           }
-        })
+        });
       }
-    })
-  }
+    });
+  };
 
   const onSubmit = data => {
     if (data.confirmCheckbox === true) {
-      handleConfirmDelete()
+      handleConfirmDelete();
     } else {
-      setError('confirmCheckbox', { type: 'manual' })
+      setError('confirmCheckbox', { type: 'manual' });
     }
-  }
+  };
 
   return (
     <Card>
@@ -113,7 +110,7 @@ const DeleteAccount = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default DeleteAccount
+export default DeleteAccount;

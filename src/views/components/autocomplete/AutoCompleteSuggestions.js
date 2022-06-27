@@ -1,11 +1,8 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete';
 
 const AutoCompleteDefaultSuggestions = () => {
-  // ** State
   const [suggestions] = useState([
     {
       title: 'React.js'
@@ -34,7 +31,7 @@ const AutoCompleteDefaultSuggestions = () => {
     {
       title: 'Laravel'
     }
-  ])
+  ]);
 
   return (
     <AutoComplete
@@ -45,6 +42,6 @@ const AutoCompleteDefaultSuggestions = () => {
       suggestions={suggestions}
       defaultSuggestions={true}
     />
-  )
-}
-export default AutoCompleteDefaultSuggestions
+  );
+};
+export default AutoCompleteDefaultSuggestions;

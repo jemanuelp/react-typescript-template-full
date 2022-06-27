@@ -1,15 +1,11 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { Scatter } from 'react-chartjs-2'
+import { Scatter } from 'react-chartjs-2';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, ButtonGroup, Button } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, ButtonGroup, Button } from 'reactstrap';
 
 const ChartjsScatterChart = ({ labelColor, gridLineColor, primary, yellowColor, successColorShade }) => {
-  // ** States
-  const [active, setActive] = useState('daily')
+  const [active, setActive] = useState('daily');
 
   // ** Chart Options
   const options = {
@@ -59,7 +55,7 @@ const ChartjsScatterChart = ({ labelColor, gridLineColor, primary, yellowColor, 
         }
       }
     }
-  }
+  };
 
   // ** Chart Data
   const data = {
@@ -275,18 +271,18 @@ const ChartjsScatterChart = ({ labelColor, gridLineColor, primary, yellowColor, 
         ]
       }
     ]
-  }
+  };
 
   //** */ To add spacing between legends and chart
   const plugins = [
     {
       beforeInit(chart) {
         chart.legend.afterFit = function () {
-          this.height += 20
-        }
+          this.height += 20;
+        };
       }
     }
-  ]
+  ];
 
   return (
     <Card>
@@ -310,7 +306,7 @@ const ChartjsScatterChart = ({ labelColor, gridLineColor, primary, yellowColor, 
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ChartjsScatterChart
+export default ChartjsScatterChart;

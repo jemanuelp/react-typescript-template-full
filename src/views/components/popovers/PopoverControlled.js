@@ -1,11 +1,9 @@
-// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap'
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 const PopoverControlled = () => {
-  const [popoverOpen, setPopoverOpen] = useState(false)
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
   return (
     <Fragment>
@@ -24,6 +22,6 @@ const PopoverControlled = () => {
         </PopoverBody>
       </Popover>
     </Fragment>
-  )
-}
-export default PopoverControlled
+  );
+};
+export default PopoverControlled;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Nav, NavItem, NavLink } from 'reactstrap'
+
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const NavSquareBorder = () => {
   return (
@@ -21,6 +21,6 @@ const NavSquareBorder = () => {
         </NavLink>
       </NavItem>
     </Nav>
-  )
-}
-export default NavSquareBorder
+  );
+};
+export default NavSquareBorder;

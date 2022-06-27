@@ -1,16 +1,13 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Reactstrap Imports
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap'
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 
 const AccordionWithoutArrow = () => {
-  // ** State
-  const [open, setOpen] = useState('1')
+  const [open, setOpen] = useState('1');
 
   const toggle = id => {
-    open === id ? setOpen() : setOpen(id)
-  }
+    open === id ? setOpen() : setOpen(id);
+  };
 
   return (
     <Accordion className='accordion-without-arrow' open={open} toggle={toggle}>
@@ -47,7 +44,7 @@ const AccordionWithoutArrow = () => {
         </AccordionBody>
       </AccordionItem>
     </Accordion>
-  )
-}
+  );
+};
 
-export default AccordionWithoutArrow
+export default AccordionWithoutArrow;

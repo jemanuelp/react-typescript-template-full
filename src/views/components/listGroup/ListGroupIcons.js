@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
-// ** Icons Imports
-import { Facebook, Instagram, Twitter } from 'react-feather'
+import { Facebook, Instagram, Twitter } from 'react-feather';
 
 const ListGroupIcons = () => {
   return (
@@ -26,6 +24,6 @@ const ListGroupIcons = () => {
         <span>Bonbon macaroon gummies pie jelly.</span>
       </ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupIcons
+  );
+};
+export default ListGroupIcons;

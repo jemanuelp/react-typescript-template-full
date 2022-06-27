@@ -1,17 +1,15 @@
-// ** Third Party Components
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, CardText, Badge, ListGroup, ListGroupItem, Button } from 'reactstrap'
+import { Row, Col, Card, CardBody, CardText, Badge, ListGroup, ListGroupItem, Button } from 'reactstrap';
 
 const PricingCards = ({ data, duration, bordered, fullWidth, cols }) => {
-  const colsProps = cols ? cols : { md: 4, xs: 12 }
+  const colsProps = cols ? cols : { md: 4, xs: 12 };
 
   const renderPricingCards = () => {
     return data.map((item, index) => {
       const monthlyPrice = duration === 'yearly' ? item.yearlyPlan.perMonth : item.monthlyPrice,
         yearlyPrice = duration === 'yearly' ? item.yearlyPlan.totalAnnual : item.monthlyPrice,
-        imgClasses = item.title === 'Basic' ? 'mb-2 mt-5' : item.title === 'Standard' ? 'mb-1' : 'mb-2'
+        imgClasses = item.title === 'Basic' ? 'mb-2 mt-5' : item.title === 'Standard' ? 'mb-1' : 'mb-2';
 
       return (
         <Col key={index} {...colsProps}>
@@ -60,14 +58,14 @@ const PricingCards = ({ data, duration, bordered, fullWidth, cols }) => {
             </CardBody>
           </Card>
         </Col>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const defaultCols = {
     sm: { offset: 2, size: 10 },
     lg: { offset: 2, size: 10 }
-  }
+  };
 
   return (
     <Row className='pricing-card'>
@@ -75,7 +73,7 @@ const PricingCards = ({ data, duration, bordered, fullWidth, cols }) => {
         <Row>{renderPricingCards()}</Row>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default PricingCards
+export default PricingCards;

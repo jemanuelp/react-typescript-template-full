@@ -37,136 +37,136 @@ const Tooltips = lazy(() => import('../../views/components/tooltips'));
 const UiElementRoutes = [
   {
     element: <Typography />,
-    path: '/ui-element/typography'
+    path: '/ui-element/typography',
   },
   {
     element: <Icons />,
-    path: '/icons/reactfeather'
+    path: '/icons/reactfeather',
   },
   {
     path: '/cards/basic',
-    element: <CardsBasic />
+    element: <CardsBasic />,
   },
   {
     path: '/cards/advance',
-    element: <CardsAdvance />
+    element: <CardsAdvance />,
   },
   {
     path: '/cards/statistics',
-    element: <CardsStatistics />
+    element: <CardsStatistics />,
   },
   {
     path: '/cards/analytics',
-    element: <CardsAnalytics />
+    element: <CardsAnalytics />,
   },
   {
     path: '/cards/action',
-    element: <CardsActions />
+    element: <CardsActions />,
   },
   {
     element: <Accordion />,
-    path: '/components/accordion'
+    path: '/components/accordion',
   },
   {
     element: <Alerts />,
-    path: '/components/alerts'
+    path: '/components/alerts',
   },
   {
     element: <Autocomplete />,
-    path: '/components/auto-complete'
+    path: '/components/auto-complete',
   },
   {
     element: <Avatar />,
-    path: '/components/avatar'
+    path: '/components/avatar',
   },
   {
     element: <Badge />,
-    path: '/components/badges'
+    path: '/components/badges',
   },
   {
     element: <BlockUI />,
-    path: '/components/blockui'
+    path: '/components/blockui',
   },
   {
     element: <Breadcrumbs />,
-    path: '/components/breadcrumbs'
+    path: '/components/breadcrumbs',
   },
   {
     element: <Buttons />,
-    path: '/components/buttons'
+    path: '/components/buttons',
   },
   {
     element: <Carousel />,
-    path: '/components/carousel'
+    path: '/components/carousel',
   },
   {
     element: <Collapse />,
-    path: '/components/collapse'
+    path: '/components/collapse',
   },
   {
     element: <Divider />,
-    path: '/components/divider'
+    path: '/components/divider',
   },
   {
     element: <Dropdown />,
-    path: '/components/dropdowns'
+    path: '/components/dropdowns',
   },
   {
     element: <ListGroup />,
-    path: '/components/list-group'
+    path: '/components/list-group',
   },
   {
     element: <Modal />,
-    path: '/components/modals'
+    path: '/components/modals',
   },
   {
     element: <NavComponent />,
-    path: '/components/nav-component'
+    path: '/components/nav-component',
   },
   {
     element: <Offcanvas />,
-    path: '/components/offcanvas'
+    path: '/components/offcanvas',
   },
   {
     element: <Pagination />,
-    path: '/components/pagination'
+    path: '/components/pagination',
   },
   {
     element: <BadgePills />,
-    path: '/components/pill-badges'
+    path: '/components/pill-badges',
   },
   {
     element: <TabPills />,
-    path: '/components/pills-component'
+    path: '/components/pills-component',
   },
   {
     element: <Popovers />,
-    path: '/components/popovers'
+    path: '/components/popovers',
   },
   {
     element: <Progress />,
-    path: '/components/progress'
+    path: '/components/progress',
   },
   {
     element: <Spinners />,
-    path: '/components/spinners'
+    path: '/components/spinners',
   },
   {
     element: <Tabs />,
-    path: '/components/tabs-component'
+    path: '/components/tabs-component',
   },
   {
     element: <Timeline />,
-    path: '/components/timeline'
+    path: '/components/timeline',
   },
   {
     element: <Toasts />,
-    path: '/components/toasts'
+    path: '/components/toasts',
   },
   {
     element: <Tooltips />,
-    path: '/components/tooltips'
-  }
+    path: '/components/tooltips',
+  },
 ];
 
 export default UiElementRoutes;

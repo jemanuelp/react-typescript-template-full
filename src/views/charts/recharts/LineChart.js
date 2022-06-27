@@ -1,9 +1,7 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Badge } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Badge } from 'reactstrap';
 
-// ** Third Party Components
-import { ArrowDown } from 'react-feather'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { ArrowDown } from 'react-feather';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 // ** Chart Data
 const data = [
@@ -67,7 +65,7 @@ const data = [
     name: '21/12',
     pv: 50
   }
-]
+];
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload) {
@@ -75,11 +73,11 @@ const CustomTooltip = ({ active, payload }) => {
       <div className='recharts-custom-tooltip'>
         <span>{`${payload[0].value}%`}</span>
       </div>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};
 
 const SimpleLineChart = ({ warning }) => {
   return (
@@ -112,6 +110,6 @@ const SimpleLineChart = ({ warning }) => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimpleLineChart
+  );
+};
+export default SimpleLineChart;

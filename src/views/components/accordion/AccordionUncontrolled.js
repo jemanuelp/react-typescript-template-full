@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { UncontrolledAccordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap'
+
+import { UncontrolledAccordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 
 const AccordionUncontrolled = () => {
   return (
@@ -29,7 +29,7 @@ const AccordionUncontrolled = () => {
         </AccordionBody>
       </AccordionItem>
     </UncontrolledAccordion>
-  )
-}
+  );
+};
 
-export default AccordionUncontrolled
+export default AccordionUncontrolled;

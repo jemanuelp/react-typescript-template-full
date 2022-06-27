@@ -1,8 +1,5 @@
-// ** React Imports
-import { Link } from 'react-router-dom'
-
-// ** Reactstrap Imports
-import { Card, CardBody, Button } from 'reactstrap'
+import { Link } from 'react-router-dom';
+import { Card, CardBody, Button } from 'reactstrap';
 
 const PreviewActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
   return (
@@ -25,7 +22,7 @@ const PreviewActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
         </Button>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default PreviewActions
+export default PreviewActions;

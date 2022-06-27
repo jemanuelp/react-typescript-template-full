@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Button } from 'reactstrap'
+
+import { Button } from 'reactstrap';
 
 const FilledButtons = () => {
   return (
@@ -12,6 +12,6 @@ const FilledButtons = () => {
       <Button.Ripple color='info'>Info</Button.Ripple>
       <Button.Ripple color='dark'>Dark</Button.Ripple>
     </div>
-  )
-}
-export default FilledButtons
+  );
+};
+export default FilledButtons;

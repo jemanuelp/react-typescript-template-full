@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+
+import { Badge } from 'reactstrap';
 
 const BadgePillContextual = () => {
   return (
@@ -26,6 +26,6 @@ const BadgePillContextual = () => {
         Dark
       </Badge>
     </div>
-  )
-}
-export default BadgePillContextual
+  );
+};
+export default BadgePillContextual;

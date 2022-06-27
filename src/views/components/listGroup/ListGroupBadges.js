@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem, Badge } from 'reactstrap'
+
+import { ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
 const ListGroupBadges = () => {
   return (
@@ -23,6 +23,6 @@ const ListGroupBadges = () => {
         </Badge>
       </ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupBadges
+  );
+};
+export default ListGroupBadges;

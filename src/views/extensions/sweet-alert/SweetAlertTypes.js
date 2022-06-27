@@ -1,11 +1,9 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button, CardText } from 'reactstrap';
 
-// ** Third Party Components
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 const SweetAlertTypes = () => {
   const handleSuccess = () => {
@@ -17,8 +15,8 @@ const SweetAlertTypes = () => {
         confirmButton: 'btn btn-primary'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleInfo = () => {
     return MySwal.fire({
@@ -29,8 +27,8 @@ const SweetAlertTypes = () => {
         confirmButton: 'btn btn-primary'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleWarning = () => {
     return MySwal.fire({
@@ -41,8 +39,8 @@ const SweetAlertTypes = () => {
         confirmButton: 'btn btn-primary'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleError = () => {
     return MySwal.fire({
@@ -53,8 +51,8 @@ const SweetAlertTypes = () => {
         confirmButton: 'btn btn-primary'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   const handleQuestion = () => {
     return MySwal.fire({
@@ -65,8 +63,8 @@ const SweetAlertTypes = () => {
         confirmButton: 'btn btn-primary'
       },
       buttonsStyling: false
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -97,7 +95,7 @@ const SweetAlertTypes = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default SweetAlertTypes
+export default SweetAlertTypes;

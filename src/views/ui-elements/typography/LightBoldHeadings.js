@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, CardText, Table } from 'reactstrap';
 
 const LightBoldHeadings = () => {
   return (
@@ -73,6 +73,6 @@ const LightBoldHeadings = () => {
         </tbody>
       </Table>
     </Card>
-  )
-}
-export default LightBoldHeadings
+  );
+};
+export default LightBoldHeadings;

@@ -1,5 +1,4 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
 const DividerDefault = () => {
   return (
@@ -15,6 +14,6 @@ const DividerDefault = () => {
         magna aliqua.
       </p>
     </Fragment>
-  )
-}
-export default DividerDefault
+  );
+};
+export default DividerDefault;

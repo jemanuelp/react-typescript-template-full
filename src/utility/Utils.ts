@@ -4,20 +4,25 @@ import { DefaultRoute } from '../router/routes';
 export const isObjEmpty = (obj: object) => Object.keys(obj).length === 0;
 
 // ** Returns K format from a number
-export const kFormatter = (num: number) => (num > 999 ? `${(num / 1000).toFixed(1)}k` : num);
+export const kFormatter = (num: number) => {
+  return (num > 999
+? `${(num / 1000).toFixed(1)}k`
+: num);
+};
 
 // ** Converts HTML to string
-export const htmlToString = (html: string) => html.replace(/<\/?[^>]+(>|$)/g, '');
+export const htmlToString = (html: string) => {
+  return html.replace(/<\/?[^>]+(>|$)/g, '');
+};
 
 // ** Checks if the passed date is today
 const isToday = (date: Date) => {
   const today = new Date();
   return (
-    /* eslint-disable operator-linebreak */
     date.getDate() === today.getDate() &&
     date.getMonth() === today.getMonth() &&
     date.getFullYear() === today.getFullYear()
-    /* eslint-enable */
+    
   );
 };
 
@@ -92,6 +97,6 @@ export const selectThemeColors = (theme: any) => ({
     primary: '#7367f0', // for selected option bg-color
     neutral10: '#7367f0', // for tags bg-color
     neutral20: '#ededed', // for input border-color
-    neutral30: '#ededed' // for input hover border-color
-  }
+    neutral30: '#ededed', // for input hover border-color
+  },
 });

@@ -1,39 +1,33 @@
-// ** React Imports
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
 // ** Demo Charts
-import PieChart from './PieChart'
-import BarChart from './BarChart'
-import LineChart from './LineChart'
-import AreaChart from './AreaChart'
-import RadarChart from './RadarChart'
-import ScatterChart from './ScatterChart'
+import PieChart from './PieChart';
+import BarChart from './BarChart';
+import LineChart from './LineChart';
+import AreaChart from './AreaChart';
+import RadarChart from './RadarChart';
+import ScatterChart from './ScatterChart';
 
-// ** Context
-import { ThemeColors } from '@src/utility/context/ThemeColors'
+import { ThemeColors } from 'src/utility/context/ThemeColors';
 
-// ** Styles
-import '@styles/react/libs/flatpickr/flatpickr.scss'
-import '@styles/react/libs/charts/recharts.scss'
+import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import 'src/@core/scss/react/libs/charts/recharts.scss';
 
 const Recharts = () => {
-  // ** Context
-  const { colors } = useContext(ThemeColors)
-
-  // ** Vars
+  
+  const { colors } = useContext(ThemeColors);
+  
   const donut = {
     series1: '#ffe700',
     series2: '#00d4bd',
     series3: '#826bf8',
     series4: '#2b9bf4',
-    series5: '#FFA1A1'
-  }
+    series5: '#FFA1A1',
+  };
 
   return (
     <Fragment>
@@ -68,7 +62,7 @@ const Recharts = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Recharts
+export default Recharts;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 const DescriptionListVertical = () => {
   return (
@@ -21,6 +21,6 @@ const DescriptionListVertical = () => {
         </dl>
       </CardBody>
     </Card>
-  )
-}
-export default DescriptionListVertical
+  );
+};
+export default DescriptionListVertical;

@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
-// ** Third Party Components
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const SimplePieChart = props => {
   // ** Chart Data
@@ -11,14 +9,13 @@ const SimplePieChart = props => {
     { name: 'Operational', value: 85, color: props.series1 },
     { name: 'Networking', value: 16, color: props.series5 },
     { name: 'Hiring', value: 50, color: props.series3 }
-  ]
-  /*eslint-disable */
-  const RADIAN = Math.PI / 180
+  ];
+  
+  const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, fill }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-    const x = cx + radius * Math.cos(-midAngle * RADIAN)
-    const y = cy + radius * Math.sin(-midAngle * RADIAN)
-    /*eslint-enable */
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
     return (
       <text
         x={x}
@@ -29,8 +26,8 @@ const SimplePieChart = props => {
       >
         {`${(percent * 100).toFixed(0)}%`}
       </text>
-    )
-  }
+    );
+  };
 
   return (
     <Card>
@@ -73,6 +70,6 @@ const SimplePieChart = props => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SimplePieChart
+  );
+};
+export default SimplePieChart;

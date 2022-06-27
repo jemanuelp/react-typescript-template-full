@@ -1,14 +1,10 @@
-// ** React Imports
-import { Fragment, useState, useRef } from 'react'
+import { Fragment, useState, useRef } from 'react';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Third Party Components
-import { utils, write } from 'xlsx'
-import * as FileSaver from 'file-saver'
+import { utils, write } from 'xlsx';
+import * as FileSaver from 'file-saver';
 
-// ** Reactstrap Imports
 import {
   Row,
   Col,
@@ -22,7 +18,7 @@ import {
   ModalBody,
   ModalHeader,
   ModalFooter
-} from 'reactstrap'
+} from 'reactstrap';
 
 const initialData = [
   {
@@ -95,70 +91,68 @@ const initialData = [
     email: 'Rey.Padberg@karina.biz',
     website: 'ambrose.net'
   }
-]
+];
 
 const Export = () => {
-  // ** Ref
-  const tableRef = useRef()
+  const tableRef = useRef();
 
-  // ** States
-  const [data] = useState(initialData)
-  const [value, setValue] = useState('')
-  const [modal, setModal] = useState(false)
-  const [fileName, setFileName] = useState('')
-  const [filteredData, setFilteredData] = useState([])
-  const [fileFormat, setFileFormat] = useState('xlsx')
+  const [data] = useState(initialData);
+  const [value, setValue] = useState('');
+  const [modal, setModal] = useState(false);
+  const [fileName, setFileName] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+  const [fileFormat, setFileFormat] = useState('xlsx');
 
   const toggleModal = () => {
-    setModal(!modal)
-  }
+    setModal(!modal);
+  };
 
   const handleFilter = e => {
-    const dataArr = data
-    let filteredData = []
-    const value = e.target.value
-    setValue(value)
+    const dataArr = data;
+    let filteredData = [];
+    const value = e.target.value;
+    setValue(value);
     if (value.length) {
       filteredData = dataArr.filter(col => {
         const startsWithCondition =
           col.name.toLowerCase().startsWith(value.toLowerCase()) ||
           col.email.toLowerCase().startsWith(value.toLowerCase()) ||
           col.website.toLowerCase().startsWith(value.toLowerCase()) ||
-          col.id.toString().toLowerCase().startsWith(value.toLowerCase())
+          col.id.toString().toLowerCase().startsWith(value.toLowerCase());
 
         const includesCondition =
           col.name.toLowerCase().includes(value.toLowerCase()) ||
           col.email.toLowerCase().includes(value.toLowerCase()) ||
           col.website.toLowerCase().includes(value.toLowerCase()) ||
-          col.id.toString().toLowerCase().includes(value.toLowerCase())
+          col.id.toString().toLowerCase().includes(value.toLowerCase());
 
-        if (startsWithCondition) return startsWithCondition
-        else if (!startsWithCondition && includesCondition) return includesCondition
-        else return null
-      })
-      setFilteredData(filteredData)
-      setValue(value)
+        if (startsWithCondition) return startsWithCondition;
+        else if (!startsWithCondition && includesCondition) return includesCondition;
+        else return null;
+      });
+      setFilteredData(filteredData);
+      setValue(value);
     }
-  }
+  };
 
   const handleExport = () => {
-    toggleModal()
-    const bookType = fileFormat
-    const wb = utils.table_to_book(tableRef.current, { sheet: 'Sheet JS' })
-    const wbout = write(wb, { bookType, bookSST: true, type: 'binary' })
+    toggleModal();
+    const bookType = fileFormat;
+    const wb = utils.table_to_book(tableRef.current, { sheet: 'Sheet JS' });
+    const wbout = write(wb, { bookType, bookSST: true, type: 'binary' });
 
     const s2ab = s => {
-      const buf = new ArrayBuffer(s.length)
-      const view = new Uint8Array(buf)
-      for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xff
-      return buf
-    }
-    const file = fileName.length ? `${fileName}.${fileFormat}` : `excel-sheet.${fileFormat}`
+      const buf = new ArrayBuffer(s.length);
+      const view = new Uint8Array(buf);
+      for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xff;
+      return buf;
+    };
+    const file = fileName.length ? `${fileName}.${fileFormat}` : `excel-sheet.${fileFormat}`;
 
-    return FileSaver.saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), file)
-  }
+    return FileSaver.saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), file);
+  };
 
-  const array = value ? filteredData : data
+  const array = value ? filteredData : data;
   const renderTableData = array.map(col => {
     return (
       <tr key={col.id}>
@@ -167,8 +161,8 @@ const Export = () => {
         <td>{col.website}</td>
         <td>{col.id}</td>
       </tr>
-    )
-  })
+    );
+  });
   return (
     <Fragment>
       <ExtensionsHeader
@@ -246,7 +240,7 @@ const Export = () => {
         </ModalFooter>
       </Modal>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Export
+export default Export;

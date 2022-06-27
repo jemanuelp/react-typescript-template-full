@@ -1,18 +1,14 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
-// ** Custom Components
-import ExtensionsHeader from '@components/extensions-header'
+import ExtensionsHeader from 'src/@core/components/extensions-header';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap'
+import { Row, Col, Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap';
 
 const I18nExtension = () => {
-  // ** Hooks
-  const { i18n, t } = useTranslation()
+  
+  const { i18n, t } = useTranslation();
 
   return (
     <Fragment>
@@ -88,7 +84,7 @@ const I18nExtension = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default I18nExtension
+export default I18nExtension;

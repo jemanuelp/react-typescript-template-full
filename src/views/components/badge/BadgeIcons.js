@@ -1,8 +1,6 @@
-// ** Reactstrap Imports
-import { Badge } from 'reactstrap'
+import { Badge } from 'reactstrap';
 
-// ** Icons Imports
-import { Star } from 'react-feather'
+import { Star } from 'react-feather';
 
 const BadgeIcons = () => {
   return (
@@ -36,6 +34,6 @@ const BadgeIcons = () => {
         <span className='align-middle ms-25'>Dark</span>
       </Badge>
     </div>
-  )
-}
-export default BadgeIcons
+  );
+};
+export default BadgeIcons;

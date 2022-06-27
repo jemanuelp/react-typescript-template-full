@@ -4,7 +4,7 @@ export const toastTranslucent = (
       {`
 
 import { Toast, ToastBody, ToastHeader, Row, Col } from 'reactstrap'
-import transparentBg from '@src/assets/images/svg/transparent.svg'
+import transparentBg from 'src/assets/images/svg/transparent.svg'
 
 const close = (
   <button type='button' className='ms-1 btn-close'>
@@ -109,7 +109,7 @@ export default ToastTranslucent
 `}
     </code>
   </pre>
-)
+);
 
 export const toastHeaderIcons = (
   <pre>
@@ -117,7 +117,7 @@ export const toastHeaderIcons = (
       {`
 
 import { Toast, ToastBody, ToastHeader, Spinner, Row, Col } from 'reactstrap'
-import logo from '@src/assets/images/logo/logo.png'
+import logo from 'src/assets/images/logo/logo.png'
 
 const close = (
   <button type='button' className='ms-1 btn-close'>
@@ -200,4 +200,4 @@ export default ToastHeaderIcons
 `}
     </code>
   </pre>
-)
+);

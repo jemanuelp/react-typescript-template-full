@@ -1,12 +1,10 @@
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Menu, Item, useContextMenu } from 'react-contexify'
+import toast from 'react-hot-toast';
+import { Menu, Item, useContextMenu } from 'react-contexify';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, Button } from 'reactstrap';
 
 const ContextMenuDoubleClick = () => {
-  const { show } = useContextMenu({ id: 'menu_double' })
+  const { show } = useContextMenu({ id: 'menu_double' });
 
   return (
     <Card>
@@ -23,7 +21,7 @@ const ContextMenuDoubleClick = () => {
         </Menu>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default ContextMenuDoubleClick
+export default ContextMenuDoubleClick;

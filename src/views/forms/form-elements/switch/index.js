@@ -1,16 +1,12 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import SwitchIcons from './SwitchIcons'
-import SwitchColors from './SwitchColors'
-import SwitchReactstrap from './SwitchBasic'
+import SwitchIcons from './SwitchIcons';
+import SwitchColors from './SwitchColors';
+import SwitchReactstrap from './SwitchBasic';
 
 const Switch = () => {
   return (
@@ -28,6 +24,6 @@ const Switch = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default Switch
+  );
+};
+export default Switch;

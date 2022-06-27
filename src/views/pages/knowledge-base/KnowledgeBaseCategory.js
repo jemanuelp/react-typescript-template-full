@@ -1,38 +1,31 @@
-// ** React Imports
-import { Link, useParams } from 'react-router-dom'
-import { Fragment, useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom';
+import { Fragment, useState, useEffect } from 'react';
 
-// ** Third Party Components
-import axios from 'axios'
-import * as Icon from 'react-feather'
-import classnames from 'classnames'
+import axios from 'axios';
+import * as Icon from 'react-feather';
+import classnames from 'classnames';
 
-// ** Custom Components
-import Breadcrumbs from '@components/breadcrumbs'
+import Breadcrumbs from 'src/@core/components/breadcrumbs';
 
-// ** Demo Components
-import KnowledgeBaseHeader from './KnowledgeBaseHeader'
+import KnowledgeBaseHeader from './KnowledgeBaseHeader';
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardBody, ListGroup, ListGroupItem } from 'reactstrap'
+import { Row, Col, Card, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 
-// ** Styles
-import '@styles/base/pages/page-knowledge-base.scss'
+import 'src/@core/scss/base/pages/page-knowledge-base.scss';
 
 const KnowledgeBaseCategory = () => {
-  // ** States
   const [data, setData] = useState(null),
     [filteredData, setFilteredData] = useState([]),
-    [searchTerm, setSearchTerm] = useState('')
+    [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('/faq/data/category').then(res => setData(res.data))
-  }, [])
+    axios.get('/faq/data/category').then(res => setData(res.data));
+  }, []);
 
-  const params = useParams()
+  const params = useParams();
 
   const Content = ({ item }) => {
-    const IconTag = Icon[item.icon]
+    const IconTag = Icon[item.icon];
     return (
       <Col className='kb-search-content' md='4' sm='6'>
         <Card>
@@ -41,7 +34,7 @@ const KnowledgeBaseCategory = () => {
               <IconTag
                 size={20}
                 className={classnames('me-50', {
-                  [item.iconColor]: item.iconColor
+                  [item.iconColor]: item.iconColor,
                 })}
               />
               <span>
@@ -63,34 +56,36 @@ const KnowledgeBaseCategory = () => {
           </CardBody>
         </Card>
       </Col>
-    )
-  }
+    );
+  };
 
   const renderContent = () => {
-    const dataToMap = searchTerm.length ? filteredData : data
+    const dataToMap = searchTerm.length
+? filteredData
+: data;
 
-    return dataToMap.map(item => <Content key={item.id} item={item} />)
-  }
+    return dataToMap.map(item => <Content key={item.id} item={item} />);
+  };
 
   const handleFilter = e => {
     const value = e.target.value,
-      knowledgeBaseSearchQueryLower = e.target.value.toLowerCase()
+      knowledgeBaseSearchQueryLower = e.target.value.toLowerCase();
 
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value);
 
-    let arr = []
+    let arr = [];
 
     if (value.length) {
       arr = data.filter(item => {
         return (
           item.title.toLowerCase().includes(knowledgeBaseSearchQueryLower) ||
           item.questions.filter(queObj => queObj.question.toLowerCase().includes(knowledgeBaseSearchQueryLower)).length
-        )
-      })
+        );
+      });
     }
 
-    setFilteredData([...arr])
-  }
+    setFilteredData([...arr]);
+  };
 
   return (
     <Fragment>
@@ -99,13 +94,15 @@ const KnowledgeBaseCategory = () => {
         data={[{ title: 'Pages' }, { title: 'Knowledge Base' }, { title: 'Category' }]}
       />
       <KnowledgeBaseHeader searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleFilter={handleFilter} />
-      {data !== null ? (
+      {data !== null
+? (
         <div id='knowledge-base-category'>
           <Row className='kb-search-content-info match-height'>{renderContent()}</Row>
         </div>
-      ) : null}
+      )
+: null}
     </Fragment>
-  )
-}
+  );
+};
 
-export default KnowledgeBaseCategory
+export default KnowledgeBaseCategory;

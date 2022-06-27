@@ -1,8 +1,7 @@
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
 // ** Avatar Image
-import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg';
 
 const AvatarSizes = () => {
   return (
@@ -12,6 +11,6 @@ const AvatarSizes = () => {
       <Avatar img={avatarImg} size='lg' />
       <Avatar img={avatarImg} size='xl' />
     </div>
-  )
-}
-export default AvatarSizes
+  );
+};
+export default AvatarSizes;

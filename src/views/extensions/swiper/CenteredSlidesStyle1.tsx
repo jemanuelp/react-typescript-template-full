@@ -6,7 +6,6 @@ import {SwiperOptions} from "swiper/types/swiper-options";
 
 const SwiperCenterSlidesStyle = ({ isRtl }: Partial<useRTLInterface>) => {
   const params: SwiperOptions = {
-    // className: 'swiper-centered-slides swiper-container p-1',
     slidesPerView: 'auto',
     spaceBetween: 30,
     centeredSlides: true,
@@ -20,7 +19,7 @@ const SwiperCenterSlidesStyle = ({ isRtl }: Partial<useRTLInterface>) => {
         <CardTitle tag='h4'>Centered Slides option-1</CardTitle>
       </CardHeader>
       <CardBody>
-        <Swiper dir={isRtl ? 'rtl' : 'ltr'} {...params}>
+        <Swiper dir={isRtl ? 'rtl' : 'ltr'} {...params} className='swiper-centered-slides swiper-container p-1'>
           <SwiperSlide className='rounded swiper-shadow'>
             <Play size={28} />
             <p className='swiper-text align-middle pt-md-1 pt-sm-50 mb-0'>Getting Started</p>

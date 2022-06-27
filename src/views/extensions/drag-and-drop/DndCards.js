@@ -1,11 +1,8 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Third Party Components
-import { ReactSortable } from 'react-sortablejs'
+import { ReactSortable } from 'react-sortablejs';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardBody, CardTitle, CardText, Col } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardTitle, CardText, Col } from 'reactstrap';
 
 const dragItems = [
   {
@@ -32,11 +29,10 @@ const dragItems = [
     content:
       'Jelly beans sugar plum cheesecake cookie oat cake soufflé.Tootsie roll bonbon liquorice tiramisu pie powder.Donut sweet roll marzipan pastry cookie cake tootsie roll oat cake cookie.'
   }
-]
+];
 
 const DndCards = () => {
-  // ** State
-  const [cardsArr, setCardsArr] = useState(dragItems)
+  const [cardsArr, setCardsArr] = useState(dragItems);
 
   return (
     <ReactSortable className='row sortable-row' list={cardsArr} setList={setCardsArr}>
@@ -53,7 +49,7 @@ const DndCards = () => {
         </Col>
       ))}
     </ReactSortable>
-  )
-}
+  );
+};
 
-export default DndCards
+export default DndCards;

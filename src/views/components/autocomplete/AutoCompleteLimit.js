@@ -1,11 +1,8 @@
-// ** React Imports
-import { useState } from 'react'
+import { useState } from 'react';
 
-// ** Custom Components
-import AutoComplete from '@components/autocomplete'
+import AutoComplete from 'src/@core/components/autocomplete';
 
 const AutoCompleteSearchLimit = () => {
-  // ** State
   const [suggestions] = useState([
     {
       title: 'React.js'
@@ -34,7 +31,7 @@ const AutoCompleteSearchLimit = () => {
     {
       title: 'Laravel'
     }
-  ])
+  ]);
 
   return (
     <AutoComplete
@@ -44,6 +41,6 @@ const AutoCompleteSearchLimit = () => {
       suggestionLimit={2}
       placeholder="Type 'a'"
     />
-  )
-}
-export default AutoCompleteSearchLimit
+  );
+};
+export default AutoCompleteSearchLimit;

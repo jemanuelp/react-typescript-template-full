@@ -1,23 +1,20 @@
-// ** Third Party Components
-import toast from 'react-hot-toast'
-import { Check } from 'react-feather'
-import { useForm, Controller } from 'react-hook-form'
+import toast from 'react-hot-toast';
+import { Check } from 'react-feather';
+import { useForm, Controller } from 'react-hook-form';
 
-// ** Custom Components
-import Avatar from '@components/avatar'
+import Avatar from 'src/@core/components/avatar';
 
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Button, Label, Input, Form } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Button, Label, Input, Form } from 'reactstrap';
 
 const BasicHookForm = () => {
-  // ** Hooks
+  
   const {
     reset,
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm()
+  } = useForm();
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
@@ -41,25 +38,25 @@ const BasicHookForm = () => {
             </ul>
           </div>
         </div>
-      )
+      );
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual'
-          })
+          });
         }
       }
     }
-  }
+  };
 
   const handleReset = () => {
     reset({
       emailBasic: '',
       firstNameBasic: '',
       lastNameBasic: ''
-    })
-  }
+    });
+  };
 
   return (
     <Card>
@@ -122,7 +119,7 @@ const BasicHookForm = () => {
         </Form>
       </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default BasicHookForm
+export default BasicHookForm;

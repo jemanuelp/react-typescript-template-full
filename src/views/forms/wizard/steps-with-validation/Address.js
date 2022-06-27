@@ -1,43 +1,40 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Third Party Components
-import { useForm, Controller } from 'react-hook-form'
-import { ArrowLeft, ArrowRight } from 'react-feather'
+import { useForm, Controller } from 'react-hook-form';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap'
+import { Label, Row, Col, Button, Form, Input, FormFeedback } from 'reactstrap';
 
 const defaultValues = {
   city: '',
   pincode: '',
   address: '',
   landmark: ''
-}
+};
 
 const Address = ({ stepper }) => {
-  // ** Hooks
+  
   const {
     control,
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm({ defaultValues })
+  } = useForm({ defaultValues });
 
   const onSubmit = data => {
     if (Object.values(data).every(field => field.length > 0)) {
-      stepper.next()
+      stepper.next();
     } else {
       for (const key in data) {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual',
             message: `Please enter a valid ${key}`
-          })
+          });
         }
       }
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -114,7 +111,7 @@ const Address = ({ stepper }) => {
         </div>
       </Form>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Address
+export default Address;

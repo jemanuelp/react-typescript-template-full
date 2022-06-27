@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Button, Row, Col } from 'reactstrap'
+import { Button, Row, Col } from 'reactstrap';
 
 const ButtonSizes = () => {
   return (
@@ -34,6 +32,6 @@ const ButtonSizes = () => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
-export default ButtonSizes
+  );
+};
+export default ButtonSizes;

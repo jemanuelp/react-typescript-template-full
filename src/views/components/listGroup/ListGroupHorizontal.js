@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { ListGroup, ListGroupItem } from 'reactstrap'
+
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const ListGroupHorizontal = () => {
   return (
@@ -9,6 +9,6 @@ const ListGroupHorizontal = () => {
       <ListGroupItem>Cheesecake</ListGroupItem>
       <ListGroupItem>Cotton candy</ListGroupItem>
     </ListGroup>
-  )
-}
-export default ListGroupHorizontal
+  );
+};
+export default ListGroupHorizontal;

@@ -1,5 +1,5 @@
-// ** Reactstrap Imports
-import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap'
+
+import { Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap';
 
 const SelectReactstrap = () => {
   return (
@@ -40,6 +40,6 @@ const SelectReactstrap = () => {
         </div>
       </CardBody>
     </Card>
-  )
-}
-export default SelectReactstrap
+  );
+};
+export default SelectReactstrap;

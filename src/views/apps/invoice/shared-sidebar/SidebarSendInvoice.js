@@ -1,11 +1,8 @@
-// ** Custom Components
-import Sidebar from '@components/sidebar'
+import Sidebar from 'src/@core/components/sidebar';
 
-// ** Icons Imports
-import { Link } from 'react-feather'
+import { Link } from 'react-feather';
 
-// ** Reactstrap Imports
-import { Form, Input, Label, Badge, Button } from 'reactstrap'
+import { Form, Input, Label, Badge, Button } from 'reactstrap';
 
 const SidebarSendInvoice = ({ open, toggleSidebar }) => {
   return (
@@ -75,7 +72,7 @@ We would appreciate payment of this invoice by 05/11/2019`}
         </div>
       </Form>
     </Sidebar>
-  )
-}
+  );
+};
 
-export default SidebarSendInvoice
+export default SidebarSendInvoice;

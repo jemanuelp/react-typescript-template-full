@@ -1,8 +1,6 @@
-// ** React Imports
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 
-// ** Reactstrap Imports
-import { Spinner } from 'reactstrap'
+import { Spinner } from 'reactstrap';
 
 const SpinnerFlex = () => {
   return (
@@ -16,6 +14,6 @@ const SpinnerFlex = () => {
         <Spinner />
       </div>
     </Fragment>
-  )
-}
-export default SpinnerFlex
+  );
+};
+export default SpinnerFlex;

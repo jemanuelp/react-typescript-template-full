@@ -1,18 +1,18 @@
-import { NavLink } from 'react-router-dom'
-import classnames from 'classnames'
-import { useTranslation } from 'react-i18next'
+import { NavLink } from 'react-router-dom';
+import classnames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 const HorizontalNavMenuLink = ({ item, isChild, setMenuOpen }: any) => {
   // ** Conditional Link Tag, if item has newTab or externalLink props use <a> tag else use NavLink
-  const LinkTag: any = item.externalLink ? 'a' : NavLink
+  const LinkTag: any = item.externalLink ? 'a' : NavLink;
 
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const handleClick = () => {
     if (setMenuOpen) {
-      setMenuOpen(false)
+      setMenuOpen(false);
     }
-  }
+  };
 
   return (
     <li
@@ -27,37 +27,34 @@ const HorizontalNavMenuLink = ({ item, isChild, setMenuOpen }: any) => {
           'nav-link': !isChild
         })}
         target={item.newTab ? '_blank' : undefined}
-        /*eslint-disable */
-        {...(item.externalLink === true
-          ? {
+        
+        {...(item.externalLink === true ? {
               href: item.navLink || '/'
-            }
-          : {
+            } : {
               to: item.navLink || '/',
               className: ({ isActive }: any) => {
-                const commonClass = 'd-flex align-items-center'
+                const commonClass = 'd-flex align-items-center';
                 if (isActive && !item.disabled && item.navLink !== '#') {
                   if (isChild) {
-                    return `${commonClass} dropdown-item active`
+                    return `${commonClass} dropdown-item active`;
                   } else {
-                    return `${commonClass} nav-link active`
+                    return `${commonClass} nav-link active`;
                   }
                 } else {
                   if (isChild) {
-                    return `${commonClass} dropdown-item`
+                    return `${commonClass} dropdown-item`;
                   } else {
-                    return `${commonClass} nav-link`
+                    return `${commonClass} nav-link`;
                   }
                 }
               }
             })}
-        /*eslint-enable */
       >
         {item.icon}
         <span>{t(item.title)}</span>
       </LinkTag>
     </li>
-  )
-}
+  );
+};
 
-export default HorizontalNavMenuLink
+export default HorizontalNavMenuLink;
