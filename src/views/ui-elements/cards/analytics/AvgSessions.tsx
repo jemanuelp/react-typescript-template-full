@@ -16,6 +16,7 @@ import {
   UncontrolledDropdown,
 } from 'reactstrap';
 import {IAvgSessions} from "../../../../domains/interfaces/card-analytics/IAvgSessions";
+import {ApexOptions} from "apexcharts";
 
 const AvgSessions = (props: { primary: string }) => {
   const [data, setData] = useState<IAvgSessions | null>(null);
@@ -25,7 +26,7 @@ const AvgSessions = (props: { primary: string }) => {
     return () => setData(null);
   }, []);
 
-  const options = {
+  const options: ApexOptions = {
       chart: {
         sparkline: { enabled: true },
         toolbar: { show: false },
@@ -39,7 +40,9 @@ const AvgSessions = (props: { primary: string }) => {
       },
       states: {
         hover: {
-          filter: 'none',
+          filter: {
+            type: 'none',
+          },
         },
       },
       colors: ['#ebf0f7', '#ebf0f7', props.primary, '#ebf0f7', '#ebf0f7', '#ebf0f7'],

@@ -33,7 +33,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
     setFooterType,
     setNavbarColor,
     setContentWidth,
-    setMenuCollapsed
+    setMenuCollapsed,
   } = props;
 
   const [openCustomizer, setOpenCustomizer] = useState(false);
@@ -50,23 +50,23 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
       {
         name: 'light',
         label: 'Light',
-        checked: skin === SkinTypes.light
+        checked: skin === SkinTypes.light,
       },
       {
         name: 'bordered',
         label: 'Bordered',
-        checked: skin === 'bordered'
+        checked: skin === SkinTypes.bordered,
       },
       {
         name: 'dark',
         label: 'Dark',
-        checked: skin === 'dark'
+        checked: skin === SkinTypes.dark,
       },
       {
         name: 'semi-dark',
         label: 'Semi Dark',
-        checked: skin === 'semi-dark'
-      }
+        checked: skin === SkinTypes["semi-dark"],
+      },
     ];
 
     return skinsArr.map((radio, index) => {
@@ -96,7 +96,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
         key={color}
         className={classnames(`color-box bg-${color}`, {
           selected: navbar.backgroundColor === color,
-          border: color === 'white'
+          border: color === 'white',
         })}
         onClick={() => setNavbarColor(color)}
       ></li>
@@ -109,23 +109,23 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
       {
         name: 'floating',
         label: 'Floating',
-        checked: navbar.type === NavbarLayoutTypes.floating
+        checked: navbar.type === NavbarLayoutTypes.floating,
       },
       {
         name: 'sticky',
         label: 'Sticky',
-        checked: navbar.type === NavbarLayoutTypes.sticky
+        checked: navbar.type === NavbarLayoutTypes.sticky,
       },
       {
         name: 'static',
         label: 'Static',
-        checked: navbar.type === NavbarLayoutTypes.static
+        checked: navbar.type === NavbarLayoutTypes.static,
       },
       {
         name: 'hidden',
         label: 'Hidden',
-        checked: navbar.type === NavbarLayoutTypes.hidden
-      }
+        checked: navbar.type === NavbarLayoutTypes.hidden,
+      },
     ];
 
     return navbarTypeArr.map((radio, index) => {
@@ -152,18 +152,18 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
       {
         name: 'sticky',
         label: 'Sticky',
-        checked: footer.type === FooterLayoutTypes.sticky
+        checked: footer.type === FooterLayoutTypes.sticky,
       },
       {
         name: 'static',
         label: 'Static',
-        checked: footer.type === FooterLayoutTypes.static
+        checked: footer.type === FooterLayoutTypes.static,
       },
       {
         name: 'hidden',
         label: 'Hidden',
-        checked: footer.type === FooterLayoutTypes.hidden
-      }
+        checked: footer.type === FooterLayoutTypes.hidden,
+      },
     ];
 
     return footerTypeArr.map((radio, index) => {
@@ -190,7 +190,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
     { value: 'fadeIn', label: 'Fade' },
     { value: 'fadeInLeft', label: 'Fade In Left' },
     { value: 'zoomIn', label: 'Zoom In' },
-    { value: 'none', label: 'None' }
+    { value: 'none', label: 'None' },
   ];
 
   // ** Get Current Transition
@@ -199,7 +199,7 @@ const Customizer = (props: (Layout & LayoutSetterState)) => {
   return (
     <div
       className={classnames('customizer d-none d-md-block', {
-        open: openCustomizer
+        open: openCustomizer,
       })}
     >
       <a href='/' className='customizer-toggle d-flex align-items-center justify-content-center' onClick={handleToggle}>

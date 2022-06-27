@@ -1,10 +1,6 @@
 import { Fragment, useContext } from 'react';
-
-import Breadcrumbs from 'src/@core/components/breadcrumbs';
-
+import Breadcrumbs from '../../../@core/components/breadcrumbs';
 import { Row, Col } from 'reactstrap';
-
-// ** Deom Charts
 import BarChart from './ChartjsBarChart';
 import LineChart from './ChartjsLineChart';
 import AreaChart from './ChartjsAreaChart';
@@ -14,21 +10,17 @@ import ScatterChart from './ChartjsScatterChart';
 import DoughnutChart from './ChartjsDoughnutChart';
 import PolarAreaChart from './ChartjsPolarAreaChart';
 import HorizontalBarChart from './ChartjsHorizontalBar';
-
-import { useSkin } from '@hooks/useSkin';
-
-import { ThemeColors } from 'src/utility/context/ThemeColors';
-
+import { ThemeColors } from '../../../utility/context/ThemeColors';
 import 'chart.js/auto';
-
 import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import {useSkin} from '../../../utility/hooks/useSkin';
 
 const ChartJS = () => {
   const { colors } = useContext(ThemeColors),
     { skin } = useSkin(),
     labelColor = skin === 'dark'
-? '#b4b7bd'
-: '#6e6b7b',
+      ? '#b4b7bd'
+      : '#6e6b7b',
     tooltipShadow = 'rgba(0, 0, 0, 0.25)',
     gridLineColor = 'rgba(200, 200, 200, 0.2)',
     lineChartPrimary = '#666ee8',
@@ -58,7 +50,10 @@ const ChartJS = () => {
           </p>
         </Col>
         <Col xl='6' sm='12'>
-          <BarChart success={successColorShade} labelColor={labelColor} gridLineColor={gridLineColor} />
+          <BarChart
+            success={successColorShade}
+            labelColor={labelColor}
+            gridLineColor={gridLineColor} />
         </Col>
         <Col xl='6' sm='12'>
           <HorizontalBarChart

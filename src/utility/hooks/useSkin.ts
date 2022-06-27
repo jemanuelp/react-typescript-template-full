@@ -21,7 +21,7 @@ export const useSkin = () => {
         const classNames = {
             dark: 'dark-layout',
             bordered: 'bordered-layout',
-            'semi-dark': 'semi-dark-layout'
+            'semi-dark': 'semi-dark-layout',
         };
 
         // ** Remove all classes from Body on mount
@@ -29,13 +29,7 @@ export const useSkin = () => {
 
         // ** If skin is not light add skin class
         if (store.skin !== 'light') {
-            element.classList.add(classNames[
-                store.skin === 'dark'
-                    ? 'dark'
-                    : store.skin === SkinTypes["semi-dark"]
-                        ? SkinTypes["semi-dark"]
-                        : SkinTypes.bordered
-                ]);
+            element.classList.add(classNames[store.skin]);
         }
     }, [store.skin]);
 

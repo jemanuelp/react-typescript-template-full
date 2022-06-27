@@ -1,31 +1,33 @@
 import { useEffect, useState } from 'react';
-
 import axios from 'axios';
 import Chart from 'react-apexcharts';
 import { HelpCircle } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap';
+import {IGoalOverview} from "../../../../domains/interfaces/card-analytics/IGoalOverview";
+import {ApexOptions} from "apexcharts";
 
-const GoalOverview = props => {
-  const [data, setData] = useState(null);
+const GoalOverview = (props: {
+  success: string,
+}) => {
+  const [data, setData] = useState<IGoalOverview | null>(null);
 
   useEffect(() => {
     axios.get('/card/card-analytics/goal-overview').then(res => setData(res.data));
     return () => setData(null);
   }, []);
 
-  const options = {
+  const options: ApexOptions = {
       chart: {
         sparkline: {
-          enabled: true
+          enabled: true,
         },
         dropShadow: {
           enabled: true,
           blur: 3,
           left: 1,
           top: 1,
-          opacity: 0.1
-        }
+          opacity: 0.1,
+        },
       },
       colors: ['#51e5a8'],
       plotOptions: {
@@ -34,24 +36,24 @@ const GoalOverview = props => {
           startAngle: -150,
           endAngle: 150,
           hollow: {
-            size: '77%'
+            size: '77%',
           },
           track: {
             background: '#ebe9f1',
-            strokeWidth: '50%'
+            strokeWidth: '50%',
           },
           dataLabels: {
             name: {
-              show: false
+              show: false,
             },
             value: {
               color: '#5e5873',
               fontFamily: 'Montserrat',
               fontSize: '2.86rem',
-              fontWeight: '600'
-            }
-          }
-        }
+              fontWeight: '600',
+            },
+          },
+        },
       },
       fill: {
         type: 'gradient',
@@ -63,21 +65,22 @@ const GoalOverview = props => {
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: 1,
-          stops: [0, 100]
-        }
+          stops: [0, 100],
+        },
       },
       stroke: {
-        lineCap: 'round'
+        lineCap: 'round',
       },
       grid: {
         padding: {
-          bottom: 30
-        }
-      }
+          bottom: 30,
+        },
+      },
     },
     series = [83];
 
-  return data !== null ? (
+  return data !== null
+? (
     <Card>
       <CardHeader>
         <CardTitle tag='h4'>Goal Overview</CardTitle>
@@ -97,6 +100,7 @@ const GoalOverview = props => {
         </Col>
       </Row>
     </Card>
-  ) : null;
+  )
+: null;
 };
 export default GoalOverview;

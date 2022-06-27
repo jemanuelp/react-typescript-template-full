@@ -3,12 +3,13 @@ import Chart from 'react-apexcharts';
 import {MoreVertical} from 'react-feather';
 import {Card, CardHeader, CardTitle, CardBody} from 'reactstrap';
 import {IColors} from "../../../../domains/interfaces/layouts/IColors";
+import {ApexOptions} from "apexcharts";
 
 const CardEmployeesTasks = (
     {colors, trackBgColor}
         : { colors: IColors, trackBgColor: string },
 ) => {
-    const employeesTasks = [
+    const employeesTasks: any = [
         {
             avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
             title: 'Ryan Harrington',
@@ -39,7 +40,7 @@ const CardEmployeesTasks = (
                                 background: trackBgColor,
                             },
                             dataLabels: {
-                                showOn: 'always',
+                                show: true,
                                 name: {
                                     show: false,
                                 },
@@ -288,7 +289,7 @@ const CardEmployeesTasks = (
     ];
 
     const renderTasks = () => {
-        return employeesTasks.map(task => {
+        return employeesTasks.map((task: any) => {
             return (
                 <div key={task.title} className='employee-task d-flex justify-content-between align-items-center'>
                     <div className='d-flex'>
@@ -301,10 +302,10 @@ const CardEmployeesTasks = (
                     </div>
                     <div className='d-flex align-items-center'>
                         <small className='text-muted me-75'>{task.time}</small>
+                        // @ts-ignore
                         <Chart
                             options={task.chart.options}
                             series={task.chart.series}
-                            // @ts-ignore
                             type={task.chart.type}
                             height={task.chart.height}
                             width={task.chart.width}

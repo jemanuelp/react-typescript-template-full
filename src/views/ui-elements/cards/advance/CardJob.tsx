@@ -1,7 +1,5 @@
-import Avatar from 'src/@core/components/avatar';
-
+import Avatar from '../../../../@core/components/avatar';
 import { Card, CardBody, CardText, Button, Badge } from 'reactstrap';
-
 import profileImg from 'src/assets/images/portrait/small/avatar-s-7.jpg';
 
 const CardJob = () => {
@@ -22,6 +20,7 @@ const CardJob = () => {
         </div>
         <h5 className='apply-job-title'>Need a designer to form branding essentials for my business.</h5>
         <CardText className='mb-2'>
+          {/* eslint-disable-next-line max-len */}
           Design high-quality designs, graphics, mock-ups and layouts for both new and existing web sites/ web
           applications / mobile applications.
         </CardText>

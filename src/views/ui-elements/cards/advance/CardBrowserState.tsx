@@ -243,7 +243,7 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
     ];
 
     const renderStates = () => {
-        return statesArr.map(state => {
+        return statesArr.map((state: any) => {
             return (
                 <div key={state.title} className='browser-states'>
                     <div className='d-flex'>
@@ -255,7 +255,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                         <Chart
                             options={state.chart.options}
                             series={state.chart.series}
-                            // @ts-ignore
                             type={state.chart.type}
                             height={state.chart.height}
                             width={state.chart.width}

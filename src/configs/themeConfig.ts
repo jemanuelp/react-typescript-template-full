@@ -17,7 +17,7 @@ const themeConfig: ThemeConfig = {
   },
   layout: {
     isRTL: false,
-    skin: SkinTypes.light, // light, dark, bordered, semi-dark
+    skin: "light", // light, dark, bordered, semi-dark
     routerTransition: RouterTransitionTypes.fadeIn, // fadeIn, fadeInLeft, zoomIn, none or check this for more transition https://animate.style/
     type: LayoutTypes.vertical, // vertical, horizontal
     contentWidth: ContentWidthTypes.boxed, // full, boxed

@@ -4,7 +4,8 @@ import Avatar from '../../../../@core/components/avatar';
 import {Card, CardHeader, CardTitle, CardBody, CardText, Row, Col} from 'reactstrap';
 
 const StatsCard = (
-    {cols}: { cols: { md: string, sm: string, xs: string } },
+    {cols}:
+        { cols: { md?: string, sm?: string, xs?: string, xl?: string } },
 ) => {
     const data = [
         {

@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-
 import axios from 'axios';
 import Chart from 'react-apexcharts';
 import { Circle } from 'react-feather';
-
 import {
   Card,
   CardBody,
@@ -12,53 +10,58 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledDropdown
+  UncontrolledDropdown,
 } from 'reactstrap';
+import {IProductOrders} from "../../../../domains/interfaces/card-analytics/IProductOrders";
+import {ApexOptions} from "apexcharts";
 
-const ProductOrders = props => {
-  const [data, setData] = useState(null);
+const ProductOrders = (props: {
+  primary: string,
+  warning: string,
+  danger: string,
+}) => {
+  const [data, setData] = useState<IProductOrders | null>(null);
 
   useEffect(() => {
     axios.get('/card/card-analytics/product-orders').then(res => setData(res.data));
   }, []);
 
-  const options = {
+  const options: ApexOptions = {
       labels: ['Finished', 'Pending', 'Rejected'],
       plotOptions: {
         radialBar: {
-          size: 150,
           hollow: {
-            size: '20%'
+            size: '20%',
           },
           track: {
             strokeWidth: '100%',
-            margin: 15
+            margin: 15,
           },
           dataLabels: {
             value: {
               fontSize: '1rem',
-              colors: '#5e5873',
+              color: '#5e5873',
               fontWeight: '500',
-              offsetY: 5
+              offsetY: 5,
             },
             total: {
               show: true,
               label: 'Total',
               fontSize: '1.286rem',
-              colors: '#5e5873',
+              color: '#5e5873',
               fontWeight: '500',
 
               formatter() {
                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                return 42459;
-              }
-            }
-          }
-        }
+                return String(42459);
+              },
+            },
+          },
+        },
       },
       colors: [props.primary, props.warning, props.danger],
       stroke: {
-        lineCap: 'round'
+        lineCap: 'round',
       },
       chart: {
         height: 355,
@@ -67,13 +70,14 @@ const ProductOrders = props => {
           blur: 3,
           left: 1,
           top: 1,
-          opacity: 0.1
-        }
-      }
+          opacity: 0.1,
+        },
+      },
     },
     series = [70, 52, 26];
 
-  return data !== null ? (
+  return data !== null
+? (
     <Card>
       <CardHeader>
         <CardTitle tag='h4'>Product Orders</CardTitle>
@@ -115,6 +119,7 @@ const ProductOrders = props => {
         </div>
       </CardBody>
     </Card>
-  ) : null;
+  )
+: null;
 };
 export default ProductOrders;
