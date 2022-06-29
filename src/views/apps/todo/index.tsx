@@ -1,34 +1,31 @@
 import { Fragment, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 import classnames from 'classnames';
-
 // ** Todo App Components
 import Tasks from './Tasks';
 import Sidebar from './Sidebar';
 import TaskSidebar from './TaskSidebar';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } from './store';
-
-import 'src/@core/scss/react/apps/app-todo.scss';
+import '../../../@core/scss/react/apps/app-todo.scss';
+import { RootState } from '../../../redux/reducers/RootReducer';
+import {IFilter} from '../../../domains/interfaces/IFilter';
 
 const TODO = () => {
   const [sort, setSort] = useState('');
   const [query, setQuery] = useState('');
   const [mainSidebar, setMainSidebar] = useState(false);
-  const [openTaskSidebar, setOpenTaskSidebar] = useState(false);
-  
-  const dispatch = useDispatch();
-  const store = useSelector(state => state.todo);
+  const [openTaskSidebar, setOpenTaskSidebar] = useState<boolean>(false);
+  const dispatch = useDispatch<any>();
+  const store = useSelector((state: RootState) => state.todo);
 
   // ** URL Params
   const paramsURL = useParams();
-  const params = {
+  const params: IFilter = {
     filter: paramsURL.filter || '',
     q: query || '',
     sortBy: sort || '',
-    tag: paramsURL.tag || ''
+    tag: paramsURL.tag || '',
   };
 
   // ** Function to handle Left sidebar & Task sidebar
@@ -42,8 +39,8 @@ const TODO = () => {
         filter: paramsURL.filter || '',
         q: query || '',
         sortBy: sort || '',
-        tag: paramsURL.tag || ''
-      })
+        tag: paramsURL.tag || '',
+      }),
     );
   }, [store.tasks.length, paramsURL.filter, paramsURL.tag, query, sort]);
 
@@ -64,30 +61,32 @@ const TODO = () => {
           <div className='content-body'>
             <div
               className={classnames('body-content-overlay', {
-                show: mainSidebar === true
+                show: mainSidebar === true,
               })}
               onClick={handleMainSidebar}
             ></div>
 
-            {store ? (
-              <Tasks
-                store={store}
-                tasks={store.tasks}
-                sort={sort}
-                query={query}
-                params={params}
-                setSort={setSort}
-                setQuery={setQuery}
-                dispatch={dispatch}
-                getTasks={getTasks}
-                paramsURL={paramsURL}
-                updateTask={updateTask}
-                selectTask={selectTask}
-                reOrderTasks={reOrderTasks}
-                handleMainSidebar={handleMainSidebar}
-                handleTaskSidebar={handleTaskSidebar}
-              />
-            ) : null}
+            {store ?
+              (
+                <Tasks
+                  store={store}
+                  tasks={store.tasks}
+                  sort={sort}
+                  query={query}
+                  params={params}
+                  setSort={setSort}
+                  setQuery={setQuery}
+                  dispatch={dispatch}
+                  getTasks={getTasks}
+                  paramsURL={paramsURL}
+                  updateTask={updateTask}
+                  selectTask={selectTask}
+                  reOrderTasks={reOrderTasks}
+                  handleMainSidebar={handleMainSidebar}
+                  handleTaskSidebar={handleTaskSidebar}
+                />
+              ) :
+              null}
 
             <TaskSidebar
               store={store}
