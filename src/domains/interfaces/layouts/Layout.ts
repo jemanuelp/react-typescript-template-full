@@ -1,7 +1,7 @@
 import {LayoutTypes} from '../../enums/LayoutTypes';
 import {SkinTypes} from '../../enums/SkinTypes';
-import {RouterTransitionTypes} from '../../enums/RouterTransitionTypes';
-import {ContentWidthTypes} from '../../enums/ContentWidthTypes';
+import {TypeRouterTransitionTypes} from '../../enums/RouterTransitionTypes';
+import {TypeContentWidthTypes} from '../../enums/ContentWidthTypes';
 import {MenuLayout} from './MenuLayout';
 import {NavbarLayout} from './NavbarLayout';
 import {ToastPosition} from 'react-hot-toast';
@@ -10,9 +10,9 @@ import {FooterLayout} from '../FooterLayout';
 export interface Layout {
     isRTL: boolean;
     skin: SkinTypes,
-    routerTransition: RouterTransitionTypes,
+    routerTransition: TypeRouterTransitionTypes,
     type: LayoutTypes,
-    contentWidth: ContentWidthTypes,
+    contentWidth: TypeContentWidthTypes,
     menu: MenuLayout,
     navbar: NavbarLayout,
     footer: FooterLayout,
