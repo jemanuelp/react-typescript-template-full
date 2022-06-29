@@ -1,8 +1,10 @@
+import {EditorState} from 'draft-js';
+
 export interface ITask2 {
-    id: number;
+    id?: number;
     title: string;
-    dueDate: string;
-    description: string;
+    dueDate: string | Date;
+    description: string | EditorState;
     assignee: {
         fullName: string;
         avatar: string;
