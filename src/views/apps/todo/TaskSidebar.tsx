@@ -1,36 +1,42 @@
-import { useState, Fragment } from 'react';
-
+import {useState, Fragment} from 'react';
 import classnames from 'classnames';
 import Flatpickr from 'react-flatpickr';
 import { Editor } from 'react-draft-wysiwyg';
 import { X, Star, Trash } from 'react-feather';
 import Select, { components } from 'react-select';
-import { useForm, Controller } from 'react-hook-form';
+import {useForm, Controller} from 'react-hook-form';
 import { EditorState, ContentState } from 'draft-js';
-
 import { Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap';
-
-import { isObjEmpty, selectThemeColors } from 'src/utility/Utils';
-
-import img1 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
-import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
-import img3 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
-import img4 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
-import img5 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
-import img6 from 'src/assets/images/portrait/small/avatar-s-11.jpg';
-
- Imports;
-import 'src/@core/scss/react/libs/editor/editor.scss';
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/react/libs/react-select/_react-select.scss';
+import { isObjEmpty, selectThemeColors } from '../../../utility/Utils';
+import img1 from '../../../../src/assets/images/portrait/small/avatar-s-3.jpg';
+import img2 from '../../../../src/assets/images/portrait/small/avatar-s-1.jpg';
+import img3 from '../../../../src/assets/images/portrait/small/avatar-s-4.jpg';
+import img4 from '../../../../src/assets/images/portrait/small/avatar-s-6.jpg';
+import img5 from '../../../../src/assets/images/portrait/small/avatar-s-2.jpg';
+import img6 from '../../../../src/assets/images/portrait/small/avatar-s-11.jpg';
+import '../../../@core/scss/react/libs/editor/editor.scss';
+import '../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../@core/scss/react/libs/react-select/_react-select.scss';
+import {TaskSidebarPropTypes} from '../../../domains/proptypes/TaskSidebarPropTypes';
+import {ISelectedOption} from '../../../domains/interfaces/ISelectedOption';
+import {ITask2} from '../../../domains/interfaces/tasks/ITask2';
 
 // ** Function to capitalize the first letter of string
-const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
+const capitalize = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 // ** Modal Header
-const ModalHeader = props => {
-  const { children, store, handleTaskSidebar, setDeleted, deleted, important, setImportant, deleteTask, dispatch } =
-    props;
+const ModalHeader = (props: any) => {
+  const {
+    children,
+    store,
+    handleTaskSidebar,
+    setDeleted,
+    deleted,
+    important,
+    setImportant,
+    deleteTask,
+    dispatch,
+  } = props;
 
   // ** Function to delete task
   const handleDeleteTask = () => {
@@ -43,15 +49,17 @@ const ModalHeader = props => {
     <div className='modal-header d-flex align-items-center justify-content-between mb-1'>
       <h5 className='modal-title'>{children}</h5>
       <div className='todo-item-action d-flex align-items-center'>
-        {store && !isObjEmpty(store.selectedTask) ? (
-          <Trash className='cursor-pointer mt-25' size={16} onClick={() => handleDeleteTask()} />
-        ) : null}
+        {store && !isObjEmpty(store.selectedTask) ?
+          (
+            <Trash className='cursor-pointer mt-25' size={16} onClick={() => handleDeleteTask()} />
+          ) :
+          null}
         <span className='todo-item-favorite cursor-pointer mx-75'>
           <Star
             size={16}
             onClick={() => setImportant(!important)}
             className={classnames({
-              'text-warning': important === true
+              'text-warning': important === true,
             })}
           />
         </span>
@@ -61,16 +69,33 @@ const ModalHeader = props => {
   );
 };
 
-const TaskSidebar = props => {
-  const { open, handleTaskSidebar, store, dispatch, updateTask, selectTask, addTask, deleteTask } = props;
+const TaskSidebar = (props: TaskSidebarPropTypes) => {
+  const {
+    open,
+    handleTaskSidebar,
+    store,
+    dispatch,
+    updateTask,
+    selectTask,
+    addTask,
+    deleteTask,
+  } = props;
 
-  const [assignee, setAssignee] = useState({ value: 'pheobe', label: 'Pheobe Buffay', img: img1 });
-  const [tags, setTags] = useState([]);
-  const [desc, setDesc] = useState(EditorState.createEmpty());
+  const [assignee, setAssignee] = useState<{
+    value: string,
+    label: string,
+    img: string
+  }>({
+    value: 'pheobe',
+    label: 'Pheobe Buffay',
+    img: img1, 
+  });
+  const [tags, setTags] = useState<ISelectedOption[]>([]);
+  const [desc, setDesc] = useState<EditorState | string>(EditorState.createEmpty());
   const [completed, setCompleted] = useState(false);
   const [important, setImportant] = useState(false);
   const [deleted, setDeleted] = useState(false);
-  const [dueDate, setDueDate] = useState(new Date());
+  const [dueDate, setDueDate] = useState<string | Date>(new Date());
 
   const {
     control,
@@ -78,9 +103,9 @@ const TaskSidebar = props => {
     setValue,
     clearErrors,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
-    defaultValues: { title: '' }
+    defaultValues: { title: '' },
   });
 
   // ** Assignee Select Options
@@ -90,7 +115,7 @@ const TaskSidebar = props => {
     { value: 'ross', label: 'Ross Geller', img: img3 },
     { value: 'monica', label: 'Monica Geller', img: img4 },
     { value: 'joey', label: 'Joey Tribbiani', img: img5 },
-    { value: 'Rachel', label: 'Rachel Green', img: img6 }
+    { value: 'Rachel', label: 'Rachel Green', img: img6 },
   ];
 
   // ** Tag Select Options
@@ -99,11 +124,11 @@ const TaskSidebar = props => {
     { value: 'low', label: 'Low' },
     { value: 'medium', label: 'Medium' },
     { value: 'high', label: 'High' },
-    { value: 'update', label: 'Update' }
+    { value: 'update', label: 'Update' },
   ];
 
   // ** Custom Assignee Component
-  const AssigneeComponent = ({ data, ...props }) => {
+  const AssigneeComponent = ({ data, ...props }: any) => {
     return (
       <components.Option {...props}>
         <div className='d-flex align-items-center'>
@@ -122,9 +147,13 @@ const TaskSidebar = props => {
           outline
           size='sm'
           onClick={() => setCompleted(!completed)}
-          color={completed === true ? 'success' : 'secondary'}
+          color={completed ?
+            'success' :
+            'secondary'}
         >
-          {completed === true ? 'Completed' : 'Mark Complete'}
+          {completed ?
+            'Completed' :
+            'Mark Complete'}
         </Button>
       );
     } else {
@@ -139,25 +168,20 @@ const TaskSidebar = props => {
       setValue('title', selectedTask.title);
       setCompleted(selectedTask.isCompleted);
       setImportant(selectedTask.isImportant);
-      setAssignee([
-        {
-          value: selectedTask.assignee.fullName,
-          label: selectedTask.assignee.fullName,
-          img: selectedTask.assignee.avatar
-        }
-      ]);
+      setAssignee({
+        value: selectedTask.assignee.fullName,
+        label: selectedTask.assignee.fullName,
+        img: selectedTask.assignee.avatar,
+      });
       setDueDate(selectedTask.dueDate);
       if (typeof selectedTask.description === 'string') {
-        setDesc(EditorState.createWithContent(ContentState.createFromText(selectedTask.description)));
-      } else {
-        const obj = selectedTask.description._immutable.currentContent.blockMap;
-        const property = Object.keys(obj).map(val => val);
-
-        setDesc(EditorState.createWithContent(ContentState.createFromText(obj[property].text)));
+        setDesc(EditorState.createWithContent(
+          ContentState.createFromText(selectedTask.description),
+        ));
       }
 
       if (selectedTask.tags.length) {
-        const tags = [];
+        const tags: ISelectedOption[] = [];
         selectedTask.tags.map(tag => {
           tags.push({ value: tag, label: capitalize(tag) });
         });
@@ -175,16 +199,20 @@ const TaskSidebar = props => {
     setCompleted(false);
     setImportant(false);
     setDueDate(new Date());
-    dispatch(selectTask({}));
+    selectTask({});
     clearErrors();
   };
 
   // ** Function to reset fields
   const handleResetFields = () => {
-    const descValue = EditorState.createWithContent(ContentState.createFromText(store.selectedTask.description));
+    if (typeof store.selectedTask.description === 'string') {
+      const descValue = EditorState.createWithContent(
+        ContentState.createFromText(store.selectedTask.description),
+      );
+      setDesc(descValue);
+    }
 
     setValue('title', store.selectedTask.title);
-    setDesc(descValue);
     setCompleted(store.selectedTask.isCompleted);
     setImportant(store.selectedTask.isImportant);
     setDeleted(store.selectedTask.isDeleted);
@@ -193,11 +221,11 @@ const TaskSidebar = props => {
       setAssignee({
         value: store.selectedTask.assignee.fullName,
         label: store.selectedTask.assignee.fullName,
-        img: store.selectedTask.assignee.avatar
+        img: store.selectedTask.assignee.avatar,
       });
     }
     if (store.selectedTask.tags.length) {
-      const tags = [];
+      const tags: ISelectedOption[] = [];
       store.selectedTask.tags.map(tag => {
         tags.push({ value: tag, label: capitalize(tag) });
       });
@@ -232,10 +260,11 @@ const TaskSidebar = props => {
     }
   };
 
-  const onSubmit = data => {
-    const newTaskTag = [];
+  const onSubmit = (data: any) => {
+    const newTaskTag: string[] = [];
 
-    const doesInclude = !isObjEmpty(store.selectedTask) && assignee.label === store.selectedTask.assignee.fullName;
+    const doesInclude = !isObjEmpty(store.selectedTask) &&
+        assignee.label === store.selectedTask.assignee.fullName;
 
     if (tags.length) {
       tags.map(tag => newTaskTag.push(tag.value));
@@ -243,9 +272,9 @@ const TaskSidebar = props => {
 
     const newAssignee = {
       fullName: assignee.label,
-      avatar: assignee.img
+      avatar: assignee.img,
     };
-    const state = {
+    const state: ITask2 = {
       dueDate,
       title: data.title,
       tags: newTaskTag,
@@ -253,12 +282,19 @@ const TaskSidebar = props => {
       isCompleted: completed,
       isDeleted: deleted,
       isImportant: important,
-      assignee: doesInclude || assignee.label === undefined ? store.selectedTask.assignee : newAssignee
+      assignee: doesInclude ||
+      assignee.label === undefined ?
+        store.selectedTask.assignee :
+        newAssignee,
     };
 
     if (data.title.length) {
       if (isObjEmpty(errors)) {
-        if (isObjEmpty(store.selectedTask) || (!isObjEmpty(store.selectedTask) && !store.selectedTask.title.length)) {
+        if (
+          isObjEmpty(store.selectedTask) ||
+            (!isObjEmpty(store.selectedTask) &&
+                !store.selectedTask.title.length)
+        ) {
           dispatch(addTask(state));
         } else {
           dispatch(updateTask({ ...state, id: store.selectedTask.id }));
@@ -267,7 +303,7 @@ const TaskSidebar = props => {
       }
     } else {
       setError('title', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
@@ -326,7 +362,7 @@ const TaskSidebar = props => {
               options={assigneeOptions}
               theme={selectThemeColors}
               value={assignee}
-              onChange={data => setAssignee(data)}
+              onChange={(data: any) => setAssignee(data)}
               components={{ Option: AssigneeComponent }}
             />
           </div>
@@ -365,18 +401,20 @@ const TaskSidebar = props => {
             <Label for='task-desc' className='form-label'>
               Description
             </Label>
-            <Editor
-              editorState={desc}
-              wrapperClassName='toolbar-bottom'
-              toolbar={{
-                options: ['inline', 'textAlign'],
-                inline: {
-                  inDropdown: false,
-                  options: ['bold', 'italic', 'underline']
-                }
-              }}
-              onEditorStateChange={data => setDesc(data)}
-            />
+            {
+              desc instanceof EditorState && <Editor
+                editorState={desc}
+                wrapperClassName='toolbar-bottom'
+                toolbar={{
+                  options: ['inline', 'textAlign'],
+                  inline: {
+                    inDropdown: false,
+                    options: ['bold', 'italic', 'underline'],
+                  },
+                }}
+                onEditorStateChange={data => setDesc(data)}
+              />
+            }
           </div>
           <div>{renderFooterButtons()}</div>
         </ModalBody>
