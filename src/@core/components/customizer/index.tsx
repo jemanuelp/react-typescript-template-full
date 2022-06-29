@@ -9,11 +9,11 @@ import '../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
 import {Layout} from '../../../domains/interfaces/layouts/Layout';
 import {LayoutSetterState} from '../../../domains/interfaces/layouts/LayoutSetterState';
 import {LayoutTypes} from '../../../domains/enums/LayoutTypes';
-import {NavbarLayoutTypes} from '../../../domains/enums/NavbarLayoutTypes';
+import {NavbarLayoutTypes} from '../../../domains/enums/TypeNavbarLayoutTypes';
 import {FooterLayoutTypes} from '../../../domains/enums/FooterLayoutTypes';
 import {SkinTypes} from '../../../domains/enums/SkinTypes';
 
-const Customizer = (props: (Layout & LayoutSetterState)) => {
+const Customizer = (props: any) => {
   const {
     skin,
     isRTL,

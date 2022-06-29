@@ -20,6 +20,7 @@ import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
 import '../scss/base/core/menu/menu-types/vertical-menu.scss';
 import '../scss/base/core/menu/menu-types/vertical-overlay-menu.scss';
 import {RootState} from '../../redux/reducers/RootReducer';
+import {TypeNavbarLayoutTypes} from '../../domains/enums/TypeNavbarLayoutTypes';
 
 const VerticalLayout = (props: any) => {
   const { menu, navbar, children, menuData } = props;
