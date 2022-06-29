@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '../../redux/reducers/RootReducer';
 import {handleNavbarType} from '../../redux/layout';
-import {NavbarLayoutTypes} from '../../domains/enums/NavbarLayoutTypes';
+import {TypeNavbarLayoutTypes} from '../../domains/enums/TypeNavbarLayoutTypes';
 
 export interface useNavbarTypeInterface {
-    navbarType: NavbarLayoutTypes;
+    navbarType: TypeNavbarLayoutTypes;
     setNavbarType: Function;
 }
 
