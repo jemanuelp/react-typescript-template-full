@@ -104,7 +104,7 @@ export const CanViewMenuGroup = (item: any) => {
   // ! This same logic is used in canViewHorizontalNavMenuGroup and canViewHorizontalNavMenuHeaderGroup. So make sure to update logic in them as well
   // @ts-ignore
   const hasAnyVisibleChild = item.children && item.children.some(
-    (i: any) => ability.can(i.action, i.resource),
+    // (i: any) => ability.can(i.action, i.resource),
   );
 
   // ** If resource and action is defined in item => Return based on children visibility (Hide group if no child is visible)
