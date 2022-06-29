@@ -1,5 +1,7 @@
 export const ContentWidthTypes = {
-  Default: 'full',
   full: 'full',
   boxed: 'boxed',
 };
+
+export type TypeContentWidthTypes = keyof typeof ContentWidthTypes;
+

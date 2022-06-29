@@ -5,3 +5,5 @@ export const RouterTransitionTypes = {
   zoomIn: 'zoomIn',
   none: 'none',
 };
+
+export type TypeRouterTransitionTypes = keyof typeof RouterTransitionTypes;
