@@ -8,7 +8,7 @@ import DataTable from 'react-data-table-component';
 import { Card, Input, Row, Col } from 'reactstrap';
 import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
 import {RootState} from '../../../../redux/reducers/RootReducer';
-import {CustomHeaderProptypes} from '../../../../domains/proptypes/CustomHeaderProptypes';
+import {CustomHeaderProptypes} from '../permissions/Table';
 
 // ** Bootstrap Checkbox Component
 const BootstrapCheckbox = forwardRef((props: any, ref: any) => (

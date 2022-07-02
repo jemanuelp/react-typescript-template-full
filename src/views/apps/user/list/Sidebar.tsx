@@ -7,7 +7,7 @@ import { Button, Label, FormText, Form, Input } from 'reactstrap';
 import { addUser } from '../store';
 import { useDispatch } from 'react-redux';
 import {IUser} from '../../../../domains/interfaces/IUser';
-import {CountryOptionsSidebar} from '../../../../domains/const/options/CountryOptions';
+import {CountryOptionsSidebar} from '../interfaces/CountryOptions';
 import Sidebar from '../../../../../src/@core/components/sidebar';
 import {SizeTypes} from '../../../../domains/enums/SizeTypes';
 

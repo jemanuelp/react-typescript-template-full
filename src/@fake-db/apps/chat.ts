@@ -1,8 +1,8 @@
 import mock from '../mock';
-import {IChats} from '../../domains/grouper/IChats';
+import {IChats} from '../../views/apps/chat/interfaces/IChats';
 import {IProfileUser} from '../../domains/interfaces/IProfileUser';
-import {IChatContact} from '../../domains/interfaces/chats/IChatContact';
-import {IChat} from '../../domains/interfaces/chats/IChat';
+import {IChatContact} from '../../views/apps/chat/interfaces/IChatContact';
+import {IChat} from '../../views/apps/chat/interfaces/IChat';
 import {AxiosRequestConfig} from 'axios';
 
 const previousDay = new Date(new Date().getTime() - (24 * 60 * 60 * 1000));

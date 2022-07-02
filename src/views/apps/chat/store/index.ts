@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {IProfileUser} from '../../../../domains/interfaces/IProfileUser';
-import {IChatContact} from '../../../../domains/interfaces/chats/IChatContact';
-import {IChats} from '../../../../domains/grouper/IChats';
+import {IChatContact} from '../interfaces/IChatContact';
+import {IChats} from '../interfaces/IChats';
 import {IUser} from '../../../../domains/interfaces/IUser';
 
 export const getUserProfile = createAsyncThunk('appChat/getTasks', async() => {

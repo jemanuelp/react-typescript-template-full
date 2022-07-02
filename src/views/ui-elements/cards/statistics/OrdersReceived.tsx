@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Package} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
-import {IOrdersRecevied} from '../../../../domains/interfaces/card-statistics/IOrdersRecevied';
+import {IOrdersRecevied} from './interfaces/IOrdersRecevied';
 
 const OrdersReceived = (
   { kFormatter, warning }:

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import {NavMenuGroup} from '../../../../../domains/proptypes/NavMenuGroup';
+import {NavMenuGroup} from '../interfaces/NavMenuGroup';
 
 const HorizontalNavMenuLink = (
   { item, isChild, setMenuOpen }: NavMenuGroup,

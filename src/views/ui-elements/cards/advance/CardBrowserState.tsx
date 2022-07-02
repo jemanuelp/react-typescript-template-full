@@ -11,7 +11,12 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {CardBrowserStateProptypes} from '../../../../domains/proptypes/CardBrowserStateProptypes';
+import {IColors} from '../../../../configs/interfaces/IColors';
+
+export interface CardBrowserStateProptypes {
+  colors: IColors;
+  trackBgColor: string;
+}
 
 const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => {
   const statesArr = [

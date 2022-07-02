@@ -19,7 +19,7 @@ import { User, Check, X } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import {selectThemeColors} from '../../../utility/Utils';
-import {CountryOptions} from '../../../domains/const/options/CountryOptions';
+import {CountryOptions} from '../../apps/user/interfaces/CountryOptions';
 
 const statusOptions = [
   { value: 'active', label: 'Active' },

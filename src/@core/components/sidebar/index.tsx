@@ -3,7 +3,7 @@ import Proptypes from 'prop-types';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {Modal, ModalHeader, ModalBody} from 'reactstrap';
-import {SidebarPropTypes} from '../../../domains/proptypes/SidebarProptypes';
+import {SidebarPropTypes} from './interfaces/SidebarProptypes';
 
 const Sidebar = (props: SidebarPropTypes) => {
   const {

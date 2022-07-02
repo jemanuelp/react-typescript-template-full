@@ -17,9 +17,9 @@ import img6 from '../../../../src/assets/images/portrait/small/avatar-s-11.jpg';
 import '../../../@core/scss/react/libs/editor/editor.scss';
 import '../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
 import '../../../@core/scss/react/libs/react-select/_react-select.scss';
-import {TaskSidebarPropTypes} from '../../../domains/proptypes/TaskSidebarPropTypes';
+import {TaskSidebarPropTypes} from './interfaces/TaskSidebarPropTypes';
 import {ISelectedOption} from '../../../domains/interfaces/ISelectedOption';
-import {ITask2} from '../../../domains/interfaces/tasks/ITask2';
+import {ITask2} from './interfaces/ITask2';
 
 // ** Function to capitalize the first letter of string
 const capitalize = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);

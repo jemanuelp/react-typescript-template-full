@@ -1,4 +1,4 @@
-import {SizeTypes} from '../enums/SizeTypes';
+import {SizeTypes} from '../../../../domains/enums/SizeTypes';
 
 export interface SidebarPropTypes {
     className?: string;

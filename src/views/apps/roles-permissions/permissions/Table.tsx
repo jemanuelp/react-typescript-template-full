@@ -21,9 +21,21 @@ import DataTable from 'react-data-table-component';
 import { useForm, Controller } from 'react-hook-form';
 import { ChevronDown, Edit, Trash } from 'react-feather';
 import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
-import {CustomHeaderProptypes} from '../../../../domains/proptypes/CustomHeaderProptypes';
 import {RootState} from '../../../../redux/reducers/RootReducer';
 import {TableColumn} from 'react-data-table-component/dist/src/DataTable/types';
+
+export interface CustomHeaderProptypes {
+  plan?: string;
+  searchTerm: string;
+  rowsPerPage: number;
+  handleFilter: Function;
+  handlePerPage: any;
+  handlePlanChange?: Function;
+  role?: any;
+  setShow?: any;
+  handleAssignedToChange?: any;
+  assignedTo?: string;
+}
 
 const CustomHeader = ({
   role,

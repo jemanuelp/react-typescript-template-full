@@ -17,7 +17,7 @@ import {useNavbarColor} from '../../utility/hooks/useNavbarColor';
 import {useLayout} from '../../utility/hooks/useLayout';
 import {RootState} from '../../redux/reducers/RootReducer';
 import {handleContentWidth, handleMenuCollapsed, handleMenuHidden} from '../../redux/layout';
-import {TypeContentWidthTypes} from '../../domains/enums/ContentWidthTypes';
+import {TypeContentWidthTypes} from '../../configs/interfaces/ContentWidthTypes';
 import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
 import ScrollToTop from '../components/scrolltop';

@@ -1,7 +1,7 @@
 import { handleNavbarColor } from '../../redux/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '../../redux/reducers/RootReducer';
-import {Layout} from '../../domains/interfaces/layouts/Layout';
+import {Layout} from '../../configs/interfaces/Layout';
 
 export const useNavbarColor = () => {
   const dispatch = useDispatch();

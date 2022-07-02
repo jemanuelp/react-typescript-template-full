@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Users} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
-import {ISubscribersGained} from '../../../../domains/interfaces/card-statistics/ISubscribersGained';
+import {ISubscribersGained} from './interfaces/ISubscribersGained';
 
 const SubscribersGained = ({kFormatter}: { kFormatter: Function }) => {
   const [data, setData] = useState<ISubscribersGained | null>(null);

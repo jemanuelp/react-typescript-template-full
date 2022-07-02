@@ -1,4 +1,4 @@
-import {AppLayout} from '../AppLayout';
+import {AppLayout} from '../../domains/interfaces/AppLayout';
 import {Layout} from './Layout';
 
 export interface ThemeConfig {

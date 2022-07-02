@@ -3,7 +3,7 @@ import VerticalNavMenuGroup from './VerticalNavMenuGroup';
 import VerticalNavMenuSectionHeader from './VerticalNavMenuSectionHeader';
 import {resolveVerticalNavMenuItemComponent as resolveNavItemComponent} from '../../../../layouts/utils';
 import {CanViewMenuGroup} from '../../../utils';
-import {VerticalMenuNavItemsProptypes} from '../../../../../domains/proptypes/VerticalMenuNavItemsProptypes';
+import {VerticalMenuNavItemsProptypes} from '../interfaces/VerticalMenuNavItemsProptypes';
 import {IItems} from '../../../../../domains/interfaces/nav-menu-items/IItems';
 
 const VerticalMenuNavItems = (props: VerticalMenuNavItemsProptypes) => {

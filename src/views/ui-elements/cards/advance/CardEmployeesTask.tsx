@@ -2,7 +2,7 @@ import Avatar from '../../../../@core/components/avatar';
 import Chart from 'react-apexcharts';
 import {MoreVertical} from 'react-feather';
 import {Card, CardHeader, CardTitle, CardBody} from 'reactstrap';
-import {IColors} from '../../../../domains/interfaces/layouts/IColors';
+import {IColors} from '../../../../configs/interfaces/IColors';
 import {ApexOptions} from 'apexcharts';
 
 const CardEmployeesTasks = (

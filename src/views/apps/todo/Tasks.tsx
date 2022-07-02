@@ -15,8 +15,8 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {TaskProptypes} from '../../../domains/proptypes/TaskProptypes';
-import {ITask2} from '../../../domains/interfaces/tasks/ITask2';
+import {TaskProptypes} from './interfaces/TaskProptypes';
+import {ITask2} from './interfaces/ITask2';
 
 const Tasks = (props: TaskProptypes) => {
   const {

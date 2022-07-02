@@ -12,7 +12,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {IProductOrders} from '../../../../domains/interfaces/card-analytics/IProductOrders';
+import {IProductOrders} from './interfaces/IProductOrders';
 import {ApexOptions} from 'apexcharts';
 
 const ProductOrders = (props: {

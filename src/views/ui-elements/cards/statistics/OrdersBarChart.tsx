@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import TinyChartStats from '../../../../@core/components/widgets/stats/TinyChartStats';
-import {IOrdersBarChart} from '../../../../domains/interfaces/card-statistics/IOrdersBarChart';
+import {IOrdersBarChart} from './interfaces/IOrdersBarChart';
 
 const OrdersBarChart = (
   {warning}: { warning: string },

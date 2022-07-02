@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ShoppingCart } from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
-import {IQuarterlySales} from '../../../../domains/interfaces/card-statistics/IQuarterlySales';
+import {IQuarterlySales} from './interfaces/IQuarterlySales';
 
 const QuarterlySales = (
   { danger }: { danger: string },

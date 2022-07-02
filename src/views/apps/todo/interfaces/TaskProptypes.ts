@@ -1,7 +1,7 @@
-import {ITaskState} from '../interfaces/tasks/ITaskState';
-import {ITask2} from '../interfaces/tasks/ITask2';
-import {IFilter} from '../interfaces/IFilter';
-import {getTasks, reOrderTasks, selectTask, updateTask} from '../../views/apps/todo/store';
+import {ITaskState} from './ITaskState';
+import {ITask2} from './ITask2';
+import {IFilter} from '../../../../domains/interfaces/IFilter';
+import {getTasks, reOrderTasks, selectTask, updateTask} from '../store';
 import {MouseEventHandler} from 'react';
 
 export interface TaskProptypes {

@@ -1,6 +1,6 @@
-import {ITaskState} from '../interfaces/tasks/ITaskState';
-import {IFilter} from '../interfaces/IFilter';
-import {getTasks} from '../../views/apps/todo/store';
+import {ITaskState} from './ITaskState';
+import {IFilter} from '../../../../domains/interfaces/IFilter';
+import {getTasks} from '../store';
 import {Dispatch, SetStateAction} from 'react';
 
 export interface TodoSidebarProptypes {

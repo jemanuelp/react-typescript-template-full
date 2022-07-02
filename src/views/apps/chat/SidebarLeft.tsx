@@ -7,9 +7,6 @@ import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {X, Search, CheckSquare, Bell, User, Trash} from 'react-feather';
 import {CardText, InputGroup, InputGroupText, Badge, Input, Button, Label} from 'reactstrap';
-import {SidebarLeftProptypes} from '../../../domains/proptypes/SidebarLeftProptypes';
-import {IChatContact} from '../../../domains/interfaces/chats/IChatContact';
-import {IChats} from '../../../domains/grouper/IChats';
 
 const SidebarLeft = (props: any) => {
   const {store, sidebar, handleSidebar, userSidebarLeft, handleUserSidebarLeft} = props;

@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext } from 'react';
-import {IColors} from '../../domains/interfaces/layouts/IColors';
+import {IColors} from '../../configs/interfaces/IColors';
 const ThemeColors = createContext<{ colors: IColors }>({} as { colors: IColors });
 
 const ThemeContext = ({ children }: any) => {

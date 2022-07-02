@@ -3,7 +3,7 @@ import axios from 'axios';
 import Chart from 'react-apexcharts';
 import { HelpCircle } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col } from 'reactstrap';
-import {IGoalOverview} from '../../../../domains/interfaces/card-analytics/IGoalOverview';
+import {IGoalOverview} from './interfaces/IGoalOverview';
 import {ApexOptions} from 'apexcharts';
 
 const GoalOverview = (props: {

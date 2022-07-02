@@ -1,5 +1,5 @@
 import mock from '../mock';
-import {ITask2} from '../../domains/interfaces/tasks/ITask2';
+import {ITask2} from '../../views/apps/todo/interfaces/ITask2';
 import {AxiosRequestConfig} from 'axios';
 
 const data: { tasks: ITask2[] } = {

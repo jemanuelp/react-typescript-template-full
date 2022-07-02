@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { hasActiveChild } from '../../../utils';
 import { useRTL } from '../../../../../utility/hooks/useRTL';
 import HorizontalNavMenuItems from './HorizontalNavMenuItems';
-import {NavMenuGroup} from '../../../../../domains/proptypes/NavMenuGroup';
+import {NavMenuGroup} from '../interfaces/NavMenuGroup';
 
 const applyHeight: Partial<Modifier<any>> = {
   enabled: true,

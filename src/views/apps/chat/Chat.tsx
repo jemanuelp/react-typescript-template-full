@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
-import { useState, useEffect, useRef } from 'react';
-import { sendMsg } from './store';
+import {useState, useEffect, useRef, Dispatch, SetStateAction} from 'react';
+import {AppChatState, sendMsg} from './store';
 import { useDispatch } from 'react-redux';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -17,10 +17,17 @@ import {
   InputGroupText,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {IChat} from '../../../domains/interfaces/chats/IChat';
+import {IChat} from './interfaces/IChat';
 import Avatar from '../../../@core/components/avatar';
-import {ChatProptypes} from '../../../domains/proptypes/ChatProptypes';
-import {IChats} from '../../../domains/grouper/IChats';
+import {IChats} from './interfaces/IChats';
+
+export interface ChatProptypes {
+  handleUser: Function;
+  handleUserSidebarRight: Dispatch<SetStateAction<boolean>>;
+  handleSidebar: Dispatch<SetStateAction<boolean>>;
+  store: AppChatState;
+  userSidebarLeft: boolean;
+}
 
 const ChatLog = (props: ChatProptypes) => {
   const {

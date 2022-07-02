@@ -15,7 +15,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {IAvgSessions} from '../../../../domains/interfaces/card-analytics/IAvgSessions';
+import {IAvgSessions} from './interfaces/IAvgSessions';
 import {ApexOptions} from 'apexcharts';
 
 const AvgSessions = (props: { primary: string }) => {

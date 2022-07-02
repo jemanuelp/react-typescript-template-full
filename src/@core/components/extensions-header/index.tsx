@@ -1,5 +1,10 @@
 import { Row, Col } from 'reactstrap';
-import {ExtensionsHeaderPropTypes} from '../../../domains/proptypes/extensions/ExtensionsHeaderPropTypes';
+
+export interface ExtensionsHeaderPropTypes {
+    link?: string;
+    title: string;
+    subTitle: string;
+}
 
 const ExtensionsHeader = (props: ExtensionsHeaderPropTypes) => {
   return (

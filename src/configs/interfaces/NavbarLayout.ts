@@ -1,4 +1,4 @@
-import {TypeNavbarLayoutTypes} from '../../enums/TypeNavbarLayoutTypes';
+import {TypeNavbarLayoutTypes} from '../../domains/enums/TypeNavbarLayoutTypes';
 
 export interface NavbarLayout {
     type: TypeNavbarLayoutTypes,

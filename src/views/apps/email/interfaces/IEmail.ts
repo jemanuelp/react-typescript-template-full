@@ -1,6 +1,6 @@
 import {ISender} from './ISender';
-import {IAdressee} from '../IAdressee';
-import {IAttachment} from '../IAttachment';
+import {IAdressee} from '../../../../domains/interfaces/IAdressee';
+import {IAttachment} from '../../../../domains/interfaces/IAttachment';
 
 export interface IEmail {
     id: number;

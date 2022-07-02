@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {CreditCard} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
-import {IRevenueGenerated} from '../../../../domains/interfaces/card-statistics/IRevenueGenerated';
+import {IRevenueGenerated} from './interfaces/IRevenueGenerated';
 
 const RevenueGenerated = (
   {kFormatter, success}:

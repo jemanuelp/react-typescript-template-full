@@ -14,7 +14,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {ISupportTracker} from '../../../../domains/interfaces/card-analytics/ISupportTracker';
+import {ISupportTracker} from './interfaces/ISupportTracker';
 
 const SupportTracker = (props: { primary: string, danger: string}) => {
   const [data, setData] = useState<ISupportTracker | null>(null);

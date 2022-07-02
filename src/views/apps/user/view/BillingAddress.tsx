@@ -19,7 +19,7 @@ import { Home, Check, X, Briefcase } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
 import { selectThemeColors } from '../../../../utility/Utils';
 import '../../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
-import {CountryOptions} from '../../../../domains/const/options/CountryOptions';
+import {CountryOptions} from '../interfaces/CountryOptions';
 
 const defaultValues = {
   lastName: '',

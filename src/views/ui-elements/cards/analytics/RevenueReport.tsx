@@ -13,7 +13,7 @@ import {
   UncontrolledButtonDropdown,
 } from 'reactstrap';
 import {ApexOptions} from 'apexcharts';
-import {IRevenueReport} from '../../../../domains/interfaces/card-analytics/IRevenueReport';
+import {IRevenueReport} from './interfaces/IRevenueReport';
 
 const RevenueReport = (props: {
     primary: string,

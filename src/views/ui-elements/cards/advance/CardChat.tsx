@@ -9,11 +9,11 @@ import {Card, CardHeader, Form, Label, InputGroup, Input, InputGroupText, Button
 import profilePic from 'src/assets/images/portrait/small/avatar-s-11.jpg';
 
 import 'src/@core/scss/base/pages/app-chat-list.scss';
-import {IChat} from '../../../../domains/interfaces/chats/IChat';
-import {IChatContact} from '../../../../domains/interfaces/chats/IChatContact';
-import {IChatContactFather} from '../../../../domains/interfaces/chats/IChatContactFather';
-import {IChats} from '../../../../domains/grouper/IChats';
-import {IMessage} from '../../../../domains/interfaces/chats/IMessage';
+import {IChat} from '../../../apps/chat/interfaces/IChat';
+import {IChatContact} from '../../../apps/chat/interfaces/IChatContact';
+import {IChatContactFather} from '../../../apps/chat/interfaces/IChatContactFather';
+import {IChats} from '../../../apps/chat/interfaces/IChats';
+import {IMessage} from '../../../apps/chat/interfaces/IMessage';
 
 const data: { chat: IChats, contact: IChatContactFather } = {
   chat: {

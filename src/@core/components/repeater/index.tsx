@@ -1,5 +1,9 @@
-import PropTypes from 'prop-types';
-import {RepeaterProptypes} from '../../../domains/proptypes/RepeaterProptypes';
+export interface RepeaterProptypes {
+  count: number;
+  tag: string;
+  children?: any;
+  rest?: any;
+}
 
 const Repeater = (props: RepeaterProptypes) => {
   const { count, tag, children, ...rest } = props;

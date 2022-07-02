@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {ITaskState} from '../../../../domains/interfaces/tasks/ITaskState';
-import {ITask2} from '../../../../domains/interfaces/tasks/ITask2';
+import {ITaskState} from '../interfaces/ITaskState';
+import {ITask2} from '../interfaces/ITask2';
 
 export const getTasks = createAsyncThunk('appTodo/getTasks', async(params: any) => {
   const response = await axios.get('/apps/todo/tasks', { params });

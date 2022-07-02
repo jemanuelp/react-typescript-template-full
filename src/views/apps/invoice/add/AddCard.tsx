@@ -12,7 +12,7 @@ import 'react-slidedown/lib/slidedown.css';
 import 'src/@core/scss/react/libs/react-select/_react-select.scss';
 import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 import 'src/@core/scss/base/pages/app-invoice.scss';
-import {CountryOptionsCard} from '../../../../domains/const/options/CountryOptions';
+import {CountryOptionsCard} from '../../user/interfaces/CountryOptions';
 import {IInvoice} from '../../../../domains/interfaces/IInvoice';
 import {ClientInterface} from '../../../../domains/interfaces/Client.interface';
 import {ISelectedOption} from '../../../../domains/interfaces/ISelectedOption';

@@ -1,7 +1,7 @@
 import {AbilityContext, Can} from '../../utility/context/Can';
 import {useContext} from 'react';
 import {IItems} from '../../domains/interfaces/nav-menu-items/IItems';
-import {NavMenuGroup} from '../../domains/proptypes/NavMenuGroup';
+import {NavMenuGroup} from './components/menu/interfaces/NavMenuGroup';
 
 /**
  * Return which component to render based on it's data/context

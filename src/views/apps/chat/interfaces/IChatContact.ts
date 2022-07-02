@@ -1,4 +1,4 @@
-import {IChats} from '../../grouper/IChats';
+import {IChats} from './IChats';
 import {IChatContactFather} from './IChatContactFather';
 
 export interface IChatContact extends IChatContactFather{

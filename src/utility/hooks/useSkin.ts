@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {handleSkin} from '../../redux/layout';
 import {RootState} from '../../redux/reducers/RootReducer';
-import {Layout} from '../../domains/interfaces/layouts/Layout';
+import {Layout} from '../../configs/interfaces/Layout';
 import {SkinTypes} from '../../domains/enums/SkinTypes';
 
 export const useSkin = () => {

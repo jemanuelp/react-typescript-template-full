@@ -1,6 +1,6 @@
 import mock from '../mock';
 import {AxiosRequestConfig} from 'axios';
-import {IEmail} from '../../domains/interfaces/emails/IEmail';
+import {IEmail} from '../../views/apps/email/interfaces/IEmail';
 
 const data: { emails: IEmail[] } = {
   emails: [

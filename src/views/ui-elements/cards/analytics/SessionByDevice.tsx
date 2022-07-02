@@ -13,7 +13,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import {ISessionsDevice} from '../../../../domains/interfaces/card-analytics/ISessionsDevice';
+import {ISessionsDevice} from './interfaces/ISessionsDevice';
 
 const SessionByDevice = (
   props: {

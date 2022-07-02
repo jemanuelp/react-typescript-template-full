@@ -1,4 +1,4 @@
-import {IItems} from '../interfaces/nav-menu-items/IItems';
+import {IItems} from '../../../../../domains/interfaces/nav-menu-items/IItems';
 
 export interface VerticalMenuNavItemsProptypes {
     activeItem: any;

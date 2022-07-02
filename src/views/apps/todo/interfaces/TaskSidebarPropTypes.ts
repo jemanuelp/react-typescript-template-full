@@ -1,6 +1,6 @@
-import {ITaskState} from '../interfaces/tasks/ITaskState';
-import {addTask, deleteTask, selectTask, updateTask} from '../../views/apps/todo/store';
-import {IFilter} from '../interfaces/IFilter';
+import {ITaskState} from './ITaskState';
+import {addTask, deleteTask, selectTask, updateTask} from '../store';
+import {IFilter} from '../../../../domains/interfaces/IFilter';
 
 export interface TaskSidebarPropTypes {
     store: ITaskState,

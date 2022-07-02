@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Mail} from 'react-feather';
 import StatsWithLineChart from '../../../../@core/components/widgets/stats/StatsWithLineChart';
-import {INewsletter} from '../../../../domains/interfaces/card-statistics/INewsletter';
+import {INewsletter} from './interfaces/INewsletter';
 
 const Newsletter = (
   { warning }: { warning: string },

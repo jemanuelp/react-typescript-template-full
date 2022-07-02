@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import themeConfig from '../configs/themeConfig';
-import {Layout} from '../domains/interfaces/layouts/Layout';
-import {MenuLayout} from '../domains/interfaces/layouts/MenuLayout';
+import {Layout} from '../configs/interfaces/Layout';
+import {MenuLayout} from '../configs/interfaces/MenuLayout';
 
 const initialMenu = (): MenuLayout => {
   const item = window.localStorage.getItem('menuCollapsed');

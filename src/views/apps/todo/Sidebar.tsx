@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { Mail, Star, Check, Trash, Plus } from 'react-feather';
 import { Button, ListGroup, ListGroupItem } from 'reactstrap';
-import {TodoSidebarProptypes} from '../../../domains/proptypes/TodoSidebarProptypes';
+import {TodoSidebarProptypes} from './interfaces/TodoSidebarProptypes';
 
 const TodoSidebar = (props: TodoSidebarProptypes) => {
   const {

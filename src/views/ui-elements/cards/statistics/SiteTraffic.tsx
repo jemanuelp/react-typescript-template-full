@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Monitor} from 'react-feather';
 import StatsWithLineChart from '../../../../@core/components/widgets/stats/StatsWithLineChart';
-import {ISiteTraffic} from '../../../../domains/interfaces/card-statistics/ISiteTraffic';
+import {ISiteTraffic} from './interfaces/ISiteTraffic';
 
 const SiteTraffic = () => {
   const [data, setData] = useState<ISiteTraffic | null>(null);
