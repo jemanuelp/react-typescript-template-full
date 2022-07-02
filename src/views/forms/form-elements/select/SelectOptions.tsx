@@ -23,8 +23,8 @@ import {
   FileText,
   Instagram,
 } from 'react-feather';
-import {IColorOptions} from '../../../../domains/interfaces/IColorOptions';
-import {OnChangeValue, OptionsOrGroups} from 'react-select/dist/declarations/src/types';
+import {IColorOptions} from '../interfaces/IColorOptions';
+import {OnChangeValue} from 'react-select/dist/declarations/src/types';
 import {selectThemeColors} from '../../../../utility/Utils';
 
 const colorOptions: IColorOptions[] = [

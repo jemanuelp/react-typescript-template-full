@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {IProfileUser} from '../../../../domains/interfaces/IProfileUser';
+import {IProfileUser} from '../interfaces/IProfileUser';
 import {IChatContact} from '../interfaces/IChatContact';
 import {IChats} from '../interfaces/IChats';
 import {IUser} from '../../../../domains/interfaces/IUser';

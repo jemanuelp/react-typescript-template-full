@@ -1,6 +1,6 @@
 import mock from '../mock';
 import {IChats} from '../../views/apps/chat/interfaces/IChats';
-import {IProfileUser} from '../../domains/interfaces/IProfileUser';
+import {IProfileUser} from '../../views/apps/chat/interfaces/IProfileUser';
 import {IChatContact} from '../../views/apps/chat/interfaces/IChatContact';
 import {IChat} from '../../views/apps/chat/interfaces/IChat';
 import {AxiosRequestConfig} from 'axios';

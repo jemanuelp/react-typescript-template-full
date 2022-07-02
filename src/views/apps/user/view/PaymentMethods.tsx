@@ -30,7 +30,7 @@ import dinersCC from '../../../../../src/assets/images/icons/payments/diners-cc.
 import maestroCC from '../../../../../src/assets/images/icons/payments/maestro-cc.png';
 import discoverCC from '../../../../../src/assets/images/icons/payments/discover-cc.png';
 import mastercardCC from '../../../../../src/assets/images/icons/payments/mastercard-cc.png';
-import {ICard} from '../../../../domains/interfaces/ICard';
+import {ICard} from '../interfaces/ICard';
 
 const cardsObj = {
   jcb: jcbCC,

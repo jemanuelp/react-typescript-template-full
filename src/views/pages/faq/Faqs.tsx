@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import {useState} from 'react';
 import * as Icon from 'react-feather';
 import {
   Nav,
@@ -15,9 +15,8 @@ import {
 } from 'reactstrap';
 
 import illustration from '../../../../src/assets/images/illustration/faq-illustrations.svg';
-import {IFaqData} from '../../../domains/interfaces/IFaqData';
-import {IconProps} from 'react-feather';
-import {IQandA} from '../../../domains/interfaces/IQandA';
+import {IFaqData} from '../interfaces/IFaqData';
+import {IQandA} from '../interfaces/IQandA';
 
 const Faqs = (
   { data }:

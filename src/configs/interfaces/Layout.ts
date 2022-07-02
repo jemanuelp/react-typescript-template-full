@@ -5,7 +5,7 @@ import {TypeContentWidthTypes} from './ContentWidthTypes';
 import {MenuLayout} from './MenuLayout';
 import {NavbarLayout} from './NavbarLayout';
 import {ToastPosition} from 'react-hot-toast';
-import {FooterLayout} from '../../domains/interfaces/FooterLayout';
+import {FooterLayout} from './FooterLayout';
 
 export interface Layout {
     isRTL: boolean;
