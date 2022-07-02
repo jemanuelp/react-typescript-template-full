@@ -1,27 +1,33 @@
 import { useState, useEffect, forwardRef } from 'react';
-
 import { columns } from './columns';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllData, getData } from 'src/views/apps/user/store';
-
+import { getAllData, getData } from '../../user/store';
 import ReactPaginate from 'react-paginate';
 import { ChevronDown } from 'react-feather';
 import DataTable from 'react-data-table-component';
-
 import { Card, Input, Row, Col } from 'reactstrap';
-
-import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
+import {RootState} from '../../../../redux/reducers/RootReducer';
+import {CustomHeaderProptypes} from '../../../../domains/proptypes/CustomHeaderProptypes';
 
 // ** Bootstrap Checkbox Component
-const BootstrapCheckbox = forwardRef((props, ref) => (
+const BootstrapCheckbox = forwardRef((props: any, ref: any) => (
   <div className='form-check'>
     <Input type='checkbox' ref={ref} {...props} />
   </div>
 ));
 
 // ** Table Header
-const CustomHeader = ({ plan, handlePlanChange, handlePerPage, rowsPerPage, handleFilter, searchTerm }) => {
+const CustomHeader = (
+  {
+    plan,
+    handlePlanChange,
+    handlePerPage,
+    rowsPerPage,
+    handleFilter,
+    searchTerm,
+  }: CustomHeaderProptypes,
+) => {
   return (
     <div className='invoice-list-table-header w-100 me-1 ms-50 mt-2 mb-75'>
       <Row>
@@ -59,7 +65,11 @@ const CustomHeader = ({ plan, handlePlanChange, handlePerPage, rowsPerPage, hand
               onChange={e => handleFilter(e.target.value)}
             />
           </div>
-          <Input value={plan} type='select' style={{ width: '10rem' }} onChange={e => handlePlanChange(e.target.value)}>
+          <Input value={plan} type='select' style={{ width: '10rem' }} onChange={e => {
+            if (handlePlanChange) {
+              handlePlanChange(e.target.value);
+            }
+          }}>
             <option value=''>Select Role</option>
             <option value='basic'>Basic</option>
             <option value='company'>Company</option>
@@ -73,9 +83,8 @@ const CustomHeader = ({ plan, handlePlanChange, handlePerPage, rowsPerPage, hand
 };
 
 const Table = () => {
-  
-  const dispatch = useDispatch();
-  const store = useSelector(state => state.users);
+  const dispatch = useDispatch<any>();
+  const store = useSelector((state: RootState) => state.users);
 
   const [plan, setPlan] = useState('');
   const [sort, setSort] = useState('desc');
@@ -96,13 +105,13 @@ const Table = () => {
         q: searchTerm,
         currentPlan: plan,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   }, [dispatch, store.data.length]);
 
   // ** Function in get data on page change
-  const handlePagination = page => {
+  const handlePagination = (page: { selected: number }) => {
     dispatch(
       getData({
         sort,
@@ -112,32 +121,34 @@ const Table = () => {
         q: searchTerm,
         currentPlan: plan,
         perPage: rowsPerPage,
-        page: page.selected + 1
-      })
+        page: page.selected + 1,
+      }),
     );
     setCurrentPage(page.selected + 1);
   };
 
   // ** Function in get data on rows per page
-  const handlePerPage = e => {
-    const value = parseInt(e.currentTarget.value);
-    dispatch(
-      getData({
-        sort,
-        role: '',
-        sortColumn,
-        status: '',
-        q: searchTerm,
-        perPage: value,
-        currentPlan: plan,
-        page: currentPage
-      })
-    );
-    setRowsPerPage(value);
+  const handlePerPage = (e: any) => {
+    if (e.currentTarget && e.currentTarget.value) {
+      const value = parseInt(e.currentTarget.value);
+      dispatch(
+        getData({
+          sort,
+          role: '',
+          sortColumn,
+          status: '',
+          q: searchTerm,
+          perPage: value,
+          currentPlan: plan,
+          page: currentPage,
+        }),
+      );
+      setRowsPerPage(value);
+    }
   };
 
   // ** Function in get data on search query change
-  const handleFilter = val => {
+  const handleFilter = (val: string) => {
     setSearchTerm(val);
     dispatch(
       getData({
@@ -148,12 +159,12 @@ const Table = () => {
         status: '',
         currentPlan: plan,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   };
 
-  const handlePlanChange = val => {
+  const handlePlanChange = (val: any) => {
     setPlan(val);
     dispatch(
       getData({
@@ -164,8 +175,8 @@ const Table = () => {
         q: searchTerm,
         currentPlan: plan,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   };
 
@@ -195,11 +206,11 @@ const Table = () => {
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
-      q: searchTerm
+      q: searchTerm,
     };
 
-    const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0;
+    const isFiltered = Object.keys(filters).some(function(k) {
+      return filters[k as keyof typeof filters].length > 0;
     });
 
     if (store.data.length > 0) {
@@ -211,7 +222,7 @@ const Table = () => {
     }
   };
 
-  const handleSort = (column, sortDirection) => {
+  const handleSort = (column: any, sortDirection: any) => {
     setSort(sortDirection);
     setSortColumn(column.sortField);
     dispatch(
@@ -223,8 +234,8 @@ const Table = () => {
         q: searchTerm,
         currentPlan: plan,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   };
 
@@ -243,6 +254,7 @@ const Table = () => {
           data={dataToRender()}
           sortIcon={<ChevronDown />}
           paginationComponent={CustomPagination}
+          // @ts-ignore
           selectableRowsComponent={BootstrapCheckbox}
           className='react-dataTable'
           subHeaderComponent={

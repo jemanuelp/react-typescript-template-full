@@ -1,5 +1,6 @@
 import mock from '../mock';
 import {ITask2} from '../../domains/interfaces/tasks/ITask2';
+import {AxiosRequestConfig} from 'axios';
 
 const data: { tasks: ITask2[] } = {
   tasks: [
@@ -402,14 +403,15 @@ mock.onGet('/apps/todo/tasks').reply(config => {
 // ------------------------------------------------
 // POST: Add new task
 // ------------------------------------------------
-mock.onPost('/apps/todo/add-tasks').reply(config => {
+mock.onPost('/apps/todo/add-tasks').reply((config: AxiosRequestConfig) => {
   // Get event from post data
-  const {task} = JSON.parse(config.data);
-
+  let {task}  = JSON.parse(config.data);
+  
+  task = task as ITask2[];
   const {length} = data.tasks;
-  let lastIndex = 0;
+  let lastIndex: number = 0;
   if (length) {
-    lastIndex = data.tasks[length - 1].id;
+    lastIndex = Number(data.tasks[length - 1].id);
   }
   task.id = lastIndex + 1;
 

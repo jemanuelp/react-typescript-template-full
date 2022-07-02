@@ -1,6 +1,4 @@
 import { Fragment } from 'react';
-
-// ** Roles Components
 import Table from './Table';
 import RoleCards from './RoleCards';
 
@@ -9,6 +7,7 @@ const Roles = () => {
     <Fragment>
       <h3>Roles List</h3>
       <p className='mb-2'>
+        {/* eslint-disable-next-line max-len */}
         A role provides access to predefined menus and features depending on the assigned role to an administrator that
         can have access to what he needs.
       </p>

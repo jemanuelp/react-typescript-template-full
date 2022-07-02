@@ -1,8 +1,8 @@
 import mock from '../mock';
-
 import { paginateArray } from '../utils';
+import {IPermission} from '../../domains/interfaces/permissions/IPermission';
 
-const data = {
+const data: { permissions: IPermission[] } = {
   permissions: [
     {
       id: 1,
@@ -71,13 +71,15 @@ mock.onGet('/apps/permissions/data').reply(config => {
     if (assignedTo !== '') {
       return (
         (permission.name.toLowerCase().includes(queryLowered) ||
-          permission.createdDate.toLowerCase().includes(queryLowered)) &&
-        permission.assignedTo.includes(assignedTo)
+          (permission.createdDate &&
+              permission.createdDate.toLowerCase().includes(queryLowered))) &&
+        (permission.assignedTo && permission.assignedTo.includes(assignedTo))
       );
     } else {
       return (
         permission.name.toLowerCase().includes(queryLowered) ||
-        permission.createdDate.toLowerCase().includes(queryLowered)
+        (permission.createdDate &&
+            permission.createdDate.toLowerCase().includes(queryLowered))
       );
     }
   });
@@ -101,7 +103,7 @@ mock.onPost('/apps/permissions/add-permission').reply(config => {
   const { length } = data.permissions;
   let lastIndex = 0;
   if (length) {
-    lastIndex = data.permissions[length - 1].id;
+    lastIndex = data.permissions[length - 1].id ?? 0;
   }
   permission.id = lastIndex + 1;
 

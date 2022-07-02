@@ -5,7 +5,7 @@ import todo from '../../views/apps/todo/store';
 import chat from '../../views/apps/chat/store';
 import users from '../../views/apps/user/store';
 import email from '../../../src/views/apps/email/store';
-import kanban from '../../../src/views/apps/kanban/store';
+import kanban from '../../views/apps/kanban/store';
 import invoice from '../../views/apps/invoice/store';
 import calendar from '../../../src/views/apps/calendar/store';
 import ecommerce from '../../../src/views/apps/ecommerce/store';

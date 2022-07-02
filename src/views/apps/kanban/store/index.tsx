@@ -1,21 +1,20 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
 import axios from 'axios';
 
 // ** Fetch Boards
-export const fetchBoards = createAsyncThunk('appKanban/fetchBoards', async () => {
+export const fetchBoards = createAsyncThunk('appKanban/fetchBoards', async() => {
   const response = await axios.get('/apps/kanban/boards');
 
   return response.data;
 });
 
-export const fetchTasks = createAsyncThunk('appKanban/fetchTasks', async () => {
+export const fetchTasks = createAsyncThunk('appKanban/fetchTasks', async() => {
   const response = await axios.get('/apps/kanban/tasks');
 
   return response.data;
 });
 
-export const updateTask = createAsyncThunk('appKanban/updateTask', async (data, { dispatch }) => {
+export const updateTask = createAsyncThunk('appKanban/updateTask', async(data, { dispatch }) => {
   const response = await axios.post('/apps/kanban/update-task', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -23,7 +22,7 @@ export const updateTask = createAsyncThunk('appKanban/updateTask', async (data, 
   return response.data;
 });
 
-export const addBoard = createAsyncThunk('appKanban/addBoard', async (data, { dispatch }) => {
+export const addBoard = createAsyncThunk('appKanban/addBoard', async(data, { dispatch }) => {
   const response = await axios.post('/apps/kanban/add-board', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -31,7 +30,7 @@ export const addBoard = createAsyncThunk('appKanban/addBoard', async (data, { di
   return response.data;
 });
 
-export const addTask = createAsyncThunk('appKanban/addTask', async (data, { dispatch }) => {
+export const addTask = createAsyncThunk('appKanban/addTask', async(data, { dispatch }) => {
   const response = await axios.post('/apps/kanban/add-task', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -39,7 +38,7 @@ export const addTask = createAsyncThunk('appKanban/addTask', async (data, { disp
   return response.data;
 });
 
-export const clearTasks = createAsyncThunk('appKanban/clearTasks', async (id, { dispatch }) => {
+export const clearTasks = createAsyncThunk('appKanban/clearTasks', async(id, { dispatch }) => {
   const response = await axios.delete('/apps/kanban/clear-tasks', { data: id });
 
   await dispatch(fetchBoards());
@@ -48,7 +47,7 @@ export const clearTasks = createAsyncThunk('appKanban/clearTasks', async (id, { 
   return response;
 });
 
-export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', async (data, { dispatch }) => {
+export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', async(data, { dispatch }) => {
   const response = await axios.post('/apps/kanban/update-task-board', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -56,7 +55,7 @@ export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', asy
   return response.data;
 });
 
-export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async (data, { dispatch }) => {
+export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async(data, { dispatch }) => {
   const response = await axios.post('/apps/kanban/reorder-tasks', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -64,7 +63,7 @@ export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async (d
   return response.data;
 });
 
-export const deleteBoard = createAsyncThunk('appKanban/deleteBoard', async (id, { dispatch }) => {
+export const deleteBoard = createAsyncThunk('appKanban/deleteBoard', async(id, { dispatch }) => {
   const response = await axios.delete('/apps/kanban/delete-board', { data: id });
 
   await dispatch(fetchBoards());
@@ -78,12 +77,12 @@ export const appKanbanSlice = createSlice({
   initialState: {
     tasks: [],
     boards: [],
-    selectedTask: null
+    selectedTask: null,
   },
   reducers: {
     handleSelectTask: (state, action) => {
       state.selectedTask = action.payload;
-    }
+    },
   },
   extraReducers: builder => {
     builder
@@ -93,7 +92,7 @@ export const appKanbanSlice = createSlice({
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.tasks = action.payload;
       });
-  }
+  },
 });
 
 export const { handleSelectTask } = appKanbanSlice.actions;

@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
+import {NavMenuGroup} from '../../../../../domains/proptypes/NavMenuGroup';
 
-const HorizontalNavMenuLink = ({ item, isChild, setMenuOpen }: any) => {
+const HorizontalNavMenuLink = (
+  { item, isChild, setMenuOpen }: NavMenuGroup,
+) => {
   // ** Conditional Link Tag, if item has newTab or externalLink props use <a> tag else use NavLink
   const LinkTag: any = item.externalLink ? 'a' : NavLink;
 

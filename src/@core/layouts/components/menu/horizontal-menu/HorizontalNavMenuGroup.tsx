@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { hasActiveChild } from '../../../utils';
 import { useRTL } from '../../../../../utility/hooks/useRTL';
 import HorizontalNavMenuItems from './HorizontalNavMenuItems';
+import {NavMenuGroup} from '../../../../../domains/proptypes/NavMenuGroup';
 
 const applyHeight: Partial<Modifier<any>> = {
   enabled: true,
@@ -34,10 +35,10 @@ const applyHeight: Partial<Modifier<any>> = {
   },
 };
 
-const HorizontalNavMenuGroup = (props: any) => {
+const HorizontalNavMenuGroup = (props: NavMenuGroup) => {
   const { item, submenu, isChild } = props;
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [popperElement] = useState(null);
   const [referenceElement] = useState(null);
 

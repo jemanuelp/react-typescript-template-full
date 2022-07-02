@@ -31,9 +31,9 @@ const AvatarGroup = (props: any) => {
                   [item.className]: item.className,
                 })}
                 {...(item.title ? { id: item.title.split(' ').join('-') } : {})}
-                {...item}
                 title={undefined}
                 meta={undefined}
+                {...item}
               />
             ) :
             null}

@@ -11,11 +11,12 @@ const IconActions = {
 };
 
 abstract class PropTypesCardActions {
-  removeIcon: any;
-  reloadIcon: any;
-  collapseIcon: any;
+  removeIcon?: any;
+  reloadIcon?: any;
+  collapseIcon?: any;
   title: string = '';
-  actions: IconActions | IconActions[] = [];
+  actions: string | string[] = [];
+  children?: any;
   endReload(props: any) {
     // ** User passes reload action and doesn't pass endReload then return Error
     if (
@@ -24,8 +25,7 @@ abstract class PropTypesCardActions {
     ) {
       return new Error('Please provide a function to end reload!');
     }
-  };
-  children: any;
+  }
 }
 
 const CardActions = (props: PropTypesCardActions) => {
@@ -73,8 +73,8 @@ const CardActions = (props: PropTypesCardActions) => {
      */
 
     if (Array.isArray(actions)) {
-      return actions.map((action: IconActions, i: number) => {
-        const Tag = Icons[action];
+      return actions.map((action: string, i: number) => {
+        const Tag = Icons[action as keyof typeof Icons];
         return (
           <Tag
             key={i}
@@ -87,8 +87,8 @@ const CardActions = (props: PropTypesCardActions) => {
         );
       });
     } else {
-      const Tag = Icons[actions];
-      return <Tag className='cursor-pointer' size={15} onClick={() => callAction(actions)} />;
+      const Tag = Icons[actions as keyof typeof Icons];
+      return actions && <Tag className='cursor-pointer' size={15} onClick={() => callAction(actions)} />;
     }
   };
 

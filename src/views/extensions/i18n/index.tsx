@@ -1,13 +1,9 @@
 import { Fragment } from 'react';
-
 import { useTranslation } from 'react-i18next';
-
-import ExtensionsHeader from 'src/@core/components/extensions-header';
-
+import ExtensionsHeader from '../../../@core/components/extensions-header';
 import { Row, Col, Card, CardHeader, CardTitle, CardBody, Input, Label } from 'reactstrap';
 
 const I18nExtension = () => {
-  
   const { i18n, t } = useTranslation();
 
   return (

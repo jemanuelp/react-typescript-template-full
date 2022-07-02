@@ -2,6 +2,7 @@ import HorizontalNavMenuLink from './HorizontalNavMenuLink';
 import HorizontalNavMenuGroup from './HorizontalNavMenuGroup';
 import {resolveHorizontalNavMenuItemComponent as resolveNavItemComponent} from '../../../../layouts/utils';
 import {CanViewMenuGroup} from '../../../utils';
+import {IItems} from '../../../../../domains/interfaces/nav-menu-items/IItems';
 
 const HorizontalNavMenuItems = (props: any) => {
   const Components = {
@@ -10,7 +11,7 @@ const HorizontalNavMenuItems = (props: any) => {
   };
 
   // ** Render Nav Items
-  return props.items.map((item: any, index: any) => {
+  return props.items.map((item: IItems, index: any) => {
     const TagName = Components[resolveNavItemComponent(item)];
     if (item.children) {
       return CanViewMenuGroup(item) &&

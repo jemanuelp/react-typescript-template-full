@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
+import {Route} from '../../domains/interfaces/Route';
 
 const Chat = lazy(() => import('../../views/apps/chat'));
 const Todo = lazy(() => import('../../views/apps/todo'));
@@ -24,7 +25,7 @@ const UserView = lazy(() => import('../../views/apps/user/view'));
 const Roles = lazy(() => import('../../views/apps/roles-permissions/roles'));
 const Permissions = lazy(() => import('../../views/apps/roles-permissions/permissions'));
 
-const AppRoutes = [
+const AppRoutes: Route[] = [
   {
     element: <Email />,
     path: '/apps/email',

@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import {
   Row,
   Col,
@@ -14,16 +13,12 @@ import {
   ModalBody,
   ModalHeader,
   FormFeedback,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from 'reactstrap';
-
 import { Copy, Info } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
-
-import AvatarGroup from 'src/@core/components/avatar-group';
-
-// ** FAQ Illustrations
-import illustration from 'src/assets/images/illustration/faq-illustrations.svg';
+import AvatarGroup from '../../../../@core/components/avatar-group';
+import illustration from '../../../../../src/assets/images/illustration/faq-illustrations.svg';
 
 const data = [
   {
@@ -33,24 +28,24 @@ const data = [
       {
         size: 'sm',
         title: 'Vinnie Mostowy',
-        img: require('src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default,
       },
       {
         size: 'sm',
         title: 'Allen Rieske',
-        img: require('src/assets/images/avatars/12.png').default
+        img: require('src/assets/images/avatars/12.png').default,
       },
       {
         size: 'sm',
         title: 'Julee Rossignol',
-        img: require('src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default,
       },
       {
         size: 'sm',
         title: 'Kaith Dsouza',
-        img: require('src/assets/images/avatars/11.png').default
-      }
-    ]
+        img: require('src/assets/images/avatars/11.png').default,
+      },
+    ],
   },
   {
     totalUsers: 7,
@@ -59,29 +54,29 @@ const data = [
       {
         size: 'sm',
         title: 'Jimmy Ressula',
-        img: require('src/assets/images/avatars/4.png').default
+        img: require('src/assets/images/avatars/4.png').default,
       },
       {
         size: 'sm',
         title: 'John Doe',
-        img: require('src/assets/images/avatars/1.png').default
+        img: require('src/assets/images/avatars/1.png').default,
       },
       {
         size: 'sm',
         title: 'Kristi Lawker',
-        img: require('src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default,
       },
       {
         size: 'sm',
         title: 'Kaith D',
-        img: require('src/assets/images/avatars/5.png').default
+        img: require('src/assets/images/avatars/5.png').default,
       },
       {
         size: 'sm',
         title: 'Danny Paul',
-        img: require('src/assets/images/avatars/7.png').default
-      }
-    ]
+        img: require('src/assets/images/avatars/7.png').default,
+      },
+    ],
   },
   {
     totalUsers: 5,
@@ -90,29 +85,29 @@ const data = [
       {
         size: 'sm',
         title: 'Andrew Tye',
-        img: require('src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default,
       },
       {
         size: 'sm',
         title: 'Rishi Swaat',
-        img: require('src/assets/images/avatars/9.png').default
+        img: require('src/assets/images/avatars/9.png').default,
       },
       {
         size: 'sm',
         title: 'Rossie Kim',
-        img: require('src/assets/images/avatars/2.png').default
+        img: require('src/assets/images/avatars/2.png').default,
       },
       {
         size: 'sm',
         title: 'Kim Merchent',
-        img: require('src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default,
       },
       {
         size: 'sm',
         title: 'Sam Dsouza',
-        img: require('src/assets/images/avatars/8.png').default
-      }
-    ]
+        img: require('src/assets/images/avatars/8.png').default,
+      },
+    ],
   },
   {
     totalUsers: 3,
@@ -121,29 +116,29 @@ const data = [
       {
         size: 'sm',
         title: 'Kim Karlos',
-        img: require('src/assets/images/avatars/3.png').default
+        img: require('src/assets/images/avatars/3.png').default,
       },
       {
         size: 'sm',
         title: 'Katy Turner',
-        img: require('src/assets/images/avatars/9.png').default
+        img: require('src/assets/images/avatars/9.png').default,
       },
       {
         size: 'sm',
         title: 'Peter Adward',
-        img: require('src/assets/images/avatars/12.png').default
+        img: require('src/assets/images/avatars/12.png').default,
       },
       {
         size: 'sm',
         title: 'Kaith Dsouza',
-        img: require('src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default,
       },
       {
         size: 'sm',
         title: 'John Parker',
-        img: require('src/assets/images/avatars/11.png').default
-      }
-    ]
+        img: require('src/assets/images/avatars/11.png').default,
+      },
+    ],
   },
   {
     totalUsers: 2,
@@ -152,30 +147,30 @@ const data = [
       {
         size: 'sm',
         title: 'Kim Merchent',
-        img: require('src/assets/images/avatars/10.png').default
+        img: require('src/assets/images/avatars/10.png').default,
       },
       {
         size: 'sm',
         title: 'Sam Dsouza',
-        img: require('src/assets/images/avatars/6.png').default
+        img: require('src/assets/images/avatars/6.png').default,
       },
       {
         size: 'sm',
         title: 'Nurvi Karlos',
-        img: require('src/assets/images/avatars/3.png').default
+        img: require('src/assets/images/avatars/3.png').default,
       },
       {
         size: 'sm',
         title: 'Andrew Tye',
-        img: require('src/assets/images/avatars/8.png').default
+        img: require('src/assets/images/avatars/8.png').default,
       },
       {
         size: 'sm',
         title: 'Rossie Kim',
-        img: require('src/assets/images/avatars/9.png').default
-      }
-    ]
-  }
+        img: require('src/assets/images/avatars/9.png').default,
+      },
+    ],
+  },
 ];
 
 const rolesArr = [
@@ -187,7 +182,7 @@ const rolesArr = [
   'Reporting',
   'API Control',
   'Repository Management',
-  'Payroll'
+  'Payroll',
 ];
 
 const RoleCards = () => {
@@ -198,17 +193,17 @@ const RoleCards = () => {
     reset,
     control,
     setError,
-    setValue,
+    // setValue,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues: { roleName: '' } });
 
-  const onSubmit = data => {
+  const onSubmit = (data: any) => {
     if (data.roleName.length) {
       setShow(false);
     } else {
       setError('roleName', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
@@ -220,7 +215,7 @@ const RoleCards = () => {
 
   const handleModalClosed = () => {
     setModalType('Add New');
-    setValue('roleName');
+    // setValue('roleName');
   };
 
   return (
@@ -310,7 +305,10 @@ const RoleCards = () => {
                   <Input {...field} id='roleName' placeholder='Enter role name' invalid={errors.roleName && true} />
                 )}
               />
-              {errors.roleName && <FormFeedback>Please enter a valid role name</FormFeedback>}
+              {
+                errors.roleName &&
+                  <FormFeedback>Please enter a valid role name</FormFeedback>
+              }
             </Col>
             <Col xs={12}>
               <h4 className='mt-2 pt-50'>Role Permissions</h4>

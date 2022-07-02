@@ -1,11 +1,13 @@
-import { AbilityContext } from '../../utility/context/Can';
+import {AbilityContext, Can} from '../../utility/context/Can';
 import {useContext} from 'react';
+import {IItems} from '../../domains/interfaces/nav-menu-items/IItems';
+import {NavMenuGroup} from '../../domains/proptypes/NavMenuGroup';
 
 /**
  * Return which component to render based on it's data/context
  * @param {Object} item nav menu item
  */
-export const resolveVerticalNavMenuItemComponent = (item: any) => {
+export const resolveVerticalNavMenuItemComponent = (item: IItems) => {
   if (item.header) return 'VerticalNavMenuSectionHeader';
   if (item.children) return 'VerticalNavMenuGroup';
   return 'VerticalNavMenuLink';
@@ -15,7 +17,7 @@ export const resolveVerticalNavMenuItemComponent = (item: any) => {
  * Return which component to render based on it's data/context
  * @param {Object} item nav menu item
  */
-export const resolveHorizontalNavMenuItemComponent = (item: any) => {
+export const resolveHorizontalNavMenuItemComponent = (item: IItems) => {
   if (item.children) return 'HorizontalNavMenuGroup';
   return 'HorizontalNavMenuLink';
 };
@@ -99,12 +101,10 @@ export const removeChildren = (
   });
 };
 
-export const CanViewMenuGroup = (item: any) => {
-  const ability = useContext(AbilityContext);
+export const CanViewMenuGroup = (item: IItems) => {
   // ! This same logic is used in canViewHorizontalNavMenuGroup and canViewHorizontalNavMenuHeaderGroup. So make sure to update logic in them as well
-  // @ts-ignore
   const hasAnyVisibleChild = item.children && item.children.some(
-    // (i: any) => ability.can(i.action, i.resource),
+    (i: any) => Can(i.action, i.resource),
   );
 
   // ** If resource and action is defined in item => Return based on children visibility (Hide group if no child is visible)
@@ -112,8 +112,7 @@ export const CanViewMenuGroup = (item: any) => {
   if (!(item.action && item.resource)) {
     return hasAnyVisibleChild;
   }
-  // @ts-ignore
-  return ability.can(item.action, item.resource) && hasAnyVisibleChild;
+  return Can(item.action, item.resource) && hasAnyVisibleChild;
 };
 
 export const CanViewMenuItem = (item: any) => {

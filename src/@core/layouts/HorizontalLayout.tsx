@@ -1,54 +1,50 @@
-import {Link} from 'react-router-dom';
-import {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {handleContentWidth, handleMenuHidden} from '../../redux/layout';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import classnames from 'classnames';
-import {ArrowUp} from 'react-feather';
-import {Button, Navbar, NavItem} from 'reactstrap';
-import themeConfig from '../../configs/themeConfig';
-import Customizer from '../../@core/components/customizer';
-import ScrollToTop from '../../@core/components/scrolltop';
+import { ArrowUp } from 'react-feather';
+import { Navbar, NavItem, Button } from 'reactstrap';
 import NavbarComponent from './components/navbar';
 import FooterComponent from './components/footer';
 import MenuComponent from './components/menu/horizontal-menu';
+import '../../@core/scss/base/core/menu/menu-types/horizontal-menu.scss';
+import {useSkin} from '../../utility/hooks/useSkin';
 import {useRTL} from '../../utility/hooks/useRTL';
-import {useLayout} from '../../utility/hooks/useLayout';
 import {useNavbarType} from '../../utility/hooks/useNavbarType';
 import {useFooterType} from '../../utility/hooks/useFooterType';
 import {useNavbarColor} from '../../utility/hooks/useNavbarColor';
-import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
-import '../scss/base/core/menu/menu-types/horizontal-menu.scss';
-import {useSkin} from '../../utility/hooks/useSkin';
+import {useLayout} from '../../utility/hooks/useLayout';
 import {RootState} from '../../redux/reducers/RootReducer';
-import {NavbarLayoutTypes} from '../../domains/enums/NavbarLayoutTypes';
+import {handleContentWidth, handleMenuHidden} from '../../redux/layout';
+import ScrollToTop from '../../@core/components/scrolltop';
+import themeConfig from '../../configs/themeConfig';
+import Customizer from '../components/customizer';
 
 const HorizontalLayout = (props: any) => {
-  const {navbar, menuData, footer, children} = props;
-
-  const {skin, setSkin} = useSkin();
-  const {isRtl, setIsRtl} = useRTL();
-  const {navbarType, setNavbarType} = useNavbarType();
-  const {footerType, setFooterType} = useFooterType();
-  const {navbarColor, setNavbarColor} = useNavbarColor();
-  const {layout, setLayout, setLastLayout} = useLayout();
-  const {transition, setTransition} = useRouterTransition();
-
-  const [isMounted, setIsMounted] = useState(false);
+  const {
+    navbar,
+    menuData,
+    footer,
+    children,
+    menu,
+    routerProps,
+    currentActiveItem,
+  } = props;
+  const { skin, setSkin } = useSkin();
+  const { isRtl, setIsRtl } = useRTL();
+  const { navbarType, setNavbarType } = useNavbarType();
+  const { footerType, setFooterType } = useFooterType();
+  const { navbarColor, setNavbarColor } = useNavbarColor();
+  const { layout, setLayout, setLastLayout } = useLayout();
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false);
-
   const dispatch = useDispatch();
   const layoutStore = useSelector((state: RootState) => state.layout);
-
   const contentWidth = layoutStore.contentWidth;
   const isHidden = layoutStore.menu.isHidden;
-
-  // ** Handles Content Width
   const setContentWidth = (val: any) => dispatch(handleContentWidth(val));
-
-  // ** Handles Content Width
   const setIsHidden = (val: any) => dispatch(handleMenuHidden(val));
 
-  // ** UseEffect Cleanup
   const cleanup = () => {
     setIsMounted(false);
     setNavbarScrolled(false);
@@ -67,7 +63,8 @@ const HorizontalLayout = (props: any) => {
     });
     return () => cleanup();
   }, []);
-    
+
+  // ** Vars
   const footerClasses = {
     static: 'footer-static',
     sticky: 'footer-fixed',
@@ -78,12 +75,11 @@ const HorizontalLayout = (props: any) => {
     floating: 'navbar-floating',
     sticky: 'navbar-sticky',
     static: 'navbar-static',
+    hidden: 'navbar-hidden',
   };
 
   const navbarClasses = {
-    floating: contentWidth === 'boxed' ?
-      'floating-nav container-xxl' :
-      'floating-nav',
+    floating: contentWidth === 'boxed' ? 'floating-nav container-xxl' : 'floating-nav',
     sticky: 'fixed-top',
   };
 
@@ -95,19 +91,12 @@ const HorizontalLayout = (props: any) => {
 
   return (
     <div
-      className={classnames(`wrapper horizontal-layout horizontal-menu 
-        ${navbarWrapperClasses[
-      navbarType === NavbarLayoutTypes.hidden ?
-        NavbarLayoutTypes.floating :
-        navbarType
-    ] || 'navbar-floating'} 
-        ${
-    footerClasses[footerType] || 'footer-static'
-    } menu-expanded`,
+      className={classnames(
+        `wrapper horizontal-layout horizontal-menu ${navbarWrapperClasses[navbarType] || 'navbar-floating'} ${
+          footerClasses[footerType] || 'footer-static'
+        } menu-expanded`,
       )}
-      {...(isHidden ?
-        {'data-col': '1-column'} :
-        {})}
+      {...(isHidden ? { 'data-col': '1-column' } : {})}
     >
       <Navbar
         expand='lg'
@@ -122,7 +111,7 @@ const HorizontalLayout = (props: any) => {
               <NavItem>
                 <Link to='/' className='navbar-brand'>
                   <span className='brand-logo'>
-                    <img src={themeConfig.app.appLogoImage} alt='logo'/>
+                    <img src={themeConfig.app.appLogoImage} alt='logo' />
                   </span>
                   <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2>
                 </Link>
@@ -132,9 +121,12 @@ const HorizontalLayout = (props: any) => {
         )}
 
         <div className='navbar-container d-flex content'>
-          {navbar ?
-            navbar({skin, setSkin}) :
-            <NavbarComponent skin={skin} setSkin={setSkin}/>}
+          {
+            navbar ?
+              navbar({ skin, setSkin }) :
+              <NavbarComponent skin={skin} setSkin={setSkin}
+              />
+          }
         </div>
       </Navbar>
       {!isHidden ?
@@ -145,51 +137,41 @@ const HorizontalLayout = (props: any) => {
               expand='sm'
               light={skin !== 'dark'}
               dark={skin === 'dark' || bgColorCondition}
-              className={classnames('header-navbar navbar-horizontal navbar-shadow menu-border',
-                {
-                  [
-                  navbarClasses[
-                    (
-                      navbarType === NavbarLayoutTypes.floating ||
-                      navbarType === NavbarLayoutTypes.sticky
-                    ) ?
-                      navbarType :
-                      NavbarLayoutTypes.floating]
-                  ]: navbarType !== 'static',
-                  'floating-nav': (((navbarType === NavbarLayoutTypes.floating || navbarType === NavbarLayoutTypes.sticky) ?
-                    navbarType :
-                    NavbarLayoutTypes.floating) &&
-                                    navbarType !== 'static') || navbarType === 'floating',
-                })}>
+              className={classnames('header-navbar navbar-horizontal navbar-shadow menu-border', {
+                [navbarClasses[navbarType as keyof typeof navbarClasses]]: navbarType !== 'static',
+                'floating-nav': (!navbarClasses[navbarType as keyof typeof navbarClasses] && navbarType !== 'static') || navbarType === 'floating',
+              })}
+            >
               {
-              // menu ? menu({menuData, routerProps, currentActiveItem}) :
-                <MenuComponent menuData={menuData}/>}
+                menu ?
+                  menu({ menuData, routerProps, currentActiveItem }) :
+                  <MenuComponent menuData={menuData}/>
+              }
             </Navbar>
           </div>
         ) :
-        null
-      }
+        null}
 
       {children}
       {themeConfig.layout.customizer === true ?
         (
           <Customizer
             skin={skin}
-            isRTL={isRtl}
-            type={layout}
-            navbar={{type: navbarType, backgroundColor: navbarColor}}
-            menu={{isHidden, isCollapsed: false}}
-            contentWidth={contentWidth}
-            footer={{type: footerType}}
-            routerTransition={transition}
+            isRtl={isRtl}
+            layout={layout}
             setSkin={setSkin}
             setIsRtl={setIsRtl}
+            isHidden={isHidden}
             setLayout={setLayout}
+            footerType={footerType}
+            navbarType={navbarType}
             setIsHidden={setIsHidden}
-            setLastLayout={setLastLayout}
-            setTransition={setTransition}
-            setNavbarType={setNavbarType}
+            themeConfig={themeConfig}
+            navbarColor={navbarColor}
+            contentWidth={contentWidth}
             setFooterType={setFooterType}
+            setNavbarType={setNavbarType}
+            setLastLayout={setLastLayout}
             setNavbarColor={setNavbarColor}
             setContentWidth={setContentWidth}
           />
@@ -200,17 +182,19 @@ const HorizontalLayout = (props: any) => {
           'd-none': footerType === 'hidden',
         })}
       >
-        {footer ?
-          footer :
-          <FooterComponent footerType={footerType} footerClasses={footerClasses}/>}
+        {
+          footer ?
+            footer :
+            <FooterComponent />
+        }
       </footer>
 
       {themeConfig.layout.scrollTop === true ?
         (
           <div className='scroll-to-top'>
-            <ScrollToTop showOffset={300} className={'scroll-top d-block'}>
+            <ScrollToTop showOffset={300} className='scroll-top d-block'>
               <Button className='btn-icon' color='primary'>
-                <ArrowUp size={14}/>
+                <ArrowUp size={14} />
               </Button>
             </ScrollToTop>
           </div>
@@ -219,4 +203,5 @@ const HorizontalLayout = (props: any) => {
     </div>
   );
 };
+
 export default HorizontalLayout;

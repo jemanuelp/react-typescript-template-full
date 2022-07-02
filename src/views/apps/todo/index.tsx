@@ -12,9 +12,9 @@ import { RootState } from '../../../redux/reducers/RootReducer';
 import {IFilter} from '../../../domains/interfaces/IFilter';
 
 const TODO = () => {
-  const [sort, setSort] = useState('');
-  const [query, setQuery] = useState('');
-  const [mainSidebar, setMainSidebar] = useState(false);
+  const [sort, setSort] = useState<string>('');
+  const [query, setQuery] = useState<string>('');
+  const [mainSidebar, setMainSidebar] = useState<boolean>(false);
   const [openTaskSidebar, setOpenTaskSidebar] = useState<boolean>(false);
   const dispatch = useDispatch<any>();
   const store = useSelector((state: RootState) => state.todo);
@@ -61,7 +61,7 @@ const TODO = () => {
           <div className='content-body'>
             <div
               className={classnames('body-content-overlay', {
-                show: mainSidebar === true,
+                show: mainSidebar,
               })}
               onClick={handleMainSidebar}
             ></div>

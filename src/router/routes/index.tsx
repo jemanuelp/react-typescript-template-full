@@ -1,13 +1,13 @@
 import {Fragment} from 'react';
-import AppRoutes from './Apps';
-import FormRoutes from './Forms';
-import PagesRoutes from './Pages';
-import TablesRoutes from './Tables';
-import ChartsRoutes from './Charts';
+// import AppRoutes from './Apps';
+// import FormRoutes from './Forms';
+// import PagesRoutes from './Pages';
+// import TablesRoutes from './Tables';
+// import ChartsRoutes from './Charts';
 import DashboardRoutes from './Dashboards';
-import UiElementRoutes from './UiElements';
+// import UiElementRoutes from './UiElements';
 import ExtensionsRoutes from './Extensions';
-import PageLayoutsRoutes from './PageLayouts';
+// import PageLayoutsRoutes from './PageLayouts';
 import AuthenticationRoutes from './Authentication';
 
 import BlankLayout from '../../@core/layouts/BlankLayout';
@@ -19,6 +19,7 @@ import {LayoutTypes} from '../../domains/enums/LayoutTypes';
 import {isObjEmpty} from '../../utility/Utils';
 import VerticalLayout from '../../layouts/VerticalLayout';
 import HorizontalLayout from '../../layouts/HorizontalLayout';
+import {Route} from '../../domains/interfaces/Route';
 
 const getLayout = {
   blank: <BlankLayout/>,
@@ -33,13 +34,13 @@ const TemplateTitle = '%s - Vuexy React Admin Template';
 const DefaultRoute = '/dashboard/ecommerce';
 
 // ** Merge Routes
-const Routes = [
+const Routes: Route[] = [
   // ...AuthenticationRoutes,
   ...DashboardRoutes,
   // ...AppRoutes,
   // ...PagesRoutes,
   // ...UiElementRoutes,
-  // ...ExtensionsRoutes,
+  ...ExtensionsRoutes,
   // ...PageLayoutsRoutes,
   // ...FormRoutes,
   // ...TablesRoutes,
@@ -65,14 +66,11 @@ const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
       let isBlank = false;
       // ** Checks if Route layout or Default layout matches current layout
       if (
-        (
-          route.meta &&
-                    route.meta.layout &&
-                    route.meta.layout === layout
-        ) || ((
-          route.meta === undefined ||
-                    route.meta.layout === undefined
-        ) && defaultLayout === layout)
+        (route.meta && route.meta.layout && route.meta.layout === layout) ||
+                (
+                  (route.meta === undefined || route.meta.layout === undefined) &&
+                    defaultLayout === layout
+                )
       ) {
         let RouteTag = PrivateRoute;
 
@@ -112,18 +110,16 @@ const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
 
 const getRoutes = (layout: LayoutTypes) => {
   const defaultLayout = layout || 'vertical';
-  const layouts = ['vertical', 'horizontal', 'blank'];
+  const layouts: LayoutTypes[] = ['vertical', 'horizontal', 'blank'];
 
   const AllRoutes = Array<RouteObject>();
 
-  layouts.forEach((layoutItem: any) => {
+  layouts.forEach((layoutItem: LayoutTypes) => {
     const LayoutRoutes = MergeLayoutRoutes(layoutItem, defaultLayout);
 
     AllRoutes.push({
       path: '/',
-      element: getLayout[
-                layoutItem as keyof typeof getLayout
-      ] || getLayout[defaultLayout],
+      element: getLayout[layoutItem] || getLayout[defaultLayout],
       children: LayoutRoutes,
     });
   });

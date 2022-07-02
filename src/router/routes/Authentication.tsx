@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import {Route} from '../../domains/interfaces/Route';
 
 const Login = lazy(() => import('../../views/pages/authentication/Login'));
 const LoginBasic = lazy(() => import('../../views/pages/authentication/LoginBasic'));
@@ -22,7 +23,7 @@ const VerifyEmailCover = lazy(() => import('../../views/pages/authentication/Ver
 const TwoStepsBasic = lazy(() => import('../../views/pages/authentication/TwoStepsBasic'));
 const TwoStepsCover = lazy(() => import('../../views/pages/authentication/TwoStepsCover'));
 
-const AuthenticationRoutes = [
+const AuthenticationRoutes: Route[] = [
   {
     path: '/login',
     element: <Login />,
@@ -76,7 +77,6 @@ const AuthenticationRoutes = [
       layout: 'blank',
     },
   },
-
   {
     path: '/forgot-password',
     element: <ForgotPassword />,

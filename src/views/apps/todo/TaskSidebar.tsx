@@ -275,6 +275,7 @@ const TaskSidebar = (props: TaskSidebarPropTypes) => {
       avatar: assignee.img,
     };
     const state: ITask2 = {
+      id: 0,
       dueDate,
       title: data.title,
       tags: newTaskTag,

@@ -62,3 +62,5 @@ export const appUsersSlice = createSlice({
 });
 
 export default appUsersSlice.reducer;
+
+export type getAllData = typeof getAllData;

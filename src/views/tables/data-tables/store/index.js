@@ -1,10 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
 import axios from 'axios';
 
 export const getData = createAsyncThunk('datatables/getData', async params => {
   const response = await axios.get('/api/datatables/data', params);
-  return { allData: response.data.allData, data: response.data.invoices, totalPages: response.data.total, params };
+  return {
+    allData: response.data.allData,
+    data: response.data.invoices,
+    totalPages: response.data.total,
+    params,
+  };
 });
 
 export const datatablesSlice = createSlice({
@@ -13,7 +17,7 @@ export const datatablesSlice = createSlice({
     data: [],
     total: 1,
     params: {},
-    allData: []
+    allData: [],
   },
   reducers: {},
   extraReducers: builder => {
@@ -23,7 +27,7 @@ export const datatablesSlice = createSlice({
       state.allData = action.payload.allData;
       state.total = action.payload.totalPages;
     });
-  }
+  },
 });
 
 export default datatablesSlice.reducer;

@@ -7,4 +7,5 @@ export interface Route {
     index?: boolean;
     meta?: Meta;
     children?: any;
+    layout?: string;
 }

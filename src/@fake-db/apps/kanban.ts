@@ -1,7 +1,6 @@
 import mock from '../mock';
 import {ITask} from '../../domains/interfaces/tasks/ITask';
 import {IBoard} from '../../domains/interfaces/IBoard';
-
 const now = new Date();
 const dayAfterTomorrow = now.setDate(now.getDate() + 2);
 

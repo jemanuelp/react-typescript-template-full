@@ -1,26 +1,35 @@
 import { Link } from 'react-router-dom';
-
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { Mail, Star, Check, Trash, Plus } from 'react-feather';
-
 import { Button, ListGroup, ListGroupItem } from 'reactstrap';
+import {TodoSidebarProptypes} from '../../../domains/proptypes/TodoSidebarProptypes';
 
-const TodoSidebar = props => {
-  const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props;
+const TodoSidebar = (props: TodoSidebarProptypes) => {
+  const {
+    handleTaskSidebar,
+    setMainSidebar,
+    mainSidebar,
+    dispatch,
+    getTasks,
+    params,
+  } = props;
 
   // ** Functions To Handle List Item Filter
-  const handleFilter = filter => {
+  const handleFilter = (filter: string) => {
     dispatch(getTasks({ ...params, filter }));
   };
 
-  const handleTag = tag => {
+  const handleTag = (tag: string) => {
     dispatch(getTasks({ ...params, tag }));
   };
 
   // ** Functions To Active List Item
-  const handleActiveItem = value => {
-    if ((params.filter && params.filter === value) || (params.tag && params.tag === value)) {
+  const handleActiveItem = (value: string) => {
+    if (
+      (params.filter && params.filter === value) ||
+        (params.tag && params.tag === value)
+    ) {
       return true;
     } else {
       return false;
@@ -30,13 +39,13 @@ const TodoSidebar = props => {
   // ** Functions To Handle Add Task Click
   const handleAddClick = () => {
     handleTaskSidebar();
-    setMainSidebar();
+    setMainSidebar(!mainSidebar);
   };
 
   return (
     <div
       className={classnames('sidebar-left', {
-        show: mainSidebar === true
+        show: mainSidebar,
       })}
     >
       <div className='sidebar'>

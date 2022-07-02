@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Avatar from '../../../@core/components/avatar';
 import blankAvatar from 'src/assets/images/avatars/avatar-blank.png';
-
 import classnames from 'classnames';
 import { ReactSortable } from 'react-sortablejs';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -16,8 +15,10 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
+import {TaskProptypes} from '../../../domains/proptypes/TaskProptypes';
+import {ITask2} from '../../../domains/interfaces/tasks/ITask2';
 
-const Tasks = props => {
+const Tasks = (props: TaskProptypes) => {
   const {
     query,
     tasks,
@@ -34,13 +35,13 @@ const Tasks = props => {
   } = props;
 
   // ** Function to selectTask on click
-  const handleTaskClick = obj => {
-    dispatch(selectTask(obj));
-    handleTaskSidebar();
+  const handleTaskClick = (obj: ITask2) => {
+    selectTask(obj);
+    dispatch(handleTaskSidebar);
   };
 
   // ** Returns avatar color based on task tag
-  const resolveAvatarVariant = tags => {
+  const resolveAvatarVariant = (tags: string[]) => {
     if (tags.includes('high')) return 'light-primary';
     if (tags.includes('medium')) return 'light-warning';
     if (tags.includes('low')) return 'light-success';
@@ -50,7 +51,7 @@ const Tasks = props => {
   };
 
   // ** Renders task tags
-  const renderTags = arr => {
+  const renderTags = (arr: string[]) => {
     const badgeColor = {
       team: 'light-primary',
       low: 'light-success',
@@ -60,13 +61,13 @@ const Tasks = props => {
     };
 
     return arr.map(item => (
-      <Badge className='text-capitalize' key={item} color={badgeColor[item]} pill>
+      <Badge className='text-capitalize' key={item} color={badgeColor[item as keyof typeof badgeColor]} pill>
         {item}
       </Badge>
     ));
   };
 
-  const renderAvatar = obj => {
+  const renderAvatar = (obj: ITask2) => {
     const item = obj.assignee;
 
     if (item.avatar === undefined || item.avatar === null) {
@@ -74,7 +75,11 @@ const Tasks = props => {
     } else if (item.avatar !== '') {
       return <Avatar img={item.avatar} imgHeight='32' imgWidth='32' />;
     } else {
-      return <Avatar color={resolveAvatarVariant(obj.tags)} content={item.fullName} initials />;
+      return <Avatar
+        color={resolveAvatarVariant(obj.tags)}
+        content={item.fullName}
+        initials
+      />;
     }
   };
 
@@ -85,10 +90,11 @@ const Tasks = props => {
         options={{ wheelPropagation: false }}
         containerRef={ref => {
           if (ref) {
-            ref._getBoundingClientRect = ref.getBoundingClientRect;
+            const _getBoundingClientRect: typeof ref.getBoundingClientRect =
+                ref.getBoundingClientRect;
 
             ref.getBoundingClientRect = () => {
-              const original = ref._getBoundingClientRect();
+              const original = _getBoundingClientRect();
 
               return { ...original, height: Math.floor(original.height) };
             };
@@ -124,7 +130,9 @@ const Tasks = props => {
                             onClick={e => e.stopPropagation()}
                             onChange={e => {
                               e.stopPropagation();
-                              dispatch(updateTask({ ...item, isCompleted: e.target.checked }));
+                              dispatch(
+                                updateTask({ ...item, isCompleted: e.target.checked }),
+                              );
                             }}
                           />
                         </div>
@@ -162,13 +170,13 @@ const Tasks = props => {
   };
 
   // ** Function to getTasks based on search query
-  const handleFilter = e => {
+  const handleFilter = (e: any) => {
     setQuery(e.target.value);
     dispatch(getTasks(params));
   };
 
   // ** Function to getTasks based on sort
-  const handleSort = (e, val) => {
+  const handleSort = (e: any, val: any) => {
     e.preventDefault();
     setSort(val);
     dispatch(getTasks({ ...params }));

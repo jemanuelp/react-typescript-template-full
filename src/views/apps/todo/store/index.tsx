@@ -68,3 +68,5 @@ export type addTask = typeof addTask;
 export type updateTask = typeof updateTask;
 export type deleteTask = typeof deleteTask;
 export type selectTask = typeof selectTask;
+export type getTasks = typeof getTasks;
+export type reOrderTasks = typeof reOrderTasks;

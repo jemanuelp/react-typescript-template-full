@@ -1,23 +1,29 @@
 import { useEffect, useState, Fragment } from 'react';
-
-
 import { columns } from './columns';
-
-import { Alert, Row, Col, Label, Form, Input, Button, Modal, ModalHeader, ModalBody, FormFeedback } from 'reactstrap';
-
-
+import {
+  Alert,
+  Row,
+  Col,
+  Label,
+  Form,
+  Input,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  FormFeedback,
+} from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData, addPermission, deletePermission, selectPermission, updatePermission } from '../store';
-
-
 import classnames from 'classnames';
 import ReactPaginate from 'react-paginate';
 import DataTable from 'react-data-table-component';
 import { useForm, Controller } from 'react-hook-form';
 import { ChevronDown, Edit, Trash } from 'react-feather';
-
-
-import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
+import {CustomHeaderProptypes} from '../../../../domains/proptypes/CustomHeaderProptypes';
+import {RootState} from '../../../../redux/reducers/RootReducer';
+import {TableColumn} from 'react-data-table-component/dist/src/DataTable/types';
 
 const CustomHeader = ({
   role,
@@ -26,8 +32,8 @@ const CustomHeader = ({
   rowsPerPage,
   handlePerPage,
   handleFilter,
-  handleAssignedToChange
-}) => {
+  handleAssignedToChange,
+}: CustomHeaderProptypes) => {
   return (
     <Row className='text-nowrap w-100 my-75 g-0 permission-header'>
       <Col xs={12} lg={4} className='d-flex align-items-center'>
@@ -82,20 +88,19 @@ const CustomHeader = ({
 };
 
 const Table = () => {
-   & Hooks
-  const dispatch = useDispatch();
-  const store = useSelector(state => state.permissions);
+  const dispatch = useDispatch<any>();
+  const store = useSelector((state: RootState) => state.permissions);
   const {
     reset,
     control,
     setError,
     setValue,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues: { permissionName: '' } });
 
   const [show, setShow] = useState(false);
-  const [assignedTo, setAssignedTo] = useState('');
+  const [assignedTo, setAssignedTo] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -107,61 +112,61 @@ const Table = () => {
         assignedTo,
         q: searchTerm,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   }, [dispatch, store.data.length]);
 
   // ** Function in get data on page change
-  const handlePagination = page => {
+  const handlePagination = (page: { selected: number }) => {
     dispatch(
       getData({
         assignedTo,
         q: searchTerm,
         perPage: rowsPerPage,
-        page: page.selected + 1
-      })
+        page: page.selected + 1,
+      }),
     );
     setCurrentPage(page.selected + 1);
   };
 
   // ** Function in get data on rows per page
-  const handlePerPage = e => {
+  const handlePerPage = (e: any) => {
     const value = parseInt(e.currentTarget.value);
     dispatch(
       getData({
         assignedTo,
         q: searchTerm,
         perPage: value,
-        page: currentPage
-      })
+        page: currentPage,
+      }),
     );
     setRowsPerPage(value);
   };
 
   // ** Function in get data on search query change
-  const handleFilter = val => {
+  const handleFilter = (val: any) => {
     setSearchTerm(val);
     dispatch(
       getData({
         q: val,
         assignedTo,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   };
 
   // ** Function to filter Roles
-  const handleAssignedToChange = val => {
+  const handleAssignedToChange = (val: any) => {
     setAssignedTo(val);
     dispatch(
       getData({
         q: searchTerm,
         assignedTo: val,
         page: currentPage,
-        perPage: rowsPerPage
-      })
+        perPage: rowsPerPage,
+      }),
     );
   };
 
@@ -191,11 +196,11 @@ const Table = () => {
   // ** Table data to render
   const dataToRender = () => {
     const filters = {
-      q: searchTerm
+      q: searchTerm,
     };
 
-    const isFiltered = Object.keys(filters).some(function (k) {
-      return filters[k].length > 0;
+    const isFiltered = Object.keys(filters).some(function(k) {
+      return filters[k as keyof typeof filters].length > 0;
     });
 
     if (store.data.length > 0) {
@@ -207,7 +212,7 @@ const Table = () => {
     }
   };
 
-  const handleEditClick = data => {
+  const handleEditClick = (data: any) => {
     dispatch(selectPermission(data));
     setValue('permissionName', data.name);
     setShow(true);
@@ -218,26 +223,30 @@ const Table = () => {
     setValue('permissionName', '');
   };
 
-  const onSubmit = data => {
+  const onSubmit = (data: any) => {
     if (data.permissionName.length) {
       if (store.selected !== null) {
-        dispatch(updatePermission({ name: data.permissionName, id: store.selected.id }));
+        if (store.selected.id) {
+          dispatch(updatePermission(
+            { name: data.permissionName, id: store.selected.id },
+          ));
+        }
       } else {
         dispatch(addPermission({ name: data.permissionName }));
       }
       setShow(false);
     } else {
       setError('permissionName', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
 
-  const updatedColumns = [
+  const updatedColumns: TableColumn<any>[] = [
     ...columns,
     {
       name: 'Actions',
-      cell: row => {
+      cell: (row: any) => {
         return (
           <div className='d-flex align-items-center permissions-actions'>
             <Button size='sm' color='transparent' className='btn btn-icon' onClick={() => handleEditClick(row)}>
@@ -253,8 +262,8 @@ const Table = () => {
             </Button>
           </div>
         );
-      }
-    }
+      },
+    },
   ];
 
   const handleDiscard = () => {
@@ -280,13 +289,16 @@ const Table = () => {
             </Label>
             <Controller
               control={control}
-              id='permissionName'
               name='permissionName'
               render={({ field }) => (
                 <Input placeholder='Permission Name' invalid={errors.permissionName && true} {...field} />
               )}
             />
-            {errors && errors.permissionName && <FormFeedback>Please enter a valid Permission Name</FormFeedback>}
+            {
+              errors &&
+                errors.permissionName &&
+                <FormFeedback>Please enter a valid Permission Name</FormFeedback>
+            }
           </Col>
           <Col xs={12} className='mt-75'>
             <div className='form-check'>
@@ -312,6 +324,7 @@ const Table = () => {
           <Alert color='warning'>
             <h6 className='alert-heading'>Warning!</h6>
             <div className='alert-body'>
+              {/* eslint-disable-next-line max-len */}
               By editing the permission name, you might break the system permissions functionality. Please ensure you're
               absolutely certain before proceeding.
             </div>
@@ -323,13 +336,16 @@ const Table = () => {
               </Label>
               <Controller
                 control={control}
-                id='permissionName'
                 name='permissionName'
                 render={({ field }) => (
                   <Input placeholder='Permission Name' invalid={errors.permissionName && true} {...field} />
                 )}
               />
-              {errors && errors.permissionName && <FormFeedback>Please enter a valid Permission Name</FormFeedback>}
+              {
+                errors &&
+                  errors.permissionName &&
+                  <FormFeedback>Please enter a valid Permission Name</FormFeedback>
+              }
             </Col>
             <Col xs={12} sm={3} className='p-sm-0'>
               <Button className='mt-2' color='primary'>
@@ -383,7 +399,7 @@ const Table = () => {
         <ModalBody
           className={classnames({
             'p-3 pt-0': store.selected !== null,
-            'px-sm-5 pb-5': store.selected === null
+            'px-sm-5 pb-5': store.selected === null,
           })}
         >
           <div className='text-center mb-2'>

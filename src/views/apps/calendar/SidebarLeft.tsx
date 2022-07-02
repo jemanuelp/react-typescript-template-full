@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import classnames from 'classnames';
 import { CardBody, Button, Input, Label } from 'reactstrap';
-import illustration from 'src/assets/images/pages/calendar-illustration.png';
+import illustration from '../../../../src/assets/images/pages/calendar-illustration.png';
 
 const filters = [
   { label: 'Personal', color: 'danger', className: 'form-check-danger mb-1' },
