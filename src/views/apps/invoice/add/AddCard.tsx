@@ -14,7 +14,7 @@ import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
 import 'src/@core/scss/base/pages/app-invoice.scss';
 import {CountryOptionsCard} from '../../user/interfaces/CountryOptions';
 import {IInvoice} from '../interfaces/IInvoice';
-import {ClientInterface} from '../interfaces/Client.interface';
+import {ClientInterface} from '../interfaces/ClientInterface';
 import {ISelectedOption} from '../../../../domains/interfaces/ISelectedOption';
 import {IInvoices} from '../interfaces/IInvoices';
 import {SizeTypes} from '../../../../domains/enums/SizeTypes';
