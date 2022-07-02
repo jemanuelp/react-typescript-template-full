@@ -1,9 +1,9 @@
 import mock from '../mock';
 import { paginateArray } from '../utils';
-import {IInvoice} from '../../domains/interfaces/IInvoice';
+import {IInvoice} from '../../views/apps/invoice/interfaces/IInvoice';
 import {ISearch} from '../../domains/interfaces/ISearch';
 import {AxiosRequestConfig} from 'axios';
-import {IInvoices} from '../../domains/grouper/IInvoices';
+import {IInvoices} from '../../views/apps/invoice/interfaces/IInvoices';
 
 const data: IInvoices = {
   invoices: [

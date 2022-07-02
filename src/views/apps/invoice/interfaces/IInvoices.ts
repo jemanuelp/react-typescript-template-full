@@ -1,4 +1,4 @@
-import {IInvoice} from '../interfaces/IInvoice';
+import {IInvoice} from './IInvoice';
 
 export interface IInvoices {
     invoices: IInvoice[]
