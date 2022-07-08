@@ -59,19 +59,43 @@ body {
 
 // style for print screen
 @media print {
+  html,
+  body {
+    width: 768px;
+  }
   .invoice-print {
     padding: 0 !important;
   }
   .invoice-header {
-    border-bottom: 1px solid $border-color;
-    flex-direction: row !important;
     margin-bottom: 3rem;
     padding-right: 5rem;
+    flex-direction: row !important;
+    border-bottom: 1px solid $border-color;
   }
+
   .table-responsive {
-    overflow-x: hidden;
+    overflow: visible;
+
+    table {
+      table-layout: fixed;
+      th.ps-4,
+      td.ps-4 {
+        width: 50%;
+        padding-left: 0.5rem !important;
+      }
+
+      p {
+        // word-wrap: break-word;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
   }
   hr {
     display: none;
+  }
+  .invoice-sales-total-wrapper {
+    margin-bottom: 1rem;
   }
 }

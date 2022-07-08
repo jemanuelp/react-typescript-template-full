@@ -81,8 +81,7 @@ $chat-widget-height: 390px;
           float: left;
           margin: 0 0 10px 1rem;
           color: $body-color;
-          background: none;
-          background-color: lighten($white, 18%);
+          background: lighten($white, 18%) none;
         }
       }
     }

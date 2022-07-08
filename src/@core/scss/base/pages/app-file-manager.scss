@@ -175,8 +175,7 @@ $file-manager-fs-xl: ($font-size-base + 0.5);
             cursor: pointer;
 
             .card-body {
-              padding: 1rem;
-              padding-bottom: 0.5rem;
+              padding: 1rem 1rem 0.5rem;
             }
 
             .form-check-input:not(:checked) {
@@ -311,7 +310,7 @@ $file-manager-fs-xl: ($font-size-base + 0.5);
 
             .file-manager-item {
               .content-wrapper {
-                margin-bottom: 0rem;
+                margin-bottom: 0;
               }
 
               .file-date {

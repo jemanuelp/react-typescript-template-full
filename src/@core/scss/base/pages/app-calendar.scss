@@ -114,7 +114,7 @@ $fc-day-toggle-btn-padding: 0.55rem 1.5rem;
       }
     }
     & > * > :not(:first-child) {
-      margin-left: 0rem;
+      margin-left: 0;
     }
     .fc-toolbar-title {
       margin-left: 0.25rem;
@@ -171,7 +171,6 @@ $fc-day-toggle-btn-padding: 0.55rem 1.5rem;
   }
   .fc-day-today {
     background: $body-bg !important;
-    background-color: $body-bg !important;
   }
 
   // Timegrid
@@ -275,7 +274,6 @@ $fc-day-toggle-btn-padding: 0.55rem 1.5rem;
     transition: all 0.3s ease-in-out;
 
     .card {
-      height: calc(100vh - 12.96rem);
       height: calc(var(--vh, 1vh) * 100 - 12.96rem);
       border-radius: 0 $border-radius-sm $border-radius-sm 0;
 

@@ -1,8 +1,8 @@
 @import '../../../base/plugins/charts/chart-apex.scss';
 
-div[type='heatmap'] {
-  .apexcharts-legend-marker {
-    top: -1px !important;
+.apex-charts-heatmap {
+  .apexcharts-legend-text {
+    margin-top: 0.5rem;
   }
 }
 

@@ -16,3 +16,9 @@
     }
   }
 }
+
+.sidebar-todo-modal {
+  .react-select {
+    z-index: 2;
+  }
+}

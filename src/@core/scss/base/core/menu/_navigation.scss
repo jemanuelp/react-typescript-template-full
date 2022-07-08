@@ -70,7 +70,6 @@
   }
 
   .navbar-header {
-    height: 100%;
     width: $menu-expanded-width;
     height: $navbar-height;
     position: relative;
@@ -191,7 +190,7 @@
   .main-menu {
     transform: translate3d(-240px, 0, 0);
     backface-visibility: hidden;
-    perspective: 1000;
+    perspective: 1000px;
   }
 
   .menu-open .main-menu {

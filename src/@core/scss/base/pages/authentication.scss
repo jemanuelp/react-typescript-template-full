@@ -6,7 +6,6 @@ $auth-1-inner-max-width: 400px !default;
 .auth-wrapper {
   display: flex;
   flex-basis: 100%;
-  min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
 
@@ -52,7 +51,6 @@ $auth-1-inner-max-width: 400px !default;
     align-items: flex-start;
     .auth-inner {
       overflow-y: auto; // For v2 scroll for long auth form
-      height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
     }
     .brand-logo {
