@@ -6,8 +6,7 @@
 .rdw-editor-wrapper {
   .rdw-editor-toolbar {
     margin-bottom: 0;
-    padding: 0.5rem;
-    padding-bottom: 0;
+    padding: 0.5rem 0.5rem 0;
     border-color: $border-color;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -63,18 +62,12 @@
     flex-direction: column;
     .rdw-editor-toolbar {
       order: 2;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-radius: 0 0 $border-radius $border-radius;
     }
     .rdw-editor-main {
       border-top: 1px solid $border-color;
       border-bottom: 0;
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: $border-radius $border-radius 0 0;
       order: 1;
     }
   }

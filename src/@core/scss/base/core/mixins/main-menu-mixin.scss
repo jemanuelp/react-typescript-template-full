@@ -23,7 +23,7 @@
 @mixin vertical-menu-transform-show($transform-width) {
   transform: translate3d($transform-width, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000;
+  perspective: 1000px;
 }
 @mixin vertical-menu-transform-hide() {
   transform: translate3d(0, 0, 0);
@@ -65,12 +65,6 @@
   $horizontalLayout: false
 ) {
   height: calc(
-    100vh -
-      calc(
-        calc(#{$contentPadding} * #{$spacingSides}) + #{$navbarHeight} + #{$footerHeight} + #{$floatingNavMargin} + #{$horizontalMenuHeight}
-      )
-  );
-  height: calc(
     var(--vh, 1vh) * 100 -
       calc(
         calc(#{$contentPadding} * #{$spacingSides}) + #{$navbarHeight} + #{$footerHeight} + #{$floatingNavMargin} + #{$horizontalMenuHeight}
@@ -80,22 +74,12 @@
   @if $horizontalLayout {
     @include media-breakpoint-down(xl) {
       height: calc(
-        100vh - calc(calc(calc(#{$contentPadding} - 0.8rem) * #{$spacingSides}) + #{$navbarHeight} + #{$footerHeight})
-      );
-      height: calc(
         var(--vh, 1vh) * 100 -
           calc(calc(calc(#{$contentPadding} - 0.8rem) * #{$spacingSides}) + #{$navbarHeight} + #{$footerHeight})
       );
     }
   } @else {
     @include media-breakpoint-down(sm) {
-      height: calc(
-        100vh -
-          calc(
-            calc(calc(#{$contentPadding} * #{$spacingSides}) - calc(0.8rem * #{$spacingSides})) + #{$navbarHeight} + #{$footerHeight} +
-              #{$floatingNavMargin} + #{$horizontalMenuHeight}
-          )
-      );
       height: calc(
         var(--vh, 1vh) * 100 -
           calc(

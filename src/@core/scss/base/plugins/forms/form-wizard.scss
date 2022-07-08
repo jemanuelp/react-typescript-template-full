@@ -51,16 +51,14 @@ $step-box-width: 38px;
 
         .bs-stepper-label {
           text-align: left;
-          margin: 0;
-          margin-top: 0.5rem;
-          margin-left: 1rem;
+          margin: 0.5rem 0 0 1rem;
 
           .bs-stepper-title {
             display: inherit;
             color: $body-color;
             font-weight: 600;
             line-height: 1rem;
-            margin-bottom: 0rem;
+            margin-bottom: 0;
           }
 
           .bs-stepper-subtitle {

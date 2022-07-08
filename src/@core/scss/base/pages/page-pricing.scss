@@ -55,10 +55,7 @@
 .pricing-free-trial {
   height: 16.71rem;
   background-color: rgba(186, 191, 199, 0.12);
-  margin-right: -$content-padding;
-  margin-left: -$content-padding;
-  margin-top: 7.5rem;
-  margin-bottom: 6.3rem;
+  margin: 7.5rem -$content-padding 6.3rem;
 
   // row default margin zero because it cause the horizontal scroll bar
   .row {

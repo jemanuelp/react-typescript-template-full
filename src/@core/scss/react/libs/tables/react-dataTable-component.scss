@@ -16,7 +16,7 @@
         .rdt_TableCol_Sortable {
           color: $body-color;
           font-weight: bold;
-          //font-style: 0.857rem;
+          font-style: normal;
           letter-spacing: 0.5px;
           text-transform: uppercase;
           &:hover {
@@ -78,6 +78,16 @@
     }
     .rdt_TableBody .rdt_TableRow .rdt_TableCell:first-child .form-check {
       transform: translateX(10px);
+    }
+  }
+
+  &.react-dataTable-selectable-rows {
+    .rdt_TableHead {
+      .rdt_TableHeadRow {
+        .rdt_TableCol:not(:first-child) {
+          padding-left: 0.2rem;
+        }
+      }
     }
   }
 }

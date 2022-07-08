@@ -49,11 +49,11 @@ samp {
 .vertical-layout.vertical-overlay-menu.menu-open .main-menu .navigation li.has-sub > a:after {
   transform: rotate(180deg);
 }
-.vertical-layout.vertical-menu-modern.menu-expanded
-  .main-menu
-  .navigation
-  li.has-sub.open:not(.menu-item-closing)
-  > a:after {
+.vertical-layout.vertical-menu-modern.menu-expanded,
+.main-menu,
+.navigation,
+li.has-sub.open:not(.menu-item-closing),
+> a:after {
   transform: rotate(90deg);
 }
 

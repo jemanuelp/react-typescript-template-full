@@ -1,9 +1,17 @@
-@import '~nouislider/dist/nouislider.css';
+@import '~nouislider/distribute/nouislider.css';
 @import '../../../base/plugins/extensions/ext-component-sliders.scss';
 @import '../../../base/core/colors/palette-noui';
 
 .noUi-vertical .noUi-origin {
   top: 0;
+}
+
+.noUi-horizontal {
+  .noUi-origin {
+    .noUi-handle {
+      right: -10px;
+    }
+  }
 }
 
 html[dir='rtl'] .noUi-horizontal {
