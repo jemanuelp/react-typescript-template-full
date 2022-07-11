@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
-const Rating = require('react-rating');
+const Rating = require('react-rating').default;
 
 const RatingNumbers = (props: {filledColor: string, dir : 'rtl' | 'ltr'}) => {
   return (

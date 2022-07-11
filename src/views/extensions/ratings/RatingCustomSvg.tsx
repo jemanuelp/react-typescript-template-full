@@ -1,6 +1,6 @@
 import { Sun, Cloud, CloudLightning, CloudSnow, CloudDrizzle } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
-const Rating = require('react-rating');
+const Rating = require('react-rating').default;
 
 const RatingCustomSvg = ({ dir }: {dir : 'rtl' | 'ltr'}) => {
   return (

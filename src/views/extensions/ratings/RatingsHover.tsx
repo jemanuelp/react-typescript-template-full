@@ -1,5 +1,5 @@
 import { useState, Fragment } from 'react';
-const Rating = require('react-rating');
+const Rating = require('react-rating').default;
 import { Star } from 'react-feather';
 
 const RatingsHover = ({ filledColor, dir }: {filledColor: string, dir : 'rtl' | 'ltr'}) => {

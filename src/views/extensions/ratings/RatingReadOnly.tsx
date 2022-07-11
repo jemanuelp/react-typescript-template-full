@@ -1,4 +1,4 @@
-const Rating = require('react-rating');
+const Rating = require('react-rating').default;
 import { Star } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
