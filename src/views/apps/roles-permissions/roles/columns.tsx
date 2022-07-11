@@ -8,7 +8,7 @@ import { Badge } from 'reactstrap';
 // ** Renders Client Columns
 const renderClient = (row: any) => {
   if (row.avatar.length) {
-    return <Avatar className='me-1' img={row.avatar} width='32' height='32' />;
+    return <Avatar className='me-1' img={row.avatar} width={32} height={32} />;
   } else {
     return (
       <Avatar

@@ -1,15 +1,27 @@
 import Avatar from '../../avatar';
-
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Chart from 'react-apexcharts';
-
 import { Card, CardBody } from 'reactstrap';
+import {areaChartOptions, ChartTypes} from './ChartOptions';
+import {ReactElement, ReactNode} from 'react';
+import {ColorTypesWithoutLight} from '../../../../views/ui-elements/cards/models/ColorTypes';
+import {ApexOptions} from 'apexcharts';
+import {ISerie} from '../../../../views/ui-elements/cards/statistics/interfaces/ISerie';
 
-// ** Default Options
-import { areaChartOptions } from './ChartOptions';
+export type StatsWithAreaChartProps = {
+  icon: ReactElement;
+  color: ColorTypesWithoutLight;
+  stats: ReactNode;
+  statTitle: string;
+  options: ApexOptions;
+  series: ISerie[];
+  type: ChartTypes;
+  height?: number;
+  className?: string;
+}
 
-const StatsWithAreaChart = (props: any) => {
+const StatsWithAreaChart = (props: StatsWithAreaChartProps) => {
   const {
     icon,
     color,
@@ -22,12 +34,15 @@ const StatsWithAreaChart = (props: any) => {
     className,
     ...rest
   } = props;
+  const classNameCardBody = className ?
+    classnames('pb-0', {
+      [className]: className,
+    }) :
+    '';
   return (
     <Card {...rest}>
       <CardBody
-        className={classnames('pb-0', {
-          [className]: className,
-        })}
+        className={classNameCardBody}
       >
         <Avatar className='avatar-stats p-50 m-0' color={`light-${color}`} icon={icon} />
         <h2 className='fw-bolder mt-1'>{stats}</h2>

@@ -55,7 +55,7 @@ const data = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('src/assets/images/icons/payments/mastercard.png').default
+    imgSrc: require('src/assets/images/icons/payments/mastercard.png')
   },
   {
     cardCvc: '681',
@@ -63,7 +63,7 @@ const data = [
     expiryDate: '02/24',
     name: 'Mildred Wagner',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('src/assets/images/icons/payments/visa.png').default
+    imgSrc: require('src/assets/images/icons/payments/visa.png')
   }
 ];
 

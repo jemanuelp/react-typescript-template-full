@@ -1,7 +1,8 @@
-// eslint-disable-next-line typescript-enum/no-enum
-export enum SizeTypes {
-    Default='md',
-    Sm='sm',
-    Lg='lg',
-    Md='md'
-}
+export const SizeTypes = {
+  Sm: 'sm',
+  Lg: 'lg',
+  Md: 'md',
+  Xl: 'xl',
+};
+
+export type SizeTypes = keyof typeof SizeTypes;

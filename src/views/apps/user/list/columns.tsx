@@ -3,13 +3,12 @@ import Avatar from '../../../../@core/components/avatar';
 import { store } from '../../../../redux/store';
 import { getUser, deleteUser } from '../store';
 import { Slack, User, Settings, Database, Edit2, MoreVertical, FileText, Trash2, Archive } from 'react-feather';
-
 import { Badge, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 // ** Renders Client Columns
 const renderClient = (row: any) => {
   if (row.avatar && row.avatar.length) {
-    return <Avatar className='me-1' img={row.avatar} width='32' height='32' />;
+    return <Avatar className='me-1' img={row.avatar} width={32} height={32} />;
   } else {
     return (
       <Avatar

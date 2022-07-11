@@ -1,5 +1,5 @@
 import {Button, Form, Input, Row, Col} from 'reactstrap';
-import 'src/@core/scss/base/pages/page-misc.scss';
+import '../../../@core/scss/base/pages/page-misc.scss';
 import {useSkin} from '../../../utility/hooks/useSkin';
 
 const Maintenance = () => {
@@ -7,7 +7,7 @@ const Maintenance = () => {
   const illustration = skin === 'dark' ?
       'under-maintenance-dark.svg' :
       'under-maintenance.svg',
-    source = require(`src/assets/images/pages/${illustration}`).default;
+    source = require(`src/assets/images/pages/${illustration}`);
 
   return (
     <div className='misc-wrapper'>

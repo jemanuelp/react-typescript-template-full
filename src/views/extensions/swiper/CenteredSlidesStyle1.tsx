@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Play, DollarSign, HelpCircle, FileText, Archive } from 'react-feather';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 import {useRTLInterface} from '../../../utility/hooks/useRTL';

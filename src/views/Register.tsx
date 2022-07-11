@@ -12,7 +12,7 @@ const Register = () => {
   const illustration = (skin === 'dark') ?
     'register-v2-dark.svg' :
     'register-v2.svg';
-  const source = require(`../assets/images/pages/${illustration}`).default;
+  const source = require(`../assets/images/pages/${illustration}`);
 
   return (
     <div className='auth-wrapper auth-cover'>

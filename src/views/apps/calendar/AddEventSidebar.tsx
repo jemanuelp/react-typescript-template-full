@@ -84,7 +84,7 @@ const AddEventSidebar = (props: any) => {
     return (
       <components.Option {...props}>
         <div className='d-flex flex-wrap align-items-center'>
-          <Avatar className='my-0 me-1' size='sm' img={data.avatar}/>
+          <Avatar className='my-0 me-1' size='Sm' img={data.avatar}/>
           <div>{data.label}</div>
         </div>
       </components.Option>

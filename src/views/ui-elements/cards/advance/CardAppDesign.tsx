@@ -1,11 +1,12 @@
 import classnames from 'classnames';
 import Avatar from '../../../../@core/components/avatar';
 import { Card, CardTitle, CardBody, CardText, Badge, Button } from 'reactstrap';
+import {CardAppDesignType} from '../models/CardAppDesignType';
 
 const CardAppDesign = () => {
-  const avatarArr = [
+  const avatarArr: CardAppDesignType[] = [
     {
-      img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg'),
       imgHeight: 34,
       imgWidth: 34,
     },
@@ -14,12 +15,12 @@ const CardAppDesign = () => {
       color: 'light-danger',
     },
     {
-      img: require('../../../../../src/assets/images/portrait/small/avatar-s-14.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-14.jpg'),
       imgHeight: 34,
       imgWidth: 34,
     },
     {
-      img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg'),
       imgHeight: 34,
       imgWidth: 34,
     },

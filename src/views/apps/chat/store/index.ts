@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {IProfileUser} from '../interfaces/IProfileUser';
-import {IChatContact} from '../interfaces/IChatContact';
-import {IChats} from '../interfaces/IChats';
 import {IUser} from '../../../../domains/interfaces/IUser';
+import {InitialStateType} from '../interfaces/InitialStateType';
 
 export const getUserProfile = createAsyncThunk('appChat/getTasks', async() => {
   const response = await axios.get('/apps/chat/users/profile-user');
@@ -29,12 +28,7 @@ export const sendMsg = createAsyncThunk('appChat/sendMsg', async(obj: any, { dis
   return response.data;
 });
 
-const initialState: {
-  userProfile: IProfileUser,
-  contacts: IChatContact[],
-  chats: IChats[],
-  selectedUser: IUser
-} = {
+const initialState: InitialStateType = {
   userProfile: {} as IProfileUser,
   contacts: [],
   chats: [],

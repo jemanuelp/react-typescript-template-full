@@ -1,46 +1,44 @@
 import Avatar from '../../../../@core/components/avatar';
 import Timeline from '../../../../@core/components/timeline';
 import AvatarGroup from '../../../../@core/components/avatar-group';
-
 import { List, MoreVertical } from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
-
 import jsonImg from '../../../../../src/assets/images/icons/json.png';
 import ceo from '../../../../../src/assets/images/portrait/small/avatar-s-9.jpg';
+import {CardBrowserType} from '../models/CardMeetupType';
 
-const avatarGroupArr = [
+const avatarGroupArr: CardBrowserType[] = [
   {
     title: 'Billy Hopkins',
-    img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg'),
     placement: 'bottom',
     imgHeight: 33,
     imgWidth: 33,
   },
   {
     title: 'Amy Carson',
-    img: require('../../../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-6.jpg'),
     placement: 'bottom',
     imgHeight: 33,
     imgWidth: 33,
   },
   {
     title: 'Brandon Miles',
-    img: require('../../../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-8.jpg'),
     placement: 'bottom',
     imgHeight: 33,
     imgWidth: 33,
   },
   {
     title: 'Daisy Weber',
-    img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-7.jpg'),
     placement: 'bottom',
     imgHeight: 33,
     imgWidth: 33,
   },
   {
     title: 'Jenny Looper',
-    img: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
+    img: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg'),
     placement: 'bottom',
     imgHeight: 33,
     imgWidth: 33,

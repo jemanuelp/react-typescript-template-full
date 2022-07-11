@@ -1,17 +1,24 @@
 import Avatar from '../../../../@core/components/avatar';
-import Chart from 'react-apexcharts';
+import Chart, {Props} from 'react-apexcharts';
 import {MoreVertical} from 'react-feather';
 import {Card, CardHeader, CardTitle, CardBody} from 'reactstrap';
 import {IColors} from '../../../../configs/interfaces/IColors';
-import {ApexOptions} from 'apexcharts';
+
+export type CardEmployeesTaskProps = {
+  avatar: string;
+  title: string;
+  subtitle: string;
+  time: string;
+  chart: Props;
+}
 
 const CardEmployeesTasks = (
   {colors, trackBgColor}
         : { colors: IColors, trackBgColor: string },
 ) => {
-  const employeesTasks: any = [
+  const employeesTasks: CardEmployeesTaskProps[] = [
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-9.jpg'),
       title: 'Ryan Harrington',
       subtitle: 'iOS Developer',
       time: '9hr 20m',
@@ -57,7 +64,7 @@ const CardEmployeesTasks = (
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg'),
       title: 'Louisa Norton',
       subtitle: 'UI Designer',
       time: '4hr 17m',
@@ -86,7 +93,6 @@ const CardEmployeesTasks = (
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -103,7 +109,7 @@ const CardEmployeesTasks = (
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-1.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-1.jpg'),
       title: 'Jayden Duncan',
       subtitle: 'Java Developer',
       time: '12hr 8m',
@@ -132,7 +138,6 @@ const CardEmployeesTasks = (
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -149,7 +154,7 @@ const CardEmployeesTasks = (
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg'),
       title: 'Cynthia Howell',
       subtitle: 'Angular Developer',
       time: '3hr 19m',
@@ -178,7 +183,6 @@ const CardEmployeesTasks = (
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -195,7 +199,7 @@ const CardEmployeesTasks = (
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-16.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-16.jpg'),
       title: 'Helena Payne',
       subtitle: 'Marketing',
       time: '9hr 50m',
@@ -224,7 +228,6 @@ const CardEmployeesTasks = (
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -241,7 +244,7 @@ const CardEmployeesTasks = (
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-13.jpg').default,
+      avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-13.jpg'),
       title: 'Troy Jensen',
       subtitle: 'iOS Developer',
       time: '4hr 48m',
@@ -270,7 +273,6 @@ const CardEmployeesTasks = (
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -293,8 +295,13 @@ const CardEmployeesTasks = (
       return (
         <div key={task.title} className='employee-task d-flex justify-content-between align-items-center'>
           <div className='d-flex'>
-            <Avatar imgClassName='rounded' className='me-75' img={task.avatar} imgHeight='42'
-              imgWidth='42'/>
+            <Avatar
+              imgClassName='rounded'
+              className='me-75'
+              img={task.avatar}
+              imgHeight='42'
+              imgWidth='42'
+            />
             <div className='my-auto'>
               <h6 className='mb-0'>{task.title}</h6>
               <small>{task.subtitle}</small>
@@ -302,7 +309,6 @@ const CardEmployeesTasks = (
           </div>
           <div className='d-flex align-items-center'>
             <small className='text-muted me-75'>{task.time}</small>
-                        // @ts-ignore
             <Chart
               options={task.chart.options}
               series={task.chart.series}

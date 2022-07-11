@@ -89,7 +89,7 @@ const SidebarNewUsers = ({ open, toggleSidebar }: any) => {
 
   return (
     <Sidebar
-      size={SizeTypes.Lg}
+      size={'Lg'}
       open={open}
       title='New User'
       headerClassName='mb-1'

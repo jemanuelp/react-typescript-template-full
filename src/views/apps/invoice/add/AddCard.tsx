@@ -9,9 +9,9 @@ import Select, {components} from 'react-select';
 import {selectThemeColors} from '../../../../utility/Utils';
 import {Button, Card, CardBody, CardText, Col, Form, Input, InputGroup, InputGroupText, Label, Row} from 'reactstrap';
 import 'react-slidedown/lib/slidedown.css';
-import 'src/@core/scss/react/libs/react-select/_react-select.scss';
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/base/pages/app-invoice.scss';
+import '../../../../@core/scss/react/libs/react-select/_react-select.scss';
+import '../../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../../@core/scss/base/pages/app-invoice.scss';
 import {CountryOptionsCard} from '../../user/interfaces/CountryOptions';
 import {IInvoice} from '../interfaces/IInvoice';
 import {ClientInterface} from '../interfaces/ClientInterface';
@@ -388,7 +388,7 @@ const AddCard = () => {
       </Card>
 
       <Sidebar
-        size={SizeTypes.Lg}
+        size={'Lg'}
         open={open}
         title='Add Payment'
         headerClassName='mb-1'

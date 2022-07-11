@@ -207,7 +207,7 @@ const ChatLog = (props: ChatProptypes) => {
                         selectedUser.contact.status
                       ) ?
                         selectedUser.contact.status :
-                        ''}
+                        undefined}
                     className='avatar-border user-profile-toggle m-0 me-1'
                     onClick={() => handleAvatarClick(selectedUser.contact)}
                   />

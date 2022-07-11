@@ -1,7 +1,7 @@
 import Table from './Table';
 import { Row, Col } from 'reactstrap';
 import { User, UserPlus, UserCheck, UserX } from 'react-feather';
-import 'src/@core/scss/react/apps/app-users.scss';
+import '../../../../@core/scss/react/apps/app-users.scss';
 import StatsHorizontal from '../../../../@core/components/widgets/stats/StatsHorizontal';
 
 const UsersList = () => {

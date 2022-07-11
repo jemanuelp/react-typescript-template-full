@@ -8,7 +8,7 @@ import {Card, CardHeader, Form, Label, InputGroup, Input, InputGroupText, Button
 
 import profilePic from 'src/assets/images/portrait/small/avatar-s-11.jpg';
 
-import 'src/@core/scss/base/pages/app-chat-list.scss';
+import '../../../../@core/scss/base/pages/app-chat-list.scss';
 import {IChat} from '../../../apps/chat/interfaces/IChat';
 import {IChatContact} from '../../../apps/chat/interfaces/IChatContact';
 import {IChatContactFather} from '../../../apps/chat/interfaces/IChatContactFather';
@@ -56,7 +56,7 @@ const data: { chat: IChats, contact: IChatContactFather } = {
   contact: {
     id: 1,
     fullName: 'Felecia Rower',
-    avatar: require('src/assets/images/portrait/small/avatar-s-20.jpg').default,
+    avatar: require('src/assets/images/portrait/small/avatar-s-20.jpg'),
     status: 'away',
   },
 };

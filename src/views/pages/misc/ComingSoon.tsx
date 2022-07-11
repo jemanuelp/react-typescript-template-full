@@ -1,5 +1,5 @@
 import {Button, Form, Input, Row, Col} from 'reactstrap';
-import 'src/@core/scss/base/pages/page-misc.scss';
+import '../../../@core/scss/base/pages/page-misc.scss';
 import {useSkin} from '../../../utility/hooks/useSkin';
 
 const ComingSoon = () => {
@@ -7,7 +7,7 @@ const ComingSoon = () => {
   const illustration = skin === 'dark' ?
       'coming-soon-dark.svg' :
       'coming-soon.svg',
-    source = require(`src/assets/images/pages/${illustration}`).default;
+    source = require(`src/assets/images/pages/${illustration}`);
 
   return (
     <div className='misc-wrapper'>

@@ -12,16 +12,17 @@ import {
   UncontrolledDropdown,
 } from 'reactstrap';
 import {IColors} from '../../../../configs/interfaces/IColors';
+import {CardBrowserType} from '../models/CardBrowserType';
 
-export interface CardBrowserStateProptypes {
+export interface CardBrowserStateProp {
   colors: IColors;
   trackBgColor: string;
 }
 
-const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => {
-  const statesArr = [
+const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProp) => {
+  const statesArr: CardBrowserType[] = [
     {
-      avatar: require('../../../../../src/assets/images/icons/google-chrome.png').default,
+      avatar: require('../../../../../src/assets/images/icons/google-chrome.png'),
       title: 'Google Chrome',
       value: '54.4%',
       chart: {
@@ -49,7 +50,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -66,7 +66,7 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/icons/mozila-firefox.png').default,
+      avatar: require('../../../../../src/assets/images/icons/mozila-firefox.png'),
       title: 'Mozila Firefox',
       value: '6.1%',
       chart: {
@@ -94,7 +94,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -111,7 +110,7 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/icons/apple-safari.png').default,
+      avatar: require('../../../../../src/assets/images/icons/apple-safari.png'),
       title: 'Apple Safari',
       value: '14.6%',
       chart: {
@@ -139,7 +138,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -156,7 +154,7 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/icons/internet-explorer.png').default,
+      avatar: require('../../../../../src/assets/images/icons/internet-explorer.png'),
       title: 'Internet Explorer',
       value: '4.2%',
       chart: {
@@ -184,7 +182,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -201,7 +198,7 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
       },
     },
     {
-      avatar: require('../../../../../src/assets/images/icons/opera.png').default,
+      avatar: require('../../../../../src/assets/images/icons/opera.png'),
       title: 'Opera Mini',
       value: '8.4%',
       chart: {
@@ -229,7 +226,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
                 background: trackBgColor,
               },
               dataLabels: {
-                showOn: 'always',
                 name: {
                   show: false,
                 },
@@ -247,8 +243,9 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProptypes) => 
     },
   ];
 
+  console.log(statesArr);
   const renderStates = () => {
-    return statesArr.map((state: any) => {
+    return statesArr.map((state: CardBrowserType) => {
       return (
         <div key={state.title} className='browser-states'>
           <div className='d-flex'>

@@ -8,7 +8,7 @@ import withReactContent from 'sweetalert2-react-content';
 import Avatar from '../../../../../src/@core/components/avatar';
 
 import {selectThemeColors} from '../../../../utility/Utils';
-import 'src/@core/scss/react/libs/react-select/_react-select.scss';
+import '../../../../@core/scss/react/libs/react-select/_react-select.scss';
 import {CountryOptions} from '../interfaces/CountryOptions';
 import {IUser} from '../../../../domains/interfaces/IUser';
 

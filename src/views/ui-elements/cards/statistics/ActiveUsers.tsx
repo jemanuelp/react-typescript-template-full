@@ -3,6 +3,7 @@ import axios from 'axios';
 import {UserCheck} from 'react-feather';
 import StatsWithLineChart from '../../../../@core/components/widgets/stats/StatsWithLineChart';
 import {IActiveUsers} from './interfaces/IActiveUsers';
+import {ApexOptions} from 'apexcharts';
 
 const ActiveUsers = ({success}: { success: string }) => {
   const [data, setData] = useState<IActiveUsers | null>(null);
@@ -11,7 +12,7 @@ const ActiveUsers = ({success}: { success: string }) => {
     axios.get('/card/card-statistics/active-users').then(res => setData(res.data));
   }, []);
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: 'activeUsers',
       toolbar: {

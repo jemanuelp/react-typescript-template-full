@@ -55,7 +55,10 @@ export const formatDate = (value: string, formatting: any = { month: 'short', da
 };
 
 // ** Returns short month of passed date
-export const formatDateToMonthShort = (value: string, toTimeForCurrentDay = true) => {
+export const formatDateToMonthShort = (
+  value: string | Date,
+  toTimeForCurrentDay = true,
+) => {
   const date = new Date(value);
   let formatting: DateTimeFormatOptions = { month: 'short', day: 'numeric' };
 

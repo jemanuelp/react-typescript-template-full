@@ -1,4 +1,22 @@
-// ** Area Chart Common Options
+import {ApexOptions} from 'apexcharts';
+
+export type ChartTypes = 'line'
+    | 'area'
+    | 'bar'
+    | 'histogram'
+    | 'pie'
+    | 'donut'
+    | 'radialBar'
+    | 'scatter'
+    | 'bubble'
+    | 'heatmap'
+    | 'treemap'
+    | 'boxPlot'
+    | 'candlestick'
+    | 'radar'
+    | 'polarArea'
+    | 'rangeBar';
+
 export const areaChartOptions = {
   chart: {
     toolbar: {
@@ -47,7 +65,7 @@ export const areaChartOptions = {
 };
 
 // ** Line Chart Common Options
-export const lineChartOptions = {
+export const lineChartOptions: ApexOptions = {
   chart: {
     toolbar: {
       show: false,

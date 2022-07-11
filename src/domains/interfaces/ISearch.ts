@@ -5,4 +5,5 @@ export interface ISearch {
     status: string;
     sort: string;
     sortColumn: string;
+    sortBy?: string;
 }

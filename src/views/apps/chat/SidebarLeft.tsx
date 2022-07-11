@@ -7,17 +7,27 @@ import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {X, Search, CheckSquare, Bell, User, Trash} from 'react-feather';
 import {CardText, InputGroup, InputGroupText, Badge, Input, Button, Label} from 'reactstrap';
+import {StatusTypes} from '../../ui-elements/cards/models/StatusTypes';
+import {IChatContact} from './interfaces/IChatContact';
+// TODO: discovered types
+export type SidebarLeftProps = {
+  store: any;
+  sidebar: boolean;
+  handleSidebar: any;
+  userSidebarLeft: boolean;
+  handleUserSidebarLeft: any;
+}
 
-const SidebarLeft = (props: any) => {
-  const {store, sidebar, handleSidebar, userSidebarLeft, handleUserSidebarLeft} = props;
-  const {chats, contacts, userProfile} = store;
+const SidebarLeft = (props: SidebarLeftProps) => {
+  const { store, sidebar, handleSidebar, userSidebarLeft, handleUserSidebarLeft } = props;
+  const { chats, contacts, userProfile } = store;
   const dispatch = useDispatch<any>();
   const [query, setQuery] = useState('');
   const [about, setAbout] = useState('');
   const [active, setActive] = useState(0);
-  const [status, setStatus] = useState('online');
-  const [filteredChat, setFilteredChat] = useState<Array<any>>([]);
-  const [filteredContacts, setFilteredContacts] = useState<Array<any>>([]);
+  const [status, setStatus] = useState<StatusTypes>('online');
+  const [filteredChat, setFilteredChat] = useState<IChatContact[]>([]);
+  const [filteredContacts, setFilteredContacts] = useState<IChatContact[]>([]);
 
   // ** Handles User Chat Click
   const handleUserClick = (id: number) => {
@@ -48,14 +58,14 @@ const SidebarLeft = (props: any) => {
           </li>
         );
       } else {
-        const arrToMap = query.length && filteredChat.length ?
-          filteredChat :
-          chats;
+        const arrToMap = query.length && filteredChat.length ? filteredChat : chats;
 
         return arrToMap.map((item: any) => {
-          const time = formatDateToMonthShort(item.chat.lastMessage ?
-            item.chat.lastMessage.time :
-            new Date());
+          const time = formatDateToMonthShort(
+            (item.chat && item.chat.lastMessage && item.chat.lastMessage.time) ?
+              item.chat.lastMessage.time :
+              new Date(),
+          );
 
           return (
             <li
@@ -65,11 +75,11 @@ const SidebarLeft = (props: any) => {
                 active: active === item.id,
               })}
             >
-              <Avatar img={item.avatar} imgHeight='42' imgWidth='42' status={item.status}/>
+              <Avatar img={item.avatar} imgHeight='42' imgWidth='42' status={item.status} />
               <div className='chat-info flex-grow-1'>
                 <h5 className='mb-0'>{item.fullName}</h5>
                 <CardText className='text-truncate'>
-                  {item.chat.lastMessage ?
+                  {item.chat && item.chat.lastMessage ?
                     item.chat.lastMessage.message :
                     chats[chats.length - 1].message}
                 </CardText>
@@ -104,12 +114,12 @@ const SidebarLeft = (props: any) => {
         );
       } else {
         const arrToMap = query.length && filteredContacts.length ?
-          filteredContacts :
+          filteredContacts : 
           contacts;
         return arrToMap.map((item: any) => {
           return (
             <li key={item.fullName} onClick={() => handleUserClick(item.id)}>
-              <Avatar img={item.avatar} imgHeight='42' imgWidth='42'/>
+              <Avatar img={item.avatar} imgHeight='42' imgWidth='42' />
               <div className='chat-info flex-grow-1'>
                 <h5 className='mb-0'>{item.fullName}</h5>
                 <CardText className='text-truncate'>{item.about}</CardText>
@@ -123,11 +133,12 @@ const SidebarLeft = (props: any) => {
     }
   };
 
-  // ** Handles Filter
   const handleFilter = (e: any) => {
     setQuery(e.target.value);
-    const searchFilterFunction = (contact: any) => {
-      return contact.fullName.toLowerCase().includes(e.target.value.toLowerCase());
+    const searchFilterFunction = (contact: IChatContact) => {
+      return contact.fullName.toLowerCase().includes(
+        e.target.value.toLowerCase(),
+      );
     };
     const filteredChatsArr = chats.filter(searchFilterFunction);
     const filteredContactssArr = contacts.filter(searchFilterFunction);
@@ -136,12 +147,10 @@ const SidebarLeft = (props: any) => {
   };
 
   const renderAboutCount = () => {
-    if (
-      userProfile &&
-            userProfile.about &&
-            userProfile.about.length &&
-            about.length === 0
-    ) {
+    if (userProfile &&
+        userProfile.about &&
+        userProfile.about.length &&
+        about.length === 0) {
       return userProfile.about.length;
     } else {
       return about.length;
@@ -159,16 +168,19 @@ const SidebarLeft = (props: any) => {
           >
             <header className='chat-profile-header'>
               <div className='close-icon' onClick={handleUserSidebarLeft}>
-                <X size={14}/>
+                <X size={14} />
               </div>
               <div className='header-profile-sidebar'>
-                <Avatar className='box-shadow-1 avatar-border' img={userProfile.avatar} status={status}
-                  size='xl'/>
+                <Avatar
+                  className='box-shadow-1 avatar-border'
+                  img={userProfile.avatar}
+                  status={status}
+                  size='Xl' />
                 <h4 className='chat-user-name'>{userProfile.fullName}</h4>
                 <span className='user-post'>{userProfile.role}</span>
               </div>
             </header>
-            <PerfectScrollbar className='profile-sidebar-area' options={{wheelPropagation: false}}>
+            <PerfectScrollbar className='profile-sidebar-area' options={{ wheelPropagation: false }}>
               <h6 className='section-label mb-1'>About</h6>
               <div className='about-user'>
                 <Input
@@ -196,7 +208,7 @@ const SidebarLeft = (props: any) => {
                       onChange={() => setStatus('online')}
                     />
                     <Label className='form-check-label' for='user-online'>
-                                            Online
+                      Online
                     </Label>
                   </div>
                 </li>
@@ -210,7 +222,7 @@ const SidebarLeft = (props: any) => {
                       onChange={() => setStatus('busy')}
                     />
                     <Label className='form-check-label' for='user-busy'>
-                                            Busy
+                      Busy
                     </Label>
                   </div>
                 </li>
@@ -224,7 +236,7 @@ const SidebarLeft = (props: any) => {
                       onChange={() => setStatus('away')}
                     />
                     <Label className='form-check-label' for='user-away'>
-                                            Away
+                      Away
                     </Label>
                   </div>
                 </li>
@@ -238,7 +250,7 @@ const SidebarLeft = (props: any) => {
                       onChange={() => setStatus('offline')}
                     />
                     <Label className='form-check-label' for='user-offline'>
-                                            Offline
+                      Offline
                     </Label>
                   </div>
                 </li>
@@ -247,28 +259,28 @@ const SidebarLeft = (props: any) => {
               <ul className='list-unstyled'>
                 <li className='d-flex justify-content-between align-items-center mb-1'>
                   <div className='d-flex align-items-center'>
-                    <CheckSquare className='me-75' size='18'/>
+                    <CheckSquare className='me-75' size='18' />
                     <span className='align-middle'>Two-step Verification</span>
                   </div>
                   <div className='form-switch'>
-                    <Input type='switch' id='verification' name='verification' defaultChecked/>
+                    <Input type='switch' id='verification' name='verification' defaultChecked />
                   </div>
                 </li>
                 <li className='d-flex justify-content-between align-items-center mb-1'>
                   <div className='d-flex align-items-center'>
-                    <Bell className='me-75' size='18'/>
+                    <Bell className='me-75' size='18' />
                     <span className='align-middle'>Notification</span>
                   </div>
                   <div className='form-switch'>
-                    <Input type='switch' id='notifications' name='notifications'/>
+                    <Input type='switch' id='notifications' name='notifications' />
                   </div>
                 </li>
                 <li className='d-flex align-items-center cursor-pointer mb-1'>
-                  <User className='me-75' size='18'/>
+                  <User className='me-75' size='18' />
                   <span className='align-middle'>Invite Friends</span>
                 </li>
                 <li className='d-flex align-items-center cursor-pointer'>
-                  <Trash className='me-75' size='18'/>
+                  <Trash className='me-75' size='18' />
                   <span className='align-middle'>Delete Account</span>
                 </li>
               </ul>
@@ -283,7 +295,7 @@ const SidebarLeft = (props: any) => {
             })}
           >
             <div className='sidebar-close-icon' onClick={handleSidebar}>
-              <X size={14}/>
+              <X size={14} />
             </div>
             <div className='chat-fixed-search'>
               <div className='d-flex align-items-center w-100'>
@@ -302,7 +314,7 @@ const SidebarLeft = (props: any) => {
                 </div>
                 <InputGroup className='input-group-merge ms-1 w-100'>
                   <InputGroupText className='round'>
-                    <Search className='text-muted' size={14}/>
+                    <Search className='text-muted' size={14} />
                   </InputGroupText>
                   <Input
                     value={query}
@@ -313,8 +325,7 @@ const SidebarLeft = (props: any) => {
                 </InputGroup>
               </div>
             </div>
-            <PerfectScrollbar className='chat-user-list-wrapper list-group'
-              options={{wheelPropagation: false}}>
+            <PerfectScrollbar className='chat-user-list-wrapper list-group' options={{ wheelPropagation: false }}>
               <h4 className='chat-list-title'>Chats</h4>
               <ul className='chat-users-list chat-list media-list'>{renderChats()}</ul>
               <h4 className='chat-list-title'>Contacts</h4>

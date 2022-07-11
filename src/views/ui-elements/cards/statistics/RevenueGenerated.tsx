@@ -3,6 +3,7 @@ import axios from 'axios';
 import {CreditCard} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
 import {IRevenueGenerated} from './interfaces/IRevenueGenerated';
+import {ApexOptions} from 'apexcharts';
 
 const RevenueGenerated = (
   {kFormatter, success}:
@@ -10,7 +11,7 @@ const RevenueGenerated = (
 ) => {
   const [data, setData] = useState<IRevenueGenerated | null>(null);
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: 'revenue',
       toolbar: {

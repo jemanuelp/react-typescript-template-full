@@ -6,7 +6,7 @@ import {Row, Col, Alert} from 'reactstrap';
 import UserTabs from './Tabs';
 import PlanCard from './PlanCard';
 import UserInfoCard from './UserInfoCard';
-import 'src/@core/scss/react/apps/app-users.scss';
+import '../../../../@core/scss/react/apps/app-users.scss';
 import {RootState} from '../../../../redux/reducers/RootReducer';
 
 const UserView = () => {

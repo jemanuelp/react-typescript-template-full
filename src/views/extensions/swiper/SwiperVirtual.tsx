@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap';
 import {useRTLInterface} from '../../../utility/hooks/useRTL';
 import {VirtualMethods} from 'swiper/types/modules/virtual';

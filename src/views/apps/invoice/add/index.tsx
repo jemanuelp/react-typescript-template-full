@@ -1,8 +1,8 @@
 import AddCard from './AddCard';
 import AddActions from './AddActions';
 import { Row, Col } from 'reactstrap';
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/base/pages/app-invoice.scss';
+import '../../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../../@core/scss/base/pages/app-invoice.scss';
 
 const InvoiceAdd = () => {
   return (

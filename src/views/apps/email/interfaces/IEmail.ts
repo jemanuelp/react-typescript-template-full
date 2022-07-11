@@ -1,6 +1,7 @@
 import {ISender} from './ISender';
 import {IAdressee} from '../../../../domains/interfaces/IAdressee';
 import {IAttachment} from '../../../../domains/interfaces/IAttachment';
+import {LabelColor} from './Colors';
 
 export interface IEmail {
     id: number;
@@ -12,7 +13,7 @@ export interface IEmail {
     message: string;
     attachments: IAttachment[];
     isStarred: boolean;
-    labels: string[];
+    labels: LabelColor[];
     time: string | Date;
     replies: IEmail[];
     folder: string;

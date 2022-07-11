@@ -7,31 +7,31 @@ const connectedAccounts = [
     checked: true,
     title: 'Google',
     subtitle: 'Calendar and contacts',
-    logo: require('src/assets/images/icons/social/google.png').default,
+    logo: require('src/assets/images/icons/social/google.png'),
   },
   {
     checked: false,
     title: 'Slack',
     subtitle: 'Communication',
-    logo: require('src/assets/images/icons/social/slack.png').default,
+    logo: require('src/assets/images/icons/social/slack.png'),
   },
   {
     checked: true,
     title: 'Github',
     subtitle: 'Git repositories',
-    logo: require('src/assets/images/icons/social/github.png').default,
+    logo: require('src/assets/images/icons/social/github.png'),
   },
   {
     checked: false,
     title: 'Mailchimp',
     subtitle: 'Email marketing service',
-    logo: require('src/assets/images/icons/social/mailchimp.png').default,
+    logo: require('src/assets/images/icons/social/mailchimp.png'),
   },
   {
     checked: false,
     title: 'Asana',
     subtitle: 'Communication',
-    logo: require('src/assets/images/icons/social/asana.png').default,
+    logo: require('src/assets/images/icons/social/asana.png'),
   },
 ];
 
@@ -39,29 +39,29 @@ const socialAccounts = [
   {
     linked: false,
     title: 'Facebook',
-    logo: require('src/assets/images/icons/social/facebook.png').default,
+    logo: require('src/assets/images/icons/social/facebook.png'),
   },
   {
     linked: true,
     title: 'Twitter',
     url: 'https://twitter.com/pixinvent',
-    logo: require('src/assets/images/icons/social/twitter.png').default,
+    logo: require('src/assets/images/icons/social/twitter.png'),
   },
   {
     linked: true,
     title: 'Linkedin',
     url: 'https://www.linkedin.com/company/pixinvent/',
-    logo: require('src/assets/images/icons/social/linkedin.png').default,
+    logo: require('src/assets/images/icons/social/linkedin.png'),
   },
   {
     linked: false,
     title: 'Dribbble',
-    logo: require('src/assets/images/icons/social/dribbble.png').default,
+    logo: require('src/assets/images/icons/social/dribbble.png'),
   },
   {
     linked: false,
     title: 'Behance',
-    logo: require('src/assets/images/icons/social/behance.png').default,
+    logo: require('src/assets/images/icons/social/behance.png'),
   },
 ];
 

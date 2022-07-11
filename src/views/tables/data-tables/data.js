@@ -137,7 +137,7 @@ export const columns = [
           <Avatar color={`light-${states[row.status]}`} content={row.full_name} initials />
         )
 : (
-          <Avatar img={require(`src/assets/images/portrait/small/avatar-s-${row.avatar}`).default} />
+          <Avatar img={require(`src/assets/images/portrait/small/avatar-s-${row.avatar}`)} />
         )}
         <div className='user-info text-truncate ms-1'>
           <span className='d-block fw-bold text-truncate'>{row.full_name}</span>

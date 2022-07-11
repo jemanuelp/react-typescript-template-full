@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { AlertCircle } from 'react-feather';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'src/@core/scss/base/bootstrap-extended/_include.scss';
+import '../../../@core/scss/base/bootstrap-extended/_include.scss';
 import './autocomplete.scss';
 import {useOnClickOutside} from '../../../utility/hooks/useOnClickOutside';
 

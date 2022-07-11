@@ -11,7 +11,7 @@ const data: { users: IUser[] } = {
       fullName: 'John Doe',
       username: 'johndoe',
       password: 'admin',
-      avatar: require('../../../src/assets/images/portrait/small/avatar-s-11.jpg').default,
+      avatar: require('../../../src/assets/images/portrait/small/avatar-s-11.jpg'),
       email: 'admin@demo.com',
       role: 'admin',
       ability: [
@@ -29,7 +29,7 @@ const data: { users: IUser[] } = {
       fullName: 'Jane Doe',
       username: 'janedoe',
       password: 'client',
-      avatar: require('../../../src/assets/images/avatars/1-small.png').default,
+      avatar: require('../../../src/assets/images/avatars/1-small.png'),
       email: 'client@demo.com',
       role: 'client',
       ability: [

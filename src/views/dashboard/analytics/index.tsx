@@ -17,45 +17,46 @@ import CardCongratulations from '../../ui-elements/cards/advance/CardCongratulat
 import jsonImg from '../../../../src/assets/images/icons/json.png';
 import ceo from '../../../../src/assets/images/portrait/small/avatar-s-9.jpg';
 import '../../../@core/scss/react/libs/charts/apex-charts.scss';
+import {CardBrowserType} from '../../ui-elements/cards/models/CardMeetupType';
 
 const AnalyticsDashboard = () => {
   const { colors } = useContext(ThemeColors);
 
-  const avatarGroupArr = [
+  const avatarGroupArr: CardBrowserType[] = [
     {
       imgWidth: 33,
       imgHeight: 33,
       title: 'Billy Hopkins',
       placement: 'bottom',
-      img: require('../../../../src/assets/images/portrait/small/avatar-s-9.jpg').default,
+      img: require('../../../../src/assets/images/portrait/small/avatar-s-9.jpg'),
     },
     {
       imgWidth: 33,
       imgHeight: 33,
       title: 'Amy Carson',
       placement: 'bottom',
-      img: require('../../../../src/assets/images/portrait/small/avatar-s-6.jpg').default,
+      img: require('../../../../src/assets/images/portrait/small/avatar-s-6.jpg'),
     },
     {
       imgWidth: 33,
       imgHeight: 33,
       title: 'Brandon Miles',
       placement: 'bottom',
-      img: require('../../../../src/assets/images/portrait/small/avatar-s-8.jpg').default,
+      img: require('../../../../src/assets/images/portrait/small/avatar-s-8.jpg'),
     },
     {
       imgWidth: 33,
       imgHeight: 33,
       title: 'Daisy Weber',
       placement: 'bottom',
-      img: require('../../../../src/assets/images/portrait/small/avatar-s-7.jpg').default,
+      img: require('../../../../src/assets/images/portrait/small/avatar-s-7.jpg'),
     },
     {
       imgWidth: 33,
       imgHeight: 33,
       title: 'Jenny Looper',
       placement: 'bottom',
-      img: require('../../../../src/assets/images/portrait/small/avatar-s-20.jpg').default,
+      img: require('../../../../src/assets/images/portrait/small/avatar-s-20.jpg'),
     },
   ];
   const data = [

@@ -9,7 +9,7 @@ const Error = () => {
   const illustration = skin === 'dark' ?
       'error-dark.svg' :
       'error.svg',
-    source = require(`../assets/images/pages/${illustration}`).default;
+    source = require(`../assets/images/pages/${illustration}`);
   return (
     <div className='misc-wrapper'>
       <a className='brand-logo' href='/'>

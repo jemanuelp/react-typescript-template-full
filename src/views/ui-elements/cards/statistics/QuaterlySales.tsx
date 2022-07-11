@@ -3,13 +3,14 @@ import axios from 'axios';
 import { ShoppingCart } from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
 import {IQuarterlySales} from './interfaces/IQuarterlySales';
+import {ApexOptions} from 'apexcharts';
 
 const QuarterlySales = (
   { danger }: { danger: string },
 ) => {
   const [data, setData] = useState<IQuarterlySales | null>(null);
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: 'revenue',
       toolbar: {

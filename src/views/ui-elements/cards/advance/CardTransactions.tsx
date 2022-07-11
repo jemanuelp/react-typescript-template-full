@@ -1,10 +1,10 @@
 import Avatar from '../../../../@core/components/avatar';
 import * as Icon from 'react-feather';
-
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
+import {CardBrowserType} from '../models/CardTransactionsType';
 
 const CardTransactions = () => {
-  const transactionsArr = [
+  const transactionsArr: CardBrowserType[] = [
     {
       title: 'Wallet',
       color: 'light-primary',

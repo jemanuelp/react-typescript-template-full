@@ -16,34 +16,22 @@ import {
   Send,
   Edit,
   Copy,
-  Save,
-  Info,
   Trash,
-  PieChart,
   Download,
   TrendingUp,
-  CheckCircle,
   MoreVertical,
-  ArrowDownCircle,
 } from 'react-feather';
-
-const invoiceStatusObj = {
-  Sent: {color: 'light-secondary', icon: Send},
-  Paid: {color: 'light-success', icon: CheckCircle},
-  Draft: {color: 'light-primary', icon: Save},
-  Downloaded: {color: 'light-info', icon: ArrowDownCircle},
-  'Past Due': {color: 'light-danger', icon: Info},
-  'Partial Payment': {color: 'light-warning', icon: PieChart},
-};
+import {ColorTypes} from '../../../ui-elements/cards/models/ColorTypes';
+import {InvoiceStatus} from '../../user/interfaces/InvoiceStatus';
 
 // ** renders client column
 const renderClient = (row: any) => {
   const stateNum = Math.floor(Math.random() * 6),
-    states = ['light-success', 'light-danger', 'light-warning', 'light-info', 'light-primary', 'light-secondary'],
+    states: ColorTypes[] = ['light-success', 'light-danger', 'light-warning', 'light-info', 'light-primary', 'light-secondary'],
     color = states[stateNum];
 
   if (row.avatar.length) {
-    return <Avatar className='me-50' img={row.avatar} width='32' height='32'/>;
+    return <Avatar className='me-50' img={row.avatar} width={32} height={32}/>;
   } else {
     return <Avatar color={color} className='me-50' content={row.client ?
       row.client.name :
@@ -67,23 +55,23 @@ export const columns = [
     name: <TrendingUp size={14}/>,
     // selector: row => row.invoiceStatus,
     cell: (row: any) => {
-      const color = invoiceStatusObj[
-                    row.invoiceStatus as keyof typeof invoiceStatusObj
+      const color = InvoiceStatus[
+                    row.invoiceStatus as keyof typeof InvoiceStatus
         ] ?
-          invoiceStatusObj[
-                        row.invoiceStatus as keyof typeof invoiceStatusObj
+          InvoiceStatus[
+                        row.invoiceStatus as keyof typeof InvoiceStatus
           ].color :
           'primary',
-        Icon = invoiceStatusObj[
-                    row.invoiceStatus as keyof typeof invoiceStatusObj
+        Icon = InvoiceStatus[
+                    row.invoiceStatus as keyof typeof InvoiceStatus
         ] ?
-          invoiceStatusObj[
-                        row.invoiceStatus as keyof typeof invoiceStatusObj
+          InvoiceStatus[
+                        row.invoiceStatus as keyof typeof InvoiceStatus
           ].icon :
           Edit;
       return (
         <Fragment>
-          <Avatar color={color} icon={<Icon size={14}/>} id={`av-tooltip-${row.id}`}/>
+          <Avatar color={color} icon={<Icon size={14}/>}/>
           <UncontrolledTooltip placement='top' target={`av-tooltip-${row.id}`}>
             <span className='fw-bold'>{row.invoiceStatus}</span>
             <br/>

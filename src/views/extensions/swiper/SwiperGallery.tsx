@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SwiperCore, { Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 import img1 from '../../../../src/assets/images/banner/banner-11.jpg';
 import img2 from '../../../../src/assets/images/banner/banner-12.jpg';

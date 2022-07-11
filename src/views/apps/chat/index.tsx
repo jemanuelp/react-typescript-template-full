@@ -5,8 +5,8 @@ import UserProfileSidebar from './UserProfileSidebar';
 import classnames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, getChatContacts } from './store';
-import 'src/@core/scss/base/pages/app-chat.scss';
-import 'src/@core/scss/base/pages/app-chat-list.scss';
+import '../../../@core/scss/base/pages/app-chat.scss';
+import '../../../@core/scss/base/pages/app-chat-list.scss';
 import {RootState} from '../../../redux/reducers/RootReducer';
 import {IUser} from '../../../domains/interfaces/IUser';
 

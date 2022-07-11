@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Package} from 'react-feather';
 import StatsWithAreaChart from '../../../../@core/components/widgets/stats/StatsWithAreaChart';
 import {IOrdersRecevied} from './interfaces/IOrdersRecevied';
+import {ApexOptions} from 'apexcharts';
 
 const OrdersReceived = (
   { kFormatter, warning }:
@@ -10,7 +11,7 @@ const OrdersReceived = (
 ) => {
   const [data, setData] = useState<IOrdersRecevied | null>(null);
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: 'revenue',
       toolbar: {

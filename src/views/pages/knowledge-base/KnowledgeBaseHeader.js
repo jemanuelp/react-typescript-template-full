@@ -16,7 +16,7 @@ const FaqFilter = ({ searchTerm, setSearchTerm, handleFilter }) => {
       <Card
         className='knowledge-base-bg'
         style={{
-          backgroundImage: `url(${require('src/assets/images/banner/banner.png').default})`
+          backgroundImage: `url(${require('src/assets/images/banner/banner.png')})`
         }}
       >
         <CardBody className='text-center'>

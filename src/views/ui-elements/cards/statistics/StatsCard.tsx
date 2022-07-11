@@ -2,12 +2,27 @@ import classnames from 'classnames';
 import {TrendingUp, User, Box, DollarSign} from 'react-feather';
 import Avatar from '../../../../@core/components/avatar';
 import {Card, CardHeader, CardTitle, CardBody, CardText, Row, Col} from 'reactstrap';
+import {ColorTypes} from '../models/ColorTypes';
+import {ReactNode} from 'react';
 
-const StatsCard = (
-  {cols}:
-        { cols: { md?: string, sm?: string, xs?: string, xl?: string } },
-) => {
-  const data = [
+export type StatsCardDataType = {
+  title: string;
+  subtitle: string;
+  color: ColorTypes;
+  icon: ReactNode;
+}
+
+export type StatsCardProps = {
+  cols: {
+    md?: string,
+    sm?: string,
+    xs?: string,
+    xl?: string
+  }
+}
+
+const StatsCard = ({cols}: StatsCardProps) => {
+  const data: StatsCardDataType[] = [
     {
       title: '230k',
       subtitle: 'Sales',

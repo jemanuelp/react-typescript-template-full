@@ -1,10 +1,16 @@
-import { Fragment } from 'react';
-import Proptypes from 'prop-types';
+import {ComponentClass, Fragment} from 'react';
 import classnames from 'classnames';
 import { UncontrolledTooltip } from 'reactstrap';
 import Avatar from '../avatar';
+import {CardBrowserType} from '../../../views/ui-elements/cards/models/CardMeetupType';
 
-const AvatarGroup = (props: any) => {
+export type AvatarGroupType = {
+  data: CardBrowserType[];
+  tag?: ComponentClass<any> | string;
+  className?: string;
+}
+
+const AvatarGroup = (props: AvatarGroupType) => {
   const { data, tag, className } = props;
 
   // ** Conditional Tag
@@ -12,8 +18,12 @@ const AvatarGroup = (props: any) => {
 
   // ** Render Data
   const renderData = () => {
-    return data.map((item: any, i: any) => {
+    return data.map((item: CardBrowserType, i: any) => {
       const ItemTag = item.tag ? item.tag : 'div';
+      const classNameTag = item.className ?
+        {[item.className]: item.className} :
+        {};
+      const className = classnames('pull-up', classNameTag);
       return (
         <Fragment key={i}>
           {item.title ?
@@ -27,13 +37,10 @@ const AvatarGroup = (props: any) => {
             (
               <Avatar
                 tag={ItemTag}
-                className={classnames('pull-up', {
-                  [item.className]: item.className,
-                })}
                 {...(item.title ? { id: item.title.split(' ').join('-') } : {})}
-                title={undefined}
                 meta={undefined}
                 {...item}
+                className={className}
               />
             ) :
             null}
@@ -43,11 +50,14 @@ const AvatarGroup = (props: any) => {
     });
   };
 
+  const classNameTag = className ?
+    {
+      [className]: className,
+    } :
+    {};
   return (
     <Tag
-      className={classnames('avatar-group', {
-        [className]: className,
-      })}
+      className={classnames('avatar-group', classNameTag)}
     >
       {renderData()}
     </Tag>
@@ -55,8 +65,3 @@ const AvatarGroup = (props: any) => {
 };
 
 export default AvatarGroup;
-
-AvatarGroup.propTypes = {
-  data: Proptypes.array.isRequired,
-  tag: Proptypes.oneOfType([Proptypes.func, Proptypes.string]),
-};

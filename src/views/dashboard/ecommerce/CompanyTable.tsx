@@ -1,10 +1,11 @@
 import Avatar from '../../../@core/components/avatar';
 import {Table, Card} from 'reactstrap';
 import {Monitor, Coffee, Watch, TrendingUp, TrendingDown} from 'react-feather';
+import {CompanyTableDataType} from '../models/CompanyTableDataType';
+import {colorsArr} from '../models/ColorArray';
 
 const CompanyTable = () => {
-
-  const data = [
+  const data: CompanyTableDataType[] = [
     {
       img: require('../../../../src/assets/images/icons/toolbox.svg').default,
       name: 'Dixons',
@@ -88,11 +89,6 @@ const CompanyTable = () => {
       salesUp: true,
     },
   ];
-  const colorsArr = {
-    Technology: 'light-primary',
-    Grocery: 'light-success',
-    Fashion: 'light-warning',
-  };
 
   const renderData = () => {
     return data.map(col => {
@@ -123,7 +119,7 @@ const CompanyTable = () => {
             <div className='d-flex align-items-center'>
               <Avatar
                 className='me-1'
-                color={colorsArr[col.category as keyof typeof colorsArr]}
+                color={colorsArr[col.category]}
                 icon={col.icon}/>
               <span>{col.category}</span>
             </div>

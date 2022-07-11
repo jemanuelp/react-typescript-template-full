@@ -13,8 +13,8 @@ import {
 } from 'reactstrap';
 import { getData } from '../../invoice/store';
 import { useDispatch, useSelector } from 'react-redux';
-import 'src/@core/scss/react/apps/app-invoice.scss';
-import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import '../../../../@core/scss/react/apps/app-invoice.scss';
+import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
 import {RootState} from '../../../../redux/reducers/RootReducer';
 
 const InvoiceList = () => {

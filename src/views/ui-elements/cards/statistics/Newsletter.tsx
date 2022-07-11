@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Mail} from 'react-feather';
 import StatsWithLineChart from '../../../../@core/components/widgets/stats/StatsWithLineChart';
 import {INewsletter} from './interfaces/INewsletter';
+import {ApexOptions} from 'apexcharts';
 
 const Newsletter = (
   { warning }: { warning: string },
@@ -13,7 +14,7 @@ const Newsletter = (
     axios.get('/card/card-statistics/newsletter').then(res => setData(res.data));
   }, []);
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: 'newsletter',
       toolbar: {

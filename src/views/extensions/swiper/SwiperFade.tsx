@@ -1,4 +1,4 @@
-import {Swiper, SwiperProps, SwiperSlide} from 'swiper/react/swiper-react';
+import {Swiper, SwiperProps, SwiperSlide} from 'swiper/react';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 import img1 from '../../../../src/assets/images/banner/banner-20.jpg';
 import img2 from '../../../../src/assets/images/banner/banner-19.jpg';

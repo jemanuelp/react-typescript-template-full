@@ -11,7 +11,7 @@ const NotAuthorized = () => {
   const illustration = (skin === SkinTypes.dark) ?
       'not-authorized-dark.svg' :
       'not-authorized.svg',
-    source = require(`../../src/assets/images/pages/${illustration}`).default;
+    source = require(`../../src/assets/images/pages/${illustration}`);
   _.get(null, `../../src/assets/images/pages/${illustration}`);
   return (
     <div className='misc-wrapper'>

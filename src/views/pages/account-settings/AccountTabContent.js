@@ -87,7 +87,7 @@ const AccountTabs = ({ data }) => {
   };
 
   const handleImgReset = () => {
-    setAvatar(require('src/assets/images/avatars/avatar-blank.png').default);
+    setAvatar(require('src/assets/images/avatars/avatar-blank.png'));
   };
 
   return (

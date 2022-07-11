@@ -27,6 +27,13 @@ const Sidebar = (props: SidebarPropTypes) => {
     closeBtn :
     <X className='cursor-pointer' size={15} onClick={() => toggleSidebar}/>;
 
+  const classNameModal = className ?
+    classnames({
+      [className]: className,
+      'sidebar-lg': size === 'Lg',
+      'sidebar-sm': size === 'Sm',
+    }) :
+    '';
   return (
     <Modal
       isOpen={open}
@@ -39,12 +46,7 @@ const Sidebar = (props: SidebarPropTypes) => {
         // @ts-ignore
         [wrapperClassName]: wrapperClassName,
       })}
-      className={classnames({
-        // @ts-ignore
-        [className]: className,
-        'sidebar-lg': size === 'lg',
-        'sidebar-sm': size === 'sm',
-      })}
+      className={classNameModal}
 
       {...(width !== undefined ?
         {

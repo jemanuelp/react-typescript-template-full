@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import classnames from 'classnames';
 import { Star } from 'react-feather';
 import SwiperCore, { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { CardText } from 'reactstrap';
 import img1 from 'src/assets/images/elements/apple-watch.png';
 import img2 from 'src/assets/images/elements/macbook-pro.png';

@@ -23,8 +23,8 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from 'reactstrap';
-import 'src/@core/scss/react/libs/react-select/_react-select.scss';
-import 'src/@core/scss/react/libs/tables/react-dataTable-component.scss';
+import '../../../../@core/scss/react/libs/react-select/_react-select.scss';
+import '../../../../@core/scss/react/libs/tables/react-dataTable-component.scss';
 import {RootState} from '../../../../redux/reducers/RootReducer';
 import {TableColumn} from 'react-data-table-component/dist/src/DataTable/types';
 import {PlanOptions, PlanOptionsTable} from '../interfaces/PlanOptions';

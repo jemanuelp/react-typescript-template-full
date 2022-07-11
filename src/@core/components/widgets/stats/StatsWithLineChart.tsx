@@ -1,20 +1,34 @@
 import Avatar from '../../avatar';
-import PropTypes from 'prop-types';
 import Chart from 'react-apexcharts';
 import { Card, CardHeader, CardText } from 'reactstrap';
-import { lineChartOptions } from './ChartOptions';
+import {ChartTypes, lineChartOptions} from './ChartOptions';
+import {ReactElement} from 'react';
+import {ColorTypesWithoutLight} from '../../../../views/ui-elements/cards/models/ColorTypes';
+import {ISerie} from '../../../../views/ui-elements/cards/statistics/interfaces/ISerie';
+import {ApexOptions} from 'apexcharts';
+
+export type StatsWithLineChart = {
+  icon: ReactElement;
+  color: ColorTypesWithoutLight;
+  stats: string;
+  statTitle: string;
+  series: ISerie[];
+  options?: ApexOptions;
+  type: ChartTypes;
+  height?: number;
+}
 
 const StatsWithLineChart = ({
   icon,
-  color,
+  color = 'primary',
   stats,
   statTitle,
   series,
-  options,
+  options = lineChartOptions,
   type,
   height,
   ...rest
-}: any) => {
+}: StatsWithLineChart) => {
   return (
     <Card {...rest}>
       <CardHeader className='align-items-start pb-0'>
@@ -38,20 +52,3 @@ const StatsWithLineChart = ({
 };
 
 export default StatsWithLineChart;
-
-StatsWithLineChart.propTypes = {
-  type: PropTypes.string,
-  height: PropTypes.string,
-  options: PropTypes.object,
-  icon: PropTypes.element.isRequired,
-  color: PropTypes.string.isRequired,
-  stats: PropTypes.string.isRequired,
-  series: PropTypes.array.isRequired,
-  statTitle: PropTypes.string.isRequired,
-};
-
-// ** Default Props
-StatsWithLineChart.defaultProps = {
-  options: lineChartOptions,
-  color: 'primary',
-};

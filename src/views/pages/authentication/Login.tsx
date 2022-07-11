@@ -20,7 +20,7 @@ const ToastContent = ({ t, name, role }: any) => {
   return (
     <div className='d-flex'>
       <div className='me-1'>
-        <Avatar size='sm' color='success' icon={<Coffee size={12} />} />
+        <Avatar size='Sm' color='success' icon={<Coffee size={12} />} />
       </div>
       <div className='d-flex flex-column'>
         <div className='d-flex justify-content-between'>
@@ -61,7 +61,7 @@ const Login = () => {
       console.log('entroooo');
       useJwt
         .login({ email: data.loginEmail, password: data.password })
-        .then((res: AxiosResponse<any>) => {
+        .then((res: AxiosResponse) => {
           const data = {
             ...res.data.userData,
             accessToken: res.data.accessToken,

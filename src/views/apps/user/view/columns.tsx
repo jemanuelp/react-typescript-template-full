@@ -6,23 +6,10 @@ import {
   Eye,
   Send,
   Edit,
-  Save,
-  Info,
-  PieChart,
   Download,
   TrendingUp,
-  CheckCircle,
-  ArrowDownCircle,
 } from 'react-feather';
-
-const invoiceStatusObj = {
-  Sent: { color: 'light-secondary', icon: Send },
-  Paid: { color: 'light-success', icon: CheckCircle },
-  Draft: { color: 'light-primary', icon: Save },
-  Downloaded: { color: 'light-info', icon: ArrowDownCircle },
-  'Past Due': { color: 'light-danger', icon: Info },
-  'Partial Payment': { color: 'light-warning', icon: PieChart },
-};
+import {InvoiceStatus} from '../interfaces/InvoiceStatus';
 
 export const columns = [
   {
@@ -40,15 +27,15 @@ export const columns = [
     sortField: 'invoiceStatus',
     selector: (row: any) => row.invoiceStatus,
     cell: (row: any) => {
-      const color = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj] ?
-          invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].color :
+      const color = InvoiceStatus[row.invoiceStatus as keyof typeof InvoiceStatus] ?
+          InvoiceStatus[row.invoiceStatus as keyof typeof InvoiceStatus].color :
           'primary',
-        Icon = invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj] ?
-          invoiceStatusObj[row.invoiceStatus as keyof typeof invoiceStatusObj].icon :
+        Icon = InvoiceStatus[row.invoiceStatus as keyof typeof InvoiceStatus] ?
+          InvoiceStatus[row.invoiceStatus as keyof typeof InvoiceStatus].icon :
           Edit;
       return (
         <Fragment>
-          <Avatar color={color} icon={<Icon size={14} />} id={`av-tooltip-${row.id}`} />
+          <Avatar color={color} icon={<Icon size={14} />}/>
           <UncontrolledTooltip placement='top' target={`av-tooltip-${row.id}`}>
             <span className='fw-bold'>{row.invoiceStatus}</span>
             <br />

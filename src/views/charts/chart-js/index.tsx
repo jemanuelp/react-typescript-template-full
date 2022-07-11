@@ -12,7 +12,7 @@ import PolarAreaChart from './ChartjsPolarAreaChart';
 import HorizontalBarChart from './ChartjsHorizontalBar';
 import { ThemeColors } from '../../../utility/context/ThemeColors';
 import 'chart.js/auto';
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
 import {useSkin} from '../../../utility/hooks/useSkin';
 
 const ChartJS = () => {
