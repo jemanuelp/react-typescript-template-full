@@ -5,6 +5,7 @@ import { Row, Col, Card, CardHeader, CardTitle, CardBody, Input, Label } from 'r
 
 const I18nExtension = () => {
   const { i18n, t } = useTranslation();
+  console.log(i18n);
 
   return (
     <Fragment>

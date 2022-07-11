@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { ThemeContext } from './utility/context/ThemeColors';
 import themeConfig from './configs/themeConfig';
 import { Toaster } from 'react-hot-toast';
+import './configs/i18n';
 import Spinner from './@core/components/spinner/Fallback-spinner';
 import './@core/components/ripple-button';
 
