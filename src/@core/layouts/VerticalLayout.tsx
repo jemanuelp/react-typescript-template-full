@@ -21,6 +21,7 @@ import {TypeContentWidthTypes} from '../../configs/interfaces/ContentWidthTypes'
 import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
 import ScrollToTop from '../components/scrolltop';
+import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
 
 const VerticalLayout = (props: any) => {
   const { menu, navbar, footer, children, menuData } = props;
@@ -30,7 +31,8 @@ const VerticalLayout = (props: any) => {
   const { navbarType, setNavbarType } = useNavbarType();
   const { footerType, setFooterType } = useFooterType();
   const { navbarColor, setNavbarColor } = useNavbarColor();
-  const { layout, setLayout, setLastLayout } = useLayout();
+  const { layoutType, setLayout, setLastLayout } = useLayout();
+  const { transition, setTransition } = useRouterTransition();
 
   const [isMounted, setIsMounted] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -178,8 +180,8 @@ const VerticalLayout = (props: any) => {
         (
           <Customizer
             skin={skin}
-            isRtl={isRtl}
-            layout={layout}
+            isRTL={isRtl}
+            layoutType={layoutType}
             setSkin={setSkin}
             setIsRtl={setIsRtl}
             isHidden={isHidden}
@@ -187,7 +189,6 @@ const VerticalLayout = (props: any) => {
             footerType={footerType}
             navbarType={navbarType}
             setIsHidden={setIsHidden}
-            themeConfig={themeConfig}
             navbarColor={navbarColor}
             contentWidth={contentWidth}
             setFooterType={setFooterType}
@@ -197,6 +198,9 @@ const VerticalLayout = (props: any) => {
             setNavbarColor={setNavbarColor}
             setContentWidth={setContentWidth}
             setMenuCollapsed={setMenuCollapsed}
+            transition={transition}
+            setTransition={setTransition}
+            themeConfig={themeConfig}
           />
         ) :
         null}

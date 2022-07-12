@@ -1,7 +1,7 @@
-export const FooterLayoutTypes = {
+export const footerLayoutTypes = {
   static: 'static',
   sticky: 'sticky',
   hidden: 'hidden',
 };
 
-export type TypeFooterLayoutTypes = keyof typeof FooterLayoutTypes;
+export type FooterLayoutTypes = keyof typeof footerLayoutTypes;

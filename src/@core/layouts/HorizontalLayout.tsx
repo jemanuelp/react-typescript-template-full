@@ -19,6 +19,7 @@ import {handleContentWidth, handleMenuHidden} from '../../redux/layout';
 import ScrollToTop from '../../@core/components/scrolltop';
 import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
+import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
 
 const HorizontalLayout = (props: any) => {
   const {
@@ -35,7 +36,8 @@ const HorizontalLayout = (props: any) => {
   const { navbarType, setNavbarType } = useNavbarType();
   const { footerType, setFooterType } = useFooterType();
   const { navbarColor, setNavbarColor } = useNavbarColor();
-  const { layout, setLayout, setLastLayout } = useLayout();
+  const { layoutType, setLayout, setLastLayout } = useLayout();
+  const { transition, setTransition } = useRouterTransition();
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -157,23 +159,25 @@ const HorizontalLayout = (props: any) => {
         (
           <Customizer
             skin={skin}
-            isRtl={isRtl}
-            layout={layout}
             setSkin={setSkin}
+            isRTL={isRtl}
             setIsRtl={setIsRtl}
             isHidden={isHidden}
-            setLayout={setLayout}
-            footerType={footerType}
-            navbarType={navbarType}
             setIsHidden={setIsHidden}
-            themeConfig={themeConfig}
-            navbarColor={navbarColor}
-            contentWidth={contentWidth}
-            setFooterType={setFooterType}
-            setNavbarType={setNavbarType}
+            layoutType={layoutType}
+            setLayout={setLayout}
             setLastLayout={setLastLayout}
-            setNavbarColor={setNavbarColor}
+            footerType={footerType}
+            setFooterType={setFooterType}
+            navbarType={navbarType}
+            setNavbarType={setNavbarType}
+            contentWidth={contentWidth}
             setContentWidth={setContentWidth}
+            navbarColor={navbarColor}
+            setNavbarColor={setNavbarColor}
+            transition={transition}
+            setTransition={setTransition}
+            themeConfig={themeConfig}
           />
         ) :
         null}

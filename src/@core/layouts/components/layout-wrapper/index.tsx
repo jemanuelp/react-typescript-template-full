@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { handleContentWidth, handleMenuCollapsed, handleMenuHidden } from '../../../../redux/layout';
 import 'animate.css/animate.css';
 import {RootState} from '../../../../redux/reducers/RootReducer';
-import {RouterTransitionTypes} from '../../../../domains/enums/RouterTransitionTypes';
+import {routerTransitionTypes} from '../../../../domains/enums/RouterTransitionTypes';
 
 const LayoutWrapper = (props: any) => {
   const { children, routeMeta } = props;
@@ -64,7 +64,7 @@ const LayoutWrapper = (props: any) => {
           'content-wrapper': routeMeta && !routeMeta.appLayout,
           'content-area-wrapper': routeMeta && routeMeta.appLayout,
           'container-xxl p-0': contentWidth === 'boxed',
-          [`animate__animated animate__${transition}`]: transition !== RouterTransitionTypes.none && transition.length,
+          [`animate__animated animate__${transition}`]: transition !== routerTransitionTypes.none && transition.length,
         })}
       >
         <Tag {...(appLayoutCondition ? { className: 'content-body' } : {})}>{children}</Tag>

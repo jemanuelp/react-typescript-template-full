@@ -9,8 +9,8 @@ export const useSkin = () => {
   const dispatch = useDispatch();
   const store: Layout = useSelector((state: RootState) => state.layout);
 
-  const setSkin = (type: any) => {
-    dispatch(handleSkin(type));
+  const setSkin = (layout: Layout) => {
+    dispatch(handleSkin(layout));
   };
 
   useEffect(() => {

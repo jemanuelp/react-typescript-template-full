@@ -10,9 +10,9 @@ const Login = lazy(() => import('../views/pages/authentication/Login'));
 const NotAuthorized = lazy(() => import('../views/pages/misc/NotAuthorized'));
 
 const Router = () => {
-  const {layout} = useLayout();
+  const {layoutType} = useLayout();
 
-  const allRoutes = getRoutes(layout);
+  const allRoutes = getRoutes(layoutType);
   const getHomeRoute = (): string => {
     const user = getUserData();
     if (user) {

@@ -6,32 +6,60 @@ import {Settings, X} from 'react-feather';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {Input, Label} from 'reactstrap';
 import '../../../../src/@core/scss/react/libs/react-select/_react-select.scss';
-import {Layout} from '../../../configs/interfaces/Layout';
-import {LayoutSetterState} from '../../../configs/interfaces/LayoutSetterState';
-import {LayoutTypes} from '../../../domains/enums/LayoutTypes';
-import {NavbarLayoutTypes} from '../../../domains/enums/TypeNavbarLayoutTypes';
-import {FooterLayoutTypes} from '../../../domains/enums/FooterLayoutTypes';
+import {layoutTypes, LayoutTypes} from '../../../domains/enums/LayoutTypes';
+import {navbarLayoutTypes, NavbarLayoutTypes} from '../../../domains/enums/NavbarLayoutTypes';
+import {FooterLayoutTypes, footerLayoutTypes} from '../../../domains/enums/FooterLayoutTypes';
 import {SkinTypes} from '../../../domains/enums/SkinTypes';
+import {ThemeConfig} from '../../../configs/interfaces/ThemeConfig';
+import {TypeContentWidthTypes} from '../../../configs/interfaces/ContentWidthTypes';
+import {RouterTransitionTypes} from '../../../domains/enums/RouterTransitionTypes';
 
-const Customizer = (props: any) => {
+export type CustomizerProps = {
+  skin: SkinTypes;
+  setSkin: Function;
+  isRTL: boolean;
+  setIsRtl: Function;
+  isHidden: boolean;
+  setIsHidden: Function;
+  layoutType: LayoutTypes;
+  setLayout: Function;
+  setLastLayout: Function;
+  footerType: FooterLayoutTypes;
+  setFooterType: Function;
+  themeConfig: ThemeConfig;
+  navbarType: NavbarLayoutTypes;
+  setNavbarType: Function;
+  contentWidth: TypeContentWidthTypes;
+  setContentWidth: Function;
+  navbarColor?: string;
+  setNavbarColor: Function;
+  menuCollapsed?: boolean;
+  transition: RouterTransitionTypes;
+  setTransition: Function;
+  setMenuCollapsed?: Function;
+}
+
+const Customizer = (props: CustomizerProps) => {
   const {
     skin,
     isRTL,
-    type,
-    navbar,
-    menu,
+    layoutType,
+    navbarType,
+    navbarColor,
+    setNavbarType,
+    setNavbarColor,
+    menuCollapsed,
+    isHidden,
     contentWidth,
-    footer,
-    routerTransition,
+    footerType,
+    transition,
     setSkin,
     setIsRtl,
     setLayout,
     setIsHidden,
     setLastLayout,
     setTransition,
-    setNavbarType,
     setFooterType,
-    setNavbarColor,
     setContentWidth,
     setMenuCollapsed,
   } = props;
@@ -72,13 +100,13 @@ const Customizer = (props: any) => {
     return skinsArr.map((radio, index) => {
       const marginCondition = index !== skinsArr.length - 1;
 
-      if (type === LayoutTypes.horizontal && radio.name === 'semi-dark') {
+      if (layoutType === layoutTypes.horizontal && radio.name === 'semi-dark') {
         return null;
       }
 
       return (
-        <div key={index} className={classnames('form-check', { 'mb-2 me-1': marginCondition })}>
-          <Input type='radio' id={radio.name} checked={radio.checked} onChange={() => setSkin(radio.name)} />
+        <div key={index} className={classnames('form-check', {'mb-2 me-1': marginCondition})}>
+          <Input type='radio' id={radio.name} checked={radio.checked} onChange={() => setSkin(radio.name)}/>
           <Label className='form-check-label' for={radio.name}>
             {radio.label}
           </Label>
@@ -95,7 +123,7 @@ const Customizer = (props: any) => {
       <li
         key={color}
         className={classnames(`color-box bg-${color}`, {
-          selected: navbar.backgroundColor === color,
+          selected: navbarColor === color,
           border: color === 'white',
         })}
         onClick={() => setNavbarColor(color)}
@@ -109,35 +137,35 @@ const Customizer = (props: any) => {
       {
         name: 'floating',
         label: 'Floating',
-        checked: navbar.type === NavbarLayoutTypes.floating,
+        checked: navbarType === navbarLayoutTypes.floating,
       },
       {
         name: 'sticky',
         label: 'Sticky',
-        checked: navbar.type === NavbarLayoutTypes.sticky,
+        checked: navbarType === navbarLayoutTypes.sticky,
       },
       {
         name: 'static',
         label: 'Static',
-        checked: navbar.type === NavbarLayoutTypes.static,
+        checked: navbarType === navbarLayoutTypes.static,
       },
       {
         name: 'hidden',
         label: 'Hidden',
-        checked: navbar.type === NavbarLayoutTypes.hidden,
+        checked: navbarType === navbarLayoutTypes.hidden,
       },
     ];
 
     return navbarTypeArr.map((radio, index) => {
       const marginCondition = index !== navbarTypeArr.length - 1;
 
-      if (type === LayoutTypes.horizontal && radio.name === 'hidden') {
+      if (layoutType === layoutTypes.horizontal && radio.name === 'hidden') {
         return null;
       }
 
       return (
-        <div key={index} className={classnames('form-check', { 'mb-2 me-1': marginCondition })}>
-          <Input type='radio' id={radio.name} checked={radio.checked} onChange={() => setNavbarType(radio.name)} />
+        <div key={index} className={classnames('form-check', {'mb-2 me-1': marginCondition})}>
+          <Input type='radio' id={radio.name} checked={radio.checked} onChange={() => setNavbarType(radio.name)}/>
           <Label className='form-check-label' for={radio.name}>
             {radio.label}
           </Label>
@@ -152,17 +180,17 @@ const Customizer = (props: any) => {
       {
         name: 'sticky',
         label: 'Sticky',
-        checked: footer.type === FooterLayoutTypes.sticky,
+        checked: footerType === footerLayoutTypes.sticky,
       },
       {
         name: 'static',
         label: 'Static',
-        checked: footer.type === FooterLayoutTypes.static,
+        checked: footerType === footerLayoutTypes.static,
       },
       {
         name: 'hidden',
         label: 'Hidden',
-        checked: footer.type === FooterLayoutTypes.hidden,
+        checked: footerType === footerLayoutTypes.hidden,
       },
     ];
 
@@ -170,7 +198,7 @@ const Customizer = (props: any) => {
       const marginCondition = index !== footerTypeArr.length - 1;
 
       return (
-        <div key={index} className={classnames('form-check', { 'mb-2 me-1': marginCondition })}>
+        <div key={index} className={classnames('form-check', {'mb-2 me-1': marginCondition})}>
           <Input
             type='radio'
             checked={radio.checked}
@@ -187,14 +215,14 @@ const Customizer = (props: any) => {
 
   // **  Router Transition Options
   const transitionOptions = [
-    { value: 'fadeIn', label: 'Fade' },
-    { value: 'fadeInLeft', label: 'Fade In Left' },
-    { value: 'zoomIn', label: 'Zoom In' },
-    { value: 'none', label: 'None' },
+    {value: 'fadeIn', label: 'Fade'},
+    {value: 'fadeInLeft', label: 'Fade In Left'},
+    {value: 'zoomIn', label: 'Zoom In'},
+    {value: 'none', label: 'None'},
   ];
 
   // ** Get Current Transition
-  const transitionValue = transitionOptions.find(i => i.value === routerTransition);
+  const transitionValue = transitionOptions.find(i => i.value === transition);
 
   return (
     <div
@@ -202,19 +230,20 @@ const Customizer = (props: any) => {
         open: openCustomizer,
       })}
     >
-      <a href='/' className='customizer-toggle d-flex align-items-center justify-content-center' onClick={handleToggle}>
-        <Settings size={14} className='spinner' />
+      <a href='/' className='customizer-toggle d-flex align-items-center justify-content-center'
+        onClick={handleToggle}>
+        <Settings size={14} className='spinner'/>
       </a>
-      <PerfectScrollbar className='customizer-content' options={{ wheelPropagation: false }}>
+      <PerfectScrollbar className='customizer-content' options={{wheelPropagation: false}}>
         <div className='customizer-header px-2 pt-1 pb-0 position-relative'>
           <h4 className='mb-0'>Theme Customizer</h4>
           <p className='m-0'>Customize & Preview in Real Time</p>
           <a href='/' className='customizer-close' onClick={handleToggle}>
-            <X />
+            <X/>
           </a>
         </div>
 
-        <hr />
+        <hr/>
 
         <div className='px-2'>
           <div className='mb-2'>
@@ -233,7 +262,7 @@ const Customizer = (props: any) => {
                   onChange={() => setContentWidth('full')}
                 />
                 <Label className='form-check-label' for='full-width'>
-                  Full Width
+                    Full Width
                 </Label>
               </div>
               <div className='form-check'>
@@ -244,7 +273,7 @@ const Customizer = (props: any) => {
                   onChange={() => setContentWidth('boxed')}
                 />
                 <Label className='form-check-label' for='boxed'>
-                  Boxed
+                    Boxed
                 </Label>
               </div>
             </div>
@@ -253,7 +282,7 @@ const Customizer = (props: any) => {
           <div className='form-switch mb-2 ps-0'>
             <div className='d-flex'>
               <p className='fw-bold me-auto mb-0'>RTL</p>
-              <Input type='switch' id='rtl' name='RTL' checked={isRTL} onChange={() => setIsRtl(!isRTL)} />
+              <Input type='switch' id='rtl' name='RTL' checked={isRTL} onChange={() => setIsRtl(!isRTL)}/>
             </div>
           </div>
 
@@ -268,13 +297,13 @@ const Customizer = (props: any) => {
                 value={transitionValue}
                 options={transitionOptions}
                 isClearable={false}
-                onChange={({ value }: any) => setTransition(value)}
+                onChange={({value}: any) => setTransition(value)}
               />
             </div>
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div className='px-2'>
           <p className='fw-bold'>Menu Layout</p>
@@ -284,33 +313,33 @@ const Customizer = (props: any) => {
                 <Input
                   type='radio'
                   id='vertical-layout'
-                  checked={type === LayoutTypes.vertical}
+                  checked={layoutType === layoutTypes.vertical}
                   onChange={() => {
                     setLayout('vertical');
                     setLastLayout('vertical');
                   }}
                 />
                 <Label className='form-check-label' for='vertical-layout'>
-                  Vertical
+                    Vertical
                 </Label>
               </div>
               <div className='form-check'>
                 <Input
                   type='radio'
                   id='horizontal-layout'
-                  checked={type === LayoutTypes.horizontal}
+                  checked={layoutType === layoutTypes.horizontal}
                   onChange={() => {
                     setLayout('horizontal');
                     setLastLayout('horizontal');
                   }}
                 />
                 <Label className='form-check-label' for='horizontal-layout'>
-                  Horizontal
+                    Horizontal
                 </Label>
               </div>
             </div>
           </div>
-          {type !== LayoutTypes.horizontal ?
+          {layoutType !== layoutTypes.horizontal ?
             (
               <div className='form-switch mb-2 ps-0'>
                 <div className='d-flex align-items-center'>
@@ -319,10 +348,10 @@ const Customizer = (props: any) => {
                     type='switch'
                     id='menu-collapsed'
                     name='menu-collapsed'
-                    checked={menu.isCollapsed}
+                    checked={menuCollapsed}
                     onChange={
                       () => setMenuCollapsed &&
-                        setMenuCollapsed(!menu.isCollapsed)
+                                  setMenuCollapsed(!menuCollapsed)
                     }
                   />
                 </div>
@@ -337,17 +366,17 @@ const Customizer = (props: any) => {
                 type='switch'
                 id='menu-hidden'
                 name='menu-hidden'
-                checked={menu.isHidden}
-                onChange={() => setIsHidden(!menu.isHidden)}
+                checked={isHidden}
+                onChange={() => setIsHidden(!isHidden)}
               />
             </div>
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div className='px-2'>
-          {type !== LayoutTypes.horizontal ?
+          {layoutType !== layoutTypes.horizontal ?
             (
               <div className='mb-2'>
                 <p className='fw-bold'>Navbar Color</p>
@@ -357,14 +386,14 @@ const Customizer = (props: any) => {
             null}
 
           <div className='mb-2'>
-            <p className='fw-bold'>{type === LayoutTypes.horizontal ?
+            <p className='fw-bold'>{layoutType === layoutTypes.horizontal ?
               'Menu' :
               'Navbar'} Type</p>
             <div className='d-flex'>{renderNavbarTypeRadio()}</div>
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div className='px-2'>
           <div className='mb-2'>

@@ -1,10 +1,10 @@
 import { handleFooterType } from '../../redux/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '../../redux/reducers/RootReducer';
-import {TypeFooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
+import {FooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
 
 export interface useFooterTypeInterface {
-  footerType: TypeFooterLayoutTypes;
+  footerType: FooterLayoutTypes;
   setFooterType: Function;
 }
 
@@ -12,7 +12,7 @@ export const useFooterType = (): useFooterTypeInterface => {
   const dispatch = useDispatch();
   const store = useSelector((state: RootState) => state.layout);
 
-  const setFooterType = (type: TypeFooterLayoutTypes) => {
+  const setFooterType = (type: FooterLayoutTypes) => {
     dispatch(handleFooterType(type));
   };
 

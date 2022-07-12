@@ -1,6 +1,6 @@
 import {LayoutTypes} from '../../domains/enums/LayoutTypes';
 import {SkinTypes} from '../../domains/enums/SkinTypes';
-import {TypeRouterTransitionTypes} from '../../domains/enums/RouterTransitionTypes';
+import {RouterTransitionTypes} from '../../domains/enums/RouterTransitionTypes';
 import {TypeContentWidthTypes} from './ContentWidthTypes';
 import {MenuLayout} from './MenuLayout';
 import {NavbarLayout} from './NavbarLayout';
@@ -10,7 +10,7 @@ import {FooterLayout} from './FooterLayout';
 export interface Layout {
     isRTL: boolean;
     skin: SkinTypes,
-    routerTransition: TypeRouterTransitionTypes,
+    routerTransition: RouterTransitionTypes,
     type: LayoutTypes,
     contentWidth: TypeContentWidthTypes,
     menu: MenuLayout,

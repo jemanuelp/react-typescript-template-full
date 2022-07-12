@@ -1,5 +1,5 @@
-import {TypeFooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
+import {FooterLayoutTypes} from '../../domains/enums/FooterLayoutTypes';
 
 export interface FooterLayout {
-    type: TypeFooterLayoutTypes;
+    type: FooterLayoutTypes;
 }

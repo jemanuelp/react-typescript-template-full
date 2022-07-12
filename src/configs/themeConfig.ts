@@ -1,5 +1,5 @@
 import {ToastPosition} from 'react-hot-toast';
-import {LayoutTypes} from '../domains/enums/LayoutTypes';
+import {layoutTypes} from '../domains/enums/LayoutTypes';
 import {ThemeConfig} from './interfaces/ThemeConfig';
 
 const toastPosition: ToastPosition = 'top-right';
@@ -28,7 +28,7 @@ const themeConfig: ThemeConfig = {
     footer: {
       type: 'static', // static, sticky, hidden
     },
-    customizer: false,
+    customizer: true,
     scrollTop: true, // Enable scroll to top button
     toastPosition,
   },

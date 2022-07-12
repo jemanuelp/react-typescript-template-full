@@ -1,4 +1,4 @@
-export const RouterTransitionTypes = {
+export const routerTransitionTypes = {
   Default: 'fadeIn',
   fadeIn: 'fadeIn',
   fadeInLeft: 'fadeInLeft',
@@ -6,4 +6,4 @@ export const RouterTransitionTypes = {
   none: 'none',
 };
 
-export type TypeRouterTransitionTypes = keyof typeof RouterTransitionTypes;
+export type RouterTransitionTypes = keyof typeof routerTransitionTypes;
