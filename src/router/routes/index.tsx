@@ -35,7 +35,7 @@ const DefaultRoute = '/dashboard/ecommerce';
 
 // ** Merge Routes
 const Routes: Route[] = [
-  // ...AuthenticationRoutes,
+  ...AuthenticationRoutes,
   ...DashboardRoutes,
   // ...AppRoutes,
   // ...PagesRoutes,

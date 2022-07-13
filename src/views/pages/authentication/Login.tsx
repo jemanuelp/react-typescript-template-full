@@ -58,7 +58,6 @@ const Login = () => {
 
   const onSubmit = (data: ILogin) => {
     if (Object.values(data).every((field) => field.length > 0)) {
-      console.log('entroooo');
       useJwt
         .login({ email: data.loginEmail, password: data.password })
         .then((res: AxiosResponse) => {
@@ -68,7 +67,7 @@ const Login = () => {
             refreshToken: res.data.refreshToken,
           };
           dispatch(handleLogin(data));
-          // ability.update(res.data.userData.ability);
+          // ability.update(res.data.userData.ability); // TODO: ability
           navigate(getHomeRouteForLoggedInUser(data.role));
           toast(t => (
             <ToastContent t={t} role={data.role || 'admin'} name={data.fullName || data.username || 'John Doe'} />
