@@ -1,8 +1,8 @@
-export const SizeTypes = {
-  Sm: 'sm',
-  Lg: 'lg',
-  Md: 'md',
-  Xl: 'xl',
+export const sizeTypes = {
+  sm: 'sm',
+  lg: 'lg',
+  md: 'md',
+  xl: 'xl',
 };
 
-export type SizeTypes = keyof typeof SizeTypes;
+export type SizeTypes = keyof typeof sizeTypes;

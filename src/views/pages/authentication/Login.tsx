@@ -20,7 +20,7 @@ const ToastContent = ({ t, name, role }: any) => {
   return (
     <div className='d-flex'>
       <div className='me-1'>
-        <Avatar size='Sm' color='success' icon={<Coffee size={12} />} />
+        <Avatar size='sm' color='success' icon={<Coffee size={12} />} />
       </div>
       <div className='d-flex flex-column'>
         <div className='d-flex justify-content-between'>

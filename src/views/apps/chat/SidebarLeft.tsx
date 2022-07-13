@@ -175,7 +175,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
                   className='box-shadow-1 avatar-border'
                   img={userProfile.avatar}
                   status={status}
-                  size='Xl' />
+                  size='xl' />
                 <h4 className='chat-user-name'>{userProfile.fullName}</h4>
                 <span className='user-post'>{userProfile.role}</span>
               </div>

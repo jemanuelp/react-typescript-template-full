@@ -51,7 +51,7 @@ const ComposePopup = (props: ComposePopupProps) => {
     return (
       <components.Option {...props}>
         <div className='d-flex flex-wrap align-items-center'>
-          <Avatar className='my-0 me-50' size={'Sm'} img={data.img}/>
+          <Avatar className='my-0 me-50' size={'sm'} img={data.img}/>
           {data.label}
         </div>
       </components.Option>

@@ -19,7 +19,7 @@ const UserProfileSidebar = (props: any) => {
         <div className='header-profile-sidebar'>
           <Avatar
             className='box-shadow-1 avatar-border'
-            size='Xl'
+            size='xl'
             status={user.status}
             img={user.avatar}
             imgHeight='70'

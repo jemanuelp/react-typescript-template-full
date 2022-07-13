@@ -30,8 +30,8 @@ const Sidebar = (props: SidebarPropTypes) => {
   const classNameModal = className ?
     classnames({
       [className]: className,
-      'sidebar-lg': size === 'Lg',
-      'sidebar-sm': size === 'Sm',
+      'sidebar-lg': size === 'lg',
+      'sidebar-sm': size === 'sm',
     }) :
     '';
   return (

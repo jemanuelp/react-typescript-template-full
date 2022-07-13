@@ -388,7 +388,7 @@ const AddCard = () => {
       </Card>
 
       <Sidebar
-        size={'Lg'}
+        size={'lg'}
         open={open}
         title='Add Payment'
         headerClassName='mb-1'
