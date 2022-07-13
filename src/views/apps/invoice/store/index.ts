@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {Dispatch} from 'redux';
+import {ISearch} from '../../../../domains/interfaces/ISearch';
 
-export const getData = createAsyncThunk('appInvoice/getData', async(params: any) => {
-  const response = await axios.get('/apps/invoice/invoices', params);
+export const getData = createAsyncThunk('appInvoice/getData', async(params: ISearch) => {
+  const response = await axios.get('/apps/invoice/invoices', { data: { ...params } });
   return {
     params,
     data: response.data.invoices,

@@ -1,4 +1,4 @@
-export interface ISearch {
+export type ISearch = {
     q: string;
     perPage: number;
     page: number;

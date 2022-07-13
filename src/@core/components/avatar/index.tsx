@@ -19,6 +19,7 @@ const initialsDefault = (props: any) => {
 };
 
 export type AvatarProps = {
+  id?: string;
   img?: string;
   icon?: ReactNode;
   src?: string;

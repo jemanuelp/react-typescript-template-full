@@ -913,23 +913,21 @@ const data: IInvoices = {
 // ------------------------------------------------
 // GET: Return Invoice List
 // ------------------------------------------------
-mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig<ISearch>) => {
+mock.onGet('/apps/invoice/invoices').reply((config: AxiosRequestConfig) => {
   if (!config.data) {
     throw new Error('No search data');
   }
 
-  const { q = '', perPage = 10, page = 1, status = '', sort, sortColumn } = config.data;
+  const { q = '', perPage = 10, page = 1, status = '', sort, sortColumn }: ISearch = JSON.parse(config.data);
 
-  const dataAsc = data.invoices.sort((a, b) => {
-    if (a[sortColumn as keyof IInvoice]) {
-      return a[sortColumn as keyof IInvoice] < b[sortColumn as keyof IInvoice] ?
+  const dataAsc: IInvoice[] = data.invoices.sort((a: any, b: any) => {
+    if (a[sortColumn]) {
+      return a[sortColumn] < b[sortColumn] ?
         -1 :
         1;
     } else {
       const splitColumn = sortColumn.split('.');
-      // @ts-ignore
       const columnA = a[splitColumn[0]][splitColumn[1]];
-      // @ts-ignore
       const columnB = b[splitColumn[0]][splitColumn[1]];
       return columnA < columnB ?
         -1 :

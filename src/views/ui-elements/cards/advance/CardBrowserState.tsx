@@ -243,7 +243,6 @@ const CardBrowserState = ({colors, trackBgColor}: CardBrowserStateProp) => {
     },
   ];
 
-  console.log(statesArr);
   const renderStates = () => {
     return statesArr.map((state: CardBrowserType) => {
       return (

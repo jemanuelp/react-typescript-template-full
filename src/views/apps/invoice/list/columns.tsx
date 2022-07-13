@@ -23,9 +23,10 @@ import {
 } from 'react-feather';
 import {ColorTypes} from '../../../ui-elements/cards/models/ColorTypes';
 import {InvoiceStatus} from '../../user/interfaces/InvoiceStatus';
+import {IInvoice} from '../interfaces/IInvoice';
 
 // ** renders client column
-const renderClient = (row: any) => {
+const renderClient = (row: IInvoice) => {
   const stateNum = Math.floor(Math.random() * 6),
     states: ColorTypes[] = ['light-success', 'light-danger', 'light-warning', 'light-info', 'light-primary', 'light-secondary'],
     color = states[stateNum];
@@ -45,16 +46,16 @@ export const columns = [
     sortable: true,
     sortField: 'id',
     minWidth: '107px',
-    // selector: row => row.id,
-    cell: (row: any) => <Link to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>,
+    selector: (row: IInvoice) => row.id,
+    cell: (row: IInvoice) => <Link to={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</Link>,
   },
   {
     sortable: true,
     minWidth: '102px',
     sortField: 'invoiceStatus',
     name: <TrendingUp size={14}/>,
-    // selector: row => row.invoiceStatus,
-    cell: (row: any) => {
+    selector: (row: IInvoice) => row.invoiceStatus,
+    cell: (row: IInvoice) => {
       const color = InvoiceStatus[
                     row.invoiceStatus as keyof typeof InvoiceStatus
         ] ?
@@ -70,8 +71,8 @@ export const columns = [
           ].icon :
           Edit;
       return (
-        <Fragment>
-          <Avatar color={color} icon={<Icon size={14}/>}/>
+        <>
+          <Avatar color={color} icon={<Icon size={14}/>} id={`av-tooltip-${row.id}`}/>
           <UncontrolledTooltip placement='top' target={`av-tooltip-${row.id}`}>
             <span className='fw-bold'>{row.invoiceStatus}</span>
             <br/>
@@ -79,7 +80,7 @@ export const columns = [
             <br/>
             <span className='fw-bold'>Due Date:</span> {row.dueDate}
           </UncontrolledTooltip>
-        </Fragment>
+        </>
       );
     },
   },
@@ -88,8 +89,8 @@ export const columns = [
     sortable: true,
     minWidth: '350px',
     sortField: 'client.name',
-    // selector: row => row.client.name,
-    cell: (row: any) => {
+    selector: (row: IInvoice) => row.client.name,
+    cell: (row: IInvoice) => {
       const name = row.client ?
           row.client.name :
           'John Doe',
@@ -112,24 +113,24 @@ export const columns = [
     sortable: true,
     minWidth: '150px',
     sortField: 'total',
-    // selector: row => row.total,
-    cell: (row: any) => <span>${row.total || 0}</span>,
+    selector: (row: IInvoice) => row.total,
+    cell: (row: IInvoice) => <span>${row.total || 0}</span>,
   },
   {
     sortable: true,
     minWidth: '200px',
     name: 'Issued Date',
     sortField: 'dueDate',
-    cell: (row: any) => row.dueDate,
-    // selector: row => row.dueDate
+    cell: (row: IInvoice) => row.dueDate,
+    selector: (row: IInvoice) => row.dueDate,
   },
   {
     sortable: true,
     name: 'Balance',
     minWidth: '164px',
     sortField: 'balance',
-    // selector: row => row.balance,
-    cell: (row: any) => {
+    selector: (row: IInvoice) => row.balance,
+    cell: (row: IInvoice) => {
       return row.balance !== 0 ?
         (
           <span>{row.balance}</span>
@@ -144,7 +145,7 @@ export const columns = [
   {
     name: 'Action',
     minWidth: '110px',
-    cell: (row: any) => (
+    cell: (row: IInvoice) => (
       <div className='column-action d-flex align-items-center'>
         <Send className='cursor-pointer' size={17} id={`send-tooltip-${row.id}`}/>
         <UncontrolledTooltip placement='top' target={`send-tooltip-${row.id}`}>
