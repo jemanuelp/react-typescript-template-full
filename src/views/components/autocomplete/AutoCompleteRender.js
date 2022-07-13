@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import classnames from 'classnames';
-
-import AutoComplete from 'src/@core/components/autocomplete';
-
-import img1 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
-import img2 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
-import img3 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
-import img4 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
-import img5 from 'src/assets/images/portrait/small/avatar-s-5.jpg';
-import img6 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
+import AutoComplete from '../../../@core/components/autocomplete';
+import img1 from '../../../../src/assets/images/portrait/small/avatar-s-1.jpg';
+import img2 from '../../../../src/assets/images/portrait/small/avatar-s-2.jpg';
+import img3 from '../../../../src/assets/images/portrait/small/avatar-s-3.jpg';
+import img4 from '../../../../src/assets/images/portrait/small/avatar-s-4.jpg';
+import img5 from '../../../../src/assets/images/portrait/small/avatar-s-5.jpg';
+import img6 from '../../../../src/assets/images/portrait/small/avatar-s-6.jpg';
 
 const AutoCompleteRender = () => {
   const [suggestions] = useState([

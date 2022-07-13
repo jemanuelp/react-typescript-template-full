@@ -1,8 +1,8 @@
 import { UncontrolledCarousel } from 'reactstrap';
 
-import sliderImage1 from 'src/assets/images/slider/01.jpg';
-import sliderImage2 from 'src/assets/images/slider/02.jpg';
-import sliderImage3 from 'src/assets/images/slider/03.jpg';
+import sliderImage1 from '../../../../src/assets/images/slider/01.jpg';
+import sliderImage2 from '../../../../src/assets/images/slider/02.jpg';
+import sliderImage3 from '../../../../src/assets/images/slider/03.jpg';
 
 const items = [
   {

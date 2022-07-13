@@ -2,7 +2,7 @@
 import { Card, CardHeader, CardTitle, CardBody, Table } from 'reactstrap';
 
 // ** Chrome Logo
-import chromeLogo from 'src/assets/images/icons/google-chrome.png';
+import chromeLogo from '../../../../src/assets/images/icons/google-chrome.png';
 
 const recentDevicesArr = [
   {

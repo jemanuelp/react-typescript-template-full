@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
-import sliderImage1 from 'src/assets/images/slider/09.jpg';
-import sliderImage2 from 'src/assets/images/slider/08.jpg';
-import sliderImage3 from 'src/assets/images/slider/10.jpg';
+import sliderImage1 from '../../../../src/assets/images/slider/09.jpg';
+import sliderImage2 from '../../../../src/assets/images/slider/08.jpg';
+import sliderImage3 from '../../../../src/assets/images/slider/10.jpg';
 
 const images = [
   {

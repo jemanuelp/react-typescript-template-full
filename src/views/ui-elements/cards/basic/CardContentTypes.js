@@ -14,8 +14,8 @@ import {
   ListGroupItem
 } from 'reactstrap';
 
-import img1 from 'src/assets/images/slider/01.jpg';
-import img2 from 'src/assets/images/slider/02.jpg';
+import img1 from '../../../../src/assets/images/slider/01.jpg';
+import img2 from '../../../../src/assets/images/slider/02.jpg';
 
 const CardContentTypes = () => {
   return (

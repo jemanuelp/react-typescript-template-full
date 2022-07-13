@@ -9,9 +9,9 @@ import {
   CarouselControl,
   CarouselIndicators
 } from 'reactstrap'
-import sliderImage1 from 'src/assets/images/slider/01.jpg'
-import sliderImage2 from 'src/assets/images/slider/02.jpg'
-import sliderImage3 from 'src/assets/images/slider/03.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/01.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/02.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/03.jpg'
 
 const images = [
   {
@@ -104,9 +104,9 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap'
-import sliderImage1 from 'src/assets/images/slider/03.jpg'
-import sliderImage2 from 'src/assets/images/slider/04.jpg'
-import sliderImage3 from 'src/assets/images/slider/05.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/03.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/04.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/05.jpg'
 
 const images = [
   {
@@ -203,9 +203,9 @@ export const carouselUncontrolled = (
       {`
 
 import { UncontrolledCarousel } from 'reactstrap'
-import sliderImage1 from 'src/assets/images/slider/06.jpg'
-import sliderImage2 from 'src/assets/images/slider/02.jpg'
-import sliderImage3 from 'src/assets/images/slider/05.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/06.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/02.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/05.jpg'
 
 const items = [
   {
@@ -237,9 +237,9 @@ export const carouselInterval = (
       {`
 
 import { UncontrolledCarousel } from 'reactstrap'
-import sliderImage1 from 'src/assets/images/slider/05.jpg'
-import sliderImage2 from 'src/assets/images/slider/04.jpg'
-import sliderImage3 from 'src/assets/images/slider/01.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/05.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/04.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/01.jpg'
 
 const images = [
   {
@@ -274,9 +274,9 @@ export const carouselKeyboard = (
 
 import { UncontrolledCarousel } from 'reactstrap'
 import { carouselKeyboard } from './CarouselSourceCode'
-import sliderImage1 from 'src/assets/images/slider/04.jpg'
-import sliderImage2 from 'src/assets/images/slider/01.jpg'
-import sliderImage3 from 'src/assets/images/slider/05.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/04.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/01.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/05.jpg'
 
 const images = [
   {
@@ -311,9 +311,9 @@ export const carouselPause = (
       {`
 
 import { UncontrolledCarousel } from 'reactstrap'
-import sliderImage1 from 'src/assets/images/slider/02.jpg'
-import sliderImage2 from 'src/assets/images/slider/06.jpg'
-import sliderImage3 from 'src/assets/images/slider/05.jpg'
+import sliderImage1 from '../../../../src/assets/images/slider/02.jpg'
+import sliderImage2 from '../../../../src/assets/images/slider/06.jpg'
+import sliderImage3 from '../../../../src/assets/images/slider/05.jpg'
 
 const images = [
   {

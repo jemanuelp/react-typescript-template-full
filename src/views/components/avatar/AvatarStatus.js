@@ -1,9 +1,6 @@
-import Avatar from 'src/@core/components/avatar';
-
+import Avatar from '../../../@core/components/avatar';
 import { GitHub } from 'react-feather';
-
-// ** Avatar Image
-import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg';
+import avatarImg from '../../../../src/assets/images/portrait/small/avatar-s-20.jpg';
 
 const AvatarStatus = () => {
   return (

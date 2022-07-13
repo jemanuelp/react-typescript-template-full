@@ -20,7 +20,7 @@ import 'cleave.js/dist/addons/cleave-phone.us';
 import { Settings, MessageSquare, ChevronRight } from 'react-feather';
 
 // ** QR Code
-import qrCode from 'src/assets/images/icons/qrcode.png';
+import qrCode from '../../../../src/assets/images/icons/qrcode.png';
 
 const AppAuthComponent = ({ setShow, setShowDetailModal }) => {
   const toggle = () => {

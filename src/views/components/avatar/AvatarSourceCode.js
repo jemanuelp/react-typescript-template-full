@@ -3,8 +3,8 @@ export const avatarSizes = (
     <code className='language-jsx'>
       {`
 
-import Avatar from 'src/@core/components/avatar'
-import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg'
+import Avatar from '../../../@core/components/avatar'
+import avatarImg from '../../../../src/assets/images/portrait/small/avatar-s-20.jpg'
 
 const AvatarSizes = () => {
   return (
@@ -128,7 +128,7 @@ export const avatarStatus = (
 
 import Avatar from 'src/@core/components/avatar'
 import { GitHub } from 'react-feather'
-import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg'
+import avatarImg from '../../../../src/assets/images/portrait/small/avatar-s-20.jpg'
 
 const AvatarStatus = () => {
   return (
@@ -155,19 +155,19 @@ import AvatarGroup from 'src/@core/components/avatar-group'
 
 const data = [
   {
-    img: require('src/assets/images/portrait/small/avatar-s-5.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-5.jpg')
   },
   {
-    img: require('src/assets/images/portrait/small/avatar-s-7.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-7.jpg')
   },
   {
-    img: require('src/assets/images/portrait/small/avatar-s-10.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-10.jpg')
   },
   {
-    img: require('src/assets/images/portrait/small/avatar-s-11.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-11.jpg')
   },
   {
-    img: require('src/assets/images/portrait/small/avatar-s-20.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-20.jpg')
   }
 ]
 
@@ -191,23 +191,23 @@ import AvatarGroup from 'src/@core/components/avatar-group'
 const data = [
   {
     title: 'Vinnie Mostowy',
-    img: require('src/assets/images/portrait/small/avatar-s-5.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-5.jpg')
   },
   {
     title: 'Elicia Rieske',
-    img: require('src/assets/images/portrait/small/avatar-s-7.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-7.jpg')
   },
   {
     title: 'Julee Rossignol',
-    img: require('src/assets/images/portrait/small/avatar-s-10.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-10.jpg')
   },
   {
     title: 'Darcey Nooner',
-    img: require('src/assets/images/portrait/small/avatar-s-11.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-11.jpg')
   },
   {
     title: 'Jenny Looper',
-    img: require('src/assets/images/portrait/small/avatar-s-20.jpg')
+    img: require('../../../../src/assets/images/portrait/small/avatar-s-20.jpg')
   }
 ]
 

@@ -1,6 +1,6 @@
 import { Toast, ToastBody, ToastHeader, Row, Col } from 'reactstrap';
 
-import transparentBg from 'src/assets/images/svg/transparent.svg';
+import transparentBg from '../../../../src/assets/images/svg/transparent.svg';
 
 const close = <button type='button' className='ms-1 btn-close'></button>;
 

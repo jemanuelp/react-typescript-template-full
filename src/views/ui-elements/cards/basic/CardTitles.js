@@ -1,8 +1,8 @@
 import { Button, Card, CardTitle, CardBody, CardText, CardSubtitle, CardLink, CardImg, Row, Col } from 'reactstrap';
 
-import img1 from 'src/assets/images/slider/04.jpg';
-import img2 from 'src/assets/images/slider/03.jpg';
-import img3 from 'src/assets/images/slider/06.jpg';
+import img1 from '../../../../src/assets/images/slider/04.jpg';
+import img2 from '../../../../src/assets/images/slider/03.jpg';
+import img3 from '../../../../src/assets/images/slider/06.jpg';
 
 const CardTitles = () => {
   return (

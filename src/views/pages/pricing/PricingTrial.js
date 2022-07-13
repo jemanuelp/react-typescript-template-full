@@ -1,6 +1,6 @@
 import { Row, Col, Button } from 'reactstrap';
 
-import trialSvg from 'src/assets/images/illustration/pricing-Illustration.svg';
+import trialSvg from '../../../../src/assets/images/illustration/pricing-Illustration.svg';
 
 const PricingTrial = () => {
   return (

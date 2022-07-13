@@ -77,7 +77,7 @@ const data = [
     },
     service: 'UI/UX Design & Development',
     total: 5219,
-    avatar: require('src/assets/images/avatars/10-small.png'),
+    avatar: require('../../../../src/assets/images/avatars/10-small.png'),
     invoiceStatus: 'Downloaded',
     balance: 0,
     dueDate: '15 Dec 2019'
@@ -95,7 +95,7 @@ const data = [
     },
     service: 'Unlimited Extended License',
     total: 3719,
-    avatar: require('src/assets/images/avatars/1-small.png'),
+    avatar: require('../../../../src/assets/images/avatars/1-small.png'),
     invoiceStatus: 'Paid',
     balance: 0,
     dueDate: '03 Nov 2019'
@@ -113,7 +113,7 @@ const data = [
     },
     service: 'Software Development',
     total: 4749,
-    avatar: require('src/assets/images/avatars/9-small.png'),
+    avatar: require('../../../../src/assets/images/avatars/9-small.png'),
     invoiceStatus: 'Sent',
     balance: 0,
     dueDate: '11 Feb 2020'
@@ -131,7 +131,7 @@ const data = [
     },
     service: 'UI/UX Design & Development',
     total: 4056,
-    avatar: require('src/assets/images/avatars/10-small.png'),
+    avatar: require('../../../../src/assets/images/avatars/10-small.png'),
     invoiceStatus: 'Draft',
     balance: '$815',
     dueDate: '30 Jun 2019'

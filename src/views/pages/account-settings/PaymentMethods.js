@@ -26,14 +26,14 @@ import { Check, X } from 'react-feather';
 import { useForm, Controller } from 'react-hook-form';
 
 // ** Card Images
-import jcbCC from 'src/assets/images/icons/payments/jcb-cc.png';
-import amexCC from 'src/assets/images/icons/payments/amex-cc.png';
-import uatpCC from 'src/assets/images/icons/payments/uatp-cc.png';
-import visaCC from 'src/assets/images/icons/payments/visa-cc.png';
-import dinersCC from 'src/assets/images/icons/payments/diners-cc.png';
-import maestroCC from 'src/assets/images/icons/payments/maestro-cc.png';
-import discoverCC from 'src/assets/images/icons/payments/discover-cc.png';
-import mastercardCC from 'src/assets/images/icons/payments/mastercard-cc.png';
+import jcbCC from '../../../../src/assets/images/icons/payments/jcb-cc.png';
+import amexCC from '../../../../src/assets/images/icons/payments/amex-cc.png';
+import uatpCC from '../../../../src/assets/images/icons/payments/uatp-cc.png';
+import visaCC from '../../../../src/assets/images/icons/payments/visa-cc.png';
+import dinersCC from '../../../../src/assets/images/icons/payments/diners-cc.png';
+import maestroCC from '../../../../src/assets/images/icons/payments/maestro-cc.png';
+import discoverCC from '../../../../src/assets/images/icons/payments/discover-cc.png';
+import mastercardCC from '../../../../src/assets/images/icons/payments/mastercard-cc.png';
 
 const cardsObj = {
   jcb: jcbCC,
@@ -55,7 +55,7 @@ const data = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('src/assets/images/icons/payments/mastercard.png')
+    imgSrc: require('../../../../src/assets/images/icons/payments/mastercard.png')
   },
   {
     cardCvc: '681',
@@ -63,7 +63,7 @@ const data = [
     expiryDate: '02/24',
     name: 'Mildred Wagner',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('src/assets/images/icons/payments/visa.png')
+    imgSrc: require('../../../../src/assets/images/icons/payments/visa.png')
   }
 ];
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Collapse, Button } from 'reactstrap';
 
 // ** Image
-import collapseImg from 'src/assets/images/slider/04.jpg';
+import collapseImg from '../../../../src/assets/images/slider/04.jpg';
 
 const CollapseBasic = () => {
   const [isOpen, setIsOpen] = useState(false);

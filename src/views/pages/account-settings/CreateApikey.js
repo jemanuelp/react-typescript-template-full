@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 
 import { Row, Col, Card, Form, Label, Input, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap';
 
-import illustration from 'src/assets/images/illustration/pricing-Illustration.svg';
+import illustration from '../../../../src/assets/images/illustration/pricing-Illustration.svg';
 
 const keyOptions = [
   { value: 'full-control', label: 'Full Control' },

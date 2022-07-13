@@ -1,7 +1,5 @@
-import Avatar from 'src/@core/components/avatar';
-
-// ** Avatar Image
-import avatarImg from 'src/assets/images/portrait/small/avatar-s-20.jpg';
+import Avatar from '../../../@core/components/avatar';
+import avatarImg from '../../../assets/images/portrait/small/avatar-s-20.jpg';
 
 const AvatarSizes = () => {
   return (

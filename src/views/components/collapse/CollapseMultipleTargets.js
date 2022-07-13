@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { Row, Col, Collapse, Button } from 'reactstrap';
 
-import collapseImg1 from 'src/assets/images/slider/06.jpg';
-import collapseImg2 from 'src/assets/images/slider/08.jpg';
+import collapseImg1 from '../../../../src/assets/images/slider/06.jpg';
+import collapseImg2 from '../../../../src/assets/images/slider/08.jpg';
 
 const CollapseMultipleTargets = () => {
   const [firstCollapse, setFirstCollapse] = useState(false);
