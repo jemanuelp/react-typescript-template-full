@@ -1,5 +1,5 @@
 import mock from '../mock';
-import {IFaqData} from '../../views/pages/interfaces/IFaqData';
+import {IFaqData} from '../../views/pages/models/IFaqData';
 
 const data: {
     faqData: {

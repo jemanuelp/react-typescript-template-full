@@ -15,8 +15,8 @@ import {
 } from 'reactstrap';
 
 import illustration from '../../../../src/assets/images/illustration/faq-illustrations.svg';
-import {IFaqData} from '../interfaces/IFaqData';
-import {IQandA} from '../interfaces/IQandA';
+import {IFaqData} from '../models/IFaqData';
+import {IQandA} from '../models/IQandA';
 
 const Faqs = (
   { data }:

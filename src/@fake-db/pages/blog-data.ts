@@ -1,6 +1,7 @@
 import mock from '../mock';
+import {DataBlog} from '../../views/pages/models/DataBlog';
 
-const data = {
+const data: DataBlog = {
   blogList: [
     {
       img: require('../../../src/assets/images/slider/02.jpg'),

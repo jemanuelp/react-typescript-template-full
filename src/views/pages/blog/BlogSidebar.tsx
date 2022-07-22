@@ -1,36 +1,41 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, Fragment } from 'react';
-
 import axios from 'axios';
 import classnames from 'classnames';
 import * as Icon from 'react-feather';
-
-import Avatar from 'src/@core/components/avatar';
-
+import Avatar from '../../../@core/components/avatar';
 import { InputGroup, Input, InputGroupText } from 'reactstrap';
+import {BlogSidebar} from '../models/BlogSidebar';
+import {ColorTypes} from '../../ui-elements/cards/models/ColorTypes';
 
 const BlogSidebar = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<BlogSidebar | null>(null);
 
   useEffect(() => {
     axios.get('/blog/list/data/sidebar').then(res => setData(res.data));
   }, []);
 
-  const CategoryColorsArr = {
+  const CategoryColorsArr: {
+    Quote: ColorTypes;
+    Fashion: ColorTypes;
+    Gaming: ColorTypes;
+    Video: ColorTypes;
+    Food: ColorTypes;
+  } = {
     Quote: 'light-info',
     Fashion: 'light-primary',
     Gaming: 'light-danger',
     Video: 'light-warning',
-    Food: 'light-success'
+    Food: 'light-success',
   };
 
   const renderRecentPosts = () => {
-    return data.recentPosts.map((post, index) => {
+    return data && data.recentPosts.map((post, index) => {
       return (
         <div
           key={index}
           className={classnames('d-flex', {
-            'mb-2': index !== data.recentPosts.length - 1
+            'mb-2': index !== data.recentPosts.length - 1,
           })}
         >
           <Link className='me-2' to={`/pages/blog/detail/${post.id}`}>
@@ -50,18 +55,22 @@ const BlogSidebar = () => {
   };
 
   const renderCategories = () => {
-    return data.categories.map((item, index) => {
-      const IconTag = Icon[item.icon];
+    return data && data.categories.map((item, index) => {
+      const IconTag = Icon[item.icon as keyof typeof Icon];
 
       return (
         <div
           key={index}
           className={classnames('d-flex justify-content-start align-items-center', {
-            'mb-75': index !== data.categories.length - 1
+            'mb-75': index !== data.categories.length - 1,
           })}
         >
           <a className='me-75' href='/' onClick={e => e.preventDefault()}>
-            <Avatar className='rounded' color={CategoryColorsArr[item.category]} icon={<IconTag size={15} />} />
+            <Avatar
+              className='rounded'
+              color={CategoryColorsArr[item.category as keyof typeof CategoryColorsArr]}
+              icon={<IconTag size={15}/>}
+            />
           </a>
           <a href='/' onClick={e => e.preventDefault()}>
             <div className='blog-category-title text-body'>{item.category}</div>
@@ -84,18 +93,20 @@ const BlogSidebar = () => {
                 </InputGroupText>
               </InputGroup>
             </div>
-            {data !== null ? (
-              <Fragment>
-                <div className='blog-recent-posts mt-3'>
-                  <h6 className='section-label'>Recent Posts</h6>
-                  <div className='mt-75'>{renderRecentPosts()}</div>
-                </div>
-                <div className='blog-categories mt-3'>
-                  <h6 className='section-label'>Categories</h6>
-                  <div className='mt-1'>{renderCategories()}</div>
-                </div>
-              </Fragment>
-            ) : null}
+            {data !== null ?
+              (
+                <Fragment>
+                  <div className='blog-recent-posts mt-3'>
+                    <h6 className='section-label'>Recent Posts</h6>
+                    <div className='mt-75'>{renderRecentPosts()}</div>
+                  </div>
+                  <div className='blog-categories mt-3'>
+                    <h6 className='section-label'>Categories</h6>
+                    <div className='mt-1'>{renderCategories()}</div>
+                  </div>
+                </Fragment>
+              ) :
+              null}
           </div>
         </div>
       </div>

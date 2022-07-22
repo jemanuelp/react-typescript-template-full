@@ -11,7 +11,7 @@ import InputPasswordToggle from '../../../@core/components/input-password-toggle
 import {handleLogin} from '../../../redux/authentication';
 import useJwt from '../../../auth/jwt/useJwt';
 import {getHomeRouteForLoggedInUser} from '../../../utility/Utils';
-import {ILogin} from '../interfaces/ILogin';
+import {ILogin} from '../models/ILogin';
 import {AxiosResponse} from 'axios';
 // import { useContext } from 'react';
 // import {AbilityContext} from "../../../utility/context/Can";

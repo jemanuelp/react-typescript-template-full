@@ -1,13 +1,9 @@
 import { Fragment } from 'react';
-
-import Breadcrumbs from 'src/@core/components/breadcrumbs';
-
-import { selectThemeColors } from 'src/utility/Utils';
-
+import Breadcrumbs from '../../../@core/components/breadcrumbs';
+import { selectThemeColors } from '../../../utility/Utils';
 import Select from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
 import { Copy, MoreVertical, Edit2, Trash2 } from 'react-feather';
-
 import {
   Row,
   Col,
@@ -25,31 +21,29 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
-  UncontrolledDropdown
+  UncontrolledDropdown,
 } from 'reactstrap';
-
-// ** Illustrations
-import illustration from 'src/assets/images/illustration/pricing-Illustration.svg';
+import illustration from '../../../../src/assets/images/illustration/pricing-Illustration.svg';
 
 const data = [
   {
     type: 'Full Access',
     name: 'Server Key 1',
     key: '23eaf7f0-f4f7-495e-8b86-fad3261282ac',
-    date: 'Created on 28 Apr 2020, 18:20 GTM+4:10'
+    date: 'Created on 28 Apr 2020, 18:20 GTM+4:10',
   },
   {
     type: 'Read Only',
     name: 'Server Key 2',
     key: 'bb98e571-a2e2-4de8-90a9-2e231b5e99',
-    date: 'Created on 12 Feb 2020, 10:30 GTM+2:30'
+    date: 'Created on 12 Feb 2020, 10:30 GTM+2:30',
   },
   {
     type: 'Full Access',
     name: 'Server Key 3',
     key: '2e915e59-3105-47f2-8838-6e46bf83b711',
-    date: 'Created on 28 Apr 2020, 12:21 GTM+4:10'
-  }
+    date: 'Created on 28 Apr 2020, 12:21 GTM+4:10',
+  },
 ];
 
 const keyOptions = [
@@ -58,11 +52,11 @@ const keyOptions = [
   { value: 'read-execute', label: 'Read & Execute' },
   { value: 'list-folder', label: 'List Folder Contents' },
   { value: 'read-only', label: 'Read Only' },
-  { value: 'read-write', label: 'Read Write' }
+  { value: 'read-write', label: 'Read Write' },
 ];
 
 const defaultValues = {
-  apiKeyName: ''
+  apiKeyName: '',
 };
 
 const ApiKey = () => {
@@ -71,15 +65,15 @@ const ApiKey = () => {
     control,
     setError,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
-  const onSubmit = data => {
+  const onSubmit = (data: any) => {
     if (data.apiKeyName.length) {
       return null;
     } else {
       setError('apiKeyName', {
-        type: 'manual'
+        type: 'manual',
       });
     }
   };
@@ -117,7 +111,10 @@ const ApiKey = () => {
                       <Input id='apiKeyName' placeholder='Server Key' invalid={errors.apiKeyName && true} {...field} />
                     )}
                   />
-                  {errors && errors.apiKeyName && <FormFeedback>Please enter a valid API key name</FormFeedback>}
+                  {
+                    errors && errors.apiKeyName &&
+                      <FormFeedback>Please enter a valid API key name</FormFeedback>
+                  }
                 </div>
                 <div>
                   <Button block type='submit' color='primary'>
@@ -140,9 +137,11 @@ const ApiKey = () => {
         </CardHeader>
         <CardBody>
           <CardText>
+            {/* eslint-disable max-len */}
             An API key is a simple encrypted string that identifies an application without any principal. They are
             useful for accessing public data anonymously, and are used to associate API requests with your project for
             quota and billing.
+            {/* eslint-disable max-len */}
           </CardText>
           <Row className='gy-2'>
             {data.map(item => (

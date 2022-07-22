@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Fragment, useState, useEffect } from 'react';
-
 import axios from 'axios';
 import classnames from 'classnames';
 import { MessageSquare } from 'react-feather';
-
 import Sidebar from '../BlogSidebar';
-import Avatar from 'src/@core/components/avatar';
-import Breadcrumbs from 'src/@core/components/breadcrumbs';
-
+import Avatar from '../../../../@core/components/avatar';
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 import {
   Row,
   Col,
@@ -20,36 +17,43 @@ import {
   Badge,
   Pagination,
   PaginationItem,
-  PaginationLink
+  PaginationLink,
 } from 'reactstrap';
-
-import 'src/@core/scss/base/pages/page-blog.scss';
+import '../../../../@core/scss/base/pages/page-blog.scss';
+import {BlogList} from '../../models/BlogList';
+import {ColorTypes} from '../../../ui-elements/cards/models/ColorTypes';
 
 const BlogList = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<BlogList[]>([]);
 
   useEffect(() => {
     axios.get('/blog/list/data').then(res => setData(res.data));
   }, []);
 
-  const badgeColorsArr = {
+  const badgeColorsArr: {
+    Quote: ColorTypes;
+    Fashion: ColorTypes;
+    Gaming: ColorTypes;
+    Video: ColorTypes;
+    Food: ColorTypes;
+  } = {
     Quote: 'light-info',
     Fashion: 'light-primary',
     Gaming: 'light-danger',
     Video: 'light-warning',
-    Food: 'light-success'
+    Food: 'light-success',
   };
   const renderRenderList = () => {
     return data.map(item => {
       const renderTags = () => {
-        return item.tags.map((tag, index) => {
+        return item.tags.map((tag: string, index: number) => {
           return (
             <a key={index} href='/' onClick={e => e.preventDefault()}>
               <Badge
                 className={classnames({
-                  'me-50': index !== item.tags.length - 1
+                  'me-50': index !== item.tags.length - 1,
                 })}
-                color={badgeColorsArr[tag]}
+                color={badgeColorsArr[tag as keyof typeof badgeColorsArr]}
                 pill
               >
                 {tag}
@@ -109,58 +113,60 @@ const BlogList = () => {
       <div className='blog-wrapper'>
         <div className='content-detached content-left'>
           <div className='content-body'>
-            {data !== null ? (
-              <div className='blog-list-wrapper'>
-                <Row>{renderRenderList()}</Row>
-                <Row>
-                  <Col sm='12'>
-                    <Pagination className='d-flex justify-content-center mt-2'>
-                      <PaginationItem className='prev-item'>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}></PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+            {data !== null ?
+              (
+                <div className='blog-list-wrapper'>
+                  <Row>{renderRenderList()}</Row>
+                  <Row>
+                    <Col sm='12'>
+                      <Pagination className='d-flex justify-content-center mt-2'>
+                        <PaginationItem className='prev-item'>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}></PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           1
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           2
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           3
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem active>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem active>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           4
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           5
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           6
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}>
                           7
-                        </PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem className='next-item'>
-                        <PaginationLink href='#' onClick={e => e.preventDefault()}></PaginationLink>
-                      </PaginationItem>
-                    </Pagination>
-                  </Col>
-                </Row>
-              </div>
-            ) : null}
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem className='next-item'>
+                          <PaginationLink href='#' onClick={e => e.preventDefault()}></PaginationLink>
+                        </PaginationItem>
+                      </Pagination>
+                    </Col>
+                  </Row>
+                </div>
+              ) :
+              null}
           </div>
         </div>
         <Sidebar />

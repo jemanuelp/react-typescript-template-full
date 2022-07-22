@@ -1,7 +1,5 @@
 import {ToastPosition} from 'react-hot-toast';
-import {layoutTypes} from '../domains/enums/LayoutTypes';
 import {ThemeConfig} from './interfaces/ThemeConfig';
-
 const toastPosition: ToastPosition = 'top-right';
 
 //Template config options
