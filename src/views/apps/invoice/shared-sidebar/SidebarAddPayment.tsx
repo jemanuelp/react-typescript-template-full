@@ -1,16 +1,13 @@
 import { useState } from 'react';
-
 import Flatpickr from 'react-flatpickr';
-
 import { Form, Input, Label, Button } from 'reactstrap';
+import Sidebar from '../../../../@core/components/sidebar';
+import '../../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../../@core/scss/base/pages/app-invoice.scss';
+import {SidebarProps} from './SidebarSendInvoice';
 
-import Sidebar from 'src/@core/components/sidebar';
-
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/base/pages/app-invoice.scss';
-
-const SidebarAddPayment = ({ open, toggleSidebar }) => {
-  const [picker, setPicker] = useState(new Date());
+const SidebarAddPayment = ({ open, toggleSidebar }: SidebarProps) => {
+  const [picker, setPicker] = useState<Date[]>([new Date()]);
 
   return (
     <Sidebar

@@ -23,7 +23,7 @@ import {
 } from 'react-feather';
 import {ColorTypes} from '../../../ui-elements/cards/models/ColorTypes';
 import {InvoiceStatus} from '../../user/interfaces/InvoiceStatus';
-import {IInvoice} from '../interfaces/IInvoice';
+import {IInvoice} from '../models/IInvoice';
 
 // ** renders client column
 const renderClient = (row: IInvoice) => {

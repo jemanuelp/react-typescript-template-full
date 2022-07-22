@@ -1,5 +1,5 @@
 import {Fragment} from 'react';
-// import AppRoutes from './Apps';
+import AppRoutes from './Apps';
 // import FormRoutes from './Forms';
 // import PagesRoutes from './Pages';
 // import TablesRoutes from './Tables';
@@ -37,7 +37,7 @@ const DefaultRoute = '/dashboard/ecommerce';
 const Routes: Route[] = [
   ...AuthenticationRoutes,
   ...DashboardRoutes,
-  // ...AppRoutes,
+  ...AppRoutes,
   // ...PagesRoutes,
   // ...UiElementRoutes,
   ...ExtensionsRoutes,

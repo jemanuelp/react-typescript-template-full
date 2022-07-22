@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import classnames from 'classnames';
 import { Star, ShoppingCart, DollarSign, Heart, Share2, Facebook, Twitter, Youtube, Instagram } from 'react-feather';
-
 import {
   Row,
   Col,
@@ -12,38 +10,59 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
-  UncontrolledButtonDropdown
+  UncontrolledButtonDropdown,
 } from 'reactstrap';
+import {addToCart, addToWishlist, deleteWishlistItem, getProduct} from '../store';
+import {ProductType} from '../models/ProductType';
 
-const Product = props => {
-  const { data, deleteWishlistItem, dispatch, addToWishlist, getProduct, productId, addToCart } = props;
+export type ProductProps = {
+  dispatch: any;
+  addToCart: addToCart;
+  productId: number;
+  getProduct: getProduct;
+  data: ProductType;
+  addToWishlist: addToWishlist;
+  deleteWishlistItem: deleteWishlistItem;
+}
+
+const Product = (props: ProductProps) => {
+  const {
+    data,
+    deleteWishlistItem,
+    dispatch,
+    addToWishlist,
+    getProduct,
+    productId,
+    addToCart,
+  } = props;
 
   const [selectedColor, setSelectedColor] = useState('primary');
 
-  // ** Renders color options
   const renderColorOptions = () => {
-    return data.colorOptions.map((color, index) => {
-      const isLastColor = data.colorOptions.length - 1 === index;
+    if (data.colorOptions && data.colorOptions.length > 0) {
+      return data.colorOptions.map((color, index) => {
+        const isLastColor = data.colorOptions.length - 1 === index;
 
-      return (
-        <li
-          key={color}
-          className={classnames('d-inline-block', {
-            'me-25': !isLastColor,
-            selected: selectedColor === color
-          })}
-          onClick={() => setSelectedColor(color)}
-        >
-          <div className={`color-option b-${color}`}>
-            <div className={`filloption bg-${color}`}></div>
-          </div>
-        </li>
-      );
-    });
+        return (
+          <li
+            key={color}
+            className={classnames('d-inline-block', {
+              'me-25': !isLastColor,
+              selected: selectedColor === color,
+            })}
+            onClick={() => setSelectedColor(color)}
+          >
+            <div className={`color-option b-${color}`}>
+              <div className={`filloption bg-${color}`}></div>
+            </div>
+          </li>
+        );
+      });
+    }
   };
 
   // ** Handle Wishlist item toggle
-  const handleWishlist = val => {
+  const handleWishlist = (val: boolean = false) => {
     if (val) {
       dispatch(deleteWishlistItem(productId));
     } else {
@@ -53,14 +72,13 @@ const Product = props => {
   };
 
   // ** Handle Move/Add to cart
-  const handleCartBtn = (id, val) => {
-    if (val === false) {
+  const handleCartBtn = (id: number, val: boolean = false) => {
+    if (!val) {
       dispatch(addToCart(id));
     }
     dispatch(getProduct(productId));
   };
 
-  // ** Condition btn tag
   const CartBtnTag = data.isInCart ? Link : 'button';
 
   return (
@@ -81,13 +99,13 @@ const Product = props => {
         <div className='ecommerce-details-price d-flex flex-wrap mt-1'>
           <h4 className='item-price me-1'>${data.price}</h4>
           <ul className='unstyled-list list-inline'>
-            {new Array(5).fill().map((listItem, index) => {
+            {new Array(5).fill(1).map((listItem, index) => {
               return (
                 <li key={index} className='ratings-list-item me-25'>
                   <Star
                     className={classnames({
                       'filled-star': index + 1 <= data.rating,
-                      'unfilled-star': index + 1 > data.rating
+                      'unfilled-star': index + 1 > data.rating,
                     })}
                   />
                 </li>
@@ -100,12 +118,14 @@ const Product = props => {
         </CardText>
         <CardText>{data.description}</CardText>
         <ul className='product-features list-unstyled'>
-          {data.hasFreeShipping ? (
-            <li>
-              <ShoppingCart size={19} />
-              <span>Free Shipping</span>
-            </li>
-          ) : null}
+          {data.hasFreeShipping ?
+            (
+              <li>
+                <ShoppingCart size={19} />
+                <span>Free Shipping</span>
+              </li>
+            ) :
+            null}
           <li>
             <DollarSign size={19} />
             <span>EMI options available</span>
@@ -124,9 +144,11 @@ const Product = props => {
             color='primary'
             onClick={() => handleCartBtn(data.id, data.isInCart)}
             
-            {...(data.isInCart ? {
-                  to: '/apps/ecommerce/checkout'
-                } : {})}
+            {...(data.isInCart ?
+              {
+                to: '/apps/ecommerce/checkout',
+              } :
+              {})}
           >
             <ShoppingCart className='me-50' size={14} />
             {data.isInCart ? 'View in cart' : 'Move to cart'}
@@ -140,7 +162,7 @@ const Product = props => {
             <Heart
               size={14}
               className={classnames('me-50', {
-                'text-danger': data.isInWishlist
+                'text-danger': data.isInWishlist,
               })}
             />
             <span>Wishlist</span>

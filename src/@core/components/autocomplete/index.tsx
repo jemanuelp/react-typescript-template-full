@@ -257,7 +257,6 @@ const Autocomplete = (props: any) => {
     }
   };
 
-  //** ComponentDidMount
   useEffect(() => {
     if (props.defaultSuggestions && focused) {
       setShowSuggestions(true);

@@ -1,22 +1,18 @@
 import { Fragment, useState, useEffect } from 'react';
-
-// ** Shop Components
 import Sidebar from './Sidebar';
 import Products from './Products';
-
-import Breadcrumbs from 'src/@core/components/breadcrumbs';
-
+import Breadcrumbs from '../../../../@core/components/breadcrumbs';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, getProducts, getCartItems, addToWishlist, deleteCartItem, deleteWishlistItem } from '../store';
-
-import 'src/@core/scss/react/apps/app-ecommerce.scss';
+import '../../../../@core/scss/react/apps/app-ecommerce.scss';
+import { ActionCreator } from '@reduxjs/toolkit';
+import { RootState } from '../../../../redux/reducers/RootReducer';
 
 const Shop = () => {
-  const [activeView, setActiveView] = useState('grid');
+  const [activeView, setActiveView] = useState<string>('grid');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  
-  const dispatch = useDispatch();
-  const store = useSelector(state => state.ecommerce);
+  const dispatch = useDispatch<ActionCreator<any>>();
+  const store = useSelector((state: RootState) => state.ecommerce);
 
   // ** Get products
   useEffect(() => {
@@ -25,8 +21,8 @@ const Shop = () => {
         q: '',
         sortBy: 'featured',
         perPage: 9,
-        page: 1
-      })
+        page: 1,
+      }),
     );
   }, [dispatch]);
 

@@ -1,8 +1,8 @@
 import mock from '../mock';
 import {ITask} from '../../views/apps/todo/interfaces/ITask';
-import {IBoard} from '../../domains/interfaces/IBoard';
+import {IBoard} from '../../views/apps/kanban/models/IBoard';
 const now = new Date();
-const dayAfterTomorrow = now.setDate(now.getDate() + 2);
+const dayAfterTomorrow = new Date(now.setDate(now.getDate() + 2));
 
 const changeIndex = (arr: ITask[], fromIndex: number, toIndex: number) => {
   const element = arr[fromIndex];

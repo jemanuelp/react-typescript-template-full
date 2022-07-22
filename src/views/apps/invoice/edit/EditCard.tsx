@@ -1,19 +1,26 @@
 import { useState } from 'react';
 import Flatpickr from 'react-flatpickr';
-import Repeater from 'src/@core/components/repeater';
+import Repeater from '../../../../@core/components/repeater';
 import { SlideDown } from 'react-slidedown';
 import { X, Plus, Hash } from 'react-feather';
 import { Row, Col, Card, Input, Label, Button, CardBody, CardText, InputGroup, InputGroupText } from 'reactstrap';
 import 'react-slidedown/lib/slidedown.css';
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/base/pages/app-invoice.scss';
+import '../../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../../@core/scss/base/pages/app-invoice.scss';
+import {InvoicePaymentDetail} from '../models/InvoicePaymentDetail';
 
-const InvoiceEditCard = ({ data }) => {
+export class InvoiceEditCardProps {
+  data: InvoicePaymentDetail = {} as InvoicePaymentDetail;
+}
+
+const InvoiceEditCard = ({ data }: InvoiceEditCardProps) => {
   const [count, setCount] = useState(1);
-  const [picker, setPicker] = useState(new Date(data.invoice.issuedDate));
-  const [dueDatepicker, setDueDatePicker] = useState(new Date(data.invoice.dueDate));
+  const [picker, setPicker] = useState<Date[]>([new Date(data.invoice.issuedDate)]);
+  const [dueDatepicker, setDueDatePicker] = useState<Date[]>(
+    [new Date(data.invoice.dueDate)],
+  );
 
-  const deleteForm = e => {
+  const deleteForm = (e: any) => {
     e.preventDefault();
     e.target.closest('.repeater-wrapper').remove();
   };
@@ -169,7 +176,7 @@ const InvoiceEditCard = ({ data }) => {
       {/* Product Details */}
       <CardBody className='invoice-padding invoice-product-details'>
         <Repeater count={count}>
-          {i => {
+          {(i: number) => {
             const Tag = i === 0 ? 'div' : SlideDown;
             return (
               <Tag key={i} className='repeater-wrapper'>
@@ -276,6 +283,10 @@ const InvoiceEditCard = ({ data }) => {
       {/* /Invoice Note */}
     </Card>
   );
+};
+
+InvoiceEditCard.defaultProps = {
+  data: [],
 };
 
 export default InvoiceEditCard;

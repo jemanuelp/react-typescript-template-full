@@ -1,125 +1,127 @@
-import { useRTL } from '@hooks/useRTL';
 import wNumb from 'wnumb';
 import classnames from 'classnames';
 import { Star } from 'react-feather';
 import Nouislider from 'nouislider-react';
 import { Card, CardBody, Row, Col, Input, Button, Label } from 'reactstrap';
-import 'src/@core/scss/react/libs/noui-slider/noui-slider.scss';
+import '../../../../@core/scss/react/libs/noui-slider/noui-slider.scss';
+import {useRTL} from '../../../../utility/hooks/useRTL';
 
-const Sidebar = props => {
+export type SidebarProps = {
+  sidebarOpen: boolean;
+}
+
+const Sidebar = (props: SidebarProps) => {
   const { sidebarOpen } = props;
-  
-  const [isRtl] = useRTL();
+  const {isRtl} = useRTL();
 
-  // ** Array of categories
   const categories = [
     {
       id: 'appliances',
       title: 'Appliances',
-      defaultChecked: true
+      defaultChecked: true,
     },
     {
       id: 'audio',
-      title: 'Audio'
+      title: 'Audio',
     },
     {
       id: 'camera-camcorders',
-      title: 'Camera & Camcorders'
+      title: 'Camera & Camcorders',
     },
     {
       id: 'car-electronics',
-      title: 'Car Electronics & Gps'
+      title: 'Car Electronics & Gps',
     },
     {
       id: 'cellphones',
-      title: 'Cell Phones'
+      title: 'Cell Phones',
     },
     {
       id: 'computers',
-      title: 'Computers & Tablets'
+      title: 'Computers & Tablets',
     },
     {
       id: 'health-fitness-beauty',
-      title: 'Health, Fitness & Beauty'
+      title: 'Health, Fitness & Beauty',
     },
     {
       id: 'office-school',
-      title: 'Office & School Supplies'
+      title: 'Office & School Supplies',
     },
     {
       id: 'tv-home-theater',
-      title: 'TV & Home Theater'
+      title: 'TV & Home Theater',
     },
     {
       id: 'video-games',
-      title: 'Video Games'
-    }
+      title: 'Video Games',
+    },
   ];
 
   // ** Array of brands
   const brands = [
     {
       title: 'Insignia™',
-      total: 746
+      total: 746,
     },
     {
       title: 'Samsung',
       total: 633,
-      checked: true
+      checked: true,
     },
     {
       title: 'Metra',
-      total: 591
+      total: 591,
     },
     {
       title: 'HP',
-      total: 530
+      total: 530,
     },
     {
       title: 'Apple',
       total: 422,
-      checked: true
+      checked: true,
     },
     {
       title: 'GE',
-      total: 394
+      total: 394,
     },
     {
       title: 'Sony',
-      total: 350
+      total: 350,
     },
     {
       title: 'Incipio',
-      total: 320
+      total: 320,
     },
     {
       title: 'KitchenAid',
-      total: 318
+      total: 318,
     },
     {
       title: 'Whirlpool',
-      total: 298
-    }
+      total: 298,
+    },
   ];
 
   // ** Array of ratings
   const ratings = [
     {
       ratings: 4,
-      total: 160
+      total: 160,
     },
     {
       ratings: 3,
-      total: 176
+      total: 176,
     },
     {
       ratings: 2,
-      total: 291
+      total: 291,
     },
     {
       ratings: 1,
-      total: 190
-    }
+      total: 190,
+    },
   ];
 
   return (
@@ -127,7 +129,7 @@ const Sidebar = props => {
       <div className='sidebar'>
         <div
           className={classnames('sidebar-shop', {
-            show: sidebarOpen
+            show: sidebarOpen,
           })}
         >
           <Row>
@@ -151,7 +153,7 @@ const Sidebar = props => {
                   <li>
                     <div className='form-check'>
                       <Input type='radio' id='10-dollars-below' name='price-range-radio' />
-                      <Label className='form-check-label' for='10-dollars-below'>{`<=$10`}</Label>
+                      <Label className='form-check-label' for='10-dollars-below'>{'<=$10'}</Label>
                     </div>
                   </li>
                   <li>
@@ -173,7 +175,7 @@ const Sidebar = props => {
                   <li>
                     <div className='form-check'>
                       <Input type='radio' id='500-dollars-above' name='price-range-radio' />
-                      <Label className='form-check-label' for='500-dollars-above'>{`>=$500`}</Label>
+                      <Label className='form-check-label' for='500-dollars-above'>{'>=$500'}</Label>
                     </div>
                   </li>
                 </ul>
@@ -188,11 +190,11 @@ const Sidebar = props => {
                     connect={true}
                     tooltips={[true, true]}
                     format={wNumb({
-                      decimals: 0
+                      decimals: 0,
                     })}
                     range={{
                       min: 51,
-                      max: 5000
+                      max: 5000,
                     }}
                   />
                 </div>
@@ -244,13 +246,13 @@ const Sidebar = props => {
                     <div key={item.total} className='ratings-list'>
                       <a href='/' onClick={e => e.preventDefault()}>
                         <ul className='unstyled-list list-inline'>
-                          {new Array(5).fill().map((listItem, index) => {
+                          {new Array(5).fill(1).map((listItem, index) => {
                             return (
                               <li key={index} className='ratings-list-item me-25'>
                                 <Star
                                   className={classnames({
                                     'filled-star': index + 1 <= item.ratings,
-                                    'unfilled-star': index + 1 > item.ratings
+                                    'unfilled-star': index + 1 > item.ratings,
                                   })}
                                 />
                               </li>

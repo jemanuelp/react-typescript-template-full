@@ -76,7 +76,6 @@ const VerticalLayout = (props: any) => {
     }
   }, [windowWidth]);
 
-  //** ComponentDidMount
   useEffect(() => {
     setIsMounted(true);
     return () => setIsMounted(false);

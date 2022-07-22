@@ -1,10 +1,13 @@
-import Sidebar from 'src/@core/components/sidebar';
-
+import Sidebar from '../../../../@core/components/sidebar';
 import { Link } from 'react-feather';
-
 import { Form, Input, Label, Badge, Button } from 'reactstrap';
 
-const SidebarSendInvoice = ({ open, toggleSidebar }) => {
+export type SidebarProps = {
+  open: boolean;
+  toggleSidebar: () => void;
+}
+
+const SidebarSendInvoice = ({ open, toggleSidebar }: SidebarProps) => {
   return (
     <Sidebar
       size='lg'

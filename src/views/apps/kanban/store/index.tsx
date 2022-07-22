@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {InitialStateKanban} from '../models/InitialStateKanban';
+import {ITask} from '../../todo/interfaces/ITask';
 
 // ** Fetch Boards
 export const fetchBoards = createAsyncThunk('appKanban/fetchBoards', async() => {
@@ -14,7 +16,7 @@ export const fetchTasks = createAsyncThunk('appKanban/fetchTasks', async() => {
   return response.data;
 });
 
-export const updateTask = createAsyncThunk('appKanban/updateTask', async(data, { dispatch }) => {
+export const updateTask = createAsyncThunk('appKanban/updateTask', async(data: any, { dispatch }) => {
   const response = await axios.post('/apps/kanban/update-task', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -22,7 +24,7 @@ export const updateTask = createAsyncThunk('appKanban/updateTask', async(data, {
   return response.data;
 });
 
-export const addBoard = createAsyncThunk('appKanban/addBoard', async(data, { dispatch }) => {
+export const addBoard = createAsyncThunk('appKanban/addBoard', async(data: { id: string, title: string }, { dispatch }) => {
   const response = await axios.post('/apps/kanban/add-board', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -30,7 +32,7 @@ export const addBoard = createAsyncThunk('appKanban/addBoard', async(data, { dis
   return response.data;
 });
 
-export const addTask = createAsyncThunk('appKanban/addTask', async(data, { dispatch }) => {
+export const addTask = createAsyncThunk('appKanban/addTask', async(data: any, { dispatch }) => {
   const response = await axios.post('/apps/kanban/add-task', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -38,7 +40,7 @@ export const addTask = createAsyncThunk('appKanban/addTask', async(data, { dispa
   return response.data;
 });
 
-export const clearTasks = createAsyncThunk('appKanban/clearTasks', async(id, { dispatch }) => {
+export const clearTasks = createAsyncThunk('appKanban/clearTasks', async(id: string, { dispatch }) => {
   const response = await axios.delete('/apps/kanban/clear-tasks', { data: id });
 
   await dispatch(fetchBoards());
@@ -47,7 +49,7 @@ export const clearTasks = createAsyncThunk('appKanban/clearTasks', async(id, { d
   return response;
 });
 
-export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', async(data, { dispatch }) => {
+export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', async(data: any, { dispatch }) => {
   const response = await axios.post('/apps/kanban/update-task-board', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -55,7 +57,7 @@ export const updateTaskBoard = createAsyncThunk('appKanban/updateTaskBoard', asy
   return response.data;
 });
 
-export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async(data, { dispatch }) => {
+export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async(data: any, { dispatch }) => {
   const response = await axios.post('/apps/kanban/reorder-tasks', { data });
   await dispatch(fetchBoards());
   await dispatch(fetchTasks());
@@ -63,7 +65,7 @@ export const reorderTasks = createAsyncThunk('appKanban/reorder-tasks', async(da
   return response.data;
 });
 
-export const deleteBoard = createAsyncThunk('appKanban/deleteBoard', async(id, { dispatch }) => {
+export const deleteBoard = createAsyncThunk('appKanban/deleteBoard', async(id: string, { dispatch }) => {
   const response = await axios.delete('/apps/kanban/delete-board', { data: id });
 
   await dispatch(fetchBoards());
@@ -72,13 +74,15 @@ export const deleteBoard = createAsyncThunk('appKanban/deleteBoard', async(id, {
   return response;
 });
 
+const initialState: InitialStateKanban = {
+  tasks: [],
+  boards: [],
+  selectedTask: null,
+};
+
 export const appKanbanSlice = createSlice({
   name: 'appKanban',
-  initialState: {
-    tasks: [],
-    boards: [],
-    selectedTask: null,
-  },
+  initialState,
   reducers: {
     handleSelectTask: (state, action) => {
       state.selectedTask = action.payload;

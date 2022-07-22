@@ -14,7 +14,6 @@ const NavbarSearch = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [navbarSearch, setNavbarSearch] = useState(false);
 
-  // ** ComponentDidMount
   useEffect(() => {
     axios.get('/api/main-search/data').then(({ data }) => {
       setSuggestions(data.searchArr);

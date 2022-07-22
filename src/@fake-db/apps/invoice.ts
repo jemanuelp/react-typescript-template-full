@@ -1,9 +1,10 @@
 import mock from '../mock';
 import { paginateArray } from '../utils';
-import {IInvoice} from '../../views/apps/invoice/interfaces/IInvoice';
+import {IInvoice} from '../../views/apps/invoice/models/IInvoice';
 import {ISearch} from '../../domains/interfaces/ISearch';
 import {AxiosRequestConfig} from 'axios';
-import {IInvoices} from '../../views/apps/invoice/interfaces/IInvoices';
+import {IInvoices} from '../../views/apps/invoice/models/IInvoices';
+import {InvoicePaymentDetail} from '../../views/apps/invoice/models/InvoicePaymentDetail';
 
 const data: IInvoices = {
   invoices: [
@@ -980,7 +981,7 @@ mock.onGet(/\/api\/invoice\/invoices\/\d+/).reply(config => {
   const invoiceId = Number(index + 1);
 
   const invoiceIndex = data.invoices.findIndex(e => e.id === invoiceId);
-  const responseData = {
+  const responseData: InvoicePaymentDetail = {
     invoice: data.invoices[invoiceIndex],
     paymentDetails: {
       totalDue: '$12,110.55',

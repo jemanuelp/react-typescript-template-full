@@ -8,17 +8,37 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
-  UncontrolledButtonDropdown
+  UncontrolledButtonDropdown,
 } from 'reactstrap';
+import {ActionCreator} from '@reduxjs/toolkit';
+import {InitialStateType} from '../models/InitialStateType';
+import {getProducts} from '../store';
+import {Dispatch, SetStateAction} from 'react';
 
-const ProductsHeader = props => {
-  const { activeView, setActiveView, dispatch, getProducts, store, setSidebarOpen } = props;
+export type ProductsHeaderProps = {
+  store: InitialStateType;
+  dispatch: ActionCreator<any>;
+  activeView: string;
+  getProducts: getProducts;
+  setActiveView: Dispatch<SetStateAction<string>>;
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const ProductsHeader = (props: ProductsHeaderProps) => {
+  const {
+    activeView,
+    setActiveView,
+    dispatch,
+    getProducts,
+    store,
+    setSidebarOpen,
+  } = props;
 
   // ** Sorting obj
   const sortToggleText = {
     'price-desc': 'Highest',
     'price-asc': 'Lowest',
-    featured: 'Featured'
+    featured: 'Featured',
   };
 
   return (
@@ -37,7 +57,7 @@ const ProductsHeader = props => {
             <div className='view-options d-flex'>
               <UncontrolledButtonDropdown className='dropdown-sort'>
                 <DropdownToggle className='text-capitalize me-1' color='primary' outline caret>
-                  {sortToggleText[store.params.sortBy]}
+                  {sortToggleText[store.params.sortBy as keyof typeof sortToggleText]}
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem
@@ -64,7 +84,7 @@ const ProductsHeader = props => {
                 <Button
                   tag='label'
                   className={classnames('btn-icon view-btn grid-view-btn', {
-                    active: activeView === 'grid'
+                    active: activeView === 'grid',
                   })}
                   color='primary'
                   outline
@@ -75,7 +95,7 @@ const ProductsHeader = props => {
                 <Button
                   tag='label'
                   className={classnames('btn-icon view-btn list-view-btn', {
-                    active: activeView === 'list'
+                    active: activeView === 'list',
                   })}
                   color='primary'
                   outline

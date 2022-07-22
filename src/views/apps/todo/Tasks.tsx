@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Avatar from '../../../@core/components/avatar';
-import blankAvatar from 'src/assets/images/avatars/avatar-blank.png';
+import blankAvatar from '../../../../src/assets/images/avatars/avatar-blank.png';
 import classnames from 'classnames';
 import { ReactSortable } from 'react-sortablejs';
 import PerfectScrollbar from 'react-perfect-scrollbar';

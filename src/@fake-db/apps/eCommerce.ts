@@ -1,8 +1,9 @@
 import mock from '../mock';
 import {getRandomInt, paginateArray, randomDate, sortCompare} from '../utils';
 import {ColorOptionsTypes} from '../../domains/enums/ColorOptionsTypes';
-import {IEcommerce} from '../../views/apps/ecommerce/interfaces/IEcommerce';
+import {IEcommerce} from '../../views/apps/ecommerce/models/IEcommerce';
 import {ISearch} from '../../domains/interfaces/ISearch';
+import {UserWishlist} from '../../views/apps/ecommerce/models/UserWishlist';
 
 const nextDay = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
 const nextWeek = new Date(nextDay.getTime() + (7 * 24 * 60 * 60 * 1000));
@@ -20,6 +21,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/27.png'),
       hasFreeShipping: true,
       rating: 2,
+      colorOptions: [],
     },
     {
       id: 2,
@@ -32,6 +34,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 5,
+      colorOptions: [],
     },
     {
       id: 3,
@@ -44,6 +47,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/25.png'),
       hasFreeShipping: false,
       rating: 5,
+      colorOptions: [],
     },
     {
       id: 4,
@@ -56,6 +60,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/24.png'),
       hasFreeShipping: false,
       rating: 2,
+      colorOptions: [],
     },
     {
       id: 5,
@@ -67,6 +72,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/23.png'),
       hasFreeShipping: false,
       rating: 2,
+      colorOptions: [],
     },
     {
       id: 6,
@@ -79,6 +85,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/22.png'),
       hasFreeShipping: false,
       rating: 4,
+      colorOptions: [],
     },
     {
       id: 7,
@@ -91,6 +98,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/21.png'),
       hasFreeShipping: false,
       rating: 3,
+      colorOptions: [],
     },
     {
       id: 8,
@@ -103,6 +111,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/20.png'),
       hasFreeShipping: false,
       rating: 1,
+      colorOptions: [],
     },
     {
       id: 9,
@@ -115,6 +124,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/19.png'),
       hasFreeShipping: false,
       rating: 5,
+      colorOptions: [],
     },
     {
       id: 10,
@@ -127,6 +137,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/18.png'),
       hasFreeShipping: false,
       rating: 1,
+      colorOptions: [],
     },
     {
       id: 11,
@@ -139,6 +150,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/17.png'),
       hasFreeShipping: false,
       rating: 3,
+      colorOptions: [],
     },
     {
       id: 12,
@@ -151,6 +163,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/16.png'),
       hasFreeShipping: false,
       rating: 5,
+      colorOptions: [],
     },
     {
       id: 13,
@@ -163,6 +176,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/15.png'),
       hasFreeShipping: false,
       rating: 5,
+      colorOptions: [],
     },
     {
       id: 14,
@@ -175,6 +189,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/14.png'),
       hasFreeShipping: false,
       rating: 3,
+      colorOptions: [],
     },
     {
       id: 15,
@@ -187,6 +202,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/13.png'),
       hasFreeShipping: false,
       rating: 2,
+      colorOptions: [],
     },
     {
       id: 16,
@@ -199,6 +215,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/12.png'),
       hasFreeShipping: false,
       rating: 3,
+      colorOptions: [],
     },
     {
       id: 17,
@@ -211,6 +228,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/11.png'),
       hasFreeShipping: false,
       rating: 1,
+      colorOptions: [],
     },
     {
       id: 18,
@@ -223,6 +241,7 @@ const data: IEcommerce = {
       image: require('../../../src/assets/images/pages/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
+      colorOptions: [],
     },
     {
       id: 19,
@@ -238,6 +257,7 @@ const data: IEcommerce = {
     makes single-handed use a real challenge. It has a massive 6.67-inch ‘Fluid AMOLED’ display with a QHD+
     resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks
     and has good viewing angles.`,
+      colorOptions: [],
     },
     {
       id: 20,
@@ -251,6 +271,7 @@ const data: IEcommerce = {
       description: `Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality
     and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.
     You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.`,
+      colorOptions: [],
     },
     {
       id: 21,
@@ -264,6 +285,7 @@ const data: IEcommerce = {
       description: `Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use
     voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with
     Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.`,
+      colorOptions: [],
     },
     {
       id: 22,
@@ -278,6 +300,7 @@ const data: IEcommerce = {
     generation, but it's also sturdy, feels good to play with, has an excellent direction pad, and features
     impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don't need an
     adapter to use it with your PC.`,
+      colorOptions: [],
     },
     {
       id: 23,
@@ -292,6 +315,7 @@ const data: IEcommerce = {
     fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,
     light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,
     better.`,
+      colorOptions: [],
     },
     {
       id: 24,
@@ -306,6 +330,7 @@ const data: IEcommerce = {
     podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice
     activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device
     turns any home into a smart device on a smartphone or tablet.`,
+      colorOptions: [],
     },
     {
       id: 25,
@@ -321,6 +346,7 @@ const data: IEcommerce = {
     experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video
     capabilities, and an even more stunning Retina 5K display. It’s the desktop that does it all — better and faster
     than ever.`,
+      colorOptions: [],
     },
     {
       id: 26,
@@ -335,6 +361,7 @@ const data: IEcommerce = {
     waterproof and dustproof body which is the key attraction of the device. The excellent set of cameras offer
     excellent images as well as capable of recording crisp videos. However, expandable storage and a fingerprint
     scanner would have made it a perfect option to go for around this price range.`,
+      colorOptions: [],
     },
     {
       id: 27,
@@ -350,11 +377,12 @@ const data: IEcommerce = {
     better navigate their day, while international emergency calling1 allows customers to call emergency services
     directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available
     in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.`,
+      colorOptions: [],
     },
   ],
   userWishlist: [
-    { id: 1, productId: 26 },
-    { id: 2, productId: 23 },
+    { id: 1, productId: 26, rating: 0, isInCart: false },
+    { id: 2, productId: 23, rating: 0, isInCart: false },
   ],
   userCart: [
     { id: 1, productId: 27, qty: 1 },
@@ -542,10 +570,8 @@ mock.onPost('/apps/ecommerce/wishlist').reply(config => {
   let lastId = 0;
   if (length) lastId = data.userWishlist[length - 1].id;
 
-  data.userWishlist.push({
-    id: lastId + 1,
-    productId: Number(productId),
-  });
+  const userWish = new UserWishlist((lastId + 1), Number(productId));
+  data.userWishlist.push(userWish);
 
   return [201];
 });

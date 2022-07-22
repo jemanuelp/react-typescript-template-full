@@ -2,14 +2,14 @@ import { Fragment, useState } from 'react';
 import { Row, Col, Button, Input, Label, InputGroup, InputGroupText } from 'reactstrap';
 import Cleave from 'cleave.js/react';
 import { Check, X, ArrowLeft, ArrowRight } from 'react-feather';
-import jcbCC from 'src/assets/images/icons/payments/jcb-cc.png';
-import amexCC from 'src/assets/images/icons/payments/amex-cc.png';
-import uatpCC from 'src/assets/images/icons/payments/uatp-cc.png';
-import visaCC from 'src/assets/images/icons/payments/visa-cc.png';
-import dinersCC from 'src/assets/images/icons/payments/diners-cc.png';
-import maestroCC from 'src/assets/images/icons/payments/maestro-cc.png';
-import discoverCC from 'src/assets/images/icons/payments/discover-cc.png';
-import mastercardCC from 'src/assets/images/icons/payments/mastercard-cc.png';
+import jcbCC from '../../../../../src/assets/images/icons/payments/jcb-cc.png';
+import amexCC from '../../../../../src/assets/images/icons/payments/amex-cc.png';
+import uatpCC from '../../../../../src/assets/images/icons/payments/uatp-cc.png';
+import visaCC from '../../../../../src/assets/images/icons/payments/visa-cc.png';
+import dinersCC from '../../../../../src/assets/images/icons/payments/diners-cc.png';
+import maestroCC from '../../../../../src/assets/images/icons/payments/maestro-cc.png';
+import discoverCC from '../../../../../src/assets/images/icons/payments/discover-cc.png';
+import mastercardCC from '../../../../../src/assets/images/icons/payments/mastercard-cc.png';
 
 const cardsObj = {
   jcb: jcbCC,

@@ -6,7 +6,7 @@ import {MoreVertical, Send, Image} from 'react-feather';
 
 import {Card, CardHeader, Form, Label, InputGroup, Input, InputGroupText, Button} from 'reactstrap';
 
-import profilePic from 'src/assets/images/portrait/small/avatar-s-11.jpg';
+import profilePic from '../../../../../src/assets/images/portrait/small/avatar-s-11.jpg';
 
 import '../../../../@core/scss/base/pages/app-chat-list.scss';
 import {IChat} from '../../../apps/chat/interfaces/IChat';
@@ -56,7 +56,7 @@ const data: { chat: IChats, contact: IChatContactFather } = {
   contact: {
     id: 1,
     fullName: 'Felecia Rower',
-    avatar: require('src/assets/images/portrait/small/avatar-s-20.jpg'),
+    avatar: require('../../../../../src/assets/images/portrait/small/avatar-s-20.jpg'),
     status: 'away',
   },
 };

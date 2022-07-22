@@ -2,8 +2,25 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { Star, ShoppingCart, Heart } from 'react-feather';
 import { Card, CardBody, CardText, Button, Badge } from 'reactstrap';
+import {InitialStateType} from '../models/InitialStateType';
+import {ActionCreator} from '@reduxjs/toolkit';
+import {addToCart, addToWishlist, deleteCartItem, deleteWishlistItem, getCartItems, getProducts} from '../store';
+import {ProductType} from '../models/ProductType';
 
-const ProductCards = props => {
+export type ProductCardProps = {
+  store: InitialStateType;
+  dispatch: ActionCreator<any>;
+  addToCart: addToCart;
+  activeView: string;
+  products: ProductType[];
+  getProducts: getProducts;
+  getCartItems: getCartItems;
+  addToWishlist: addToWishlist;
+  deleteCartItem: deleteCartItem;
+  deleteWishlistItem: deleteWishlistItem;
+}
+
+const ProductCards = (props: ProductCardProps) => {
   const {
     store,
     products,
@@ -13,20 +30,19 @@ const ProductCards = props => {
     getProducts,
     getCartItems,
     addToWishlist,
-    deleteWishlistItem
+    deleteWishlistItem,
   } = props;
 
   // ** Handle Move/Add to cart
-  const handleCartBtn = (id, val) => {
-    if (val === false) {
+  const handleCartBtn = (id: number, val: boolean = false) => {
+    if (!val) {
       dispatch(addToCart(id));
     }
     dispatch(getCartItems());
     dispatch(getProducts(store.params));
   };
 
-  // ** Handle Wishlist item toggle
-  const handleWishlistClick = (id, val) => {
+  const handleWishlistClick = (id: number, val: boolean = false) => {
     if (val) {
       dispatch(deleteWishlistItem(id));
     } else {
@@ -35,10 +51,9 @@ const ProductCards = props => {
     dispatch(getProducts(store.params));
   };
 
-  // ** Renders products
   const renderProducts = () => {
     if (products.length) {
-      return products.map(item => {
+      return products.map((item: ProductType) => {
         const CartBtnTag = item.isInCart ? Link : 'button';
 
         return (
@@ -52,13 +67,13 @@ const ProductCards = props => {
               <div className='item-wrapper'>
                 <div className='item-rating'>
                   <ul className='unstyled-list list-inline'>
-                    {new Array(5).fill().map((listItem, index) => {
+                    {new Array(5).fill(1).map((listItem, index) => {
                       return (
                         <li key={index} className='ratings-list-item me-25'>
                           <Star
                             className={classnames({
                               'filled-star': index + 1 <= item.rating,
-                              'unfilled-star': index + 1 > item.rating
+                              'unfilled-star': index + 1 > item.rating,
                             })}
                           />
                         </li>
@@ -87,11 +102,13 @@ const ProductCards = props => {
               <div className='item-wrapper'>
                 <div className='item-cost'>
                   <h4 className='item-price'>${item.price}</h4>
-                  {item.hasFreeShipping ? (
-                    <CardText className='shipping'>
-                      <Badge color='light-success'>Free Shipping</Badge>
-                    </CardText>
-                  ) : null}
+                  {item.hasFreeShipping ?
+                    (
+                      <CardText className='shipping'>
+                        <Badge color='light-success'>Free Shipping</Badge>
+                      </CardText>
+                    ) :
+                    null}
                 </div>
               </div>
               <Button
@@ -101,7 +118,7 @@ const ProductCards = props => {
               >
                 <Heart
                   className={classnames('me-50', {
-                    'text-danger': item.isInWishlist
+                    'text-danger': item.isInWishlist,
                   })}
                   size={14}
                 />
@@ -113,9 +130,11 @@ const ProductCards = props => {
                 className='btn-cart move-cart'
                 onClick={() => handleCartBtn(item.id, item.isInCart)}
                 
-                {...(item.isInCart ? {
-                      to: '/apps/ecommerce/checkout'
-                    } : {})}
+                {...(item.isInCart ?
+                  {
+                    to: '/apps/ecommerce/checkout',
+                  } :
+                  {})}
               >
                 <ShoppingCart className='me-50' size={14} />
                 <span>{item.isInCart ? 'View In Cart' : 'Add To Cart'}</span>
@@ -131,7 +150,7 @@ const ProductCards = props => {
     <div
       className={classnames({
         'grid-view': activeView === 'grid',
-        'list-view': activeView === 'list'
+        'list-view': activeView === 'list',
       })}
     >
       {renderProducts()}

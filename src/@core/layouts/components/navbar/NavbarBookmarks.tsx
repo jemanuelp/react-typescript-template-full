@@ -32,7 +32,6 @@ const NavbarBookmarks = (props: any) => {
   const dispatch = useDispatch();
   const store = useSelector((state: RootState) => state.navbar);
 
-  // ** ComponentDidMount
   useEffect(() => {
     getBookmarks();
   }, []);

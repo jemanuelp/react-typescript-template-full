@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
-
 import { Row, Col, Table } from 'reactstrap';
-
-import 'src/@core/scss/base/pages/app-invoice-print.scss';
+import '../../../../@core/scss/base/pages/app-invoice-print.scss';
 
 const Print = () => {
-  // ** Print on mount
   useEffect(() => {
     setTimeout(() => window.print(), 50);
   }, []);
@@ -205,6 +202,7 @@ const Print = () => {
         <Col sm='12'>
           <span className='fw-bold'>Note:</span>
           <span>
+            {/* eslint-disable-next-line max-len */}
             It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
             projects. Thank You!
           </span>

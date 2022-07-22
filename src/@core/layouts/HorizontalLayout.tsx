@@ -52,7 +52,6 @@ const HorizontalLayout = (props: any) => {
     setNavbarScrolled(false);
   };
 
-  //** ComponentDidMount
   useEffect(() => {
     setIsMounted(true);
     window.addEventListener('scroll', function() {

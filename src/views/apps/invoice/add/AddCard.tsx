@@ -13,10 +13,10 @@ import '../../../../@core/scss/react/libs/react-select/_react-select.scss';
 import '../../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
 import '../../../../@core/scss/base/pages/app-invoice.scss';
 import {CountryOptionsCard} from '../../user/interfaces/CountryOptions';
-import {IInvoice} from '../interfaces/IInvoice';
-import {ClientInterface} from '../interfaces/ClientInterface';
+import {IInvoice} from '../models/IInvoice';
+import {ClientInterface} from '../models/ClientInterface';
 import {ISelectedOption} from '../../../../domains/interfaces/ISelectedOption';
-import {IInvoices} from '../interfaces/IInvoices';
+import {IInvoices} from '../models/IInvoices';
 import {SizeTypes} from '../../../../domains/enums/SizeTypes';
 
 const AddCard = () => {

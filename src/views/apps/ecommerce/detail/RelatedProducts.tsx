@@ -1,21 +1,19 @@
 import { Fragment } from 'react';
-
 import classnames from 'classnames';
 import { Star } from 'react-feather';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CardText } from 'reactstrap';
-import img1 from 'src/assets/images/elements/apple-watch.png';
-import img2 from 'src/assets/images/elements/macbook-pro.png';
-import img3 from 'src/assets/images/elements/homepod.png';
-import img4 from 'src/assets/images/elements/magic-mouse.png';
-import img5 from 'src/assets/images/elements/iphone-x.png';
-
-import 'src/@core/scss/react/libs/swiper/swiper.scss';
+import img1 from '../../../../../src/assets/images/elements/apple-watch.png';
+import img2 from '../../../../../src/assets/images/elements/macbook-pro.png';
+import img3 from '../../../../../src/assets/images/elements/homepod.png';
+import img4 from '../../../../../src/assets/images/elements/magic-mouse.png';
+import img5 from '../../../../../src/assets/images/elements/iphone-x.png';
+import '../../../../@core/scss/react/libs/swiper/swiper.scss';
 
 const RelatedProducts = () => {
   SwiperCore.use([Navigation]);
-
+  
   // ** Related products Slides
   const slides = [
     {
@@ -23,36 +21,36 @@ const RelatedProducts = () => {
       brand: 'Apple',
       ratings: 4,
       price: 399.98,
-      img: img1
+      img: img1,
     },
     {
       name: 'Apple MacBook Pro - Silver',
       brand: 'Apple',
       ratings: 2,
       price: 2449.49,
-      img: img2
+      img: img2,
     },
     {
       name: 'Apple HomePod (Space Grey)',
       brand: 'Apple',
       ratings: 3,
       price: 229.29,
-      img: img3
+      img: img3,
     },
     {
       name: 'Magic Mouse 2 - Black',
       brand: 'Apple',
       ratings: 3,
       price: 90.98,
-      img: img4
+      img: img4,
     },
     {
       name: 'iPhone 12 Pro',
       brand: 'Apple',
       ratings: 4,
       price: 1559.99,
-      img: img5
-    }
+      img: img5,
+    },
   ];
 
   // ** Slider params
@@ -64,21 +62,21 @@ const RelatedProducts = () => {
     breakpoints: {
       1600: {
         slidesPerView: 4,
-        spaceBetween: 55
+        spaceBetween: 55,
       },
       1300: {
         slidesPerView: 3,
-        spaceBetween: 55
+        spaceBetween: 55,
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 55
+        spaceBetween: 55,
       },
       320: {
         slidesPerView: 1,
-        spaceBetween: 55
-      }
-    }
+        spaceBetween: 55,
+      },
+    },
   };
 
   return (
@@ -101,13 +99,13 @@ const RelatedProducts = () => {
                 </div>
                 <div className='item-meta'>
                   <ul className='unstyled-list list-inline mb-25'>
-                    {new Array(5).fill().map((listItem, index) => {
+                    {new Array(5).fill(slide.price).map((listItem, index) => {
                       return (
                         <li key={index} className='ratings-list-item me-25'>
                           <Star
                             className={classnames({
                               'filled-star': index + 1 <= slide.ratings,
-                              'unfilled-star': index + 1 > slide.ratings
+                              'unfilled-star': index + 1 > slide.ratings,
                             })}
                           />
                         </li>

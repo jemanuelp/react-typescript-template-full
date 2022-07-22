@@ -1,36 +1,41 @@
 import { useState, useEffect, Fragment } from 'react';
-
 import { Input, Button, FormText, DropdownMenu, DropdownItem, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
-
-// ** Third Party Imports
 import { ReactSortable } from 'react-sortablejs';
 import { useForm, Controller } from 'react-hook-form';
 import { Plus, MoreVertical } from 'react-feather';
-
 import { useDispatch } from 'react-redux';
-
-// ** Actions
 import { addTask, clearTasks, deleteBoard, reorderTasks, updateTaskBoard } from './store';
-
 import KanbanTasks from './KanbanTasks';
-// ** Kanban Component
+import {IBoard} from './models/IBoard';
+import {InitialStateKanban} from './models/InitialStateKanban';
+import {LabelColorClass, LabelColors} from './models/LabelColors';
 
 const defaultValues = {
-  taskTitle: ''
+  taskTitle: '',
 };
 
-const KanbanBoard = props => {
+export type KanbanBoardProps = {
+  store: InitialStateKanban;
+  board: IBoard;
+  labelColors: LabelColorClass;
+  isLastBoard: boolean;
+  key: string;
+  index: string;
+  handleTaskSidebarToggle: Function;
+}
+
+const KanbanBoard = (props: KanbanBoardProps) => {
   const { board, index, store, labelColors, handleTaskSidebarToggle } = props;
 
-  const [title, setTitle] = useState('');
-  const [showAddTask, setShowAddTask] = useState(null);
+  const [title, setTitle] = useState<string>('');
+  const [showAddTask, setShowAddTask] = useState<string | null>(null);
   
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const {
     reset,
     control,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ defaultValues });
 
   useEffect(() => {
@@ -55,69 +60,71 @@ const KanbanBoard = props => {
     dispatch(deleteBoard(board.id));
   };
 
-  const handleAddTaskFormSubmit = data => {
+  const handleAddTaskFormSubmit = (data: any) => {
     dispatch(addTask({ title: data.taskTitle, boardId: board.id }));
     handleAddTaskReset();
   };
 
   const renderAddTaskForm = () => {
-    return board.id === showAddTask ? (
-      <form onSubmit={handleSubmit(handleAddTaskFormSubmit)}>
-        <div className='mb-1'>
-          <Controller
-            name='taskTitle'
-            control={control}
-            rules={{ required: true }}
-            render={({ field: { value, onChange } }) => (
-              <Input
-                autoFocus
-                rows='2'
-                value={value}
-                type='textarea'
-                id='task-title'
-                onChange={onChange}
-                placeholder='Add Content'
-                invalid={errors.taskTitle && true}
-                aria-describedby='validation-add-task'
-              />
-            )}
-          />
-          {errors.taskTitle && (
-            <FormText color='danger' id='validation-add-task'>
+    return board.id === showAddTask ?
+      (
+        <form onSubmit={handleSubmit(handleAddTaskFormSubmit)}>
+          <div className='mb-1'>
+            <Controller
+              name='taskTitle'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <Input
+                  autoFocus
+                  rows='2'
+                  value={value}
+                  type='textarea'
+                  id='task-title'
+                  onChange={onChange}
+                  placeholder='Add Content'
+                  invalid={errors.taskTitle && true}
+                  aria-describedby='validation-add-task'
+                />
+              )}
+            />
+            {errors.taskTitle && (
+              <FormText color='danger' id='validation-add-task'>
               Please enter a valid Task Title
-            </FormText>
-          )}
-        </div>
-        <div>
-          <Button color='primary' size='sm' type='submit' className='me-75'>
+              </FormText>
+            )}
+          </div>
+          <div>
+            <Button color='primary' size='sm' type='submit' className='me-75'>
             Add
-          </Button>
-          <Button outline size='sm' color='secondary' onClick={handleAddTaskReset}>
+            </Button>
+            <Button outline size='sm' color='secondary' onClick={handleAddTaskReset}>
             Cancel
-          </Button>
-        </div>
-      </form>
-    ) : null;
+            </Button>
+          </div>
+        </form>
+      ) :
+      null;
   };
 
-  const sortTaskOnSameBoard = ev => {
+  const sortTaskOnSameBoard = (ev: any) => {
     if (ev.from.classList[1] === ev.to.classList[1]) {
       dispatch(
         reorderTasks({
           taskId: ev.item.dataset.taskId,
-          targetTaskId: ev.originalEvent.target.dataset.taskId
-        })
+          targetTaskId: ev.originalEvent.target.dataset.taskId,
+        }),
       );
     }
   };
 
-  const MoveTaskToAnotherBoard = ev => {
+  const MoveTaskToAnotherBoard = (ev: any) => {
     dispatch(
       updateTaskBoard({
         taskId: ev.item.dataset.taskId,
         boardId: ev.item.dataset.boardId,
-        newBoardId: ev.to.classList[1].replace('board-', '')
-      })
+        newBoardId: ev.to.classList[1].replace('board-', ''),
+      }),
     );
   };
 
@@ -180,14 +187,16 @@ const KanbanBoard = props => {
             })}
           </ReactSortable>
 
-          {showAddTask === null || (showAddTask !== null && showAddTask !== board.id) ? (
-            <Button size='sm' color='flat-secondary' onClick={handleOpenAddTask}>
-              <Plus size={14} className='me-25' />
-              <span className='align-middle'>Add New Task</span>
-            </Button>
-          ) : (
-            renderAddTaskForm()
-          )}
+          {showAddTask === null || (showAddTask !== null && showAddTask !== board.id) ?
+            (
+              <Button size='sm' color='flat-secondary' onClick={handleOpenAddTask}>
+                <Plus size={14} className='me-25' />
+                <span className='align-middle'>Add New Task</span>
+              </Button>
+            ) :
+            (
+              renderAddTaskForm()
+            )}
         </div>
       </div>
     </Fragment>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card, CardBody, Button } from 'reactstrap';
 
-const PreviewActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
+const PreviewActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }: any) => {
   return (
     <Card className='invoice-action-wrapper'>
       <CardBody>

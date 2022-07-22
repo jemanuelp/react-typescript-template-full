@@ -1,6 +1,6 @@
 import Avatar from '../../../../@core/components/avatar';
 import { Card, CardBody, CardText, Button, Badge } from 'reactstrap';
-import profileImg from 'src/assets/images/portrait/small/avatar-s-7.jpg';
+import profileImg from '../../../../../src/assets/images/portrait/small/avatar-s-7.jpg';
 
 const CardJob = () => {
   return (

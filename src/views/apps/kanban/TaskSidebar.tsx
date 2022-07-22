@@ -1,74 +1,50 @@
-import { useState } from 'react';
-
+import {MouseEventHandler, useState} from 'react';
 import { Badge, Modal, ModalBody, Button, Form, Input, Label, FormFeedback } from 'reactstrap';
-
-import { useDispatch } from 'react-redux';
-
+import {useDispatch, useSelector} from 'react-redux';
 import Flatpickr from 'react-flatpickr';
 import { useDropzone } from 'react-dropzone';
 import { X, DownloadCloud } from 'react-feather';
 import Select, { components } from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-
-// ** Actions
 import { updateTask, handleSelectTask } from './store';
+import { selectThemeColors } from '../../../utility/Utils';
+import '../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
+import '../../../@core/scss/react/libs/react-select/_react-select.scss';
+import '../../../@core/scss/react/libs/file-uploader/file-uploader.scss';
+import {SelectedOption} from '../../../domains/interfaces/SelectedOption';
+import {LabelColorClass, LabelColors} from './models/LabelColors';
+import {ITask} from '../todo/interfaces/ITask';
+import {assigneeOptions} from './models/AsigneeOptions';
+import {labelOptions} from './models/LabelOptions';
+import {SelectedOptionImg} from '../../../domains/interfaces/SelectedOptionImg';
+import {InitialStateKanban} from './models/InitialStateKanban';
+import {RootState} from '../../../redux/reducers/RootReducer';
+import {SelectedOptionLabelColors} from '../../../domains/interfaces/SelectedOptionLabelColors';
 
-import { isObjEmpty, selectThemeColors } from 'src/utility/Utils';
+export type TaskSidebarProps = {
+  sidebarOpen: boolean;
+  labelColors: LabelColorClass;
+  selectedTask: ITask | null;
+  handleTaskSidebarToggle: any;
+}
 
-import img1 from 'src/assets/images/portrait/small/avatar-s-3.jpg';
-import img2 from 'src/assets/images/portrait/small/avatar-s-1.jpg';
-import img3 from 'src/assets/images/portrait/small/avatar-s-4.jpg';
-import img4 from 'src/assets/images/portrait/small/avatar-s-6.jpg';
-import img5 from 'src/assets/images/portrait/small/avatar-s-2.jpg';
-import img6 from 'src/assets/images/portrait/small/avatar-s-11.jpg';
-
- Imports;
-import 'src/@core/scss/react/libs/flatpickr/flatpickr.scss';
-import 'src/@core/scss/react/libs/react-select/_react-select.scss';
-import 'src/@core/scss/react/libs/file-uploader/file-uploader.scss';
-
-// ** Assignee Select Options
-const assigneeOptions = [
-  { value: 'Pheobe Buffay', label: 'Pheobe Buffay', img: img1 },
-  { value: 'Chandler Bing', label: 'Chandler Bing', img: img2 },
-  { value: 'Ross Geller', label: 'Ross Geller', img: img3 },
-  { value: 'Monica Geller', label: 'Monica Geller', img: img4 },
-  { value: 'Joey Tribbiani', label: 'Joey Tribbiani', img: img5 },
-  { value: 'Rachel Green', label: 'Rachel Green', img: img6 },
-  { value: 'Jerry Seinfeld', label: 'Jerry Seinfeld', img: img3 },
-  { value: 'Jerry Seinfeld', label: 'Jerry Seinfeld', img: img3 },
-  { value: 'Astro Kramer', label: 'Astro Kramer', img: img2 },
-  { value: 'George Costanza', label: 'George Costanza', img: img5 },
-  { value: 'Charlie Kelly', label: 'Charlie Kelly', img: img4 },
-  { value: 'Dennis Reynolds', label: 'Dennis Reynolds', img: img3 }
-];
-
-// ** Label Select Options
-const labelOptions = [
-  { value: 'UX', label: 'UX' },
-  { value: 'App', label: 'App' },
-  { value: 'Forms', label: 'Forms' },
-  { value: 'Images', label: 'Images' },
-  { value: 'Code Review', label: 'Code Review' },
-  { value: 'Charts & Maps', label: 'Charts & Maps' }
-];
-
-const TaskSidebar = props => {
+const TaskSidebar = (props: TaskSidebarProps) => {
   const { sidebarOpen, labelColors, selectedTask, handleTaskSidebarToggle } = props;
 
+  const store: InitialStateKanban = useSelector((state: RootState) => state.kanban);
   const [desc, setDesc] = useState('');
-  const [files, setFiles] = useState([]);
-  const [labels, setLabels] = useState([]);
-  const [dueDate, setDueDate] = useState(new Date());
-  const [assignedTo, setAssignedTo] = useState(null);
+  const [files, setFiles] = useState<({ name: string } | File | string)[]>([]);
+  const [labels, setLabels] = useState<SelectedOptionLabelColors[]>([]);
+  const [dueDate, setDueDate] = useState<Date>(new Date());
+  const [assignedTo, setAssignedTo] = useState<SelectedOptionImg[]>([]);
   
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     onDrop: acceptedFiles => {
       setFiles([...acceptedFiles.map(file => Object.assign(file))]);
-    }
+    },
   });
 
   const {
@@ -77,21 +53,21 @@ const TaskSidebar = props => {
     setValue,
     clearErrors,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
-    defaultValues: { title: '' }
+    defaultValues: { title: '' },
   });
 
   // ** Custom Select Components
-  const LabelOptions = ({ data, ...props }) => {
+  const LabelOptions = ({ data, ...props }: any) => {
     return (
       <components.Option {...props}>
-        <Badge color={`light-${labelColors[data.label]}`}>{data.label}</Badge>
+        <Badge color={`light-${labelColors[data.label as LabelColors]}`}>{data.label}</Badge>
       </components.Option>
     );
   };
 
-  const AssigneeComponent = ({ data, ...props }) => {
+  const AssigneeComponent = ({ data, ...props }: any) => {
     return (
       <components.Option {...props}>
         <div className='d-flex align-items-center'>
@@ -104,7 +80,7 @@ const TaskSidebar = props => {
 
   // ** Function to run when sidebar opens
   const handleSidebarOpened = () => {
-    if (!isObjEmpty(selectedTask)) {
+    if (selectedTask !== null) {
       setValue('title', selectedTask.title);
       setDueDate(selectedTask.dueDate);
       setDesc(selectedTask.description);
@@ -112,14 +88,14 @@ const TaskSidebar = props => {
         setFiles([selectedTask.coverImage]);
       }
       if (selectedTask.assignedTo.length) {
-        const arr = [];
+        const arr: SelectedOptionImg[] = [];
         selectedTask.assignedTo.map(assignee => {
           arr.push({ value: assignee.title, label: assignee.title, img: assignee.img });
         });
         setAssignedTo(arr);
       }
       if (selectedTask.labels.length) {
-        const labelsArr = [];
+        const labelsArr: SelectedOptionLabelColors[] = [];
         selectedTask.labels.map(label => {
           labelsArr.push({ value: label, label });
         });
@@ -137,13 +113,13 @@ const TaskSidebar = props => {
     setDueDate(new Date());
     clearErrors();
     dispatch(handleSelectTask({}));
-    setAssignedTo(null);
+    setAssignedTo([]);
   };
 
-  const onSubmit = data => {
+  const onSubmit = (data: { title: string }) => {
     if (data.title.length) {
-      const labelsArr = [];
-      const assignedArr = [];
+      const labelsArr: string[]  = [];
+      const assignedArr: { title: string, img: string }[] = [];
 
       if (assignedTo.length) {
         assignedTo.map(item => {
@@ -153,7 +129,7 @@ const TaskSidebar = props => {
 
       if (labels.length) {
         labels.map(label => {
-          labelsArr.push(label.label);
+          labelsArr.push(labelColors[label.label]);
         });
       }
 
@@ -165,21 +141,22 @@ const TaskSidebar = props => {
           labels: labelsArr,
           description: desc,
           assignedTo: assignedArr,
-          ...(files.length && typeof files[0] !== 'string' ? {
-                coverImage: URL.createObjectURL(files[0])
-              } : {})
-        })
+          ...(files.length && files[0] instanceof File ?
+            {
+              coverImage: URL.createObjectURL(files[0]),
+            } :
+            {}),
+        }),
       );
       handleTaskSidebarToggle();
     } else {
-      setError('title');
+      setError('title', {});
     }
   };
 
   const renderUploadedImage = () => {
     if (files.length && typeof files[0] !== 'string') {
-      // @ts-ignore
-      return files.map(file => (
+      return files.map((file: any) => (
         <img key={file.name} alt={file.name} className='single-file-image img-fluid' src={URL.createObjectURL(file)} />
       ));
     } else {
@@ -192,25 +169,27 @@ const TaskSidebar = props => {
   const handleResetFields = () => {
     setDesc('');
 
-    setValue('title', store.selectedTask.title);
-    setDueDate(store.selectedTask.dueDate);
-    if (selectedTask.assignedTo.length) {
-      const arr = [];
+    if (store.selectedTask) {
+      setValue('title', store.selectedTask.title);
+      setDueDate(store.selectedTask.dueDate);
+    }
+    if (selectedTask && selectedTask.assignedTo.length) {
+      const arr: SelectedOptionImg[] = [];
       selectedTask.assignedTo.map(assignee => {
         arr.push({ value: assignee.title, label: assignee.title, img: assignee.img });
       });
 
       setAssignedTo(arr);
     }
-    if (selectedTask.labels.length) {
-      const labels = [];
+    if (selectedTask && selectedTask.labels.length) {
+      const labels: SelectedOptionLabelColors[] = [];
       selectedTask.labels.map(label => {
         labels.push({ value: label, label });
       });
       setLabels(labels);
     }
 
-    if (selectedTask.coverImage) {
+    if (selectedTask && selectedTask.coverImage) {
       setFiles([selectedTask.coverImage]);
     } else {
       setFiles([]);
@@ -251,7 +230,10 @@ const TaskSidebar = props => {
                   />
                 )}
               />
-              {errors.title && <FormFeedback>Please enter a valid task title</FormFeedback>}
+              {
+                errors.title &&
+                  <FormFeedback>Please enter a valid task title</FormFeedback>
+              }
             </div>
             <div className='mb-1'>
               <Label className='form-label' for='due-date'>
@@ -281,7 +263,10 @@ const TaskSidebar = props => {
                 theme={selectThemeColors}
                 components={{ Option: LabelOptions }}
                 onChange={data => {
-                  setLabels(data !== null ? [...data] : []);
+                  setLabels(data !== null ?
+                    [...data] :
+                    [],
+                  );
                 }}
               />
             </div>
@@ -298,7 +283,9 @@ const TaskSidebar = props => {
                 classNamePrefix='select'
                 options={assigneeOptions}
                 theme={selectThemeColors}
-                onChange={data => setAssignedTo(data)}
+                onChange={data => setAssignedTo(data.map(item => (
+                  { value: item.value, label: item.label, img: item.img }
+                )))}
                 components={{ Option: AssigneeComponent }}
               />
             </div>
@@ -309,7 +296,9 @@ const TaskSidebar = props => {
                   <DownloadCloud size={64} />
                   <h5>Drop Files here or click to upload</h5>
                 </div>
-                {files.length ? renderUploadedImage() : null}
+                {files.length ?
+                  renderUploadedImage() :
+                  null}
               </div>
             </div>
             <div className='mb-1'>

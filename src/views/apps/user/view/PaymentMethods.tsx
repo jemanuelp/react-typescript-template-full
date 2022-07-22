@@ -52,7 +52,7 @@ const data: ICard[] = [
     badgeColor: 'primary',
     cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
-    imgSrc: require('src/assets/images/icons/payments/mastercard.png'),
+    imgSrc: require('../../../../../src/assets/images/icons/payments/mastercard.png'),
   },
   {
     cardCvc: '681',
@@ -60,7 +60,7 @@ const data: ICard[] = [
     expiryDate: '02/24',
     imgAlt: 'Visa card',
     cardNumber: '4532 3616 2070 5678',
-    imgSrc: require('src/assets/images/icons/payments/visa.png'),
+    imgSrc: require('../../../../../src/assets/images/icons/payments/visa.png'),
   },
   {
     cardCvc: '3845',
@@ -70,7 +70,7 @@ const data: ICard[] = [
     name: 'Lester Jennings',
     imgAlt: 'American Express card',
     cardNumber: '3700 000000 00002',
-    imgSrc: require('src/assets/images/icons/payments/american-ex.png'),
+    imgSrc: require('../../../../../src/assets/images/icons/payments/american-ex.png'),
   },
 ];
 

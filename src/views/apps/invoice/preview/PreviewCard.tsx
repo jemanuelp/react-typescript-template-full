@@ -1,9 +1,9 @@
-
 import { Card, CardBody, CardText, Row, Col, Table } from 'reactstrap';
+import {InvoicePaymentDetail} from '../models/InvoicePaymentDetail';
 
-const PreviewCard = ({ data }) => {
-  return data !== null ? (
-    <Card className='invoice-preview-card'>
+const PreviewCard = ({ data }: { data: InvoicePaymentDetail}) => {
+  return data !== null ?
+    (<Card className='invoice-preview-card'>
       <CardBody className='invoice-padding pb-0'>
         {/* Header */}
         <div className='d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0'>
@@ -215,6 +215,7 @@ const PreviewCard = ({ data }) => {
           <Col sm='12'>
             <span className='fw-bold'>Note: </span>
             <span>
+              {/* eslint-disable-next-line max-len */}
               It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
               projects. Thank You!
             </span>
@@ -223,7 +224,8 @@ const PreviewCard = ({ data }) => {
       </CardBody>
       {/* /Invoice Note */}
     </Card>
-  ) : null;
+    ) :
+    null;
 };
 
 export default PreviewCard;

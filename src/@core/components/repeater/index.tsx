@@ -1,6 +1,8 @@
-export interface RepeaterProptypes {
-  count: number;
-  tag: string;
+import {ComponentClass} from 'react';
+
+export class RepeaterProptypes {
+  count: number = 0;
+  tag: ComponentClass<any> | string = 'div';
   children?: any;
   rest?: any;
 }
@@ -19,11 +21,9 @@ const Repeater = (props: RepeaterProptypes) => {
     items.push(children(i));
   }
 
-  // @ts-ignore
   return <Tag {...rest}>{items}</Tag>;
 };
 
-// ** Default Props
 Repeater.defaultProps = {
   tag: 'div',
 };

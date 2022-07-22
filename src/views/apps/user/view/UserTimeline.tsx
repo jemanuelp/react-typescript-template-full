@@ -1,7 +1,7 @@
 import Avatar from '../../../../@core/components/avatar';
 import Timeline from '../../../../@core/components/timeline';
-import pdf from 'src/assets/images/icons/file-icons/pdf.png';
-import ceo from 'src/assets/images/portrait/small/avatar-s-7.jpg';
+import pdf from '../../../../../src/assets/images/icons/file-icons/pdf.png';
+import ceo from '../../../../../src/assets/images/portrait/small/avatar-s-7.jpg';
 import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap';
 
 // ** Timeline Data

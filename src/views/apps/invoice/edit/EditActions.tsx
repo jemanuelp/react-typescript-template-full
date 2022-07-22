@@ -2,7 +2,13 @@ import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, Button, Input } from 'reactstrap';
 
-const EditActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }) => {
+export type EditActionsProps = {
+  id: number;
+  setSendSidebarOpen: Function;
+  setAddPaymentOpen: Function;
+}
+
+const EditActions = ({ id, setSendSidebarOpen, setAddPaymentOpen }: EditActionsProps) => {
   return (
     <Fragment>
       <Card className='invoice-action-wrapper'>

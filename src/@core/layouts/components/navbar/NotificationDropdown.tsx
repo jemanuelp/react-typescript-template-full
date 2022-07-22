@@ -18,7 +18,7 @@ const NotificationDropdown = () => {
       ),
     },
     {
-      img: require('src/assets/images/portrait/small/avatar-s-3.jpg'),
+      img: require('../../../../../src/assets/images/portrait/small/avatar-s-3.jpg'),
       subtitle: 'You have 10 unread messages.',
       title: (
         <p className='media-heading'>

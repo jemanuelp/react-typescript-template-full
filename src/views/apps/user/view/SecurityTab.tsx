@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import {
   Row,
   Col,
@@ -18,18 +17,15 @@ import {
   ModalHeader,
   FormFeedback,
 } from 'reactstrap';
-
 import InputPasswordToggle from '../../../../@core/components/input-password-toggle';
-
 import * as yup from 'yup';
 import Cleave from 'cleave.js/react';
 import 'cleave.js/dist/addons/cleave-phone.us';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, Controller } from 'react-hook-form';
 import { Edit, Trash, Settings, MessageSquare, ChevronRight } from 'react-feather';
-
-import qrCode from 'src/assets/images/icons/qrcode.png';
-import chromeLogo from 'src/assets/images/icons/google-chrome.png';
+import qrCode from '../../../../../src/assets/images/icons/qrcode.png';
+import chromeLogo from '../../../../../src/assets/images/icons/google-chrome.png';
 
 const SignupSchema = yup.object().shape({
   password: yup.string().min(8).required(),

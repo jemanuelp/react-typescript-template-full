@@ -1,6 +1,6 @@
 import { useForm, Controller } from 'react-hook-form';
 import { Form, Input, Card, Label, CardHeader, CardTitle, CardBody, CardText, Button, Row, Col } from 'reactstrap';
-import {IAddress} from '../../interfaces/IAddress';
+import {IAddress} from '../../models/IAddress';
 
 const defaultValues: IAddress = {
   checkoutName: '',
