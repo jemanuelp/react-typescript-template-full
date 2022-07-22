@@ -826,7 +826,7 @@ mock.onPost('/apps/email/update-emails-label').reply(config => {
 // GET: GET Single Email
 // ------------------------------------------------
 mock.onGet('/apps/email/get-email').reply((config: AxiosRequestConfig) => {
-  const {id} = config.data;
+  const {id} = JSON.parse(config.data);
 
   const emailId = Number(id);
 
