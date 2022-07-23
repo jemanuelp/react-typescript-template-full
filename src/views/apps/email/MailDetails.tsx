@@ -231,7 +231,7 @@ const MailDetails = (props: MailDetailsProperty) => {
             <div className='email-detail-header'>
               <div className='email-header-left d-flex align-items-center'>
                 <span className='go-back me-1' onClick={handleGoBack}>
-                  <ChevronRight size={20} />
+                  <ChevronLeft size={20} />
                 </span>
                 <h4 className='email-subject mb-0'>{mail.subject}</h4>
               </div>
@@ -365,7 +365,7 @@ const MailDetails = (props: MailDetailsProperty) => {
                         return mail.hasPreviousMail ? dispatch(paginateMail({ dir: 'next', emailId: mail.id })) : null;
                       }}
                     >
-                      <ChevronRight
+                      <ChevronLeft
                         size={18}
                         className={classnames({
                           'text-muted': !mail.hasPreviousMail,
@@ -382,7 +382,7 @@ const MailDetails = (props: MailDetailsProperty) => {
                         return mail.hasNextMail ? dispatch(paginateMail({ dir: 'previous', emailId: mail.id })) : null;
                       }}
                     >
-                      <ChevronLeft
+                      <ChevronRight
                         size={18}
                         className={classnames({
                           'text-muted': !mail.hasNextMail,
