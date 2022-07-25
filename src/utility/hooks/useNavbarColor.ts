@@ -5,7 +5,7 @@ import {Layout} from '../../configs/interfaces/Layout';
 
 export const useNavbarColor = () => {
   const dispatch = useDispatch();
-  const store: Layout = useSelector((state: RootState) => state.layout);
+  const store : Layout = useSelector((state: RootState) => state.layout);
 
   // ** Return a wrapped version of useState's setter function
   const setNavbarColor = (value: any) => {

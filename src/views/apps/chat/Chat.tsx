@@ -61,26 +61,31 @@ const ChatLog = (props: ChatProptypes) => {
 
   // ** Formats chat data based on sender
   const formattedChatData = () => {
-    const chatLog: IChat[] = [];
-    if (selectedUser.chat && selectedUser.chat.length) {
-      selectedUser.chat.forEach((chat: IChats) => {
-        chat.chat.forEach((msg: IChat) => {
-          chatLog.push(msg);
-        });
-      });
+    let chatLog: IChat[] = [];
+    if (selectedUser.chat) {
+      chatLog = selectedUser.chat.chat;
     }
 
-    const formattedChatLog: IChat[] = [];
-    let chatMessageSenderId = chatLog[0] ?
-      chatLog[0].senderId :
-      undefined;
-    let msgGroup: IChat = {
+    const formattedChatLog: {
+      senderId: number | undefined;
+      messages: {
+        msg: string | undefined;
+        time: string | Date | undefined;
+      }[];
+    }[] = [];
+    let chatMessageSenderId = chatLog[0] ? chatLog[0].senderId : undefined;
+    let msgGroup: {
+      senderId: number | undefined;
+      messages: {
+        msg: string | undefined;
+        time: string | Date | undefined;
+      }[];
+    } = {
       senderId: chatMessageSenderId,
       messages: [],
     };
-    chatLog.forEach((msg: any, index: number) => {
+    chatLog.forEach((msg, index) => {
       if (chatMessageSenderId === msg.senderId) {
-        msgGroup.messages = [];
         msgGroup.messages.push({
           msg: msg.message,
           time: msg.time,
@@ -211,16 +216,7 @@ const ChatLog = (props: ChatProptypes) => {
                     className='avatar-border user-profile-toggle m-0 me-1'
                     onClick={() => handleAvatarClick(selectedUser.contact)}
                   />
-                  <h6 className='mb-0'>{
-                    (
-                      selectedUser &&
-                      selectedUser.contact &&
-                      selectedUser.contact &&
-                      typeof selectedUser.contact === 'string'
-                    ) ?
-                      selectedUser.contact :
-                      ''
-                  }</h6>
+                  <h6 className='mb-0'>{selectedUser.contact.fullName ?? ''}</h6>
                 </div>
                 <div className='d-flex align-items-center'>
                   <PhoneCall size={18} className='cursor-pointer d-sm-block d-none me-1' />

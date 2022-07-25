@@ -4,9 +4,10 @@ import {RootState} from '../../redux/reducers/RootReducer';
 import {LayoutTypes, layoutTypes} from '../../domains/enums/LayoutTypes';
 import {useCallback, useEffect} from 'react';
 import {Layout} from '../../configs/interfaces/Layout';
+import {ActionCreator} from '@reduxjs/toolkit';
 
 export const useLayout = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ActionCreator<any>>();
   const store: Layout = useSelector((state: RootState) => state.layout);
 
   const setLayout = (value: LayoutTypes) => {
@@ -25,7 +26,7 @@ export const useLayout = () => {
     }
     // ** If lastLayout is horizontal & screen size is equals to or above 1200
     if (store.lastLayout === layoutTypes.horizontal && window.innerWidth >= 1200) {
-      setLayout(layoutTypes.horizontal);
+      setLayout('horizontal');
     }
   }, []);
 

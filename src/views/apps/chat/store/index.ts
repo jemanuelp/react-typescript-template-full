@@ -32,7 +32,7 @@ const initialState: InitialStateType = {
   userProfile: {} as IProfileUser,
   contacts: [],
   chats: [],
-  selectedUser: {} as IUser,
+  selectedUser: {} as any,
 };
 
 export const appChatSlice = createSlice({
@@ -49,6 +49,7 @@ export const appChatSlice = createSlice({
         state.contacts = action.payload.contacts;
       })
       .addCase(selectChat.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.selectedUser = action.payload;
       });
   },

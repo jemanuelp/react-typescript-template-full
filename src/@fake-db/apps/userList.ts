@@ -1,5 +1,4 @@
 import mock from '../mock';
-
 import {paginateArray} from '../utils';
 import {IUser} from '../../domains/interfaces/IUser';
 

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '../../redux/reducers/RootReducer';
 import {handleNavbarType} from '../../redux/layout';
 import {NavbarLayoutTypes} from '../../domains/enums/NavbarLayoutTypes';
+import {Layout} from '../../configs/interfaces/Layout';
 
 export interface useNavbarTypeInterface {
     navbarType: NavbarLayoutTypes;
@@ -10,7 +11,7 @@ export interface useNavbarTypeInterface {
 
 export const useNavbarType = (): useNavbarTypeInterface => {
   const dispatch = useDispatch();
-  const store = useSelector((state: RootState) => state.layout);
+  const store: Layout = useSelector((state: RootState) => state.layout);
 
   const setNavbarType = (type: any) => {
     dispatch(handleNavbarType(type));

@@ -119,7 +119,6 @@ mock.onPost('/jwt/register').reply((request: AxiosRequestConfig) => {
       password,
       username,
       fullName: '',
-      avatar: null,
       role: 'admin',
       ability: [
         {

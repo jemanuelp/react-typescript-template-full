@@ -18,9 +18,10 @@ const initialMenu = (): MenuLayout => {
 const initialDirection = () => {
   const item = window.localStorage.getItem('direction');
   //** Parse stored json or if none return initialValue
-  return item ?
-    JSON.parse(item) :
-    themeConfig.layout.isRTL;
+  if (!item) {
+    return themeConfig.layout.isRTL;
+  }
+  return JSON.parse(item);
 };
 
 const initialSkin = () => {

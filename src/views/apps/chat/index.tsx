@@ -9,11 +9,13 @@ import '../../../@core/scss/base/pages/app-chat.scss';
 import '../../../@core/scss/base/pages/app-chat-list.scss';
 import {RootState} from '../../../redux/reducers/RootReducer';
 import {IUser} from '../../../domains/interfaces/IUser';
+import {InitialStateType} from './interfaces/InitialStateType';
+import {ActionCreator} from '@reduxjs/toolkit';
 
 const AppChat = () => {
-  const dispatch = useDispatch<any>();
-  const store = useSelector((state: RootState) => state.chat);
-  const [user, setUser] = useState({});
+  const dispatch = useDispatch<ActionCreator<any>>();
+  const store: InitialStateType = useSelector((state: RootState) => state.chat);
+  const [user, setUser] = useState<IUser>({} as IUser);
   const [sidebar, setSidebar] = useState<boolean>(false);
   const [userSidebarRight, setUserSidebarRight] = useState<boolean>(false);
   const [userSidebarLeft, setUserSidebarLeft] = useState<boolean>(false);

@@ -2,8 +2,15 @@ import Avatar from '../../../@core/components/avatar';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { X, Mail, PhoneCall, Clock, Tag, Star, Image, Trash, Slash } from 'react-feather';
+import {IUser} from '../../../domains/interfaces/IUser';
 
-const UserProfileSidebar = (props: any) => {
+export type UserProfileSidebarProps = {
+  user: IUser;
+  userSidebarRight: boolean;
+  handleUserSidebarRight: any;
+}
+
+const UserProfileSidebar = (props: UserProfileSidebarProps) => {
   const {
     user,
     handleUserSidebarRight,
@@ -11,7 +18,7 @@ const UserProfileSidebar = (props: any) => {
   } = props;
 
   return (
-    <div className={classnames('user-profile-sidebar', { show: userSidebarRight === true })}>
+    <div className={classnames('user-profile-sidebar', { show: userSidebarRight })}>
       <header className='user-profile-header'>
         <span className='close-icon' onClick={handleUserSidebarRight}>
           <X size={14} />

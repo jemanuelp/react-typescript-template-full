@@ -22,6 +22,7 @@ import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
 import ScrollToTop from '../components/scrolltop';
 import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
+import {Layout} from '../../configs/interfaces/Layout';
 
 const VerticalLayout = (props: any) => {
   const { menu, navbar, footer, children, menuData } = props;
@@ -39,7 +40,7 @@ const VerticalLayout = (props: any) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const dispatch = useDispatch();
-  const layoutStore = useSelector((state: RootState) => state.layout);
+  const layoutStore : Layout = useSelector((state: RootState) => state.layout);
 
   const handleWindowWidth = () => {
     setWindowWidth(window.innerWidth);

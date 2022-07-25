@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {handleRTL} from '../../redux/layout';
 import {RootState} from '../../redux/reducers/RootReducer';
+import {ActionCreator} from '@reduxjs/toolkit';
 
 export interface useRTLInterface {
   isRtl: boolean;
@@ -10,7 +11,7 @@ export interface useRTLInterface {
 
 export const useRTL = (): useRTLInterface => {
   
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ActionCreator<any>>();
   const isRtl: boolean = useSelector((state: RootState) => state.layout.isRTL);
 
   // ** Return a wrapped version of useState's setter function

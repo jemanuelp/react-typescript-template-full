@@ -252,7 +252,7 @@ mock.onGet('/apps/chat/users/profile-user').reply(() => [200, data.profileUser])
 mock.onGet('/apps/chat/get-chat').reply((config: AxiosRequestConfig) => {
   // Get event id from URL
 
-  const userId = Number(config.data.id);
+  const userId = Number(JSON.parse(config.data).id);
 
   const chat = data.chats.find(c => c.id === userId);
   if (chat) chat.unseenMsgs = 0;

@@ -59,10 +59,10 @@ const getRouteMeta = (route: any) => {
 
 // ** Return Filtered Array of Routes & Paths
 const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
-  const LayoutRoutes = new Array<RouteObject>();
+  const LayoutRoutes: RouteObject[] = [];
 
   if (Routes) {
-    Routes.filter((route: any) => {
+    Routes.filter((route: Route) => {
       let isBlank = false;
       // ** Checks if Route layout or Default layout matches current layout
       if (
@@ -85,8 +85,7 @@ const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
         }
         if (route.element) {
           const Wrapper =
-                        // eslint-disable-next-line multiline-ternary
-                        isObjEmpty(route.element.props) && !isBlank ? // eslint-disable-next-line multiline-ternary
+                        isObjEmpty(route.element.props) && !isBlank ?
                           LayoutWrapper :
                           Fragment;
 
@@ -99,7 +98,6 @@ const MergeLayoutRoutes = (layout: LayoutTypes, defaultLayout: LayoutTypes) => {
           );
         }
 
-        // Push route to LayoutRoutes
         LayoutRoutes.push(route);
       }
       return LayoutRoutes;
@@ -112,7 +110,7 @@ const getRoutes = (layout: LayoutTypes) => {
   const defaultLayout = layout || 'vertical';
   const layouts: LayoutTypes[] = ['vertical', 'horizontal', 'blank'];
 
-  const AllRoutes = Array<RouteObject>();
+  const AllRoutes: RouteObject[] = [];
 
   layouts.forEach((layoutItem: LayoutTypes) => {
     const LayoutRoutes = MergeLayoutRoutes(layoutItem, defaultLayout);

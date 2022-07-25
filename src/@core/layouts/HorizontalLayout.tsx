@@ -20,6 +20,13 @@ import ScrollToTop from '../../@core/components/scrolltop';
 import themeConfig from '../../configs/themeConfig';
 import Customizer from '../components/customizer';
 import {useRouterTransition} from '../../utility/hooks/useRouterTransition';
+import {Layout} from '../../configs/interfaces/Layout';
+import navigation from '../../navigation/horizontal';
+import {ActionCreator} from '@reduxjs/toolkit';
+
+export type HorizontalLayoutProps = {
+  menuData: typeof navigation;
+}
 
 const HorizontalLayout = (props: any) => {
   const {
@@ -40,8 +47,8 @@ const HorizontalLayout = (props: any) => {
   const { transition, setTransition } = useRouterTransition();
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false);
-  const dispatch = useDispatch();
-  const layoutStore = useSelector((state: RootState) => state.layout);
+  const dispatch = useDispatch<ActionCreator<any>>();
+  const layoutStore : Layout = useSelector((state: RootState) => state.layout);
   const contentWidth = layoutStore.contentWidth;
   const isHidden = layoutStore.menu.isHidden;
   const setContentWidth = (val: any) => dispatch(handleContentWidth(val));

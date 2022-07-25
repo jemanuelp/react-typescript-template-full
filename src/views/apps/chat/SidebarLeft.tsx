@@ -1,17 +1,20 @@
-import {useState, useEffect, ChangeEvent, ChangeEventHandler} from 'react';
+import {useState, useEffect} from 'react';
 import Avatar from '../../../@core/components/avatar';
 import {selectChat} from './store';
 import {useDispatch} from 'react-redux';
-import {formatDateToMonthShort, isObjEmpty} from '../../../utility/Utils';
+import {formatDateToMonthShort} from '../../../utility/Utils';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {X, Search, CheckSquare, Bell, User, Trash} from 'react-feather';
 import {CardText, InputGroup, InputGroupText, Badge, Input, Button, Label} from 'reactstrap';
 import {StatusTypes} from '../../ui-elements/cards/models/StatusTypes';
 import {IChatContact} from './interfaces/IChatContact';
-// TODO: discovered types
+import {ActionCreator} from '@reduxjs/toolkit';
+import {InitialStateType} from './interfaces/InitialStateType';
+import {IChats} from './interfaces/IChats';
+
 export type SidebarLeftProps = {
-  store: any;
+  store: InitialStateType;
   sidebar: boolean;
   handleSidebar: any;
   userSidebarLeft: boolean;
@@ -21,12 +24,12 @@ export type SidebarLeftProps = {
 const SidebarLeft = (props: SidebarLeftProps) => {
   const { store, sidebar, handleSidebar, userSidebarLeft, handleUserSidebarLeft } = props;
   const { chats, contacts, userProfile } = store;
-  const dispatch = useDispatch<any>();
+  const dispatch = useDispatch<ActionCreator<any>>();
   const [query, setQuery] = useState('');
   const [about, setAbout] = useState('');
   const [active, setActive] = useState(0);
   const [status, setStatus] = useState<StatusTypes>('online');
-  const [filteredChat, setFilteredChat] = useState<IChatContact[]>([]);
+  const [filteredChat, setFilteredChat] = useState<IChats[]>([]);
   const [filteredContacts, setFilteredContacts] = useState<IChatContact[]>([]);
 
   // ** Handles User Chat Click
@@ -39,11 +42,13 @@ const SidebarLeft = (props: SidebarLeftProps) => {
   };
 
   useEffect(() => {
-    if (!isObjEmpty(store.selectedUser)) {
+    if (store.selectedUser) {
       if (store.selectedUser.chat) {
         setActive(store.selectedUser.chat.id);
       } else {
-        setActive(store.selectedUser.contact.id);
+        if (store.selectedUser.contact) {
+          setActive(store.selectedUser.contact.id);
+        }
       }
     }
   }, []);
@@ -79,9 +84,9 @@ const SidebarLeft = (props: SidebarLeftProps) => {
               <div className='chat-info flex-grow-1'>
                 <h5 className='mb-0'>{item.fullName}</h5>
                 <CardText className='text-truncate'>
-                  {item.chat && item.chat.lastMessage ?
+                  {item.chat.lastMessage ?
                     item.chat.lastMessage.message :
-                    chats[chats.length - 1].message}
+                    item.about}
                 </CardText>
               </div>
               <div className='chat-meta text-nowrap'>
@@ -135,7 +140,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
 
   const handleFilter = (e: any) => {
     setQuery(e.target.value);
-    const searchFilterFunction = (contact: IChatContact) => {
+    const searchFilterFunction = (contact: any) => {
       return contact.fullName.toLowerCase().includes(
         e.target.value.toLowerCase(),
       );
@@ -291,7 +296,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
           </div>
           <div
             className={classnames('sidebar-content', {
-              show: sidebar === true,
+              show: sidebar,
             })}
           >
             <div className='sidebar-close-icon' onClick={handleSidebar}>
