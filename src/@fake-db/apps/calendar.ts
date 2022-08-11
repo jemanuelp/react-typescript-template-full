@@ -1,4 +1,5 @@
 import mock from '../mock';
+import {Event} from '../../views/apps/calendar/models/Event';
 
 const date = new Date();
 // const prevDay = new Date().getDate() - 1;
@@ -11,7 +12,7 @@ const prevMonth = date.getMonth() === 11 ?
   new Date(date.getFullYear() - 1, 0, 1) :
   new Date(date.getFullYear(), date.getMonth() - 1, 1);
 
-const data = {
+const data: { events: Event[] } = {
   events: [
     {
       id: 1,
@@ -131,7 +132,7 @@ const data = {
 // ------------------------------------------------
 mock.onGet('/apps/calendar/events').reply(config => {
   // Get requested calendars as Array
-  const calendars = config.data.calendars;
+  const calendars = JSON.parse(config.data).calendars;
 
   return [
     200,
@@ -149,7 +150,7 @@ mock.onPost('/apps/calendar/add-event').reply(config => {
   const { length } = data.events;
   let lastIndex = 0;
   if (length) {
-    lastIndex = data.events[length - 1].id;
+    lastIndex = data.events[length - 1].id ?? 0;
   }
   event.id = lastIndex + 1;
 

@@ -9,18 +9,12 @@ import { fetchEvents, selectEvent, updateEvent, updateFilter, updateAllFilters, 
 import '../../../@core/scss/react/apps/app-calendar.scss';
 import {RootState} from '../../../redux/reducers/RootReducer';
 import {useRTL} from '../../../utility/hooks/useRTL';
-
-const calendarsColor = {
-  Business: 'primary',
-  Holiday: 'success',
-  Personal: 'danger',
-  Family: 'warning',
-  ETC: 'info',
-};
+import {calendarsColor} from './models/CalendarColor';
+import {InitialStateCalendar} from './models/InitialStateCalendar';
 
 const CalendarComponent = () => {
   const dispatch = useDispatch<any>();
-  const store = useSelector((state: RootState) => state.calendar);
+  const store: InitialStateCalendar = useSelector((state: RootState) => state.calendar);
   const [calendarApi, setCalendarApi] = useState<any>(null);
   const [addSidebarOpen, setAddSidebarOpen] = useState(false);
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);

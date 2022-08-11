@@ -16,8 +16,26 @@ import '../../../@core/scss/react/libs/react-select/_react-select.scss';
 import '../../../@core/scss/react/libs/flatpickr/flatpickr.scss';
 import Avatar from '../../../@core/components/avatar';
 import {isObjEmpty, selectThemeColors} from '../../../utility/Utils';
+import {InitialStateCalendar} from './models/InitialStateCalendar';
+import {addEvent, removeEvent, selectEvent, updateEvent} from './store';
+import {CalendarColor} from './models/CalendarColor';
+import {Event} from './models/Event';
 
-const AddEventSidebar = (props: any) => {
+export type AddEventSidebarProps = {
+  store: InitialStateCalendar;
+  dispatch: any;
+  addEvent: addEvent;
+  open: boolean;
+  selectEvent: selectEvent;
+  updateEvent: updateEvent;
+  removeEvent: removeEvent;
+  calendarApi: any;
+  refetchEvents: Function;
+  calendarsColor: CalendarColor;
+  handleAddEventSidebar: any;
+}
+
+const AddEventSidebar = (props: AddEventSidebarProps) => {
   const {
     open,
     store,
@@ -92,7 +110,7 @@ const AddEventSidebar = (props: any) => {
   };
 
   const handleAddEvent = () => {
-    const obj = {
+    const obj: Event = {
       title: getValues('title'),
       start: startPicker,
       end: endPicker,
@@ -144,7 +162,7 @@ const AddEventSidebar = (props: any) => {
           return {
             label: calendar,
             value: calendar,
-            color: calendarsColor[calendar],
+            color: calendarsColor[calendar as keyof typeof calendarsColor],
           };
         } else {
           return {value: 'Business', label: 'Business', color: 'primary'};
@@ -200,7 +218,7 @@ const AddEventSidebar = (props: any) => {
   // ** Updates Event in Store
   const handleUpdateEvent = () => {
     if (getValues('title').length) {
-      const eventToUpdate = {
+      const eventToUpdate: Event = {
         id: selectedEvent.id,
         title: getValues('title'),
         allDay,
@@ -234,14 +252,16 @@ const AddEventSidebar = (props: any) => {
 
   // ** (UI) removeEventInCalendar
   const removeEventInCalendar = (eventId: number) => {
-    calendarApi.getEventById(eventId).remove();
+    calendarApi.getEventById(String(eventId)).remove();
   };
 
   const handleDeleteEvent = () => {
-    dispatch(removeEvent(selectedEvent.id));
-    removeEventInCalendar(selectedEvent.id);
-    handleAddEventSidebar();
-    toast.error('Event Removed');
+    if (selectedEvent.id) {
+      dispatch(removeEvent(selectedEvent.id));
+      removeEventInCalendar(selectedEvent.id);
+      handleAddEventSidebar();
+      toast.error('Event Removed');
+    }
   };
 
   const EventActions = () => {
@@ -382,7 +402,7 @@ const AddEventSidebar = (props: any) => {
                 onChange={(date: any) => setEndPicker(date[0])}
                 value={endPicker}
                 options={{
-                  enableTime: allDay === false,
+                  enableTime: !allDay,
                   dateFormat: 'Y-m-d H:i',
                 }}
               />

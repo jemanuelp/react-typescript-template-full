@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {InitialStateCalendar} from '../models/InitialStateCalendar';
+import {Event} from '../models/Event';
 
 export const fetchEvents = createAsyncThunk('appCalendar/fetchEvents', async(calendars: any) => {
   const response = await axios.get('/apps/calendar/events', { data: {
@@ -8,13 +10,13 @@ export const fetchEvents = createAsyncThunk('appCalendar/fetchEvents', async(cal
   return response.data;
 });
 
-export const addEvent = createAsyncThunk('appCalendar/addEvent', async(event, { dispatch, getState }: any) => {
+export const addEvent = createAsyncThunk('appCalendar/addEvent', async(event: Event, { dispatch, getState }: any) => {
   await axios.post('/apps/calendar/add-event', { event });
   await dispatch(fetchEvents(getState().calendar.selectedCalendars));
   return event;
 });
 
-export const updateEvent = createAsyncThunk('appCalendar/updateEvent', async(event, { dispatch, getState }: any) => {
+export const updateEvent = createAsyncThunk('appCalendar/updateEvent', async(event: Event, { dispatch, getState }: any) => {
   await axios.post('/apps/calendar/update-event', { event });
   await dispatch(fetchEvents(getState().calendar.selectedCalendars));
   return event;
@@ -41,19 +43,22 @@ export const updateAllFilters = createAsyncThunk('appCalendar/updateAllFilters',
 });
 
 export const removeEvent = createAsyncThunk('appCalendar/removeEvent', async(id: number) => {
-  await axios.delete('/apps/calendar/remove-event', { data: {
-    id,
-  } });
+  await axios.delete('/apps/calendar/remove-event', {
+    data: {
+      id,
+    },
+  });
   return id;
 });
 
+export const initialState: InitialStateCalendar = {
+  events: [],
+  selectedEvent: {} as Event,
+  selectedCalendars: ['Personal', 'Business', 'Family', 'Holiday', 'ETC'],
+};
 export const appCalendarSlice = createSlice({
   name: 'appCalendar',
-  initialState: {
-    events: [],
-    selectedEvent: {},
-    selectedCalendars: ['Personal', 'Business', 'Family', 'Holiday', 'ETC'],
-  },
+  initialState,
   reducers: {
     selectEvent: (state, action) => {
       state.selectedEvent = action.payload;
@@ -89,3 +94,8 @@ export const appCalendarSlice = createSlice({
 export const { selectEvent } = appCalendarSlice.actions;
 
 export default appCalendarSlice.reducer;
+
+export type updateEvent = typeof updateEvent;
+export type selectEvent = typeof selectEvent;
+export type addEvent = typeof addEvent;
+export type removeEvent = typeof removeEvent;

@@ -1,15 +1,32 @@
-import {useEffect, useRef, memo, Fragment} from 'react';
+import {useEffect, useRef, memo} from 'react';
 import FullCalendar from '@fullcalendar/react';
 import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import toast from 'react-hot-toast';
-import {Menu} from 'react-feather';
 import {Card, CardBody} from 'reactstrap';
-import {CalendarOptions} from '@fullcalendar/common';
+import {CalendarApi, CalendarOptions} from '@fullcalendar/common';
+import {InitialStateCalendar} from './models/InitialStateCalendar';
+import {ActionCreator} from '@reduxjs/toolkit';
+import {CalendarColor} from './models/CalendarColor';
+import {selectEvent, updateEvent} from './store';
 
-const Calendar = (props: any) => {
+export type CalendarProps = {
+  isRtl: boolean;
+  store: InitialStateCalendar;
+  dispatch: ActionCreator<any>;
+  blankEvent: any;
+  calendarApi: CalendarApi;
+  selectEvent: selectEvent;
+  updateEvent: updateEvent;
+  toggleSidebar: Function;
+  calendarsColor: CalendarColor;
+  setCalendarApi: any;
+  handleAddEventSidebar: Function;
+}
+
+const Calendar = (props: CalendarProps) => {
   const calendarRef = useRef<any>(null);
   const {
     store,
@@ -33,7 +50,7 @@ const Calendar = (props: any) => {
 
   // ** calendarOptions(Props)
   const calendarOptions: CalendarOptions = {
-    events: store.events.length ?
+    events: Array.isArray(store.events) && store.events.length ?
       store.events :
       [],
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
@@ -73,7 +90,9 @@ const Calendar = (props: any) => {
     navLinks: true,
 
     eventClassNames({event: calendarEvent}: any) {
-      const colorName = calendarsColor[calendarEvent._def.extendedProps.calendar];
+      const colorName = calendarsColor[
+          calendarEvent._def.extendedProps.calendar as keyof typeof calendarsColor
+      ];
 
       return [
         // Background Color
@@ -105,7 +124,7 @@ const Calendar = (props: any) => {
       const ev = blankEvent;
       ev.start = info.date;
       ev.end = info.date;
-      dispatch(selectEvent(ev));
+      selectEvent(ev);
       handleAddEventSidebar();
     },
 
@@ -127,7 +146,6 @@ const Calendar = (props: any) => {
       dispatch(updateEvent(resizedEvent));
       toast.success('Event Updated');
     },
-    // ref: calendarRef,
 
     // Get direction from app state (store)
     direction: isRtl ?
@@ -138,7 +156,7 @@ const Calendar = (props: any) => {
   return (
     <Card className='shadow-none border-0 mb-0 rounded-0'>
       <CardBody className='pb-0'>
-        <FullCalendar {...calendarOptions} />{' '}
+        <FullCalendar {...calendarOptions} ref={calendarRef}/>{' '}
       </CardBody>
     </Card>
   );
