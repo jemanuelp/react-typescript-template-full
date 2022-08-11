@@ -287,6 +287,8 @@ const TaskSidebar = (props: TaskSidebarPropTypes) => {
       assignee.label === undefined ?
         store.selectedTask.assignee :
         newAssignee,
+      chosen: false,
+      selected: false,
     };
 
     if (data.title.length) {

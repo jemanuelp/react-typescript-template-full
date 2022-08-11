@@ -1,7 +1,6 @@
 import { Fragment, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import classnames from 'classnames';
-// ** Todo App Components
 import Tasks from './Tasks';
 import Sidebar from './Sidebar';
 import TaskSidebar from './TaskSidebar';
@@ -10,13 +9,14 @@ import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } f
 import '../../../@core/scss/react/apps/app-todo.scss';
 import { RootState } from '../../../redux/reducers/RootReducer';
 import {IFilter} from '../../../domains/interfaces/IFilter';
+import {ActionCreator} from '@reduxjs/toolkit';
 
 const TODO = () => {
   const [sort, setSort] = useState<string>('');
   const [query, setQuery] = useState<string>('');
   const [mainSidebar, setMainSidebar] = useState<boolean>(false);
   const [openTaskSidebar, setOpenTaskSidebar] = useState<boolean>(false);
-  const dispatch = useDispatch<any>();
+  const dispatch = useDispatch<ActionCreator<any>>();
   const store = useSelector((state: RootState) => state.todo);
 
   // ** URL Params

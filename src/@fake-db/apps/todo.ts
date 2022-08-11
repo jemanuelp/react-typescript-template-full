@@ -18,6 +18,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 2,
@@ -33,6 +35,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 3,
@@ -48,6 +52,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 4,
@@ -63,6 +69,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
     {
       id: 5,
@@ -78,6 +86,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
     {
       id: 6,
@@ -93,6 +103,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: true,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 7,
@@ -108,6 +120,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
     {
       id: 8,
@@ -123,6 +137,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 9,
@@ -138,6 +154,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: true,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 10,
@@ -153,6 +171,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 11,
@@ -168,6 +188,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
     {
       id: 12,
@@ -183,6 +205,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 13,
@@ -198,6 +222,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 14,
@@ -213,6 +239,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
     {
       id: 15,
@@ -228,6 +256,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 16,
@@ -243,6 +273,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: true,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 17,
@@ -258,6 +290,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: false,
+      chosen: false,
+      selected: false,
     },
     {
       id: 18,
@@ -273,6 +307,8 @@ const data: { tasks: ITask2[] } = {
       isCompleted: false,
       isDeleted: false,
       isImportant: true,
+      chosen: false,
+      selected: false,
     },
   ],
 };

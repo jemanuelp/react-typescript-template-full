@@ -1,7 +1,8 @@
 import {EditorState} from 'draft-js';
 import {ItemInterface} from 'react-sortablejs';
 
-export interface ITask2 extends ItemInterface {
+export interface ITask2 {
+    id: number;
     title: string;
     dueDate: string | Date;
     description: string | EditorState;
@@ -13,4 +14,6 @@ export interface ITask2 extends ItemInterface {
     isCompleted: boolean;
     isDeleted: boolean;
     isImportant: boolean;
+    chosen: boolean;
+    selected: boolean;
 }

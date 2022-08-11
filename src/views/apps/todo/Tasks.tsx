@@ -17,6 +17,7 @@ import {
 } from 'reactstrap';
 import {TaskProptypes} from './interfaces/TaskProptypes';
 import {ITask2} from './interfaces/ITask2';
+import React from 'react';
 
 const Tasks = (props: TaskProptypes) => {
   const {
@@ -36,8 +37,8 @@ const Tasks = (props: TaskProptypes) => {
 
   // ** Function to selectTask on click
   const handleTaskClick = (obj: ITask2) => {
-    selectTask(obj);
-    dispatch(handleTaskSidebar);
+    dispatch(selectTask(obj));
+    handleTaskSidebar();
   };
 
   // ** Returns avatar color based on task tag
@@ -90,11 +91,12 @@ const Tasks = (props: TaskProptypes) => {
         options={{ wheelPropagation: false }}
         containerRef={ref => {
           if (ref) {
-            const _getBoundingClientRect: typeof ref.getBoundingClientRect =
-                ref.getBoundingClientRect;
+            // @ts-ignore
+            ref._getBoundingClientRect = ref.getBoundingClientRect;
 
             ref.getBoundingClientRect = () => {
-              const original = _getBoundingClientRect();
+              // @ts-ignore
+              const original = ref._getBoundingClientRect();
 
               return { ...original, height: Math.floor(original.height) };
             };
@@ -110,7 +112,7 @@ const Tasks = (props: TaskProptypes) => {
               className='todo-task-list media-list'
               setList={newState => dispatch(reOrderTasks(newState))}
             >
-              {tasks.map((item, index) => {
+              {tasks.map((item: ITask2, index: number) => {
                 return (
                   <li
                     key={`${item.id}-${index}`}
@@ -130,9 +132,9 @@ const Tasks = (props: TaskProptypes) => {
                             onClick={e => e.stopPropagation()}
                             onChange={e => {
                               e.stopPropagation();
-                              dispatch(
-                                updateTask({ ...item, isCompleted: e.target.checked }),
-                              );
+                              dispatch(updateTask(
+                                { ...item, isCompleted: e.target.checked },
+                              ));
                             }}
                           />
                         </div>
@@ -176,7 +178,7 @@ const Tasks = (props: TaskProptypes) => {
   };
 
   // ** Function to getTasks based on sort
-  const handleSort = (e: any, val: any) => {
+  const handleSort = (e: React.MouseEvent<HTMLElement>, val: string) => {
     e.preventDefault();
     setSort(val);
     dispatch(getTasks({ ...params }));
@@ -185,7 +187,9 @@ const Tasks = (props: TaskProptypes) => {
   return (
     <div className='todo-app-list'>
       <div className='app-fixed-search d-flex align-items-center'>
-        <div className='sidebar-toggle cursor-pointer d-block d-lg-none ms-1' onClick={handleMainSidebar}>
+        <div className='sidebar-toggle cursor-pointer d-block d-lg-none ms-1' onClick={() => {
+          handleMainSidebar();
+        }}>
           <Menu size={21} />
         </div>
         <div className='d-flex align-content-center justify-content-between w-100'>
@@ -202,19 +206,19 @@ const Tasks = (props: TaskProptypes) => {
           </DropdownToggle>
           <DropdownMenu end>
             <DropdownItem tag={Link} to='/' onClick={e => handleSort(e, 'title-asc')}>
-              Sort A-Z
+                Sort A-Z
             </DropdownItem>
             <DropdownItem tag={Link} to='/' onClick={e => handleSort(e, 'title-desc')}>
-              Sort Z-A
+                Sort Z-A
             </DropdownItem>
             <DropdownItem tag={Link} to='/' onClick={e => handleSort(e, 'assignee')}>
-              Sort Assignee
+                Sort Assignee
             </DropdownItem>
             <DropdownItem tag={Link} to='/' onClick={e => handleSort(e, 'due-date')}>
-              Sort Due Date
+                Sort Due Date
             </DropdownItem>
             <DropdownItem tag={Link} to='/' onClick={e => handleSort(e, '')}>
-              Reset Sort
+                Reset Sort
             </DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
